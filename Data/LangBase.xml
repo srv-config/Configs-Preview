@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2024 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == Modify if you know what you do only!
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### LanguageSystem ###
+//
+// ### LanguageSystem::Lang ###
+//	ID: Unique ID assigned to language, 0-5
+//	FileName: Name of language file located in \Data\Langs\
+//	Enable: Allows to activate or deactivate specified language, 0/1
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ List of languages should match list of available languages in ServerInfo.xml(bmd), LangInfo section
+//~~ In case player will set invalid language ID or language that is disabled on server side,
+//~~ the system will auto-switch to default language which is language of ID 0.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<LanguageSystem>
+	<Lang ID="0" FileName="English.xml"/> <!-- Lang ID = 0 is default language, enabled by default -->
+	<Lang ID="1" FileName="Spanish.xml" Enable="0"/>
+	<Lang ID="2" FileName="Portuguese.xml" Enable="0"/>
+	<Lang ID="3" FileName="Korean.xml" Enable="0" />
+	<Lang ID="4" FileName="Chinese.xml" Enable="0" />
+	<Lang ID="5" FileName="Vietnamese.xml" Enable="0" />
+</LanguageSystem>

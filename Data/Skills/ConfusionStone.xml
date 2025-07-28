@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == Modify if you know what you do only!
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ changes to the file require modification of client related file, ConfusionStoneMonsterSet.txt (Lang.mpr) 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ConfusionStone ###
+//	DisappearTime: Stone disappearance time, seconds
+//	MonsterRegenTime: Time to respawn monster, seconds
+//	GiveExpMode:
+//		~ 0: Any player can get the exp
+//		~ 1: Only caster can get exp
+//		~ 2: Caster and his party members can get exp
+//
+// ### ConfusionStone::Map ###
+//	Number: Number of map to apply configuration to. Each map number can be defined once only
+//	MonsterIndex: Monster index to respawn, -1 if skill cannot be used on the map
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<ConfusionStone DisappearTime="60" MonsterRegenTime="10" GiveExpMode="0">
+	<Map Number="0"	MonsterIndex="7" />
+	<Map Number="1"	MonsterIndex="-1" />
+	<Map Number="2"	MonsterIndex="19" />
+	<Map Number="3"	MonsterIndex="32" />
+	<Map Number="4"	MonsterIndex="-1" />
+	<Map Number="7"	MonsterIndex="45" />
+	<Map Number="8"	MonsterIndex="57" />
+	<Map Number="10" MonsterIndex="70" />
+	<Map Number="24" MonsterIndex="160" />
+	<Map Number="25" MonsterIndex="180" />
+	<Map Number="26" MonsterIndex="188" />
+	<Map Number="27" MonsterIndex="196" />
+	<Map Number="28" MonsterIndex="266" />
+	<Map Number="29" MonsterIndex="274" />
+	<Map Number="36" MonsterIndex="337" />
+	<Map Number="31" MonsterIndex="294" />
+	<Map Number="33" MonsterIndex="306" />
+	<Map Number="37" MonsterIndex="350" />
+	<Map Number="38" MonsterIndex="360" />
+	<Map Number="51" MonsterIndex="425" />
+	<Map Number="56" MonsterIndex="449" />
+	<Map Number="57" MonsterIndex="458" />
+	<Map Number="63" MonsterIndex="490" />
+	<Map Number="80" MonsterIndex="574" />
+	<Map Number="81" MonsterIndex="576" />
+	<Map Number="91" MonsterIndex="586" />
+	<Map Number="95" MonsterIndex="608" />
+	<Map Number="100" MonsterIndex="670" />
+	<Map Number="110" MonsterIndex="713" />
+	<Map Number="112" MonsterIndex="730" />
+	<Map Number="113" MonsterIndex="744" />
+	<Map Number="116" MonsterIndex="767" />
+	<Map Number="117" MonsterIndex="772" />
+	<Map Number="118" MonsterIndex="773" />
+	<Map Number="119" MonsterIndex="769" />
+	<Map Number="120" MonsterIndex="777" />
+	<Map Number="122" MonsterIndex="788" />
+	<Map Number="123" MonsterIndex="810" />
+	<Map Number="124" MonsterIndex="810" />
+	<Map Number="125" MonsterIndex="810" />
+	<Map Number="126" MonsterIndex="810" />
+	<Map Number="127" MonsterIndex="810" />
+	<Map Number="128" MonsterIndex="832" />
+	<Map Number="129" MonsterIndex="834" />
+	<Map Number="130" MonsterIndex="836" />
+	<Map Number="131" MonsterIndex="846" />
+	<Map Number="132" MonsterIndex="861" />
+	<Map Number="133" MonsterIndex="867" />
+	<Map Number="134" MonsterIndex="875" />
+	<Map Number="135" MonsterIndex="893" />
+	<Map Number="136" MonsterIndex="896" />
+	<Map Number="137" MonsterIndex="905" />
+	<Map Number="138" MonsterIndex="911" />
+	<Map Number="140" MonsterIndex="926" />
+	<Map Number="141" MonsterIndex="942" />
+	<Map Number="142" MonsterIndex="955" />
+	<Map Number="143" MonsterIndex="963" />
+</ConfusionStone>

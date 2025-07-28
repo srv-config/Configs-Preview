@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == Modify if you know what you do only!
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Use of the Alchemist Trade BOT requires Alchemist BOT Plugin available from store
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ItemList::CraftItem ###
+//	ID: Unique Craft Item ID
+//	Cat: Category of result item, see ItemList.xml
+//	Index: Index of result item, see ItemList.xml
+//	Level: Level of result item, 0-15
+//	Durability: Defines reward item durability, 0-255
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If Durability is not defined then it will be set automatically to default
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Luck:
+//		~ 0: No Luck
+//		~ 1: With Luck
+//
+//	Skill:
+//		~ 0: No Skill
+//		~ 1: With Skill
+//
+//	Option:
+//		~ 0-7: Options from +0 to +28
+//
+// Exc:
+//		-1: No exc option
+//		-2: Random count of random options (based on rates from ExcellentOptions.xml)
+//		-3;X: Specified count of random options, the 'X' defines count of excellent options, max 9 (options selection based on rates from ExcellentOptions.xml)
+//		-10: A draw of bonus and excellent options set from MasteryExcOptions.xml. If used, the skill and luck attributes from this file are ignored, see referred file for further details.
+//		X;X;X;X;X;X;X;X;X: Defined excellent options, the 'X' is excellent option ID based on ExcellentOptions.xml, maximum 9 options can be defined
+//
+//	SetItem: Specific set item ID from ItemSetOption.xml
+//	Elemental:
+//		~ -1: Random element
+//		~ 0: No element
+//		~ 1: Fire
+//		~ 2: Water
+//		~ 3: Earth
+//		~ 4: Wind
+//		~ 5: Darkness
+//
+//	Count: Number of reward items
+//	SuccessRate: Chance rate of successful crafting, 0-100
+//
+// ### ItemList::CraftItem::ReqItem ###
+//	ID: Unique requirement ID
+//	Cat: Category of required item, see ItemList.xml
+//	Index: Index of required item, see ItemList.xml
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Pentagrams and Errtels are currently not supported
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	MinLevel: Minimum required level of item, 0-15
+//	Durability: Defines reward item durability, 0-255
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If Durability is not defined then it will be set automatically to default
+//~~ In case of overlapped items the system requires to insert
+//~~ a stack of exact durability and in number defined by Count attribute
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Luck:
+//		~ 0: No Luck
+//		~ 1: With Luck
+//
+//	Skill:
+//		~ 0: No Skill
+//		~ 1: With Skill
+//
+//	Option:
+//		~ 0-7: Options from +0 to +28
+//
+// Exc:
+//		-1: Accept any item, whether it is excellent or not
+//		-2: Require excellent item of not defined number of options
+//		-3;X: Require excellent item of specified number of options, the 'X' defines count of excellent options, max 9
+//		X;X;X;X;X;X;X;X;X: Require excellent item of specified set of excellent options, the 'X' is excellent option ID based on ExcellentOptions.xml, maximum 9 options can be defined
+//
+//	SetItem: Specific set item ID from ItemSetOption.xml
+//	Elemental:
+//		~ -1: Random element
+//		~ 0: No element
+//		~ 1: Fire
+//		~ 2: Water
+//		~ 3: Earth
+//		~ 4: Wind
+//		~ 5: Darkness
+//
+//	Count: Number of required items
+//	SuccessRate: Chance rate of successful crafting, 0-100
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<ItemList>
+	<CraftItem ID="1" Cat="7" Index="0" Level="9" Skill="1" Luck="1" Option="4" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="13" MinLevel="0" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	</CraftItem>
+
+	<CraftItem ID="2" Cat="10" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="14" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	</CraftItem>
+
+	<CraftItem ID="3" Cat="11" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="16" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	</CraftItem>
+
+	<CraftItem ID="4" Cat="9" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="22" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	</CraftItem>
+
+	<CraftItem ID="5" Cat="8" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="12" Index="15" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	</CraftItem>
+</ItemList>

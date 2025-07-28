@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### ItemBank ###
+//	Enable: Whether or not, activate the system, 0/1
+//	Password: A password used by ToolKit ServerInfo (XML) editor to encode the file, max 8 characters
+//
+// ### ItemBank::BankList::Bank ###
+//	Enable: Whether or not, activate specific bank, 0/1
+//	Name: Display name of the bank
+//	Type: Unique bank ID
+//	ItemCat: Item category the bank applies to, see ItemList.xml
+//	ItemIndex: Item index the bank applies to, see ItemList.xml
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The bank can store various type of items, either overlapped or not, however it is limited to basic item types without any special options
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	ItemLevel: Level of item defined for the bank
+//	BaseMaxItemCount: Number of slots bank slots available after bank purchase
+//	PurchaseCoinType:
+//		~ -1: Free
+//		~ 0: Zen
+//		~ 1: WCoin
+//		~ 2: Goblin Point
+//		~ 3: Ruud
+//
+//	PurchasePrice: Value of the bank purchase 
+//	TextColor: Color of the text displayed on the bank row, R;G;B
+//
+// ### ItemBank::BankList::Bank::Withdraw ###
+//	CommissionCoinType:
+//		~ -1: Free
+//		~ 0: Zen
+//		~ 1: WCoin
+//		~ 2: Goblin Point
+//		~ 3: Ruud
+//
+//	CommissionValue: Value of commission to collect every withdrawal
+//
+// ### ItemBank::BankList::Bank::UpgradeList::Upgrade ###
+//	Level: Bank upgrade level, should start from 1 and increase sequentially
+//	MaxItemCount: Number of slots offered with the upgrade
+//	CoinType:
+//		~ -1: Free
+//		~ 0: Zen
+//		~ 1: WCoin
+//		~ 2: Goblin Point
+//		~ 3: Ruud
+//	Price: Value of the bank upgrade
+//	TextColor: Color of the text displayed on the bank upgrade option row, R;G;B
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<ItemBank Enable="1" Password="GhyjukJi">
+	<BankList>
+		<Bank Enable="1" Name="Bless Bank (Z) - (Commission Applies)" Type="0" ItemCat="14" ItemIndex="13" ItemLevel="0" BaseMaxItemCount="10" PurchaseCoinType="-1" PurchasePrice="0" TextColor="255;255;0">
+			<Withdraw CommissionCoinType="0" CommissionValue="10" />
+			<UpgradeList>
+				<Upgrade Level="1" MaxItemCount="20" CoinType="0" Price="5" TextColor="255;0;0" />
+				<Upgrade Level="2" MaxItemCount="30" CoinType="0" Price="10" TextColor="0;255;0" />
+				<Upgrade Level="3" MaxItemCount="40" CoinType="0" Price="30" TextColor="0;0;255" />
+				<Upgrade Level="4" MaxItemCount="50" CoinType="0" Price="50" TextColor="255;0;0" />
+				<Upgrade Level="5" MaxItemCount="60" CoinType="0" Price="100" TextColor="0;255;255" />
+			</UpgradeList>
+		</Bank>
+		<Bank Enable="1" Name="Soul Bank (Z) - (Commission Applies)" Type="1" ItemCat="14" ItemIndex="14" ItemLevel="0" BaseMaxItemCount="10" PurchaseCoinType="-1" PurchasePrice="0" TextColor="0;255;0">
+			<Withdraw CommissionCoinType="0" CommissionValue="10" />
+			<UpgradeList>
+				<Upgrade Level="1" MaxItemCount="20" CoinType="0" Price="5" TextColor="255;0;0" />
+				<Upgrade Level="2" MaxItemCount="30" CoinType="0" Price="10" TextColor="0;255;0" />
+				<Upgrade Level="3" MaxItemCount="40" CoinType="0" Price="30" TextColor="0;0;255" />
+				<Upgrade Level="4" MaxItemCount="50" CoinType="0" Price="50" TextColor="255;0;0" />
+				<Upgrade Level="5" MaxItemCount="60" CoinType="0" Price="100" TextColor="0;255;255" />
+			</UpgradeList>
+		</Bank>
+		<Bank Enable="1" Name="Bless Bank (W) - (Commission Free)" Type="2" ItemCat="14" ItemIndex="13" ItemLevel="0" BaseMaxItemCount="10" PurchaseCoinType="1" PurchasePrice="10" TextColor="0;255;255">
+			<Withdraw CommissionCoinType="-1" CommissionValue="10" />
+			<UpgradeList>
+				<Upgrade Level="1" MaxItemCount="20" CoinType="1" Price="5" TextColor="255;0;0" />
+				<Upgrade Level="2" MaxItemCount="30" CoinType="1" Price="10" TextColor="0;255;0" />
+				<Upgrade Level="3" MaxItemCount="40" CoinType="1" Price="30" TextColor="0;0;255" />
+				<Upgrade Level="4" MaxItemCount="50" CoinType="1" Price="50" TextColor="255;0;0" />
+				<Upgrade Level="5" MaxItemCount="60" CoinType="1" Price="100" TextColor="0;255;255" />
+			</UpgradeList>
+		</Bank>
+		<Bank Enable="1" Name="Soul Bank (W) - (Commission Free)" Type="3" ItemCat="14" ItemIndex="14" ItemLevel="0" BaseMaxItemCount="10" PurchaseCoinType="1" PurchasePrice="10">
+			<Withdraw CommissionCoinType="-1" CommissionValue="10" />
+			<UpgradeList>
+				<Upgrade Level="1" MaxItemCount="20" CoinType="1" Price="5" TextColor="255;0;0" />
+				<Upgrade Level="2" MaxItemCount="30" CoinType="1" Price="10" TextColor="0;255;0" />
+				<Upgrade Level="3" MaxItemCount="40" CoinType="1" Price="30" TextColor="0;0;255" />
+				<Upgrade Level="4" MaxItemCount="50" CoinType="1" Price="50" TextColor="255;0;0" />
+				<Upgrade Level="5" MaxItemCount="60" CoinType="1" Price="100" TextColor="0;255;255" />
+			</UpgradeList>
+		</Bank>
+		<Bank Enable="1" Name="Chaos Bank (R) - (Commission Applies)" Type="4" ItemCat="12" ItemIndex="15" ItemLevel="0" BaseMaxItemCount="10" PurchaseCoinType="3" PurchasePrice="10">
+			<Withdraw CommissionCoinType="3" CommissionValue="10" />
+			<UpgradeList>
+				<Upgrade Level="1" MaxItemCount="20" CoinType="3" Price="5" TextColor="255;0;0" />
+				<Upgrade Level="2" MaxItemCount="30" CoinType="3" Price="10" TextColor="0;255;0" />
+				<Upgrade Level="3" MaxItemCount="40" CoinType="3" Price="30" TextColor="0;0;255" />
+				<Upgrade Level="4" MaxItemCount="50" CoinType="3" Price="50" TextColor="255;0;0" />
+				<Upgrade Level="5" MaxItemCount="60" CoinType="3" Price="100" TextColor="0;255;255" />
+			</UpgradeList>
+		</Bank>
+		<Bank Enable="1" Name="Chaos Bank (R) - (Commission Applies)" Type="5" ItemCat="12" ItemIndex="15" ItemLevel="0" BaseMaxItemCount="10" PurchaseCoinType="3" PurchasePrice="10">
+			<Withdraw CommissionCoinType="3" CommissionValue="10" />
+			<UpgradeList>
+				<Upgrade Level="1" MaxItemCount="20" CoinType="3" Price="5" TextColor="255;0;0" />
+				<Upgrade Level="2" MaxItemCount="30" CoinType="3" Price="10" TextColor="0;255;0" />
+				<Upgrade Level="3" MaxItemCount="40" CoinType="3" Price="30" TextColor="0;0;255" />
+				<Upgrade Level="4" MaxItemCount="50" CoinType="3" Price="50" TextColor="255;0;0" />
+				<Upgrade Level="5" MaxItemCount="60" CoinType="3" Price="100" TextColor="0;255;255" />
+			</UpgradeList>
+		</Bank>
+	</BankList>
+</ItemBank>

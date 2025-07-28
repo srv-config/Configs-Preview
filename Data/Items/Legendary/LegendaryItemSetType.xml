@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2024 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Updating values display requires editing LegendaryItemSetType.txt on client side (Lang.mpr)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### LegendaryItemSetType::OptionList::Option ### ~ section used by game client only
+//	SetOptionID: The ID of set options the Legendary weapon belongs to, references Index attribute in SetItemOption.xml. SetItemOption::SetItem section
+//	CatX (1~4): Category of legendary weapon item
+//	IndexX (1~4): Index of legendary weapon item
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<LegendaryItemSetType>						
+	<Item SetOptionID="326" Cat1="0" Index1="128" Cat2="0" Index2="128" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="327" Cat1="5" Index1="151" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="328" Cat1="4" Index1="70" Cat2="4" Index2="71" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="329" Cat1="5" Index1="152" Cat2="5" Index2="153" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="330" Cat1="0" Index1="129" Cat2="0" Index2="129" Cat3="0" Index3="132" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="331" Cat1="2" Index1="52" Cat2="6" Index2="86" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="332" Cat1="0" Index1="130" Cat2="0" Index2="130" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="333" Cat1="3" Index1="35" Cat2="6" Index2="85" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="334" Cat1="6" Index1="84" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="335" Cat1="5" Index1="156" Cat2="5" Index2="156" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="336" Cat1="2" Index1="53" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="337" Cat1="0" Index1="131" Cat2="0" Index2="131" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="338" Cat1="0" Index1="134" Cat2="6" Index2="83" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="339" Cat1="4" Index1="69" Cat2="4" Index2="69" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="340" Cat1="5" Index1="157" Cat2="5" Index2="154" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="341" Cat1="5" Index1="155" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="342" Cat1="0" Index1="133" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+</LegendaryItemSetType>

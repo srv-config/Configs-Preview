@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2024 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### MonsterSoulConversion ###
+//	WeeklyPurchasesNumber: Maximum number the converter can be purchased a week
+//
+// ### MonsterSoulConversion::WeeklyReset ###
+//	Day: Day of a week:
+//		~ 0: Sunday
+//		~ 1: Monday
+//		~ 2: Tuesday
+//		~ 3: Wednesday
+//		~ 4: Thursday
+//		~ 5: Friday
+//		~ 6: Saturday
+//
+//	Hour: Hour of reset, 0-23
+//	Minute: Minute of reset, 0-59
+//	Second: Second of reset, 0-59
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ IMPORTANT: Change the reset time settings only while server is down for maintenance
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### MonsterSoulConversion::ConverterSettings::Converter ###
+//	Level: Converter level, 1-5
+//	Cat: Category of converter, see ItemList.xml
+//	Index: Index of Converter, see ItemList.xml
+//	ReqSoulNumber: Number of souls types to collect per converter, e.g. 2 would mean souls of two different monsters
+//
+// ### MonsterSoulConversion::MonsterSettings::Converter ###
+//	Level: Converter level, 1-5
+//
+// ### MonsterSoulConversion::MonsterSettings::Converter::Area ###
+//	ID: Unique ID of area
+//	MapNumber: Number of map
+//	MonsterIndex: Index of monster, see MonsterList.xml
+//	ReqSoulNumber: 
+//	DropRate: Drop rate, 1/1000000
+//	Name: Area name, used for logs purpose and in-file description
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<MonsterSoulConversion WeeklyPurchasesNumber="3">
+<WeeklyReset Day="4" Hour="10" Minute="30" Second="0" />
+
+	<ConverterSettings>
+		<Converter Level="1" Cat="14" Index="460" ReqSoulNumber="1"/>
+		<Converter Level="2" Cat="14" Index="461" ReqSoulNumber="1"/>
+		<Converter Level="3" Cat="14" Index="462" ReqSoulNumber="1"/>
+		<Converter Level="4" Cat="14" Index="463" ReqSoulNumber="1"/>
+		<Converter Level="5" Cat="14" Index="464" ReqSoulNumber="1"/>
+	</ConverterSettings>
+
+	<MonsterSettings>
+		<Converter Level="1">
+			<Area ID="0"  MapNumber="91" MonsterIndex="586" ReqSoulNumber="500" DropRate="450000" Name="Acheron" />
+			<Area ID="1"  MapNumber="91" MonsterIndex="589" ReqSoulNumber="500" DropRate="450000" Name="Acheron" />
+			<Area ID="2"  MapNumber="63" MonsterIndex="480" ReqSoulNumber="500" DropRate="450000" Name="Vulcanus" />
+			<Area ID="3"  MapNumber="29" MonsterIndex="271" ReqSoulNumber="500" DropRate="450000" Name="Kalima 6" />
+			<Area ID="4"  MapNumber="36" MonsterIndex="331" ReqSoulNumber="500" DropRate="450000" Name="Kalima 7" />
+			<Area ID="5"  MapNumber="33" MonsterIndex="308" ReqSoulNumber="500" DropRate="450000" Name="Aida" />
+		</Converter>
+		<Converter Level="2">
+			<Area ID="0" MapNumber="37" MonsterIndex="553" ReqSoulNumber="500" DropRate="450000" Name="Kanturu Ruins" />
+			<Area ID="1" MapNumber="81" MonsterIndex="575" ReqSoulNumber="500" DropRate="450000" Name="Karutan 2" />
+			<Area ID="2" MapNumber="57" MonsterIndex="562" ReqSoulNumber="500" DropRate="450000" Name="Raklion" />
+			<Area ID="3" MapNumber="56" MonsterIndex="557" ReqSoulNumber="500" DropRate="450000" Name="Swamp of Calmness" />
+			<Area ID="4" MapNumber="112" MonsterIndex="730" ReqSoulNumber="500" DropRate="450000" Name="Ferea" />
+		</Converter>
+		<Converter Level="3">
+			<Area ID="0" MapNumber="113" MonsterIndex="743" ReqSoulNumber="500" DropRate="450000" Name="Nixies Lake" />
+			<Area ID="1" MapNumber="116" MonsterIndex="767" ReqSoulNumber="500" DropRate="450000" Name="Deep Dungeon 1" />
+			<Area ID="2" MapNumber="117" MonsterIndex="771" ReqSoulNumber="500" DropRate="450000" Name="Deep Dungeon 2" />
+			<Area ID="3" MapNumber="118" MonsterIndex="768" ReqSoulNumber="500" DropRate="450000" Name="Deep Dungeon 3" />
+			<Area ID="4" MapNumber="119" MonsterIndex="769" ReqSoulNumber="500" DropRate="450000" Name="Deep Dungeon 4" />
+			<Area ID="5" MapNumber="120" MonsterIndex="775" ReqSoulNumber="500" DropRate="450000" Name="Deep Dungeon 5" />
+			<Area ID="6" MapNumber="122" MonsterIndex="786" ReqSoulNumber="500" DropRate="450000" Name="Swamp of Darkness" />
+			<Area ID="7" MapNumber="123" MonsterIndex="810" ReqSoulNumber="500" DropRate="450000" Name="Kubera Mine" />
+			<Area ID="8" MapNumber="128" MonsterIndex="832" ReqSoulNumber="500" DropRate="450000" Name="Atlans (Abyss) 1" />
+		</Converter>
+		<Converter Level="4">
+			<Area ID="0" MapNumber="131" MonsterIndex="845" ReqSoulNumber="500" DropRate="450000" Name="Scorched Canyon" />
+			<Area ID="1" MapNumber="132" MonsterIndex="859" ReqSoulNumber="500" DropRate="450000" Name="Red Smoke Icarus" />
+			<Area ID="2" MapNumber="133" MonsterIndex="867" ReqSoulNumber="500" DropRate="450000" Name="Arenil Temple" />
+			<Area ID="3" MapNumber="134" MonsterIndex="875" ReqSoulNumber="500" DropRate="450000" Name="Ashen Aida" />
+			<Area ID="4" MapNumber="136" MonsterIndex="895" ReqSoulNumber="500" DropRate="450000" Name="Blaze Kethotum" />
+		</Converter>
+		<Converter Level="5">
+			<Area ID="0" MapNumber="137" MonsterIndex="905" ReqSoulNumber="500" DropRate="450000" Name="Underground Persona" />
+			<Area ID="1" MapNumber="138" MonsterIndex="911" ReqSoulNumber="500" DropRate="450000" Name="Magma Gladiator" />
+			<Area ID="2" MapNumber="140" MonsterIndex="926" ReqSoulNumber="500" DropRate="450000" Name="Bloody Mutant" />
+			<Area ID="3" MapNumber="141" MonsterIndex="942" ReqSoulNumber="500" DropRate="450000" Name="Storm Guard" />
+			<Area ID="4" MapNumber="142" MonsterIndex="955" ReqSoulNumber="500" DropRate="450000" Name="Twisted Crypta" />
+		</Converter>
+	</MonsterSettings>
+</MonsterSoulConversion>

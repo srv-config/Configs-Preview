@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### SkillAdjuster::Skill ###
+//	ID: Skill index, see SkillList.xml
+//	PercentPvP: Percentage value to manipulate PvP damage of specific skill
+//	PercentPvM: Percentage value to manipulate PvM damage of specific skill
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ System affects only skill that are defined in the file. Value of 100 will keep damage unchanged.
+//~~ Value lower or higher than 100 will successively decrease or increase the damage.
+//~~ Only skill damage is subject to adjustment, further skill bonuses are applied after the calc.
+//~~ Formula: Damage = Damage * Percent / 100.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<SkillAdjuster>
+	<Skill ID="1" PercentPvP="100" PercentPvM="100" />
+</SkillAdjuster>

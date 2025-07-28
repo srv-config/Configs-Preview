@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2024 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### LastManStanding ###
+//	Enable: Whether or not, activate the event, 0/1
+//	AllowSameIPUser: Whether or not, allow different players from same IP to access same room twice or more at the same time, 0/1
+//	DamageReductionLimit: Maximum damage reduction that can be achieved during event battle
+//	MinPlayers: Minimum number of players required to start the event, minimum is 2
+//	MaxPlayers: Maximum number of players per room
+//
+//	### LastManStanding::Reward ###
+//	RewardOnTimeOver: Whether or not, reward users when time is over and number of players in the room is 2 or greater, LooserEventBagID is issued basing on score, 0/1
+//	BestScoreWinner: Extension to RewardOnTimeOver, if enabled a winner will be determined basing on highest score among players left on the event after time over, WinnerEventBagID is issued basing on score, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If BestScoreWinner is enabled then RewardOnTimeOver is getting set to 1 automatically
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ MaxUsersToReward: Extension to RewardOnTimeOver, maximum number of players to issue reward to basing on highest score, -1 for no limit
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If two or more users will have equal score then the one who registered for the event as first will be chosen as best score player
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### LastManStanding::Event ###
+//	Duration: Duration of the Battle, minutes
+//	TownSpawn: Time after which players will be moved back to town after event ends, seconds
+//	MapNumber: Map number the event runs on
+//	StartX: The start X coordinate of entire event area
+//	StartY: The start Y coordinate of entire event area
+//	EndX: The end X coordinate of entire event area
+//	EndY: The end Y coordinate of entire event area
+//
+// ### LastMandStanding::Registration ###
+//	Time: Duration of registration period, minutes
+//	MapNumber: Map number to spawn the registration NPC on
+//	NPCIndex: Index of Event Registration NPC
+//	PosX: The X coordinate of the Registration NPC
+//	PosY: The Y coordinate of the Registration NPC
+//	Dir: Direction the Registration NPC looks at after spawn
+//		~ 0: Central
+//		~ 1: South-West
+//		~ 2: South
+//		~ 3: South-East
+//		~ 4: East
+//		~ 5: North-East
+//		~ 6: North
+//		~ 7: North-West
+//		~ 8: West
+//		~ -1: Random
+//
+//	ReqMoney: Amount of Money (Zen) to register for the event
+//	ReqSpecialItem: Defines if a special item is required prior to register to the event, 0/1
+//	ItemCount: Count of special items required, ignored if ReqSpecialItem is set to 0
+//	ItemCat: Category of required item for registration, refer to ItemLisr.xml, ignored if ReqSpecialItem is set to 0
+//	ItemIndex: Index of required item for registration, refer to ItemLisr.xml, ignored if ReqSpecialItem is set to 0
+//	ItemLevel: level of required item, 0-15, ignored if ReqSpecialItem is set to 0
+//
+// ### LastManStanding::Schedule::Start ###
+//	Hour: Start hour of the event, 0-23
+//	Minute: Start minute of the event, 0-59
+//
+// ### LastManStanding::RoomSettings::Room ###
+//	ID: Unique ID of the room in range of 0-19
+//	KickDieCount: Number of times being killed to kick from the event
+//	DamageReduction: Damage reduction during the event, 1-100, read DRMultiplyByKillPoint description
+//	DRMultiplyByKillPoint: Multiply damage reduction value by kill points, 0/1
+//		~ 0: Damage reduction formula: AttackDamage = AttackDamage * DamageReduction / 100
+//		~ 1: Damage reduction formula: AttackDamage = AttackDamage * (100 - (DamageReduction - (DamageReduction * KillPoint))) / 100
+//
+// ### LastManStanding::RoomSettings::Room::Coordinates ###
+//	StartX: Start X coordinate of specified room
+//	StartY: Start Y coordinate of specified room
+//	EndX: End X coordinate of specified room
+//	EndY: End Y coordinate of specified room
+//	RebornStartX: Start X coordinate to move/respawn players upon event start and after death
+//	RebornStartY: Start Y coordinate to move/respawn players upon event start and after death
+//	RebornEndX: End X coordinate to move/respawn players upon event start and after death
+//	RebornEndY: End Y coordinate to move/respawn players upon event start and after death
+//
+// ### LastManStanding::RoomSettings::Room::Requirements ###
+//	MinLevel: Minimum level to join to specific room, value must be greater or equal value of PlayerKillSystem.xml::MinLevelForPK
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If set to 'MinLvlForPK' then MinLevel will be set to value of value of PlayerKillSystem.xml::MinLevelForPK
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	MaxLevel: Maximum level to join to specific room, if set to MAX the value will be set to sum of max regular and master level for server
+//	MinGrandReset: Minimum number of grand resets to qualify for specified room
+//	MaxGrandReset: Maximum number of grand resets to qualify for specified room
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Grand resets must be maintained by your web module. It is just data stored in Character table
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	MinReset: Minimum number of resets to qualify for specified room
+//	MaxReset: Maximum number of resets to qualify for specified room, if 'MAX' is used then it is set to value of ResetSystem.xml::MaxReset
+//
+// ### LastManStanding::RewardSettings::Room ###
+//	ID: ID of room the setting applies to, unique in range of 0-19
+//
+// ### LastManStanding::RewardSettings::Room::Reward ###
+//	MinScore: Minimum score of the range to issue a reward
+//	MaxScore: Maximum score of the range to issue a reward
+//	LooserEventBagID: Reward to issue to not a winner, -1 if not applies
+//	WinnerEventBagID: Reward to issue to a winner, -1 if not applies
+//	LooserCP: Gens Contribution point to reward to a looser, 0 to disable
+//	WinnerCP: Gens Contribution point to reward to a winner, 0 to disable
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->	
+
+<LastManStanding Enable="0" AllowSameIPUser="1" DamageReductionLimit="30" MinPlayers="2" MaxPlayers="50">
+	<Reward RewardOnTimeOver="0" BestScoreWinner="1" MaxUsersToReward="3" />
+	<Event Duration="15" TownSpawn="15" MapNumber="6" StartX="146" StartY="78" EndX="160" EndY="60" />
+	<Registration Time="1" MapNumber="0" NPCIndex="258" PosX="145" PosY="140" Dir="1" ReqMoney="1000000" ReqSpecialItem="0" ItemCount="1" ItemCat="14" ItemIndex="160" ItemLevel="0" />
+
+	<Schedule>
+		<Start Hour="10" Minute="30" />
+		<Start Hour="15" Minute="30" />
+		<Start Hour="20" Minute="30" />
+	</Schedule>
+
+	<RoomSettings> <!-- Max 20 rooms -->
+		<Room ID="0" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 1 -->
+			<Coordinates StartX="54" StartY="198" EndX="77" EndY="228" RebornStartX="61" RebornStartY="205" RebornEndX="69" RebornEndY="221" />
+			<Requirements MinLevel="MinLvlForPK" MaxLevel="100" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="1" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 2 -->
+			<Coordinates StartX="90" StartY="198" EndX="114" EndY="228" RebornStartX="97" RebornStartY="206" RebornEndX="106" RebornEndY="221" />
+			<Requirements MinLevel="101" MaxLevel="200" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="2" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 3 -->
+			<Coordinates StartX="126" StartY="198" EndX="151" EndY="227" RebornStartX="135" RebornStartY="204" RebornEndX="143" RebornEndY="221" />
+			<Requirements MinLevel="201" MaxLevel="300" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="3" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 4 -->
+			<Coordinates StartX="162" StartY="196" EndX="186" EndY="226" RebornStartX="169" RebornStartY="203" RebornEndX="178" RebornEndY="221" />
+			<Requirements MinLevel="301" MaxLevel="500" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="4" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 5 -->
+			<Coordinates StartX="198" StartY="196" EndX="224" EndY="226" RebornStartX="208" RebornStartY="205" RebornEndX="216" RebornEndY="221" />
+			<Requirements MinLevel="501" MaxLevel="700" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="5" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 9 -->
+			<Coordinates StartX="89" StartY="154" EndX="115" EndY="185" RebornStartX="97" RebornStartY="163" RebornEndX="106" RebornEndY="178" />
+			<Requirements MinLevel="701" MaxLevel="800" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="6" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 8 -->
+			<Coordinates StartX="127" StartY="154" EndX="151" EndY="185" RebornStartX="134" RebornStartY="162" RebornEndX="143" RebornEndY="178" />
+			<Requirements MinLevel="901" MaxLevel="1100" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="7" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 7 -->
+			<Coordinates StartX="163" StartY="154" EndX="187" EndY="184" RebornStartX="170" RebornStartY="162" RebornEndX="179" RebornEndY="178" />
+			<Requirements MinLevel="1101" MaxLevel="1200" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="8" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 6 -->
+			<Coordinates StartX="200" StartY="154" EndX="223" EndY="184" RebornStartX="207" RebornStartY="162" RebornEndX="215" RebornEndY="178" />
+			<Requirements MinLevel="1201" MaxLevel="1350" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+		<Room ID="9" KickDieCount="3" DamageReduction="15" DRMultiplyByKillPoint="1"> <!-- Room 10 -->
+			<Coordinates StartX="200" StartY="113" EndX="224" EndY="143" RebornStartX="208" RebornStartY="122" RebornEndX="216" RebornEndY="137" />
+			<Requirements MinLevel="1351" MaxLevel="MAX" MinGrandReset="-1" MaxGrandReset="-1" MinReset="-1" MaxReset="-1" />
+		</Room>
+	</RoomSettings>
+	
+	<RewardSettings>
+		<Room ID="0">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="1">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="2">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="3">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="4">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="5">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="6">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="7">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="8">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+		<Room ID="9">
+			<Reward MinScore="1" MaxScore="1" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="1" WinnerCP="5" />
+			<Reward MinScore="2" MaxScore="2" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="2" WinnerCP="10" />
+			<Reward MinScore="3" MaxScore="3" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="3" WinnerCP="15" />
+			<Reward MinScore="4" MaxScore="4" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="4" WinnerCP="20" />
+			<Reward MinScore="5" MaxScore="5" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="5" WinnerCP="25" />
+			<Reward MinScore="6" MaxScore="6" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="6" WinnerCP="30" />
+			<Reward MinScore="7" MaxScore="7" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="7" WinnerCP="35" />
+			<Reward MinScore="8" MaxScore="8" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="8" WinnerCP="40" />
+			<Reward MinScore="9" MaxScore="9" LooserEventBagID="-1" WinnerEventBagID="-1" LooserCP="9" WinnerCP="45" />
+			<Reward MinScore="10" MaxScore="MAX" LooserEventBagID="1000" WinnerEventBagID="1050" LooserCP="10" WinnerCP="50" />
+		</Room>
+	</RewardSettings>
+</LastManStanding>

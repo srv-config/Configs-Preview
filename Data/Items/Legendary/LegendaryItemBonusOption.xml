@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Updating values display requires editing LegendaryItemBonusOption.txt on client side (Lang.mpr)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### LegendaryItemBonusOption::OptionList::Option ### ~ section used by game client only
+//	Number: Option number
+//	Name: Name of the option
+//	DisplayLineNumber: Number of line the option display within the Legendary item bonus option area
+//
+// ### LegendaryItemBonusOption::OptionRate::Armors/Shields/FairyShields/LancerShields/Weapons::Option ###
+//	Number: Option value number, refers to Number of option from OptionList section
+//	Index: Option value index, unique per option number, 1-3
+//	Rate: Chance rate of getting specified option value, n/1000000
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If option draw will fail for all available option entries then no bonus option is applied
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### LegendaryItemBonusOption::ArmorOptionValue/WeaponOptionValue::OptionSet ###
+//	Index: Options set unique index
+//	OptionNumberX (1~4): Number of option, references to Number attribute from LegendaryItemBonusOption::OptionList section
+//	FormulaIDX (1~4): Option value formula, refer to FormulaData.xml. ExcellentOption section
+//	
+// ### LegendaryItemBonusOption::OptionRate::Armors/Shields/FairyShields/LancerShields/Weapons::Option ###
+//	Number: Option value number, refers to Number of option from OptionList section
+//	Index: Option value index, unique per option number, 1-3
+//	Rate: Chance rate of getting specified option value, n/1000000
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If option draw will fail for all available option entries then no bonus option is applied
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<LegendaryItemBonusOption>
+	<OptionList>
+		<Option Number="1" Name="Increase defense by +%d" DisplayLineNumber="1" />						
+		<Option Number="2" Name="Increase extra defense by +%d" DisplayLineNumber="2" />	
+		<Option Number="3" Name="Increase all stats by +%d" DisplayLineNumber="3" />	
+		<Option Number="4" Name="Nuke (+%d)" DisplayLineNumber="4" />	
+		<Option Number="5" Name=", Bolt (+%d)" DisplayLineNumber="4" />	
+		<Option Number="6" Name=", AoE (+%d) attack power" DisplayLineNumber="4" />	
+	</OptionList>
+
+	<ArmorOptionValue>
+		<OptionSet Index="1" OptionNumber1="1" FormulaID1="33" OptionNumber2="2" FormulaID2="34" OptionNumber3="-1" FormulaID3="-1" OptionNumber4="-1" FormulaID4="-1" />
+		<OptionSet Index="2" OptionNumber1="1" FormulaID1="39" OptionNumber2="2" FormulaID2="40" OptionNumber3="-1" FormulaID3="-1" OptionNumber4="-1" FormulaID4="-1" />
+		<OptionSet Index="3" OptionNumber1="1" FormulaID1="45" OptionNumber2="2" FormulaID2="46" OptionNumber3="-1" FormulaID3="-1" OptionNumber4="-1" FormulaID4="-1" />
+	</ArmorOptionValue>
+
+	<WeaponOptionValue>
+		<OptionSet Index="1" OptionNumber1="3" FormulaID1="35" OptionNumber2="4" FormulaID2="36" OptionNumber3="5" FormulaID3="37" OptionNumber4="6" FormulaID4="38" />
+		<OptionSet Index="2" OptionNumber1="3" FormulaID1="41" OptionNumber2="4" FormulaID2="42" OptionNumber3="5" FormulaID3="43" OptionNumber4="6" FormulaID4="44" />
+		<OptionSet Index="3" OptionNumber1="3" FormulaID1="47" OptionNumber2="4" FormulaID2="48" OptionNumber3="5" FormulaID3="49" OptionNumber4="6" FormulaID4="50" />
+	</WeaponOptionValue>
+	
+	<OptionRate>
+		<Armors>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />
+		</Armors>
+		<Shields>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />		
+		</Shields>
+		<FairyShields>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />	
+		</FairyShields>
+		<LancerShields>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />	
+		</LancerShields>
+		<Weapons>
+			<Option Number="2" Index="1" Rate="6250" />
+			<Option Number="2" Index="2" Rate="4150" />
+			<Option Number="2" Index="3" Rate="2100" />
+		</Weapons>
+	</OptionRate>
+</LegendaryItemBonusOption>

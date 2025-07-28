@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2024 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### RaffleEvent ###
+//	Enable: Deactivates or activates the event, 0/1
+//
+// ### RaffleEvent::Schedule ###
+//	OpenTime: Event duration, time to buy coupons after event start, minutes
+//	EndTime: Time the event is closed after draw of the prize, minutes
+//
+// ### HideAndSeek::Schedule::Start ###
+//	Year: Year to start the event, -1 if not applies
+//	Month: Month number to start the event 1-12, -1 if not applies
+//	Day: Day of a month to start the event, 1-31, -1 if not applies
+//	DayOfWeek: Day of a week to start the event, -1 if not applies
+//		~ 1: Sunday
+//		~ 2: Monday
+//		~ 3: Tuesday
+//		~ 4: Wednesday
+//		~ 5: Thursday
+//		~ 6: Friday
+//		~ 7: Saturday
+//
+//	Hour: Hour to start the event, 0-23
+//	Minute: Minute to start the event: 0-59
+//	Second: Second to start the event, 0-59 or -1 if not applies
+//	Type:
+//		~ 0: Raffle Event
+//		~ 1: Lotto Event
+//		~ 2: HitOrder Event
+//
+// ### RaffleEvent::Raffle ###
+//	MaxCoupons: Total number of coupons available in the raffle, -1 for no limit
+//	UserMaxCouponBuy: Maximum number of coupons single player may purchase, -1 for no limit
+//	WinnerCount: Number of Winning coupons (players) for single raffle
+//	RewardItemBag: Item bag ID to issue reward from, bags must be defined in ItemBagsScript.lua 
+//	PriceType: Type of currency the coupons can be purchased for
+//		~ 0: Zen
+//		~ 1: WCoin
+//		~ 2: Goblin Point
+//		~ 3: Ruud
+//
+//	PriceMoney: Amount of money in selected currency to charge for single coupon
+//
+// ### RaffleEvent::Lotto ###
+//	MaxCoupons: Total number of coupons available in the raffle, -1 for no limit
+//	UserMaxCouponBuy: Maximum number of coupons single player may purchase, -1 for no limit
+//	CouponUnique: Determines whether coupons should be unique, it will not be possible to buy two coupons with same numbers, 0/1
+//	NumbersInOrder: Determines whether order of numbers on coupon is important or not, 0/1
+//	NumbersOnCoupon: Determines how many numbers should be specified for every coupon, max 30
+//	DrawMinNumber: Sets minimum for the range of numbers the winning numbers are being drawn from, minimum 1
+//	DrawMaxNumber: Sets maximum for the range of numbers the winning numbers are being drawn from, greater than DrawMinNumber
+//	PriceType: Type of currency the coupons can be purchased for
+//		~ 0: Zen
+//		~ 1: WCoin
+//		~ 2: Goblin Point
+//		~ 3: Ruud
+//
+//	PriceMoney: Amount of money in selected currency to charge for single coupon
+
+// ### RaffleEvent::Lotto::Reward ###
+//	MinNumbers: Sets minimum for a range of guessed winning numbers
+//	MaxNumbers: Sets maximum for a range of guessed winning numbers
+//	ItemBag: Item bag ID to issue reward from, bags must be defined in ItemBagsScript.lua
+//
+// ### RaffleEvent::HitOrder ###
+//	MaxCoupons: Total number of coupons available in the raffle, -1 for no limit
+//	UserMaxCouponBuy: Maximum number of coupons single player may purchase, -1 for no limit
+//	CouponUnique: Determines whether coupons should be unique, it will not be possible to buy two coupons with same numbers, 0/1
+//	NumbersOnCoupon: Determines how many numbers should be specified for every coupon, max 30
+//	DrawMinNumber: Sets minimum for the range of numbers the winning numbers are being drawn from, minimum 1
+//	DrawMaxNumber: Sets maximum for the range of numbers the winning numbers are being drawn from, greater than DrawMinNumber
+//	PriceType: Type of currency the coupons can be purchased for
+//		~ 0: Zen
+//		~ 1: WCoin
+//		~ 2: Goblin Point
+//		~ 3: Ruud
+//
+//	PriceMoney: Amount of money in selected currency to charge for single coupon
+
+// ### RaffleEvent::HitOrder::Reward ###
+//	MinNumbers: Sets minimum for a range of guessed winning numbers
+//	MaxNumbers: Sets maximum for a range of guessed winning numbers
+//	ItemBag: Item bag ID to issue reward from, bags must be defined in ItemBagsScript.lua
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<RaffleEvent Enable="0">
+	<Schedule OpenTime="15" EndTime="1">
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="12" Minute="0" Second="-1" Type="0" />
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="15" Minute="0" Second="-1" Type="1" />
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="17" Minute="0" Second="-1" Type="2" />
+	</Schedule>
+	
+	<Raffle MaxCoupons="-1" UserMaxCouponBuy="-1" WinnerCount="3" RewardItemBag="600" PriceType="0" PriceMoney="100" /> <!-- Type 0 -->
+	
+	<Lotto MaxCoupons="-1" UserMaxCouponBuy="-1" CouponUnique="1" NumbersInOrder="0" NumbersOnCoupon="6" DrawMinNumber="1" DrawMaxNumber="49" PriceType="0" PriceMoney="100" > <!-- Type 1 -->
+		<Reward MinNumbers="8" MaxNumbers="8" ItemBag="601" />
+		<Reward MinNumbers="9" MaxNumbers="9" ItemBag="602" />
+		<Reward MinNumbers="10" MaxNumbers="10" ItemBag="603" />
+	</Lotto>
+	
+	<HitOrder MaxCoupons="-1" UserMaxCouponBuy="-1" CouponUnique="1" NumbersOnCoupon="10" DrawMinNumber="1" DrawMaxNumber="10" PriceType="0" PriceMoney="100" > <!-- Type 2 -->
+		<Reward MinNumbers="8" MaxNumbers="8" ItemBag="611" />
+		<Reward MinNumbers="9" MaxNumbers="9" ItemBag="612" />
+		<Reward MinNumbers="10" MaxNumbers="10" ItemBag="613" />
+	</HitOrder>
+</RaffleEvent>

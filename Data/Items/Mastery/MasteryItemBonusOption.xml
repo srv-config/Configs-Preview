@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2024 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Updating values display requires editing MasteryItemBonusOption.txt on client side (Lang.mpr)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### MasteryItemBonusOption::OptionList::Option ###
+//	Number: Option number
+//		1: Damage Decrease
+//		2: Increase all stats
+//
+//	Index: Option index, unique per option number
+//	Operator: Operator of option effect behavior - operators are not in use at the moment
+//		1: Addition (+)
+//		2: Multiplication (*) by Percentage (%) 
+//		3: Division (/) by Level/20
+//		4: Division (/) by Life
+//		5: Division by Mana
+//		6: Increase per Level
+//		100: Use of formula, see FormulaID description for details
+//
+//	Value: Value of the option
+//	FormulaID: ID of formula from FormulaData.xml - formula is not in use at the moment
+//	ItemKindA_1: KindA of item the option applies to, -1 if not applies
+//	ItemKindA_2: KindA of item the option applies to, -1 if not applies
+//	ItemKindA_3: KindA of item the option applies to, -1 if not applies
+//	ItemKindA_4: KindA of item the option applies to, -1 if not applies
+//	ItemKindA_5: KindA of item the option applies to, -1 if not applies
+//	Name: Name of the option (used for in-file description purpose only)
+//
+// ### MasteryItemBonusOption::OptionRate::Armors/Shields/FairyShields/LancerShields/Weapons::Option ###
+//	Number: Option value number, refers to Number of option from OptionList section
+//	Index: Option value index, unique per option number, 1-3
+//	Rate: Chance rate of getting specified option value, n/1000000
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If option draw will fail for all available option entries then no bonus option is applied
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<MasteryItemBonusOption>
+	<OptionList>
+	<!-- Damage Decrease -->							
+		<Option Number="1" Index="1" Operator="1" Value="25" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="-1" Name="Damage Decrease %d" />
+		<Option Number="1" Index="2" Operator="1" Value="50" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="-1" Name="Damage Decrease %d" />
+		<Option Number="1" Index="3" Operator="1" Value="75" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="-1" Name="Damage Decrease %d" />
+	<!-- Increase all stats -->								
+		<Option Number="2" Index="1" Operator="1" Value="10" FormulaID="-1" ItemKindA_1="14" ItemKindA_2="-1" ItemKindA_3="-1" ItemKindA_4="-1" ItemKindA_5="-1" Name="Increase all stats +%d" />
+		<Option Number="2" Index="2" Operator="1" Value="25" FormulaID="-1" ItemKindA_1="14" ItemKindA_2="-1" ItemKindA_3="-1" ItemKindA_4="-1" ItemKindA_5="-1" Name="Increase all stats +%d" />
+		<Option Number="2" Index="3" Operator="1" Value="40" FormulaID="-1" ItemKindA_1="14" ItemKindA_2="-1" ItemKindA_3="-1" ItemKindA_4="-1" ItemKindA_5="-1" Name="Increase all stats +%d" />
+	</OptionList>
+	
+	<OptionRate>
+		<Armors>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />
+		</Armors>
+		<Shields>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />	
+		</Shields>
+		<FairyShields>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />
+		</FairyShields>
+		<LancerShields>
+			<Option Number="1" Index="1" Rate="18750" />
+			<Option Number="1" Index="2" Rate="12500" />
+			<Option Number="1" Index="3" Rate="6250" />
+		</LancerShields>
+		<Weapons>
+			<Option Number="2" Index="1" Rate="6250" />
+			<Option Number="2" Index="2" Rate="4150" />
+			<Option Number="2" Index="3" Rate="2180" />
+		</Weapons>
+	</OptionRate>
+</MasteryItemBonusOption>

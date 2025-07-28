@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == Modify if you know what you do only!
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### VIPSystem::VipServers ###
+//	RatesChangeMessage: Whether or not, send notification of rates switch between, 0/1
+//
+// ### VIPSystem::VipServers::Server ###
+//	Code: Server code to define access type to
+//	AccessType: Rules on which access to specific game server is available
+//		~ -2: Equality access, anyone can join, no VIP benefits are applied
+//		~ -1: Open access, anyone can join, VIP benefits are still applied
+//		~ 0-99, minimum VIP type that can access specific game server
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Non-VIP server do not have to be defined in the file, -1 is default value for all servers
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VIPSystem::VipTypes::Defaults::Vip ###
+//	Type: VIP type, 0-99
+//	NameLangID: Text ID pointing to specific VIP name from English.xml, VIPSystem section, ID, 0-99
+//	MainRuleID: Main rule ID defined in MainRules section, X;Y
+//	MiscRuleID: Misc rule ID defined in MiscRules section, X;Y
+//	EventRuleID: Event rule ID defined in EventRules section, X;Y
+//	MixRuleID: Mix rule ID defined in MixRules section, X;Y
+//	CharExtRuleID: Char Ext rule ID defined in CharExtRules section, X;Y
+//	ItemExtRuleID: Item Ext rule ID defined in ItemExtRules section, X;Y
+//	BuffExtRuleID: Buff Ext rule ID defined in BuffExtRules section, X;Y
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The 'X' defines day time rule and 'Y' defines night time rule
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	NightRatesStartEndTime: The start/end time of night rates, X1;Y1;X2;Y2
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ X1: Start hour, 0-23
+//~~ Y1: Start minute, 0-59
+//~~ X2: End hour, 0-23
+//~~ Y2: End minute, 0-59
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ IMPORTANT: Defaults section should contain all VIP types available within specific realm
+//~~ Special Game Servers such as Arca, Siege, Market, etc will use Default configuration,
+//~~ unless configuration for specific server code has been found.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VIPSystem::VipTypes::ServerCode ###
+//	ID: Server code ID of server to apply specific rules configuration, overrides Defaults section rules
+//
+// ### VIPSystem::VipTypes::ServerCode::Vip ###
+//	Type: VIP type, 0-99
+//	NameLangID: Text ID pointing to specific VIP name from English.xml, VIPSystem section, ID, 0-99
+//	MainRuleID: Main rule ID defined in MainRules section, X;Y
+//	MiscRuleID: Misc rule ID defined in MiscRules section, X;Y
+//	EventRuleID: Event rule ID defined in EventRules section, X;Y
+//	MixRuleID: Mix rule ID defined in MixRules section, X;Y
+//	CharExtRuleID: Char Ext rule ID defined in CharExtRules section, X;Y
+//	ItemExtRuleID: Item Ext rule ID defined in ItemExtRules section, X;Y
+//	BuffExtRuleID: Buff Ext rule ID defined in BuffExtRules section, X;Y
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The 'X' defines day time rule and 'Y' defines night time rule
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	NightRatesStartEndTime: The start/end time of night rates, X1;Y1;X2;Y2
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ X1: Start hour, 0-23
+//~~ Y1: Start minute, 0-59
+//~~ X2: End hour, 0-23
+//~~ Y2: End minute, 0-59
+//
+// ### VIPSystem::MainRules::Rule ###
+//	ID: Unique ID of a rule
+//	ExpBonus: Bonus added to base server normal experience setting, float
+//	DropBonus: Bonus added to base server item drop setting, percentage, max value in total is 100
+//	MasterExpBonus: Bonus for master characters added to base server master experience setting, float
+//	MasterDropBonus: Bonus for master characters added to base server item drop setting, max value in total is 100
+//	MajesticExpBonus: Bonus for majestic characters added to base server master experience setting, float
+//	MajesticDropBonus: Bonus for majestic characters added to base server item drop setting, max value in total is 100
+//	OffLevelExp: Exp multiplier override for players in Offline Leveling mode, float
+//
+// ### VIPSystem::MiscRules::Rule ###
+//	ID: Unique ID of a rule
+//	ML_MonsterMinLevel: Minimum monster level to gain Master Experience
+//	MJ_MonsterMinLevel: Minimum monster level to gain Majestic Experience
+//	PointPerResetBonus: Per reset free level up points bonus added to number of points from ResetSystem.xml
+//	ResetStayOnPosition: Whether or not, the character should keep the same position after reset, 0/1
+//	ResetMoveToCharSelectWindow: Whether or not, should character be forced to be moved to character selection screen after reset, 0/1
+//
+// ### VIPSystem::EventRules::Rule ###
+//	ID: Unique ID of a rule
+//
+// ### VIPSystem::EventRules::Rule::EntryDailyLimit::Event ###
+//	Type: Event type
+//		~ 0: Chaos Castle
+//		~ 1: Blood Castle
+//		~ 2: Devil's Square
+//		~ 3: Imperial Fort
+//		~ 5: Illusion Temple
+//		~ 6: Doppelganger
+//		~ 7: Boss Battle Together
+//
+//	Count: Maximum daily entries count
+//	Name: Event name, used for description purpose only
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Entry limits for regular players are managed from EventMapPoint.xml
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VIPSystem::EventRules::Rule::GiantTypeAwardRate::Giant ###
+//	Type: Type of giant
+//		~ 1: Type 1 giant
+//		~ 2: Type 2 giant
+//		~ 3: Type 3 giant
+//
+//	Rate: Chance rate of getting specific giant, weight based, sum of all rates is total, rate/total
+//
+// ### VIPSystem::MixRules::Rule ###
+//	ID: Unique ID of a rule
+//
+// ### VIPSystem::MixRules::Rule::Rates::Normal|Enhanced|Socket|Pentagram ###
+//	Level10: Combination rate of items +10
+//	Level11: Combination rate of items +11
+//	Level12: Combination rate of items +12
+//	Level13: Combination rate of items +13
+//	Level14: Combination rate of items +14
+//	Level15: Combination rate of items +15
+//	AddLuck: Combination bonus rate for Luck option
+//
+// ### VIPSystem::MixRules::Rule::Rates::Wing ###
+//	Second: Combination max success rate of second type wings
+//	Monster: Combination max success rate of monster (aka 2.5 level) type wings
+//	Third: Combination max success rate of third type wings
+//	Fourth: Combination max success rate of fourth type wings
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The above mix rates override general settings available in ChaosBox.ini
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+// ### VIPSystem::VipExtension::CharExtRules::Rule ###
+//	ID: Unique ID of a rule
+//
+// ### VIPSystem::VipExtension::CharExtRules::Rule::Value ###
+//	HPBonus: Increases HP by configured value
+//	MPBonus: Increases MP by configured value
+//	SDBonus: Increases SD by configured value
+//	AGBonus: Increases AG by configured value
+//	PvPAttackDamageBonus: Increases PvP attack damage by configured value
+//	PvMAttackDamageBonus: Increases PvM attack damage by configured value
+//	AttackRateBonus: Increases Attack Rate by configured value
+//	MagicDamageBonus: Increases Magic Damage by configured value
+//	DefenseBonus: Increases Defense by configured value
+//	DefenseRateBonus: Increases Defense Rate by configured value
+//	DamageDecBonus: Increases Damage Decrease by configured value
+//
+// ### VIPSystem::VipExtension::CharExtRules::Rule::Percent ###
+//	HPBonus: Increases HP by configured percentage
+//	MPBonus: Increases MP by configured percentage
+//	SDBonus: Increases SD by configured percentage
+//	AGBonus: Increases AG by configured percentage
+//	PvPAttackDamageBonus: Increases PvP attack damage by configured percentage
+//	PvMAttackDamageBonus: Increases PvM attack damage by configured percentage
+//	AttackRateBonus: Increases Attack Rate by configured percentage
+//	MagicDamageBonus: Increases Magic Damage by configured percentage
+//	DefenseBonus: Increases Defense by configured percentage
+//	DefenseRateBonus: Increases Defense Rate by configured percentage
+//	DamageDecBonus: Increases Damage Decrease by configured percentage
+//	AbsorptionBonus: Increases Absorption by configured percentage
+//
+// ### VIPSystem::VipExtension::ItemExtRules::Rule ###
+//	ID: Unique ID of a rule
+//	WCoinBonus: WCoin bonus added to WCoins reward coming from Item Bags, percentage
+//	GPBonus: Goblin Points bonus added to Goblin Points reward coming from Item Bags, percentage
+//	RuudBonus: Ruud bonus added to Ruud reward coming from Item Bags, percentage
+//	ZenBonus: Zen bonus added to Zen drop coming from general drop system, percentage
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Formula applies to all of the above: Reward = Value + (Value * Bonus / 100)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VIPSystem::VipExtension::BuffExtRules::Rule ###
+//	ID: Unique ID of a rule
+//
+// ### VIPSystem::VipExtension::BuffExtRules::Rule::JoinGameBuff:
+//	ID: Buff index (see BuffEffectManager.xml) to set upon entry to the game, max 10 separated with semicolon, -1 is not applies
+//	Duration: Duration of the buff, -10 for unlimited time (may not work with certain buffs), seconds
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ NOTE: Below configuration is proposed example, system is allowing to define own VIP types and names.
+//~~ Modifying VIP types requires to apply the changes in Essential Tools -> VipSettings.xml file.
+//~~ 
+//~~ For details of how to configure Gold Channel Tickets refer to \Data\CashShop\xxx.xxx.xxx\CashItem_Info.xml
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<VIPSystem>
+	<VIPServers RatesChangeMessage="1">
+		<Server Code="0" AccessType="-1" />
+	</VIPServers>
+
+	<VIPTypes>
+		<Defaults>
+			<Vip Type="1" NameLangID="0" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" /> <!-- Bronze -->
+			<Vip Type="2" NameLangID="1" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" /> <!-- Silver -->
+			<Vip Type="3" NameLangID="2" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" /> <!-- Gold -->
+			<Vip Type="4" NameLangID="3" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" /> <!-- Platinum -->
+		</Defaults>
+		
+		<!-- Override example for server code 0 -->
+		<ServerCode ID="0">
+			<Vip Type="1" NameLangID="0" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" />
+			<Vip Type="2" NameLangID="1" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" />
+			<Vip Type="3" NameLangID="2" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" />
+			<Vip Type="4" NameLangID="3" MainRuleID="0;1" MiscRuleID="0;1" EventRuleID="0;1" MixRuleID="0;1" CharExtRuleID="0;1" ItemExtRuleID="0;1" BuffExtRuleID="0;1" NightRatesStartEndTime="22;0;7;30" />
+		</ServerCode>
+	</VIPTypes>
+	
+	<MainRules>
+		<Rule ID="0" ExpBonus="0.0" DropBonus="0" MasterExpBonus="0.0" MasterDropBonus="0" MajesticExpBonus="0.0" MajesticDropBonus="0" OffLevelExp="1.0" />
+		<Rule ID="1" ExpBonus="0.0" DropBonus="0" MasterExpBonus="0.0" MasterDropBonus="0" MajesticExpBonus="0.0" MajesticDropBonus="0" OffLevelExp="1.0" />
+	</MainRules>
+	
+	<MiscRules>
+		<Rule ID="0" ML_MonsterMinLevel="95" MJ_MonsterMinLevel="160" PointPerResetBonus="200" ResetStayOnPosition="0" ResetMoveToCharSelectWindow="0" />
+		<Rule ID="1" ML_MonsterMinLevel="95" MJ_MonsterMinLevel="160" PointPerResetBonus="200" ResetStayOnPosition="0" ResetMoveToCharSelectWindow="0" />
+	</MiscRules>
+	
+	<EventRules>
+		<Rule ID="0">
+			<EntryDailyLimit>
+				<Event Type="0" Count="6" Name="Chaos Castle" />
+				<Event Type="1" Count="6" Name="Blood Castle" />
+				<Event Type="2" Count="6" Name="Devil's Square" />
+				<Event Type="3" Count="6" Name="Imperial Fort" />
+				<Event Type="5" Count="3" Name="Illusion Temple" />
+				<Event Type="6" Count="6" Name="Doppelganger" />
+				<Event Type="7" Count="3" Name="Boss Battle Together" />
+			</EntryDailyLimit>
+			
+			<GiantTypeAwardRate>
+				<Giant Type="1" Rate="5000" />
+				<Giant Type="2" Rate="3000" />
+				<Giant Type="3" Rate="2000" />
+			</GiantTypeAwardRate>
+		</Rule>
+		<Rule ID="1">
+			<EntryDailyLimit>
+				<Event Type="0" Count="6" Name="Chaos Castle" />
+				<Event Type="1" Count="6" Name="Blood Castle" />
+				<Event Type="2" Count="6" Name="Devil's Square" />
+				<Event Type="3" Count="6" Name="Imperial Fort" />
+				<Event Type="5" Count="3" Name="Illusion Temple" />
+				<Event Type="6" Count="6" Name="Doppelganger" />
+				<Event Type="7" Count="3" Name="Boss Battle Together" />
+			</EntryDailyLimit>
+			
+			<GiantTypeAwardRate>
+				<Giant Type="1" Rate="5000" />
+				<Giant Type="2" Rate="3000" />
+				<Giant Type="3" Rate="2000" />
+			</GiantTypeAwardRate>
+		</Rule>
+	</EventRules>
+	
+	<MixRules>
+		<Rule ID="0">
+			<Rates>
+				<Normal Level10="60" Level11="60" Level12="60" Level13="55" Level14="55" Level15="50" AddLuck="25" />
+				<Enhanced Level10="50" Level11="50" Level12="50" Level13="45" Level14="45" Level15="40" AddLuck="25" />
+				<Socket Level10="40" Level11="40" Level12="40" Level13="35" Level14="35" Level15="30" AddLuck="25" SocketWeapon="40" />
+				<Pentagram Level10="40" Level11="40" Level12="40" Level13="35" Level14="35" Level15="30" AddLuck="25" />
+				<Wing Second="90" Monster="60" Third_Feather="40" Third_Relic="24" Fourth_Feather="40" Fourth_Relic="24" Fifth_Relic="24" />
+			</Rates>
+		</Rule>
+		
+		<Rule ID="1">
+			<Rates>
+				<Normal Level10="60" Level11="60" Level12="60" Level13="55" Level14="55" Level15="50" AddLuck="25" />
+				<Enhanced Level10="50" Level11="50" Level12="50" Level13="45" Level14="45" Level15="40" AddLuck="25" />
+				<Socket Level10="40" Level11="40" Level12="40" Level13="35" Level14="35" Level15="30" AddLuck="25" SocketWeapon="40" />
+				<Pentagram Level10="40" Level11="40" Level12="40" Level13="35" Level14="35" Level15="30" AddLuck="25" />
+				<Wing Second="90" Monster="60" Third_Feather="40" Third_Relic="24" Fourth_Feather="40" Fourth_Relic="24" Fifth_Relic="24" />
+			</Rates>
+		</Rule>
+	</MixRules>
+	
+	<VipExtension> <!-- Requires 'Custom Ranks & Extended VIP System' plugin -->
+		<CharExtRules>
+			<Rule ID="0">
+				<Value HPBonus="0" MPBonus="0" SDBonus="0" AGBonus="0" PvPAttackDamageBonus="0" PvMAttackDamageBonus="0" AttackRateBonus="0" MagicDamageBonus="0" DefenseBonus="0" DefenseRateBonus="0" DamageDecBonus="0" />
+				<Percent HPBonus="0.0" MPBonus="0.0" SDBonus="0.0" AGBonus="0.0" PvPAttackDamageBonus="0.0" PvMAttackDamageBonus="0.0" AttackRateBonus="0.0" MagicDamageBonus="0.0" DefenseBonus="0.0" DefenseRateBonus="0.0" DamageDecBonus="0.0" AbsorptionBonus="0.0" />
+			</Rule> 
+			<Rule ID="1">
+				<Value HPBonus="0" MPBonus="0" SDBonus="0" AGBonus="0" PvPAttackDamageBonus="0" PvMAttackDamageBonus="0" AttackRateBonus="0" MagicDamageBonus="0" DefenseBonus="0" DefenseRateBonus="0" DamageDecBonus="0" />
+				<Percent HPBonus="0.0" MPBonus="0.0" SDBonus="0.0" AGBonus="0.0" PvPAttackDamageBonus="0.0" PvMAttackDamageBonus="0.0" AttackRateBonus="0.0" MagicDamageBonus="0.0" DefenseBonus="0.0" DefenseRateBonus="0.0" DamageDecBonus="0.0" AbsorptionBonus="0.0" />
+			</Rule> 
+		</CharExtRules>
+		
+		<ItemExtRules>
+			<Rule ID="0" WCoinBonus="0" GPBonus="0" RuudBonus="0" ZenBonus="0" />
+			<Rule ID="1" WCoinBonus="0" GPBonus="0" RuudBonus="0" ZenBonus="0" />
+		</ItemExtRules>
+		
+		<BuffExtRules>
+			<Rule ID="0">
+				<JoinGameBuff ID="-1" Duration="0" />
+			</Rule>
+			<Rule ID="1">
+				<JoinGameBuff ID="-1" Duration="0" />
+			</Rule>
+		</BuffExtRules>
+	</VipExtension>
+</VIPSystem>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2024 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == Modify if you know what you do only!
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### FereaBossZone ###
+//	Enable: Deactivates or activates the event, 0/1
+//
+// ### FereaBossZone::RegenTime ###
+//	SuccessStartBaseHour: The base number of hours to restart the event after successful completion, minimum value is 1
+//	SuccessStartAddHour: The add hour is a random number from the set value, minimum value is 0
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ RestartHour = SuccessStartBaseHour + (RandomValue of SuccessStartAddHour)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	FailureStartMin: Number of minutes to restart the event after failing to kill the boss
+//
+// ### FereaBossZone::HPRecovery ###
+//	Value: Amount of HP the Ferea boss will be healed by during healing phase
+//
+// ### FereaBossZone::Skills ###
+//	WhirlWindDamagePercent: Percentage value the player's HP will be reduced by when being hit by Ferea Whirl Wind skill
+//	WhirlWindDistance: Maximum distance the player can be attacked from by Ferea Whirl Wind skill
+//	LandMineDamagePercent: Percentage value the player's HP will be reduced by when being hit by Ferea Land Mine skill
+//	RoarDistance: Maximum distance the player can be attacked from by Ferea Roar skill
+//
+// ### FereaBossZone::CrystalBall::Phase ###
+//	Number: Unique phase number
+//	Life: Minimum percentage amount of HP of Crystal Ball to run specific phase
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Activation of each phase triggers summon of next set of event monsters
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### FereaBossZone::SummonMonsterPos ###
+//	StartX: Start 'X' coordinate to spawn event monsters
+//	StartY: Start 'Y' coordinate to spawn event monsters
+//	EndX: End 'X' coordinate to spawn event monsters
+//	EndY: End 'Y' coordinate to spawn event monsters
+//
+// ### FereaBossZone::SummonMonsterInfo ###
+//	MaxMonster: Maximum number of summon monsters that can be called by Ferea
+//
+// ### FereaBossZone::SummonMonsterInfo::Group ###
+//	Number: Number of phase the monsters apply to
+//	Index: Monster index to spawn, see MonsterList.xml
+//	Count: Count of monsters to spawn
+//	Element: Element type of monster to spawn
+//		~ 0: No element
+//		~ 1: Fire
+//		~ 2: Water
+//		~ 3: Earth
+//		~ 4: Wind
+//		~ 5: Darkness
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<FereaBossZone Enable="1">
+	<RegenTime SuccessStartBaseHour="18" SuccessStartAddHour="6" FailureStartMin="5" />
+	<HPRecovery Value="70000" />
+	<Skills WhirlWindDamagePercent="80" WhirlWindDistance="3" LandMineDamagePercent="95" RoarDistance="6" />
+	
+	<CrystalBall>
+		<Phase Number="0" Life="90" />
+		<Phase Number="1" Life="70" />
+		<Phase Number="2" Life="50" />
+		<Phase Number="3" Life="30" />
+		<Phase Number="4" Life="0" />
+	</CrystalBall>
+	
+	<SummonMonsterPos StartX="27" StartY="115" EndX="35" EndY="125" />
+	<SummonMonsterInfo MaxMonster="25">
+		<Group Number="0" Index="730" Count="1" Element="0" />
+		<Group Number="0" Index="731" Count="2" Element="0" />
+		<Group Number="0" Index="732" Count="2" Element="0" />
+		<Group Number="1" Index="730" Count="2" Element="0" />
+		<Group Number="1" Index="731" Count="2" Element="0" />
+		<Group Number="1" Index="732" Count="3" Element="0" />
+		<Group Number="2" Index="730" Count="3" Element="0" />
+		<Group Number="2" Index="731" Count="3" Element="0" />
+		<Group Number="2" Index="732" Count="4" Element="0" />
+		<Group Number="3" Index="730" Count="3" Element="0" />
+		<Group Number="3" Index="731" Count="3" Element="0" />
+		<Group Number="3" Index="732" Count="4" Element="0" />
+	</SummonMonsterInfo>
+</FereaBossZone>

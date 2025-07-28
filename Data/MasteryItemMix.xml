@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Changes to this file may require modification appropriate mix configuration in Mix.bmd, group 0
+//~~ File is used to maintain regular combinations within Chaos Goblin, can be used for custom mixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### MasteryItemMix::CombinationMaterials:Material ###
+//	ID: Unique, in-file material ID
+//	Cat: Material item category, see ItemList.xml
+//	Index: Material item index, see ItemList.xml
+//	MinLevel: Minimum level of material item, 0-15
+//	MaxLevel: Maximum level of material item, 0-15
+//	Option: Minimum option value of material item, 0-7 (+4 to +28)
+//	Durability: Durability value of material item
+//	Type:
+//		~ 0: Non-exc item
+//		~ 1: Exc item
+//		~ 2: Set item
+//		~ 3: Earring item
+//
+//	Name: material name, used for in-file and description purpose
+//
+// ### MasteryItemMix::CombinationResult:Mix ###
+//	AncientHeroSoulLuckRate: Chance rate for luck option when OptKeepType is set to keep luck, Ancient Hero Soul is used in combination and input item has no luck, otherwise luck option is taken from input combination item, n/100
+//	NoAncientHeroSoulLuckRate: Chance rate for luck option when OptKeepType is not set to keep luck from input item and no Ancient Hero Soul is used, n/100
+//
+// ### MasteryItemMix::CombinationResult:Mix ###
+//	ID: Mix ID, refers to HeadCode column in mix.bmd
+//	RandomID: Optional attribute defining random Result ID from RandomCombinationResult section, Cat and Index are not used when RandomID is defined
+//	Cat: Mix result item category, see ItemList.xml
+//	Index: Mix result item index, see ItemList.xml
+//	Level: Result item level, 0-15
+//	Name: Result item name
+//	OptKeepType: Determines a way of managing options on result items, bits sum
+//		~ 1: Keep exc options
+//		~ 2: Keep luck
+//		~ 4: Keep set options
+//		~ 8: Generate new set option
+//		~ 16: Generate new JoL option (+4 to +16), works with option 8 only, e.g. 16+8=24
+//		~ 32: Keeps Mastery Bonus option from source item, otherwise generates new option on a basis of MasteryBonusOptions.xml
+//		~ 128: Copy all options from main material item, including item level and durability
+//
+//	UpgradeOptMaxCnt: Maximum number of options to apply to earring upon upgrade, if source Earring has 3 or more options and value of UpgradeOptMaxCnt is set to 2-5 then output Earring will come randomly with 2-5 options, if UpgradeOptMaxCnt is set to -1 then system will draw randomly 1-5 with a rates defined in EarringAttribute.xml
+//	SuccessRate: Maximum success rate of the mix
+//	MaterialID1: Main material ID to use for the mix, -1 if not applies
+//	MaterialCnt1: Count of main materials
+//	MaterialID2: Material 2 for the mix, -1 if not applies
+//	MaterialCnt2: Count of material 2
+//	MaterialID3: Material 3 for the mix, -1 if not applies
+//	MaterialCnt3: Count of material 3
+//	MaterialID4: Material 4 for the mix, -1 if not applies
+//	MaterialCnt4: Count of material 4
+//	MaterialID5: Material 5 for the mix, -1 if not applies
+//	MaterialCnt5: Count of material 5
+//	MaterialID6: Material 6 for the mix, -1 if not applies
+//	MaterialCnt6: Count of material 6
+//	MaterialID7: Material 6 for the mix, -1 if not applies
+//	MaterialCnt7: Count of material 6
+//	MaterialID8: Material 6 for the mix, -1 if not applies
+//	MaterialCnt8: Count of material 6
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ For material IDs refer to see CombinationMaterials section
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	Money: Mix cost in Zen, not used at the moment
+//
+// ### RandomCombinationResult::Result ###
+//	ID: Unique ID of set of items
+//
+// ### RandomCombinationResult::Result::Item ###
+//	Cat: Item category
+//	Index: Item index`
+//	Name: Name of item, used for description purpose only
+//	Rate: Chance of getting specific item. It is a weight rate, total is sum of all rates per ID
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+//
+-->
+
+<MasteryItemMix>
+	<CombinationMaterials>
+		<Material ID="0" Cat="12" Index="449" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (L)" />
+		<Material ID="1" Cat="14" Index="458" MinLevel="0" MaxLevel="0" Option="0" Durability="0" Type="0" Name="Ancestral Frame" />
+		<Material ID="2" Cat="14" Index="13" MinLevel="0" MaxLevel="0" Option="0" Durability="20" Type="0" Name="Jewel of Bless" />
+		<Material ID="3" Cat="14" Index="14" MinLevel="0" MaxLevel="0" Option="0" Durability="20" Type="0" Name="Jewel of Soul" />
+		<Material ID="4" Cat="12" Index="15" MinLevel="0" MaxLevel="0" Option="0" Durability="1" Type="0" Name="Jewel of Chaos" />
+		<Material ID="5" Cat="14" Index="22" MinLevel="0" MaxLevel="0" Option="0" Durability="1" Type="0" Name="Jewel of Creation" />
+		<Material ID="6" Cat="12" Index="457" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (R)" />
+		<Material ID="7" Cat="12" Index="449" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (L)" />
+		<Material ID="8" Cat="12" Index="457" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (R)" />
+		<Material ID="9" Cat="12" Index="449" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (L)" />
+		<Material ID="10" Cat="12" Index="457" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (R)" />
+		<Material ID="11" Cat="12" Index="449" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (L)" />
+		<Material ID="12" Cat="12" Index="457" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (R)" />
+		<Material ID="13" Cat="12" Index="449" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (L)" />
+		<Material ID="14" Cat="12" Index="457" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Rage Earring (R)" />
+		<Material ID="15" Cat="12" Index="450" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (L)" />
+		<Material ID="16" Cat="14" Index="497" MinLevel="0" MaxLevel="0" Option="0" Durability="0" Type="0" Name="Glory of Honor" />
+		<Material ID="17" Cat="12" Index="458" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (R)" />
+		<Material ID="18" Cat="12" Index="450" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (L)" />
+		<Material ID="19" Cat="12" Index="458" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (R)" />
+		<Material ID="20" Cat="12" Index="450" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (L)" />
+		<Material ID="21" Cat="12" Index="458" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (R)" />
+		<Material ID="22" Cat="12" Index="450" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (L)" />
+		<Material ID="23" Cat="12" Index="458" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (R)" />
+		<Material ID="24" Cat="12" Index="450" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (L)" />
+		<Material ID="25" Cat="12" Index="458" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Ancestral Earring (R)" />
+		<Material ID="26" Cat="12" Index="451" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (L)" />
+		<Material ID="27" Cat="20" Index="77" MinLevel="0" MaxLevel="0" Option="0" Durability="0" Type="0" Name="Blood Crafting Frame" />
+		<Material ID="28" Cat="12" Index="459" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (R)" />
+		<Material ID="29" Cat="12" Index="451" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (L)" />
+		<Material ID="30" Cat="12" Index="459" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (R)" />
+		<Material ID="31" Cat="12" Index="451" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (L)" />
+		<Material ID="32" Cat="12" Index="459" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (R)" />
+		<Material ID="33" Cat="12" Index="451" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (L)" />
+		<Material ID="34" Cat="12" Index="459" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (R)" />
+		<Material ID="35" Cat="12" Index="451" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (L)" />
+		<Material ID="36" Cat="12" Index="459" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Earring of Honor (R)" />
+		<Material ID="37" Cat="12" Index="452" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (L)" />
+		<Material ID="38" Cat="20" Index="83" MinLevel="0" MaxLevel="0" Option="0" Durability="0" Type="0" Name="Daze Crafting Frame" />
+		<Material ID="39" Cat="12" Index="460" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (R)" />
+		<Material ID="40" Cat="12" Index="452" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (L)" />
+		<Material ID="41" Cat="12" Index="460" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (R)" />
+		<Material ID="42" Cat="12" Index="452" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (L)" />
+		<Material ID="43" Cat="12" Index="460" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (R)" />
+		<Material ID="44" Cat="12" Index="452" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (L)" />
+		<Material ID="45" Cat="12" Index="460" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (R)" />
+		<Material ID="46" Cat="12" Index="452" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (L)" />
+		<Material ID="47" Cat="12" Index="460" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Blood Earring (R)" />
+		<Material ID="48" Cat="12" Index="453" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (L)" />
+		<Material ID="49" Cat="20" Index="112" MinLevel="0" MaxLevel="0" Option="0" Durability="0" Type="0" Name="Binding Frame" />
+		<Material ID="50" Cat="12" Index="461" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (R)" />
+		<Material ID="51" Cat="12" Index="453" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (L)" />
+		<Material ID="52" Cat="12" Index="461" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (R)" />
+		<Material ID="53" Cat="12" Index="453" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (L)" />
+		<Material ID="54" Cat="12" Index="461" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (R)" />
+		<Material ID="55" Cat="12" Index="453" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (L)" />
+		<Material ID="56" Cat="12" Index="461" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (R)" />
+		<Material ID="57" Cat="12" Index="453" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (L)" />
+		<Material ID="58" Cat="12" Index="461" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Daze Earring (R)" />
+		<Material ID="59" Cat="12" Index="454" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (L)" />
+		<Material ID="60" Cat="20" Index="257" MinLevel="0" MaxLevel="0" Option="0" Durability="0" Type="0" Name="Verdant Frame" />
+		<Material ID="61" Cat="12" Index="462" MinLevel="15" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (R)" />
+		<Material ID="62" Cat="12" Index="454" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (L)" />
+		<Material ID="63" Cat="12" Index="462" MinLevel="14" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (R)" />
+		<Material ID="64" Cat="12" Index="454" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (L)" />
+		<Material ID="65" Cat="12" Index="462" MinLevel="13" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (R)" />
+		<Material ID="66" Cat="12" Index="454" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (L)" />
+		<Material ID="67" Cat="12" Index="462" MinLevel="12" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (R)" />
+		<Material ID="68" Cat="12" Index="454" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (L)" />
+		<Material ID="69" Cat="12" Index="462" MinLevel="11" MaxLevel="15" Option="0" Durability="0" Type="3" Name="Binding Earring (R)" />
+	</CombinationMaterials>
+	<CombinationResult>
+		<Mix ID="522" Cat="12" Index="450" Level="0" Name="Ancestral Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="0" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="523" Cat="12" Index="458" Level="0" Name="Ancestral Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="6" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="531" Cat="12" Index="450" Level="0" Name="Ancestral Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="7" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="532" Cat="12" Index="458" Level="0" Name="Ancestral Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="8" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="533" Cat="12" Index="450" Level="0" Name="Ancestral Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="9" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="534" Cat="12" Index="458" Level="0" Name="Ancestral Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="10" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="535" Cat="12" Index="450" Level="0" Name="Ancestral Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="11" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="536" Cat="12" Index="458" Level="0" Name="Ancestral Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="12" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="537" Cat="12" Index="450" Level="0" Name="Ancestral Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="13" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="538" Cat="12" Index="458" Level="0" Name="Ancestral Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="14" MaterialCnt1="1" MaterialID2="1" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1041" Cat="12" Index="451" Level="0" Name="Earring of Honor (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="15" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1042" Cat="12" Index="459" Level="0" Name="Earring of Honor (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="17" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1043" Cat="12" Index="451" Level="0" Name="Earring of Honor (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="18" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1044" Cat="12" Index="459" Level="0" Name="Earring of Honor (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="19" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1045" Cat="12" Index="451" Level="0" Name="Earring of Honor (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="20" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1046" Cat="12" Index="459" Level="0" Name="Earring of Honor (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="21" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1047" Cat="12" Index="451" Level="0" Name="Earring of Honor (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="22" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1048" Cat="12" Index="459" Level="0" Name="Earring of Honor (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="23" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1049" Cat="12" Index="451" Level="0" Name="Earring of Honor (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="24" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1050" Cat="12" Index="459" Level="0" Name="Earring of Honor (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="25" MaterialCnt1="1" MaterialID2="16" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1441" Cat="12" Index="452" Level="0" Name="Blood Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="26" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1442" Cat="12" Index="460" Level="0" Name="Blood Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="28" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1443" Cat="12" Index="452" Level="0" Name="Blood Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="29" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1444" Cat="12" Index="460" Level="0" Name="Blood Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="30" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1445" Cat="12" Index="452" Level="0" Name="Blood Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="31" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1446" Cat="12" Index="460" Level="0" Name="Blood Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="32" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1447" Cat="12" Index="452" Level="0" Name="Blood Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="33" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1448" Cat="12" Index="460" Level="0" Name="Blood Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="34" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1449" Cat="12" Index="452" Level="0" Name="Blood Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="35" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1450" Cat="12" Index="460" Level="0" Name="Blood Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="36" MaterialCnt1="1" MaterialID2="27" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1467" Cat="12" Index="453" Level="0" Name="Daze Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="37" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1468" Cat="12" Index="461" Level="0" Name="Daze Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="39" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1469" Cat="12" Index="453" Level="0" Name="Daze Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="40" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1470" Cat="12" Index="461" Level="0" Name="Daze Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="41" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1471" Cat="12" Index="453" Level="0" Name="Daze Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="42" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1472" Cat="12" Index="461" Level="0" Name="Daze Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="43" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1473" Cat="12" Index="453" Level="0" Name="Daze Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="44" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1474" Cat="12" Index="461" Level="0" Name="Daze Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="45" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1475" Cat="12" Index="453" Level="0" Name="Daze Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="46" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1476" Cat="12" Index="461" Level="0" Name="Daze Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="47" MaterialCnt1="1" MaterialID2="38" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1636" Cat="12" Index="454" Level="0" Name="Binding Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="48" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1637" Cat="12" Index="462" Level="0" Name="Binding Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="50" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1638" Cat="12" Index="454" Level="0" Name="Binding Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="51" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1639" Cat="12" Index="462" Level="0" Name="Binding Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="52" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1640" Cat="12" Index="454" Level="0" Name="Binding Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="53" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1641" Cat="12" Index="462" Level="0" Name="Binding Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="54" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1642" Cat="12" Index="454" Level="0" Name="Binding Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="55" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1643" Cat="12" Index="462" Level="0" Name="Binding Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="56" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1644" Cat="12" Index="454" Level="0" Name="Binding Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="57" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="1645" Cat="12" Index="462" Level="0" Name="Binding Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="58" MaterialCnt1="1" MaterialID2="49" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2820" Cat="12" Index="455" Level="0" Name="Verdant Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="59" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2821" Cat="12" Index="463" Level="0" Name="Verdant Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="100" MaterialID1="61" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2822" Cat="12" Index="455" Level="0" Name="Verdant Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="62" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2823" Cat="12" Index="463" Level="0" Name="Verdant Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="90" MaterialID1="63" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2824" Cat="12" Index="455" Level="0" Name="Verdant Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="64" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2825" Cat="12" Index="463" Level="0" Name="Verdant Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="80" MaterialID1="65" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2826" Cat="12" Index="455" Level="0" Name="Verdant Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="66" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2827" Cat="12" Index="463" Level="0" Name="Verdant Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="70" MaterialID1="67" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2828" Cat="12" Index="455" Level="0" Name="Verdant Earring (L)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="68" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+		<Mix ID="2829" Cat="12" Index="463" Level="0" Name="Verdant Earring (R)" OptKeepType="2" UpgradeOptMaxCnt="3" SuccessRate="60" MaterialID1="69" MaterialCnt1="1" MaterialID2="60" MaterialCnt2="1" MaterialID3="2" MaterialCnt3="1" MaterialID4="3" MaterialCnt4="1" MaterialID5="4" MaterialCnt5="1" MaterialID6="5" MaterialCnt6="1" MaterialID7="-1" MaterialCnt7="0" MaterialID8="-1" MaterialCnt8="0" Money="0" />
+	</CombinationResult>
+</MasteryItemMix>

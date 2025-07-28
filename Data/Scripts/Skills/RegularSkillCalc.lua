@@ -34,63 +34,93 @@ TARGET_TYPE_MONSTER = 2
 
 -- SkillID: 1, Poison
 function PoisonCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 2, Meteorite
 function MeteoriteCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 3, Lightning
 function LightningCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 4, Fire Ball
 function FireBallCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 5, Flame
 function FlameCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 7, Ice
 function IceCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 8, Twister
 function TwisterCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 9, Evil Spirit
 function EvilSpiritCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = 0
+	local OutDamage = 0
  
  	if (Class == CLASS_WIZARD) then
 		OutDamage = InDamage
 	elseif (Class == CLASS_GLADIATOR) then
 		OutDamage = InDamage
 	elseif (Class == CLASS_RUNEWIZARD) then
-		OutDamage = InDamage
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
 	end
  
  return OutDamage
@@ -98,58 +128,88 @@ end
 
 -- SkillID: 10, Hell Fire
 function HellFireCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 11, Power Wave
 function PowerWaveCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 12, Aqua Beam
 function AquaBeamCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 13, Comet Fall
 function CometfallCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 14, Inferno
 function InfernoCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
-
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 17, Energy Ball
 function EnergyBallCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
 
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 38, Decay
 function DecayCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
-
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 39, Ice Storm
 function IceStormCalc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
-
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 16, Soul Barrier
@@ -168,14 +228,14 @@ end
 
 -- SkillID: 40, Nova
 function Wizard_NovaSkillCalc(InDamage, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 42, Anger Blow
 function AngerBlow_Calc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = 0
+	local OutDamage = 0
  
  	if (Class == CLASS_KNIGHT) then
 		OutDamage = InDamage * (Energy / 10 + 200) / 100
@@ -183,7 +243,7 @@ function AngerBlow_Calc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
 		OutDamage = InDamage * (Energy / 10 + 200) / 100
 	end
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 724, Meteor Strike
@@ -202,9 +262,9 @@ end
 
 -- SkillID: 726, Soul Seeker
 function WizardSoulSeekerCalcDamage(InDamage, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 19, 20, 21, 22, 23, 41, 43, 44, 49, 57, Falling Slash, Lunge, Uppercut,
@@ -1167,21 +1227,21 @@ end
 
 -- SkillID: 283, Magic Arrow
 function RuneWizardMagicArrowCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
 	
 	return OutDamage
 end
 
 -- SkillID: 284, Plasma Ball
 function RuneWizardPlasmaBallCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
 	
 	return OutDamage
 end
 
 -- SkillID: 285, Lightning Storm
 function RuneWizardLightningStormCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
 	
 	return OutDamage
 end
@@ -1190,16 +1250,16 @@ end
 function RuneWizardBurstCalc(Energy)
 	local SkillEffect1 = Energy / 30
 	local SkillEffect2 = Energy / 100
-	local SkillTime = Energy / 20 + 30
+	local SkillTime = 70
 	
 	return SkillEffect1, SkillEffect2, SkillTime
 end
 
 -- SkillID: 287, Haste
 function RuneWizardHasteCalc(Index, TargetIndex, TargetClass, Energy)
-	local SkillEffect1 = Energy / 100
-	local SkillEffect2 = Energy / 30
-	local SkillTime = Energy / 20 + 30
+	local SkillEffect1 = 25
+	local SkillEffect2 = 2
+	local SkillTime = 70
 	
 	return SkillEffect1, SkillEffect2, SkillTime
 end
@@ -1378,14 +1438,8 @@ function GunCrusherDeathIceCalc(InDamage, Strength, Dexterity, Vitality, Energy,
 end
 
 -- SkillID: 240, Magic Shot
-function LightWizardMagicShot(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
-	local OutDamage = 0
-	
-	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
-	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
-	end
+function LightWizardMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
 	
 	return OutDamage
 end
@@ -1434,15 +1488,9 @@ function LightWizardReflectionBarrierCalc(Level, MasterLevel, Strength, Dexterit
 end
 
 -- SkillID: 240, Magic Shot
-function LemuriaMageMagicShot(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
-	local OutDamage = 0
-	
-	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
-	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
-	end
-	
+function LemuriaMageMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+
 	return OutDamage
 end
 
@@ -1704,41 +1752,48 @@ function IllusionKnightAvatarCalc(Strength, Dexterity, Vitality, Energy, InDamag
 end
 
 -- SkillID: 240, Magic Shot
-function AlchemistMagicShot(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
-	local OutDamage = 0
-	
-	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * (165 + (Energy / 65)) / 100
-	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * (165 + (Energy / 65)) / 100
-	end
+function AlchemistMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = (InDamage * 1.0) * (165 + (Energy / 65)) / 100
 	
 	return OutDamage
 end
 
 -- SkillID: 2091, Alchemy: Ignition Bomber
 function AlchemistAngelHomunculus(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (165 + (Energy / 65)) / 100
+	local OutDamage = InDamage * (165 + (Energy / 65)) / 100
 
 	return OutDamage
 end
 
 -- SkillID: 2092, Alchemy: Countless Weapon
 function AlchemistIgnitionBomber(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (165 + (Energy / 65)) / 100
+	local OutDamage = InDamage * (165 + (Energy / 65)) / 100
 
 	return OutDamage
 end
 
 -- SkillID: 2093, Alchemy: Countless Weapon
 function AlchemistCountlessWeapon(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
-	local OutDamage = 0
+	local OutDamage = InDamage * (165 + (Energy / 65)) / 100
 
-	OutDamage = InDamage * (165 + (Energy / 65)) / 100
+	return OutDamage
+end
 
+-- SkillID: 240, Magic Shot
+function RuneWizardMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
+	return OutDamage
+end
+
+function RuneWizardRunicSpear(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
+	return OutDamage
+end
+
+function RuneWizardRunePhrase(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
 	return OutDamage
 end

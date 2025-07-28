@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -50,9 +50,9 @@
 <MasteryItemBonusOption>
 	<OptionList>
 	<!-- Damage Decrease -->							
-		<Option Number="1" Index="1" Operator="1" Value="25" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="-1" Name="Damage Decrease %d" />
-		<Option Number="1" Index="2" Operator="1" Value="50" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="-1" Name="Damage Decrease %d" />
-		<Option Number="1" Index="3" Operator="1" Value="75" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="-1" Name="Damage Decrease %d" />
+		<Option Number="1" Index="1" Operator="1" Value="25" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="55" Name="Damage Decrease %d" />
+		<Option Number="1" Index="2" Operator="1" Value="50" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="55" Name="Damage Decrease %d" />
+		<Option Number="1" Index="3" Operator="1" Value="75" FormulaID="-1" ItemKindA_1="15" ItemKindA_2="18" ItemKindA_3="27" ItemKindA_4="33" ItemKindA_5="55" Name="Damage Decrease %d" />
 	<!-- Increase all stats -->								
 		<Option Number="2" Index="1" Operator="1" Value="10" FormulaID="-1" ItemKindA_1="14" ItemKindA_2="-1" ItemKindA_3="-1" ItemKindA_4="-1" ItemKindA_5="-1" Name="Increase all stats +%d" />
 		<Option Number="2" Index="2" Operator="1" Value="25" FormulaID="-1" ItemKindA_1="14" ItemKindA_2="-1" ItemKindA_3="-1" ItemKindA_4="-1" ItemKindA_5="-1" Name="Increase all stats +%d" />

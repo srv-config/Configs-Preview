@@ -188,4 +188,9 @@
 	<Element Number="175" Type="3" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="450" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Devil Sorcerer Mana Reduction" />
 	<Element Number="176" Type="4" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="30" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Devil Sorcerer AG Reduction" />
 	<Element Number="177" Type="0" SuccessRate="3" ContinuanceTime="3" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="-1" CharacterClass="0" CharacterLevel="0" Name="Kardamahal Underground Monsters Stun" />
+	<Element Number="178" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Ice Napin Destruction Attack" />
+	<Element Number="179" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Sapi Queen Destruction Attack" />
+	<Element Number="180" Type="3" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="550" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Sapi Queen Destruction Mana Reduction" />
+	<Element Number="181" Type="4" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="40" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Sapi Queen Destruction AG Reduction" />
+	<Element Number="182" Type="0" SuccessRate="3" ContinuanceTime="3" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="-1" CharacterClass="0" CharacterLevel="0" Name="Swamp of Destruction Monsters Stun" />
 </MonsterSkill>

@@ -297,22 +297,29 @@ function HavokSpear_4thEnchant_Gladiator(InDamage, Strength, Dexterity, Vitality
 end
 
 function MagicArrow_4thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
-	
-	return OutDamage
-end
-
-function PlasmaBall_4thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
 	
 	return OutDamage
 end
 
 function LightningStorm_4thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
 	
 	return OutDamage
 end
+
+function RunicSpear_4thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
+	return OutDamage
+end
+
+function RunePhrase_4thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
+	return OutDamage
+end
+
 
 -- SkillID: 1155, Death Scythe Enhancement
 function DeadScythe_4thEnchant_Summoner(InDamage, TargetClass, Strength, Dexterity, Vitality, Energy, BarrageCount)

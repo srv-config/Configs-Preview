@@ -84,6 +84,7 @@
 	</Class>
 	<Class ID="8"> <!-- RW -->
 		<Skill ID="32" Type="0" ItemCat="20" ItemIndex="196" SkillIndex="2068" ReqSkill="1150" StaticOptionIndex="1" StaticOptionValue="15" FormulaID="35" />
+		<Skill ID="50" Type="1" ItemCat="20" ItemIndex="286" SkillIndex="2103" ReqSkill="1505" StaticOptionIndex="3" StaticOptionValue="1" FormulaID="47" />
 	</Class>
 	<Class ID="9"> <!-- SLA -->
 		<Skill ID="35" Type="0" ItemCat="20" ItemIndex="199" SkillIndex="2071" ReqSkill="1160" StaticOptionIndex="2" StaticOptionValue="1" FormulaID="38" />

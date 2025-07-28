@@ -89,6 +89,7 @@
 		<Map Index="141" Name="Tormenta Island" />
 		<Map Index="142" Name="Twisted Karutan" />
 		<Map Index="143" Name="Kardamahal Underground Temple" />
+		<Map Index="144" Name="Swamp of Destruction" />
 	</MapIncluded>
 	<MonstersExcluded> <!-- Monsters excluded from hunting records -->
 		<Monster Index="413" Name="Gold Rabbit" />

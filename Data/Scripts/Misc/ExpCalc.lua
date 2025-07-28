@@ -1,7 +1,7 @@
 -- // ============================================================
 -- // == INTERNATIONAL GAMING CENTER NETWORK
 -- // == www.igcn.mu
--- // == (C) 2020-2023 IGC-Network (R)
+-- // == (C) 2010-2025 IGC-Network (R)
 -- // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- // == File is a part of IGCN Group MuOnline Server files.
 -- // ============================================================
@@ -79,4 +79,27 @@ function ExpSystemCalc(FormulaID, PlayerVipType, StaticExp, DynamicExp, EventExp
 	end
 	
 	return Exp;
+end
+
+function ExpPenaltyCalc(MapNumber, UserLevel, UserMasterLevel, MonsterLevel, PenaltyMonsterAddLevel)
+	local SumUserLevel = UserLevel + UserMasterLevel
+	local SumMonLevel = MonsterLevel + PenaltyMonsterAddLevel
+	local LevelDiff = SumMonLevel - SumUserLevel
+	local ExpRate = 100
+
+	if LevelDiff <= 0 then
+		return ExpRate
+	end
+
+	if (LevelDiff > 7) then
+		LevelDiff = 7
+	end
+
+	ExpRate = ExpRate - (LevelDiff * 10)
+	
+	if (ExpRate < 30) then
+		ExpRate = 30
+	end
+	
+	return ExpRate
 end

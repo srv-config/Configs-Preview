@@ -418,6 +418,7 @@
 		<Tag Id="5" MapNumber="56" X="56" Y="177" Name="Safe Zone Entrance" />
 		<Tag Id="6" MapNumber="56" X="68" Y="52" Name="Safe Zone Entrance" />
 		<Tag Id="7" MapNumber="56" X="197" Y="13" Name="Safe Zone Entrance" />
+		<Tag Id="8" MapNumber="56" X="131" Y="177" Name="Swamp of Destruction" />
 	<!-- Raklion -->
 		<Tag Id="0" MapNumber="57" X="224" Y="214" Name="Devias Entrance" />
 		<Tag Id="1" MapNumber="57" X="169" Y="22" Name="Hatchery Entrance" />

@@ -239,7 +239,7 @@ end
 
 -- SkillID: 2068, Lightning Storm of Gale
 function LightningStorm_5thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
 	
 	return OutDamage
 end
@@ -340,5 +340,11 @@ function AlchemistCountlessWeapon_5thEnchant_Calc(InDamage, Strength, Dexterity,
 
 	OutDamage = InDamage * (165 + (Energy / 65)) / 100
 
+	return OutDamage
+end
+
+function RunePhrase_5thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
 	return OutDamage
 end

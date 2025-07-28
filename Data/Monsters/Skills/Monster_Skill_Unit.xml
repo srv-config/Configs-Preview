@@ -179,4 +179,6 @@
 	<Unit Number="166" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="2" Delay="300" ElementSlot0="172" ElementSlot1="177" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Devil Sword Attack" />
 	<Unit Number="167" TargetType="1" ScopeType="0" ScopeAngle="-1" ScopeValue="3" Delay="300" ElementSlot0="173" ElementSlot1="177" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Devil Scythe Attack" />
 	<Unit Number="168" TargetType="1" ScopeType="0" ScopeAngle="-1" ScopeValue="6" Delay="300" ElementSlot0="174" ElementSlot1="175" ElementSlot2="176" ElementSlot3="177" ElementSlot4="-1" Name="Devil Sorcerer Attack" />
+	<Unit Number="169" TargetType="1" ScopeType="0" ScopeAngle="-1" ScopeValue="2" Delay="300" ElementSlot0="178" ElementSlot1="182"  ElementSlot2="-1"  ElementSlot3="-1" ElementSlot4="-1" Name="Ice Napin Destruction Attack" />
+	<Unit Number="170" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="3" Delay="300" ElementSlot0="179" ElementSlot1="180" ElementSlot2="181" ElementSlot3="-1" ElementSlot4="-1" Name="Sapi Queen Destruction Attack" />
 </MonsterSkill>

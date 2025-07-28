@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2019 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -36,7 +36,7 @@
 	<!-- <Skill Index="741=" ItemGroup="12" ItemIndex="402=" ReqIndex="24" ReqMasterSkillIndex="431" ReqMasterPoint="10" /> -->
 	<!-- <Skill Index="742=" ItemGroup="12" ItemIndex="403=" ReqIndex="277" ReqMasterSkillIndex="699" ReqMasterPoint="10" /> -->
 	<Skill Index="282" ItemGroup="12" ItemIndex="413" ReqIndex="262" ReqMasterSkillIndex="558" ReqMasterPoint="10" />
-	<Skill Index="285" ItemGroup="15" ItemIndex="39" ReqIndex="284" ReqMasterSkillIndex="751" ReqMasterPoint="10" />
+	<Skill Index="285" ItemGroup="15" ItemIndex="39" ReqIndex="283" ReqMasterSkillIndex="748" ReqMasterPoint="10" />
 	<Skill Index="288" ItemGroup="15" ItemIndex="45" ReqIndex="225" ReqMasterSkillIndex="778" ReqMasterPoint="10" />
 	<Skill Index="294" ItemGroup="12" ItemIndex="479" ReqIndex="293" ReqMasterSkillIndex="782" ReqMasterPoint="10" />
 	<Skill Index="1501" ItemGroup="12" ItemIndex="486" ReqIndex="43" ReqMasterSkillIndex="339" ReqMasterPoint="10" />
@@ -53,4 +53,5 @@
 	<Skill Index="2085" ItemGroup="12" ItemIndex="98" ReqIndex="279" ReqMasterSkillIndex="698" ReqMasterPoint="10" />
 	<Skill Index="2095" ItemGroup="15" ItemIndex="67" ReqIndex="61" ReqMasterSkillIndex="508" ReqMasterPoint="10" />
 	<Skill Index="2093" ItemGroup="15" ItemIndex="66" ReqIndex="2092" ReqMasterSkillIndex="903" ReqMasterPoint="10" />
+	<Skill Index="2102" ItemGroup="15" ItemIndex="71" ReqIndex="284" ReqMasterSkillIndex="751" ReqMasterPoint="10" />
 </SkillRequire>

@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2019 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -93,4 +93,5 @@
 	<Move Level="1400" MapNumber="141" StartX="1" StartY="1" EndX="255" EndY="255" Name="Tormenta Island" />
 	<Move Level="1450" MapNumber="142" StartX="1" StartY="1" EndX="255" EndY="255" Name="Twisted Karutan" />
 	<Move Level="1500" MapNumber="143" StartX="1" StartY="1" EndX="255" EndY="255" Name="Kardamahal Underground Temple" />
+	<Move Level="1550" MapNumber="144" StartX="1" StartY="1" EndX="255" EndY="255" Name="Swamp of Destruction" />
 </MoveSettings>

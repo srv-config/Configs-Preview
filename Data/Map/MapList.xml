@@ -171,6 +171,7 @@
 		<Map Number="141" File="141_TormentaIsland.att" />
 		<Map Number="142" File="142_TwistedKarutan.att" />
 		<Map Number="143" File="143_Kardamahal_Underground_Temple.att" />
+		<Map Number="144" File="144_SwampOfDestruction.att" />
 	</DefaultMaps>
 	
 	<CrywolfEventAttr>

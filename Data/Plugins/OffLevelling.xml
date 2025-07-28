@@ -244,5 +244,8 @@
 		<Map Number="139" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Boss Zone (entrance) -->
 		<Map Number="140" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Bloody Tarkan -->
 		<Map Number="141" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Tormenta Island -->
+		<Map Number="142" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Twisted Karutan -->
+		<Map Number="143" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Kardamahal Underground Temple -->
+		<Map Number="144" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Swamp of Destruction -->
 	</PerMapAdjustments>
 </OffLevelling>

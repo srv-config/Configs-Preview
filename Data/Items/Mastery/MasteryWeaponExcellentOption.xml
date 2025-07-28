@@ -481,6 +481,31 @@
 	<Item KindA="18" Cat="6" Index="70" ExcOption="10;3;8;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
 	<Item KindA="18" Cat="6" Index="70" ExcOption="10;3;8;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
 	<Item KindA="18" Cat="6" Index="70" ExcOption="10;3;8;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+<!-- Blood Angel Lord Shield -->
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;-1;-1;-1;-1;-1;-1;-1" BonusOption="-1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;-1;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;-1;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;4;-1;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;4;-1;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;4;-1;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;6;-1;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;6;-1;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;6;-1;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;7;-1;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;7;-1;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;7;-1;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;8;-1;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;8;-1;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;8;-1;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;6;-1;-1;-1;-1;-1;-1" BonusOption="-1" Rate="80000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;6;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;6;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;4;7;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;4;7;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;4;7;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;8;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;8;-1;-1;-1;-1;-1;-1" BonusOption="2" Rate="40000" LuckRate="500000" SkillRate="1000000" />
+	<Item KindA="55" Cat="6" Index="87" ExcOption="10;3;8;-1;-1;-1;-1;-1;-1" BonusOption="3" Rate="40000" LuckRate="500000" SkillRate="1000000" />
 <!-- Blood Angel Magic Book -->
 	<Item KindA="14" Cat="5" Index="73" ExcOption="0;3;-1;-1;-1;-1;-1;-1;-1" BonusOption="-1" Rate="40000" LuckRate="500000" SkillRate="1000000" />
 	<Item KindA="14" Cat="5" Index="73" ExcOption="0;3;-1;-1;-1;-1;-1;-1;-1" BonusOption="1" Rate="40000" LuckRate="500000" SkillRate="1000000" />

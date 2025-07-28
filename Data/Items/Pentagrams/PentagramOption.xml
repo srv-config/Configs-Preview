@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2019 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -75,6 +75,7 @@
 		<Pentagram ItemCat="12" ItemIndex="212" Grade="3" OptionNum1="41" OptionNum2="24" OptionNum3="0" OptionNum4="0" OptionNum5="0" OptionNum6="0" OptionNum7="0" Name="Arcana Book of Prophesies" /> <!-- Unique -->
 		<Pentagram ItemCat="12" ItemIndex="213" Grade="3" OptionNum1="41" OptionNum2="42" OptionNum3="0" OptionNum4="0" OptionNum5="0" OptionNum6="0" OptionNum7="0" Name="Antonias' Sword" /> <!-- Unique -->
 		<Pentagram ItemCat="12" ItemIndex="214" Grade="3" OptionNum1="41" OptionNum2="43" OptionNum3="0" OptionNum4="0" OptionNum5="0" OptionNum6="0" OptionNum7="0" Name="Kundun's Sealed Book" /> <!-- Unique -->
+		<Pentagram ItemCat="12" ItemIndex="219" Grade="3" OptionNum1="41" OptionNum2="42" OptionNum3="0" OptionNum4="0" OptionNum5="0" OptionNum6="0" OptionNum7="0" Name="[Bound] Antonias’ Sword" /> <!-- Unique -->
 		<Pentagram ItemCat="12" ItemIndex="502" Grade="3" OptionNum1="0" OptionNum2="0" OptionNum3="0" OptionNum4="0" OptionNum5="0" OptionNum6="0" OptionNum7="0" Name="1st Arcana Prophecy (Unique)" /> <!-- Unique -->
 		<Pentagram ItemCat="12" ItemIndex="503" Grade="3" OptionNum1="67" OptionNum2="68" OptionNum3="0" OptionNum4="0" OptionNum5="0" OptionNum6="0" OptionNum7="0" Name="1st Antonias' Sword (Unique)" /> <!-- Unique -->
 		<Pentagram ItemCat="12" ItemIndex="504" Grade="3" OptionNum1="0" OptionNum2="0" OptionNum3="0" OptionNum4="0" OptionNum5="0" OptionNum6="0" OptionNum7="0" Name="1st Seal of the Kundun (Unique)" /> <!-- Unique -->

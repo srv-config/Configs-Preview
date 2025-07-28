@@ -430,4 +430,8 @@
 		<Item Cat="20" Index="250" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Holy Divine Spirit -->
 		<Item Cat="20" Index="256" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- [Bound] Fire Divine Spirit -->
 	</Section>
+	
+	<Section ID="90">
+		<Item Cat="19" Index="17" Option1="155" Value1="50" Option2="0" Value2="0" Time="-10" /> <!-- Eunice's Blessing -->
+	</Section>
 </ItemOptionManager>

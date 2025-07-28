@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == Modify if you know what you do only!
 // == File is a part of IGCN Group MuOnline Server files.
@@ -34,7 +34,7 @@
 //	IK: Can card be used by IK class, 0/1
 //	AC: Can card be used by AC class, 0/1
 //	OptionID: ID of card option setting, refers to AbilityCardOption.xml::AbilityCardOptions::CardOption::Option::ID attribute
-//	
+//
 // STRICTLY NO COMMENTS INSIDE TAGS 
 -->
 
@@ -90,6 +90,9 @@
 	<Item Cat="20" Index="196" OptionIndex="-1" AddOptionIndex="65" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="1" SLA="0" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="31" />
 	<Item Cat="20" Index="196" OptionIndex="-1" AddOptionIndex="66" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="1" SLA="0" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="31" />
 	<Item Cat="20" Index="196" OptionIndex="-1" AddOptionIndex="67" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="1" SLA="0" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="31" />
+	<Item Cat="20" Index="286" OptionIndex="-1" AddOptionIndex="65" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="1" SLA="0" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="51" />
+	<Item Cat="20" Index="286" OptionIndex="-1" AddOptionIndex="66" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="1" SLA="0" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="51" />
+	<Item Cat="20" Index="286" OptionIndex="-1" AddOptionIndex="67" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="1" SLA="0" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="51" />
 	<Item Cat="20" Index="199" OptionIndex="-1" AddOptionIndex="65" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="0" SLA="1" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="34" />
 	<Item Cat="20" Index="199" OptionIndex="-1" AddOptionIndex="66" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="0" SLA="1" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="34" />
 	<Item Cat="20" Index="199" OptionIndex="-1" AddOptionIndex="67" DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="0" SLA="1" GC="0" LW="0" LM="0" IK="0" AC="0" OptionID="34" />

@@ -448,8 +448,8 @@
 		<Buff Index="421" EffectType="334" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Additional Nuke Damage" Description="Extra Nuke damage can be inflicted when attacking." />
 		<Buff Index="422" EffectType="335" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Additional Bolt Damage" Description="Extra Bolt damage can be inflicted when attacking." />
 		<Buff Index="423" EffectType="336" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Additional Wide Area Damage" Description="Extra Wide Area damage can be inflicted when attacking." />
-		<Buff Index="424" EffectType="123" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Wrath" Description="Attack and combat power increase. Defense decreases." />
-		<Buff Index="425" EffectType="123" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Wrath Strengthener" Description="Attack and combat power increase. Defense decreases." />
+		<Buff Index="424" EffectType="123" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Wrath" Description="Attack and combat power increase. Defense decreases." />
+		<Buff Index="425" EffectType="123" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Wrath Strengthener" Description="Attack and combat power increase. Defense decreases." />
 		<Buff Index="426" EffectType="116" ItemType="14" ItemIndex="69" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="[PC Room] Blessing of Light (Advanced)" Description="You are blessed with experience/acquire an additional 200% of the base experience." />
 		<Buff Index="427" EffectType="87" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Crown Force" Description="Increases all stats" />
 		<Buff Index="428" EffectType="337" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Divine Force" Description="The stats required for attack are greatly increased for 3 seconds." />
@@ -464,6 +464,8 @@
 		<Buff Index="437" EffectType="337" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Battle Glory Enhancement" Description="Increases attack and combat power." />
 		<Buff Index="442" EffectType="230" ItemType="20" ItemIndex="256" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="(Bound) Divine Spirit" Description="(Bound) Summons the Divine Spirit." />
 		<Buff Index="443" EffectType="399" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Confusion Stone" Description="" />
+		<Buff Index="446" EffectType="340" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Special Praise" Description="Defense decreases." />
+		<Buff Index="447" EffectType="341" ItemType="19" ItemIndex="17" Type="2" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Blessing of Eunice" Description="50% additional experience gain for 5th class characters." />
 	</General>
 	<Period>
 		<Buff Index="179" EffectType1="0" EffectValue1="25" EffectType2="0" EffectValue2="0" Duration="604800" Name="Fire Tower" />

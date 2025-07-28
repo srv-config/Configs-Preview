@@ -81,4 +81,6 @@
 	<Item ID="56" Cat="12" Index="480" Name="Wings of Power" />
 	<Item ID="57" Cat="12" Index="154" Name="Small White Cloak" />
 	<Item ID="58" Cat="12" Index="457" Name="Rage Earring (R)" />
+	<Item ID="59" Cat="13" Index="6" Name="" />
+	<Item ID="60" Cat="12" Index="29" Name="" />
 </PeriodExtendableItem>

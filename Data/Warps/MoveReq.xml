@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == Modify if you know what you do only!
 // == File is a part of IGCN Group MuOnline Server files.
@@ -27,7 +27,7 @@
 //	DifficultyOrder: Allows to set a map display order basing on its difficulty, ascending, used by game client
 //	AlphabetOrder: Displays map in alphabetical order, ascending, used by game client
 //	MonsterClassification: Defines maximum monster level on a map, used by game client
-//															
+//
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Gates can be configured in \Data\Warps\GateSettings.xml. Gates configuration must much Game Client side, Gate.txt (Lang.mpr)
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -64,7 +64,7 @@
 	<Warp Index="20" ServerName="LostTower 7" ClientName="LostTower7" MinLevel="70" MaxLevel="-1" ReqMoney="8000" ReqVipLevel="-1" GateNumber="41" DifficultyOrder="22" AlphabetOrder="26" MonsterClassification="35" />
 	<Warp Index="21" ServerName="Tarkan" ClientName="Tarkan" MinLevel="130" MaxLevel="-1" ReqMoney="8000" ReqVipLevel="-1" GateNumber="57" DifficultyOrder="25" AlphabetOrder="67" MonsterClassification="57" />
 	<Warp Index="22" ServerName="Tarkan 2" ClientName="Tarkan2" MinLevel="160" MaxLevel="-1" ReqMoney="8500" ReqVipLevel="-1" GateNumber="77" DifficultyOrder="28" AlphabetOrder="68" MonsterClassification="61" />
-	<Warp Index="50" ServerName="Ferea" ClientName="Ferea" MinLevel="400" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="509" DifficultyOrder="40" AlphabetOrder="70" MonsterClassification="730" />
+	<Warp Index="50" ServerName="Ferea" ClientName="Ferea" MinLevel="400" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="509" DifficultyOrder="40" AlphabetOrder="71" MonsterClassification="730" />
 	<Warp Index="25" ServerName="Aida" ClientName="Aida1" MinLevel="150" MaxLevel="-1" ReqMoney="8500" ReqVipLevel="-1" GateNumber="119" DifficultyOrder="26" AlphabetOrder="32" MonsterClassification="306" />
 	<Warp Index="26" ServerName="Crywolf" ClientName="Crywolf" MinLevel="10" MaxLevel="-1" ReqMoney="0" ReqVipLevel="-1" GateNumber="118" DifficultyOrder="56" AlphabetOrder="59" MonsterClassification="-1" />
 	<Warp Index="27" ServerName="Aida 2" ClientName="Aida2" MinLevel="380" MaxLevel="-1" ReqMoney="8500" ReqVipLevel="-1" GateNumber="140" DifficultyOrder="37" AlphabetOrder="33" MonsterClassification="550" />
@@ -78,7 +78,7 @@
 	<Warp Index="34" ServerName="Raklion" ClientName="Raklion" MinLevel="380" MaxLevel="-1" ReqMoney="15000" ReqVipLevel="-1" GateNumber="287" DifficultyOrder="39" AlphabetOrder="16" MonsterClassification="458" />
 	<Warp Index="51" ServerName="Nixies Lake" ClientName="Nixies Lake" MinLevel="630" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="522" DifficultyOrder="41" AlphabetOrder="7" MonsterClassification="744" />
 	<Warp Index="66" ServerName="Old Kethotum" ClientName="old Kethotum" MinLevel="700" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="648" DifficultyOrder="42" AlphabetOrder="45" MonsterClassification="893" />
-	<Warp Index="33" ServerName="Swamp of Calmness" ClientName="Swamp_of_Calmness" MinLevel="380" MaxLevel="-1" ReqMoney="15000" ReqVipLevel="-1" GateNumber="273" DifficultyOrder="35" AlphabetOrder="71" MonsterClassification="449" />
+	<Warp Index="33" ServerName="Swamp of Calmness" ClientName="Swamp_of_Calmness" MinLevel="380" MaxLevel="-1" ReqMoney="15000" ReqVipLevel="-1" GateNumber="273" DifficultyOrder="35" AlphabetOrder="72" MonsterClassification="449" />
 	<Warp Index="49" ServerName="Akeron" ClientName="Akeron" MinLevel="300" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="417" DifficultyOrder="34" AlphabetOrder="34" MonsterClassification="591" />
 	<Warp Index="42" ServerName="Vulcanus" ClientName="Vulcanus" MinLevel="300" MaxLevel="-1" ReqMoney="15000" ReqVipLevel="-1" GateNumber="294" DifficultyOrder="32" AlphabetOrder="27" MonsterClassification="490" />
 	<Warp Index="24" ServerName="Loren Deep" ClientName="LorenDeep" MinLevel="10" MaxLevel="-1" ReqMoney="0" ReqVipLevel="-1" GateNumber="104" DifficultyOrder="56" AlphabetOrder="19" MonsterClassification="-1" />
@@ -93,7 +93,7 @@
 	<Warp Index="60" ServerName="Abyss of Atlans 2" ClientName="abyss_Atlans2" MinLevel="925" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="618" DifficultyOrder="60" AlphabetOrder="37" MonsterClassification="834" />
 	<Warp Index="61" ServerName="Abyss of Atlans 3" ClientName="abyss_Atlans3" MinLevel="950" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="619" DifficultyOrder="61" AlphabetOrder="38" MonsterClassification="836" />
 	<Warp Index="62" ServerName="Scorched Canyon" ClientName="Scorched Canyon" MinLevel="1000" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="620" DifficultyOrder="62" AlphabetOrder="30" MonsterClassification="846" />
-	<Warp Index="63" ServerName="Red Smoke Icarus" ClientName="Red Smoke Icarus" MinLevel="1050" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="631" DifficultyOrder="63" AlphabetOrder="72" MonsterClassification="861" />
+	<Warp Index="63" ServerName="Red Smoke Icarus" ClientName="Red Smoke Icarus" MinLevel="1050" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="631" DifficultyOrder="63" AlphabetOrder="73" MonsterClassification="861" />
 	<Warp Index="64" ServerName="Arenil Temple" ClientName="Arenil Temple" MinLevel="1100" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="634" DifficultyOrder="64" AlphabetOrder="31" MonsterClassification="867" />
 	<Warp Index="65" ServerName="Ashen Aida" ClientName="Ashen Aida" MinLevel="1150" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="643" DifficultyOrder="65" AlphabetOrder="49" MonsterClassification="875" />
 	<Warp Index="67" ServerName="Blaze Kethotum" ClientName="Blaze Kethotum" MinLevel="1200" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="659" DifficultyOrder="66" AlphabetOrder="28" MonsterClassification="896" />
@@ -103,6 +103,7 @@
 	<Warp Index="71" ServerName="Tormenta Island" ClientName="Tormenta Island" MinLevel="1400" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="694" DifficultyOrder="70" AlphabetOrder="69" MonsterClassification="942" />
 	<Warp Index="72" ServerName="Twisted Karutan" ClientName="Distorted Karutan" MinLevel="1450" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="699" DifficultyOrder="71" AlphabetOrder="15" MonsterClassification="955" />
 	<Warp Index="73" ServerName="Kardamahal Underground Temple" ClientName="Kardamahal UnderGround Temple" MinLevel="1500" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="704" DifficultyOrder="72" AlphabetOrder="50" MonsterClassification="963" />
+	<Warp Index="74" ServerName="Swamp of Destruction" ClientName="Swamp of Destruction" MinLevel="1550" MaxLevel="-1" ReqMoney="50000" ReqVipLevel="-1" GateNumber="713" DifficultyOrder="72" AlphabetOrder="50" MonsterClassification="969" />
 	<!-- <Warp Index="35" ServerName="Kalima 1" ClientName="Kalima1" MinLevel="40" MaxLevel="-1" ReqMoney="0" ReqVipLevel="-1" GateNumber="88" DifficultyOrder="49" AlphabetOrder="55" MonsterClassification="160" /> -->
 	<!-- <Warp Index="36" ServerName="Kalima 2" ClientName="Kalima2" MinLevel="131" MaxLevel="-1" ReqMoney="0" ReqVipLevel="-1" GateNumber="89" DifficultyOrder="50" AlphabetOrder="56" MonsterClassification="180" /> -->
 	<!-- <Warp Index="37" ServerName="Kalima 3" ClientName="Kalima3" MinLevel="181" MaxLevel="-1" ReqMoney="0" ReqVipLevel="-1" GateNumber="90" DifficultyOrder="51" AlphabetOrder="57" MonsterClassification="188" /> -->

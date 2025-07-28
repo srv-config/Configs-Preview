@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -50,10 +50,10 @@
 //~~ As possible maximum options are considered items with "All Stats +15 +Luck" or "All Stats +15 +Luck +number of excellent options set within MaxExcOption attribute"
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
-// ### LegendaryItemChangeOption::Shields|FairyShields|LancerShields|Weapons ###
+// ### LegendaryItemChangeOption::Shields|FairyShields|LancerShields|RuneWizardShields|Weapons ###
 //	MaxExcOption: Number of options to consider item as item that achieved maximum number of options coming from mysterious stone, Luck option must present as well
 //
-// ### LegendaryItemChangeOption::Shields|FairyShields|LancerShields|Weapons::OptionRand::CommonItem|PeriodItem::Option ###
+// ### LegendaryItemChangeOption::Shields|FairyShields|LancerShields|RuneWizardShields|Weapons::OptionRand::CommonItem|PeriodItem::Option ###
 //	ExcX: Where X is 1-2, excellent option to apply for upon selection of specific entry, see LegendaryWeaponSetOption.xml::LegendaryWeaponSetOption::Weapon|Shield|FairyShield|LancerShield::Option::Number for available option values
 //
 // LegendaryBonusOption:
@@ -464,6 +464,120 @@
 			</PeriodItem>
 		</BonusOptionRand>
 	</LancerShields>
+	<RuneWizardShields MaxExcOption="3">
+		<OptionRand>
+			<CommonItem> <!-- Maximum 100 entries -->
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="-1" Rate="45600" />
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="1" Rate="9600" />
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="2" Rate="6000" />
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="3" Rate="3060" />	
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="-1" Rate="20400" />
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="1" Rate="4260" />
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="2" Rate="2820" />
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="3" Rate="1380" />	
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="-1" Rate="108000" />
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="1" Rate="22800" />
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="2" Rate="15000" />
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="3" Rate="7500" />	
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="-1" Rate="108000" />
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="1" Rate="23400" />
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="2" Rate="15600" />
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="3" Rate="7800" />	
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="-1" Rate="111000" />
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="1" Rate="22980" />
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="2" Rate="15000" />
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="0" LegendaryBonusOption="3" Rate="7800" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="0" LegendaryBonusOption="-1" Rate="840" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="0" LegendaryBonusOption="1" Rate="180" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="0" LegendaryBonusOption="2" Rate="120" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="0" LegendaryBonusOption="3" Rate="60" />
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="-1" Rate="3150" />
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="1" Rate="675" />
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="2" Rate="450" />
+				<Option Exc1="4" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="3" Rate="225" />	
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="-1" Rate="1260" />
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="1" Rate="270" />
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="2" Rate="180" />
+				<Option Exc1="2" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="3" Rate="90" />	
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="-1" Rate="6930" />
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="1" Rate="1485" />
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="2" Rate="990" />
+				<Option Exc1="0" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="3" Rate="495" />	
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="-1" Rate="8190" />
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="1" Rate="1755" />
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="2" Rate="1170" />
+				<Option Exc1="1" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="3" Rate="585" />	
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="-1" Rate="8190" />
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="1" Rate="1755" />
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="2" Rate="1170" />
+				<Option Exc1="3" Exc2="-1" Set="1" Luck="1" LegendaryBonusOption="3" Rate="585" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="1" LegendaryBonusOption="-1" Rate="840" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="1" LegendaryBonusOption="1" Rate="180" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="1" LegendaryBonusOption="2" Rate="120" />
+				<Option Exc1="4" Exc2="2" Set="1" Luck="1" LegendaryBonusOption="3" Rate="60" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="-1" Rate="30400" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="1" Rate="6400" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="2" Rate="4000" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="3" Rate="2040" />	
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="-1" Rate="13600" />
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="1" Rate="2840" />
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="2" Rate="1880" />
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="3" Rate="920" />	
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="-1" Rate="72000" />
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="1" Rate="15200" />
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="2" Rate="10000" />
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="3" Rate="5000" />	
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="-1" Rate="72000" />
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="1" Rate="15600" />
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="2" Rate="10400" />
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="3" Rate="5200" />	
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="-1" Rate="74000" />
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="1" Rate="15320" />
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="2" Rate="10000" />
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="0" LegendaryBonusOption="3" Rate="5200" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="0" LegendaryBonusOption="-1" Rate="560" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="0" LegendaryBonusOption="1" Rate="120" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="0" LegendaryBonusOption="2" Rate="80" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="0" LegendaryBonusOption="3" Rate="40" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="-1" Rate="2100" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="1" Rate="450" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="2" Rate="300" />
+				<Option Exc1="4" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="3" Rate="150" />	
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="-1" Rate="840" />
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="1" Rate="180" />
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="2" Rate="120" />
+				<Option Exc1="2" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="3" Rate="60" />	
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="-1" Rate="4620" />
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="1" Rate="990" />
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="2" Rate="660" />
+				<Option Exc1="0" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="3" Rate="330" />	
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="-1" Rate="5460" />
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="1" Rate="1170" />
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="2" Rate="780" />
+				<Option Exc1="1" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="3" Rate="390" />	
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="-1" Rate="5460" />
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="1" Rate="1170" />
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="2" Rate="780" />
+				<Option Exc1="3" Exc2="-1" Set="2" Luck="1" LegendaryBonusOption="3" Rate="390" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="1" LegendaryBonusOption="-1" Rate="560" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="1" LegendaryBonusOption="1" Rate="120" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="1" LegendaryBonusOption="2" Rate="80" />
+				<Option Exc1="4" Exc2="2" Set="2" Luck="1" LegendaryBonusOption="3" Rate="40" />					
+			</CommonItem>
+			<PeriodItem> <!-- Maximum 100 entries -->
+			</PeriodItem>
+		</OptionRand>
+		<BonusOptionRand>
+			<CommonItem>
+				<Option LegendaryBonus="-1" Rate="700000" />
+				<Option LegendaryBonus="1" Rate="175000" />
+				<Option LegendaryBonus="2" Rate="100000" />
+				<Option LegendaryBonus="3" Rate="25000" />
+			</CommonItem>
+			<PeriodItem>
+			</PeriodItem>
+		</BonusOptionRand>
+	</RuneWizardShields>
 	<Weapons MaxExcOption="3">
 		<OptionRand>
 			<CommonItem> <!-- Maximum 100 entries -->

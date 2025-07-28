@@ -30,77 +30,95 @@ CLASS_ALCHEMIST										  = 14
 
 -- SkillID: 378, 483, Flame Strengthener
 function FlameCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 379, 480, Lightning Strengthener
 function LightningCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 381, 486, Inferno Strengthener
 function InfernoCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 382, 484, Blast Strengthener
 function BlastCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 384, Poison Strengthener
 function PoisonCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 387, Decay Strengthener
 function DecayCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 388, Hell Fire Strengthener
 function HellFireCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 389, 489, Ice Strengthener
 function IceCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 390, Meteor Strengthener
 function MeteorCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 391, Ice Storm Strengthener
 function IceStormCalc_Master(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = 0
+	
+	if (Class == CLASS_RUNEWIZARD) then
+		OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	else
+		OutDamage = InDamage
+	end
+	
+	return OutDamage
 end
 
 -- SkillID: 385, 487, Evil Spirit Strengthener
 function EvilSpirit_MasterLevel1_Calc(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = 0
+	local OutDamage = 0
  
  	if (Class == CLASS_WIZARD) then
 		OutDamage = InDamage
@@ -110,14 +128,14 @@ function EvilSpirit_MasterLevel1_Calc(Class, InDamage, Strength, Dexterity, Vita
 		OutDamage = InDamage
 	end
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 392, Nova Strengthener - (Grand Master)
 function NovaSkillCalc_Master_Wizard(InDamage, Energy)
- local OutDamage = InDamage
+	local OutDamage = InDamage
  
- return OutDamage
+	return OutDamage
 end
 
 -- SkillID: 403, Soul Barrier Strengthener - (Grand Master)
@@ -1056,7 +1074,7 @@ end
 function RuneWizardBurstCalc_Level1(Energy)
 	local SkillEffect1 = Energy / 30
 	local SkillEffect2 = Energy / 100
-	local SkillTime = Energy / 20 + 30
+	local SkillTime = 70
 	
 	return SkillEffect1, SkillEffect2, SkillTime
 end
@@ -1065,54 +1083,54 @@ end
 function RuneWizardBurstCalc_Level2(Energy)
 	local SkillEffect1 = Energy / 30
 	local SkillEffect2 = Energy / 100
-	local SkillTime = Energy / 20 + 30
+	local SkillTime = 70
 	
 	return SkillEffect1, SkillEffect2, SkillTime
 end
 
 -- SkillID: 768, Haste Strengthener - (Grand Rune Master)
 function RuneWizardHasteCalc_Level1(Index, TargetIndex, TargetClass, Energy)
-	local SkillEffect1 = Energy / 100
-	local SkillEffect2 = Energy / 30
-	local SkillTime = Energy / 20 + 30
+	local SkillEffect1 = 25
+	local SkillEffect2 = 2
+	local SkillTime = 70
 	
 	return SkillEffect1, SkillEffect2, SkillTime
 end
 
 -- SkillID: 769, Haste Mastery - (Grand Rune Master)
 function RuneWizardHasteCalc_Level2(Index, TargetIndex, TargetClass, Energy)
-	local SkillEffect1 = Energy / 100
-	local SkillEffect2 = Energy / 30
-	local SkillTime = Energy / 20 + 30
+	local SkillEffect1 = 25
+	local SkillEffect2 = 2
+	local SkillTime = 70
 	
 	return SkillEffect1, SkillEffect2, SkillTime
 end
 
 -- SkillID: 748, Magic Arrow Enhancement - (Grand Rune Master)
 function RuneWizardMagicArrowCalcDamage_Level1(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
-	
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+
 	return OutDamage
 end
 
 -- SkillID: 750, Plasma Ball Strengthening - (Grand Rune Master)
 function RuneWizardPlasmaBallCalcDamage_Level1(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
-	
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+
 	return OutDamage
 end
 
 -- SkillID: 749, Magic Arrow Mastery - (Grand Rune Master)
 function RuneWizardMagicArrowCalcDamage_Level2(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
-	
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+
 	return OutDamage
 end
 
 -- SkillID: 751, Plasma Ball Mastery - (Grand Rune Master)
 function RuneWizardPlasmaBallCalcDamage_Level2(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = InDamage
-	
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+
 	return OutDamage
 end
 
@@ -1853,5 +1871,11 @@ function AlchemistIgnitionBomber_MasterLevel2_Calc(InDamage, Strength, Dexterity
 
 	OutDamage = InDamage * (165 + (Energy / 65)) / 100
 
+	return OutDamage
+end
+
+function RuneWizardRunicSpear_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
 	return OutDamage
 end

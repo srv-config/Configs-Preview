@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -704,6 +704,7 @@
 		<Tree Type="1"> <!-- Retaliation - Skill Enhancement (Grand Rune Master) -->
 			<Skill Index="37" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="325" ValueType="0" Name="Attack Success Rate Increase" />
 			<Skill Index="41" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="380" ValueType="0" Name="PvP Defense Rate Increase" />
+			<Skill Index="42" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="916" ValueType="1" Name="Runic Spear Strengthener" />
 			<Skill Index="43" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="378" ValueType="1" Name="Flame Strengthener" />
 			<Skill Index="44" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="748" ValueType="1" Name="Magic Arrow Enhancement" />
 			<Skill Index="45" ReqMinPoint="1" MaxPoint="20" ParentSkill1="380" ParentSkill2="0" MagicNumber="383" ValueType="0" Name="Expansion of Wizardry Mastery" />

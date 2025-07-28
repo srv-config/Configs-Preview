@@ -992,6 +992,9 @@
 		<Formula ID="13" Data="(((%d*5)+230)/1.8)" /> <!-- ItemLevel -->
 		<Formula ID="14" Data="(((%d*5)+215)/1)" /> <!-- ItemLevel -->
 		<Formula ID="15" Data="(((%d*6)+90)/1)" /> <!-- ItemLevel -->
+		<Formula ID="16" Data="(((%d*5)+262)/1.8)" /> <!-- ItemLevel -->
+		<Formula ID="17" Data="(((%d*5)+245)/1)" /> <!-- ItemLevel -->
+		<Formula ID="18" Data="(((%d*6)+100)/1)" /> <!-- ItemLevel -->
 	</Earrings>
 	<Group11>
 		<Formula ID="0" Data="0" /> <!-- empty -->
@@ -1365,5 +1368,7 @@
 		<Formula ID="5" Data="((%d-800)*19024359459)+(300000000*(%d-801)*((%d-800)/2))" /> <!-- MasterLevel, MasterLevel, MasterLevel -->
 		<Formula ID="6" Data="(((%d-800)*19024359459)+(300000000*(%d-801)*((%d-800)/2))+(1200000000*(%d-999)*((%d-1000)/2)))" /> <!-- MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel -->
 		<Formula ID="7" Data="(197413333648350+(((%d-1450)*753724359459)+(1500000000*(%d-1450)*(%d-1449)/2)+(150001*(%d-1450)*(%d-1449)/2)*(((%d-1450)*(%d-1449)/2)^1.4)))" /> <!-- MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel -->
+		<Formula ID="8" Data="396271760718481+(%d-1550)*6300000000000+((5200000000*(((%d))-1551)*(((%d))-1550)/2))*(49+(%d-1550))*0.5" />
+		<Formula ID="9" Data="1026586760718480+((%d-1600)*22500000000000)+(35500000000*((%d-1601)*(%d-1600)/2))" />
 	</LevelExp>
 </FormulaData>

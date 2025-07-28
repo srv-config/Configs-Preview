@@ -153,4 +153,5 @@
 	<Map Number="141" MinMoneyCount="100" MaxMoneyCount="100" Disable="0" /><!-- Tormenta Island -->
 	<Map Number="142" MinMoneyCount="100" MaxMoneyCount="100" Disable="0" /><!-- Twisted Karutan -->
 	<Map Number="143" MinMoneyCount="100" MaxMoneyCount="100" Disable="0" /><!-- Kardamahal Underground Temple -->
+	<Map Number="144" MinMoneyCount="100" MaxMoneyCount="100" Disable="0" /><!-- Swamp of Destruction-->
 </ZenDropSystem>

@@ -1,3 +1,3 @@
 #####################################################################################
- @@@ To view files changes of specific Seasons/Parts, select appropriate branch @@@
+ ~~ To view files changes of specific Seasons/Parts, select appropriate branch ~~
 #####################################################################################

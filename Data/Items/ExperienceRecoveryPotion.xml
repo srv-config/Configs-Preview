@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### ExperienceRecoveryPotion ###
+//	Enable: Deactivates or activates the system, 0/1
+//	MaxExpRecoveryDuration: Maximum time exp can be recovered for after being lost, seconds
+//
+// ### ExperienceRecoveryPotion::LevelRange::Range ###
+//	MinLevel: Minimum level of character that applies to the rule
+//	MaxLevel: Maximum level of character that applies to the rule
+//	ExpPerPotion = Maximum exp recoverable per potion, if the recoverable exp is smaller than the max recoverable, it will recover only the available exp
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Example: If recoverable EXP is 1000000 and the ExpPerPotion setting is 50000 per potion. The total number of required potions are 1000000/50000 = 20
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<ExperienceRecoveryPotion Enable="1" MaxExpRecoveryDuration="86400">
+	<LevelRange>
+		<Range MinLevel="1" MaxLevel="400" ExpPerPotion="100000000" />
+		<Range MinLevel="401" MaxLevel="MAX" ExpPerPotion="150000000" />
+	</LevelRange>
+</ExperienceRecoveryPotion>

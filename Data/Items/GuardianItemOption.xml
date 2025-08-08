@@ -63,7 +63,7 @@
 		<Guardian Number="2" OptionNumber="1" FormulaID="11" LowerBound="0" UpperBound="-1" />
 		<Guardian Number="2" OptionNumber="2" FormulaID="12" LowerBound="0" UpperBound="1100" />
 		<Guardian Number="2" OptionNumber="3" FormulaID="13" LowerBound="0" UpperBound="1100" />
-		<Guardian Number="2" OptionNumber="4" FormulaID="14" LowerBound="0" UpperBound="-1" />	
+		<Guardian Number="2" OptionNumber="4" FormulaID="14" LowerBound="0" UpperBound="-1" />
 	<!-- Pierce Lion -->
 		<Guardian Number="3" OptionNumber="0" FormulaID="20" LowerBound="0" UpperBound="-1" />
 		<Guardian Number="3" OptionNumber="1" FormulaID="21" LowerBound="0" UpperBound="-1" />
@@ -85,9 +85,15 @@
 	<!-- Leviathan -->
 		<Guardian Number="6" OptionNumber="0" FormulaID="51" LowerBound="0" UpperBound="-1" />	
 		<Guardian Number="6" OptionNumber="1" FormulaID="52" LowerBound="0" UpperBound="-1"	/>
-		<Guardian Number="6" OptionNumber="2" FormulaID="53" LowerBound="0" UpperBound="1100" />			
-		<Guardian Number="6" OptionNumber="3" FormulaID="54" LowerBound="0" UpperBound="1100" />		
+		<Guardian Number="6" OptionNumber="2" FormulaID="53" LowerBound="0" UpperBound="1100" />
+		<Guardian Number="6" OptionNumber="3" FormulaID="54" LowerBound="0" UpperBound="1100" />
 		<Guardian Number="6" OptionNumber="4" FormulaID="55" LowerBound="0" UpperBound="-1" />
+	<!-- Taurus -->
+		<Guardian Number="7" OptionNumber="0" FormulaID="61" LowerBound="0" UpperBound="-1" />	
+		<Guardian Number="7" OptionNumber="1" FormulaID="62" LowerBound="0" UpperBound="-1"	/>
+		<Guardian Number="7" OptionNumber="2" FormulaID="63" LowerBound="0" UpperBound="1100" />
+		<Guardian Number="7" OptionNumber="3" FormulaID="64" LowerBound="0" UpperBound="1100" />
+		<Guardian Number="7" OptionNumber="4" FormulaID="65" LowerBound="0" UpperBound="-1" />
 	</OptionSettings>
 	
 	<OptionRate One="7000" Two="2000" Three="1000" Four="0" />
@@ -137,5 +143,11 @@
 		<Guardian Number="6" OptionSet="2" OptionNumber1="0" FormulaID1="56" ValueType1="0" OptionNumber2="3" FormulaID2="59" ValueType2="0" />
 		<Guardian Number="6" OptionSet="3" OptionNumber1="1" FormulaID1="57" ValueType1="0" OptionNumber2="4" FormulaID2="60" ValueType2="0" />
 		<Guardian Number="6" OptionSet="4" OptionNumber1="0" FormulaID1="56" ValueType1="0" OptionNumber2="4" FormulaID2="60" ValueType2="0" />
+	<!-- Taurus -->
+		<Guardian Number="7" OptionSet="0" OptionNumber1="0" FormulaID1="66" ValueType1="0" OptionNumber2="2" FormulaID2="68" ValueType2="0" />
+		<Guardian Number="7" OptionSet="1" OptionNumber1="1" FormulaID1="67" ValueType1="0" OptionNumber2="2" FormulaID2="68" ValueType2="0" />
+		<Guardian Number="7" OptionSet="2" OptionNumber1="0" FormulaID1="66" ValueType1="0" OptionNumber2="3" FormulaID2="69" ValueType2="0" />
+		<Guardian Number="7" OptionSet="3" OptionNumber1="1" FormulaID1="67" ValueType1="0" OptionNumber2="4" FormulaID2="70" ValueType2="0" />
+		<Guardian Number="7" OptionSet="4" OptionNumber1="0" FormulaID1="66" ValueType1="0" OptionNumber2="4" FormulaID2="70" ValueType2="0" />
 	</EliteOptionSettings>
 </GuardianItemOption>

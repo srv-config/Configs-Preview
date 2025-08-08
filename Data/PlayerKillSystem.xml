@@ -92,8 +92,8 @@
 	
 	<ExpDeduction>
 		<PK Level="3"> <!-- Normal -->
-			<LevelRange Start="11" End="150" DeductionRate="3" />
-			<LevelRange Start="151" End="220" DeductionRate="2" />
+			<LevelRange Start="11" End="150" DeductionRate="1" />
+			<LevelRange Start="151" End="220" DeductionRate="1" />
 			<LevelRange Start="221" End="MAX" DeductionRate="1" />
 		</PK>
 		<PK Level="4"> <!-- Warning -->

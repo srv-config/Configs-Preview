@@ -464,6 +464,8 @@
 		<Buff Index="437" EffectType="337" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Battle Glory Enhancement" Description="Increases attack and combat power." />
 		<Buff Index="442" EffectType="230" ItemType="20" ItemIndex="256" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="(Bound) Divine Spirit" Description="(Bound) Summons the Divine Spirit." />
 		<Buff Index="443" EffectType="399" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Confusion Stone" Description="" />
+		<Buff Index="444" EffectType="338" ItemType="12" ItemIndex="53" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Taurus" Description="Guardian mount item" />
+		<Buff Index="445" EffectType="338" ItemType="12" ItemIndex="54" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Taurus (Rare)" Description="Guardian mount item" />
 		<Buff Index="446" EffectType="340" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Special Praise" Description="Defense decreases." />
 		<Buff Index="447" EffectType="341" ItemType="19" ItemIndex="17" Type="2" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Blessing of Eunice" Description="50% additional experience gain for 5th class characters." />
 	</General>

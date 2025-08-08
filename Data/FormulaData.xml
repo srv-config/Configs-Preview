@@ -974,6 +974,16 @@
 		<Formula ID="58" Data="((5.8+(%d/10))^4.2)" /> <!-- ItemLevel -->
 		<Formula ID="59" Data="((4.9+(0.5*%d))^1.72)" /> <!-- ItemLevel -->
 		<Formula ID="60" Data="((6.4+(%d/10))^4)" /> <!-- ItemLevel -->
+		<Formula ID="61" Data="(313+((15+%d)/2)^2)" /> <!-- ItemLevel -->
+		<Formula ID="62" Data="(313+((15+%d)/2)^2)" /> <!-- ItemLevel -->
+		<Formula ID="63" Data="(7+((%d/10)*1.9)^1.5)" /> <!-- ItemLevel -->
+		<Formula ID="64" Data="(7+((%d/10)*1.6)^1.49)" /> <!-- ItemLevel -->
+		<Formula ID="65" Data="(4.36+(%d/10))^3.9" /> <!-- ItemLevel -->
+		<Formula ID="66" Data="(2586+(100*((%d/1.1)^1.1)))" /> <!-- ItemLevel -->
+		<Formula ID="67" Data="(3137+(200*((%d/1.2)^1.1)))" /> <!-- ItemLevel -->
+		<Formula ID="68" Data="(2128+(150*((%d/1.3)^1.1)))" /> <!-- ItemLevel -->
+		<Formula ID="69" Data="(18+(4*((%d/1)^1.02)))" /> <!-- ItemLevel -->
+		<Formula ID="70" Data="(2138+(110*((%d/1.1)^1.1)))" /> <!-- ItemLevel -->
 	</GuardianItem>
 	<Earrings>
 		<Formula ID="0" Data="(((%d*5)+70)/1.8)" /> <!-- ItemLevel -->

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~ Changes to the file must be reflected on game client side and encrypted to .bmd using ToolKit Lite or Premium "IGC File Enc/Dec (XML)" tool, \Data\Local\DailyReward.bmd
+//
+// ### DailyRewards ###
+//	Enable: Deactivate or activate the system, 0/1
+//	ActiveMonths: Whether or not, set specific month active, 0/1
+//	MinCharacterLevel: Minimum level of any character within account to get reward (sum of regular and master)
+//	MinVipLevel: Minimum VIP level to get reward, -1 if not applies
+//	OpenRewardWindowOnGameJoin: Whether or not, open reward window after joining the game, 0/1, applies if combination if conditions is met:
+//		~ OpenRewardWindowOnGameJoin is set to 1
+//		~ Current month is active for rewards
+//		~ Minimum character level is met
+//		~ Minimum VIP level is met
+//
+//	Password: A password used by ToolKit ServerInfo (XML) editor to encode the file, max 8 characters
+//
+// ### DailyRewards::DailyReward|WeeklyBonus|MonthlyBonus ###
+//	Number: Number of reward day, 1-31
+//	Exp: Reward Exp, max 9223372036854775807, used by server
+//	LevelUp: Number of levels to level up the character, used by server
+//	LevelUpPoints: Number of level up points to add, used by server
+//	GensContributions: Number of gens contributions to add, used by server
+//	EventBagID: Event Item Bag ID to use to reward item, used by server
+//	LangID: Lang ID from CustomText.bmd (XML), DailyReward section used to display reward info, used by client, -1 if not applies
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Notes:
+//~~ To collect weekly reward, all current week days must be collected
+//~~ To collect monthly reward, all four weeks rewards must be collected
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+<DailyRewards Enable="1" ActiveMonths="1;1;1;1;1;1;1;1;1;1;1;1" MinCharacterLevel="1" MinVipLevel="-1" OpenRewardWindowOnGameJoin="1" Password="FgThUj^F">
+	<DailyReward>
+		<Day Number="1" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1300" LangID="100" />
+		<Day Number="2" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1301" LangID="101" />
+		<Day Number="3" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1302" LangID="102" />
+		<Day Number="4" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1303" LangID="103" />
+		<Day Number="5" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1304" LangID="104" />
+		<Day Number="6" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1305" LangID="105" />
+		<Day Number="7" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1306" LangID="106" />
+		<Day Number="8" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1307" LangID="107" />
+		<Day Number="9" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1308" LangID="108" />
+		<Day Number="10" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1309" LangID="109" />
+		<Day Number="11" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1310" LangID="110" />
+		<Day Number="12" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1311" LangID="111" />
+		<Day Number="13" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1312" LangID="112" />
+		<Day Number="14" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1313" LangID="113" />
+		<Day Number="15" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1314" LangID="114" />
+		<Day Number="16" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1315" LangID="115" />
+		<Day Number="17" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1316" LangID="116" />
+		<Day Number="18" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1317" LangID="117" />
+		<Day Number="19" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1318" LangID="118" />
+		<Day Number="20" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1319" LangID="119" />
+		<Day Number="21" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1320" LangID="120" />
+		<Day Number="22" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1321" LangID="121" />
+		<Day Number="23" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1322" LangID="122" />
+		<Day Number="24" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1323" LangID="123" />
+		<Day Number="25" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1324" LangID="124" />
+		<Day Number="26" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1325" LangID="125" />
+		<Day Number="27" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1326" LangID="126" />
+		<Day Number="28" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1327" LangID="127" />
+		<Day Number="29" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1328" LangID="128" />
+		<Day Number="30" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1329" LangID="129" />
+		<Day Number="31" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1330" LangID="130" />
+	</DailyReward>
+	
+	<WeeklyBonus>
+		<Week Number="1" Exp="100000" LevelUp="0" LevelUpPoints="20" GensContributions="0" EventBagID="1331" LangID="131" />
+		<Week Number="2" Exp="150000" LevelUp="0" LevelUpPoints="25" GensContributions="0" EventBagID="1332" LangID="132" />
+		<Week Number="3" Exp="200000" LevelUp="0" LevelUpPoints="30" GensContributions="0" EventBagID="1333" LangID="133" />
+		<Week Number="4" Exp="250000" LevelUp="0" LevelUpPoints="35" GensContributions="0" EventBagID="1334" LangID="134" />
+	</WeeklyBonus>
+		
+	<MonthlyBonus Exp="1000000" LevelUp="0" LevelUpPoints="50" GensContributions="0" EventBagID="1335" LangID="135" />
+</DailyRewards>

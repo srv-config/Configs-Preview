@@ -23,27 +23,58 @@ end
 -- Master Exp Table formula - used to calculate exp required for next regular level
 function SetExpTable_Master(MasterLevel, MaxNormalLevel)
 	local TotalLevel = MasterLevel + MaxNormalLevel
-	local Exp = (TotalLevel + 9) * TotalLevel * TotalLevel * 10
-	
-	Exp = Exp + ( ((TotalLevel - 255) + 9) * (TotalLevel - 255) * (TotalLevel - 255) * 1000)
-	Exp = (Exp - 3892250000) / 2
-	
-	if (MasterLevel > 600) then
-		Exp = SetExpTable_Master(MasterLevel - 1, MaxNormalLevel)
-		Exp = Exp + 80224359459 + (1500000000 * (MasterLevel - 601))
-		
-	elseif (MasterLevel > 400) then
-		Exp = SetExpTable_Master(MasterLevel - 1, MaxNormalLevel)
-		Exp = Exp + 19024359459 + (300000000 * (MasterLevel - 401))
+	local Exp = 0
 
-	elseif (MasterLevel >= 370) then
-		local ModExp = TotalLevel - (600 - ((TotalLevel - 770) * (TotalLevel - 770)) * 0.3)
-		Exp = (Exp * (ModExp * ModExp * 1.2 / 100000.0 + 1.0))
-	
-	elseif(MasterLevel >= 200) then
-		Exp = Exp * ( (TotalLevel - 600) * (TotalLevel - 600) * 1.2 / 100000.0 + 1.0 )
+	if (MasterLevel >= 1200) then
+		Exp = SetExpTable_Master(400, MaxNormalLevel)
+		Exp = Exp + 1026586760718480
+			+ ((TotalLevel - 1600) * 22500000000000)
+			+ (35500000000 * ((TotalLevel - 1601) * (TotalLevel - 1600) / 2))
+
+	elseif (MasterLevel >= 1150) then
+		Exp = SetExpTable_Master(400, MaxNormalLevel)
+		Exp = Exp + 396271760718481
+			+ (TotalLevel - 1550) * 6300000000000
+			+ ((5200000000 * (TotalLevel - 1551) * (TotalLevel - 1550) / 2))
+				* (49 + (TotalLevel - 1550)) * 0.5
+
+	elseif (MasterLevel >= 1050) then
+		Exp = SetExpTable_Master(400, MaxNormalLevel)
+		Exp = Exp + 197413333648350
+			+ (((TotalLevel - 1450) * 753724359459)
+			+ (1500000000 * (TotalLevel - 1450) * (TotalLevel - 1449) / 2)
+			+ (150001 * (TotalLevel - 1450) * (TotalLevel - 1449) / 2)
+				* (((TotalLevel - 1450) * (TotalLevel - 1449) / 2) ^ 1.4))
+
+	elseif (MasterLevel >= 600) then
+		Exp = SetExpTable_Master(400, MaxNormalLevel)
+		Exp = Exp + (((TotalLevel - 800) * 19024359459)
+			+ (300000000 * (TotalLevel - 801) * ((TotalLevel - 800) / 2))
+			+ (1200000000 * (TotalLevel - 999) * ((TotalLevel - 1000) / 2)))
+
+	elseif (MasterLevel > 400) then
+		Exp = SetExpTable_Master(400, MaxNormalLevel)
+		Exp = Exp + ((TotalLevel - 800) * 19024359459)
+			+ (300000000 * (TotalLevel - 801) * ((TotalLevel - 800) / 2))
+
+	elseif (MasterLevel > 370) then
+		Exp = ((((9 + TotalLevel) * TotalLevel * TotalLevel * 10)
+			+ ((9 + (TotalLevel - 255)) * (TotalLevel - 255) * (TotalLevel - 255) * 1000)
+			- 3892250000) / 2)
+			* (1 + (1.2 * ((TotalLevel - (600 - (0.3 * ((TotalLevel - 770) * (TotalLevel - 770))))) ^ 2)) / 100000)
+
+	elseif (MasterLevel > 200) then
+		Exp = ((((9 + TotalLevel) * TotalLevel * TotalLevel * 10)
+			+ ((9 + (TotalLevel - 255)) * (TotalLevel - 255) * (TotalLevel - 255) * 1000)
+			- 3892250000) / 2)
+			* (1 + (1.2 * ((TotalLevel - 600) ^ 2)) / 100000)
+
+	else
+		Exp = ((((9 + TotalLevel) * TotalLevel * TotalLevel * 10)
+			+ ((9 + (TotalLevel - 255)) * (TotalLevel - 255) * (TotalLevel - 255) * 1000)
+			- 3892250000) / 2)
 	end
-	
+
 	return Exp
 end
 

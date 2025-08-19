@@ -15,11 +15,13 @@
 //	ActiveMonths: Whether or not, set specific month active, 0/1
 //	MinCharacterLevel: Minimum level of any character within account to get reward (sum of regular and master)
 //	MinVipLevel: Minimum VIP level to get reward, -1 if not applies
+//	MinOnlineHours: Minimum number of hours the account must be online to get daily reward, 0 to disable
 //	OpenRewardWindowOnGameJoin: Whether or not, open reward window after joining the game, 0/1, applies if combination if conditions is met:
 //		~ OpenRewardWindowOnGameJoin is set to 1
 //		~ Current month is active for rewards
 //		~ Minimum character level is met
 //		~ Minimum VIP level is met
+/		~ Minimum online hours after login
 //
 //	Password: A password used by ToolKit ServerInfo (XML) editor to encode the file, max 8 characters
 //
@@ -39,7 +41,7 @@
 //	
 // STRICTLY NO COMMENTS INSIDE TAGS
 -->
-<DailyRewards Enable="1" ActiveMonths="1;1;1;1;1;1;1;1;1;1;1;1" MinCharacterLevel="1" MinVipLevel="-1" OpenRewardWindowOnGameJoin="1" Password="FgThUj^F">
+<DailyRewards Enable="1" ActiveMonths="1;1;1;1;1;1;1;1;1;1;1;1" MinCharacterLevel="1" MinVipLevel="-1" MinOnlineHours="0" OpenRewardWindowOnGameJoin="1" Password="FgThUj^F">
 	<DailyReward>
 		<Day Number="1" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1300" LangID="100" />
 		<Day Number="2" Exp="-1" LevelUp="0" LevelUpPoints="0" GensContributions="0" EventBagID="1301" LangID="101" />

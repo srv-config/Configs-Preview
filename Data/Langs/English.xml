@@ -919,9 +919,9 @@
 	</VIPSystem>
 	
 	<AutoStat>
-		<Msg ID="0" Text="[AUTO-STAT] Usage Syntax 1: /autostat <option>" />
+		<Msg ID="0" Text="[AUTO-STAT] Usage Syntax 1: /autostat &lt;option&gt;" />
 		<Msg ID="1" Text="Available options: off|status" />
-		<Msg ID="2" Text="Usage Syntax 2: /autostat <MinPoint> <str_percent> <agi_percent> <vit_percent> <ene_percent> <cmd_percent>" />
+		<Msg ID="2" Text="Usage Syntax 2: /autostat &lt;MinPoint&gt; &lt;str_percent&gt; &lt;agi_percent&gt; &lt;vit_percent&gt; &lt;ene_percent&gt; &lt;cmd_percent&gt;" />
 		<Msg ID="3" Text="MinPoint is free level up points to trigger auto stat" />
 		<Msg ID="4" Text="The xxx_percent is percent of free level up points to distribute to specific stat" />
 		<Msg ID="5" Text="[AUTOSTAT] Deactivated." />

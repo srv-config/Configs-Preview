@@ -408,6 +408,8 @@
 		<Item Cat="12" Index="84" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Shining Tail (Rare) -->
 		<Item Cat="12" Index="51" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Leviathan -->
 		<Item Cat="12" Index="52" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Leviathan (Rare) -->
+		<Item Cat="12" Index="53" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Taurus -->
+		<Item Cat="12" Index="54" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Taurus (Rare) -->
 		<Item Cat="12" Index="93" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Ur -->
 		<Item Cat="12" Index="94" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Ur (Rare) -->
 		<Item Cat="12" Index="473" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Ghost Horse -->

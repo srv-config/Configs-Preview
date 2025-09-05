@@ -189,6 +189,12 @@
 //		~ 5: Darkness
 //		~ -1: Random element
 //
+//	MinMoney: Minimum amount of Zen to drop, must be equal or lower MaxMoney, 0 if not applies
+//	MaxMoney: Maximum amount of Zen to drop, must be equal or higher MinMoney, 0 if not applies
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Min/Max money applies if item cat/index is set to 14,15
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
 //	MuunEvolutionItemCat: Attribute used and required for item 16,211 (Evolution Stone) only, defines Muun Item Category
 //	MuunEvolutionItemIndex: Attribute used and required for item 16,211 (Evolution Stone) only, defines Muun Item Index
 //	KindA: Attribute automatically assigned on a basis on ItemList.xml configuration, no necessary to be defined in bag

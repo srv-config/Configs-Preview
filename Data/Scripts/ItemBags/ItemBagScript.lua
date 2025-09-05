@@ -511,6 +511,7 @@ function LoadItemBag() -- Bags Load
 -- Bags for purpose of Last Man Standing event
 	AddItemBag(BAG_EVENT, 1000,0, 'Event_LastManStanding_Looser_Reward') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 1050,0, 'Event_LastManStanding_Winner_Reward') -- DropFunction /3/
+	
 -- Bags for purpose of DoppelGanger event
 	AddItemBag(BAG_EVENT, 1200,0, 'Event_DoppelGanger_InterimChest_1') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 1201,0, 'Event_DoppelGanger_InterimChest_2') -- DropFunction /3/
@@ -521,6 +522,43 @@ function LoadItemBag() -- Bags Load
 	AddItemBag(BAG_EVENT, 1206,0, 'Event_DoppelGanger_FinalChest_4') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 1207,0, 'Event_DoppelGanger_FinalChest_5') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 1208,0, 'Event_DoppelGanger_FinalChest_6') -- DropFunction /3/
+	
+-- Bags for purpose of Daily Rewards event plugin
+	AddItemBag(BAG_EVENT, 1300,0, 'DailyRewards\\Event_DailyRewards_Day_1') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1301,0, 'DailyRewards\\Event_DailyRewards_Day_2') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1302,0, 'DailyRewards\\Event_DailyRewards_Day_3') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1303,0, 'DailyRewards\\Event_DailyRewards_Day_4') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1304,0, 'DailyRewards\\Event_DailyRewards_Day_5') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1305,0, 'DailyRewards\\Event_DailyRewards_Day_6') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1306,0, 'DailyRewards\\Event_DailyRewards_Day_7') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1307,0, 'DailyRewards\\Event_DailyRewards_Day_8') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1308,0, 'DailyRewards\\Event_DailyRewards_Day_9') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1309,0, 'DailyRewards\\Event_DailyRewards_Day_10') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1310,0, 'DailyRewards\\Event_DailyRewards_Day_11') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1311,0, 'DailyRewards\\Event_DailyRewards_Day_12') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1312,0, 'DailyRewards\\Event_DailyRewards_Day_13') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1313,0, 'DailyRewards\\Event_DailyRewards_Day_14') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1314,0, 'DailyRewards\\Event_DailyRewards_Day_15') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1315,0, 'DailyRewards\\Event_DailyRewards_Day_16') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1316,0, 'DailyRewards\\Event_DailyRewards_Day_17') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1317,0, 'DailyRewards\\Event_DailyRewards_Day_18') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1318,0, 'DailyRewards\\Event_DailyRewards_Day_19') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1319,0, 'DailyRewards\\Event_DailyRewards_Day_20') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1320,0, 'DailyRewards\\Event_DailyRewards_Day_21') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1321,0, 'DailyRewards\\Event_DailyRewards_Day_22') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1322,0, 'DailyRewards\\Event_DailyRewards_Day_23') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1323,0, 'DailyRewards\\Event_DailyRewards_Day_24') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1324,0, 'DailyRewards\\Event_DailyRewards_Day_25') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1325,0, 'DailyRewards\\Event_DailyRewards_Day_26') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1326,0, 'DailyRewards\\Event_DailyRewards_Day_27') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1327,0, 'DailyRewards\\Event_DailyRewards_Day_28') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1328,0, 'DailyRewards\\Event_DailyRewards_Day_29') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1329,0, 'DailyRewards\\Event_DailyRewards_Day_30') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1330,0, 'DailyRewards\\Event_DailyRewards_Day_31') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1331,0, 'DailyRewards\\Event_DailyRewards_Week_1') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1332,0, 'DailyRewards\\Event_DailyRewards_Week_2') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1333,0, 'DailyRewards\\Event_DailyRewards_Week_3') -- DropFunction /3/
+	AddItemBag(BAG_EVENT, 1334,0, 'DailyRewards\\Event_DailyRewards_Week_4') -- DropFunction /3/
 end
 
 -- ### /1/ Drop Item (using Item Bag Structure) ### --

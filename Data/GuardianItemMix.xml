@@ -61,6 +61,8 @@
 //		3: 12,75-76
 //		4: 12, 83-84
 //		5: 12, 93-94
+//		6: 12, 51-52
+//		7: 12, 53-54
 //
 //	ItemCat: Item category
 //	ItemIndex: Item index
@@ -149,6 +151,7 @@
 		<Mix ReqGuardianNum="4" SubItemCat="14" SubItemIndex="470" MaxOptCount="5" />
 		<Mix ReqGuardianNum="5" SubItemCat="14" SubItemIndex="470" MaxOptCount="5" />
 		<Mix ReqGuardianNum="6" SubItemCat="14" SubItemIndex="470" MaxOptCount="5" />
+		<Mix ReqGuardianNum="7" SubItemCat="14" SubItemIndex="470" MaxOptCount="5" />
 	</GuardianItemOptChange>
 	
 	<GuardianItemUpgrade>																							
@@ -197,6 +200,16 @@
 		<Mix ID="42" MainItemCat="12" MainItemIndex="94" MainItemLevel="13" MainItemDur="1" SubItemCat1="20" SubItemIndex1="253" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="800000" ResultItemCat="12" ResultItemIndex="51" ResultItemLevel="0" />
 		<Mix ID="43" MainItemCat="12" MainItemIndex="94" MainItemLevel="14" MainItemDur="1" SubItemCat1="20" SubItemIndex1="253" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="900000" ResultItemCat="12" ResultItemIndex="51" ResultItemLevel="0" />
 		<Mix ID="44" MainItemCat="12" MainItemIndex="94" MainItemLevel="15" MainItemDur="1" SubItemCat1="20" SubItemIndex1="253" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="1000000" ResultItemCat="12" ResultItemIndex="51" ResultItemLevel="0" />
+		<Mix ID="45" MainItemCat="12" MainItemIndex="51" MainItemLevel="11" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="600000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="46" MainItemCat="12" MainItemIndex="51" MainItemLevel="12" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="700000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="47" MainItemCat="12" MainItemIndex="51" MainItemLevel="13" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="800000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="48" MainItemCat="12" MainItemIndex="51" MainItemLevel="14" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="900000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="49" MainItemCat="12" MainItemIndex="51" MainItemLevel="15" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="1000000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="50" MainItemCat="12" MainItemIndex="52" MainItemLevel="11" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="600000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="51" MainItemCat="12" MainItemIndex="52" MainItemLevel="12" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="700000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="52" MainItemCat="12" MainItemIndex="52" MainItemLevel="13" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="800000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="53" MainItemCat="12" MainItemIndex="52" MainItemLevel="14" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="900000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
+		<Mix ID="54" MainItemCat="12" MainItemIndex="52" MainItemLevel="15" MainItemDur="1" SubItemCat1="20" SubItemIndex1="276" SubItemDur1="1" SubItemCat2="14" SubItemIndex2="13" SubItemDur2="20" SubItemCat3="14" SubItemIndex3="14" SubItemDur3="20" SubItemCat4="12" SubItemIndex4="15" SubItemDur4="1" SubItemCat5="14" SubItemIndex5="22" SubItemDur5="1" ReqMoney="0" SuccessRate="1000000" ResultItemCat="12" ResultItemIndex="53" ResultItemLevel="0" />
 	</GuardianItemUpgrade>
 	
 	<GuardianItemUpgradeSpecial>
@@ -205,6 +218,7 @@
 		<Result ReqGuardianNum="4" ItemCat="12" ItemIndex="84" Probability="100" />
 		<Result ReqGuardianNum="5" ItemCat="12" ItemIndex="94" Probability="100" />
 		<Result ReqGuardianNum="6" ItemCat="12" ItemIndex="52" Probability="100" />
+		<Result ReqGuardianNum="7" ItemCat="12" ItemIndex="54" Probability="100" />
 	</GuardianItemUpgradeSpecial>
 	
 	<PetItemUpgrade>

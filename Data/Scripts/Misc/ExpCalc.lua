@@ -81,16 +81,22 @@ end
 function ExpSystemCalc(FormulaID, PlayerVipType, StaticExp, DynamicExp, EventExp, VipExp, BonusEvent, MapBonusExp, MiscExp)
 	local Exp = 0
 
+-- Note: FORMULA BLOCK should match FORMULA BLOCK configured on client side in \Data\Custom\Scripts\ExpToolTip.lua (.lsc), ExpSystemCalc function
+
 -- The OffLevelExp is 1.0 when not having plugin purchased
 -- The MiscExp is percentage bonus exp added by Static Option System plugin, default is 0.0
+
+-- ### FORMULA BLOCK START ###
 	if (FormulaID == 0) then
 		Exp = StaticExp+(EventExp+VipExp+BonusEvent+MapBonusExp);
+		DynamicExp = 0; -- not used in the formula, set to 0 to avoid display
 	elseif (FormulaID == 1) then
 		Exp = StaticExp+DynamicExp+(EventExp+VipExp+BonusEvent+MapBonusExp);
 	elseif (FormulaID == 2) then
 		Exp = StaticExp*DynamicExp+(EventExp+VipExp+BonusEvent+MapBonusExp);
 	elseif (FormulaID == 3) then
 		Exp = DynamicExp+(EventExp+VipExp+BonusEvent+MapBonusExp);
+		StaticExp = 0; -- not used in the formula, set to 0 to avoid display
 	elseif (FormulaID == 4) then
 		Exp = (StaticExp+EventExp+VipExp+BonusEvent+MapBonusExp)*DynamicExp;
 	elseif (FormulaID == 5) then
@@ -108,6 +114,7 @@ function ExpSystemCalc(FormulaID, PlayerVipType, StaticExp, DynamicExp, EventExp
 	if (MiscExp > 0) then
 		Exp = Exp + (Exp * MiscExp / 100)
 	end
+-- ### FORMULA BLOCK END ###
 	
 	return Exp;
 end

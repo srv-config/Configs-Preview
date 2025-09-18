@@ -1273,6 +1273,8 @@ function ExpansionWizardryCalc(Class, Energy)
 		SkillEffect = Energy / 9 * 0.20
 	elseif (Class == CLASS_RUNEWIZARD) then
 		SkillEffect = Energy / 9 * 0.20
+	elseif (Class == CLASS_LIGHTWIZARD) then
+		SkillEffect = Energy / 9 * 0.20
 	elseif (Class == CLASS_LEMURIAMAGE) then
 		SkillEffect = Energy / 9 * 0.20
 	elseif (Class == CLASS_ALCHEMIST) then

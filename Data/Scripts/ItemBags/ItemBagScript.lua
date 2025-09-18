@@ -40,9 +40,8 @@
 	EVENTBAG_WARRIORRING_1 = 19
 	EVENTBAG_WARRIORRING_2 = 20
 	EVENTBAG_CHERRYBLOSSOM_GOLD = 21
-	EVENTBAG_LUCKYCOIN10 = 22
-	EVENTBAG_LUCKYCOIN20 = 23
-	EVENTBAG_LUCKYCOIN30 = 24
+	EVENTBAG_LUCKYCOIN = 22
+-- 23 - 24
 	EVENTBAG_LORDMIX = 25
 	EVENTBAG_KUNDUN = 26
 	EVENTBAG_ACHERONGUARDIAN = 27
@@ -402,9 +401,8 @@ function LoadItemBag() -- Bags Load
 	AddItemBag(BAG_EVENT, 18,0, 'NPC_SantaClause(3)_Reward') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 19,0, 'Item_WarriorRing(40)_Reward') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 20,0, 'Item_WarriorRing(80)_Reward') -- DropFunction /3/
-	AddItemBag(BAG_EVENT, 22,0, 'Mix_LuckyCoin(10)_Reward') -- DropFunction /4/
-	AddItemBag(BAG_EVENT, 23,0, 'Mix_LuckyCoin(20)_Reward') -- DropFunction /4/
-	AddItemBag(BAG_EVENT, 24,0, 'Mix_LuckyCoin(30)_Reward') -- DropFunction /4/
+	AddItemBag(BAG_EVENT, 22,0, 'Event_LuckyCoin_Reward') -- DropFunction /4/
+-- 23 ~ 24
 	AddItemBag(BAG_EVENT, 25,0, 'Mix_Senior_Reward') -- DropFunction /4/
 	AddItemBag(BAG_EVENT, 26,0, 'Monster_(275)_Kundun') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 27,0, 'Event_AcheronGuardian_Reward') -- DropFunction /3/
@@ -437,7 +435,7 @@ function LoadItemBag() -- Bags Load
 	AddItemBag(BAG_EVENT, 56,0, 'Monster_(734)_Lord_of_Ferea') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 57,0, 'Monster_(746)_Knicks') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 58,0, 'Monster_(794)_God_of_Darkness') -- DropFunction /3/
--- 59 - 69
+-- 59 ~ 69
 	AddItemBag(BAG_EVENT, 70,0, 'Event_CW_Elf_Altar') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 71,0, 'Event_CW_Hero_List') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 72,0, 'Item_(14,460,0)_[Lvl1]_Monster_Soul_Converter') -- DropFunction /3/
@@ -445,7 +443,7 @@ function LoadItemBag() -- Bags Load
 	AddItemBag(BAG_EVENT, 74,0, 'Item_(14,462,0)_[Lvl3]_Monster_Soul_Converter') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 75,0, 'Item_(14,463,0)_[Lvl4]_Monster_Soul_Converter') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 76,0, 'Item_(14,464,0)_[Lvl5]_Monster_Soul_Converter') -- DropFunction /3/
--- 77 - 79 IWC
+-- 77 ~ 79 IWC
 	AddItemBag(BAG_EVENT, 80,0, 'Event_IllusionTemple_League_Match_Win') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 81,0, 'Event_IllusionTemple_League_Tournament_Win') -- DropFunction /3/
 	AddItemBag(BAG_EVENT, 82,0, 'Mix_Maple_Leaf_Reward') -- DropFunction /4/

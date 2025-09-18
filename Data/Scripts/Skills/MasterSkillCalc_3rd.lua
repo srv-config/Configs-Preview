@@ -1143,6 +1143,9 @@ function ExpansionWizardryCalc_Level1(Class, Energy, MagicDamageMax, SkillTreeVa
 	if (Class == CLASS_WIZARD) then
 		SkillEffect1 = Energy / 9 * 0.20
 		SkillEffect2 = MagicDamageMax / 100.0 * SkillTreeValue
+	elseif (Class == CLASS_RUNEWIZARD) then
+		SkillEffect1 = Energy / 9 * 0.20
+		SkillEffect2 = MagicDamageMax / 100.0 * SkillTreeValue
 	elseif (Class == CLASS_LIGHTWIZARD) then
 		SkillEffect1 = Energy / 9 * 0.20
 		SkillEffect2 = MagicDamageMax / 100.0 * SkillTreeValue
@@ -1164,6 +1167,9 @@ function ExpansionWizardryCalc_Level2(Class, Energy, MagicDamageMax, SkillTreeVa
 	local SkillTime = 1800
 	
 	if (Class == CLASS_WIZARD) then
+		SkillEffect1 = Energy / 9 * 0.20
+		SkillEffect2 = MagicDamageMax / 100.0 * SkillTreeValue
+	elseif (Class == CLASS_RUNEWIZARD) then
 		SkillEffect1 = Energy / 9 * 0.20
 		SkillEffect2 = MagicDamageMax / 100.0 * SkillTreeValue
 	elseif (Class == CLASS_LIGHTWIZARD) then

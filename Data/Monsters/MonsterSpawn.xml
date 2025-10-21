@@ -3817,6 +3817,8 @@
 			<Spawn Index="257" Distance="0" StartX="73" StartY="220" Dir="1" />
 			<!--(452) Seed Master [Lv.2]-->
 			<Spawn Index="452" Distance="0" StartX="46" StartY="243" Dir="1" />
+			<!--(492) Moss [Lv.2]-->
+			<Spawn Index="492" Distance="0" StartX="22" StartY="225" Dir="2" />
 			<!--(568) Wandering Merchant Zyro [Lv.2]-->
 			<Spawn Index="568" Distance="0" StartX="55" StartY="199" Dir="1" />
 			<!--(582) Adniel [Lv.2]-->

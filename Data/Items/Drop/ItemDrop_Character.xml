@@ -58,7 +58,8 @@
 //		~ 3: Earth
 //		~ 4: Wind
 //		~ 5: Darkness
-//		~ -1: Use PentagramItemDropRate.xml
+//		~ -1: Random (1-5)
+//		~ -2: Use PentagramItemDropRate.xml
 //
 //	SocketCount: Minimum and maximum socket count of item to drop, 1-5, usage: min;max, 0 to use SocketSystem.xml rates, for pentagram a rate of sockets from PentagramItemDropRate.xml are used
 //

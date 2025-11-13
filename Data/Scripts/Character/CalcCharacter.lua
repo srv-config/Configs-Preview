@@ -1,7 +1,7 @@
 -- // ============================================================
 -- // == INTERNATIONAL GAMING CENTER NETWORK
 -- // == www.igcn.mu
--- // == (C) 2019 IGC-Network (R)
+-- // == (C) 2010-2025 IGC-Network (R)
 -- // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- // == File is a part of IGCN Group MuOnline Server files.
 -- // ============================================================
@@ -11,21 +11,22 @@
 -- For more CalcCharacter options refer to \Data\CalcCharacter.ini
 
 -- Character Classes
-CLASS_WIZARD = 0 -- Fairy Elf, Muse Elf, High Elf
-CLASS_KNIGHT = 1 -- Dark Wizard, Soul Master, Grand Master
-CLASS_ELF = 2 -- Dark Knight, Blade Knight, Blade Master
-CLASS_GLADIATOR = 3 -- Magic Gladiator, Duel Master
-CLASS_DARKLORD = 4 -- Dark Lord, Lord Emperor
-CLASS_SUMMONER = 5 -- Summoner, Bloody Summoner, Dimension Master
-CLASS_RAGEFIGHTER = 6 -- Rage Fighter, Fist Master
-CLASS_GROWLANCER = 7 -- Grow Lancer, Mirage Lancer
-CLASS_RUNEWIZARD = 8 -- Rune Wizard, Rune Spell Master, Grand Rune Master
-CLASS_SLAYER = 9 -- Slayer, Royal Slayer, Master Slayer, Slaughterer
-CLASS_GUNCRUSHER = 10 -- Gun Crusher, Gun Breaker, Master Gun Breaker, Heist Gun Crusher
-CLASS_LIGHTWIZARD = 11 -- Light Wizard, Shining Wizard, Luminous Wizard
-CLASS_LEMURIAMAGE = 12 -- Lemuria Mage, Warmage, Archmage, Mystic Mage
-CLASS_ILLUSIONKNIGHT = 13 -- Illusion Knight, Mirage Knight, Illusion Master, Mystic Knight
-CLASS_ALCHEMIST = 14 -- Alchemist, Alchemic Magician, Alchemic Master, Alchemic Force, Creator
+CLASS_WIZARD = 0
+CLASS_KNIGHT = 1
+CLASS_ELF = 2
+CLASS_GLADIATOR = 3
+CLASS_DARKLORD = 4
+CLASS_SUMMONER = 5
+CLASS_RAGEFIGHTER = 6
+CLASS_GROWLANCER = 7
+CLASS_RUNEWIZARD = 8
+CLASS_SLAYER = 9
+CLASS_GUNCRUSHER = 10
+CLASS_LIGHTWIZARD = 11
+CLASS_LEMURIAMAGE = 12
+CLASS_ILLUSIONKNIGHT = 13
+CLASS_ALCHEMIST = 14
+CLASS_CRUSADER = 15
 
 -- Character Damage - Fist Fighting - (Dark Wizard, Soul Master, Grand Master)
 function WizardDamageCalc(Strength, Dexterity, Vitality, Energy)
@@ -267,6 +268,20 @@ function AlchemistDamageCalc(Strength, Dexterity, Vitality, Energy)
 	return AttackDamageMinLeft, AttackDamageMinRight, AttackDamageMaxLeft, AttackDamageMaxRight
 end
 
+function CrusaderDamageCalc(Strength, Dexterity, Vitality, Energy)
+	local AttackDamageMinLeft = 0
+	local AttackDamageMaxLeft = 0
+	local AttackDamageMinRight = 0
+	local AttackDamageMaxRight = 0
+	
+	AttackDamageMinLeft = Strength / 6 -- Minimum Left Hand Damage
+	AttackDamageMinRight = Strength / 6 -- Minimum Right Hand Damage
+	AttackDamageMaxLeft = Strength / 4 -- Maximum Left Hand Damage
+	AttackDamageMaxRight = Strength / 4 -- Maximum Right Hand Damage
+	
+	return AttackDamageMinLeft, AttackDamageMinRight, AttackDamageMaxLeft, AttackDamageMaxRight
+end
+
 -- Character Magic Damage - (Dark Wizard, Soul Master, Grand Master)
 function WizardMagicDamageCalc(Energy)
 	local MagicDamageMin = 0
@@ -449,6 +464,16 @@ function AlchemistMagicDamageCalc(Energy)
 	return MagicDamageMin, MagicDamageMax
 end
 
+function CrusaderMagicDamageCalc(Energy)
+	local MagicDamageMin = 0
+	local MagicDamageMax = 0
+	
+	MagicDamageMin = Energy / 9 -- Minimum Magic Damage
+	MagicDamageMax = Energy / 4 -- Maximum Magic Damage
+	
+	return MagicDamageMin, MagicDamageMax
+end
+
 -- Character Attack Speed - for Anti-Hack purpose only, does not take effect in Game for versions lower than w Season 8 Episode 3
 function CalcAttackSpeed(Class, Dexterity)
 	local AttackSpeed = 0
@@ -499,6 +524,9 @@ function CalcAttackSpeed(Class, Dexterity)
 	elseif(Class == CLASS_ALCHEMIST) then
 		AttackSpeed = Dexterity / 20
 		MagicSpeed = Dexterity / 10
+	elseif(Class == CLASS_CRUSADER) then
+		AttackSpeed = Dexterity / 10
+		MagicSpeed = Dexterity / 10
 	end
 	
 	return AttackSpeed, MagicSpeed
@@ -539,6 +567,8 @@ function CalcAttackSuccessRate_PvM(Class, Strength, Dexterity, Vitality, Energy,
 		AttackSuccessRate = TotalLevel * 5 + Dexterity * 1.5 + Strength / 4
 	elseif(Class == CLASS_ALCHEMIST) then
 		AttackSuccessRate = TotalLevel * 5 + Dexterity * 1.5 + Strength / 4
+	elseif(Class == CLASS_CRUSADER) then
+		AttackSuccessRate = TotalLevel * 5 + Dexterity * 1.5 + Strength / 4
 	end
 	
 	return AttackSuccessRate
@@ -578,6 +608,8 @@ function CalcDefenseSuccessRate_PvM(Class, Strength, Dexterity, Vitality, Energy
 	elseif(Class == CLASS_ILLUSIONKNIGHT) then
 		DefenseSuccessRate = Dexterity / 3
 	elseif(Class == CLASS_ALCHEMIST) then
+		DefenseSuccessRate = Dexterity / 3
+	elseif(Class == CLASS_CRUSADER) then
 		DefenseSuccessRate = Dexterity / 3
 	end
 	
@@ -626,6 +658,8 @@ function CalcDefense(Class, Strength, Dexterity, IsSpecialBuff)
 		Defense = Dexterity / 10 + Strength / 5
 	elseif(Class == CLASS_ALCHEMIST) then
 		Defense = Dexterity / 2
+	elseif(Class == CLASS_CRUSADER) then
+		Defense = Dexterity / 2
 	end
 	
 	return Defense
@@ -666,6 +700,8 @@ function CalcAttackSuccessRate_PvP(Class, Strength, Dexterity, Vitality, Energy,
 		AttackRate = Dexterity * 2.5 + 3 * TotalLevel
 	elseif(Class == CLASS_ALCHEMIST) then
 		AttackRate = Dexterity * 4 + 3 * TotalLevel
+	elseif(Class == CLASS_CRUSADER) then
+		AttackRate = Dexterity * 4 + 3 * TotalLevel
 	end
 	
 	return AttackRate
@@ -705,6 +741,8 @@ function CalcDefenseSuccessRate_PvP(Class, Strength, Dexterity, Vitality, Energy
 	elseif(Class == CLASS_ILLUSIONKNIGHT) then
 		DefenseRate = Dexterity / 4 + 2 * TotalLevel
 	elseif(Class == CLASS_ALCHEMIST) then
+		DefenseRate = Dexterity / 3 + 2 * TotalLevel
+	elseif(Class == CLASS_CRUSADER) then
 		DefenseRate = Dexterity / 3 + 2 * TotalLevel
 	end
 	
@@ -761,6 +799,9 @@ function ElementalDamageCalc(Class, Strength, Dexterity, Vitality, Energy, Comma
 	elseif(Class == CLASS_ALCHEMIST) then
 		MinDamage = ItemMinDamage + (Energy / 6)
 		MaxDamage = ItemMaxDamage + (Energy / 4)
+	elseif(Class == CLASS_CRUSADER) then
+		MinDamage = ItemMinDamage + (Strength / 7)
+		MaxDamage = ItemMaxDamage + (Strength / 5)
 	end
 	
 	return MinDamage, MaxDamage
@@ -801,6 +842,8 @@ function ElementalAttackRateCalc_MvP(Class, NormalLevel, MasterLevel, Strength, 
 		AttackSuccessRate = (3 * Dexterity / 2) + (5 * TotalLevel) + (Strength / 4)
 	elseif(Class == CLASS_ALCHEMIST) then
 		AttackSuccessRate = (3 * Dexterity / 2) + (5 * TotalLevel) + (Strength / 4)
+	elseif(Class == CLASS_CRUSADER) then
+		AttackSuccessRate = (3 * Dexterity / 2) + (5 * TotalLevel) + (Strength / 4)
 	end
 	
 	return AttackSuccessRate
@@ -840,6 +883,8 @@ function ElementalAttackRateCalc_PvP(Class, NormalLevel, MasterLevel, Strength, 
 	elseif(Class == CLASS_ILLUSIONKNIGHT) then
 		AttackSuccessRate = (3 * Dexterity / 2) + (5 * TotalLevel) + (Strength / 4)
 	elseif(Class == CLASS_ALCHEMIST) then
+		AttackSuccessRate = (3 * Dexterity / 2) + (5 * TotalLevel) + (Strength / 4)
+	elseif(Class == CLASS_CRUSADER) then
 		AttackSuccessRate = (3 * Dexterity / 2) + (5 * TotalLevel) + (Strength / 4)
 	end
 	
@@ -884,6 +929,8 @@ function ElementalDefenseCalc(Class, Strength, Dexterity, Vitality, Energy, IsSp
 		Defense = (Strength / 6) + (Dexterity / 15)
 	elseif(Class == CLASS_ALCHEMIST) then
 		Defense = (Energy / 5) + (Dexterity / 8)
+	elseif(Class == CLASS_CRUSADER) then
+		Defense = (Energy / 5) + (Dexterity / 8)
 	end
 	
 	return Defense
@@ -922,6 +969,8 @@ function ElementalDefenseRateCalc(Class, Strength, Dexterity, Energy, Vitality, 
 	elseif(Class == CLASS_ILLUSIONKNIGHT) then
 		DefenseRate = Dexterity / 3
 	elseif(Class == CLASS_ALCHEMIST) then
+		DefenseRate = Dexterity / 3
+	elseif(Class == CLASS_CRUSADER) then
 		DefenseRate = Dexterity / 3
 	end
 	
@@ -962,6 +1011,8 @@ function CalcAbilityGauge(Class, Strength, Dexterity, Vitality, Energy, Leadersh
 		AG = (Strength * 0.3) + (Dexterity * 0.5) + (Vitality * 0.2) + (Energy * 0.2)
 	elseif(Class == CLASS_ALCHEMIST) then
 		AG = (Strength * 0.2) + (Dexterity * 0.2) + (Vitality * 0.2) + (Energy * 0.4)
+	elseif(Class == CLASS_CRUSADER) then
+		AG = (Strength * 0.3) + (Dexterity * 0.5) + (Vitality * 0.2) + (Energy * 0.2)
 	end
 	
 	return AG
@@ -1021,50 +1072,50 @@ end
 
 -- Penalty Damage calculation from user, Damage Correction of Monster is configured from MonsterList.xml
 function CalcPenaltyDamageFromUser(UserLevel, UserMasterLevel, UserDamageCorrection, MonsterLevel, PenaltyMonsterAddLevel, MonsterDamageCorrection, InDamage)
-    local SumUserLevel = UserLevel + UserMasterLevel
-    local SumMonLevel = MonsterLevel + PenaltyMonsterAddLevel
-    local LevelDiff = SumMonLevel - SumUserLevel
-    local DamageCorrectionDiff = MonsterDamageCorrection - UserDamageCorrection
-    local OutDamage = InDamage
+	local SumUserLevel = UserLevel + UserMasterLevel
+	local SumMonLevel = MonsterLevel + PenaltyMonsterAddLevel
+	local LevelDiff = SumMonLevel - SumUserLevel
+	local DamageCorrectionDiff = MonsterDamageCorrection - UserDamageCorrection
+	local OutDamage = InDamage
 
-    if LevelDiff <= 0 then
-        return OutDamage
-    end
+	if LevelDiff <= 0 then
+		return OutDamage
+	end
 
-    if (LevelDiff > 7) then
-        LevelDiff = 7
-    end
+	if (LevelDiff > 7) then
+		LevelDiff = 7
+	end
 
-    if DamageCorrectionDiff < 0 then
-        DamageCorrectionDiff = 0
-    end
+	if DamageCorrectionDiff < 0 then
+		DamageCorrectionDiff = 0
+	end
 
-    OutDamage = OutDamage - (OutDamage * ((LevelDiff * 10) + DamageCorrectionDiff) / 100)
-    return OutDamage
+	OutDamage = OutDamage - (OutDamage * ((LevelDiff * 10) + DamageCorrectionDiff) / 100)
+	return OutDamage
 end
 
 -- Penalty Damage calculation from monster, Damage Correction of Monster is configured from MonsterList.xml
 function CalcPenaltyDamageFromMonster(UserLevel, UserMasterLevel, UserDamageCorrection, MonsterLevel, PenaltyMonsterAddLevel, MonsterDamageCorrection, InDamage)
-    local SumUserLevel = UserLevel + UserMasterLevel
-    local SumMonLevel = MonsterLevel + PenaltyMonsterAddLevel
-    local LevelDiff = SumMonLevel - SumUserLevel
-    local DamageCorrectionDiff = MonsterDamageCorrection - UserDamageCorrection
-    local OutDamage = InDamage
+	local SumUserLevel = UserLevel + UserMasterLevel
+	local SumMonLevel = MonsterLevel + PenaltyMonsterAddLevel
+	local LevelDiff = SumMonLevel - SumUserLevel
+	local DamageCorrectionDiff = MonsterDamageCorrection - UserDamageCorrection
+	local OutDamage = InDamage
 
-    if LevelDiff <= 0 then
-        return OutDamage
-    end
+	if LevelDiff <= 0 then
+		return OutDamage
+	end
 
-    if LevelDiff > 7 then
-        LevelDiff = 7
-    end
+	if LevelDiff > 7 then
+		LevelDiff = 7
+	end
 
-    if DamageCorrectionDiff < 0 then
-        DamageCorrectionDiff = 0
-    end
+	if DamageCorrectionDiff < 0 then
+		DamageCorrectionDiff = 0
+	end
 
-    OutDamage = OutDamage + (OutDamage * ((LevelDiff * 10) + DamageCorrectionDiff) / 100)
-    return OutDamage
+	OutDamage = OutDamage + (OutDamage * ((LevelDiff * 10) + DamageCorrectionDiff) / 100)
+	return OutDamage
 end
 
 function ExtraDamageCalc(UserLevel, UserMasterLevel, MonsterLevel, Class, Strength, Dexterity, Vitality, Energy, InDamageMin, InDamageMax)

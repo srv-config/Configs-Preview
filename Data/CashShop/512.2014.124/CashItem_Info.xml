@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2023 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -85,6 +85,8 @@
 //		Type 2: Minutes
 //		Type 3: Always 0
 //		Type 4: Days
+//
+//	Rank: Defines Errtel rank, 1-5
 //
 // Description: Used for cash shop inventory search option. Should always be filled. Inserted into T_inGameShop_Items.Description column. Encoding of the file must be set properly for your database collation, e.g. Chinese_PRC_CI_AS will require the file encoding to be set to ANSI. Avoid using following characters as they will be removed automatically -> .;:~%'
 //
@@ -812,8 +814,20 @@
 	<Item GUID="897" ID="1101" Cat="20" Index="122" Level="0" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="5" Duration="0" Description="Pass Ticket X1" />
 	<Item GUID="897" ID="1102" Cat="20" Index="122" Level="0" Durability="5" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="5" Duration="0" Description="Pass Ticket X5" />
 	<Item GUID="897" ID="1103" Cat="20" Index="122" Level="0" Durability="10" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="5" Duration="0" Description="Pass Ticket X10" />
-	<Item GUID="898" ID="1104" Cat="13" Index="124" Level="1" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" Element="0" Type="4" Duration="30" Description="Brozne VIP" />
-	<Item GUID="899" ID="1106" Cat="13" Index="124" Level="2" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" Element="0" Type="4" Duration="30" Description="Silver VIP" />
-	<Item GUID="900" ID="1108" Cat="13" Index="124" Level="3" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" Element="0" Type="4" Duration="30" Description="Gold VIP" />
-	<Item GUID="901" ID="1110" Cat="13" Index="124" Level="4" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" Element="0" Type="4" Duration="30" Description="Platinum VIP" />
+	<Item GUID="898" ID="1104" Cat="13" Index="124" Level="1" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="4" Duration="30" Description="Brozne VIP" />
+	<Item GUID="899" ID="1106" Cat="13" Index="124" Level="2" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="4" Duration="30" Description="Silver VIP" />
+	<Item GUID="900" ID="1108" Cat="13" Index="124" Level="3" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="4" Duration="30" Description="Gold VIP" />
+	<Item GUID="901" ID="1110" Cat="13" Index="124" Level="4" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="4" Duration="30" Description="Platinum VIP" />
+	<Item GUID="902" ID="1111" Cat="19" Index="17" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="1440" Description="Eunice's Blessing (GP)" />
+	<Item GUID="902" ID="1112" Cat="19" Index="17" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="10080" Description="Eunice's Blessing (GP)" />
+	<Item GUID="903" ID="1114" Cat="20" Index="383" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="1440" Description="Contract of Fury (GP)" />
+	<Item GUID="903" ID="1115" Cat="20" Index="383" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="10080" Description="Contract of Fury (GP)" />
+	<Item GUID="904" ID="1117" Cat="20" Index="384" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="1440" Description="Contract of Gale (GP)" />
+	<Item GUID="904" ID="1118" Cat="20" Index="384" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="10080" Description="Contract of Gale (GP)" />
+	<Item GUID="905" ID="1120" Cat="20" Index="385" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="1440" Description="Contract of Mana (GP)" />
+	<Item GUID="905" ID="1121" Cat="20" Index="385" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="10080" Description="Contract of Mana (GP)" />
+	<Item GUID="906" ID="1123" Cat="20" Index="386" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="1440" Description="Contract of Life (GP)" />
+	<Item GUID="906" ID="1124" Cat="20" Index="386" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="10080" Description="Contract of Life (GP)" />
+	<Item GUID="907" ID="1126" Cat="20" Index="387" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="1440" Description="Contract of Skill (GP)" />
+	<Item GUID="907" ID="1127" Cat="20" Index="387" Level="0" Durability="0" Skill="0" Luck="0" Option="0" Exc="-1" Set="0" SocketCount="0" SocketInfo="-1;-1;-1;-1;-1" Element="0" Type="1" Duration="10080" Description="Contract of Skill (GP)" />
 </CashItemInfo>

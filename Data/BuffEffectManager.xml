@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -21,10 +21,12 @@
 //	NoticeType: 
 //		0: 
 //		1: 
+//
 //	ClearType: Type of buff clearance
 //		1: Upon die and regen
 //		2: Upon logout
 //		4: Upon entering Chaos Castle
+//
 //	BuffOutputValue: used by game client only.
 //	Name: Name of buff
 //	Description: Description of buff
@@ -246,11 +248,11 @@
 		<Buff Index="208" EffectType="117" ItemType="13" ItemIndex="37" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Horn of Fenrir" Description="Summons Fenrir to mount." />
 		<Buff Index="209" EffectType="118" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Paralyze" Description="Reduces your Mvmt SP by 50% by paralyzing your legs." />
 		<Buff Index="210" EffectType="118" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Paralyze" Description="Reduces your Mvmt SP by 50% by paralyzing your legs, and gives continual DMG." />
-		<Buff Index="211" EffectType="119" ItemType="-1" ItemIndex="-1" Type="2" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Internet Cafe" Description="Extra XP/Chaos Castle in PC Cafe/Access to Kalima/Accum. Gob. Pts." />
+		<Buff Index="211" EffectType="119" ItemType="-1" ItemIndex="-1" Type="2" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="PC Cafe" Description="Experience increase/Additional EXP when partying with PC Cafe users/Increased drop rate" />
 		<Buff Index="212" EffectType="116" ItemType="14" ItemIndex="263" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Bless of Light (Low Grade)" Description="Receiving the blessing for a short period of time, you acquire 50% of basic EXP additionally." />
 		<Buff Index="213" EffectType="116" ItemType="14" ItemIndex="264" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Bless of Light (Middle Grade)" Description="Receiving the blessing for a short period of time, you acquire 100% of basic EXP additionally." />
 		<Buff Index="214" EffectType="120" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Evasion" Description="Increases your block chance and makes you immune to immobilizing effect" />
-		<Buff Index="215" EffectType="119" ItemType="-1" ItemIndex="-1" Type="2" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Internet Cafe" Description="Extra XP/Chaos Castle in PC Cafe/Access to Kalima/Accum. Gob. Pts./Stam. Sys. Disabled" />
+		<Buff Index="215" EffectType="119" ItemType="-1" ItemIndex="-1" Type="2" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="PC Cafe" Description="Experience increase/Additional EXP when partying with PC Cafe users/Increased drop rate/Stamina not consumed" />
 		<Buff Index="216" EffectType="121" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Circle Shield" Description="Chance to decrease opponent's AG by 10" />
 		<Buff Index="217" EffectType="122" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="1" Name="Obsidian" Description="Increases skill attack power by %d" />
 		<Buff Index="218" EffectType="123" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Wrath" Description="Decreases Defense by 30%, increases Damage by 50%" />
@@ -468,6 +470,17 @@
 		<Buff Index="445" EffectType="338" ItemType="12" ItemIndex="54" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Taurus (Rare)" Description="Guardian mount item" />
 		<Buff Index="446" EffectType="340" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Special Praise" Description="Defense decreases." />
 		<Buff Index="447" EffectType="341" ItemType="19" ItemIndex="17" Type="2" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Blessing of Eunice" Description="50% additional experience gain for 5th class characters." />
+		<Buff Index="448" EffectType="342" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Luguard's Protection: Punishment" Description="DSkill damage is increased by the effect of Lugard's Punishment Emblem." />
+		<Buff Index="449" EffectType="342" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Luguard's Protection: Punishment Enhancement" Description="Skill damage is increased by the effect of Lugard's Punishment Emblem." />
+		<Buff Index="450" EffectType="343" ItemType="20" ItemIndex="383" Type="2" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Contract of Fury" Description="Damage Increase +5%" />
+		<Buff Index="451" EffectType="344" ItemType="20" ItemIndex="384" Type="2" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Contract of Gale" Description="Attack Speed +20" />
+		<Buff Index="452" EffectType="345" ItemType="20" ItemIndex="385" Type="2" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Contract of Life" Description="Max HP +800" />
+		<Buff Index="453" EffectType="346" ItemType="20" ItemIndex="386" Type="2" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Contract of Mana" Description="Max MP +800" />
+		<Buff Index="454" EffectType="347" ItemType="20" ItemIndex="387" Type="2" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Contract of Skill" Description="Max AG +100" />
+		<Buff Index="455" EffectType="247" ItemType="20" ItemIndex="388" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="[Enhanced] Contract Stone of Fury" Description="Damage Increase +1%" />
+		<Buff Index="456" EffectType="246" ItemType="20" ItemIndex="389" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="[Increased] Contract Stone of Life" Description="Max HP +300" />
+		<Buff Index="457" EffectType="246" ItemType="20" ItemIndex="390" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="[Increased] Contract Stone of Mana" Description="Max MP +300" />
+		<Buff Index="458" EffectType="246" ItemType="20" ItemIndex="391" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="[Increased] Contract Stone of Skill" Description="Max AG +50" />
 	</General>
 	<Period>
 		<Buff Index="179" EffectType1="0" EffectValue1="25" EffectType2="0" EffectValue2="0" Duration="604800" Name="Fire Tower" />

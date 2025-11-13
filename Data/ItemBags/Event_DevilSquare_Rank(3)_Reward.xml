@@ -19,7 +19,7 @@
 
 <DropSection UseMode="-1" DisplayName="Section 1">
 <!-- Devil Square 1 -->
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="50" PlayerMaxLevel="399" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="50" PlayerMaxLevel="399" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
 		<Item Cat="10" Index="35" ItemMinLevel="3" ItemMaxLevel="5" Skill="0" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="11" Index="35" ItemMinLevel="3" ItemMaxLevel="5" Skill="0" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -64,7 +64,7 @@
 		</Drop>
 	</DropAllow>
 <!-- Devil Square 2 -->
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="400" PlayerMaxLevel="599" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="400" PlayerMaxLevel="599" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
 			<Item Cat="0" Index="3" ItemMinLevel="7" ItemMaxLevel="9" Skill="1" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="0" Index="5" ItemMinLevel="7" ItemMaxLevel="9" Skill="1" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -93,7 +93,7 @@
 		</Drop>
 	</DropAllow>
 <!-- Devil Square 3 -->
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="600" PlayerMaxLevel="699" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="600" PlayerMaxLevel="699" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
 			<Item Cat="8" Index="21" ItemMinLevel="0" ItemMaxLevel="3" Skill="0" Luck="0" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="7" Index="22" ItemMinLevel="0" ItemMaxLevel="3" Skill="0" Luck="0" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -112,7 +112,7 @@
 		</Drop>
 	</DropAllow>
 <!-- Devil Square 4 -->
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="700" PlayerMaxLevel="799" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="700" PlayerMaxLevel="799" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
 			<Item Cat="7" Index="21" ItemMinLevel="0" ItemMaxLevel="3" Skill="0" Luck="0" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="9" Index="21" ItemMinLevel="0" ItemMaxLevel="3" Skill="0" Luck="0" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -130,7 +130,7 @@
 		</Drop>
 	</DropAllow>
 <!-- Devil Square 5 -->
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="800" PlayerMaxLevel="899" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="800" PlayerMaxLevel="899" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
 			<Item Cat="0" Index="17" ItemMinLevel="0" ItemMaxLevel="3" Skill="1" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="0" Index="18" ItemMinLevel="0" ItemMaxLevel="3" Skill="1" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -151,7 +151,7 @@
 		</Drop>
 	</DropAllow>
 <!-- Devil Square 6 -->
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="900" PlayerMaxLevel="999" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="900" PlayerMaxLevel="999" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
 			<Item Cat="7" Index="42" ItemMinLevel="0" ItemMaxLevel="3" Skill="0" Luck="0" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="9" Index="42" ItemMinLevel="0" ItemMaxLevel="3" Skill="0" Luck="0" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -178,7 +178,7 @@
 		</Drop>
 	</DropAllow>
 <!-- Devil Square 7 -->
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="1000" PlayerMaxLevel="MAX" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="1000" PlayerMaxLevel="MAX" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
 			<Item Cat="7" Index="29" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="8" Index="29" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />

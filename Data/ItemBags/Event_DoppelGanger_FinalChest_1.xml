@@ -18,7 +18,7 @@
 <Ruud GainRate="0" MinValue="1" MaxValue="10" PlayerMinLevel="1" PlayerMaxLevel="MAX" PlayerMinReset="0" PlayerMaxReset="MAX" />
 
 <DropSection UseMode="-1" DisplayName="Section 1">
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="50" PlayerMaxLevel="399" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="50" PlayerMaxLevel="399" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="9000" Type="0" Count="1">
 			<Item Cat="0" Index="5" ItemMinLevel="0" ItemMaxLevel="7" Skill="-1" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="5" Index="3" ItemMinLevel="0" ItemMaxLevel="7" Skill="0" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -37,7 +37,7 @@
 		</Drop>
 	</DropAllow>
 	
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="400" PlayerMaxLevel="799" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="400" PlayerMaxLevel="799" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="8500" Type="0" Count="1">
 			<Item Cat="0" Index="5" ItemMinLevel="0" ItemMaxLevel="7" Skill="-1" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="5" Index="3" ItemMinLevel="0" ItemMaxLevel="7" Skill="0" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -56,7 +56,7 @@
 		</Drop>
 	</DropAllow>
 	
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="800" PlayerMaxLevel="899" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="800" PlayerMaxLevel="899" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="8000" Type="0" Count="1">
 			<Item Cat="0" Index="5" ItemMinLevel="0" ItemMaxLevel="7" Skill="-1" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="5" Index="3" ItemMinLevel="0" ItemMaxLevel="7" Skill="0" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -75,7 +75,7 @@
 		</Drop>
 	</DropAllow>
 	
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="900" PlayerMaxLevel="1099" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="900" PlayerMaxLevel="1099" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="7500" Type="0" Count="1">
 			<Item Cat="0" Index="5" ItemMinLevel="0" ItemMaxLevel="7" Skill="-1" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="5" Index="3" ItemMinLevel="0" ItemMaxLevel="7" Skill="0" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -94,7 +94,7 @@
 		</Drop>
 	</DropAllow>
 	
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="1100" PlayerMaxLevel="1299" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="1100" PlayerMaxLevel="1299" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="7000" Type="0" Count="1">
 			<Item Cat="0" Index="5" ItemMinLevel="0" ItemMaxLevel="7" Skill="-1" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="5" Index="3" ItemMinLevel="0" ItemMaxLevel="7" Skill="0" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -113,7 +113,7 @@
 		</Drop>
 	</DropAllow>
 	
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="1300" PlayerMaxLevel="1499" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="1300" PlayerMaxLevel="1499" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="6500" Type="0" Count="1">
 			<Item Cat="0" Index="5" ItemMinLevel="0" ItemMaxLevel="7" Skill="-1" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="5" Index="3" ItemMinLevel="0" ItemMaxLevel="7" Skill="0" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
@@ -132,7 +132,7 @@
 		</Drop>
 	</DropAllow>
 	
-	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" PlayerMinLevel="1500" PlayerMaxLevel="MAX" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
+	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1" PlayerMinLevel="1500" PlayerMaxLevel="MAX" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="6000" Type="0" Count="1">
 			<Item Cat="0" Index="5" ItemMinLevel="0" ItemMaxLevel="7" Skill="-1" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 			<Item Cat="5" Index="3" ItemMinLevel="0" ItemMaxLevel="7" Skill="0" Luck="-1" Option="0" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />

@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == Modify if you know what you do only!
 // == File is a part of IGCN Group MuOnline Server files.
@@ -59,6 +59,7 @@
 //		~ 4: Wind
 //		~ 5: Darkness
 //		~ -1: Use PentagramItemDropRate.xml
+//		~ -2: Random (1-5)
 //
 //	SocketCount: Minimum and maximum socket count of item to drop, 1-5, usage: min;max, 0 to use SocketSystem.xml rates, for pentagram a rate of sockets from PentagramItemDropRate.xml are used
 //

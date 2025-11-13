@@ -107,6 +107,8 @@
 //	LW: 0 or specific class evolution: 1/2/3/4/5
 //	LM: 0 or specific class evolution: 1/2/3/4/5
 //	IK: 0 or specific class evolution: 1/2/3/4/5
+//	AC: 0 or specific class evolution: 1/2/3/4/5
+//	CR: 0 or specific class evolution: 1/2/3/4/5
 //	PlayerMinLevel: Minimum level of player to apply drop of items from the section (must be lower or equal to PlayerMaxLevel)
 //	PlayerMaxLevel: Maximum level of player to apply drop of items from the section (must be greater or equal to PlayerMinLevel)
 //	PlayerMinReset: Minimum reset of player to apply drop of items from the section (must be lower or equal to PlayerMaxReset)

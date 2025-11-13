@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -38,6 +38,8 @@
 //		~ 11: Light Wizard
 //		~ 12: Lemuria Mage
 //		~ 13: Illusion Knight
+//		~ 14: Alchemist
+//		~ 15: Crusader
 //
 //	Evo: Character class Evo (job quest)
 //		~ 1: First Evo (base)
@@ -360,6 +362,16 @@
 				<MuunInventory List="" />
 				<Buffs List="0;7" />
 			</Character>
+			
+			<Character Class="15" Evo="1" Level="0" MasterLevel="0" Resets="0" MarlonFirstQuest="0" MarlonSecondQuest="0" GiantQuest="0" GiantMountType="0" Zen="1000" Ruud="100" InventoryExpansion="0"> <!-- Crusader -->
+				<Stats Strength="0" Dexterity="0" Vitality="0" Energy="0" Command="0" FreeStatPts="400" FreeMasterPts3rd="0" FreeMasterPts4th="0" />
+				<Equipment WeaponRight="183" WeaponLeft="-1" Helm="178" Armor="179" Pants="180" Gloves="181" Boots="181" Wings="184" Helper="182" Pendant="110" RingRight="126" RingLeft="127" Pentagram="-1" EarringRight="-1" EarringLeft="-1" />
+				<Skills List="" />
+				<Inventory List="" />
+				<EventInventory List="" />
+				<MuunInventory List="" />
+				<Buffs List="0;7" />
+			</Character>
 		</Server>
 	</ServerList>
 	
@@ -534,6 +546,14 @@
 		<Item ID="175" Cat="10" Index="352" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Alchemist Holy Spirit Gloves" />
 		<Item ID="176" Cat="11" Index="352" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Alchemist Holy Spirit Boots" />
 		<Item ID="177" Cat="5" Index="112" Durability="0" Level="9" Skill="1" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Amber Wand" />
+		<!-- Crusader Equipment -->
+		<Item ID="178" Cat="7" Index="408" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Crusader Brass Helmet" />
+		<Item ID="179" Cat="8" Index="408" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Crusader Brass Armor" />
+		<Item ID="180" Cat="9" Index="408" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Crusader Brass Pants" />
+		<Item ID="181" Cat="10" Index="408" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Crusader Brass Gloves" />
+		<Item ID="182" Cat="11" Index="408" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Crusader Brass Boots" />
+		<Item ID="183" Cat="2" Index="54" Durability="0" Level="9" Skill="1" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="0" Name="Floor Hammer" />
+		<Item ID="184" Cat="21" Index="0" Durability="0" Level="9" Skill="0" Luck="1" Option="3" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" Duration="604800" Name="Cloak of Protection" />
 	</ItemList>
 	
 	<BuffList>

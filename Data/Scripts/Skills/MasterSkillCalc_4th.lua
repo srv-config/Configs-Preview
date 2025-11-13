@@ -12,33 +12,34 @@
 -- SkillID refers to Index of skill in \Data\Skills\SkillList.txt
 
 -- Character Classes
-CLASS_WIZARD                                          = 0	-- Fairy Elf, Muse Elf, High Elf
-CLASS_KNIGHT                                          = 1	-- Dark Wizard, Soul Master, Grand Master
-CLASS_ELF                                             = 2	-- Dark Knight, Blade Knight, Blade Master
-CLASS_GLADIATOR                                       = 3	-- Magic Gladiator, Duel Master
-CLASS_DARKLORD                                        = 4	-- Dark Lord, Lord Emperor
-CLASS_SUMMONER                                        = 5	-- Summoner, Bloody Summoner, Dimension Master
-CLASS_RAGEFIGHTER                                     = 6	-- Rage Fighter, Fist Master
-CLASS_GROWLANCER									  = 7	-- Grow Lancer, Mirage Lancer
-CLASS_RUNEWIZARD									  = 8	-- Rune Wizard, Rune Spell Master, Grand Rune Master
-CLASS_SLAYER									  	  = 9	-- Slayer, Royal Slayer, Master Slayer, Slaughterer
-CLASS_GUNCRUSHER									  = 10	-- Gun Crusher, Gun Breaker, Master Gun Breaker, Heist Gun Crusher
-CLASS_LIGHTWIZARD									  = 11	-- Light Wizard, Shining Wizard, Luminous Wizard
-CLASS_LEMURIAMAGE									  = 12	-- Lemuria Mage, Warmage, Archmage, Mystic Mage
-CLASS_ILLUSIONKNIGHT								  = 13	-- Illusion Knight, Mirage Knight, Illusion Master, Mystic Knight
-CLASS_ALCHEMIST										  = 14
+CLASS_WIZARD = 0
+CLASS_KNIGHT = 1
+CLASS_ELF = 2
+CLASS_GLADIATOR = 3
+CLASS_DARKLORD = 4
+CLASS_SUMMONER = 5
+CLASS_RAGEFIGHTER = 6
+CLASS_GROWLANCER = 7
+CLASS_RUNEWIZARD = 8
+CLASS_SLAYER = 9
+CLASS_GUNCRUSHER = 10
+CLASS_LIGHTWIZARD = 11
+CLASS_LEMURIAMAGE = 12
+CLASS_ILLUSIONKNIGHT = 13
+CLASS_ALCHEMIST = 14
+CLASS_CRUSADER = 15
 
 -- SkillID: 1078, 1088, Evil Spirit Enhancement Skill
 function EvilSpiritCalc_4thEnchant(Class, InDamage, Strength, Dexterity, Vitality, Energy)
- local OutDamage = 0
- 
- 	if (Class == CLASS_WIZARD) then
+	local OutDamage = 0
+
+	if (Class == CLASS_WIZARD) then
 		OutDamage = InDamage
 	elseif (Class == CLASS_GLADIATOR) then
 		OutDamage = InDamage
 	end
- 
- return OutDamage
+
+	return OutDamage
 end
 
 function DeathStab_4thEnchant_Knight(InDamage, Energy)
@@ -54,9 +55,9 @@ function AngerBlow_4thEnchant(Class, InDamage, Strength, Dexterity, Vitality, En
 end
 
 function FireBlow_4thEnchant_Knight(InDamage, Strength, Dexterity, Vitality, Energy)
-    local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100;
+	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100;
 
-    return OutDamage
+	return OutDamage
 end
 
 function FireBlood_4thEnchant_Gladiator(InDamage, Strength, Energy)
@@ -77,21 +78,21 @@ function IceBlood_4thEnchant_Gladiator(InDamage, Strength, Energy)
 end
 
 function FireSlash_4thEnchant_Gladiator(InDamage, Strength, Energy, BarrageCount)
-    local OutDamage = InDamage * 2
-    
-    if (BarrageCount == 1) then
-        OutDamage = OutDamage * 0.15
-    elseif (BarrageCount == 2) then
-        OutDamage = OutDamage * 0.18
-    elseif (BarrageCount == 3) then
-        OutDamage = OutDamage * 0.22
-    elseif (BarrageCount == 4) then
-        OutDamage = OutDamage * 0.25
+	local OutDamage = InDamage * 2
+	
+	if (BarrageCount == 1) then
+		OutDamage = OutDamage * 0.15
+	elseif (BarrageCount == 2) then
+		OutDamage = OutDamage * 0.18
+	elseif (BarrageCount == 3) then
+		OutDamage = OutDamage * 0.22
+	elseif (BarrageCount == 4) then
+		OutDamage = OutDamage * 0.25
 	elseif (BarrageCount == 5) then
-        OutDamage = OutDamage * 0.27
+		OutDamage = OutDamage * 0.27
 	elseif (BarrageCount == 6) then
-        OutDamage = OutDamage * 0.29
-    end
+		OutDamage = OutDamage * 0.29
+	end
 	
 	return OutDamage
 end
@@ -100,14 +101,14 @@ function WindSoul_4thEnchant_Lord(InDamage, Strength, Dexterity, Vitality, Energ
 	local OutDamage = 0
 	
 	if (BarrageCount == 1) then
-        OutDamage = InDamage
-    elseif (BarrageCount == 2) then
-        OutDamage = InDamage
-    elseif (BarrageCount == 3) then
-        OutDamage = InDamage
-    elseif (BarrageCount == 4) then
-        OutDamage = InDamage
-    end
+		OutDamage = InDamage
+	elseif (BarrageCount == 2) then
+		OutDamage = InDamage
+	elseif (BarrageCount == 3) then
+		OutDamage = InDamage
+	elseif (BarrageCount == 4) then
+		OutDamage = InDamage
+	end
 	
 	return OutDamage
 end
@@ -141,13 +142,13 @@ end
 
 function DarkSide_4thEnchant_Fighter(InDamage, Dexterity, Energy)
 	local OutDamage = (Dexterity / 8 + InDamage + Energy / 10) * (Dexterity / 8 + Energy / 10 + 100) / 100.0
- 
+
 	return OutDamage
 end
 
 function DragonRoar_4thEnchant_Fighter(InDamage, Energy)
 	local OutDamage = (InDamage + Energy / 10) * (Energy / 10 + 50) / 100.0
- 
+
 	return OutDamage
 end
 
@@ -207,15 +208,15 @@ function MultiShot_4thEnchant_Elf(InDamage, Dexterity, Energy)
 end
 
 function GiganticStorm_4thEnchant_Gladiator(InDamage, Strength, Dexterity, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = InDamage
+
+	return OutDamage
 end
 
 function TripleShot_4thEnchant_Elf(InDamage, Strength, Dexterity, Energy)
- local OutDamage = InDamage
- 
- return OutDamage
+	local OutDamage = InDamage
+
+	return OutDamage
 end
 
 function FocusShot_4thEnchant_Elf(InDamage, Strength, Dexterity, Energy)
@@ -262,38 +263,38 @@ end
 
 -- SkillID: 1214, Chaos Blade Enhancement
 function ChaosBlade_4thEnchant_Gladiator(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
-    local OutDamage = 0
-    
-    if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
-    elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
-    elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
-    elseif (BarrageCount == 4) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;		
+	local OutDamage = 0
+
+	if (BarrageCount == 1) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+	elseif (BarrageCount == 2) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+	elseif (BarrageCount == 3) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+	elseif (BarrageCount == 4) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;		
 	elseif(BarrageCount == 5) then -- Explosion
 		OutDamage = 10000
-    end
-    return OutDamage
+	end
+	return OutDamage
 end
 
 -- SkillID: 2015, Havok Spear Enhancement
 function HavokSpear_4thEnchant_Gladiator(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
-    local OutDamage = 0
-    
-    if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
-    elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
-    elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
-    elseif (BarrageCount == 4) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;		
+	local OutDamage = 0
+
+	if (BarrageCount == 1) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+	elseif (BarrageCount == 2) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+	elseif (BarrageCount == 3) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+	elseif (BarrageCount == 4) then
+		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;		
 	elseif(BarrageCount == 5) then -- Explosion
 		OutDamage = 10000
-    end
-    return OutDamage
+	end
+	return OutDamage
 end
 
 function MagicArrow_4thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy)
@@ -422,10 +423,10 @@ end
 function BurstingFlare_4thEnchant_GunCrusher(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, IsShockwave)
 	local OutDamage = 0
 
-    if (IsShockwave == 1) then
-        OutDamage = (InDamage * 1.5) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
-        return OutDamage
-    end
+	if (IsShockwave == 1) then
+		OutDamage = (InDamage * 1.5) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		return OutDamage
+	end
 
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
@@ -519,16 +520,16 @@ function ElfRainingArrow_4thEnchant_Calc(InDamage, Strength, Dexterity, Vitality
 	local OutDamage = InDamage
 	
 	if (BarrageCount == 1) then
-        OutDamage = InDamage
-    elseif (BarrageCount == 2) then
-        OutDamage = InDamage
-    elseif (BarrageCount == 3) then
-        OutDamage = InDamage
+		OutDamage = InDamage
+	elseif (BarrageCount == 2) then
+		OutDamage = InDamage
+	elseif (BarrageCount == 3) then
+		OutDamage = InDamage
 	elseif (BarrageCount == 4) then
-        OutDamage = InDamage
+		OutDamage = InDamage
 	elseif (BarrageCount == 5) then
-        OutDamage = InDamage
-    end
+		OutDamage = InDamage
+	end
 	
 	return OutDamage
 end
@@ -538,14 +539,14 @@ function ElfHolyBolt_4thEnchant_Calc(InDamage, Strength, Dexterity, Vitality, En
 	local OutDamage = InDamage
 	
 	if (BarrageCount == 1) then
-        OutDamage = InDamage
-    elseif (BarrageCount == 2) then
-        OutDamage = InDamage
-    elseif (BarrageCount == 3) then
-        OutDamage = InDamage
+		OutDamage = InDamage
+	elseif (BarrageCount == 2) then
+		OutDamage = InDamage
+	elseif (BarrageCount == 3) then
+		OutDamage = InDamage
 	elseif (BarrageCount == 4) then
-        OutDamage = InDamage
-    end
+		OutDamage = InDamage
+	end
 	
 	return OutDamage
 end
@@ -584,6 +585,8 @@ function Heal_4thEnchant_Elf(Class, Index, TargetIndex, Strength, Dexterity, Vit
 		elseif (Class == CLASS_ILLUSIONKNIGHT) then
 			SkillEffect = Energy / 5 + 5
 		elseif (Class == CLASS_ALCHEMIST) then
+			SkillEffect = Energy / 5 + 5
+		elseif (Class == CLASS_CRUSADER) then
 			SkillEffect = Energy / 5 + 5
 		end
 	elseif (Index == TargetIndex) then
@@ -636,6 +639,8 @@ function Attack_4thEnchant_Elf(Class, Index, TargetIndex, Strength, Dexterity, V
 			SkillEffect = 3 + Energy / 7
 		elseif (Class == CLASS_ALCHEMIST) then
 			SkillEffect = 3 + Energy / 7
+		elseif (Class == CLASS_CRUSADER) then
+			SkillEffect = 3 + Energy / 7
 		end
 	elseif (Index == TargetIndex) then
 		SkillEffect = 3 + Energy / 7
@@ -679,6 +684,8 @@ function Defense_4thEnchant_Elf(Class, Index, TargetIndex, Strength, Dexterity, 
 		elseif (Class == CLASS_ILLUSIONKNIGHT) then
 			SkillEffect = 2 + Energy / 8
 		elseif (Class == CLASS_ALCHEMIST) then
+			SkillEffect = 2 + Energy / 8
+		elseif (Class == CLASS_CRUSADER) then
 			SkillEffect = 2 + Energy / 8
 		end
 	elseif (Index == TargetIndex) then
@@ -724,6 +731,8 @@ function ElementalAttack_4thEnchant_Elf(Class, Index, TargetIndex, Strength, Dex
 			SkillEffect = InEffect
 		elseif (Class == CLASS_ALCHEMIST) then
 			SkillEffect = InEffect
+		elseif (Class == CLASS_CRUSADER) then
+			SkillEffect = InEffect
 		end
 	elseif (Index == TargetIndex) then
 		SkillEffect = InEffect
@@ -767,6 +776,8 @@ function ElementalDefense_4thEnchant_Elf(Class, Index, TargetIndex, Strength, De
 		elseif (Class == CLASS_ILLUSIONKNIGHT) then
 			SkillEffect = InEffect
 		elseif (Class == CLASS_ALCHEMIST) then
+			SkillEffect = InEffect
+		elseif (Class == CLASS_CRUSADER) then
 			SkillEffect = InEffect
 		end
 	elseif (Index == TargetIndex) then
@@ -859,5 +870,26 @@ function AlchemistCountlessWeapon_4thEnchant_Calc(InDamage, Strength, Dexterity,
 
 	OutDamage = InDamage * (165 + (Energy / 65)) / 100
 
+	return OutDamage
+end
+
+-- SkillID: 1506, Divine Fall Enhancement Skill
+function CrusaderDivineFall_4thEnchant_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage
+	
+	return OutDamage
+end
+
+-- SkillID: 1507, Holly Sweep Enhancement Skill
+function CrusaderHollySweep_4thEnchant_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage
+	
+	return OutDamage
+end
+
+-- SkillID: 1508, Secred Impact Enhancement Skill
+function CrusaderSacredImpact_4thEnchant_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage
+	
 	return OutDamage
 end

@@ -55,7 +55,7 @@
 //	RewardCat: Category of upgrade result item, if set to -1 then rewarded item is automatically set to cat/index of source item
 //	RewardIndex: Index of upgrade result item
 //	RewardLevel: Level of upgrade result item, 0-15
-//	RewardItemDurability: Durability of reward item, -1 to set automatically
+//	RewardItemDurability: Durability of reward item, 0 to set automatically
 //	FailPenalty: In case of failure, different kind of penalties may be applied:
 //		~ -1: No penalty
 //		~ 0: Destroy item

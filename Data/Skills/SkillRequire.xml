@@ -54,4 +54,5 @@
 	<Skill Index="2095" ItemGroup="15" ItemIndex="67" ReqIndex="61" ReqMasterSkillIndex="508" ReqMasterPoint="10" />
 	<Skill Index="2093" ItemGroup="15" ItemIndex="66" ReqIndex="2092" ReqMasterSkillIndex="903" ReqMasterPoint="10" />
 	<Skill Index="2102" ItemGroup="15" ItemIndex="71" ReqIndex="284" ReqMasterSkillIndex="751" ReqMasterPoint="10" />
+	<Skill Index="2107" ItemGroup="15" ItemIndex="74" ReqIndex="2106" ReqMasterSkillIndex="921" ReqMasterPoint="10" />
 </SkillRequire>

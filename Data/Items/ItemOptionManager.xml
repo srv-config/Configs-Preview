@@ -40,11 +40,6 @@
 // 5: Increases Maximum Mana +%d
 -->
 	<Section ID="1">
-		<Item Cat="14" Index="46" Option1="1" Value1="10" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Blessings -->
-		<Item Cat="14" Index="47" Option1="2" Value1="25" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Wrath -->
-		<Item Cat="14" Index="48" Option1="3" Value1="100" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Cry -->
-		<Item Cat="14" Index="49" Option1="4" Value1="500" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Food -->
-		<Item Cat="14" Index="50" Option1="5" Value1="500" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Drink -->
 	</Section>
 	
 <!-- Cash Item option value:
@@ -130,9 +125,6 @@
 	</Section>
 
 	<Section ID="6">
-		<Item Cat="14" Index="85" Option1="5" Value1="700" Option2="0" Value2="10" Time="1800" /> <!-- Cherry Blossom Wine -->
-		<Item Cat="14" Index="86" Option1="4" Value1="700" Option2="0" Value2="10" Time="1800" /> <!-- Cherry Blossom Rice Cake -->
-		<Item Cat="14" Index="87" Option1="2" Value1="40" Option2="0" Value2="10" Time="1800" /> <!-- Cherry Blossom Flower Petal -->
 	</Section>
 
 	<Section ID="9">
@@ -387,21 +379,36 @@
 	</Section>
 	
 	<Section ID="84">
+		<Item Cat="14" Index="46" Option1="1" Value1="10" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Blessings -->
+		<Item Cat="14" Index="49" Option1="4" Value1="500" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Food -->
+		<Item Cat="14" Index="50" Option1="5" Value1="500" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Drink -->
+		<Item Cat="14" Index="85" Option1="5" Value1="700" Option2="0" Value2="10" Time="1800" /> <!-- Cherry Blossom Wine -->
+		<Item Cat="14" Index="86" Option1="4" Value1="700" Option2="0" Value2="10" Time="1800" /> <!-- Cherry Blossom Rice Cake -->
 		<Item Cat="14" Index="432" Option1="4" Value1="700" Option2="0" Value2="0" Time="1800" /> <!-- Life Medicine -->
 		<Item Cat="14" Index="433" Option1="5" Value1="700" Option2="0" Value2="0" Time="1800" /> <!-- Mana Medicine -->
 		<Item Cat="14" Index="434" Option1="1" Value1="10" Option2="0" Value2="0" Time="1800" /> <!-- Speed medicine -->
+		<Item Cat="20" Index="389" Option1="164" Value1="300" Option2="0" Value2="0" Time="1800" />
+		<Item Cat="20" Index="390" Option1="165" Value1="300" Option2="0" Value2="0" Time="1800" />
+		<Item Cat="20" Index="391" Option1="166" Value1="50" Option2="0" Value2="0" Time="1800" />
+	</Section>
+	
+	<Section ID="85">
+		<Item Cat="14" Index="47" Option1="2" Value1="25" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Wrath -->
+		<Item Cat="14" Index="48" Option1="3" Value1="100" Option2="0" Value2="10" Time="1800" /> <!-- Jack O'Lantern Cry -->
+		<Item Cat="14" Index="87" Option1="2" Value1="40" Option2="0" Value2="10" Time="1800" /> <!-- Cherry Blossom Flower Petal -->
 		<Item Cat="14" Index="435" Option1="14" Value1="40" Option2="0" Value2="0" Time="1800" /> <!-- Power Medicine -->
 		<Item Cat="14" Index="436" Option1="15" Value1="40" Option2="27" Value2="40" Time="1800" /> <!-- Spell Medicine -->
 		<Item Cat="14" Index="437" Option1="3" Value1="100" Option2="0" Value2="0" Time="1800" /> <!-- Defense Medicine -->
 		<Item Cat="14" Index="438" Option1="0" Value1="85" Option2="0" Value2="0" Time="1800" /> <!-- Fungus of Death -->
 		<Item Cat="14" Index="439" Option1="0" Value1="85" Option2="0" Value2="0" Time="1800" /> <!-- Dragee of Strength -->
+		<Item Cat="20" Index="388" Option1="162" Value1="1" Option2="0" Value2="0" Time="1800" />
 	</Section>
 
-	<Section ID="85">
+	<Section ID="86">
 		<Item Cat="14" Index="453" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Switch Scroll -->
 	</Section>
 	
-	<Section ID="86">
+	<Section ID="87">
 		<Item Cat="12" Index="75" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Pierce Lion -->
 		<Item Cat="12" Index="76" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Pierce Lion (Rare) -->
 		<Item Cat="12" Index="83" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Shining Tail -->
@@ -417,15 +424,15 @@
 		<Item Cat="12" Index="484" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Ice Dragon (Rare) -->
 	</Section>
 	
-	<Section ID="87">
+	<Section ID="88">
 		<Item Cat="14" Index="366" Option1="128" Value1="50" Option2="1" Value2="10" Time="1800" /> <!-- Piece of Pizza -->
 	</Section>
 	
-	<Section ID="88">
+	<Section ID="89">
 		<Item Cat="14" Index="69" Option1="88" Value1="200" Option2="0" Value2="0" Time="1800" /> <!-- [PC Room][Bound] Blessing of Light (Advanced) -->
 	</Section>
 	
-	<Section ID="89">
+	<Section ID="90">
 		<Item Cat="20" Index="247" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Divine Horse -->
 		<Item Cat="20" Index="248" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Fire Divine Spirit -->
 		<Item Cat="20" Index="249" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- Ice Divine Spirit -->
@@ -433,7 +440,27 @@
 		<Item Cat="20" Index="256" Option1="0" Value1="0" Option2="0" Value2="0" Time="-10" /> <!-- [Bound] Fire Divine Spirit -->
 	</Section>
 	
-	<Section ID="90">
+	<Section ID="91">
 		<Item Cat="19" Index="17" Option1="155" Value1="50" Option2="0" Value2="0" Time="-10" /> <!-- Eunice's Blessing -->
+	</Section>
+	
+	<Section ID="92">
+		<Item Cat="20" Index="383" Option1="162" Value1="5" Option2="0" Value2="0" Time="0" /> <!-- Contract of Fury -->
+	</Section>
+	
+	<Section ID="93">
+		<Item Cat="20" Index="384" Option1="163" Value1="20" Option2="0" Value2="0" Time="0" /> <!-- Contract of Gale -->
+	</Section>
+	
+	<Section ID="94">
+		<Item Cat="20" Index="385" Option1="164" Value1="800" Option2="0" Value2="0" Time="0" /> <!-- Contract of Life -->
+	</Section>
+	
+	<Section ID="95">
+		<Item Cat="20" Index="386" Option1="165" Value1="800" Option2="0" Value2="0" Time="0" /> <!-- Contract of Mana -->
+	</Section>
+	
+	<Section ID="96">
+		<Item Cat="20" Index="387" Option1="166" Value1="100" Option2="0" Value2="0" Time="0" /> <!-- Contract of Skill -->
 	</Section>
 </ItemOptionManager>

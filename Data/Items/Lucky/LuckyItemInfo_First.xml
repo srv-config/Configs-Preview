@@ -60,6 +60,7 @@
 //		~ 12: Lemuria Mage
 //		~ 13: Illusion Knight
 //		~ 14: Alchemist
+//		~ 15: Crusader
 //
 // ### LuckyItem::ItemLevelDrawSettings::List ###
 //	ID: ID of the section, links to ID from TicketSettings section
@@ -140,6 +141,7 @@
 			<Item Cat="7" Index="267" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="12" /> <!-- Mage Sphinx Mask -->
 			<Item Cat="7" Index="315" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="13" /> <!-- Illusion Knight Iron Plate Helmet -->
 			<Item Cat="7" Index="352" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="14" /> <!-- Alchemist Holy Spirit Helm -->
+			<Item Cat="7" Index="408" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="15" /> <!-- Crusader Brass Helm -->
 		</List>
 		<List ID="2" Name="1st Lucky Armor Ticket">
 			<Item Cat="8" Index="62" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="1" /> <!-- Scale Armor -->
@@ -157,6 +159,7 @@
 			<Item Cat="8" Index="267" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="12" /> <!-- Mage Sphinx Armor -->
 			<Item Cat="8" Index="315" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="13" /> <!-- Illusion Knight Iron Plate Armor -->
 			<Item Cat="8" Index="352" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="14" /> <!-- Alchemist Holy Spirit Armor -->
+			<Item Cat="8" Index="408" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="15" /> <!-- Crusader Brass Armor -->
 		</List>
 		<List ID="3" Name="1st Lucky Pants Ticket">
 			<Item Cat="9" Index="62" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="1" /> <!-- Scale Pants -->
@@ -174,6 +177,7 @@
 			<Item Cat="9" Index="267" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="12" /> <!-- Mage Sphinx Pants -->
 			<Item Cat="9" Index="315" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="13" /> <!-- Illusion Knight Iron Plate Pants -->
 			<Item Cat="9" Index="352" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="14" /> <!-- Alchemist Holy Spirit Pants -->
+			<Item Cat="9" Index="408" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="15" /> <!-- Crusader Brass Pants -->
 		</List>
 		<List ID="4" Name="1st Lucky Gloves Ticket">
 			<Item Cat="10" Index="62" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="1" /> <!-- Scale Gloves -->
@@ -190,6 +194,7 @@
 			<Item Cat="10" Index="267" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="12" /> <!-- Mage Sphinx Gloves -->
 			<Item Cat="10" Index="315" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="13" /> <!-- Illusion Knight Iron Plate Gloves -->
 			<Item Cat="10" Index="352" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="14" /> <!-- Alchemist Holy Spirit Gloves -->
+			<Item Cat="10" Index="408" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="15" /> <!-- Crusader Brass Gloves -->
 		</List>
 		<List ID="5" Name="1st Lucky Boots Ticket">
 			<Item Cat="11" Index="62" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="1" /> <!-- Scale Boots -->
@@ -207,6 +212,7 @@
 			<Item Cat="11" Index="267" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="12" /> <!-- Mage Sphinx Boots -->
 			<Item Cat="11" Index="315" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="13" /> <!-- Illusion Knight Iron Plate Boots -->
 			<Item Cat="11" Index="352" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="14" /> <!-- Alchemist Holy Spirit Boots -->
+			<Item Cat="11" Index="408" Skill="0" Luck="-1" Option="-2" Exc="-1" CharClass="15" /> <!-- Crusader Brass Boots -->
 		</List>
 	</TicketItemList>
 

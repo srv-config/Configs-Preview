@@ -74,11 +74,11 @@
 	<Move Level="400" MapNumber="112" StartX="112" StartY="236" EndX="152" EndY="237" Name="Ferea" />
 	<Move Level="630" MapNumber="113" StartX="1" StartY="1" EndX="255" EndY="255" Name="Nixie Lake" />
 	<Move Level="700" MapNumber="135" StartX="1" StartY="1" EndX="255" EndY="255" Name="Old Kethotum" />
-	<Move Level="770" MapNumber="116" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 1" />
-	<Move Level="770" MapNumber="117" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 2" />
+	<Move Level="730" MapNumber="116" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 1" />
+	<Move Level="750" MapNumber="117" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 2" />
 	<Move Level="770" MapNumber="118" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 3" />
-	<Move Level="770" MapNumber="119" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 4" />
-	<Move Level="770" MapNumber="120" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 5" />
+	<Move Level="780" MapNumber="119" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 4" />
+	<Move Level="780" MapNumber="120" StartX="1" StartY="1" EndX="255" EndY="255" Name="Deep Dungeon 5" />
 	<Move Level="900" MapNumber="128" StartX="1" StartY="1" EndX="255" EndY="255" Name="Abyss of Atlas 1" />
 	<Move Level="925" MapNumber="129" StartX="1" StartY="1" EndX="255" EndY="255" Name="Abyss of Atlas 2" />
 	<Move Level="950" MapNumber="130" StartX="1" StartY="1" EndX="255" EndY="255" Name="Abyss of Atlas 3" />

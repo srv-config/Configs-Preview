@@ -176,7 +176,7 @@
 		<Reward ID="7" Type="1"	BuffNumber="-1"	ItemCat="14" ItemIndex="42"	ItemDurability="5" PassType="-1" />
 		<Reward ID="8" Type="1"	BuffNumber="-1"	ItemCat="20" ItemIndex="125" ItemDurability="0" PassType="-1" />
 		<Reward ID="9" Type="1"	BuffNumber="-1"	ItemCat="16" ItemIndex="510" ItemDurability="0" PassType="-1" />
-		<Reward ID="10" Type="1" BuffNumber="-1" ItemCat="20" ItemIndex="120" ItemDurability="5" PassType="-1" />
+		<Reward ID="10" Type="1" BuffNumber="-1" ItemCat="20" ItemIndex="392" ItemDurability="5" PassType="-1" />
 		<Reward ID="11" Type="1" BuffNumber="-1" ItemCat="20" ItemIndex="121" ItemDurability="0" PassType="-1" />
 		<Reward ID="12" Type="1" BuffNumber="-1" ItemCat="20" ItemIndex="144" ItemDurability="0" PassType="-1" />
 		<Reward ID="13" Type="1" BuffNumber="-1" ItemCat="20" ItemIndex="147" ItemDurability="0" PassType="-1" />

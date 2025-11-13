@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -136,5 +136,10 @@
 		<Option StatType="2" Index="2" StatLimit_1="1500" StatVal_1="10" StatLimit_2="2000" StatVal_2="30" StatLimit_3="3000" StatVal_3="45" StatLimit_4="-1" StatVal_4="-1" StatLimit_5="-1" StatVal_5="-1" />
 		<Option StatType="2" Index="3" StatLimit_1="1500" StatVal_1="10" StatLimit_2="2000" StatVal_2="30" StatLimit_3="3000" StatVal_3="45" StatLimit_4="-1" StatVal_4="-1" StatLimit_5="-1" StatVal_5="-1" />
 		<Option StatType="4" Index="9" StatLimit_1="1500" StatVal_1="10" StatLimit_2="2000" StatVal_2="30" StatLimit_3="3000" StatVal_3="45" StatLimit_4="-1" StatVal_4="-1" StatLimit_5="-1" StatVal_5="-1" />
+	</Class>
+	<Class ID="16"> <!-- Crusader -->
+		<Option StatType="1" Index="1" StatLimit_1="1500" StatVal_1="10" StatLimit_2="2000" StatVal_2="30" StatLimit_3="3000" StatVal_3="45" StatLimit_4="-1" StatVal_4="-1" StatLimit_5="-1" StatVal_5="-1" />
+		<Option StatType="2" Index="2" StatLimit_1="1500" StatVal_1="10" StatLimit_2="2000" StatVal_2="30" StatLimit_3="3000" StatVal_3="45" StatLimit_4="-1" StatVal_4="-1" StatLimit_5="-1" StatVal_5="-1" />
+		<Option StatType="2" Index="4" StatLimit_1="1500" StatVal_1="10" StatLimit_2="2000" StatVal_2="30" StatLimit_3="3000" StatVal_3="45" StatLimit_4="-1" StatVal_4="-1" StatLimit_5="-1" StatVal_5="-1" />
 	</Class>
 </StatSpecialize>

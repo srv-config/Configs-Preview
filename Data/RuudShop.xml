@@ -33,6 +33,7 @@
 //		12: Mage Lemuria
 //		13: Illusion Knight
 //		14: Alchemist
+//		15: Crusader
 //
 //	Name: Name of the character class, used for in-file description and logging purpose only
 //
@@ -122,15 +123,15 @@
 		<Item Cat="6" Index="44" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Shield -->
 	</Character>
 	<Character Class="2" Name="Fairy Elf">
-		<Item Cat="6" Index="34" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Fairy Shield -->
-		<Item Cat="13" Index="363" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Flurry -->
-		<Item Cat="13" Index="364" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Flurry -->
-		<Item Cat="13" Index="365" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Flurry -->
-		<Item Cat="13" Index="366" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Gloves of Sealed Flurry -->
-		<Item Cat="13" Index="367" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Armor of Sealed Redemption -->
-		<Item Cat="13" Index="368" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Helm of Sealed Redemption -->
-		<Item Cat="13" Index="369" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Pants of Sealed Redemption -->
-		<Item Cat="13" Index="370" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Gloves of Sealed Redemption -->
+		<Item Cat="6" Index="34" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Sealed Blood Angel Fairy Shield -->
+		<Item Cat="13" Index="363" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Flurry -->
+		<Item Cat="13" Index="364" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Flurry -->
+		<Item Cat="13" Index="365" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Flurry -->
+		<Item Cat="13" Index="366" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Gloves of Flurry -->
+		<Item Cat="13" Index="367" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Armor of Redemption -->
+		<Item Cat="13" Index="368" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Helm of Redemption -->
+		<Item Cat="13" Index="369" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Pants of Redemption -->
+		<Item Cat="13" Index="370" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Gloves of Redemption -->
 		<Item Cat="14" Index="394" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Attack Elf Conversion Order -->
 		<Item Cat="14" Index="395" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="10000" /> <!-- Support Elf Conversion Order -->
 		<Item Cat="4" Index="28" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Bow -->
@@ -143,14 +144,14 @@
 		<Item Cat="12" Index="171" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Elemental Defense Enhancement Orb -->
 	</Character>
 	<Character Class="3" Name="Magic Gladiator">
-		<Item Cat="13" Index="371" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Extremity -->
-		<Item Cat="13" Index="372" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Extremity -->
-		<Item Cat="13" Index="373" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Extremity -->
-		<Item Cat="13" Index="374" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Gloves of Sealed Extremity -->
-		<Item Cat="13" Index="375" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Armor of Sealed Captivation -->
-		<Item Cat="13" Index="376" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Boots of Sealed Captivation -->
-		<Item Cat="13" Index="377" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Pants of Sealed Captivation -->
-		<Item Cat="13" Index="378" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Blood Angel Gloves of Sealed Captivation -->
+		<Item Cat="13" Index="371" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Extremity -->
+		<Item Cat="13" Index="372" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Extremity -->
+		<Item Cat="13" Index="373" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Extremity -->
+		<Item Cat="13" Index="374" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Gloves of Extremity -->
+		<Item Cat="13" Index="375" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Armor of Captivation -->
+		<Item Cat="13" Index="376" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Boots of Captivation -->
+		<Item Cat="13" Index="377" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Pants of Captivation -->
+		<Item Cat="13" Index="378" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Gloves of Captivation -->
 		<Item Cat="5" Index="41" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Staff -->
 		<Item Cat="0" Index="44" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Magic Sword -->
 		<Item Cat="0" Index="89" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Magic Two Hand Sword -->
@@ -165,20 +166,20 @@
 
 	</Character>
 	<Character Class="4" Name="Dark Lord">
-		<Item Cat="13" Index="379" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Conquest -->
-		<Item Cat="13" Index="380" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Conquest -->
-		<Item Cat="13" Index="381" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Conquest -->
-		<Item Cat="13" Index="382" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Gloves of Sealed Conquest -->
+		<Item Cat="13" Index="379" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Conquest -->
+		<Item Cat="13" Index="380" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Conquest -->
+		<Item Cat="13" Index="381" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Conquest -->
+		<Item Cat="13" Index="382" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Gloves of Conquest -->
 		<Item Cat="2" Index="22" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Scepter -->
 		<Item Cat="6" Index="70" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Lord Shield -->
 		<Item Cat="12" Index="303" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Scroll of Wind Soul -->
 		<Item Cat="15" Index="67" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Scroll of Spirit Blast -->
 	</Character>
 	<Character Class="5" Name="Summoner">
-		<Item Cat="13" Index="387" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Honor -->
-		<Item Cat="13" Index="388" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Honor -->
-		<Item Cat="13" Index="389" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Honor -->
-		<Item Cat="13" Index="390" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Gloves of Sealed Honor -->
+		<Item Cat="13" Index="387" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Honor -->
+		<Item Cat="13" Index="388" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Honor -->
+		<Item Cat="13" Index="389" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Honor -->
+		<Item Cat="13" Index="390" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Gloves of Honor -->
 		<Item Cat="5" Index="43" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Stick -->
 		<Item Cat="5" Index="57" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Book of Blood Angel -->
 		<Item Cat="12" Index="295" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Parchment of Fire Beast -->
@@ -186,86 +187,93 @@
 		<Item Cat="15" Index="45" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Death Scythe Parchment -->
 	</Character>
 	<Character Class="6" Name="Rage Fighter">
-		<Item Cat="13" Index="391" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Destruction -->
-		<Item Cat="13" Index="392" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Destruction -->
-		<Item Cat="13" Index="393" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Destruction -->
-		<Item Cat="13" Index="394" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Destruction -->
+		<Item Cat="13" Index="391" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Destruction -->
+		<Item Cat="13" Index="392" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Destruction -->
+		<Item Cat="13" Index="393" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Destruction -->
+		<Item Cat="13" Index="394" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Destruction -->
 		<Item Cat="0" Index="46" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Claw -->
 		<Item Cat="12" Index="305" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Parchment of Dark Phoenix Shot -->
 		<Item Cat="12" Index="413" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Parchment of Spirit Hook -->
 	</Character>
 	<Character Class="7" Name="Grow Lancer">
-		<Item Cat="13" Index="399" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Tenacity -->
-		<Item Cat="13" Index="400" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Tenacity -->
-		<Item Cat="13" Index="401" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Tenacity -->
-		<Item Cat="13" Index="402" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Gloves of Sealed Tenacity -->
+		<Item Cat="13" Index="399" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Tenacity -->
+		<Item Cat="13" Index="400" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Tenacity -->
+		<Item Cat="13" Index="401" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Tenacity -->
+		<Item Cat="13" Index="402" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Gloves of Tenacity -->
 		<Item Cat="3" Index="19" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Lance -->
 		<Item Cat="12" Index="95" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Oversting Scroll -->
 		<Item Cat="12" Index="98" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Wild Breath Scroll -->
 		<Item Cat="6" Index="60" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Lancer Shield -->
 	</Character>
 	<Character Class="8" Name="Rune Wizard">
-		<Item Cat="13" Index="355" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Vengeance -->
-		<Item Cat="13" Index="356" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Vengeance -->
-		<Item Cat="13" Index="357" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Vengeance -->
-		<Item Cat="13" Index="358" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Gloves of Sealed Vengeance -->
+		<Item Cat="13" Index="355" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Vengeance -->
+		<Item Cat="13" Index="356" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Vengeance -->
+		<Item Cat="13" Index="357" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Vengeance -->
+		<Item Cat="13" Index="358" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Gloves of Vengeance -->
 		<Item Cat="2" Index="32" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Runic Mace -->
 		<Item Cat="6" Index="87" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Rune Wizard Shield -->
 		<Item Cat="15" Index="39" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Lightning Storm -->
 		<Item Cat="15" Index="71" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Rune Phrase Book -->
 	</Character>
 	<Character Class="9" Name="Slayer">
-		<Item Cat="13" Index="383" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Heartless -->
-		<Item Cat="13" Index="384" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Heartless -->
-		<Item Cat="13" Index="385" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Heartless -->
-		<Item Cat="13" Index="386" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Gloves of Sealed Heartless -->
+		<Item Cat="13" Index="383" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Heartless -->
+		<Item Cat="13" Index="384" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Heartless -->
+		<Item Cat="13" Index="385" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Heartless -->
+		<Item Cat="13" Index="386" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Gloves of Heartless -->
 		<Item Cat="0" Index="71" Level="0" Skill="0" Luck="0" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Short Sword -->
 		<Item Cat="12" Index="479" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Pierce Attack -->
 		<Item Cat="12" Index="482" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Demolish -->
 	</Character>
 	<Character Class="10" Name="Gun Crusher">
-		<Item Cat="13" Index="403" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Ritual -->
-		<Item Cat="13" Index="404" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Ritual -->
-		<Item Cat="13" Index="405" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Ritual -->
-		<Item Cat="13" Index="406" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Ritual -->
+		<Item Cat="13" Index="403" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Ritual -->
+		<Item Cat="13" Index="404" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Ritual -->
+		<Item Cat="13" Index="405" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Ritual -->
+		<Item Cat="13" Index="406" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Ritual -->
 		<Item Cat="4" Index="48" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Magic Gun -->
 		<Item Cat="12" Index="493" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Ice Blast Bead -->
 		<Item Cat="12" Index="495" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Busting Flare Bead -->
 	</Character>
 	<Character Class="11" Name="Light Wizard">
-		<Item Cat="20" Index="58" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Twilight -->
-		<Item Cat="20" Index="59" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Twilight -->
-		<Item Cat="20" Index="60" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Twilight -->
-		<Item Cat="20" Index="61" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Twilight -->
+		<Item Cat="20" Index="58" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Twilight -->
+		<Item Cat="20" Index="59" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Twilight -->
+		<Item Cat="20" Index="60" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Twilight -->
+		<Item Cat="20" Index="61" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Twilight -->
 		<Item Cat="5" Index="73" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Magic Book -->
 		<Item Cat="15" Index="49" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Scroll of Spear Storm -->
 	</Character>
 	<Character Class="12" Name="Lemuria Mage">
-		<Item Cat="20" Index="62" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Liberation -->
-		<Item Cat="20" Index="63" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Liberation -->
-		<Item Cat="20" Index="64" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Liberation -->
-		<Item Cat="20" Index="65" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Liberation -->
+		<Item Cat="20" Index="62" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Liberation -->
+		<Item Cat="20" Index="63" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Liberation -->
+		<Item Cat="20" Index="64" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Liberation -->
+		<Item Cat="20" Index="65" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Liberation -->
 		<Item Cat="5" Index="86" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Orb -->
 		<Item Cat="15" Index="53" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Scroll of Ultimate Force -->
 	</Character>
 	<Character Class="13" Name="Illusion Knight">
-		<Item Cat="20" Index="89" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Longing -->
-		<Item Cat="20" Index="90" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Longing -->
-		<Item Cat="20" Index="91" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Longing -->
-		<Item Cat="20" Index="92" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Longing -->
+		<Item Cat="20" Index="89" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Longing -->
+		<Item Cat="20" Index="90" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Longing -->
+		<Item Cat="20" Index="91" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Longing -->
+		<Item Cat="20" Index="92" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Longing -->
 		<Item Cat="12" Index="91" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Blade Storm Orb -->
 		<Item Cat="0" Index="105" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Blade -->
 	</Character>
 	<Character Class="14" Name="Alchemist">
-		<Item Cat="20" Index="240" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Helm of Sealed Element -->
-		<Item Cat="20" Index="241" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Armor of Sealed Element -->
-		<Item Cat="20" Index="242" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Element -->
-		<Item Cat="20" Index="243" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Element -->
+		<Item Cat="20" Index="240" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Element -->
+		<Item Cat="20" Index="241" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Element -->
+		<Item Cat="20" Index="242" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Element -->
+		<Item Cat="20" Index="243" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Element -->
 		<Item Cat="15" Index="66" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Softness: Countless Weapon Law Book -->
 		<Item Cat="5" Index="114" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Wand -->
-		<Item Cat="5" Index="133" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Elixir -->	
+		<Item Cat="5" Index="133" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Elixir -->
 	</Character>
-		<Character Class="-1" Name="All Classes">
+	<Character Class="15" Name="Crusader">
+		<Item Cat="20" Index="302" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Faith  -->
+		<Item Cat="20" Index="301" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Faith  -->
+		<Item Cat="20" Index="303" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Faith  -->
+		<Item Cat="20" Index="304" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Faith  -->
+		<Item Cat="15" Index="74" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Sacred Impact Orb -->
+	</Character>
+	<Character Class="-1" Name="All Classes">
 		<Item Cat="16" Index="42" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="1440" Price="75000" /> <!-- Chicken (Evolved) -->
 		<Item Cat="14" Index="341" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Stone Shard -->
 		<Item Cat="14" Index="364" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="5000" /> <!-- Socket Upgrade Note -->

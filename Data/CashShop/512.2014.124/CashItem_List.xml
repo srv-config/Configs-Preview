@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2023 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN ShopCategory MuOnline Server files.
 // ============================================================
@@ -266,4 +266,16 @@
 	<Item GUID="573" iIndex="538" iSubIndex="508" OptionSelect="0" PackageID="0" CoinType="0" CoinValue="7500" UniqueID1="899" UniqueID2="1106" ShopCategory="59" GPRewardValue="0" CanBuy="1" CanGift="0" RandomItemSelect="0" Description="Silver VIP" />
 	<Item GUID="574" iIndex="539" iSubIndex="508" OptionSelect="0" PackageID="0" CoinType="0" CoinValue="10000" UniqueID1="900" UniqueID2="1108" ShopCategory="59" GPRewardValue="0" CanBuy="1" CanGift="0" RandomItemSelect="0" Description="Gold VIP" />
 	<Item GUID="575" iIndex="540" iSubIndex="508" OptionSelect="0" PackageID="0" CoinType="0" CoinValue="12500" UniqueID1="901" UniqueID2="1110" ShopCategory="59" GPRewardValue="0" CanBuy="1" CanGift="0" RandomItemSelect="0" Description="Platinum VIP" />
+	<Item GUID="591" iIndex="541" iSubIndex="508" OptionSelect="1111" PackageID="0" CoinType="0" CoinValue="2000" UniqueID1="902" UniqueID2="1111" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Eunice's Blessing (GP)" />
+	<Item GUID="592" iIndex="541" iSubIndex="508" OptionSelect="1112" PackageID="0" CoinType="0" CoinValue="2500" UniqueID1="902" UniqueID2="1112" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Eunice's Blessing (GP)" />
+	<Item GUID="597" iIndex="542" iSubIndex="508" OptionSelect="1114" PackageID="0" CoinType="0" CoinValue="1200" UniqueID1="903" UniqueID2="1114" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Fury (GP)" />
+	<Item GUID="598" iIndex="542" iSubIndex="508" OptionSelect="1115" PackageID="0" CoinType="0" CoinValue="1800" UniqueID1="903" UniqueID2="1115" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Fury (GP)" />
+	<Item GUID="624" iIndex="544" iSubIndex="508" OptionSelect="1120" PackageID="0" CoinType="0" CoinValue="900" UniqueID1="905" UniqueID2="1120" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Mana (GP)" />
+	<Item GUID="625" iIndex="544" iSubIndex="508" OptionSelect="1121" PackageID="0" CoinType="0" CoinValue="1300" UniqueID1="905" UniqueID2="1121" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Mana (GP)" />
+	<Item GUID="636" iIndex="543" iSubIndex="508" OptionSelect="1117" PackageID="0" CoinType="0" CoinValue="900" UniqueID1="904" UniqueID2="1117" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Gale (GP)" />
+	<Item GUID="637" iIndex="543" iSubIndex="508" OptionSelect="1118" PackageID="0" CoinType="0" CoinValue="1500" UniqueID1="904" UniqueID2="1118" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Gale (GP)" />
+	<Item GUID="642" iIndex="546" iSubIndex="508" OptionSelect="1126" PackageID="0" CoinType="0" CoinValue="800" UniqueID1="907" UniqueID2="1126" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Skill (GP)" />
+	<Item GUID="643" iIndex="546" iSubIndex="508" OptionSelect="1127" PackageID="0" CoinType="0" CoinValue="1300" UniqueID1="907" UniqueID2="1127" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Skill (GP)" />
+	<Item GUID="645" iIndex="545" iSubIndex="508" OptionSelect="1123" PackageID="0" CoinType="0" CoinValue="900" UniqueID1="906" UniqueID2="1123" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Life (GP)" />
+	<Item GUID="646" iIndex="545" iSubIndex="508" OptionSelect="1124" PackageID="0" CoinType="0" CoinValue="1300" UniqueID1="906" UniqueID2="1124" ShopCategory="29" GPRewardValue="200" CanBuy="1" CanGift="1" RandomItemSelect="0" Description="Contract of Life (GP)" />
 </CashItemList>

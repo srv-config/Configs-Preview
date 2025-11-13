@@ -338,6 +338,8 @@ function ComboSkillDamage(Class, Strength, Dexterity, Vitality, Energy, Command,
 		ComboDamage = (Strength * 1.5) + Dexterity + Energy
 	elseif(Class == CLASS_ALCHEMIST) then
 		ComboDamage = (Strength * 1.5) + Dexterity + Energy
+	elseif(Class == CLASS_CRUSADER) then
+		ComboDamage = (Strength * 1.5) + Dexterity + Energy
 	end
 
  return ComboDamage
@@ -419,7 +421,9 @@ function ElfHeal(TargetClass, Index, TargetIndex, Strength, Dexterity, Vitality,
 		elseif (TargetClass == CLASS_ILLUSIONKNIGHT) then
 			SkillEffect = Energy / 5 + 5
 		elseif (TargetClass == CLASS_ALCHEMIST) then
-			SkillEffect = Energy / 5 + 5			
+			SkillEffect = Energy / 5 + 5
+		elseif (TargetClass == CLASS_CRUSADER) then
+			SkillEffect = Energy / 5 + 5
 		end
 	elseif (Index == TargetIndex) then
 		SkillEffect = Energy / 5 + 5
@@ -464,6 +468,8 @@ function ElfAttack(Class, Index, TargetIndex, Strength, Dexterity, Vitality, Ene
 			SkillEffect = 3 + Energy / 7
 		elseif (Class == CLASS_ALCHEMIST) then
 			SkillEffect = 3 + Energy / 7
+		elseif (Class == CLASS_CRUSADER) then
+			SkillEffect = 3 + Energy / 7
 		end
 	elseif (Index == TargetIndex) then
 		SkillEffect = 3 + Energy / 7
@@ -507,6 +513,8 @@ function ElfDefense(Class, Index, TargetIndex, Strength, Dexterity, Vitality, En
 		elseif (Class == CLASS_ILLUSIONKNIGHT) then
 			SkillEffect = 2 + Energy / 8
 		elseif (Class == CLASS_ALCHEMIST) then
+			SkillEffect = 2 + Energy / 8
+		elseif (Class == CLASS_CRUSADER) then
 			SkillEffect = 2 + Energy / 8
 		end
 	elseif (Index == TargetIndex) then
@@ -603,6 +611,8 @@ function ElfElementalAttack(Class, Index, TargetIndex, Strength, Dexterity, Vita
 			SkillEffect = InEffect
 		elseif (Class == CLASS_ALCHEMIST) then
 			SkillEffect = InEffect
+		elseif (Class == CLASS_CRUSADER) then
+			SkillEffect = InEffect
 		end
 	elseif (Index == TargetIndex) then
 		SkillEffect = InEffect
@@ -646,6 +656,8 @@ function ElfElementalDefense(Class, Index, TargetIndex, Strength, Dexterity, Vit
 		elseif (Class == CLASS_ILLUSIONKNIGHT) then
 			SkillEffect = InEffect
 		elseif (Class == CLASS_ALCHEMIST) then
+			SkillEffect = InEffect
+		elseif (Class == CLASS_CRUSADER) then
 			SkillEffect = InEffect
 		end
 	elseif (Index == TargetIndex) then
@@ -804,7 +816,7 @@ end
 -- SkillID: 737, Wind Soul - (Lord Emperor)
 function LordWindSoulCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy, Command, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
@@ -819,7 +831,7 @@ end
 -- SkillID: 2095, Spirit Blast
 function LordSpiritBlastCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy, Command, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
@@ -846,7 +858,7 @@ end
 -- SkillID: 215, Chain Lighting
 function ChainLightningCalc(InDamage, TargetNumber)
 	local DamagePercent = 0
-	
+
 	if(TargetNumber == 1) then
 		DamagePercent = 100
 	elseif(TargetNumber == 2) then
@@ -856,7 +868,7 @@ function ChainLightningCalc(InDamage, TargetNumber)
 	else
 		DamagePercent = 0
 	end
-		
+
 	local OutDamage = InDamage * DamagePercent / 100
 	
 	return OutDamage
@@ -866,18 +878,18 @@ end
 function SummonerDamageReflect(Index, TargetIndex, TargetClass, Energy)
 	local Reflect = 30 + (Energy / 42)
 	local Time = 30 + (Energy / 25)
-	
+
 	if (Reflect > 25) then
 		Reflect = 25
 	end
-	
+
 	return Reflect, Time
 end
 
 -- SkillID: 288, Death Scythe
 function DeadScythe_Summoner(InDamage, TargetClass, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = InDamage * 0.8
 	elseif (BarrageCount == 2) then
@@ -895,7 +907,7 @@ end
 function Sleep_Monster(Energy, Curse, MonsterLevel)
 	local SkillSuccessRate = Energy / 30 + Curse / 6 + 20
 	local SkillTime = Energy / 100 + 5 - MonsterLevel / 20
-	
+
 	return SkillSuccessRate, SkillTime
 end
 
@@ -1059,9 +1071,9 @@ end
 -- SkillID: 282, Spirit Hook
 function RageFighterSpiritHook(InDamage, Vitality)
 	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
-	
+
 	return OutDamage
-end											
+end
 
 
 -- SkillID: 18, Defense - (Shields Skill)
@@ -1074,15 +1086,15 @@ end
 -- SkillID: 76, Plasma Storm - (Fenrir Pets)
 function FenrirSkillCalc(InDamage, PlayerLevel, PlayerMasterLevel)
 	local DamageInc = PlayerLevel - 300 + PlayerMasterLevel
-	
+
 	if (DamageInc < 0) then
 		DamageInc = 0
 	end
-	
+
 	DamageInc = DamageInc / 5
 	
 	local OutDamage = ( InDamage * ( DamageInc + 200 ) ) / 100;
-	
+
 	return OutDamage
 end
 
@@ -1097,7 +1109,7 @@ end
 -- SkillID: 276, Harsh Strike
 function GrowLancerHarshStrike(InDamage, Strength, SkillTreeBonus, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 1.0) * (Strength / 10 + 97 + SkillTreeBonus) / 100.0
 	elseif (BarrageCount == 2) then
@@ -1110,7 +1122,7 @@ end
 -- SkillID: 274, Magic Pin
 function GrowLancerMagicPin(InDamage, Dexterity, SkillTreeBonus, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 0.8) * (Dexterity / 10 + 97 + SkillTreeBonus) / 100.0
 	elseif (BarrageCount == 2) then
@@ -1148,14 +1160,14 @@ end
 -- SkillID: 2036, Oversting
 function GrowLancerOversting(InDamage, Dexterity, SkillTreeBonus)
 	local OutDamage = (InDamage * 1.0) * (Dexterity / 10 + 97 + SkillTreeBonus) / 100.0
-	
-	return OutDamage			   
+
+	return OutDamage
 end
 
 -- SkillID: 2085, Wild Breath
 function GrowLancerWildBreath(InDamage, Strength, SkillTreeBonus)
 	local OutDamage = (InDamage * 0.5) * (Strength / 10 + 97 + SkillTreeBonus) / 100.0
-	
+
 	return OutDamage
 end
 
@@ -1167,7 +1179,7 @@ function BastionBuffCalcSuccessAndMinSD(CharacterLevel)
 	if (SuccessRate > 100) then
 		SuccessRate = 100
 	end
-	
+
 	return SuccessRate, MinShieldPercent
 end
 
@@ -1228,21 +1240,21 @@ end
 -- SkillID: 283, Magic Arrow
 function RuneWizardMagicArrowCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
-	
+
 	return OutDamage
 end
 
 -- SkillID: 284, Plasma Ball
 function RuneWizardPlasmaBallCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
-	
+
 	return OutDamage
 end
 
 -- SkillID: 285, Lightning Storm
 function RuneWizardLightningStormCalcDamage(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
-	
+
 	return OutDamage
 end
 
@@ -1251,7 +1263,7 @@ function RuneWizardBurstCalc(Energy)
 	local SkillEffect1 = Energy / 30
 	local SkillEffect2 = Energy / 100
 	local SkillTime = 70
-	
+
 	return SkillEffect1, SkillEffect2, SkillTime
 end
 
@@ -1260,7 +1272,7 @@ function RuneWizardHasteCalc(Index, TargetIndex, TargetClass, Energy)
 	local SkillEffect1 = 25
 	local SkillEffect2 = 2
 	local SkillTime = 70
-	
+
 	return SkillEffect1, SkillEffect2, SkillTime
 end
 
@@ -1268,7 +1280,7 @@ end
 function ExpansionWizardryCalc(Class, Energy)
 	local SkillEffect = 0
 	local SkillTime = 1800
-	
+
 	if (Class == CLASS_WIZARD) then
 		SkillEffect = Energy / 9 * 0.20
 	elseif (Class == CLASS_RUNEWIZARD) then
@@ -1288,7 +1300,7 @@ end
 function SlayerBatFlockCalc(InDamage, Strength, Dexterity)
 	local OutDamage = InDamage * ((Strength / 8) + (Dexterity / 28) + 120) / 100
 	OutDamage = OutDamage * 0.5
-	
+
 	return OutDamage
 end
 
@@ -1296,13 +1308,13 @@ end
 -- Use below function to manipulate the output damage value
 function BatFlockDotDamage(InDamage, DOT, Strength, Dexterity, Vitality, Energy, TargetType, TargetClass)
 	local OutDamage = 0
-	
+
 	if (TargetType == TARGET_TYPE_PLAYER) then
 		OutDamage = InDamage
 	elseif (TargetType == TARGET_TYPE_MONSTER) then
 		OutDamage = InDamage
 	end
-	
+
 	return OutDamage
 end
 
@@ -1316,7 +1328,7 @@ end
 function SlayerSwordInertiaCalc(InDamage, Strength, Dexterity)
 	local OutDamage = InDamage * ((Strength / 8) + (Dexterity / 28) + 120) / 100
 	OutDamage = OutDamage
-	
+
 	return OutDamage
 end
 
@@ -1325,7 +1337,7 @@ function SlayerDemolishCalc(Strength, Dexterity, Vitality, Energy)
 	local SkillEffect = ((Strength / 8) + (Dexterity / 28) + 120)
 	local SkillTime = 60
 	SkillEffect = SkillEffect * 0.03
-	
+
 	return SkillEffect, SkillTime
 end
 
@@ -1333,7 +1345,7 @@ end
 function KnightSwordAngerCalc(Strength, Dexterity, Vitality, Energy)
 	local SkillAddRange = 1
 	local SkillTime = -10
-	
+
 	return SkillAddRange, SkillTime
 end
 
@@ -1373,7 +1385,7 @@ end
 -- SkillID: 2002, Ice Break
 function GunCrusherIceBreakCalc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
 	elseif (BarrageCount == 2) then
@@ -1381,20 +1393,20 @@ function GunCrusherIceBreakCalc(InDamage, Strength, Dexterity, Vitality, Energy,
 	elseif (BarrageCount == 3) then
 		OutDamage = (InDamage * 1.2) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
 	end
-	
+
 	return OutDamage
 end
 
 -- SkillID: 2004, Death Fire
 function GunCrusherDeathFireCalc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
 	elseif (BarrageCount == 2) then
 		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
 	end
-	
+
 	return OutDamage
 end
 
@@ -1410,10 +1422,10 @@ end
 function GunCrusherBurstingFlareCalc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, IsShockwave)
 	local OutDamage = 0
 
-    if (IsShockwave == 1) then
-        OutDamage = (InDamage * 1.5) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
-        return OutDamage
-    end
+	if (IsShockwave == 1) then
+		OutDamage = (InDamage * 1.5) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		return OutDamage
+	end
 
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
@@ -1422,34 +1434,34 @@ function GunCrusherBurstingFlareCalc(InDamage, Strength, Dexterity, Vitality, En
 	elseif (BarrageCount == 3) then
 		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
 	end
-	
+
 	return OutDamage
 end
 
 -- SkillID: 2006, Death Ice
 function GunCrusherDeathIceCalc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
 	elseif (BarrageCount == 2) then
 		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
 	end
-	
+
 	return OutDamage
 end
 
 -- SkillID: 240, Magic Shot
 function LightWizardMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
-	
+
 	return OutDamage
 end
 
 -- SkillID: 241, Shining Bird
 function LightWizardShiningBirdCalc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	OutDamage = (InDamage * 1.0) * ((Energy / 50) + 200) / 100
 
 	return OutDamage
@@ -1458,7 +1470,7 @@ end
 -- SkillID: 242, Dragon Violent
 function LightWizardDragonViolentCalc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 1.0) * ((Energy / 50) + 200) / 100
 	elseif (BarrageCount == 2) then
@@ -1471,7 +1483,7 @@ end
 -- SkillID: 243, Spear Storm
 function LightWizardSpearStormCalc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 1.0) * ((Energy / 50) + 200) / 100
 	elseif (BarrageCount == 2) then
@@ -1499,38 +1511,38 @@ end
 -- SkillID: 245, Marvel Burst
 function LemuriaMageMarvelBurst(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = 0
-	
+
 	OutDamage = InDamage * (140 + (Energy / 100)) / 100
-	
+
 	return OutDamage
 end
 
 -- SkillID: 246, Unleash Marvel
 function LemuriaMageUnleashMarvel(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = 0
-	
+
 	OutDamage = InDamage * (140 + (Energy / 100)) / 100
-	
+
 	return OutDamage
 end
 
 -- SkillID: 247, Ultimate Force
 function LemuriaMageUltimateForce(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
 	elseif (BarrageCount == 2) then
 		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
 	end
-	
+
 	return OutDamage
 end
 
 -- SkillID: 2007, Beginner Care
 function LemuriaMageHeal(TargetClass, Index, TargetIndex, Energy)
 	local SkillEffect = 0
-	
+
 	if (Index ~= TargetIndex) then
 		if (TargetClass == CLASS_WIZARD) then
 			SkillEffect = Energy / 10 + 5
@@ -1562,18 +1574,20 @@ function LemuriaMageHeal(TargetClass, Index, TargetIndex, Energy)
 			SkillEffect = Energy / 10 + 5
 		elseif (TargetClass == CLASS_ALCHEMIST) then
 			SkillEffect = Energy / 10 + 5
+		elseif (TargetClass == CLASS_CRUSADER) then
+			SkillEffect = Energy / 10 + 5
 		end
 	elseif (Index == TargetIndex) then
 		SkillEffect = Energy / 10 + 5
 	end
-	
+
 	return SkillEffect
 end
 
 -- SkillID: 2008, Beginner Shield Recovery
 function LemuriaMageShieldRecovery(Energy, PlayerLevel)
 	local SkillEffect = Energy / 8 + PlayerLevel
- 
+
 	return SkillEffect
 end
 
@@ -1581,7 +1595,7 @@ end
 function LemuriaMageDefense(Class, Index, TargetIndex, Energy)
 	local SkillEffect = 0
 	local SkillTime = 60
-	
+
 	if (Index ~= TargetIndex) then
 		if (Class == CLASS_WIZARD) then
 			SkillEffect = 2 + Energy / 16
@@ -1613,11 +1627,13 @@ function LemuriaMageDefense(Class, Index, TargetIndex, Energy)
 			SkillEffect = 2 + Energy / 16
 		elseif (Class == CLASS_ALCHEMIST) then
 			SkillEffect = 2 + Energy / 16
+		elseif (Class == CLASS_CRUSADER) then
+			SkillEffect = 2 + Energy / 16
 		end
 	elseif (Index == TargetIndex) then
 		SkillEffect = 2 + Energy / 16
 	end
-	
+
 	return SkillEffect, SkillTime
 end
 
@@ -1625,7 +1641,7 @@ end
 function LemuriaMageAttack(Class, Index, TargetIndex, Energy)
 	local SkillEffect = 0
 	local SkillTime = 60
-	
+
 	if (Index ~= TargetIndex) then
 		if (Class == CLASS_WIZARD) then
 			SkillEffect = 3 + Energy / 15
@@ -1656,6 +1672,8 @@ function LemuriaMageAttack(Class, Index, TargetIndex, Energy)
 		elseif (Class == CLASS_ILLUSIONKNIGHT) then
 			SkillEffect = 3 + Energy / 15
 		elseif (Class == CLASS_ALCHEMIST) then
+			SkillEffect = 3 + Energy / 15
+		elseif (Class == CLASS_CRUSADER) then
 			SkillEffect = 3 + Energy / 15
 		end
 	elseif (Index == TargetIndex) then
@@ -1668,7 +1686,7 @@ end
 -- SkillID: 2011, Beginner Bless
 function LemuriaMageBless(Index, TargetIndex, TargetClass, Energy)
 	local SkillEffect = Energy / 150
-	
+
 	return SkillEffect
 end
 
@@ -1682,28 +1700,28 @@ end
 function BondAttack_TickDmg_Monster(Level, MasterLevel, Strength, Dexterity, Vitality, Energy, MagicDamageMin, MagicDamageMax)
 	local SkillEffect = MagicDamageMax / 4
 	local Duration = 3
-	
+
 	return SkillEffect, Duration
 end
 
 -- SkillID: 2022, Bond - Bonus for Light Wizard and Lemuria Mage
 function BondAttack_Active(InDamage, Class, Level, MasterLevel, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = InDamage * 130 / 100
-	
+
 	return OutDamage
 end
 
 -- SkillID: 2022, Bond - Bonus for other class party members
 function BondAttack_PartyMember(InDamage, Class, Level, MasterLevel, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = InDamage * 115 / 100
-	
+
 	return OutDamage
 end
 
 -- SkillID: 2028, Charge Slash
 function IllusionKnightChargeSlash(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
 	elseif (BarrageCount == 2) then
@@ -1716,7 +1734,7 @@ end
 -- SkillID: 2029, Wind Glaive
 function IllusionKnightWindGlaive(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
 	elseif (BarrageCount == 2) then
@@ -1731,7 +1749,7 @@ end
 -- SkillID: 2030, Blade Storm
 function IllusionKnightBladeStorm(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
-	
+
 	if (BarrageCount == 1) then
 		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
 	elseif (BarrageCount == 2) then
@@ -1749,14 +1767,14 @@ function IllusionKnightAvatarCalc(Strength, Dexterity, Vitality, Energy, InDamag
 	local OutDamageMin = InDamageMin * 1.5
 	local OutDamageMax = InDamageMax * 2
 	local OutLife = (PlayerTotalLevel / 20) * PlayerMaxLife
-	
+
 	return OutDamageMin, OutDamageMax, OutLife
 end
 
 -- SkillID: 240, Magic Shot
 function AlchemistMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = (InDamage * 1.0) * (165 + (Energy / 65)) / 100
-	
+
 	return OutDamage
 end
 
@@ -1784,18 +1802,41 @@ end
 -- SkillID: 240, Magic Shot
 function RuneWizardMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
-	
+
 	return OutDamage
 end
 
+-- SkillID: 2101, Runic Spear
 function RuneWizardRunicSpear(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
-	
+
 	return OutDamage
 end
 
+-- SkillID: 2102, Rune Phrase
 function RuneWizardRunePhrase(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
-	
+
+	return OutDamage
+end
+
+-- SkillID: 2105, Divine Fall
+function CrusaderDivineFall(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage
+
+	return OutDamage
+end
+
+-- SkillID: 2106, Holly Sweep
+function CrusaderHollySweep(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage
+
+	return OutDamage
+end
+
+-- SkillID: 2107, Sacred Impact
+function CrusaderSacredImpact(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage
+
 	return OutDamage
 end

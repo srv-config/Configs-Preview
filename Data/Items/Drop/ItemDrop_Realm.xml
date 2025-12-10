@@ -70,8 +70,8 @@
 //		~ 3: Earth
 //		~ 4: Wind
 //		~ 5: Darkness
-//		~ -1: Use PentagramItemDropRate.xml
-//		~ -2: Random (1-5)
+//		~ -1: Random (1-5)
+//		~ -2: Use PentagramItemDropRate.xml
 //
 //	SocketCount: Minimum and maximum socket count of item to drop, 1-5, usage: min;max, 0 to use SocketSystem.xml rates, for pentagram a rate of sockets from PentagramItemDropRate.xml are used
 //
@@ -141,6 +141,12 @@
 			<Monster Index="966" Rate="450" />
 			<Monster Index="967" Rate="450" />
 			<Monster Index="968" Rate="450" />
+			<Monster Index="972" Rate="500" />
+			<Monster Index="973" Rate="500" />
+			<Monster Index="974" Rate="500" />
+			<Monster Index="978" Rate="550" />
+			<Monster Index="979" Rate="550" />
+			<Monster Index="980" Rate="550" />
 		</Item>
 		<Item DropID="2">
 			<Monster Index="839" Rate="100" />
@@ -176,6 +182,12 @@
 			<Monster Index="966" Rate="450" />
 			<Monster Index="967" Rate="450" />
 			<Monster Index="968" Rate="450" />
+			<Monster Index="972" Rate="500" />
+			<Monster Index="973" Rate="500" />
+			<Monster Index="974" Rate="500" />
+			<Monster Index="978" Rate="550" />
+			<Monster Index="979" Rate="550" />
+			<Monster Index="980" Rate="550" />
 		</Item>
 		<Item DropID="3">
 			<Monster Index="839" Rate="100" />
@@ -211,6 +223,12 @@
 			<Monster Index="966" Rate="450" />
 			<Monster Index="967" Rate="450" />
 			<Monster Index="968" Rate="450" />
+			<Monster Index="972" Rate="500" />
+			<Monster Index="973" Rate="500" />
+			<Monster Index="974" Rate="500" />
+			<Monster Index="978" Rate="550" />
+			<Monster Index="979" Rate="550" />
+			<Monster Index="980" Rate="550" />
 		</Item>
 		<Item DropID="4">
 			<Monster Index="839" Rate="100" />
@@ -246,6 +264,12 @@
 			<Monster Index="966" Rate="450" />
 			<Monster Index="967" Rate="450" />
 			<Monster Index="968" Rate="450" />
+			<Monster Index="972" Rate="500" />
+			<Monster Index="973" Rate="500" />
+			<Monster Index="974" Rate="500" />
+			<Monster Index="978" Rate="550" />
+			<Monster Index="979" Rate="550" />
+			<Monster Index="980" Rate="550" />
 		</Item>
 		<Item DropID="5">
 			<Monster Index="839" Rate="100" />
@@ -281,6 +305,12 @@
 			<Monster Index="966" Rate="450" />
 			<Monster Index="967" Rate="450" />
 			<Monster Index="968" Rate="450" />
+			<Monster Index="972" Rate="500" />
+			<Monster Index="973" Rate="500" />
+			<Monster Index="974" Rate="500" />
+			<Monster Index="978" Rate="550" />
+			<Monster Index="979" Rate="550" />
+			<Monster Index="980" Rate="550" />
 		</Item>
 	</DropItem>
 </RealmItemDrop>

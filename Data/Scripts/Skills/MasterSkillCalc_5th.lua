@@ -343,8 +343,16 @@ function AlchemistCountlessWeapon_5thEnchant_Calc(InDamage, Strength, Dexterity,
 	return OutDamage
 end
 
+-- SkillID: 2103: Rune Phrase of Saturation
 function RunePhrase_5thEnchant_RuneWizard(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = InDamage * (170 + (Energy / 40)) / 100
+	
+	return OutDamage
+end
+
+-- SkillID: 2109, Sacred Impact of Gale
+function SacredImpact_5thEnchant_Crusader(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
+	local OutDamage = InDamage
 	
 	return OutDamage
 end

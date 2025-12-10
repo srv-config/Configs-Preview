@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -154,4 +154,5 @@
 	<Map Number="142" Disable="0" /> <!-- Twisted Karutan -->
 	<Map Number="143" Disable="0" /> <!-- Kardamahal Underground Temple -->
 	<Map Number="144" Disable="0" /> <!-- Swamp of Destruction -->
+	<Map Number="145" Disable="0" /> <!-- Aquila's Temple -->
 </OffTrade>

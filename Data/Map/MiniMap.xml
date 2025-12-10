@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2023 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -401,6 +401,7 @@
 		<Tag Id="0" MapNumber="37" X="16" Y="222" Name="Tarkan Entrance" />
 		<Tag Id="1" MapNumber="37" X="89" Y="91" Name="Kanturu Relics Entrance" />
 		<Tag Id="2" MapNumber="37" X="6" Y="159" Name="Kanturu Undergrounds Entrance" />
+		<Tag Id="3" MapNumber="37" X="125" Y="176" Name="Aquila's Temple Entrance" />
 	<!-- Kanturu 1 (Remain) -->
 		<Tag Id="0" MapNumber="38" X="66" Y="105" Name="Kanturu Ruins Entrance" />
 		<Tag Id="1" MapNumber="38" X="141" Y="186" Name="Gateway Machine" />
@@ -418,7 +419,7 @@
 		<Tag Id="5" MapNumber="56" X="56" Y="177" Name="Safe Zone Entrance" />
 		<Tag Id="6" MapNumber="56" X="68" Y="52" Name="Safe Zone Entrance" />
 		<Tag Id="7" MapNumber="56" X="197" Y="13" Name="Safe Zone Entrance" />
-		<Tag Id="8" MapNumber="56" X="131" Y="177" Name="Swamp of Destruction" />
+		<Tag Id="8" MapNumber="56" X="131" Y="117" Name="Swamp of Destruction" />
 	<!-- Raklion -->
 		<Tag Id="0" MapNumber="57" X="224" Y="214" Name="Devias Entrance" />
 		<Tag Id="1" MapNumber="57" X="169" Y="22" Name="Hatchery Entrance" />
@@ -610,5 +611,9 @@
 		<Tag Id="3" MapNumber="143" X="46" Y="126" Name="Earth Element Area" />
 		<Tag Id="4" MapNumber="143" X="236" Y="132" Name="Wind Element Area" />
 		<Tag Id="5" MapNumber="143" X="237" Y="198" Name="Darkness Elite Zone" />
+	<!-- Swamp of Destruction -->
+		<Tag Id="0" MapNumber="144" X="101" Y="125" Name="Swamp of Calmness Entrance" />
+	<!-- Aquila's Temple -->
+		<Tag Id="0" MapNumber="145" X="112" Y="66" Name="Kanturu Ruins Entrance" />
 	</TypeTwo>
 </MiniMapObjects>

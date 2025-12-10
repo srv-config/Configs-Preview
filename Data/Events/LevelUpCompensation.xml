@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -16,7 +16,7 @@
 //	Level: Total level the player is rewarded for upon reaching it
 //	StartDate: Start date and time the reward will start being issues, format: yyyy-MM-dd HH:mm
 //	EndDate: Start date and time the reward will start being issues, format: yyyy-MM-dd HH:mm
-//	DW, DK, ELF, MG, DL, SU, RF, GL, RW, SLA, GC, LW, LM, IK: Character class the reward rule applies to, 0/1
+//	DW, DK, ELF, MG, DL, SU, RF, GL, RW, SLA, GC, LW, LM, IK, AC, CR: Character class the reward rule applies to, 0/1
 //
 //	### LevelUpCompensation::Compensation::Item ###
 //	Cat: Category of reward item, see Itemlist.xml
@@ -32,11 +32,15 @@
 -->
 
 <LevelUpCompensation Enable="0" IgnoreResets="0">
-	<Compensation Level="1600" StartDate="2023-10-01 00:00" EndDate="2023-12-31 23:59" DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1">
+	<Compensation Level="1600" StartDate="2023-10-01 00:00" EndDate="2023-12-31 23:59" DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1">
 		<Item Cat="16" Index="169" Level="1" Durability="0" />
 	</Compensation>
 	
-	<Compensation Level="1650" StartDate="2024-10-01 00:00" EndDate="2024-12-31 23:59" DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1">
-		<Item Cat="16" Index="169" Level="1" Durability="0" />
+	<Compensation Level="1650" StartDate="2024-08-01 00:00" EndDate="2024-09-31 23:59" DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1">
+		<Item Cat="16" Index="171" Level="1" Durability="0" />
+	</Compensation>
+	
+	<Compensation Level="1700" StartDate="2025-10-01 00:00" EndDate="2024-11-31 23:59" DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" GL="1" RW="1" SLA="1" GC="1" LW="1" LM="1" IK="1" AC="1" CR="1">
+		<Item Cat="16" Index="173" Level="1" Durability="0" />
 	</Compensation>
 </LevelUpCompensation>

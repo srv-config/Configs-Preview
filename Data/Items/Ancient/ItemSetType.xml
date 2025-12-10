@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -15,12 +15,11 @@
 // STRICTLY NO COMMENTS INSIDE TAGS
 -->
 <SetItemType>
-	<DropRate>																		  
-																			  
+	<DropRate>
 		<Section Index="0" DropRate="5000000" />
 		<Section Index="1" DropRate="0" />
 		<Section Index="2" DropRate="5000000" />
-		<Section Index="3" DropRate="0" />
+		<Section Index="3" DropRate="5000000" />
 		<Section Index="4" DropRate="5000000" />
 		<Section Index="5" DropRate="5000000" />
 		<Section Index="6" DropRate="5000000" />
@@ -49,15 +48,26 @@
 		<Item Index="132" TierI="330" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="133" TierI="342" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="134" TierI="338" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="135" TierI="344" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="136" TierI="348" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="137" TierI="350" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="138" TierI="355" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="139" TierI="348" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="140" TierI="360" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="141" TierI="356" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="2" Name="Maces and Scepters">
 		<Item Index="1" TierI="1" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="11" TierI="61" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="52" TierI="331" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="53" TierI="336" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="70" TierI="374" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="73" TierI="349" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="74" TierI="354" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="3" Name="Spears">
 		<Item Index="35" TierI="333" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="36" TierI="351" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="4" Name="Bows and Crossbows">
 		<Item Index="5" TierI="29" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -66,6 +76,9 @@
 		<Item Index="69" TierI="339" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="70" TierI="328" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="71" TierI="328" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="72" TierI="357" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="73" TierI="346" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="74" TierI="346" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="5" Name="Staffs">
 		<Item Index="0" TierI="13" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -79,6 +92,17 @@
 		<Item Index="155" TierI="341" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="156" TierI="335" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="157" TierI="340" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="158" TierI="343" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="159" TierI="343" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="160" TierI="345" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="161" TierI="347" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="162" TierI="347" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="163" TierI="358" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="164" TierI="359" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="165" TierI="353" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="166" TierI="358" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="167" TierI="361" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="168" TierI="361" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="6" Name="Shields">
 		<Item Index="0" TierI="0" TierII="2" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -93,6 +117,12 @@
 		<Item Index="85" TierI="333" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="86" TierI="331" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="97" TierI="336" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="112" TierI="374" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="115" TierI="356" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="116" TierI="352" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="117" TierI="351" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="118" TierI="349" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="119" TierI="354" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="7" Name="Helmets">
 		<Item Index="0" TierI="4" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -324,6 +354,7 @@
 		<Item Index="348" TierI="323" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="349" TierI="324" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="350" TierI="325" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="351" TierI="343" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="352" TierI="312" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="353" TierI="313" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="354" TierI="314" TierII="315" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -344,9 +375,35 @@
 		<Item Index="371" TierI="342" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="392" TierI="362" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="395" TierI="364" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="396" TierI="365" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="397" TierI="366" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="398" TierI="367" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="399" TierI="368" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="400" TierI="369" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="401" TierI="370" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="402" TierI="371" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="403" TierI="372" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="404" TierI="373" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="405" TierI="374" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="407" TierI="376" TierII="377" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="408" TierI="378" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="409" TierI="379" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="410" TierI="344" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="411" TierI="345" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="412" TierI="346" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="413" TierI="347" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="415" TierI="349" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="416" TierI="350" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="417" TierI="351" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="418" TierI="352" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="420" TierI="354" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="421" TierI="355" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="422" TierI="356" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="423" TierI="357" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="424" TierI="358" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="425" TierI="359" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="426" TierI="360" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="427" TierI="361" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="8" Name="Armors">
 		<Item Index="0" TierI="3" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -604,6 +661,7 @@
 		<Item Index="348" TierI="323" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="349" TierI="324" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="350" TierI="325" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="351" TierI="343" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="352" TierI="312" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="353" TierI="313" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="354" TierI="314" TierII="315" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -626,9 +684,37 @@
 		<Item Index="371" TierI="342" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="392" TierI="362" TierII="363" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="395" TierI="364" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="396" TierI="365" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="397" TierI="366" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="398" TierI="367" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="399" TierI="368" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="400" TierI="369" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="401" TierI="370" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="402" TierI="371" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="403" TierI="372" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="404" TierI="373" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="405" TierI="374" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="407" TierI="376" TierII="377" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="408" TierI="378" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="409" TierI="379" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="410" TierI="344" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="411" TierI="345" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="412" TierI="346" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="413" TierI="347" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="414" TierI="348" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="415" TierI="349" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="416" TierI="350" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="417" TierI="351" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="418" TierI="352" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="419" TierI="353" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="420" TierI="354" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="421" TierI="355" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="422" TierI="356" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="423" TierI="357" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="424" TierI="358" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="425" TierI="359" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="426" TierI="360" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="427" TierI="361" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="9" Name="Pants">
 		<Item Index="0" TierI="3" TierII="4" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -886,6 +972,7 @@
 		<Item Index="348" TierI="323" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="349" TierI="324" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="350" TierI="325" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="351" TierI="343" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="352" TierI="312" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="353" TierI="313" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="354" TierI="314" TierII="315" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -908,9 +995,37 @@
 		<Item Index="371" TierI="342" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="392" TierI="362" TierII="363" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="395" TierI="364" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="396" TierI="365" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="397" TierI="366" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="398" TierI="367" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="399" TierI="368" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="400" TierI="369" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="401" TierI="370" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="402" TierI="371" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="403" TierI="372" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="404" TierI="373" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="405" TierI="374" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="407" TierI="376" TierII="377" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="408" TierI="378" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="409" TierI="379" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="410" TierI="344" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="411" TierI="345" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="412" TierI="346" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="413" TierI="347" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="414" TierI="348" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="415" TierI="349" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="416" TierI="350" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="417" TierI="351" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="418" TierI="352" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="419" TierI="353" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="420" TierI="354" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="421" TierI="355" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="422" TierI="356" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="423" TierI="357" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="424" TierI="358" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="425" TierI="359" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="426" TierI="360" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="427" TierI="361" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="10" Name="Gloves">
 		<Item Index="0" TierI="4" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -1122,6 +1237,7 @@
 		<Item Index="348" TierI="323" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="349" TierI="324" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="350" TierI="325" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="351" TierI="343" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="352" TierI="312" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="353" TierI="313" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="354" TierI="314" TierII="315" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -1140,9 +1256,33 @@
 		<Item Index="371" TierI="342" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="392" TierI="362" TierII="363" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="395" TierI="364" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="396" TierI="365" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="397" TierI="366" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="398" TierI="367" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="399" TierI="368" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="400" TierI="369" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="401" TierI="370" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="402" TierI="371" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="403" TierI="372" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="404" TierI="373" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="405" TierI="374" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="407" TierI="376" TierII="377" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="408" TierI="378" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="409" TierI="379" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="411" TierI="345" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="412" TierI="346" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="413" TierI="347" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="414" TierI="348" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="415" TierI="349" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="417" TierI="351" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="418" TierI="352" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="419" TierI="353" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="420" TierI="354" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="421" TierI="355" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="424" TierI="358" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="425" TierI="359" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="426" TierI="360" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="427" TierI="361" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="11" Name="Boots">
 		<Item Index="0" TierI="3" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
@@ -1294,6 +1434,12 @@
 		<Item Index="407" TierI="376" TierII="377" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="408" TierI="378" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 		<Item Index="409" TierI="379" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="410" TierI="344" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="414" TierI="348" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="416" TierI="350" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="419" TierI="353" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="422" TierI="356" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
+		<Item Index="423" TierI="357" TierII="0" TierIII="0" TierIV="0" MixLevelA="0" MixLevelB="0" />
 	</Section>
 	<Section Index="13" Name="Jewel and Misc">
 		<Item Index="8" TierI="1" TierII="62" TierIII="73" TierIV="0" MixLevelA="0" MixLevelB="0" />

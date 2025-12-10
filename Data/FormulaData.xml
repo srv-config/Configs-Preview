@@ -332,6 +332,7 @@
 		<Formula ID="70" Data="(((%d-9)*(%d-8))/2)+((%d+%d)*0)" /> <!-- ItemLevel, ItemLevel, ItemLevel, ItemLevel -->
 		<Formula ID="71" Data="(%d+25)" /> <!-- ItemDefense -->
 		<Formula ID="72" Data="((%d+25)+57)+((((%d-1)*20)/20*26))" /> <!-- ItemDefense, LegendaryGrade -->
+		<Formula ID="73" Data="(%d*1.5)" />
 	</ExcellentOption>
 	<SetAddStatOption>
 		<Formula ID="0"	Data="%d/10" /> <!-- ItemLevel -->
@@ -805,6 +806,7 @@
 		<Formula ID="114" Data="(((%d*1.9)^1.4)+9)" /> <!-- ItemLevel -->
 		<Formula ID="115" Data="(((%d*2.2)^1)+22)" /> <!-- ItemLevel -->
 		<Formula ID="116" Data="((((%d*1.8)^1.48)+56)/1.1)" /> <!-- ItemLevel -->
+<!-- 1st legendary -->
 		<Formula ID="117" Data="(((%d*2)^1)+21)" /> <!-- ItemLevel -->
 		<Formula ID="118" Data="(80.5+(%d*1)/2)" /> <!-- ItemLevel -->
 		<Formula ID="119" Data="(38+(%d*1)/3)" /> <!-- ItemLevel -->
@@ -840,6 +842,42 @@
 		<Formula ID="149" Data="100" />
 		<Formula ID="150" Data="300" />
 		<Formula ID="151" Data="240" />
+<!-- 2nd legendary -->
+		<Formula ID="152" Data="(88.5+(%d*1)/2)" /> <!-- ItemLevel -->
+		<Formula ID="153" Data="(43+(%d*1)/3)" /> <!-- ItemLevel -->
+		<Formula ID="154" Data="(732+(%d*6.78))" /> <!-- ItemLevel -->
+		<Formula ID="155" Data="(292+(%d*2.63))" /> <!-- ItemLevel -->
+		<Formula ID="156" Data="(215+(%d*2.65))" /> <!-- ItemLevel -->
+		<Formula ID="157" Data="(215+(%d*2.65))" /> <!-- ItemLevel -->
+		<Formula ID="158" Data="(75+(%d*1.2))" /> <!-- ItemLevel -->
+		<Formula ID="159" Data="(287+(%d*2.53))" /> <!-- ItemLevel -->
+		<Formula ID="160" Data="(265+(%d*2.37))" /> <!-- ItemLevel -->
+		<Formula ID="161" Data="(224+(%d*2.65))" /> <!-- ItemLevel -->
+		<Formula ID="162" Data="(87+(%d*1.5))" /> <!-- ItemLevel -->
+		<Formula ID="163" Data="(284+(%d*2.39))" /> <!-- ItemLevel -->
+		<Formula ID="164" Data="(273+(%d*2.33))" /> <!-- ItemLevel -->
+		<Formula ID="165" Data="(74+(%d*1.2))" /> <!-- ItemLevel -->
+		<Formula ID="166" Data="(138.5+(%d*1)/2)" /> <!-- ItemLevel -->
+		<Formula ID="167" Data="(154+(%d*2.5))" /> <!-- ItemLevel -->
+		<Formula ID="168" Data="(70+(%d*1))" /> <!-- ItemLevel -->
+		<Formula ID="169" Data="(190+(%d*1.39))" /> <!-- ItemLevel -->
+		<Formula ID="170" Data="500" />
+		<Formula ID="171" Data="500" />
+		<Formula ID="172" Data="300" />
+		<Formula ID="173" Data="400" />
+		<Formula ID="174" Data="(42+(%d*1.5))" /> <!-- ItemLevel -->
+		<Formula ID="175" Data="500" />
+		<Formula ID="176" Data="500" />
+		<Formula ID="177" Data="300" />
+		<Formula ID="178" Data="400" />
+		<Formula ID="179" Data="(42+(%d*1.5))" /> <!-- ItemLevel -->
+		<Formula ID="180" Data="150" />
+		<Formula ID="181" Data="120" />
+		<Formula ID="182" Data="100" />
+		<Formula ID="183" Data="300" />
+		<Formula ID="184" Data="240" />
+		<Formula ID="185" Data="50" />
+		<Formula ID="186" Data="50" />
 	</SetOption>
 	<Wing4thDamage>
 		<Formula ID="0" Data="100+(%d^1.2*11.8)" /> <!-- WingsLevel -->
@@ -904,7 +942,7 @@
 		<Formula ID="35" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Agility -->
 		<Formula ID="36" Data="((%d/10)+5)" /> <!-- Energy -->
 		<Formula ID="37" Data="(%d/10)+10" /> <!-- Energy -->
-		<Formula ID="38" Data="(%d/30)+5" /> <!-- Energy -->
+		<Formula ID="38" Data="(%d/11)+5" /> <!-- Energy -->
 		<Formula ID="39" Data="5" /> <!-- None -->
 		<Formula ID="40" Data="30" /> <!-- None -->
 		<Formula ID="41" Data="2000" /> <!-- None -->
@@ -1355,7 +1393,7 @@
 		<Formula ID="284" Data="%d*1" /> <!-- ReqCardCount -->
 		<Formula ID="285" Data="%d*1000000" /> <!-- ReqCardCount -->
 		<Formula ID="286" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.59+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="287" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.59+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
+		<Formula ID="287" Data="(((15+(%d*15))+((%d+1)*%d*2))*1+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 	</AbilityTree>
 	<PetItem>
 		<Formula ID="0" Data="50" /> <!-- None -->

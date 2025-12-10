@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2023 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -35,4 +35,5 @@
 	<Item ID="6" Cat="20" Index="132" Count="2500" />
 	<Item ID="7" Cat="20" Index="133" Count="2500" />
 	<Item ID="8" Cat="20" Index="232" Count="2500" />
+	<Item ID="9" Cat="20" Index="298" Count="3750" />
 </CollectItemCount>

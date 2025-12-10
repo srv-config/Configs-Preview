@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2019 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -175,8 +175,8 @@
 	<Element Number="162" Type="43" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Eunice Rush" />
 	<Element Number="163" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Eunice AOE Attack" />
 	<Element Number="164" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Eunice Anger Blow Attack" />
-	<Element Number="165" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Eunice & Giant Normal Attack" />
-	<Element Number="166" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Eunice & Giant Aqua Beam" />
+	<Element Number="165" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Eunice &amp; Giant Normal Attack" />
+	<Element Number="166" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Eunice &amp; Giant Aqua Beam" />
 	<Element Number="167" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Storm Fiend AOE Attack" />
 	<Element Number="168" Type="0" SuccessRate="3" ContinuanceTime="3" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="-1" CharacterClass="0" CharacterLevel="0" Name="Storm Fiend Stun" />
 	<Element Number="169" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Twisted Condra AOE Attack" />
@@ -193,4 +193,5 @@
 	<Element Number="180" Type="3" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="550" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Sapi Queen Destruction Mana Reduction" />
 	<Element Number="181" Type="4" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="40" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Sapi Queen Destruction AG Reduction" />
 	<Element Number="182" Type="0" SuccessRate="3" ContinuanceTime="3" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="-1" CharacterClass="0" CharacterLevel="0" Name="Swamp of Destruction Monsters Stun" />
+	<Element Number="183" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Aquila Temple Monster Attack" />
 </MonsterSkill>

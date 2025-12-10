@@ -21,6 +21,7 @@
 -->
 
 <LegendaryItemSetType>
+<!-- Grade 1 -->
 	<Item SetOptionID="326" Cat1="0" Index1="128" Cat2="0" Index2="128" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="327" Cat1="5" Index1="151" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="328" Cat1="4" Index1="70" Cat2="4" Index2="71" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
@@ -38,4 +39,26 @@
 	<Item SetOptionID="340" Cat1="5" Index1="157" Cat2="5" Index2="154" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="341" Cat1="5" Index1="155" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="342" Cat1="0" Index1="133" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+<!-- Grade 2 -->
+	<Item SetOptionID="342" Cat1="0" Index1="133" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="343" Cat1="5" Index1="158" Cat2="5" Index2="159" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="374" Cat1="2" Index1="70" Cat2="6" Index2="112" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="344" Cat1="0" Index1="135" Cat2="0" Index2="135" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="345" Cat1="5" Index1="160" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="346" Cat1="4" Index1="73" Cat2="4" Index2="74" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="347" Cat1="5" Index1="161" Cat2="5" Index2="162" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="348" Cat1="0" Index1="136" Cat2="0" Index2="136" Cat3="0" Index3="139" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="349" Cat1="2" Index1="73" Cat2="6" Index2="118" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="350" Cat1="0" Index1="137" Cat2="0" Index2="137" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="351" Cat1="3" Index1="36" Cat2="6" Index2="117" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="352" Cat1="6" Index1="116" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="353" Cat1="5" Index1="165" Cat2="5" Index2="165" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="354" Cat1="2" Index1="74" Cat2="6" Index2="119" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="355" Cat1="0" Index1="138" Cat2="0" Index2="138" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="356" Cat1="0" Index1="141" Cat2="6" Index2="115" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="357" Cat1="4" Index1="72" Cat2="4" Index2="72" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="358" Cat1="5" Index1="166" Cat2="5" Index2="163" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="359" Cat1="5" Index1="164" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="360" Cat1="0" Index1="140" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="361" Cat1="5" Index1="167" Cat2="5" Index2="168" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 </LegendaryItemSetType>

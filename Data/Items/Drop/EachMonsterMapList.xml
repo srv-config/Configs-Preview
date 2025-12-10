@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2023 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -88,4 +88,5 @@
 	<Map Number="142" FileName="MonsterMap_(142)_Bag.xml" />
 	<Map Number="143" FileName="MonsterMap_(143)_Bag.xml" />
 	<Map Number="144" FileName="MonsterMap_(144)_Bag.xml" />
+	<Map Number="145" FileName="MonsterMap_(145)_Bag.xml" />
 </EachMonsterMapList>

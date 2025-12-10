@@ -271,6 +271,8 @@
 		<Item Cat="20" Index="301" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Armor of Faith  -->
 		<Item Cat="20" Index="303" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Faith  -->
 		<Item Cat="20" Index="304" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Faith  -->
+		<Item Cat="2" Index="60" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Hammer -->
+		<Item Cat="6" Index="102" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Crusader Shield -->
 		<Item Cat="15" Index="74" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Sacred Impact Orb -->
 	</Character>
 	<Character Class="-1" Name="All Classes">

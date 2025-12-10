@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -52,7 +52,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS
--->											
+-->
 
 <VoucherItemExchange Enable="1">
 	<VoucherSettings>
@@ -73,6 +73,7 @@
 				<Reward ID="12" ItemCat="12" ItemIndex="152" ItemLevel="11" Luck="1" Option="1" Duration="2592000" />
 				<Reward ID="13" ItemCat="12" ItemIndex="178" ItemLevel="11" Luck="1" Option="1" Duration="2592000" />
 				<Reward ID="14" ItemCat="12" ItemIndex="196" ItemLevel="11" Luck="1" Option="1" Duration="2592000" />
+				<Reward ID="15" ItemCat="21" ItemIndex="3" ItemLevel="11" Luck="1" Option="1" Duration="2592000" />
 			</RewardItemList>
 			<RewardItemOptions>
 				<OptionSet ID="0" OptionID1="3" OptionVal1="2" OptionID2="6" OptionVal2="2" OptionID3="-1" OptionVal3="-1" OptionID4="-1" OptionVal4="-1" ShuffleEffect="0" Rate="16666" />
@@ -237,5 +238,5 @@
 				<OptionSet ID="159" OptionID1="3" OptionVal1="3" OptionID2="6" OptionVal2="3" OptionID3="5" OptionVal3="3" OptionID4="4" OptionVal4="3" ShuffleEffect="1" Rate="133" />
 			</RewardItemOptions>
 		</Voucher>
-	</VoucherSettings>											
+	</VoucherSettings>
 </VoucherItemExchange>

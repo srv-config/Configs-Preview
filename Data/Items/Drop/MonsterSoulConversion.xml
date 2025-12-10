@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -63,8 +63,8 @@
 		<Converter Level="1">
 			<Area ID="0" MapNumber="33" MonsterIndex="308" ReqSoulNumber="500" DropRate="450000" Name="Aida" />
 			<Area ID="1" MapNumber="37" MonsterIndex="553" ReqSoulNumber="500" DropRate="450000" Name="Kanturu Ruins" />
-			<Area ID="2" MapNumber="100" MonsterIndex="670" ReqSoulNumber="500" DropRate="450000" Name="Kanturu Ruins" />
-			<Area ID="3" MapNumber="110" MonsterIndex="713" ReqSoulNumber="500" DropRate="450000" Name="Kanturu Ruins" />
+			<Area ID="2" MapNumber="100" MonsterIndex="670" ReqSoulNumber="500" DropRate="450000" Name="Urk Montain" />
+			<Area ID="3" MapNumber="110" MonsterIndex="713" ReqSoulNumber="500" DropRate="450000" Name="Nars" />
 			<Area ID="4" MapNumber="57" MonsterIndex="562" ReqSoulNumber="500" DropRate="450000" Name="Raklion" />
 			<Area ID="5" MapNumber="56" MonsterIndex="557" ReqSoulNumber="500" DropRate="450000" Name="Swamp of Calmness" />
 		</Converter>
@@ -89,12 +89,13 @@
 			<Area ID="1" MapNumber="137" MonsterIndex="905" ReqSoulNumber="500" DropRate="450000" Name="Kanturu Underground" />
 			<Area ID="2" MapNumber="138" MonsterIndex="911" ReqSoulNumber="500" DropRate="450000" Name="Ignis Volcano" />
 			<Area ID="3" MapNumber="140" MonsterIndex="926" ReqSoulNumber="500" DropRate="450000" Name="Bloody Tarkan" />
+			<Area ID="4" MapNumber="141" MonsterIndex="942" ReqSoulNumber="500" DropRate="450000" Name="Bloody Tarkan" />
 		</Converter>
 		<Converter Level="5">
-			<Area ID="0" MapNumber="141" MonsterIndex="942" ReqSoulNumber="500" DropRate="450000" Name="Tormenta Island" />
-			<Area ID="1" MapNumber="142" MonsterIndex="955" ReqSoulNumber="500" DropRate="450000" Name="Twisted Kalutan" />
-			<Area ID="2" MapNumber="143" MonsterIndex="963" ReqSoulNumber="500" DropRate="450000" Name="Kardama Underground Temple" />
-			<Area ID="3" MapNumber="144" MonsterIndex="969" ReqSoulNumber="500" DropRate="450000" Name="Swamp of Destruction" />
+			<Area ID="0" MapNumber="141" MonsterIndex="942" ReqSoulNumber="500" DropRate="450000" Name="Twisted Kalutan" />
+			<Area ID="1" MapNumber="142" MonsterIndex="955" ReqSoulNumber="500" DropRate="450000" Name="Kardamahal Underground Temple" />
+			<Area ID="2" MapNumber="143" MonsterIndex="963" ReqSoulNumber="500" DropRate="450000" Name="Swamp of Destruction" />
+			<Area ID="3" MapNumber="144" MonsterIndex="969" ReqSoulNumber="500" DropRate="450000" Name="Aquila's Temple" />
 		</Converter>
 	</MonsterSettings>
 </MonsterSoulConversion>

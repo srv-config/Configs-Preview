@@ -49,7 +49,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS 
--->	
+-->
 
 <MapAttribute>
 	<Config>
@@ -183,5 +183,6 @@
 		<Map Number="142" ViewRange="15" PvPConfig="0" MoveToGate="-1" ExpPenalty="0" PKCtrlMode="0" ItemDropRateBonus="0" ExpBonus="0.0" MasterExpBonus="0.0" MajesticExpBonus="0.0" VipLevel="-1" PkLevelIncrease="1" RegenOnSamePlace="0" BlockEntry="0" PartyUserMove="1" AllowPShopOpen="1" Enable3D="1" EnableMuHelper="1" EnableZenDrop="1" ItemLootingTime="-1" ItemDisappearTime="-1" /> <!-- Twisted Karutan -->
 		<Map Number="143" ViewRange="15" PvPConfig="0" MoveToGate="-1" ExpPenalty="1" PKCtrlMode="0" ItemDropRateBonus="0" ExpBonus="0.0" MasterExpBonus="0.0" MajesticExpBonus="0.0" VipLevel="-1" PkLevelIncrease="1" RegenOnSamePlace="0" BlockEntry="0" PartyUserMove="1" AllowPShopOpen="1" Enable3D="1" EnableMuHelper="1" EnableZenDrop="1" ItemLootingTime="-1" ItemDisappearTime="-1" /> <!-- Kardamahal Underground Temple -->
 		<Map Number="144" ViewRange="15" PvPConfig="0" MoveToGate="-1" ExpPenalty="1" PKCtrlMode="0" ItemDropRateBonus="0" ExpBonus="0.0" MasterExpBonus="0.0" MajesticExpBonus="0.0" VipLevel="-1" PkLevelIncrease="1" RegenOnSamePlace="0" BlockEntry="0" PartyUserMove="1" AllowPShopOpen="1" Enable3D="1" EnableMuHelper="1" EnableZenDrop="1" ItemLootingTime="-1" ItemDisappearTime="-1" /> <!-- Swamp of Destruction -->
+		<Map Number="145" ViewRange="15" PvPConfig="0" MoveToGate="-1" ExpPenalty="1" PKCtrlMode="0" ItemDropRateBonus="0" ExpBonus="0.0" MasterExpBonus="0.0" MajesticExpBonus="0.0" VipLevel="-1" PkLevelIncrease="1" RegenOnSamePlace="0" BlockEntry="0" PartyUserMove="1" AllowPShopOpen="1" Enable3D="1" EnableMuHelper="1" EnableZenDrop="1" ItemLootingTime="-1" ItemDisappearTime="-1" /> <!-- Aquila's Temple -->
 	</Config>
 </MapAttribute>

@@ -1129,5 +1129,7 @@
 		<Msg ID="141" Text="Tormenta Island" />
 		<Msg ID="142" Text="Twisted Karutan" />
 		<Msg ID="143" Text="Kardamahal Underground Temple" />
+		<Msg ID="144" Text="Swamp of Destruction" />
+		<Msg ID="145" Text="Aquila's Temple" />
 	</Map>
 </Language>

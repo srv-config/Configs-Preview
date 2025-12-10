@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2022 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -194,6 +194,13 @@
 		<Combination ID="108" ItemCat="9" ItemIndex="339" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
 		<Combination ID="109" ItemCat="10" ItemIndex="339" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
 		<Combination ID="110" ItemCat="11" ItemIndex="339" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
+		<Combination ID="111" ItemCat="2"  ItemIndex="56"  ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
+		<Combination ID="112" ItemCat="6"  ItemIndex="100" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
+		<Combination ID="113" ItemCat="7"  ItemIndex="393" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
+		<Combination ID="114" ItemCat="8"  ItemIndex="393" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
+		<Combination ID="115" ItemCat="9"  ItemIndex="393" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
+		<Combination ID="116" ItemCat="10" ItemIndex="393" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
+		<Combination ID="117" ItemCat="11" ItemIndex="393" ItemMinLevel="11" ItemMaxLevel="15" ReqSkill="0" ReqOption="0" AllowNonEmptySocket="0" MinSocketCount="2" ReqMoney="10000000" />
 	</CombinationMaterials>
 	<CombinationRequirements>
 		<Combination StartID="0" EndID="110" ItemCat="14" ItemIndex="364" ItemLevel="-1" ItemDurability="-1" ItemCount="1" />
@@ -313,9 +320,15 @@
 		<Combination ID="108" SuccessRate="8000" ItemCat="9" ItemIndex="340" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
 		<Combination ID="109" SuccessRate="8000" ItemCat="10" ItemIndex="340" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
 		<Combination ID="110" SuccessRate="8000" ItemCat="11" ItemIndex="340" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
-
+		<Combination ID="111" SuccessRate="8000" ItemCat="2"  ItemIndex="57"  ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
+		<Combination ID="112" SuccessRate="8000" ItemCat="6"  ItemIndex="101" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
+		<Combination ID="113" SuccessRate="8000" ItemCat="7"  ItemIndex="394" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
+		<Combination ID="114" SuccessRate="8000" ItemCat="8"  ItemIndex="394" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
+		<Combination ID="115" SuccessRate="8000" ItemCat="9"  ItemIndex="394" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
+		<Combination ID="116" SuccessRate="8000" ItemCat="10" ItemIndex="394" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
+		<Combination ID="117" SuccessRate="8000" ItemCat="11" ItemIndex="394" ItemLevel="0" Skill="0" SkillRate="2000" Luck="0" LuckRate="2000" SlotCreateType="0" SlotRate1="3000" SlotRate2="4500" SlotRate3="2500" SlotRate4="0" SlotRate5="0" />
 	</CombinationResult>
-	<CombinationFail>	
+	<CombinationFail>
 		<Combination ID="0" FailType="1" ItemCat="5" ItemIndex="31" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
 		<Combination ID="1" FailType="1" ItemCat="6" ItemIndex="20" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
 		<Combination ID="2" FailType="1" ItemCat="7" ItemIndex="52" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
@@ -427,5 +440,12 @@
 		<Combination ID="108" FailType="1" ItemCat="9" ItemIndex="339" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
 		<Combination ID="109" FailType="1" ItemCat="10" ItemIndex="339" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
 		<Combination ID="110" FailType="1" ItemCat="11" ItemIndex="339" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
+		<Combination ID="111" FailType="1" ItemCat="2"  ItemIndex="56"  ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
+		<Combination ID="112" FailType="1" ItemCat="6"  ItemIndex="100" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
+		<Combination ID="113" FailType="1" ItemCat="7"  ItemIndex="393" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
+		<Combination ID="114" FailType="1" ItemCat="8"  ItemIndex="393" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
+		<Combination ID="115" FailType="1" ItemCat="9"  ItemIndex="393" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
+		<Combination ID="116" FailType="1" ItemCat="10" ItemIndex="393" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
+		<Combination ID="117" FailType="1" ItemCat="11" ItemIndex="393" ItemLevel="-1" LevelDownValue="-1" ItemDurability="-1" Skill="-1" Option="-1" Luck="-1" ClearSockets="0" SocketSlot="-1" />
 	</CombinationFail>
 </SocketItemUpgrade>

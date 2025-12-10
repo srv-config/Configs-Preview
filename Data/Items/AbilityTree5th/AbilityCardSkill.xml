@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == Modify if you know what you do only!
 // == File is a part of IGCN Group MuOnline Server files.
@@ -29,6 +29,8 @@
 //		~ 11: LW
 //		~ 12: LM
 //		~ 13: IK
+//		~ 14: AC
+//		~ 14: CR
 //
 // ### AbilityCardSkill::Class::Skill ###
 //	ID: Base (normal) skill ID, see SkillList.xml
@@ -103,5 +105,8 @@
 	</Class>
 	<Class ID="14"> <!-- AC -->
 		<Skill ID="49" Type="0" ItemCat="20" ItemIndex="258" SkillIndex="2094" ReqSkill="1239" StaticOptionIndex="2" StaticOptionValue="1" FormulaID="286" />
+	</Class>
+	<Class ID="15"> <!-- CR -->
+		<Skill ID="49" Type="0" ItemCat="20" ItemIndex="300" SkillIndex="2109" ReqSkill="1508" StaticOptionIndex="1" StaticOptionValue="15" FormulaID="287" />
 	</Class>
 </AbilityCardSkill>

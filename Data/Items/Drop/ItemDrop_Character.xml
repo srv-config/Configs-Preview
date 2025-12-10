@@ -58,8 +58,8 @@
 //		~ 3: Earth
 //		~ 4: Wind
 //		~ 5: Darkness
-//		~ -1: Use PentagramItemDropRate.xml
-//		~ -2: Random (1-5)
+//		~ -1: Random (1-5)
+//		~ -2: Use PentagramItemDropRate.xml
 //
 //	SocketCount: Minimum and maximum socket count of item to drop, 1-5, usage: min;max, 0 to use SocketSystem.xml rates, for pentagram a rate of sockets from PentagramItemDropRate.xml are used
 //
@@ -135,6 +135,18 @@
 			<Monster Index="966" Rate="850" />
 			<Monster Index="967" Rate="850" />
 			<Monster Index="968" Rate="850" />
+			<Monster Index="969" Rate="1100" />
+			<Monster Index="970" Rate="1100" />
+			<Monster Index="971" Rate="1100" />
+			<Monster Index="972" Rate="1150" />
+			<Monster Index="973" Rate="1150" />
+			<Monster Index="974" Rate="1150" />
+			<Monster Index="975" Rate="1200" />
+			<Monster Index="976" Rate="1200" />
+			<Monster Index="977" Rate="1200" />
+			<Monster Index="978" Rate="1250" />
+			<Monster Index="979" Rate="1250" />
+			<Monster Index="980" Rate="1250" />
 		</Item>
 		<Item DropID="2">
 			<Monster Index="892" Rate="400" />
@@ -180,6 +192,18 @@
 			<Monster Index="966" Rate="1050" />
 			<Monster Index="967" Rate="1050" />
 			<Monster Index="968" Rate="1050" />
+			<Monster Index="969" Rate="1100" />
+			<Monster Index="970" Rate="1100" />
+			<Monster Index="971" Rate="1100" />
+			<Monster Index="972" Rate="1150" />
+			<Monster Index="973" Rate="1150" />
+			<Monster Index="974" Rate="1150" />
+			<Monster Index="975" Rate="1200" />
+			<Monster Index="976" Rate="1200" />
+			<Monster Index="977" Rate="1200" />
+			<Monster Index="978" Rate="1250" />
+			<Monster Index="979" Rate="1250" />
+			<Monster Index="980" Rate="1250" />
 		</Item>
 	</DropItem>
 </CharacterItemDrop>

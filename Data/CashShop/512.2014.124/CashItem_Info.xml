@@ -86,6 +86,8 @@
 //		Type 3: Always 0
 //		Type 4: Days
 //
+//	Rank: Defines rank for Errtel items, 1-5
+//
 // Description: Used for cash shop inventory search option. Should always be filled. Inserted into T_inGameShop_Items.Description column. Encoding of the file must be set properly for your database collation, e.g. Chinese_PRC_CI_AS will require the file encoding to be set to ANSI. Avoid using following characters as they will be removed automatically -> .;:~%'
 //
 // STRICTLY NO COMMENTS INSIDE TAGS

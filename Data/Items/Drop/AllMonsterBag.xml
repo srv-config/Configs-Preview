@@ -28,8 +28,8 @@
 //		~ 3: Earth
 //		~ 4: Wind
 //		~ 5: Darkness
-//		~ -1: Random (1-5)
-//		~ -2: Use PentagramItemDropRate.xml
+//		~ -1: Use PentagramItemDropRate.xml
+//		~ -2: Random (1-5)
 //
 //	Rate: Item drop rate, max individual rate is 1000000
 //

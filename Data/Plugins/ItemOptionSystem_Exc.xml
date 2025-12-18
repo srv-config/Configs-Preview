@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2023 IGC-Network (R)
+// == (C) 2010-2025 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -106,6 +106,7 @@
 		<Strings>
 			<String Index="0" Text=" (Rq " />
 		</Strings>
+		
 		<Requirements>
 			<Req Index="0" Text=" Lv >= +%d"/>
 			<Req Index="1" Text=" Anc %d" />
@@ -113,6 +114,7 @@
 			<Req Index="3" Text=" Sckt >= %d" />
 		</Requirements>
 	</Notices>
+	
 	<Items>
 		<Item Cat="5" Index="10" MinLevel="15" SocketCount="0" OptionIndex="0" OptionValue="5" OptionProbability="100" Ancient="-1" Excellent="1" />
 		<Item Cat="5" Index="10" MinLevel="15" SocketCount="0" OptionIndex="1" OptionValue="5" OptionProbability="100" Ancient="-1" Excellent="1" />
@@ -124,9 +126,11 @@
 		<Item Cat="4" Index="40" MinLevel="5" SocketCount="0" OptionIndex="4" OptionValue="10000" OptionProbability="100" Ancient="-1" Excellent="0" />
 		<Item Cat="13" Index="37" MinLevel="0" SocketCount="0" OptionIndex="7" OptionValue="1000" OptionProbability="0" Ancient="-1" Excellent="0" /> 
 	</Items>
-    <Socket>
-        <Item Cat="19" Index="190" MinLevel="0" MaxLevel="15" OptionIndex="0" OptionValue="5" OptionProbability="100" SeedMinLevel="0" SeedMaxLevel="5" SeedCountFire="1" SeedCountWater="1" SeedCountIce="0" SeedCountWind="1" SeedCountLight="0" SeedCountEarth="0" />
-    </Socket>
+	
+	<Socket>
+		<Item Cat="19" Index="190" MinLevel="0" MaxLevel="15" OptionIndex="0" OptionValue="5" OptionProbability="100" SeedMinLevel="0" SeedMaxLevel="5" SeedCountFire="1" SeedCountWater="1" SeedCountIce="0" SeedCountWind="1" SeedCountLight="0" SeedCountEarth="0" />
+	</Socket>
+	
 	<OptionText>
 		<Text OptionId="0" ColorID="6" Title="Max HP is reduced by %d%% (Chance %d%%)" />
 		<Text OptionId="1" ColorID="7" Title="Attack speed is reduced by %d%% (Chance %d%%)" />
@@ -157,7 +161,7 @@
 		<Text OptionId="26" ColorID="6" Title="Increase Excellent DMG Rate +%d%%" />
 		<Text OptionId="27" ColorID="6" Title="Increase Critical DMG Rate +%d%%" />
 		<Text OptionId="28" ColorID="6" Title="True DMG Chance +%d%%" />
-		<Text OptionId="29" ColorID="6" Title="Triple DMG Chance +%d%%" />	
+		<Text OptionId="29" ColorID="6" Title="Triple DMG Chance +%d%%" />
 		<Text OptionId="30" ColorID="6" Title="Triple DMG Resistance +%d%%" />
 		<Text OptionId="31" ColorID="6" Title="Become invincible for %d seconds when attacked (Chance %d%%)" />
 		<Text OptionId="32" ColorID="6" Title="Blind enemy for %d seconds (Chance %d%%)" />
@@ -167,18 +171,22 @@
 		<Text OptionId="36" ColorID="6" Title="Empty" />
 		<Text OptionId="37" ColorID="6" Title="Increase Attack Success Rate +%d" />
 		<Text OptionId="38" ColorID="6" Title="Increase SD Resistance +%d%%" />
-		<Text OptionId="39" ColorID="6" Title="Stun Resistance +%d%%" />	
+		<Text OptionId="39" ColorID="6" Title="Stun Resistance +%d%%" />
 		<Text OptionId="40" ColorID="6" Title="Incoming Combo DMG Reduce +%d%%" />
 		<Text OptionId="41" ColorID="6" Title="Triple DMG Increase +%d%%" />
 		<Text OptionId="42" ColorID="6" Title="Elemental DMG Increase +%d%%" />
 		<Text OptionId="43" ColorID="6" Title="Elemental DEF Increase +%d%%" />
 		<Text OptionId="44" ColorID="6" Title="Empty" />
 		<Text OptionId="45" ColorID="6" Title="Empty" />
-		<Text OptionId="46" ColorID="6" Title="Stun 4th Tree for %d seconds (Chance %d%%) " />	
+		<Text OptionId="46" ColorID="6" Title="Stun 4th Tree for %d seconds (Chance %d%%) " />
 		<Text OptionId="47" ColorID="6" Title="Empty" />
-		<Text OptionId="48" ColorID="6" Title="Become invincible" />		
-		<Text OptionId="49" ColorID="6" Title="Increase Chaos Mix Rate +%d%%" />	
-		<Text OptionId="50" ColorID="6" Title="Increase Exp +%d%%" />	
-		<Text OptionId="51" ColorID="6" Title="Increase Item drop Rate +%d%%" />		
+		<Text OptionId="48" ColorID="6" Title="Become invincible" />
+		<Text OptionId="49" ColorID="6" Title="Increase Chaos Mix Rate +%d%%" />
+		<Text OptionId="50" ColorID="6" Title="Increase Exp +%d%%" />
+		<Text OptionId="51" ColorID="6" Title="Increase Item drop Rate +%d%%" />
 	</OptionText>
+	
+	<OptionSettings>
+		<OneShotPVE ImmuneMonsters="-1" />
+	</OptionSettings>
 </ItemOptionSystem>

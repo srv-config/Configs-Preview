@@ -57,8 +57,8 @@
 //		~ 3: Earth
 //		~ 4: Wind
 //		~ 5: Darkness
-//		~ -1: Random (1-5)
-//		~ -2: Use PentagramItemDropRate.xml
+//		~ -1: Use PentagramItemDropRate.xml
+//		~ -2: Random (1-5)
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ If exc item has been drawn a skill and luck are drawn on basis of ExcItemLuckRate and ExcItemSkillRate from ItemDropRateControl.ini, otherwise ItemLuckRate and ItemSkillRate are used.

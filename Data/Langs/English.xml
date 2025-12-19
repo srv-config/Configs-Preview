@@ -943,6 +943,7 @@
 		<Msg ID="21" Text=" * Command: +%d" />
 		<Msg ID="22" Text="[AUTO-STAT] You need at least %s VIP to use the command." />
 		<Msg ID="23" Text="[AUTO-STAT] You are short of money, the cost is %d %s." />
+		<Msg ID="24" Text=" (capped)" />
 	</AutoStat>
 	
 	<HideAndSeek>

@@ -1071,10 +1071,8 @@ function CalcDarkHorseDefenseBonus(Dexterity, PetLevel)
 end
 
 -- Penalty Damage calculation from user, Damage Correction of Monster is configured from MonsterList.xml
-function CalcPenaltyDamageFromUser(UserLevel, UserMasterLevel, UserDamageCorrection, MonsterLevel, PenaltyMonsterAddLevel, MonsterDamageCorrection, InDamage)
-	local SumUserLevel = UserLevel + UserMasterLevel
-	local SumMonLevel = MonsterLevel + PenaltyMonsterAddLevel
-	local LevelDiff = SumMonLevel - SumUserLevel
+function CalcPenaltyDamageFromUser(UserLevel, UserDamageCorrection, PenaltyLevel, MonsterDamageCorrection, InDamage)
+	local LevelDiff = PenaltyLevel - UserLevel
 	local DamageCorrectionDiff = MonsterDamageCorrection - UserDamageCorrection
 	local OutDamage = InDamage
 
@@ -1095,10 +1093,8 @@ function CalcPenaltyDamageFromUser(UserLevel, UserMasterLevel, UserDamageCorrect
 end
 
 -- Penalty Damage calculation from monster, Damage Correction of Monster is configured from MonsterList.xml
-function CalcPenaltyDamageFromMonster(UserLevel, UserMasterLevel, UserDamageCorrection, MonsterLevel, PenaltyMonsterAddLevel, MonsterDamageCorrection, InDamage)
-	local SumUserLevel = UserLevel + UserMasterLevel
-	local SumMonLevel = MonsterLevel + PenaltyMonsterAddLevel
-	local LevelDiff = SumMonLevel - SumUserLevel
+function CalcPenaltyDamageFromMonster(UserLevel, UserDamageCorrection, PenaltyLevel, MonsterDamageCorrection, InDamage)
+	local LevelDiff = PenaltyLevel - UserLevel
 	local DamageCorrectionDiff = MonsterDamageCorrection - UserDamageCorrection
 	local OutDamage = InDamage
 

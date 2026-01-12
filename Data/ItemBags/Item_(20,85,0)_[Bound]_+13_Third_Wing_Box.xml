@@ -93,12 +93,10 @@
 			<Item Cat="12" Index="195" ItemMinLevel="13" ItemMaxLevel="13" Skill="0" Luck="-1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 		</Drop>
 	</DropAllow>
-<!-- TODO
 	<DropAllow DW="0" DK="0" ELF="0" MG="0" DL="0" SU="0" RF="0" GL="0" RW="0" SLA="0" GC="0" LW="0" LM="0" IK="0" AC="0" CR="1" PlayerMinLevel="1" PlayerMaxLevel="MAX" PlayerMinReset="0" PlayerMaxReset="MAX" MapNumber="-1">
 		<Drop Rate="10000" Type="0" Count="1">
-			<Item Cat="12" Index="195" ItemMinLevel="13" ItemMaxLevel="13" Skill="0" Luck="-1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
+			<Item Cat="21" Index="2" ItemMinLevel="13" ItemMaxLevel="13" Skill="0" Luck="-1" Option="1" Exc="-1" SetItem="0" SocketCount="0" ElementalItem="0" />
 		</Drop>
 	</DropAllow>
--->
 </DropSection>
 </ItemBag>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### MapPenalty ###
+//	Enable: Disable or enable the system, 0/1
+//
+// ### MapPenalty:Map ###
+//	Number: Number of a map
+/	PenaltyLevel: Minimum level penalty applies at
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<MapPenalty Enable="1">
+	<Map Number="122" PenaltyLevel="875" /> <!-- Swamp of Darkness -->
+	<Map Number="123" PenaltyLevel="980" /> <!-- Kubera Mine -->
+	<Map Number="124" PenaltyLevel="980" /> <!-- Kubera Mine -->
+	<Map Number="125" PenaltyLevel="980" /> <!-- Kubera Mine -->
+	<Map Number="126" PenaltyLevel="980" /> <!-- Kubera Mine -->
+	<Map Number="127" PenaltyLevel="980" /> <!-- Kubera Mine -->
+	<Map Number="128" PenaltyLevel="1010" /> <!-- Abyss Of Atlans 1 -->
+	<Map Number="129" PenaltyLevel="1020" /> <!-- Abyss Of Atlans 2 -->
+	<Map Number="130" PenaltyLevel="1030" /> <!-- Abyss Of Atlans 3 -->
+	<Map Number="131" PenaltyLevel="1070" /> <!-- Scorched Canyon -->
+	<Map Number="132" PenaltyLevel="1100" /> <!-- Red Smoke Icarus -->
+	<Map Number="133" PenaltyLevel="1130" /> <!-- Arenil Temple -->
+	<Map Number="134" PenaltyLevel="1160" /> <!-- Ashy Aida -->
+	<Map Number="136" PenaltyLevel="1190" /> <!-- Burning Kethotum -->
+	<Map Number="137" PenaltyLevel="1220" /> <!-- Kanturu Undergrounds -->
+	<Map Number="138" PenaltyLevel="1250" /> <!-- Volcano Ignis -->
+	<Map Number="140" PenaltyLevel="1280" /> <!-- Bloody Tarkan -->
+	<Map Number="141" PenaltyLevel="1310" /> <!-- Tormenta Island -->
+	<Map Number="142" PenaltyLevel="1500" /> <!-- Twisted Karutan -->
+	<Map Number="143" PenaltyLevel="1550" /> <!-- Kardamahal Underground Temple -->
+	<Map Number="144" PenaltyLevel="1600" /> <!-- Swamp of Destruction -->
+	<Map Number="145" PenaltyLevel="1650" /> <!-- Aquila's Temple -->
+</MapPenalty>

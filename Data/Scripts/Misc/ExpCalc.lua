@@ -119,7 +119,7 @@ function ExpSystemCalc(FormulaID, PlayerVipType, StaticExp, DynamicExp, EventExp
 	return Exp;
 end
 
-function ExpPenaltyCalc(MapNumber, UserLevel, PenaltyLevel)
+function ExpPenaltyCalc(MapNumber, UserLevel, MonsterClass, MonsterLevel, PenaltyLevel)
 	local LevelDiff = PenaltyLevel - UserLevel
 	local ExpRate = 100
 

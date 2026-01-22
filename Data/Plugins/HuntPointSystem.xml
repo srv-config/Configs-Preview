@@ -3,11 +3,12 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2024 IGC-Network (R)
+// == (C) 2010-2026 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
 //
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //	HuntPoint system is an mixture of PVP and PVE addition to the MU Online Game. The purpose of this system is to add ability for players
 //	to improve their character by accomplishing special tasks and battle each other for more points.
 //	Once the Hunt Point system is activated, the player Receives special buff with a tool-tip.
@@ -19,9 +20,10 @@
 //	The abilities can be slightly boosted by completing range of quests defined in this file.
 //	Player can cancel one quest and start another if he decides to change his strategy to improve another ability
 //	Data about Players, their huntpoints and boosts are stored in MuOnline DB. IGC_HuntPoint table 
-//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~//
 // ### HuntPointSystem ###
-//	Enabled = Enable/Disable system
+//	Enabled: Enable/Disable system
 //
 // ### HuntPointSystem::General ###
 //	GSCodeActive: Active game server codes for the system to be working (Syntax code,code,code)
@@ -38,6 +40,7 @@
 //	AttMapTime: 
 //
 // ### HuntPointSystem::BuffSettings ###
+//	Enabled: Is buff enabled (!!! WARNING !!!) IF YOU ENABLE OR DISABLE ANY OF THE BUFFS, YOU MUST RESET THE HUNTPOINT SYSTEM DATA!
 //	AllowUp: Allow to enchant this buff
 //	EffectType: Unused
 //	HuntDiv: Divisor from formula (how much effect is given based on hunt point %)
@@ -108,14 +111,22 @@
 	/>
 	
 	<BuffSettings>
-		<Buff Id="0" Name="Defense" AllowUp="1" EffectType="3" HuntDiv="4" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
-		<Buff Id="1" Name="Mana" AllowUp="1" EffectType="5" HuntDiv="1" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
-		<Buff Id="2" Name="HP" AllowUp="1" EffectType="4" HuntDiv="1"	Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
-		<Buff Id="3" Name="HP Recovery" AllowUp="1" EffectType="53" HuntDiv="2000" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
-		<Buff Id="4" Name="Damage" AllowUp="1" EffectType="14" HuntDiv="5" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
-		<Buff Id="5" Name="Wizardry" AllowUp="1" EffectType="15" HuntDiv="2" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
-		<Buff Id="6" Name="Critical Damage" AllowUp="1" EffectType="55" HuntDiv="1000" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
-		<Buff Id="7" Name="Excellent Damage" AllowUp="1" EffectType="56" HuntDiv="1000" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="0" Name="Defense" Enabled="1" AllowUp="1" HuntDiv="4" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="1" Name="Mana" Enabled="1" AllowUp="1" HuntDiv="1" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="2" Name="HP" Enabled="1" AllowUp="1" HuntDiv="1"	Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="3" Name="HP Recovery" Enabled="0" AllowUp="1" HuntDiv="2000" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="4" Name="Damage" Enabled="1" AllowUp="1" HuntDiv="5" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="5" Name="Wizardry" Enabled="1" AllowUp="1" HuntDiv="2" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="6" Name="Critical Damage" Enabled="1" AllowUp="1" HuntDiv="1000" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="7" Name="Excellent Damage" Enabled="1" AllowUp="1" HuntDiv="1000" Max="100" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="8" Name="Elemental Damage" Enabled="1" AllowUp="1" HuntDiv="1000" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="9" Name="Elemental Defense" Enabled="1" AllowUp="1" HuntDiv="1000" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="10" Name="Damage Reduction" Enabled="1" AllowUp="1" HuntDiv="1000" Max="20" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="11" Name="Damage Reflect" Enabled="1" AllowUp="1" HuntDiv="1000" Max="20" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="12" Name="Max SD" Enabled="1" AllowUp="1" HuntDiv="1000" Max="65000" IsPercent="0" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="13" Name="Ignore Defense" Enabled="1" AllowUp="1" HuntDiv="1000" Max="50" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="14" Name="Triple DMG" Enabled="1" AllowUp="1" HuntDiv="1000" Max="50" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
+		<Buff Id="15" Name="Double DMG" Enabled="1" AllowUp="1" HuntDiv="1000" Max="50" IsPercent="1" MinWorkPercent="2" MinLevel="1" MinMasterLevel="0" MinReset="0" MinMasterReset="0" />
 	</BuffSettings>
 
 	<Battle Enabled="1">
@@ -134,12 +145,12 @@
 		ReceiveInactivePercent="70"
 		BuffPercent="2"
 		AllowSameGuildBattle="0"
-		CancelBuffList="1,2,3,4,5,6,8,9,71,76,77,81,82,129,130,131,135,136,138,139,140,142,143,148,149,150,151,152,153,154,155,161,162,163,216,217,218,219,220,221,222,223,224,225,226,246,293,294,295,296,298,299" />	
+		CancelBuffList="1,2,3,4,5,6,8,9,71,76,77,81,82,129,130,131,135,136,138,139,140,142,143,148,149,150,151,152,153,154,155,161,162,163,216,217,218,219,220,221,222,223,224,225,226,246,293,294,295,296,298,299" />
 		<AreasSettings>
 			<Area Id="0" Map="6" X1="42" X2="52" Y1="52" Y2="61" />
 			<Area Id="0" Map="6" X1="42" X2="52" Y1="52" Y2="61" />
 			<Area Id="0" Map="6" X1="42" X2="52" Y1="52" Y2="61" />
-		</AreasSettings>		
+		</AreasSettings>
 	</Battle>
 	
 	<ItemQuest Enabled="1" MaxBuffs="5">
@@ -335,7 +346,7 @@
 					<Point Id="6" Reward="3" />
 					<Point Id="7" Reward="0" />
 				</Points>
-			</Item>			
+			</Item>
 		</List>
 	</ItemQuest>
 	

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### EventScheduler::Event ###
+//	Type: Unique event type identifier (must match Enums.EventType)
+//	Name: Display name of the event
+//	NoticePeriod: Time in seconds before event start to send warning (0 = no notice)
+//	Duration: Event duration in seconds from start to auto-end (0 = no auto-end, event runs indefinitely)
+//
+// ### EventScheduler::Event::Start ###
+//	Year: Year to start the event, -1 if not applies
+//	Month: Month number to start the event 1-12, -1 if not applies
+//	Day: Day of a month to start the event, 1-31, -1 if not applies
+//	DayOfWeek: Day of a week to start the event, -1 if not applies
+//		~ 0: Sunday
+//		~ 1: Monday
+//		~ 2: Tuesday
+//		~ 3: Wednesday
+//		~ 4: Thursday
+//		~ 5: Friday
+//		~ 6: Saturday
+//	Hour: Hour to start the event, 0-23, -1 if not applies
+//	Minute: Minute to start the event, 0-59, -1 if not applies
+//	Second: Second to start the event, 0-59, -1 if not applies
+//
+// NOTES:
+//	- Events can have multiple Start schedules
+//	- If Second != -1, scheduler checks events every second (second-precision mode)
+//	- If Second == -1 for all events, scheduler throttles to once per minute (better performance)
+//	- All time values use server local time
+//	- Event lifecycle: Notice → Start → (Duration elapsed) → End
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<EventScheduler>
+	<Event Type="0" Name="Sample Event 1" NoticePeriod="300" Duration="600">
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="20" Minute="0" Second="0" />
+	</Event>
+
+	<Event Type="1" Name="Sample Event 2" NoticePeriod="300" Duration="1200">
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="8" Minute="0" Second="0" />
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="14" Minute="0" Second="0" />
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="20" Minute="0" Second="0" />
+	</Event>
+	
+	<Event Type="2" Name="Sample Event 3" NoticePeriod="300" Duration="300">
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="8" Minute="0" Second="0" />
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="14" Minute="0" Second="0" />
+		<Start Year="-1" Month="-1" Day="-1" DayOfWeek="-1" Hour="20" Minute="0" Second="0" />
+	</Event>
+</EventScheduler>

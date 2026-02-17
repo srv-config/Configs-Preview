@@ -27,7 +27,7 @@ CLASS_CRUSADER = 15
 -- NOTE: The below calculations must be adjusted to suit actual server max stats, otherwise the fruit points will not display correctly under 'C' window
 function FruitAddStatCalc(Class, PrevAddStat, Level)
 	local AddStat = PrevAddStat
-	local PointPerLevel = GetClassPointPerLevel(Class);
+	local PointPerLevel = Server.GetClassPointsPerLevel(Class);
 	
 	if (Level == 0) then
 		AddStat = 2
@@ -48,7 +48,7 @@ end
 
 function FruitMinusStatCalc(Class, PrevMinusStat, Level)
 	local MinusStat = PrevMinusStat
-	local PointPerLevel = GetClassPointPerLevel(Class);
+	local PointPerLevel = Server.GetClassPointsPerLevel(Class);
 	
 	if (Level == 0) then
 		MinusStat = 2

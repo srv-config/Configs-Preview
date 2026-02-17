@@ -1311,9 +1311,9 @@ function BatFlockDotDamage(InDamage, DOT, Strength, Dexterity, Vitality, Energy,
 	local OutDamage = 0
 
 	if (TargetType == TARGET_TYPE_PLAYER) then
-		OutDamage = InDamage
+		OutDamage = DOT
 	elseif (TargetType == TARGET_TYPE_MONSTER) then
-		OutDamage = InDamage
+		OutDamage = DOT
 	end
 
 	return OutDamage

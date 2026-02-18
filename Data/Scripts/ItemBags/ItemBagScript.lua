@@ -767,7 +767,7 @@ end
 -- ### /2/ Drop Item (using Monster Bag Structure) ### --
 function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerIndex, BagItem)
 	local ItemID = MakeItemID(BagItem.ItemType, BagItem.ItemIndex)
-	local ItemCheck = IsItem(ItemID)
+	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
 		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
@@ -972,7 +972,7 @@ end
 -- ### /3/ Create Item (using Event Bag Structure) - Item Drop on Ground ### --
 function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerIndex, UseType, GremoryCaseType, GremoryCaseGiveType, iGCReceiptDuration, BagItem)
 	local ItemID = MakeItemID(BagItem.ItemType, BagItem.ItemIndex)
-	local ItemCheck = IsItem(ItemID)
+	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
 		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
@@ -1187,7 +1187,7 @@ end
 -- ### /4/ Create Item (using Event Bag Structure) - Mix/Inventory - LuckyCoin, CherryBlossom, LordMix ### --
 function EventBagMakeItem(BagItem)
 	local ItemID = MakeItemID(BagItem.ItemType, BagItem.ItemIndex)
-	local ItemCheck = IsItem(ItemID)
+	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
 		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
@@ -1387,7 +1387,7 @@ end
 -- ### /5/ Create Item (using Inventory Bag Structure) - BAG_INVENTORY ### --
 function InventoryBagItemCreate(aIndex, BagItem)
 	local ItemID = MakeItemID(BagItem.ItemType, BagItem.ItemIndex)
-	local ItemCheck = IsItem(ItemID)
+	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
 		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))

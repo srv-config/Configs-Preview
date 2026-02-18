@@ -156,13 +156,22 @@ end
 -- NPC Interaction Events
 ------------------------------------------------------------------
 
--- Called when player talks to NPC (Async)
+-- Called when player talks to NPC (Sync)
 function onNpcTalk(oPlayer, oNpc)
 	if (oPlayer ~= nil) then
 		if (oNpc ~= nil) then
 			
 		end
 	end
+	return 0
+end
+
+-- Called when player ends conversation with to NPC by closing window (Sync)
+function onCloseWindow(oPlayer)
+	if (oPlayer ~= nil) then
+	
+	end
+	return 0
 end
 
 ------------------------------------------------------------------

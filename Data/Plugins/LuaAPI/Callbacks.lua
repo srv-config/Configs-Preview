@@ -178,6 +178,14 @@ end
 -- Inventory Management Events
 ------------------------------------------------------------------
 
+-- Called when player uses any item via right mouse click (Sync)
+function onItemUse(iResult, oPlayer, oItem, iItemSourcePos, iItemTargetPos)
+	if (oPlayer ~= nil) then
+		
+	end
+	return 0
+end
+
 -- Called when player moves item in main inventory (Async)
 function onInventoryMoveItem(oPlayer, iItemSourcePos, iItemTargetPos, btResult)
 	if (oPlayer ~= nil) then

@@ -558,14 +558,16 @@ function LoadItemBag() -- Bags Load
 	ItemBag.Add(BAG_EVENT, 1332,0, 'DailyRewards\\Event_DailyRewards_Week_2') -- DropFunction /3/
 	ItemBag.Add(BAG_EVENT, 1333,0, 'DailyRewards\\Event_DailyRewards_Week_3') -- DropFunction /3/
 	ItemBag.Add(BAG_EVENT, 1334,0, 'DailyRewards\\Event_DailyRewards_Week_4') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 1335,0, 'DailyRewards\\Event_DailyRewards_Month') -- DropFunction /3/
 end
+
 -- ### /1/ Drop Item (using Item Bag Structure) ### --
 function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 	local ItemID = MakeItemID(BagItem.ItemType, BagItem.ItemIndex)
 	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
-		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
+		Log.Add(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
 		return 0
 	end
 
@@ -770,14 +772,14 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
-		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
+		Log.Add(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
 		return 0
 	end
 
 	local ItemResult = BagItemResult.new()
 	ItemResult.MapNumber = MapNumber
-	ItemResult.X = X
-	ItemResult.Y = Y
+	ItemResult.X = MonsterX
+	ItemResult.Y = MonsterY
 	ItemResult.ItemNum = ItemID
 	ItemResult.ItemLevel = Utility.GetRandomRangedInt(BagItem.ItemMinLevel, BagItem.ItemMaxLevel)
 	ItemResult.ItemDurability = BagItem.Durability
@@ -975,14 +977,14 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
-		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
+		Log.Add(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
 		return 0
 	end
 
 	local ItemResult = BagItemResult.new()
 	ItemResult.MapNumber = MapNumber
-	ItemResult.X = X
-	ItemResult.Y = Y
+	ItemResult.X = MonsterX
+	ItemResult.Y = MonsterY
 	ItemResult.ItemNum = ItemID
 	ItemResult.ItemLevel = Utility.GetRandomRangedInt(BagItem.ItemMinLevel, BagItem.ItemMaxLevel)
 	ItemResult.ItemDurability = BagItem.Durability
@@ -1179,7 +1181,7 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 		ItemResult.MapNumber = 235
 	end
 	
-	ItemBag.CreateItem(aIndex, ItemResult)
+	ItemBag.CreateItem(MonsterIndex, ItemResult)
 	return 1
 end
 
@@ -1190,7 +1192,7 @@ function EventBagMakeItem(BagItem)
 	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
-		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
+		Log.Add(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
 		return 0
 	end
 
@@ -1390,7 +1392,7 @@ function InventoryBagItemCreate(aIndex, BagItem)
 	local ItemCheck = Item.IsValid(ItemID);
 
 	if ItemCheck == false then
-		LogAdd(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
+		Log.Add(string.format('Wrong Item In Bag (ItemID: %d)', ItemID))
 		return 0
 	end
 

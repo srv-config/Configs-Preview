@@ -77,6 +77,7 @@
 ---@field Class integer Character class code
 ---@field Level integer Character level
 ---@field AccountId string Account login name (read-only)
+-- @field Name string Object name of Player, Monster or NPC (read-only)
 ---@field Life number Current HP
 ---@field MaxLife number Maximum HP
 ---@field AddLife integer Additional HP from items/buffs
@@ -142,6 +143,8 @@
 ---@field LoseDuels integer Total duel losses
 ---@field Live integer Alive state (1=alive, 0=dead)
 ---@field ActionTickCount ActionTickCount[] Array of 3 timers (Lua index 1-3)
+-- @field TargetNumber short Target object Index (monster/player being attacked)
+-- @field TargetNpcNumber short NPC object Index (NPC player is interacting with)
 
 -- Player methods
 ---@param iInventoryPos integer Inventory slot (0 to INVENTORY_SIZE-1)

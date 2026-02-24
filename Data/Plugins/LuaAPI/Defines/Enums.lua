@@ -95,6 +95,17 @@ Enums.ElementType = {
 -- Usage: Object.AddMonster(monClass, mapNumber, x1, y1, x2, y2, Enums.ElementType.FIRE)
 -- Usage: if oMonster.PentagramMainAttribute == Enums.ElementType.WATER then print("Water element") end
 
+Enums.ItemBagType = {
+	DROP = 0,
+	INVENTORY = 1,
+	MONSTER = 2,
+	EVENT = 3
+}
+-- Usage: ItemBag.Use(oPlayer.Index, Enums.ItemBagType.DROP, itemId, itemLevel)
+-- Usage: ItemBag.Use(oPlayer.Index, Enums.ItemBagType.INVENTORY, itemId, itemLevel)
+-- Usage: ItemBag.Use(oPlayer.Index, Enums.ItemBagType.MONSTER, monsterClass, oPlayer.Index)
+-- Usage: ItemBag.Use(oPlayer.Index, Enums.ItemBagType.EVENT, eventBagId, oPlayer.Index)
+
 Enums.HPManaUpdateFlag = {
 	INVENTORY_STATE_RESET = 253, -- SendLife only: restores inventory interaction after a failed item operation
 	MAX_HP_MANA = 254, -- Sends maximum HP/Shield or Mana/AG values (after stat change, level up, buff)

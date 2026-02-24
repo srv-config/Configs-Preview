@@ -392,21 +392,21 @@ function ItemInfo:Clear() end
 ------------------------------------------------------------------
 
 ---@class BagItem
----@field ItemType integer Item type (0-15)
----@field ItemIndex integer Item index (0-511)
----@field ItemMinLevel integer Minimum item level
----@field ItemMaxLevel integer Maximum item level
----@field Skill integer Has skill (0-1)
----@field Luck integer Has luck (0-1)
----@field Option integer Has additional option (0-1)
----@field Anc integer Is ancient/set (0-1)
----@field Socket integer Is socket item (0-1)
----@field Elemental integer Is elemental (0-1)
----@field ErrtelRank integer Errtel rank (0-1)
----@field MuunEvolutionItemType integer Muun evolution type
----@field MuunEvolutionItemIndex integer Muun evolution index
----@field Durability integer Item durability
----@field Duration integer Item duration
+---@field ItemType BYTE Item type (0-21)
+---@field ItemIndex WORD Item index (0-511)
+---@field ItemMinLevel BYTE Minimum item level (0-15)
+---@field ItemMaxLevel BYTE Maximum item level (0-15)
+---@field Skill short Has skill (-1, 0, 1) 
+---@field Luck short Has luck (-1, 0, 1) 
+---@field Option short Has additional option (-1, 0, 1-7)
+---@field Anc short Is ancient/set (0-1)
+---@field Socket short Is socket item (-2, 0-5)
+---@field Elemental short Is elemental (-1, 0-5)
+---@field ErrtelRank short Errtel rank (1-5)
+---@field MuunEvolutionItemType BYTE Muun evolution type
+---@field MuunEvolutionItemIndex WORD Muun evolution index
+---@field Durability WORD Item durability
+---@field Duration DWORD Item duration
 
 -- BagItem methods (1-based indexing)
 ---@param index integer Socket slot (1-based)

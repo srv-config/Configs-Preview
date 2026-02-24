@@ -680,6 +680,27 @@ function Utility.GetLargeRand() end
 ---@param iPlayerIndex integer Player index
 function Utility.FireCracker(iPlayerIndex) end
 
+---Send visual timer to player
+---@param playerIndex integer Player index
+---@param milliseconds integer Timer duration in milliseconds
+---@param countUp integer 0 = count down, 1 = count up
+---@param displayType integer Text type (0=none, 1=time limit, 2=remaining, 3=hunting, 5=survival)
+---@param deleteTimer integer 0 = show timer, 1 = remove timer
+function Utility.SendEventTimer(playerIndex, milliseconds, countUp, displayType, deleteTimer) end
+
+------------------------------------------------------------------
+-- ItemBag Namespace
+------------------------------------------------------------------
+
+ItemBag = {}
+
+---Use item bag to give items to player
+---@param playerIndex integer Player index
+---@param bagType integer Bag type (use Enums.ItemBagType)
+---@param param1 integer Depends on bag type
+---@param param2 integer Depends on bag type
+function ItemBag.Use(playerIndex, bagType, param1, param2) end
+
 ------------------------------------------------------------------
 -- Log Namespace
 ------------------------------------------------------------------
@@ -717,4 +738,3 @@ function Helpers.GetItemType(ItemId) end
 ---@param ItemId integer Item ID
 ---@return integer ItemIndex (0-511)
 function Helpers.GetItemIndex(ItemId) end
-

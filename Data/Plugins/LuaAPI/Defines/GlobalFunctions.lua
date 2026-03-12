@@ -151,6 +151,15 @@ function Object.AddMonster(iMonIndex, iMapNumber, iBeginX, iBeginY, iEndX, iEndY
 ---@return integer Result of gObjDel
 function Object.DelMonster(aIndex) end
 
+---Add an NPC to the game at specified location
+---@param iNPCIndex integer NPC class ID
+---@param iMapNumber integer Map number
+---@param iX integer X coordinate
+---@param iY integer Y coordinate
+---@param iNpcType integer NPC type (Enums.NPCType)
+---@return integer Object index of spawned NPC, or -1 on failure
+function Object.AddNPC(iNPCIndex, iMapNumber, iX, iY, iNpcType) end
+
 ------------------------------------------------------------------
 -- Player Namespace
 ------------------------------------------------------------------
@@ -221,6 +230,32 @@ function Player.SaveCharacter(iPlayerIndex) end
 ---@param bMSBFlag boolean Master Skill Book flag
 ---@param iMonsterType integer Monster type ID (0 for custom exp)
 function Player.SetExp(iPlayerIndex, iTargetIndex, i64Exp, iAttackDamage, bMSBFlag, iMonsterType) end
+
+---Send trade OK button packet to client
+---@param iPlayerIndex integer Player index
+---@param btFlag integer Button flag: 0=no consent (no border), 1=consent (green border), 2=item removed from trade
+function Player.SendTradeOkButton(iPlayerIndex, btFlag) end
+
+---Send trade cancel/result packet to client
+---@param iPlayerIndex integer Player index
+---@param btResult integer Result code: 0=canceled, 2=inventory full, 3=request canceled, 4=reinforced item, 5=request canceled, 6=pentagram limit exceeded, 7=255+ Errtels equipped
+function Player.SendTradeCancel(iPlayerIndex, btResult) end
+
+---Send trade response packet to client
+---@param bResponse boolean Response (true=accept, false=decline)
+---@param iPlayerIndex integer Player index
+---@param szName string Trade partner name
+---@param iLevel integer Trade partner level (Level + MasterLevel)
+---@param iGuildNumber integer Trade partner guild number
+function Player.SendTradeResponse(bResponse, iPlayerIndex, szName, iLevel, iGuildNumber) end
+
+---Process trade OK button click
+---@param iPlayerIndex integer Player index
+function Player.TradeOkButton(iPlayerIndex) end
+
+---Cancel trade for player
+---@param iPlayerIndex integer Player index
+function Player.TradeCancel(iPlayerIndex) end
 
 ------------------------------------------------------------------
 -- Combat Namespace
@@ -738,3 +773,126 @@ function Helpers.GetItemType(ItemId) end
 ---@param ItemId integer Item ID
 ---@return integer ItemIndex (0-511)
 function Helpers.GetItemIndex(ItemId) end
+------------------------------------------------------------------
+-- Language Namespace
+------------------------------------------------------------------
+
+Language = {}
+
+---Get localized text from language files
+---@param iLangID integer Language code (oPlayer.LangCode)
+---@param iTextType integer Text type (Enums.eLANGUAGE_TEXT_TYPE)
+---@param iTextID integer Text ID in language file
+---@return string Localized text or empty string if not found
+function Language.GetText(iLangID, iTextType, iTextID) end
+
+------------------------------------------------------------------
+-- EventMonsterTracker Namespace
+------------------------------------------------------------------
+
+EventMonsterTracker = {}
+
+---Register object to event tracking
+---@param iEventType integer Event type ID
+---@param iObjectIndex integer Object index
+---@param iObjectClass integer Monster/NPC class ID
+---@param iObjectType integer Object type (Enums.ObjectType: 2=MONSTER, 3=NPC)
+function EventMonsterTracker.Register(iEventType, iObjectIndex, iObjectClass, iObjectType) end
+
+---Unregister object from event tracking
+---@param iEventType integer Event type ID
+---@param iObjectIndex integer Object index
+---@return boolean True if unregistered, false if not found
+function EventMonsterTracker.Unregister(iEventType, iObjectIndex) end
+
+---Check if object is tracked for event
+---@param iEventType integer Event type ID
+---@param iObjectIndex integer Object index
+---@return boolean True if tracked
+function EventMonsterTracker.IsTracked(iEventType, iObjectIndex) end
+
+---Get stored object info
+---@param iEventType integer Event type ID
+---@param iObjectIndex integer Object index
+---@return TrackedObjectData Object data (class=-1, type=-1 if not found)
+function EventMonsterTracker.GetObjectInfo(iEventType, iObjectIndex) end
+
+---Get stored object class
+---@param iEventType integer Event type ID
+---@param iObjectIndex integer Object index
+---@return integer Monster/NPC class ID or -1 if not found
+function EventMonsterTracker.GetMonsterClass(iEventType, iObjectIndex) end
+
+---Get all tracked object indices for event
+---@param iEventType integer Event type ID
+---@param iFilterType? integer Optional filter: -1=all (default), 2=MONSTER, 3=NPC
+---@return table Array of object indices
+function EventMonsterTracker.GetMonsters(iEventType, iFilterType) end
+
+---Get count of tracked objects
+---@param iEventType integer Event type ID
+---@param iFilterType? integer Optional filter: -1=all (default), 2=MONSTER, 3=NPC
+---@return integer Number of tracked objects
+function EventMonsterTracker.GetCount(iEventType, iFilterType) end
+
+---Cleanup objects for event (delete and untrack)
+---@param iEventType integer Event type ID
+---@param iFilterType? integer Optional filter: -1=all (default), 2=MONSTER, 3=NPC
+---@return integer Number of objects removed
+function EventMonsterTracker.CleanupEvent(iEventType, iFilterType) end
+
+---Cleanup only monsters for event
+---@param iEventType integer Event type ID
+---@return integer Number of monsters removed
+function EventMonsterTracker.CleanupMonsters(iEventType) end
+
+---Cleanup only NPCs for event
+---@param iEventType integer Event type ID
+---@return integer Number of NPCs removed
+function EventMonsterTracker.CleanupNPCs(iEventType) end
+
+---Cleanup dead objects from tracking (without deleting them)
+---@param iEventType integer Event type ID
+---@param iFilterType? integer Optional filter: -1=all (default), 2=MONSTER, 3=NPC
+---@return integer Number of objects removed from tracking
+function EventMonsterTracker.CleanupDead(iEventType, iFilterType) end
+
+---Get active event types
+---@return table Array of event type IDs
+function EventMonsterTracker.GetActiveEvents() end
+
+---Clear all tracking data
+---@return integer Number of events cleared
+function EventMonsterTracker.ClearAll() end
+
+---Spawn single monster and register to tracking
+---@param iEventType integer Event type ID
+---@param iMonsterClass integer Monster class ID
+---@param iMapNumber integer Map number
+---@param iX1 integer Spawn area start X
+---@param iY1 integer Spawn area start Y
+---@param iX2 integer Spawn area end X
+---@param iY2 integer Spawn area end Y
+---@param iElement integer Elemental attribute (0=none)
+---@return integer Monster object index or -1 if failed
+function EventMonsterTracker.SpawnAndRegister(iEventType, iMonsterClass, iMapNumber, iX1, iY1, iX2, iY2, iElement) end
+
+---Spawn wave of monsters and register all to tracking
+---@param iEventType integer Event type ID
+---@param iMonsterClass integer Monster class ID
+---@param iCount integer Number of monsters to spawn
+---@param iMapNumber integer Map number
+---@param iX1 integer Spawn area start X
+---@param iY1 integer Spawn area start Y
+---@param iX2 integer Spawn area end X
+---@param iY2 integer Spawn area end Y
+---@param iElement integer Elemental attribute (0=none)
+---@return table Array of spawned monster indices
+function EventMonsterTracker.SpawnWaveAndRegister(iEventType, iMonsterClass, iCount, iMapNumber, iX1, iY1, iX2, iY2, iElement) end
+
+---Register existing NPC to tracking
+---@param iEventType integer Event type ID
+---@param iNpcIndex integer NPC object index
+---@param iNpcClass integer NPC class ID
+function EventMonsterTracker.RegisterNPC(iEventType, iNpcIndex, iNpcClass) end
+

@@ -15,6 +15,7 @@ Constants.WAREHOUSE_SIZE = 240
 Constants.EVENT_INVENTORY_SIZE = 32
 Constants.FULL_INVENTORY_SIZE = 239
 Constants.MAIN_INVENTORY_SIZE = 204
+Constants.TRADE_BOX_SIZE = 32
 
 -- Equipment Slots
 Constants.EQUIPMENT_SLOT_LEFT_HAND = 0
@@ -40,3 +41,4 @@ Constants.MAX_OPT_SLOT = 3
 
 -- Player & Class
 Constants.MAX_TYPE_PLAYER = 16
+

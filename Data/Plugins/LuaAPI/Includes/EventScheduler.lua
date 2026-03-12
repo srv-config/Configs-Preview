@@ -62,10 +62,10 @@ function EventScheduler.ProcessEvents()
 		lastMinuteCheck = currentTick
 	end
 	
-	-- Process event notices (pre-warnings)
+	-- Process event notices (pre-warnings) - now returns EventNotice with time
 	local noticeEvents = Scheduler.CheckEventNotices()
-	for _, eventType in ipairs(noticeEvents) do
-		EventHandlers.OnEventNotice(eventType)
+	for _, notice in ipairs(noticeEvents) do
+		EventHandlers.OnEventNotice(notice.type, notice.secondsRemaining)
 	end
 	
 	-- Process event starts
@@ -80,4 +80,3 @@ function EventScheduler.ProcessEvents()
 		EventHandlers.OnEventEnd(eventType)
 	end
 end
-

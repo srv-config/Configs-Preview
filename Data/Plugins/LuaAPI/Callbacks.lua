@@ -88,25 +88,74 @@ function onCloseWarehouse(oPlayer)
 end
 
 ------------------------------------------------------------------
+-- Trade Events
+------------------------------------------------------------------
+
+-- Called when player sends trade request to another player (Sync - can prevent trade)
+-- Return non-zero to prevent trade request from being sent
+function onTradeRequestSend(oPlayer, oTarget)
+	if (oPlayer ~= nil) then
+		if (oTarget ~= nil) then
+			
+		end
+	end
+	return 0
+end
+
+-- Called when player receives trade response from another player (Sync - can prevent response processing)
+-- Return non-zero to prevent response from being processed
+-- bResponse: true = accept, false = decline
+function onTradeResponseReceive(oPlayer, oTarget, bResponse)
+	if (oPlayer ~= nil) then
+		if (oTarget ~= nil) then
+			
+		end
+	end
+	return 0
+end
+
+-- Called when both players click OK button in trade window (Sync - can prevent trade completion)
+-- Return non-zero to prevent trade from completing
+function onTradeAccept(oPlayer, oTarget)
+	if (oPlayer ~= nil) then
+		if (oTarget ~= nil) then
+			
+		end
+	end
+	return 0
+end
+
+-- Called when trade is cancelled by either player (Sync - can prevent trade cancellation)
+-- Return non-zero to prevent trade cancellation
+function onTradeCancel(oPlayer, oTarget)
+	if (oPlayer ~= nil) then
+		if (oTarget ~= nil) then
+			
+		end
+	end
+	return 0
+end
+
+------------------------------------------------------------------
 -- Special Event Entries
 ------------------------------------------------------------------
 
 -- Called when player enters Blood Castle event (Async)
-function onBloodCastleEnter(oPlayer, EventLevel)
+function onBloodCastleEnter(oPlayer, iEventLevel)
 	if (oPlayer ~= nil) then
 		
 	end
 end
 
 -- Called when player enters Chaos Castle event (Async)
-function onChaosCastleEnter(oPlayer, EventLevel)
+function onChaosCastleEnter(oPlayer, iEventLevel)
 	if (oPlayer ~= nil) then
 		
 	end
 end
 
 -- Called when player enters Devil Square event (Async)
-function onDevilSquareEnter(oPlayer, EventLevel)
+function onDevilSquareEnter(oPlayer, iEventLevel)
 	if (oPlayer ~= nil) then
 		
 	end
@@ -418,3 +467,4 @@ function onJSDBQueryReceive(iPlayerIndex, iQueryNumber, bIsLastPacket, iCurrentR
 		
 	end
 end
+

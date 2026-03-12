@@ -636,7 +636,7 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 	-- Item must be of Type 2 in item list settings
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
-			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket) -- set up to configured value of sockets
+			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
 		elseif (BagItem.Socket == -2) then
 			ItemResult.IsSocket = -2
 		end
@@ -653,7 +653,7 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 
 		if (Item.IsPentagram(ItemID) == true) then
 			if (BagItem.Socket > 0 and BagItem.Socket <= 5) then
-				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket)
+				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket)
 			elseif (BagItem.Socket == -2) then
 				ItemResult.IsSocket = -2
 			end
@@ -841,7 +841,7 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 	-- Item must be of Type 2 in item list settings
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
-			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket) -- set up to configured value of sockets
+			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
 		elseif (BagItem.Socket == -2) then
 			ItemResult.IsSocket = -2
 		end
@@ -858,7 +858,7 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 
 		if (Item.IsPentagram(ItemID) == true) then
 			if (BagItem.Socket > 0 and BagItem.Socket <= 5) then
-				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket)
+				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket)
 			elseif (BagItem.Socket == -2) then
 				ItemResult.IsSocket = -2
 			end
@@ -1046,7 +1046,7 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 	-- Item must be of Type 2 in item list settings
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
-			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket) -- set up to configured value of sockets
+			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
 		elseif (BagItem.Socket == -2) then
 			ItemResult.IsSocket = -2
 		end
@@ -1063,7 +1063,7 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 
 		if (Item.IsPentagram(ItemID) == true) then
 			if (BagItem.Socket > 0 and BagItem.Socket <= 5) then
-				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket)
+				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket)
 			elseif (BagItem.Socket == -2) then
 				ItemResult.IsSocket = -2
 			end
@@ -1257,7 +1257,7 @@ function EventBagMakeItem(BagItem)
 	-- Item must be of Type 2 in item list settings
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
-			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket) -- set up to configured value of sockets
+			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
 		elseif (BagItem.Socket == -2) then
 			ItemResult.IsSocket = -2
 		end
@@ -1274,7 +1274,7 @@ function EventBagMakeItem(BagItem)
 
 		if (Item.IsPentagram(ItemID) == true) then
 			if (BagItem.Socket > 0 and BagItem.Socket <= 5) then
-				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket)
+				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket)
 			elseif (BagItem.Socket == -2) then
 				ItemResult.IsSocket = -2
 			end
@@ -1459,7 +1459,7 @@ function InventoryBagItemCreate(aIndex, BagItem)
 	-- Item must be of Type 2 in item list settings
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (1-5)
-			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket) -- set up to configured value of sockets
+			ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
 		elseif (BagItem.Socket == -2) then
 			ItemResult.IsSocket = -2
 		end
@@ -1476,7 +1476,7 @@ function InventoryBagItemCreate(aIndex, BagItem)
 
 		if (Item.IsPentagram(ItemID) == true) then
 			if (BagItem.Socket > 0 and BagItem.Socket <= 5) then
-				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, ItemInfo.Socket)
+				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket)
 			elseif (BagItem.Socket == -2) then
 				ItemResult.IsSocket = -2
 			end

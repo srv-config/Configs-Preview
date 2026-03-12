@@ -55,6 +55,14 @@
 ---@field tick integer Tick count value (read-only, use ActionTick.Set to modify)
 
 ------------------------------------------------------------------
+-- TrackedObjectData Structure
+------------------------------------------------------------------
+
+---@class TrackedObjectData
+---@field class integer Monster/NPC class ID
+---@field type integer Object type (Enums.ObjectType: 2=MONSTER, 3=NPC)
+
+------------------------------------------------------------------
 -- Player Object (stObject)
 ------------------------------------------------------------------
 -- Note: This structure is used for ALL objects (players, monsters, NPCs)
@@ -70,6 +78,7 @@
 ---@field userData userData UserData substructure (read-only pointer; only for players and player-like NPCs)
 ---@field Index integer Player object index in server array (read-only)
 ---@field Type integer Object type (read-only; Enums.ObjectType.USER | MONSTER | NPC)
+---@field NPCType, BYTE (read-only; Enums.NPCType,NONE | SHOP | WAREHOUSE | CHAOS_MIX | GOLDEN_ARCHER | PENTAGRAM_MIX | MAP_MOVE | LAST_MAN_STANDING)
 ---@field Connected integer Connection state (1=connected, 0=disconnected)
 ---@field UserNumber integer Unique user session number (read-only)
 ---@field DBNumber integer Database character ID (memb_guid; read-only)
@@ -143,6 +152,8 @@
 ---@field LoseDuels integer Total duel losses
 ---@field Live integer Alive state (1=alive, 0=dead)
 ---@field ActionTickCount ActionTickCount[] Array of 3 timers (Lua index 1-3)
+---@field TradeMoney integer Zen amount offered in trade window
+---@field TradeOk integer Trade confirmation status (0=not confirmed, 1=confirmed)
 -- @field TargetNumber short Target object Index (monster/player being attacked)
 -- @field TargetNpcNumber short NPC object Index (NPC player is interacting with)
 
@@ -154,6 +165,10 @@ function Object:GetInventoryItem(iInventoryPos) end
 ---@param iWarehousePos integer Warehouse slot (0 to WAREHOUSE_SIZE-1)
 ---@return ItemInfo|nil Item pointer if valid, nil otherwise
 function Object:GetWarehouseItem(iWarehousePos) end
+
+---@param iTradeBoxPos integer Trade box slot (0 to TRADE_BOX_SIZE-1)
+---@return ItemInfo|nil Item pointer if valid, nil otherwise
+function Object:GetTradeItem(iTradeBoxPos) end
 
 ------------------------------------------------------------------
 -- ItemAttr Structure (Read-Only)

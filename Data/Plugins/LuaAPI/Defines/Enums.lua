@@ -75,6 +75,19 @@ Enums.ObjectType = {
 }
 -- Usage: if oPlayer.Type == Enums.ObjectType.USER then print("Player object") end
 
+-- NPC Types
+Enums.NPCType = {
+	NONE = 0,
+	SHOP = 1,
+	WAREHOUSE = 2,
+	CHAOS_MIX = 3,
+	GOLDEN_ARCHER = 4,
+	PENTAGRAM_MIX = 5,
+	MAP_MOVE = 6,
+	LAST_MAN_STANDING = 7,
+}
+-- Usage: if oPlayer.NPCType == Enums.NPCType.SHOP then print("This is shop NPC") end
+
 -- Player Connection States
 Enums.PlayerState = {
 	EMPTY = 0,
@@ -1177,3 +1190,15 @@ Enums.EffectType = {
 	CUSTOM_DAMAGE = 254,
 }
 -- Usage: Buff.Add(playerIndex, buffType, Enums.EffectType.IMPROVE_DAMAGE, value, 0, 0, duration, 0, sourceIndex)
+
+Enums.eLANGUAGE_TEXT_TYPE = {
+	COMMON = 0,
+	MAP = 1,
+	AUTOSTAT = 2,
+	HIDEANDSEEK = 3,
+	RAFFLE = 4,
+	VIPSYSTEM = 5,
+	MAX = 6,
+}
+-- Usage: local text = Language.GetText(oPlayer.LangCode, Enums.eLANGUAGE_TEXT_TYPE.COMMON, textID)
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<BloodCastle Enable="1" EarlyFinishRestriction="0" EarlyFinishMinTime="300">
+<Monster TimeToRegen="0" />
+<Time ToOpen="5" PlayDuration="15" ToClose="1" />
+<InvitationDrop AngelKingPaperRate="10" BloodBoneRate="20" />
+	
+	<Schedule>
+		<Start Hour="3" Minute="10" />
+		<Start Hour="3" Minute="40" />
+		<Start Hour="5" Minute="10" />
+		<Start Hour="7" Minute="10" />
+		<Start Hour="9" Minute="10" />
+		<Start Hour="11" Minute="10" />
+		<Start Hour="13" Minute="10" />
+		<Start Hour="15" Minute="10" />
+		<Start Hour="17" Minute="10" />
+		<Start Hour="19" Minute="10" />
+		<Start Hour="21" Minute="10" />
+		<Start Hour="21" Minute="40" />
+		<Start Hour="22" Minute="10" />
+		<Start Hour="22" Minute="40" />
+		<Start Hour="23" Minute="10" />
+		<Start Hour="23" Minute="40" />
+		<Start Hour="0" Minute="10" />
+		<Start Hour="0" Minute="40" />
+		<Start Hour="1" Minute="10" />
+		<Start Hour="1" Minute="40" />
+		<Start Hour="2" Minute="10" />
+		<Start Hour="2" Minute="40" />
+	</Schedule>
+
+	<EventSettings>
+		<Castle Level="0" StatueHP="65000" GateHP="150000" /> <!-- Blood Castle 1 -->
+		<Castle Level="1" StatueHP="105000" GateHP="205000" /> <!-- Blood Castle 2 -->
+		<Castle Level="2" StatueHP="145000" GateHP="260000" /> <!-- Blood Castle 3 -->
+		<Castle Level="3" StatueHP="185000" GateHP="325000" /> <!-- Blood Castle 4 -->
+		<Castle Level="4" StatueHP="225000" GateHP="400000" /> <!-- Blood Castle 5 -->
+		<Castle Level="5" StatueHP="265000" GateHP="480000" /> <!-- Blood Castle 6 -->
+		<Castle Level="6" StatueHP="305000" GateHP="565000" /> <!-- Blood Castle 7 -->
+		<Castle Level="6" StatueHP="345000" GateHP="665000" /> <!-- Blood Castle 8 -->
+	</EventSettings>
+
+	<RewardExpSettings>
+		<Castle Level="0" Multiplier="1.0" /> <!-- Blood Castle 1 -->
+		<Castle Level="1" Multiplier="1.0" /> <!-- Blood Castle 2 -->
+		<Castle Level="2" Multiplier="1.0" /> <!-- Blood Castle 3 -->
+		<Castle Level="3" Multiplier="1.0" /> <!-- Blood Castle 4 -->
+		<Castle Level="4" Multiplier="1.0" /> <!-- Blood Castle 5 -->
+		<Castle Level="5" Multiplier="1.0" /> <!-- Blood Castle 6 -->
+		<Castle Level="6" Multiplier="1.0" /> <!-- Blood Castle 7 -->
+		<Castle Level="7" Multiplier="1.0" /> <!-- Blood Castle 8 -->
+	</RewardExpSettings>
+</BloodCastle>

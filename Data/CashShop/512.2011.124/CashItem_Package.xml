@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### CashItemPackage::Package ###
+//	GUID: Order value, same as ItemSequence, starting from 0
+//	ID: ID of package, unique per ItemSequence sequence value
+//	ItemSequence: Value defining sequence of items in package, starting from 0
+//	UniqueID1: An identifier of item to be added to specified package, refer to UniqueID1 attribute from IGC_CashItem_List.xml
+//	UniqueID2: An identifier of item to be added to specified package, refer to UniqueID2 attribute from IGC_CashItem_List.xml
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+<CashItemPackage>
+	<Package GUID="0" ID="1" ItemSequence="0" UniqueID1="95" UniqueID2="153" PackageName=" Level up (Master)" Description="Master Seal of Wealth" />
+	<Package GUID="1" ID="1" ItemSequence="1" UniqueID1="96" UniqueID2="154" PackageName=" Level up (Master)" Description="Chaos Card Gold" />
+	<Package GUID="2" ID="1" ItemSequence="2" UniqueID1="97" UniqueID2="155" PackageName=" Level up (Master)" Description="Scroll of Protection" />
+	<Package GUID="3" ID="1" ItemSequence="3" UniqueID1="98" UniqueID2="156" PackageName=" Level up (Master)" Description="Gold Channel Ticket" />
+	<Package GUID="4" ID="1" ItemSequence="4" UniqueID1="99" UniqueID2="157" PackageName=" Level up (Master)" Description="Chaos Card Gold" />
+	<Package GUID="5" ID="1" ItemSequence="5" UniqueID1="100" UniqueID2="158" PackageName=" Level up (Master)" Description="Chaos Card Gold" />
+	<Package GUID="6" ID="2" ItemSequence="0" UniqueID1="94" UniqueID2="152" PackageName=" Level up (normal)" Description="Seal of Wealth" />
+	<Package GUID="7" ID="2" ItemSequence="1" UniqueID1="96" UniqueID2="154" PackageName=" Level up (normal)" Description="Chaos Card Gold" />
+	<Package GUID="8" ID="2" ItemSequence="2" UniqueID1="97" UniqueID2="155" PackageName=" Level up (normal)" Description="Scroll of Protection" />
+	<Package GUID="9" ID="2" ItemSequence="3" UniqueID1="98" UniqueID2="156" PackageName=" Level up (normal)" Description="Gold Channel Ticket" />
+	<Package GUID="10" ID="2" ItemSequence="4" UniqueID1="99" UniqueID2="157" PackageName=" Level up (normal)" Description="Chaos Card Gold" />
+	<Package GUID="11" ID="2" ItemSequence="5" UniqueID1="100" UniqueID2="158" PackageName=" Level up (normal)" Description="Chaos Card Gold" />
+	<Package GUID="12" ID="3" ItemSequence="0" UniqueID1="115" UniqueID2="174" PackageName=" Gladiator Package" Description="D-Scroll of Quickness" />
+	<Package GUID="13" ID="3" ItemSequence="1" UniqueID1="116" UniqueID2="175" PackageName=" Gladiator Package" Description="D-Elite SD Potion" />
+	<Package GUID="14" ID="3" ItemSequence="2" UniqueID1="118" UniqueID2="177" PackageName=" Gladiator Package" Description="D-Critical Ring of Wizard" />
+	<Package GUID="15" ID="3" ItemSequence="3" UniqueID1="119" UniqueID2="178" PackageName=" Gladiator Package" Description="D-Demon" />
+	<Package GUID="16" ID="3" ItemSequence="4" UniqueID1="120" UniqueID2="179" PackageName=" Gladiator Package" Description="D-Scroll of Strengthener" />
+	<Package GUID="17" ID="3" ItemSequence="5" UniqueID1="121" UniqueID2="180" PackageName=" Gladiator Package" Description="D-SD Boost Aura" />
+	<Package GUID="18" ID="3" ItemSequence="6" UniqueID1="122" UniqueID2="181" PackageName=" Gladiator Package" Description="D-Ruby Necklace" />
+	<Package GUID="19" ID="4" ItemSequence="0" UniqueID1="159" UniqueID2="219" PackageName=" Scroll Package A" Description="Scroll of Wrath-P" />
+	<Package GUID="20" ID="4" ItemSequence="1" UniqueID1="160" UniqueID2="220" PackageName=" Scroll Package A" Description="Scroll of Protection-P" />
+	<Package GUID="21" ID="4" ItemSequence="2" UniqueID1="161" UniqueID2="221" PackageName=" Scroll Package A" Description="Scroll of Quickness-P" />
+	<Package GUID="22" ID="5" ItemSequence="0" UniqueID1="158" UniqueID2="218" PackageName=" Scroll Package B" Description="Scroll of Wizardry-P" />
+	<Package GUID="23" ID="5" ItemSequence="1" UniqueID1="160" UniqueID2="220" PackageName=" Scroll Package B" Description="Scroll of Protection-P" />
+	<Package GUID="24" ID="5" ItemSequence="2" UniqueID1="161" UniqueID2="221" PackageName=" Scroll Package B" Description="Scroll of Quickness-P" />
+	<Package GUID="25" ID="6" ItemSequence="0" UniqueID1="156" UniqueID2="216" PackageName=" Scroll Package C" Description="Scroll of Mana-P" />
+	<Package GUID="26" ID="6" ItemSequence="1" UniqueID1="157" UniqueID2="217" PackageName=" Scroll Package C" Description="Scroll of Health-P" />
+	<Package GUID="27" ID="6" ItemSequence="2" UniqueID1="159" UniqueID2="219" PackageName=" Scroll Package C" Description="Scroll of Wrath-P" />
+	<Package GUID="28" ID="6" ItemSequence="3" UniqueID1="160" UniqueID2="220" PackageName=" Scroll Package C" Description="Scroll of Protection-P" />
+	<Package GUID="29" ID="6" ItemSequence="4" UniqueID1="161" UniqueID2="221" PackageName=" Scroll Package C" Description="Scroll of Quickness-P" />
+	<Package GUID="30" ID="6" ItemSequence="5" UniqueID1="162" UniqueID2="222" PackageName=" Scroll Package C" Description="Scroll of Battle-P" />
+	<Package GUID="31" ID="7" ItemSequence="0" UniqueID1="156" UniqueID2="216" PackageName=" Scroll Package D" Description="Scroll of Mana-P" />
+	<Package GUID="32" ID="7" ItemSequence="1" UniqueID1="157" UniqueID2="217" PackageName=" Scroll Package D" Description="Scroll of Health-P" />
+	<Package GUID="33" ID="7" ItemSequence="2" UniqueID1="158" UniqueID2="218" PackageName=" Scroll Package D" Description="Scroll of Wizardry-P" />
+	<Package GUID="34" ID="7" ItemSequence="3" UniqueID1="160" UniqueID2="220" PackageName=" Scroll Package D" Description="Scroll of Protection-P" />
+	<Package GUID="35" ID="7" ItemSequence="4" UniqueID1="161" UniqueID2="221" PackageName=" Scroll Package D" Description="Scroll of Quickness-P" />
+	<Package GUID="36" ID="7" ItemSequence="5" UniqueID1="162" UniqueID2="222" PackageName=" Scroll Package D" Description="Scroll of Battle-P" />
+	<Package GUID="37" ID="8" ItemSequence="0" UniqueID1="229" UniqueID2="289" PackageName=" [Chaos Card BLUE]" Description="Rare Item Ticket 8_BLUE" />
+	<Package GUID="38" ID="8" ItemSequence="1" UniqueID1="239" UniqueID2="299" PackageName=" [Chaos Card BLUE]" Description="Seed (Lightning)_BLUE" />
+	<Package GUID="39" ID="8" ItemSequence="2" UniqueID1="240" UniqueID2="300" PackageName=" [Chaos Card BLUE]" Description="Seed (Earth)_BLUE" />
+	<Package GUID="40" ID="8" ItemSequence="3" UniqueID1="242" UniqueID2="302" PackageName=" [Chaos Card BLUE]" Description="Seed (Ice Mana)_BLUE" />
+	<Package GUID="41" ID="8" ItemSequence="4" UniqueID1="349" UniqueID2="418" PackageName=" [Chaos Card BLUE]" Description="Jewel of Chaos Bundle (30)_BLUE" />
+	<Package GUID="42" ID="8" ItemSequence="5" UniqueID1="350" UniqueID2="419" PackageName=" [Chaos Card BLUE]" Description="Jewel of Life Bundle (30)_BLUE" />
+	<Package GUID="55" ID="9" ItemSequence="0" UniqueID1="535" UniqueID2="622" PackageName=" [5+1][Chaos Card Gold]" Description="Chaos Card GOLD_Bonus(1)" />
+	<Package GUID="56" ID="9" ItemSequence="1" UniqueID1="541" UniqueID2="628" PackageName=" [5+1][Chaos Card Gold]" Description="Chaos Card GOLD_5" />
+	<Package GUID="57" ID="9" ItemSequence="2" UniqueID1="542" UniqueID2="629" PackageName=" [5+1][Chaos Card Gold]" Description="Chaos Card GOLD_4" />
+	<Package GUID="58" ID="9" ItemSequence="3" UniqueID1="543" UniqueID2="630" PackageName=" [5+1][Chaos Card Gold]" Description="Chaos Card GOLD_3" />
+	<Package GUID="59" ID="9" ItemSequence="4" UniqueID1="544" UniqueID2="631" PackageName=" [5+1][Chaos Card Gold]" Description="Chaos Card GOLD_2" />
+	<Package GUID="60" ID="9" ItemSequence="5" UniqueID1="545" UniqueID2="632" PackageName=" [5+1][Chaos Card Gold]" Description="Chaos Card GOLD_1" />
+	<Package GUID="61" ID="10" ItemSequence="0" UniqueID1="530" UniqueID2="612" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_Bonus(3)" />
+	<Package GUID="62" ID="10" ItemSequence="1" UniqueID1="534" UniqueID2="621" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_Bonus(2)" />
+	<Package GUID="63" ID="10" ItemSequence="2" UniqueID1="535" UniqueID2="622" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_Bonus(1)" />
+	<Package GUID="64" ID="10" ItemSequence="3" UniqueID1="536" UniqueID2="623" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_10" />
+	<Package GUID="65" ID="10" ItemSequence="4" UniqueID1="537" UniqueID2="624" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_9" />
+	<Package GUID="66" ID="10" ItemSequence="5" UniqueID1="538" UniqueID2="625" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_8" />
+	<Package GUID="67" ID="10" ItemSequence="6" UniqueID1="539" UniqueID2="626" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_7" />
+	<Package GUID="68" ID="10" ItemSequence="7" UniqueID1="540" UniqueID2="627" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_6" />
+	<Package GUID="69" ID="10" ItemSequence="8" UniqueID1="541" UniqueID2="628" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_5" />
+	<Package GUID="70" ID="10" ItemSequence="9" UniqueID1="542" UniqueID2="629" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_4" />
+	<Package GUID="71" ID="10" ItemSequence="10" UniqueID1="543" UniqueID2="630" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_3" />
+	<Package GUID="72" ID="10" ItemSequence="11" UniqueID1="544" UniqueID2="631" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_2" />
+	<Package GUID="73" ID="10" ItemSequence="12" UniqueID1="545" UniqueID2="632" PackageName=" [10+3][Chaos Card Gold]" Description="Chaos Card GOLD_1" />
+	<Package GUID="74" ID="11" ItemSequence="0" UniqueID1="548" UniqueID2="635" PackageName=" [5+1][Chaos Card  Mini]" Description="Chaos Card  Mini_Bonus(1)" />
+	<Package GUID="75" ID="11" ItemSequence="1" UniqueID1="554" UniqueID2="641" PackageName=" [5+1][Chaos Card  Mini]" Description="Chaos Card  Mini_5" />
+	<Package GUID="76" ID="11" ItemSequence="2" UniqueID1="555" UniqueID2="642" PackageName=" [5+1][Chaos Card  Mini]" Description="Chaos Card  Mini_4" />
+	<Package GUID="77" ID="11" ItemSequence="3" UniqueID1="556" UniqueID2="643" PackageName=" [5+1][Chaos Card  Mini]" Description="Chaos Card  Mini_3" />
+	<Package GUID="78" ID="11" ItemSequence="4" UniqueID1="557" UniqueID2="644" PackageName=" [5+1][Chaos Card  Mini]" Description="Chaos Card  Mini_2" />
+	<Package GUID="79" ID="11" ItemSequence="5" UniqueID1="558" UniqueID2="645" PackageName=" [5+1][Chaos Card  Mini]" Description="Chaos Card  Mini_1" />
+	<Package GUID="80" ID="12" ItemSequence="0" UniqueID1="546" UniqueID2="633" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_Bonus(3)" />
+	<Package GUID="81" ID="12" ItemSequence="1" UniqueID1="547" UniqueID2="634" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_Bonus(2)" />
+	<Package GUID="82" ID="12" ItemSequence="2" UniqueID1="548" UniqueID2="635" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_Bonus(1)" />
+	<Package GUID="83" ID="12" ItemSequence="3" UniqueID1="549" UniqueID2="636" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_10" />
+	<Package GUID="84" ID="12" ItemSequence="4" UniqueID1="550" UniqueID2="637" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_9" />
+	<Package GUID="85" ID="12" ItemSequence="5" UniqueID1="551" UniqueID2="638" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_8" />
+	<Package GUID="86" ID="12" ItemSequence="6" UniqueID1="552" UniqueID2="639" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_7" />
+	<Package GUID="87" ID="12" ItemSequence="7" UniqueID1="553" UniqueID2="640" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_6" />
+	<Package GUID="88" ID="12" ItemSequence="8" UniqueID1="554" UniqueID2="641" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_5" />
+	<Package GUID="89" ID="12" ItemSequence="9" UniqueID1="555" UniqueID2="642" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_4" />
+	<Package GUID="90" ID="12" ItemSequence="10" UniqueID1="556" UniqueID2="643" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_3" />
+	<Package GUID="91" ID="12" ItemSequence="11" UniqueID1="557" UniqueID2="644" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_2" />
+	<Package GUID="92" ID="12" ItemSequence="12" UniqueID1="558" UniqueID2="645" PackageName=" [10+3][Chaos Card  Mini]" Description="Chaos Card  Mini_1" />
+	<Package GUID="93" ID="13" ItemSequence="0" UniqueID1="431" UniqueID2="500" PackageName=" [Skills package for Magic Glad.]" Description="Pet Panda (7 Day)_P" />
+	<Package GUID="94" ID="13" ItemSequence="1" UniqueID1="432" UniqueID2="501" PackageName=" [Skills package for Magic Glad.]" Description="Seal of Healing (7 Day)_P" />
+	<Package GUID="95" ID="13" ItemSequence="2" UniqueID1="433" UniqueID2="502" PackageName=" [Skills package for Magic Glad.]" Description="Bundle of Jewel of Bless (10)_P" />
+	<Package GUID="96" ID="13" ItemSequence="3" UniqueID1="434" UniqueID2="503" PackageName=" [Skills package for Magic Glad.]" Description="Bundle of Jewel of Soul (10)_P" />
+	<Package GUID="97" ID="13" ItemSequence="4" UniqueID1="439" UniqueID2="508" PackageName=" [Skills package for Magic Glad.]" Description="Scroll of Evil Spirit_P" />
+	<Package GUID="98" ID="13" ItemSequence="5" UniqueID1="455" UniqueID2="524" PackageName=" [Skills package for Magic Glad.]" Description="Scroll of Gigantic Storm_P" />
+	<Package GUID="99" ID="13" ItemSequence="6" UniqueID1="456" UniqueID2="525" PackageName=" [Skills package for Magic Glad.]" Description="Scroll of Cometfall_P" />
+	<Package GUID="100" ID="13" ItemSequence="7" UniqueID1="457" UniqueID2="526" PackageName=" [Skills package for Magic Glad.]" Description="Scroll of Flame Strike_P" />
+	<Package GUID="101" ID="14" ItemSequence="0" UniqueID1="431" UniqueID2="500" PackageName=" [Skills package for Fairy Elf]" Description="Pet Panda (7 Day)_P" />
+	<Package GUID="102" ID="14" ItemSequence="1" UniqueID1="432" UniqueID2="501" PackageName=" [Skills package for Fairy Elf]" Description="Seal of Healing (7 Day)_P" />
+	<Package GUID="103" ID="14" ItemSequence="2" UniqueID1="433" UniqueID2="502" PackageName=" [Skills package for Fairy Elf]" Description="Bundle of Jewel of Bless (10)_P" />
+	<Package GUID="104" ID="14" ItemSequence="3" UniqueID1="434" UniqueID2="503" PackageName=" [Skills package for Fairy Elf]" Description="Bundle of Jewel of Soul (10)_P" />
+	<Package GUID="105" ID="14" ItemSequence="4" UniqueID1="451" UniqueID2="520" PackageName=" [Skills package for Fairy Elf]" Description="Scroll of Multi Shot_P" />
+	<Package GUID="106" ID="14" ItemSequence="5" UniqueID1="452" UniqueID2="521" PackageName=" [Skills package for Fairy Elf]" Description="Orb of Ice Arrow_P" />
+	<Package GUID="107" ID="14" ItemSequence="6" UniqueID1="453" UniqueID2="522" PackageName=" [Skills package for Fairy Elf]" Description="Orb of Penetration_P" />
+	<Package GUID="108" ID="14" ItemSequence="7" UniqueID1="454" UniqueID2="523" PackageName=" [Skills package for Fairy Elf]" Description="Orb of Recovery_P" />
+	<Package GUID="109" ID="15" ItemSequence="0" UniqueID1="431" UniqueID2="500" PackageName=" [Skills package for Rage Fighter]" Description="Pet Panda (7 Day)_P" />
+	<Package GUID="110" ID="15" ItemSequence="1" UniqueID1="432" UniqueID2="501" PackageName=" [Skills package for Rage Fighter]" Description="Seal of Healing (7 Day)_P" />
+	<Package GUID="110" ID="15" ItemSequence="2" UniqueID1="433" UniqueID2="502" PackageName=" [Skills package for Rage Fighter]" Description="Bundle of Jewel of Bless (10)_P" />
+	<Package GUID="112" ID="15" ItemSequence="3" UniqueID1="434" UniqueID2="503" PackageName=" [Skills package for Rage Fighter]" Description="Bundle of Jewel of Soul (10)_P" />
+	<Package GUID="113" ID="15" ItemSequence="4" UniqueID1="447" UniqueID2="516" PackageName=" [Skills package for Rage Fighter]" Description="Increase Health Parchment_P" />
+	<Package GUID="114" ID="15" ItemSequence="5" UniqueID1="448" UniqueID2="517" PackageName=" [Skills package for Rage Fighter]" Description="Dark Side Parchment_P" />
+	<Package GUID="115" ID="15" ItemSequence="6" UniqueID1="449" UniqueID2="518" PackageName=" [Skills package for Rage Fighter]" Description="Dragon Slasher Parchment_P" />
+	<Package GUID="116" ID="15" ItemSequence="7" UniqueID1="450" UniqueID2="519" PackageName=" [Skills package for Rage Fighter]" Description="Increase Block Parchment_P" />
+	<Package GUID="117" ID="16" ItemSequence="0" UniqueID1="431" UniqueID2="500" PackageName=" [Skill book package for Summoner]" Description="Pet Panda (7 Day)_P" />
+	<Package GUID="118" ID="16" ItemSequence="1" UniqueID1="432" UniqueID2="501" PackageName=" [Skill book package for Summoner]" Description="Seal of Healing (7 Day)_P" />
+	<Package GUID="119" ID="16" ItemSequence="2" UniqueID1="433" UniqueID2="502" PackageName=" [Skill book package for Summoner]" Description="Bundle of Jewel of Bless (10)_P" />
+	<Package GUID="120" ID="16" ItemSequence="3" UniqueID1="434" UniqueID2="503" PackageName=" [Skill book package for Summoner]" Description="Bundle of Jewel of Soul (10)_P" />
+	<Package GUID="121" ID="16" ItemSequence="4" UniqueID1="443" UniqueID2="512" PackageName=" [Skill book package for Summoner]" Description="Chain Lightning Parchment_P" />
+	<Package GUID="122" ID="16" ItemSequence="5" UniqueID1="444" UniqueID2="513" PackageName=" [Skill book package for Summoner]" Description="Damage Reflection Parchment_P" />
+	<Package GUID="123" ID="16" ItemSequence="6" UniqueID1="445" UniqueID2="514" PackageName=" [Skill book package for Summoner]" Description="Berserker Parchment_P" />
+	<Package GUID="124" ID="16" ItemSequence="7" UniqueID1="446" UniqueID2="515" PackageName=" [Skill book package for Summoner]" Description="Lightning Shock Parchment_P" />
+	<Package GUID="125" ID="17" ItemSequence="0" UniqueID1="431" UniqueID2="500" PackageName=" [Skills package for Dark Wizard]" Description="Pet Panda (7 Day)_P" />
+	<Package GUID="126" ID="17" ItemSequence="1" UniqueID1="432" UniqueID2="501" PackageName=" [Skills package for Dark Wizard]" Description="Seal of Healing (7 Day)_P" />
+	<Package GUID="127" ID="17" ItemSequence="2" UniqueID1="433" UniqueID2="502" PackageName=" [Skills package for Dark Wizard]" Description="Bundle of Jewel of Bless (10)_P" />
+	<Package GUID="128" ID="17" ItemSequence="3" UniqueID1="434" UniqueID2="503" PackageName=" [Skills package for Dark Wizard]" Description="Bundle of Jewel of Soul (10)_P" />
+	<Package GUID="129" ID="17" ItemSequence="4" UniqueID1="439" UniqueID2="508" PackageName=" [Skills package for Dark Wizard]" Description="Scroll of Evil Spirit_P" />
+	<Package GUID="130" ID="17" ItemSequence="5" UniqueID1="440" UniqueID2="509" PackageName=" [Skills package for Dark Wizard]" Description="Scroll of Expansion of Wizardry_P" />
+	<Package GUID="131" ID="17" ItemSequence="6" UniqueID1="441" UniqueID2="510" PackageName=" [Skills package for Dark Wizard]" Description="Scroll of Nova_P" />
+	<Package GUID="132" ID="17" ItemSequence="7" UniqueID1="442" UniqueID2="511" PackageName=" [Skills package for Dark Wizard]" Description="Scroll of Soul Barrior_P" />
+	<Package GUID="133" ID="18" ItemSequence="0" UniqueID1="431" UniqueID2="500" PackageName=" [skills package for Dark Knight]" Description="Pet Panda (7 Day)_P" />
+	<Package GUID="134" ID="18" ItemSequence="1" UniqueID1="432" UniqueID2="501" PackageName=" [skills package for Dark Knight]" Description="Seal of Healing (7 Day)_P" />
+	<Package GUID="135" ID="18" ItemSequence="2" UniqueID1="433" UniqueID2="502" PackageName=" [skills package for Dark Knight]" Description="Bundle of Jewel of Bless (10)_P" />
+	<Package GUID="136" ID="18" ItemSequence="3" UniqueID1="434" UniqueID2="503" PackageName=" [skills package for Dark Knight]" Description="Bundle of Jewel of Soul (10)_P" />
+	<Package GUID="137" ID="18" ItemSequence="4" UniqueID1="435" UniqueID2="504" PackageName=" [skills package for Dark Knight]" Description="Orb of Strike of Destruction_P" />
+	<Package GUID="138" ID="18" ItemSequence="5" UniqueID1="436" UniqueID2="505" PackageName=" [skills package for Dark Knight]" Description="Orb of Rageful Blow_P" />
+	<Package GUID="139" ID="18" ItemSequence="6" UniqueID1="437" UniqueID2="506" PackageName=" [skills package for Dark Knight]" Description="Orb of Death Stab_P" />
+	<Package GUID="140" ID="18" ItemSequence="7" UniqueID1="438" UniqueID2="507" PackageName=" [skills package for Dark Knight]" Description="Orb of Swell Life_P" />
+</CashItemPackage>

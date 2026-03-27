@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2019 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<DevilSquare>
+	<Monster EventLevel="0" MapNumber="9"> <!-- Level 1 -->
+		<Spawn Index="17" Distance="30" StartX="119" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" /> 
+		<Spawn Index="15" Distance="30" StartX="119" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" /> 
+	</Monster>
+	
+	<Monster EventLevel="1" MapNumber="9"> <!-- Level 2 -->
+		<Spawn Index="10" Distance="30" StartX="121" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" />
+		<Spawn Index="39" Distance="30" StartX="121" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" />
+	</Monster>
+	
+	<Monster EventLevel="2" MapNumber="9"> <!-- Level 3 -->
+		<Spawn Index="41" Distance="30" StartX="49" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
+		<Spawn Index="37" Distance="30" StartX="49" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
+	</Monster>
+	
+	<Monster EventLevel="3" MapNumber="9"> <!-- Level 4 -->
+		<Spawn Index="64" Distance="30" StartX="53" StartY="74" EndX="83" EndY="109" Dir="-1" Count="35" />
+		<Spawn Index="65" Distance="30" StartX="53" StartY="74" EndX="83" EndY="109" Dir="-1" Count="35" /> 
+	</Monster>
+	
+	<Monster EventLevel="4" MapNumber="32"> <!-- Level 5 -->
+		<Spawn Index="294" Distance="30" StartX="120" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" /> 
+		<Spawn Index="60" Distance="30" StartX="120" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" />
+	</Monster>
+	
+	<Monster EventLevel="5" MapNumber="32"> <!-- Level 6 -->
+		<Spawn Index="290" Distance="30" StartX="122" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" />
+		<Spawn Index="57" Distance="30" StartX="122" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" /> 
+	</Monster>
+	
+	<Monster EventLevel="6" MapNumber="32"> <!-- Level 7 -->
+		<Spawn Index="434" Distance="30" StartX="50" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
+		<Spawn Index="435" Distance="30" StartX="50" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
+	</Monster>
+</DevilSquare>

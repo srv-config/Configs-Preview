@@ -1,0 +1,21 @@
+//############################################################
+//# -- INTERNATIONAL GAMING CENTER NETWORK
+//# -- www.igcn.mu
+//# -- (C) 2010-2016 IGC-Network (R)
+//# ---------------------------------------------------------
+//# -- File is a part of IGCN Group MuOnline Server files.
+//############################################################
+
+// Allows to define kills count of what monsters will be recorded in DB
+// For Monster ID (Index) refer to \Data\Monster\Settings\MonsterList.xml
+// Referenced Table: MuOnline.[dbo].[C_Monster_KillCount]
+
+0 // DO NOT REMOVE SECTION NUMBER
+
+// ==========================
+//	MonsterID	Description
+// ==========================
+// --------------------------
+//	2 		// Example entry
+
+end

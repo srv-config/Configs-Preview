@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2019 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<IllusionTemple>
+	<Temple Level="0">
+		<Monster Index="380" MapNumber="45" Distance="0" StartX="134" StartY="121" Dir="2" />
+		<Monster Index="380" MapNumber="45" Distance="0" StartX="207" StartY="47" Dir="2" />
+		<Monster Index="381" MapNumber="45" Distance="0" StartX="139" StartY="46" Dir="3" />
+		<Monster Index="382" MapNumber="45" Distance="0" StartX="194" StartY="123" Dir="3" />
+		<Monster Index="383" MapNumber="45" Distance="0" StartX="141" StartY="59" Dir="2" />
+		<Monster Index="384" MapNumber="45" Distance="0" StartX="194" StartY="113" Dir="2" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="131" StartY="93" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="131" StartY="89" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="131" StartY="85" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="168" StartY="123" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="164" StartY="123" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="160" StartY="123" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="169" StartY="48" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="169" StartY="52" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="169" StartY="56" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="206" StartY="85" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="206" StartY="81" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="206" StartY="77" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="158" StartY="85" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="168" StartY="94" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="169" StartY="75" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="179" StartY="85" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="157" StartY="66" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="162" StartY="66" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="150" StartY="78" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="150" StartY="73" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="176" StartY="103" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="181" StartY="103" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="187" StartY="98" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="187" StartY="92" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="197" StartY="57" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="141" StartY="113" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="193" StartY="61" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="145" StartY="109" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="189" StartY="65" Dir="-1" />
+		<Monster Index="388" MapNumber="45" Distance="10" StartX="149" StartY="105" Dir="-1" />
+		<Monster Index="386" MapNumber="45" Distance="10" StartX="167" StartY="87" Dir="-1" />
+		<Monster Index="387" MapNumber="45" Distance="10" StartX="171" StartY="83" Dir="-1" />
+	</Temple>
+	<Temple Level="1">
+		<Monster Index="380" MapNumber="46" Distance="0" StartX="134" StartY="121" Dir="2" />
+		<Monster Index="380" MapNumber="46" Distance="0" StartX="207" StartY="47" Dir="2" />
+		<Monster Index="381" MapNumber="46" Distance="0" StartX="139" StartY="46" Dir="2" />
+		<Monster Index="382" MapNumber="46" Distance="0" StartX="194" StartY="123" Dir="3" />
+		<Monster Index="383" MapNumber="46" Distance="0" StartX="141" StartY="59" Dir="2" />
+		<Monster Index="384" MapNumber="46" Distance="0" StartX="194" StartY="113" Dir="2" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="131" StartY="93" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="131" StartY="89" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="131" StartY="85" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="168" StartY="123" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="164" StartY="123" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="160" StartY="123" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="169" StartY="48" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="169" StartY="52" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="169" StartY="56" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="206" StartY="85" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="206" StartY="81" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="206" StartY="77" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="158" StartY="85" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="168" StartY="94" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="169" StartY="75" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="179" StartY="85" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="157" StartY="66" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="162" StartY="66" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="150" StartY="78" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="150" StartY="73" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="176" StartY="103" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="181" StartY="103" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="187" StartY="98" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="187" StartY="92" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="197" StartY="57" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="141" StartY="113" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="193" StartY="61" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="145" StartY="109" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="189" StartY="65" Dir="-1" />
+		<Monster Index="391" MapNumber="46" Distance="10" StartX="149" StartY="105" Dir="-1" />
+		<Monster Index="389" MapNumber="46" Distance="10" StartX="167" StartY="87" Dir="-1" />
+		<Monster Index="390" MapNumber="46" Distance="10" StartX="171" StartY="83" Dir="-1" />
+	</Temple>
+	<Temple Level="2">
+		<Monster Index="380" MapNumber="47" Distance="0" StartX="134" StartY="121" Dir="2" />
+		<Monster Index="380" MapNumber="47" Distance="0" StartX="207" StartY="47" Dir="2" />
+		<Monster Index="381" MapNumber="47" Distance="0" StartX="139" StartY="46" Dir="2" />
+		<Monster Index="382" MapNumber="47" Distance="0" StartX="194" StartY="123" Dir="3" />
+		<Monster Index="383" MapNumber="47" Distance="0" StartX="141" StartY="59" Dir="2" />
+		<Monster Index="384" MapNumber="47" Distance="0" StartX="194" StartY="113" Dir="2" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="131" StartY="93" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="131" StartY="89" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="131" StartY="85" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="168" StartY="123" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="164" StartY="123" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="160" StartY="123" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="169" StartY="48" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="169" StartY="52" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="169" StartY="56" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="206" StartY="85" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="206" StartY="81" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="206" StartY="77" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="158" StartY="85" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="168" StartY="94" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="169" StartY="75" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="179" StartY="85" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="157" StartY="66" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="162" StartY="66" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="150" StartY="78" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="150" StartY="73" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="176" StartY="103" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="181" StartY="103" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="187" StartY="98" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="187" StartY="92" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="197" StartY="57" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="141" StartY="113" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="193" StartY="61" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="145" StartY="109" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="189" StartY="65" Dir="-1" />
+		<Monster Index="394" MapNumber="47" Distance="10" StartX="149" StartY="105" Dir="-1" />
+		<Monster Index="392" MapNumber="47" Distance="10" StartX="167" StartY="87" Dir="-1" />
+		<Monster Index="393" MapNumber="47" Distance="10" StartX="171" StartY="83" Dir="-1" />
+	</Temple>
+	<Temple Level="3">
+		<Monster Index="380" MapNumber="48" Distance="0" StartX="134" StartY="121" Dir="2" />
+		<Monster Index="380" MapNumber="48" Distance="0" StartX="207" StartY="47" Dir="2" />
+		<Monster Index="381" MapNumber="48" Distance="0" StartX="139" StartY="46" Dir="2" />
+		<Monster Index="382" MapNumber="48" Distance="0" StartX="194" StartY="123" Dir="3" />
+		<Monster Index="383" MapNumber="48" Distance="0" StartX="141" StartY="59" Dir="2" />
+		<Monster Index="384" MapNumber="48" Distance="0" StartX="194" StartY="113" Dir="2" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="131" StartY="93" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="131" StartY="89" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="131" StartY="85" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="168" StartY="123" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="164" StartY="123" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="160" StartY="123" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="169" StartY="48" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="169" StartY="52" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="169" StartY="56" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="206" StartY="85" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="206" StartY="81" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="206" StartY="77" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="158" StartY="85" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="168" StartY="94" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="169" StartY="75" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="179" StartY="85" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="157" StartY="66" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="162" StartY="66" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="150" StartY="78" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="150" StartY="73" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="176" StartY="103" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="181" StartY="103" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="187" StartY="98" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="187" StartY="92" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="197" StartY="57" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="141" StartY="113" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="193" StartY="61" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="145" StartY="109" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="189" StartY="65" Dir="-1" />
+		<Monster Index="397" MapNumber="48" Distance="10" StartX="149" StartY="105" Dir="-1" />
+		<Monster Index="395" MapNumber="48" Distance="10" StartX="167" StartY="87" Dir="-1" />
+		<Monster Index="396" MapNumber="48" Distance="10" StartX="171" StartY="83" Dir="-1" />
+	</Temple>
+	<Temple Level="4">
+		<Monster Index="380" MapNumber="49" Distance="0" StartX="134" StartY="121" Dir="2" />
+		<Monster Index="380" MapNumber="49" Distance="0" StartX="207" StartY="47" Dir="2" />
+		<Monster Index="381" MapNumber="49" Distance="0" StartX="139" StartY="46" Dir="2" />
+		<Monster Index="382" MapNumber="49" Distance="0" StartX="194" StartY="123" Dir="3" />
+		<Monster Index="383" MapNumber="49" Distance="0" StartX="141" StartY="59" Dir="2" />
+		<Monster Index="384" MapNumber="49" Distance="0" StartX="194" StartY="113" Dir="2" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="131" StartY="93" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="131" StartY="89" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="131" StartY="85" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="168" StartY="123" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="164" StartY="123" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="160" StartY="123" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="169" StartY="48" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="169" StartY="52" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="169" StartY="56" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="206" StartY="85" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="206" StartY="81" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="206" StartY="77" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="158" StartY="85" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="168" StartY="94" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="169" StartY="75" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="179" StartY="85" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="157" StartY="66" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="162" StartY="66" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="150" StartY="78" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="150" StartY="73" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="176" StartY="103" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="181" StartY="103" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="187" StartY="98" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="187" StartY="92" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="197" StartY="57" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="141" StartY="113" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="193" StartY="61" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="145" StartY="109" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="189" StartY="65" Dir="-1" />
+		<Monster Index="400" MapNumber="49" Distance="10" StartX="149" StartY="105" Dir="-1" />
+		<Monster Index="398" MapNumber="49" Distance="10" StartX="167" StartY="87" Dir="-1" />
+		<Monster Index="399" MapNumber="49" Distance="10" StartX="171" StartY="83" Dir="-1" />
+	</Temple>
+	<Temple Level="5">
+		<Monster Index="380" MapNumber="50" Distance="0" StartX="134" StartY="121" Dir="2" />
+		<Monster Index="380" MapNumber="50" Distance="0" StartX="207" StartY="47" Dir="2" />
+		<Monster Index="381" MapNumber="50" Distance="0" StartX="139" StartY="46" Dir="2" />
+		<Monster Index="382" MapNumber="50" Distance="0" StartX="194" StartY="123" Dir="3" />
+		<Monster Index="383" MapNumber="50" Distance="0" StartX="141" StartY="59" Dir="2" />
+		<Monster Index="384" MapNumber="50" Distance="0" StartX="194" StartY="113" Dir="2" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="131" StartY="93" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="131" StartY="89" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="131" StartY="85" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="168" StartY="123" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="164" StartY="123" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="160" StartY="123" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="169" StartY="48" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="169" StartY="52" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="169" StartY="56" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="206" StartY="85" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="206" StartY="81" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="206" StartY="77" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="158" StartY="85" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="168" StartY="94" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="169" StartY="75" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="179" StartY="85" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="157" StartY="66" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="162" StartY="66" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="150" StartY="78" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="150" StartY="73" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="176" StartY="103" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="181" StartY="103" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="187" StartY="98" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="187" StartY="92" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="197" StartY="57" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="141" StartY="113" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="193" StartY="61" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="145" StartY="109" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="189" StartY="65" Dir="-1" />
+		<Monster Index="403" MapNumber="50" Distance="10" StartX="149" StartY="105" Dir="-1" />
+		<Monster Index="401" MapNumber="50" Distance="10" StartX="167" StartY="87" Dir="-1" />
+		<Monster Index="402" MapNumber="50" Distance="10" StartX="171" StartY="83" Dir="-1" />
+	</Temple>
+</IllusionTemple>

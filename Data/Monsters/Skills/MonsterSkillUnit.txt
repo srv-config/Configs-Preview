@@ -1,0 +1,110 @@
+//############################################################
+//# -- INTERNATIONAL GAMING CENTER NETWORK
+//# -- www.igcn.mu
+//# -- (C) 2010-2016 IGC-Network (R)
+//# ---------------------------------------------------------
+//# -- File is a part of IGCN Group MuOnline Server files.
+//############################################################
+
+// ================================================================================================================================================================================================================
+// UnitNumber		UnitName									UnitTargetType		UnitScopeType	UnitScopeValue	Delay			ElementsSlot0	ElementsSlot1	ElementsSlot2	ElementsSlot3	ElementsSlot4
+// ================================================================================================================================================================================================================
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0 // DO NOT REMOVE SECTION NUMBER
+	1				"Thunder Break"                             1					0				6				300				1				-1				-1				-1				-1
+	2				"Bloody Wind"                               1					0				6				300				14				7				-1				-1				-1
+	3				"Fire Ray"                                  1					0				6				300				11				-1				-1				-1				-1
+	4				"Very"                                      1					-1				0				300				17				23				-1				-1				-1
+	5				"Vampires Rick Touch"                       1					-1				0				300				3				-1				-1				-1				-1
+	6				"Dark Elf - Group Address"             	 	2					-1				6				300				16				-1				-1				-1				-1
+	7				"Dark Elf - Group Therapy"                	2					-1				6				300				13				-1				-1				-1				-1
+	8				"Dark Elf - Geom"                     		1					-1				6				300				1				-1				-1				-1				-1
+	9				"Balram - The Direction"                    1					-1				0				300				17				-1				-1				-1				-1
+	10				"Death Spirit - Reduce Mana/AG"             1					-1				0				300				3				4				-1				-1				-1
+	11				"Soram - Push"                              1					0				6				300				7				-1				-1				-1				-1
+	12				"Balgass - Direct Land Hit"                 1					0				6				300				7				1				17				-1				-1
+	13				"Balgass"                    				1					0				6				300				7				1				1				-1				-1
+	14				"Kentauros - Multi Shot"                    1					1				6				300				24				-1				-1				-1				-1
+	15				"Persona - Demon"                           1					0				6				300				25				-1				-1				-1				-1
+	16				"Twin Tail - Hair Attack"                  	1					-1				0				300				26				27				-1				-1				-1
+	17				"Dread - 2 times a peer"               		1					-1				0				300				28				-1				-1				-1				-1
+	18				"Nightmare - Dog Attack"                    1					-1				0				300				29				30				-1				-1				-1
+	19				"Nightmare - Pot like"                     	1					1				6				300				31				-1				-1				-1				-1
+	20				"Nightmare - Summon"                       	2					-1				0				300				-1				-1				-1				-1				-1
+	21				"Nightmare - Fire Jeans"                    1					0				6				300				32				33				-1				-1				-1
+	22				"Nightmare - Warp"                          2					-1				0				300				34				-1				-1				-1				-1
+	23				"Maya hand - Pressure"                   	1					0				6				300				35				36				37				-1				-1
+	24				"Maya hand - Power Wave"                	1					1				6				300				38				-1				-1				-1				-1
+	25				"Maya - Ice Storm"                          1					-1				6				300				39				40				-1				-1				-1
+	26				"Maya - Broken Shower"                      1					-1				6				300				41				42				-1				-1				-1
+	27				"Ghosts - Stern"                            1					-1				0				300				1				-1				-1				-1				-1
+	28				"Ghost - dog"                               1					-1				0				300				8				1				-1				-1				-1
+	29				"Roar"                                      1					-1				0				300				43				-1				-1				-1				-1
+	30				"Break period"                              1					-1				0				300				44				-1				-1				-1				-1
+	31				"Anger Strike"                              1					0				2				300				45				-1				-1				-1				-1
+	32				"Cooler Tin - Dog Ball"                     1					-1				0				300				46				-1				-1				-1				-1
+	33				"Blow"                                      1					-1				0				300				47				-1				-1				-1				-1
+	34				"Selupan - Poison Ball"                 	1					0				6				300				48				-1				-1				-1				-1
+	35				"Selupan - Frost Storm"                 	1					0				8				300				49				-1				-1				-1				-1
+	36				"Selupan - Frost Shock"               		1					0				6				300				50				-1				-1				-1				-1
+	37				"Selupan - Fall"                       		1					0				4				300				51				-1				-1				-1				-1
+	38				"Selupan - Recall"                      	2					-1				0				300				52				-1				-1				-1				-1
+	39				"Selupan - Healing"                   		2					-1				0				300				53				-1				-1				-1				-1
+	40				"Selupan - Icing"                       	1					-1				0				300				54				-1				-1				-1				-1
+	41				"Selupan - Teleportation"                 	2					-1				0				300				55				-1				-1				-1				-1
+	42				"Selupan - Invincible"                  	2					-1				0				300				56				-1				-1				-1				-1
+	43				"Selupan - Berserk"                    	 	2					-1				0				300				57				-1				-1				-1				-1
+	44				"Shield bottle - Defense"                   5					-1				0				300				58				-1				-1				-1				-1
+	45				"Shield bottle - Shield"                    3					-1				0				300				59				-1				-1				-1				-1
+	46				"Healing Disease - Healing"                 4					-1				0				300				60				-1				-1				-1				-1
+	47				"Quartermaster - Skill 01"                  1					0				6				300				61				-1				-1				-1				-1
+	48				"Quartermaster - Skill 02"                  1					0				3				300				61				-1				-1				-1				-1
+	49				"Combat Instructor - Skill 03"              1					1				10				300				61				-1				-1				-1				-1
+	50				"Knight Commander - Skill 04"               3					-1				0				300				61				62				-1				-1				-1
+	51				"Archmage - Pillar of Fire"                 3					0				10				300				61				-1				-1				-1				-1
+	52				"Archmage - Wide Meteorite"                 1					0				10				300				61				59				-1				-1				-1
+	53				"Assassinated leader - Skill 06"            1					0				10				300				61				65				-1				-1				-1
+	54				"Riders GM - Earth Shakes"                  1					0				3				300				61				64				-1				-1				-1
+	55				"Riders GM - Bite"                          3					-1				0				300				61				62				-1				-1				-1
+	56				"Riders Director - Head of CEE"             3					-1				0				300				61				66				59				-1				-1
+	57				"Dessler - Blade Door"                      1					0				10				300				61				-1				-1				-1				-1
+	58				"Dessler - Skill 07"                        1					1				5				300				61				-1				-1				-1				-1
+	//59			"Berserk"                                   2					-1				0				300				67				68				-1				-1				-1
+	60				"Vermont - Skill 08"                        1					0				10				300				61				59				-1				-1				-1
+	61				"Vermont - Skill 09"                        1					0				10				300				61				69				-1				-1				-1
+	62				"El kaneu - Skill 14"                       1					0				6				300				61				-1				-1				-1				-1
+	63				"El kaneu - Skill 15"                       1					0				3				300				61				64				-1				-1				-1
+	64				"Ion -Blood Attack"                         1					1				3				300				61				70				-1				-1				-1
+	65				"Ion - Gigantik Storm"                      1					0				5				300				61				72				-1				-1				-1
+	66				"Ion - Flame"                               1					1				5				300				61				73				-1				-1				-1
+	67				"Ion - General"                             3					-1				0				300				71				-1				-1				-1				-1
+	68				"Bloody Golem - Stern"                      1					-1				0				300				47				74				-1				-1				-1
+	69				"Location Queen - Ice"                      1					-1				0				300				47				9				5				-1				-1
+	70				"Berserker - Stern Ball"                    1					-1				0				300				47				74				6				-1				-1
+	71				"Zeno Outsider - Stern"                     1					-1				0				300				47				74				7				-1				-1
+	72				"Safi Queen - Stern Room"                   1					-1				0				300				47				74				5				-1				-1
+	73				"Ice Nail Pin - Ice"                        1					-1				0				300				47				9				7				-1				-1
+	74				"Shadow Master - Stern"                     1					-1				0				300				47				74				6				-1				-1
+	75				"The Dark memeodeu - Solitary"              1					-1				0				300				47				27				6				-1				-1
+	76				"The Dark Giant - Dokgong"                  1					-1				0				300				47				27				5				-1				-1
+	77				"Dark Iron Knight - Poison"                 1					-1				0				300				47				74				27				-1				-1
+	78				"Medusa - Curse Poison"                     1					0				10				300				75				-1				-1				-1				-1
+	79				"Medusa - Chaotic"                          1					0				10				300				76				77				-1				-1				-1
+	80				"Medusa - Gigantik"                         1					0				10				300				72				77				-1				-1				-1
+	81				"Medusa - Evil"                             1					0				10				300				25				8				-1				-1				-1
+	82				"Salamander - 1 Hit Skill"                  1					-1				0				300				78				-1				-1				-1				-1
+	83				"Salamander - 2 Hits Kill"              	1					-1				0				300				79				-1				-1				-1				-1
+	84				"Salamander - German"                       1					-1				0				300				80				81				-1				-1				-1
+	85				"Undine - 1 Hit Skill"                      1					-1				0				300				82				-1				-1				-1				-1
+	86				"Undine - Skill Strikes 2"                  1					-1				0				300				83				-1				-1				-1				-1
+	87				"Undine - Ice"                              1					-1				0				300				84				85				-1				-1				-1
+	88				"Gnome - skill Hit 1"                       1					-1				0				300				86				-1				-1				-1				-1
+	89				"Gnome - Strike 2 Skill"                    1					-1				0				300				87				-1				-1				-1				-1
+	90				"Gnome - Stun"                              1					-1				0				300				88				89				-1				-1				-1
+	91				"Silpideu - 1 Hit Skill"                    1					-1				0				300				90				-1				-1				-1				-1
+	92				"Silpideu - Skill Strikes 2"                1					-1				0				300				91				-1				-1				-1				-1
+	93				"Silpideu - Push"                           1					-1				0				300				92				93				-1				-1				-1
+	94				"Hill Lhasa - Hitting one Skill"            1					-1				0				300				94				-1				-1				-1				-1
+	95				"Hill Lhasa - Hitting Skills 2"             1					-1				0				300				95				-1				-1				-1				-1
+	96				"Hill Lhasa - HP loss"                      1					-1				0				300				96				97				-1				-1				-1
+end

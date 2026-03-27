@@ -1,0 +1,1386 @@
+//############################################################
+//# -- INTERNATIONAL GAMING CENTER NETWORK
+//# -- www.igcn.mu
+//# -- (C) 2010-2016 IGC-Network (R)
+//# ---------------------------------------------------------
+//# -- File is a part of IGCN Group MuOnline Server files.
+//############################################################
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+0 // DO NOT REMOVE SECTION NUMBER
+// -- Protection - Passive (Blade Master) ---------------------------------------------------------------------
+// -- Index 1-28 (common for all classes), 29-36 dedicated for class ------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	1		1		0		1		20		0		0		300		// Durability Reduction (1)
+//	2 ---------------------------------------------------------------------------------------------------------
+//	3 ---------------------------------------------------------------------------------------------------------
+	4		1		0		1		20		0		0		301		// PvP Defence Rate Increase
+//	5 ---------------------------------------------------------------------------------------------------------
+	6		1		0		1		20		0		0		302		// Maximum SD increase
+	7		1		0		1		20		0		0		303		// Automatic Mana Recovery Increase
+	8		1		0		1		20		0		0		304		// Poison Resistance Increase
+	9		1		0		1		20		300		0		305		// Durability Reduction (2)
+	10		1		0		1		20		302		0		306		// SD Recovery Speed Increase
+	11		1		0		1		20		303		0		307		// Automatic HP Recovery Increase
+	12		1		0		1		20		304		0		308		// Lightning Resistance Increase
+//	13 --------------------------------------------------------------------------------------------------------
+	14		1		0		1		20		0		0		309		// Defense Increase
+	15		1		0		1		20		307		0		310		// Automatic AG Recovery Increase
+	16		1		0		1		20		308		0		311		// Ice Resistance Increase
+	17		1		0		1		20		305		0		312		// Durability Reduction (3)
+	18		1		0		1		20		309		0		313		// Defense Success Rate Increase
+//	19 --------------------------------------------------------------------------------------------------------
+//	20 --------------------------------------------------------------------------------------------------------
+//	21 --------------------------------------------------------------------------------------------------------
+//	22		1		0		1		20		313		0		314		// Cast Invincibility
+	23		1		0		1		20		0		0		315		// Armor Set Bonus Increase
+	24		1		0		1		20		315		0		316		// Vengeance
+	25		1		0		1		20		0		0		317		// Energy Increase
+	26		1		0		1		20		0		0		318		// Stamina Increase
+	27		1		0		1		20		0		0		319		// Agility Increase
+	28		1		0		1		20		0		0		320		// Strength Increase
+// ------------------------------------------------------------------------------------------------------------
+//	29		1		0		1		20		0		0		321		// Wing of Storm Absorption PowUp
+	30		1		0		1		20		0		0		322		// Wing of Storm Defense PowUp
+//	31 --------------------------------------------------------------------------------------------------------
+//	32 --------------------------------------------------------------------------------------------------------
+//	33 --------------------------------------------------------------------------------------------------------
+	34		1		0		1		20		322		0		324		// Wing of Storm Attack PowUp
+//	35 --------------------------------------------------------------------------------------------------------
+//	36 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Bravery - Skill Enhancement (Blade Master) --------------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	37		1		1		1		20		0		0		325		// Attack Success Rate Increase
+//	38 --------------------------------------------------------------------------------------------------------
+//	39 --------------------------------------------------------------------------------------------------------
+//	40 --------------------------------------------------------------------------------------------------------
+	41		1		1		1		20		0		0		326		// Cyclone Strengthener
+	42		1		1		1		20		0		0		327		// Slash Strengthener
+	43		1		1		1		20		0		0		328		// Falling Slash Strengthener
+	44		1		1		1		20		0		0		329		// Lunge Strengthener
+	45		1		1		1		20		0		0		330		// Twisting Slash Strengthener
+	46		1		1		1		20		0		0		331		// Rageful Blow Strengthener
+//	47 --------------------------------------------------------------------------------------------------------
+//	48 --------------------------------------------------------------------------------------------------------
+	49		1		1		1		20		330		0		332		// Twisting Slash Mastery
+	50		1		1		1		20		331		0		333		// Rageful Blow Mastery
+	51		1		1		1		20		0		0		334		// Maximum Life Increase
+	52		1		1		1		20		0		0		335		// Weapon Mastery
+	53		1		1		1		20		0		0		336		// Slash Strengthener
+	54		1		1		1		20		0		0		337		// Strike of Destruction Strengthener
+	55		1		1		1		20		334		0		338		// Maximum Mana Increase
+//	56 --------------------------------------------------------------------------------------------------------
+	57		1		1		1		20		336		0		339		// Death Stab Proficiency
+	58		1		1		1		20		337		0		340		// Strike of Destruction Proficiency
+	59		1		1		1		20		338		0		341		// Maximum AG Increase
+//	60 --------------------------------------------------------------------------------------------------------
+	61		1		1		1		20		339		0		342		// Death Stab Mastery
+	62		1		1		1		20		340		0		343		// Strike of Destruction Mastery
+//	63 --------------------------------------------------------------------------------------------------------
+//	64 --------------------------------------------------------------------------------------------------------
+	65		1		1		1		20		0		0		345		// Combo Strengthener
+	66		1		1		10		10		0		0		344		// Blood Storm
+//	67 --------------------------------------------------------------------------------------------------------
+//	68 --------------------------------------------------------------------------------------------------------
+//	69 --------------------------------------------------------------------------------------------------------
+	70		1		1		1		20		344		0		346		// Blood Storm Strengthener
+//	71 --------------------------------------------------------------------------------------------------------
+//	72 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Anger - Defense / Attack Enhancement (Blade Master) -----------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	73		1		2		1		20		0		0		347		// Attack Rate
+//	74 --------------------------------------------------------------------------------------------------------
+//	75 --------------------------------------------------------------------------------------------------------
+//	76 --------------------------------------------------------------------------------------------------------
+	77		1		2		1		20		0		0		348		// Two-handed Sword Strengthener
+	78		1		2		1		20		0		0		349		// One-handed Sword Strengthener
+	79		1		2		1		20		0		0		350		// Mace Strengthener
+	80		1		2		1		20		0		0		351		// Spear Strengthener
+	81		1		2		1		20		348		0		352		// Two-handed Sword Mastery
+	82		1		2		1		10		349		0		353		// One-handed Sword Mastery
+	83		1		2		1		20		350		0		354		// Mace Mastery
+	84		1		2		1		20		351		0		355		// Spear Mastery
+	85		1		2		1		20		0		0		356		// Swell Life Strengthener
+	86		1		2		1		20		0		0		357		// Mana Reduction
+	87		1		2		1		20		0		0		358		// Monster Attack SD Increment
+	88		1		2		1		20		0		0		359		// Monster Attack Life Increment
+	89		1		2		1		20		356		0		360		// Swell Life Proficiency
+	90		1		2		1		20		0		0		361		// Minimum Attack Power Increase
+//	91 --------------------------------------------------------------------------------------------------------
+	92		1		2		1		20		359		0		362		// Monster Attack Mana Increment
+	93		1		2		1		20		360		0		363		// Swell Life Mastery
+	94		1		2		1		20		361		0		364		// Maximum Attack Power Increase
+//	95 --------------------------------------------------------------------------------------------------------
+	96		1		2		1		20		0		0		366		// Increases critical damage rate
+//	97 --------------------------------------------------------------------------------------------------------
+	98		1		2		1		20		0		0		367		// Restores all Mana
+	99		1		2		1		20		0		0		368		// Restores all HP
+	100		1		2		1		20		366		0		369		// Increases excellent damage rate
+//	101 -------------------------------------------------------------------------------------------------------
+	102		1		2		1		20		0		0		370		// Increases double damage rate
+	103		1		2		1		20		368		0		372		// Restores all SD
+//	104 -------------------------------------------------------------------------------------------------------
+//	105 -------------------------------------------------------------------------------------------------------
+	106		1		2		1		20		370		0		371		// Increases chance of ignore Def
+//	107 -------------------------------------------------------------------------------------------------------
+//	108 -------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Peace - Passive (Grand Master) --------------------------------------------------------------------------
+// -- Index 1-28 (common for all classes), 29-36 dedicated for class ------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	1		2		0		1		20		0		0		300		// Durability Reduction (1)
+//	2 --------------------------------------------------------------------------------------------------------
+//	3 --------------------------------------------------------------------------------------------------------
+	4		2		0		1		20		0		0		301		// PvP Defence Rate Increase
+//	5 --------------------------------------------------------------------------------------------------------
+	6		2		0		1		20		0		0		302		// Maximum SD increase
+	7		2		0		1		20		0		0		303		// Automatic Mana Recovery Increase
+	8		2		0		1		20		0		0		304		// Poison Resistance Increase
+	9		2		0		1		20		300		0		305		// Durability Reduction (2)
+	10		2		0		1		20		302		0		306		// SD Recovery Speed Increase
+	11		2		0		1		20		303		0		307		// Automatic HP Recovery Increase
+	12		2		0		1		20		304		0		308		// Lightning Resistance Increase
+//	13 --------------------------------------------------------------------------------------------------------
+	14		2		0		1		20		0		0		309		// Defense Increase
+	15		2		0		1		20		307		0		310		// Automatic AG Recovery Increase
+	16		2		0		1		20		308		0		311		// Ice Resistance Increase
+	17		2		0		1		20		305		0		312		// Durability Reduction (3)
+	18		2		0		1		20		309		0		313		// Defense Success Rate Increase
+//	19 --------------------------------------------------------------------------------------------------------
+//	20 --------------------------------------------------------------------------------------------------------
+//	21 --------------------------------------------------------------------------------------------------------
+//	22		2		0		1		20		313		0		314		// Cast Invincibility
+	23		2		0		1		20		0		0		315		// Armor Set Bonus Increase
+	24		2		0		1		20		315		0		316		// Vengeance
+	25		2		0		1		20		0		0		317		// Energy Increase
+	26		2		0		1		20		0		0		318		// Stamina Increase
+	27		2		0		1		20		0		0		319		// Agility Increase
+	28		2		0		1		20		0		0		320		// Strength Increase
+// ------------------------------------------------------------------------------------------------------------
+//	29		2		0		1		20		0		0		374		// Eternal Wings Absorption PowUp
+	30		2		0		1		20		0		0		375		// Eternal Wings Defense PowUp
+//	31 --------------------------------------------------------------------------------------------------------
+//	32 --------------------------------------------------------------------------------------------------------
+//	33 --------------------------------------------------------------------------------------------------------
+	34		2		0		1		20		375		0		377		// Eternal Wings Attack PowUp
+//	35 --------------------------------------------------------------------------------------------------------
+//	36 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Wisdom - Skill Enhancement (Grand Master) ---------------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	37		2		1		1		20		0		0		325		// Attack Success Rate Increase
+//	38 --------------------------------------------------------------------------------------------------------
+//	39 --------------------------------------------------------------------------------------------------------
+//	40 --------------------------------------------------------------------------------------------------------
+	41		2		1		1		20		0		0		378		// Flame Strengthener
+	42		2		1		1		20		0		0		379		// Lightning Strengthener
+	43		2		1		1		20		0		0		380		// Expansion of Wizardry Strengthen
+//	44 --------------------------------------------------------------------------------------------------------
+	45		2		1		1		20		378		0		381		// Inferno Strengthener
+	46		2		1		1		20		379		0		382		// Blast Strengthener
+	47		2		1		1		20		380		0		383		// Expansion of Wizardry Mastery
+	48		2		1		1		20		0		0		384		// Poison Strengthener
+	49		2		1		1		20		0		0		385		// Evil Spirit Strengthener
+	50		2		1		1		20		385		0		386		// Magic Mastery
+	51		2		1		1		20		0		0		334		// Maximum Life Increase
+	52		2		1		1		20		384		0		387		// Decay Strengthener
+//	53 --------------------------------------------------------------------------------------------------------
+	54		2		1		1		20		0		0		388		// Hellfire Strengthener
+	55		2		1		1		20		334		0		338		// Maximum Mana Increase
+	56		2		1		1		20		0		0		389		// Ice Strengthener
+	57		2		1		1		20		0		0		390		// Meteor Strengthener
+//	58 --------------------------------------------------------------------------------------------------------
+	59		2		1		1		20		338		0		341		// Maximum AG Increase
+	60		2		1		1		20		389		0		391		// Ice Storm Strengthener
+//	61 --------------------------------------------------------------------------------------------------------
+	62		2		1		1		20		388		0		392		// Nova Strengthener
+//	63 --------------------------------------------------------------------------------------------------------
+	64		2		1		1		20		391		0		393		// Ice Storm Mastery
+	65		2		1		1		20		390		0		394		// Meteor Mastery
+	66		2		1		10		10		0		0		495		// Nova Cast Strengthener
+//	67 --------------------------------------------------------------------------------------------------------
+//	68 --------------------------------------------------------------------------------------------------------
+//	69 --------------------------------------------------------------------------------------------------------
+	70		2		1		1		20		495		0		497		// One-handed Staff Strengthener
+//	71 --------------------------------------------------------------------------------------------------------
+//	72 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Overcome - Defense / Attack Enhancement (Grand Master) --------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	73		2		2		1		20		0		0		347		// Attack Rate
+//	74 --------------------------------------------------------------------------------------------------------
+//	75 --------------------------------------------------------------------------------------------------------
+//	76 --------------------------------------------------------------------------------------------------------
+	77		2		2		1		20		0		0		397		// One-handed Staff Strengthener
+	78		2		2		1		20		0		0		398		// Two-handed Staff Strengthener
+	79		2		2		1		20		0		0		399		// Shield Strengthener
+//	80 --------------------------------------------------------------------------------------------------------
+	81		2		2		1		10		397		0		400		// One-handed Staff Mastery
+	82		2		2		1		20		398		0		401		// Two-handed Staff Mastery
+	83		2		2		1		20		399		0		402		// Shield Mastery
+//	84 --------------------------------------------------------------------------------------------------------
+	85		2		2		1		20		0		0		403		// Soul Barrier Strengthener
+	86		2		2		1		20		0		0		357		// Mana Reduction
+	87		2		2		1		20		0		0		358		// Monster Attack SD Increment
+	88		2		2		1		20		0		0		359		// Monster Attack Life Increment
+	89		2		2		1		20		403		0		404		// Soul Barrier Proficiency
+	90		2		2		1		20		0		0		405		// Minimum Wizardry Increase
+//	91 --------------------------------------------------------------------------------------------------------
+	92		2		2		1		20		359		0		362		// Monster Attack Mana Increment
+	93		2		2		1		20		404		0		406		// Soul Barrier Mastery
+	94		2		2		1		20		405		0		407		// Maximum Wizardry Increase
+//	95 --------------------------------------------------------------------------------------------------------
+	96		2		2		1		20		0		0		366		// Increases critical damage rate
+//	97 --------------------------------------------------------------------------------------------------------
+	98		2		2		1		20		0		0		367		// Restores all Mana
+	99		2		2		1		20		0		0		368		// Restores all HP
+	100		2		2		1		20		366		0		369		// Increases excellent damage rate
+//	101 -------------------------------------------------------------------------------------------------------
+	102		2		2		1		20		0		0		370		// Increases double damage rate
+	103		2		2		1		20		368		0		372		// Restores all SD
+//	104 -------------------------------------------------------------------------------------------------------
+//	105 -------------------------------------------------------------------------------------------------------
+	106		2		2		1		20		370		0		371		// Increases chance of ignore Def
+//	107 -------------------------------------------------------------------------------------------------------
+//	108 -------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Blessing - Passive (High Elves) -------------------------------------------------------------------------
+// -- Index 1-28 (common for all classes), 29-36 dedicated for class ------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	1		4		0		1		20		0		0		300		// Durability Reduction (1)
+//	2 --------------------------------------------------------------------------------------------------------
+//	3 --------------------------------------------------------------------------------------------------------
+	4		4		0		1		20		0		0		301		// PvP Defence Rate Increase
+//	5 --------------------------------------------------------------------------------------------------------
+	6		4		0		1		20		0		0		302		// Maximum SD increase
+	7		4		0		1		20		0		0		303		// Automatic Mana Recovery Increase
+	8		4		0		1		20		0		0		304		// Poison Resistance Increase
+	9		4		0		1		20		300		0		305		// Durability Reduction (2)
+	10		4		0		1		20		302		0		306		// SD Recovery Speed Increase
+	11		4		0		1		20		303		0		307		// Automatic HP Recovery Increase
+	12		4		0		1		20		304		0		308		// Lightning Resistance Increase
+//	13 --------------------------------------------------------------------------------------------------------
+	14		4		0		1		20		0		0		309		// Defense Increase
+	15		4		0		1		20		307		0		310		// Automatic AG Recovery Increase
+	16		4		0		1		20		308		0		311		// Ice Resistance Increase
+	17		4		0		1		20		305		0		312		// Durability Reduction (3)
+	18		4		0		1		20		309		0		313		// Defense Success Rate Increase
+//	19 --------------------------------------------------------------------------------------------------------
+//	20 --------------------------------------------------------------------------------------------------------
+//	21 --------------------------------------------------------------------------------------------------------
+//	22		4		0		1		20		313		0		314		// Cast Invincibility
+	23		4		0		1		20		0		0		315		// Armor Set Bonus Increase
+	24		4		0		1		20		315		0		316		// Vengeance
+	25		4		0		1		20		0		0		317		// Energy Increase
+	26		4		0		1		20		0		0		318		// Stamina Increase
+	27		4		0		1		20		0		0		319		// Agility Increase
+	28		4		0		1		20		0		0		320		// Strength Increase
+// ------------------------------------------------------------------------------------------------------------
+//	29		4		0		1		20		0		0		409		// Illusion Wings Absorption PowUp
+	30		4		0		1		20		0		0		410		// Illusion Wings Defense PowUp
+//	31 --------------------------------------------------------------------------------------------------------
+//	32 --------------------------------------------------------------------------------------------------------
+//	33 --------------------------------------------------------------------------------------------------------
+	34		4		0		1		20		410		0		412		// Illusion Wings Attack PowUp
+//	35 --------------------------------------------------------------------------------------------------------
+//	36 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Salvation - Skill Enhancement (High Elf) ----------------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	37		4		1		1		20		0		0		325		// Attack Success Rate Increase
+//	38 --------------------------------------------------------------------------------------------------------
+//	39 --------------------------------------------------------------------------------------------------------
+//	40 --------------------------------------------------------------------------------------------------------
+	41		4		1		1		20		0		0		413		// Heal Strengthener
+//	42 --------------------------------------------------------------------------------------------------------
+	43		4		1		1		20		0		0		414		// Triple Shot Strengthener
+	44		4		1		1		20		0		0		415		// Summoned Monster Strengthener (1)
+	45		4		1		1		20		0		0		416		// Penetration Strengthener
+	46		4		1		1		20		0		0		417		// Defense Increase Strengthener
+	47		4		1		10		10		414		0		418		// Triple Shot Mastery
+	48		4		1		1		20		415		0		419		// Summoned Monster Strengthener (2)
+	49		4		1		1		20		0		0		420		// Attack Increase Strengthener
+//	50 --------------------------------------------------------------------------------------------------------
+	51		4		1		1		20		0		0		421		// Weapon Mastery 
+	52		4		1		1		20		0		0		334		// Maximum Life Increase
+	53		4		1		1		20		420		0		422		// Attack Increase Mastery
+	54		4		1		1		20		417		0		423		// Defense Increase Mastery
+	55		4		1		1		20		0		0		424		// Ice Arrow Strengthener
+	56		4		1		1		20		334		0		338		// Maximum Mana Increase
+//	57 --------------------------------------------------------------------------------------------------------
+	58		4		1		10		10		423		0		425		// Cure
+	59		4		1		1		20		0		0		411		// Multi-Shot Strengthener
+	60		4		1		1		20		338		0		341		// Maximum AG Increase
+	61		4		1		10		10		0		0		426		// Party Healing
+//	62 --------------------------------------------------------------------------------------------------------
+	63		4		1		1		20		411		0		431		// Multi-Shot Mastery
+	64		4		1		1		20		0		0		428		// Summoned Monster Strengthener (3)
+	65		4		1		1		20		426		0		429		// Party Healing Strengthener
+	66		4		1		10		10		0		0		430		// Bless
+	67		4		1		10		10		0		0		427		// Poison Arrow
+	68		4		1		10		10		428		0		432		// Summon Satyros
+//	69 --------------------------------------------------------------------------------------------------------
+	70		4		1		1		20		430		0		433		// Bless Strengthener
+	71		4		1		1		20		427		0		434		// Poison Arrow Strengthener
+//	72 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Storm - Defense / Attack Enhancement (High Elf) ---------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	73		4		2		1		20		0		0		347		// Attack Rate
+//	74 --------------------------------------------------------------------------------------------------------
+//	75 --------------------------------------------------------------------------------------------------------
+//	76 --------------------------------------------------------------------------------------------------------
+	77		4		2		1		20		0		0		435		// Bow Strengthener
+	78		4		2		1		20		0		0		436		// Crossbow Strengthener
+	79		4		2		1		20		0		0		437		// Shield Strengthener
+//	80 --------------------------------------------------------------------------------------------------------
+	81		4		2		1		10		435		0		438		// Bow Mastery
+	82		4		2		1		20		436		0		439		// Crossbow Mastery
+	83		4		2		1		20		437		0		440		// Shield Mastery
+//	84 --------------------------------------------------------------------------------------------------------
+//	85 --------------------------------------------------------------------------------------------------------
+	86		4		2		1		20		0		0		357		// Mana Reduction
+	87		4		2		1		20		0		0		358		// Monster Attack SD Increment
+	88		4		2		1		20		0		0		359		// Monster Attack Life Increment
+	89		4		2		1		20		0		0		441		// Infinity Arrow Strengthener
+	90		4		2		1		20		0		0		442		// Minimum Attack Power Increase
+//	91 --------------------------------------------------------------------------------------------------------
+	92		4		2		1		20		359		0		362		// Monster Attack Mana Increment
+//	93 --------------------------------------------------------------------------------------------------------
+	94		4		2		1		20		442		0		443		// Maximum Attack Power Increase
+//	95 --------------------------------------------------------------------------------------------------------
+	96		4		2		1		20		0		0		366		// Increases critical damage rate
+//	97 --------------------------------------------------------------------------------------------------------
+	98		4		2		1		20		0		0		367		// Restores all Mana
+	99		4		2		1		20		0		0		368		// Restores all HP
+	100		4		2		1		20		366		0		369		// Increases excellent damage rate
+//	101 -------------------------------------------------------------------------------------------------------
+	102		4		2		1		20		0		0		370		// Increases double damage rate
+	103		4		2		1		20		368		0		372		// Restores all SD
+//	104 -------------------------------------------------------------------------------------------------------
+//	105 -------------------------------------------------------------------------------------------------------
+	106		4		2		1		20		370		0		371		// Increases chance of ignore Def
+//	107 -------------------------------------------------------------------------------------------------------
+//	108 -------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Guardian - Passive (Dimension Master) -------------------------------------------------------------------
+// -- Index 1-28 (common for all classes), 29-36 dedicated for class ------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	1		8		0		1		20		0		0		300		// Durability Reduction (1)
+//	2 --------------------------------------------------------------------------------------------------------
+//	3 --------------------------------------------------------------------------------------------------------
+	4		8		0		1		20		0		0		301		// PvP Defence Rate Increase
+//	5 --------------------------------------------------------------------------------------------------------
+	6		8		0		1		20		0		0		302		// Maximum SD increase
+	7		8		0		1		20		0		0		303		// Automatic Mana Recovery Increase
+	8		8		0		1		20		0		0		304		// Poison Resistance Increase
+	9		8		0		1		20		300		0		305		// Durability Reduction (2)
+	10		8		0		1		20		302		0		306		// SD Recovery Speed Increase
+	11		8		0		1		20		303		0		307		// Automatic HP Recovery Increase
+	12		8		0		1		20		304		0		308		// Lightning Resistance Increase
+//	13 --------------------------------------------------------------------------------------------------------
+	14		8		0		1		20		0		0		309		// Defense Increase
+	15		8		0		1		20		307		0		310		// Automatic AG Recovery Increase
+	16		8		0		1		20		308		0		311		// Ice Resistance Increase
+	17		8		0		1		20		305		0		312		// Durability Reduction (3)
+	18		8		0		1		20		309		0		313		// Defense Success Rate Increase
+//	19 --------------------------------------------------------------------------------------------------------
+//	20 --------------------------------------------------------------------------------------------------------
+//	21 --------------------------------------------------------------------------------------------------------
+//	22		8		0		1		20		313		0		314		// Cast Invincibility
+	23		8		0		1		20		0		0		315		// Armor Set Bonus Increase
+	24		8		0		1		20		315		0		316		// Vengeance
+	25		8		0		1		20		0		0		317		// Energy Increase
+	26		8		0		1		20		0		0		318		// Stamina Increase
+	27		8		0		1		20		0		0		319		// Agility Increase
+	28		8		0		1		20		0		0		320		// Strength Increase
+// ------------------------------------------------------------------------------------------------------------
+//	29		8		0		1		20		0		0		445		// DimensionWings Absorb PowUp
+	30		8		0		1		20		0		0		446		// DimensionWings Defense PowUp
+//	31 --------------------------------------------------------------------------------------------------------
+//	32 --------------------------------------------------------------------------------------------------------
+//	33 --------------------------------------------------------------------------------------------------------
+	34		8		0		1		20		446		0		447		// DimensionWings Attack PowUp
+//	35 --------------------------------------------------------------------------------------------------------
+//	36 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Chaos - Skill Enhancement (Dimension Master) ------------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	37		8		1		1		20		0		0		325		// Attack Success Rate Increase
+//	38 --------------------------------------------------------------------------------------------------------
+//	39 --------------------------------------------------------------------------------------------------------
+//	40 --------------------------------------------------------------------------------------------------------
+	41		8		1		1		20		0		0		448		// Fire Tome Strengthener
+	42		8		1		1		20		0		0		449		// Wind Tome Strengthener
+	43		8		1		1		20		0		0		450		// Lightning Tome Strengthener
+//	44 --------------------------------------------------------------------------------------------------------
+	45		8		1		1		20		448		0		451		// Fire Tome Mastery
+	46		8		1		1		20		449		0		452		// Wind Tome Mastery
+	47		8		1		1		20		450		0		453		// Lightning Tome Mastery
+	48		8		1		1		20		0		0		454		// Sleep Strengthener
+	49		8		1		1		20		0		0		455		// Chain Lightning Strengthener
+	50		8		1		1		20		0		0		456		// Lightning Shock Strengthener
+//	51 --------------------------------------------------------------------------------------------------------
+	52		8		1		1		20		0		0		334		// Maximum Life Increase
+	53		8		1		1		20		0		0		457		// Magic Mastery
+//	54 --------------------------------------------------------------------------------------------------------
+	55		8		1		1		20		0		0		458		// Drain Life Strengthener
+	56		8		1		1		20		334		0		338		// Maximum Mana Increase
+//	57 --------------------------------------------------------------------------------------------------------
+	58		8		1		1		20		0		0		460		// Innovation Strengthener
+//	59 --------------------------------------------------------------------------------------------------------
+	60		8		1		1		20		338		0		341		// Infinity Arrow Strengthener
+	61		8		1		1		20		0		0		459		// Weakness Strengthener
+//	62 --------------------------------------------------------------------------------------------------------
+	63		8		1		1		20		458		0		462		// Drain Life Mastery
+//	64 --------------------------------------------------------------------------------------------------------
+//	65 --------------------------------------------------------------------------------------------------------
+	66		8		1		10		10		459		460		461		// Blind
+//	67 --------------------------------------------------------------------------------------------------------
+//	68 --------------------------------------------------------------------------------------------------------
+//	69 --------------------------------------------------------------------------------------------------------
+	70		8		1		1		20		461		0		463		// Blind Strengthener
+//	71 --------------------------------------------------------------------------------------------------------
+//	72 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Honor - Defensive / Offensive Improvement (Dimension Master) --------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	73		8		2		1		20		0		0		347		// DimensionWings Attack PowUp
+//	74 --------------------------------------------------------------------------------------------------------
+//	75 --------------------------------------------------------------------------------------------------------
+//	76 --------------------------------------------------------------------------------------------------------
+	77		8		2		1		20		0		0		465		// Stick Strengthener
+	78		8		2		1		20		0		0		466		// Other World Tome Strengthener
+//	79 --------------------------------------------------------------------------------------------------------
+//	80 --------------------------------------------------------------------------------------------------------
+	81		8		2		1		20		465		0		467		// Stick Mastery
+	82		8		2		1		10		466		0		468		// Other World Tome Mastery
+//	83 --------------------------------------------------------------------------------------------------------
+//	84 --------------------------------------------------------------------------------------------------------
+	85		8		2		1		20		0		0		469		// Berserker Strengthener
+	86		8		2		1		20		0		0		357		// Mana Reduction
+	87		8		2		1		20		0		0		358		// Monster Attack SD Increment
+	88		8		2		1		20		0		0		359		// Monster Attack Life Increment
+	89		8		2		1		20		469		0		470		// Berserker Proficiency
+	90		8		2		1		20		0		0		471		// Minimum Wizardry/Curse Increase
+//	91 --------------------------------------------------------------------------------------------------------
+	92		8		2		1		20		359		0		362		// Monster Attack Mana Increment
+	93		8		2		1		20		470		0		472		// Berserker Mastery
+	94		8		2		1		20		471		0		473		// Maximum Wizardry/Curse Increase
+//	95 --------------------------------------------------------------------------------------------------------
+	96		8		2		1		20		0		0		366		// Increases critical damage rate
+//	97 --------------------------------------------------------------------------------------------------------
+	98		8		2		1		20		0		0		367		// Restores all Mana
+	99		8		2		1		20		0		0		368		// Restores all HP
+	100		8		2		1		20		366		0		369		// Increases excellent damage rate
+//	101 -------------------------------------------------------------------------------------------------------
+	102		8		2		1		20		0		0		370		// Increases double damage rate
+	103		8		2		1		20		368		0		372		// Restores all SD
+//	104 -------------------------------------------------------------------------------------------------------
+//	105 -------------------------------------------------------------------------------------------------------
+	106		8		2		1		20		370		0		371		// Increases chance of ignore Def
+//	107 -------------------------------------------------------------------------------------------------------
+//	108 -------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Solidity - Passive (Duel Master) ------------------------------------------------------------------------
+// -- Index 1-28 (common for all classes), 29-36 dedicated for class ------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	1		16		0		1		20		0		0		300		// Durability Reduction (1)
+//	2 --------------------------------------------------------------------------------------------------------
+//	3 --------------------------------------------------------------------------------------------------------
+	4		16		0		1		20		0		0		301		// PvP Defence Rate Increase
+//	5 --------------------------------------------------------------------------------------------------------
+	6		16		0		1		20		0		0		302		// Maximum SD increase
+	7		16		0		1		20		0		0		303		// Automatic Mana Recovery Increase
+	8		16		0		1		20		0		0		304		// Poison Resistance Increase
+	9		16		0		1		20		300		0		305		// Durability Reduction (2)
+	10		16		0		1		20		302		0		306		// SD Recovery Speed Increase
+	11		16		0		1		20		303		0		307		// Automatic HP Recovery Increase
+	12		16		0		1		20		304		0		308		// Lightning Resistance Increase
+//	13 --------------------------------------------------------------------------------------------------------
+	14		16		0		1		20		0		0		309		// Defense Increase
+	15		16		0		1		20		307		0		310		// Automatic AG Recovery Increase
+	16		16		0		1		20		308		0		311		// Ice Resistance Increase
+	17		16		0		1		20		305		0		312		// Durability Reduction (3)
+	18		16		0		1		20		309		0		313		// Defense Success Rate Increase
+//	19 --------------------------------------------------------------------------------------------------------
+//	20 --------------------------------------------------------------------------------------------------------
+//	21 --------------------------------------------------------------------------------------------------------
+//	22		16		0		1		20		313		0		314		// Cast Invincibility
+	23		16		0		1		20		0		0		315		// Armor Set Bonus Increase
+	24		16		0		1		20		315		0		316		// Vengeance
+	25		16		0		1		20		0		0		317		// Energy Increase
+	26		16		0		1		20		0		0		318		// Stamina Increase
+	27		16		0		1		20		0		0		319		// Agility Increase
+	28		16		0		1		20		0		0		320		// Strength Increase
+// ------------------------------------------------------------------------------------------------------------
+//	29		16		0		1		20		0		0		475		// Wing of Ruin Absorption PowUp
+	30		16		0		1		20		0		0		476		// Wing of Ruin Defense PowUp
+//	31 --------------------------------------------------------------------------------------------------------
+//	32 --------------------------------------------------------------------------------------------------------
+//	33 --------------------------------------------------------------------------------------------------------
+	34		16		0		1		20		476		0		478		// Wing of Ruin Attack PowUp
+//	35 --------------------------------------------------------------------------------------------------------
+//	36 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Fighting Spirit - Skill Enhancement (Duel Master) -------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	37		16		1		1		20		0		0		325		// Attack Success Rate Increase
+//	38 --------------------------------------------------------------------------------------------------------
+//	39 --------------------------------------------------------------------------------------------------------
+//	40 --------------------------------------------------------------------------------------------------------
+	41		16		1		1		20		0		0		479		// Cyclone Strengthener
+	42		16		1		1		20		0		0		480		// Lightning Strengthener
+	43		16		1		1		20		0		0		481		// Twisting Slash Strengthener
+	44		16		1		1		20		0		0		482		// Power Slash Strengthener
+	45		16		1		1		20		0		0		483		// Flame Strengthener
+	46		16		1		1		20		480		0		484		// Blast Strengthener
+//	47 --------------------------------------------------------------------------------------------------------
+	48		16		1		1		20		481		482		485		// Weapon Mastery
+	49		16		1		1		20		483		0		486		// Inferno Strengthener
+	50		16		1		1		20		0		0		487		// Evil Spirit Strengthener
+	51		16		1		1		20		487		0		488		// Magic Mastery
+	52		16		1		1		20		0		0		334		// Maximum Life Increase
+//	53 --------------------------------------------------------------------------------------------------------
+	54		16		1		1		20		0		0		490		// Blood Attack Strengthener
+	55		16		1		1		20		0		0		489		// Ice Strengthener
+	56		16		1		1		20		334		0		338		// Maximum Mana Increase
+	57		16		1		1		20		0		0		492		// Flame Strike Strengthener
+//	58 --------------------------------------------------------------------------------------------------------
+	59		16		1		1		20		489		0		491		// Ice Mastery
+	60		16		1		1		20		338		0		341		// Maximum AG Increase
+	61		16		1		1		20		492		0		494		// Flame Strike Mastery
+	62		16		1		1		20		490		0		493		// Fire Slash Mastery
+	63		16		1		1		20		0		0		496		// Gigantic Storm Strengthener
+//	64 --------------------------------------------------------------------------------------------------------
+//	65 --------------------------------------------------------------------------------------------------------
+	66		16		1		10		10		0		0		344		// Blood Storm
+	67		16		1		10		10		0		0		495		// Earth Prison
+//	68 --------------------------------------------------------------------------------------------------------
+//	69 --------------------------------------------------------------------------------------------------------
+	70		16		1		1		20		344		0		346		// Blood Storm Strengthener
+	71		16		1		1		20		495		0		497		// Earth Prison Strengthener
+//	72 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Ultimatum - Defense / Attack Improvement (Duel Master) --------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	73		16		2		1		20		0		0		347		// Attack Rate
+//	74 --------------------------------------------------------------------------------------------------------
+//	75 --------------------------------------------------------------------------------------------------------
+//	76 --------------------------------------------------------------------------------------------------------
+	77		16		2		1		20		0		0		348		// Two-handed Sword Strengthener
+	78		16		2		1		20		0		0		349		// One-handed Sword Strengthener
+	79		16		2		1		20		0		0		397		// One-handed Staff Strengthener
+	80		16		2		1		20		0		0		398		// Two-handed Staff Strengthener
+	81		16		2		1		20		348		0		352		// Two-handed Sword Mastery
+	82		16		2		1		10		349		0		353		// One-handed Sword Mastery
+	83		16		2		1		10		397		0		400		// One-handed Staff Mastery
+	84		16		2		1		20		398		0		401		// Two-handed Staff Mastery
+//	85 --------------------------------------------------------------------------------------------------------
+	86		16		2		1		20		0		0		357		// Mana Reduction
+	87		16		2		1		20		0		0		358		// Monster Attack SD Increment
+	88		16		2		1		20		0		0		359		// Monster Attack Life Increment
+	89		16		2		1		20		0		0		405		// Minimum Wizardry Increase
+	90		16		2		1		20		0		0		361		// Minimum Attack Power Increase
+//	91 --------------------------------------------------------------------------------------------------------
+	92		16		2		1		20		359		0		362		// Monster Attack Mana Increment
+	93		16		2		1		20		405		0		407		// Maximum Wizardry Increase
+	94		16		2		1		20		361		0		364		// Maximum Attack Power Increase
+//	95 --------------------------------------------------------------------------------------------------------
+	96		16		2		1		20		0		0		366		// Increases critical damage rate
+//	97 --------------------------------------------------------------------------------------------------------
+	98		16		2		1		20		0		0		367		//  Restores all Mana
+	99		16		2		1		20		0		0		368		//  Restores all HP
+	100		16		2		1		20		366		0		369		//  Increases excellent damage rate
+//	101 -------------------------------------------------------------------------------------------------------
+	102		16		2		1		20		0		0		370		// Increases double damage rate
+	103		16		2		1		20		368		0		372		// Restores all SD
+//	104 -------------------------------------------------------------------------------------------------------
+//	105 -------------------------------------------------------------------------------------------------------
+	106		16		2		1		20		370		0		371		// Increases chance of ignore Def
+//	107 -------------------------------------------------------------------------------------------------------
+//	108 -------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Determination - Passive (Lord Emperor) ------------------------------------------------------------------
+// -- Index 1-28 (common for all classes), 29-36 dedicated for class ------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	1		32		0		1		20		0		0		300		// Durability Reduction (1)
+//	2 --------------------------------------------------------------------------------------------------------
+//	3 --------------------------------------------------------------------------------------------------------
+	4		32		0		1		20		0		0		301		// PvP Defence Rate Increase
+//	5 --------------------------------------------------------------------------------------------------------
+	6		32		0		1		20		0		0		302		// Maximum SD increase
+	7		32		0		1		20		0		0		303		// Automatic Mana Recovery Increase
+	8		32		0		1		20		0		0		304		// Poison Resistance Increase
+	9		32		0		1		20		300		0		305		// Durability Reduction (2)
+	10		32		0		1		20		302		0		306		// SD Recovery Speed Increase
+	11		32		0		1		20		303		0		307		// Automatic HP Recovery Increase
+	12		32		0		1		20		304		0		308		// Lightning Resistance Increase
+//	13 --------------------------------------------------------------------------------------------------------
+	14		32		0		1		20		0		0		309		// Defense Increase
+	15		32		0		1		20		307		0		310		// Automatic AG Recovery Increase
+	16		32		0		1		20		308		0		311		// Ice Resistance Increase
+	17		32		0		1		20		305		0		312		// Durability Reduction (3)
+	18		32		0		1		20		309		0		313		// Defense Success Rate Increase
+//	19 --------------------------------------------------------------------------------------------------------
+//	20 --------------------------------------------------------------------------------------------------------
+//	21 --------------------------------------------------------------------------------------------------------
+//	22		32		0		1		20		313		0		314		// Cast Invincibility
+	23		32		0		1		20		0		0		315		// Armor Set Bonus Increase
+	24		32		0		1		20		315		0		316		// Vengeance
+	25		32		0		1		20		0		0		317		// Energy Increase
+	26		32		0		1		20		0		0		318		// Stamina Increase
+	27		32		0		1		20		0		0		319		// Agility Increase
+	28		32		0		1		20		0		0		320		// Strength Increase
+// ------------------------------------------------------------------------------------------------------------
+//	29		32		0		1		20		0		0		504		// Emperor Cape Absorption PowUp
+	30		32		0		1		20		0		0		505		// Emperor Cape Defense PowUp
+	31		32		0		1		20		0		0		506		// Adds Command Stat
+//	32 --------------------------------------------------------------------------------------------------------
+//	33 --------------------------------------------------------------------------------------------------------
+	34		32		0		1		20		505		0		507		// Emperor Cape Attack PowUp
+//	35 --------------------------------------------------------------------------------------------------------
+//	36 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Justice - Skill Enhancement (Lord Emperor) --------------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	37		32		1		1		20		0		0		325		// Attack Success Rate Increase
+//	38 --------------------------------------------------------------------------------------------------------
+//	39 --------------------------------------------------------------------------------------------------------
+//	40 --------------------------------------------------------------------------------------------------------
+	41		32		1		1		20		0		0		508		// Fire Burst Strengthener
+	42		32		1		1		20		0		0		509		// Force Wave Strengthener
+	43		32		1		1		20		0		0		510		// Dark Horse Strengthener (1)
+//	44 --------------------------------------------------------------------------------------------------------
+//	45 --------------------------------------------------------------------------------------------------------
+	46		32		1		1		20		0		0		511		// Critical DMG Increase PowUp
+	47		32		1		1		20		510		0		512		// Earthshake Strengthener
+	48		32		1		1		20		0		0		513		// Weapon Mastery
+	49		32		1		1		20		508		0		514		// Fire Burst Mastery
+	50		32		1		1		20		511		0		515		// Critical DMG Increase PowUp (2)
+	51		32		1		1		20		512		0		516		// Earthshake Mastery
+	52		32		1		1		20		0		0		334		// Maximum Life Increase
+//	53 --------------------------------------------------------------------------------------------------------
+	54		32		1		1		20		515		0		517		// Critical DMG Increase PowUp (3)
+	55		32		1		1		20		0		0		518		// Fire Scream Strengthener
+	56		32		1		1		20		334		0		338		// Maximum Mana Increase
+	57		32		1		1		20		0		0		519		// Electric Spark Strengthener
+//	58 --------------------------------------------------------------------------------------------------------
+	59		32		1		1		20		518		0		520		// Fire Scream Mastery
+	60		32		1		1		20		338		0		341		// Maximum AG Increase
+//	61 --------------------------------------------------------------------------------------------------------
+	62		32		1		1		20		517		0		522		// Critical Damage Increase Mastery
+	63		32		1		1		20		0		0		523		// Chaotic Diseier Strengthener		
+//	64 --------------------------------------------------------------------------------------------------------
+//	65 --------------------------------------------------------------------------------------------------------
+	66		32		1		10		10		0		0		521		// Iron Defense
+//	67 --------------------------------------------------------------------------------------------------------
+//	68 --------------------------------------------------------------------------------------------------------
+//	69 --------------------------------------------------------------------------------------------------------
+	70		32		1		1		20		521		0		524		// Iron Defense Strengthener
+//	71 --------------------------------------------------------------------------------------------------------
+//	72 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Conquer - Defense / Attack Enhancement (Lord Emperor) ---------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	73		32		2		1		20		0		0		347		// Attack Rate
+//	74 --------------------------------------------------------------------------------------------------------
+//	75 --------------------------------------------------------------------------------------------------------
+//	76 --------------------------------------------------------------------------------------------------------
+	77		32		2		1		20		0		0		526		// Dark Spirit Strengthener
+	78		32		2		1		20		0		0		527		// Scepter Strengthener
+	79		32		2		1		20		0		0		528		// Shield Strengthener
+	80		32		2		1		20		0		0		529		// Use Scepter : Pet Strengthener
+	81		32		2		1		20		526		0		530		// Dark Spirit Strengthener (2)	
+	82		32		2		1		20		527		0		531		// Scepter Mastery
+	83		32		2		1		20		528		0		532		// Shield Mastery
+	84		32		2		1		20		529		0		533		// Command Attack Increase
+//	85 --------------------------------------------------------------------------------------------------------
+	86		32		2		1		20		0		0		357		// Mana Reduction
+	87		32		2		1		20		0		0		358		// Monster Attack SD Increment
+	88		32		2		1		20		0		0		359		// Monster Attack Life Increment
+	89		32		2		1		20		530		0		534		// Dark Spirit Strengthener (3)
+	90		32		2		1		20		0		0		535		// Pet Durability Strengthener
+	91		32		2		1		20		0		0		361		// Minimum Attack Power Increase
+	92		32		2		1		20		359		0		362		// Monster Attack Mana Increment
+	93		32		2		1		20		0		0		536		// Dark Spirit Strengthener (4)
+	94		32		2		1		20		0		0		366		// Increases critical damage rate
+	95		32		2		1		20		361		0		364		// Maximum Attack Power Increase
+//	96 --------------------------------------------------------------------------------------------------------
+	97		32		2		1		20		0		0		538		// Dark Spirit Strengthener (5)
+	98		32		2		1		20		366		0		369		// Increases excellent damage rate
+	99		32		2		1		20		0		0		367		// Restores all Mana
+	100		32		2		1		20		0		0		368		// Restores all HP
+	101		32		2		1		20		538		0		539		// Spirit Lord
+//	102 -------------------------------------------------------------------------------------------------------
+	103		32		2		1		20		0		0		370		// Increases double damage rate
+	104		32		2		1		20		368		0		372		// Restores all SD
+//	105 -------------------------------------------------------------------------------------------------------
+//	106 -------------------------------------------------------------------------------------------------------
+	107		32		2		1		20		370		0		371		// Increases chance of ignore Def
+//	108 -------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Wild Power - Passive (Fist Master) ----------------------------------------------------------------------
+// -- Index 1-28 (common for all classes), 29-36 dedicated for class ------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	1		64		0		1		20		0		0		578		// Durability Reduction (1)
+//	2 --------------------------------------------------------------------------------------------------------
+//	3 --------------------------------------------------------------------------------------------------------
+	4		64		0		1		20		0		0		579		// Increase PvP Defense Rate
+//	5 --------------------------------------------------------------------------------------------------------
+	6		64		0		1		20		0		0		580		// Increase Maximum SD
+	7		64		0		1		20		0		0		581		// Increase Mana Recovery Rate
+	8		64		0		1		20		0		0		582		// Increase Poison Resistance
+	9		64		0		1		20		578		0		583		// Durability Reduction (2)
+	10		64		0		1		20		580		0		584		// Increase SD Recovery Rate
+	11		64		0		1		20		581		0		585		// Increase HP Recovery Rate
+	12		64		0		1		20		582		0		586		// Increase Lightning Resistance
+//	13 --------------------------------------------------------------------------------------------------------
+	14		64		0		1		20		0		0		587		// Increases Defense
+	15		64		0		1		20		585		0		588		// Increases AG Recovery Rate
+	16		64		0		1		20		586		0		589		// Increase Ice Resistance
+	17		64		0		1		20		583		0		590		// Durability Reduction(3)
+	18		64		0		1		20		587		0		591		// Increase Defense Success Rate
+//	19 --------------------------------------------------------------------------------------------------------
+//	20 --------------------------------------------------------------------------------------------------------
+//	21 --------------------------------------------------------------------------------------------------------
+	22		64		0		1		20		591		0		592		// Cast Invincibility
+	23		64		0		1		20		0		0		593		// Increase Set Defense
+	24		64		0		1		20		593		0		594		// Vengeance
+	25		64		0		1		20		0		0		595		// Increase Energy
+	26		64		0		1		20		0		0		596		// Increase HP
+	27		64		0		1		20		0		0		597		// Increase Agility
+	28		64		0		1		20		0		0		598		// Increase Strength
+// ------------------------------------------------------------------------------------------------------------
+	29		64		0		1		20		0		0		548		// Reigning Cloak Absorption PowUp
+	30		64		0		1		20		0		0		549		// Reigning Cloak Defense PowUp
+//	31 --------------------------------------------------------------------------------------------------------
+//	32 --------------------------------------------------------------------------------------------------------
+//	33 --------------------------------------------------------------------------------------------------------
+	34		64		0		1		20		549		0		550		// Reigning Cloak Attack PowUp
+//	35 --------------------------------------------------------------------------------------------------------
+//	36 --------------------------------------------------------------------------------------------------------
+
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Determination - Skill Enhancement (Fist Master) ---------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	37		64		1		1		20		0		0		599		// Increase Attack Success Rate
+//	38 --------------------------------------------------------------------------------------------------------
+//	39 --------------------------------------------------------------------------------------------------------
+//	40 --------------------------------------------------------------------------------------------------------
+	41		64		1		1		20		0		0		551		// Killing Blow Strengthener
+	42		64		1		1		20		0		0		552		// Beast Uppercut Strengthener
+//	43 --------------------------------------------------------------------------------------------------------
+//	44 --------------------------------------------------------------------------------------------------------
+	45		64		1		1		20		551		0		554		// Killing Blow Mastery
+	46		64		1		1		20		552		0		555		// Beast Uppercut Mastery
+//	47 --------------------------------------------------------------------------------------------------------
+//	48 --------------------------------------------------------------------------------------------------------
+//	49 --------------------------------------------------------------------------------------------------------
+//	50 --------------------------------------------------------------------------------------------------------
+	51		64		1		1		20		0		0		600		// Increase Maximum HP
+	52		64		1		1		20		0		0		557		// Weapon Mastery
+	53		64		1		1		20		0		0		558		// Chain Drive Strengthener
+	54		64		1		1		20		0		0		559		// Dark Side Strengthener
+	55		64		1		1		20		600		0		601		// Increase Maximum Mana
+	56		64		1		1		20		0		0		560		// Dragon Roar Strengthener
+//	57 --------------------------------------------------------------------------------------------------------
+//	58 --------------------------------------------------------------------------------------------------------
+	59		64		1		1		20		601		0		602		// Increase Maximum AG
+	60		64		1		1		20		560		0		561		// Dragon Roar Mastery
+	61		64		1		1		20		558		0		562		// Chain Drive Mastery
+	62		64		1		10		10		559		0		563		// Dark Side Mastery
+	63		64		1		1		20		0		0		564		// Dragon Slasher Strengthener
+//	64 --------------------------------------------------------------------------------------------------------
+//	65 --------------------------------------------------------------------------------------------------------
+	66		64		1		10		10		0		0		565		// Blood Howling
+	67		64		1		1		20		564		0		566		// Dragon Slasher Mastery
+//	68 --------------------------------------------------------------------------------------------------------
+//	69 --------------------------------------------------------------------------------------------------------
+	70		64		1		1		20		565		0		567		// Blood Howling Strengthener
+//	71 --------------------------------------------------------------------------------------------------------
+//	72 --------------------------------------------------------------------------------------------------------
+
+// [1] Index - Incremental unique value
+// [2] ClassType
+//	- 1: Blade Master
+//	- 2: Grand Master
+//	- 4: High Elf
+//	- 8: Dimension Master
+//	- 16: Duel Masters
+//	- 32: Lord Emperor
+//	- 64: Fist Master
+//	- 255: All Classes
+// -- To share same skill among multiple classes sum their ClassType, e.g. Blade Master and High Elf: 1 + 4 = 5
+// [3] AttrType
+//		- 0: Passive Skill (1st tree box)
+//		- 1: Skill Enhancement(2nd tree box)
+//		- 2: Defense / Attack Strengthen (3rd tree box)
+// [4] ReqPoint - Required Skill Points to get it active
+// [5] MaxPoint - Maximum Skill Points for the Skill
+// [6] ParentSkill1 - Parent (leading) Skill ID
+// [7] ParentSkill2 - Parent 2 (leading) Skill ID
+// [8] SkillID - \Data\Skills\SkillList.txt
+// [9] Description - Skill Name
+
+// -- Destruction - Attack Enhancement (Fist Master) ----------------------------------------------------------
+// ============================================================================================================
+//	[1]		[2]		[3]		[4]		[5]		[6]		[7]		[8]		[9]
+// ============================================================================================================
+// ------------------------------------------------------------------------------------------------------------
+	73		64		2		1		20		0		0		603		// Increase PvP Attack Rate
+//	74 --------------------------------------------------------------------------------------------------------
+//	75 --------------------------------------------------------------------------------------------------------
+//	76 --------------------------------------------------------------------------------------------------------
+	77		64		2		1		20		0		0		568		// Equipped Weapon Strengthener
+	78		64		2		1		20		0		0		569		// Def SuccessRate Increase PowUp
+//	79 --------------------------------------------------------------------------------------------------------
+//	80 --------------------------------------------------------------------------------------------------------
+	81		64		2		1		10		568		0		571		// Equipped Weapon Mastery
+	82		64		2		1		20		569		0		572		// DefSuccessRate Increase Mastery
+//	83 --------------------------------------------------------------------------------------------------------
+//	84 --------------------------------------------------------------------------------------------------------
+	85		64		2		1		20		0		0		573		// Stamina Increase Strengthener
+	86		64		2		1		20		0		0		604		// Decrease Mana
+	87		64		2		1		20		0		0		605		// Recover SD from Monster Kills
+	88		64		2		1		20		0		0		606		// Recover HP from Monster Kills
+//	89 --------------------------------------------------------------------------------------------------------
+	90		64		2		1		20		0		0		607		// Increase Minimum Attack Power
+//	91 --------------------------------------------------------------------------------------------------------
+	92		64		2		1		20		606		0		608		// Recover Mana from Monster Kills
+//	93 --------------------------------------------------------------------------------------------------------
+	94		64		2		1		20		607		0		609		// Increase Maximum Attack Power
+//	95 --------------------------------------------------------------------------------------------------------
+	96		64		2		1		20		0		0		610		// Increases Critical Damage Chance
+//	97 --------------------------------------------------------------------------------------------------------
+	98		64		2		1		20		0		0		611		// Recover Mana Fully
+	99		64		2		1		20		0		0		612		// Recovers HP Fully
+	100		64		2		1		20		610		0		613		// Increase Excellent Damage Chance
+//	101 -------------------------------------------------------------------------------------------------------
+	102		64		2		1		20		0		0		614		// Increase Double Damage Chance
+	103		64		2		1		20		612		0		616		// Recovers SD Fully
+//	104 -------------------------------------------------------------------------------------------------------
+//	105 -------------------------------------------------------------------------------------------------------
+	106		64		2		1		20		614		0		615		// Increase Ignore Def Chance
+//	107 -------------------------------------------------------------------------------------------------------
+//	108 -------------------------------------------------------------------------------------------------------
+end

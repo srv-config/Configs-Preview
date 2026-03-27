@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == Modify if you know what you do only!
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->
+
+<LanguageSystem DefaultLang="0">
+	<Lang ID="0" FileName="English.xml" Enable="1" Codepage="1252" />
+	<Lang ID="1" FileName="Spanish.xml" Enable="0" Codepage="1250"/>
+	<Lang ID="2" FileName="Portuguese.xml" Enable="0" Codepage="860"/>
+	<Lang ID="3" FileName="Korean.xml" Enable="0" Codepage="949" />
+	<Lang ID="4" FileName="Chinese.xml" Enable="0" Codepage="950" />
+	<Lang ID="5" FileName="Vietnamese.xml" Enable="0" Codepage="1258" />
+	<Lang ID="6" FileName="Russian.xml" Enable="0" Codepage="1251" />
+</LanguageSystem>

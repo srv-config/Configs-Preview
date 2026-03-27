@@ -1,0 +1,28 @@
+//############################################################
+//# -- INTERNATIONAL GAMING CENTER NETWORK
+//# -- www.igcn.mu
+//# -- (C) 2010-2016 IGC-Network (R)
+//# ---------------------------------------------------------
+//# -- File is a part of IGCN Group MuOnline Server files.
+//############################################################
+
+// SYNTAX
+// ===========================================================================================================
+// ID		LINE_UMBER			TEXT		LINE_NUMBER				TEXT			LINE_NUMBER			TEXT
+// ===========================================================================================================
+// -------------------------------- LINE NUMBER must be 0 (1), 1 (2), 2 (3) ----------------------------------
+0 // DO NOT REMOVE SECTION NUMBER
+
+	0		0			"WELCOME TO"			1			"OUR NEWLY OPENED"		2				"~! SERVER !~"
+	1		0			"REMEMBER TO"			1			"VIST OUR"				2				"FANTASTIC WEBSITE"
+end
+
+// SYNTAX
+// ==============================
+// DELAY BETWEEN NEWS IN MINUTES
+// ==============================
+// ------------------------------
+1 // DO NOT REMOVE SECTION NUMBER
+
+	10
+end

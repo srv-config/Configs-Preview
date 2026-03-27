@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ System allows to define Custom Socket Items for Season 6
+//
+//~~ Do not add official socket items to the file as it
+//~~ will lead in range of issues and items corruption
+//
+//~~ System dedicated for Season 6 Episode 3 only, for later
+//~~ version use ItemList.xml -> Type (3), Item_xxx.bmd -> Type
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### CustomSocket::Item ###
+//	Cat: Category of an item
+//	Index: Index of an item
+//	Enable: Activates custom socket item, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ For Cat and Index refer to ItemList_s6.xml
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<CustomSocket>
+	<Item Cat="0" Index="0" Enable="0" />
+</CustomSocket>

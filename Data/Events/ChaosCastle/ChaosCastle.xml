@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2025 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<ChaosCastle Enable="1" MinPlayer="1">
+	<Time StartIn="5" Duration="10" TownSpawn="1" />
+	
+	<Schedule>
+		<Start Hour="1" Minute="0" />
+		<Start Hour="15" Minute="0" />
+		<Start Hour="17" Minute="0" />
+		<Start Hour="19" Minute="0" />
+		<Start Hour="21" Minute="0" />
+		<Start Hour="23" Minute="0" />
+	</Schedule>
+
+	<RewardExpSettings>
+		<Castle Level="0" Multiplier="1.0" /> <!-- Chaos Castle 1 -->
+		<Castle Level="1" Multiplier="1.0" /> <!-- Chaos Castle 2 -->
+		<Castle Level="2" Multiplier="1.0" /> <!-- Chaos Castle 3 -->
+		<Castle Level="3" Multiplier="1.0" /> <!-- Chaos Castle 4 -->
+		<Castle Level="4" Multiplier="1.0" /> <!-- Chaos Castle 5 -->
+		<Castle Level="5" Multiplier="1.0" /> <!-- Chaos Castle 6 -->
+		<Castle Level="6" Multiplier="1.0" /> <!-- Chaos Castle 7 -->
+	</RewardExpSettings>
+</ChaosCastle>

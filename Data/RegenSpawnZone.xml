@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2020 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ System allowing to define custom regen locations after death
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### RegenSpawnZone::Map ###
+//	Number: Map number to apply for the system
+//	DieLocationRate: Chance rate for spawning in the same location of death, n/10000
+//	DieLocationMsg: Message to display upon success spawn at the place of death (English.xml, 777), 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Maps should be added in order, increasing way. To disable map from the system just remove its section.
+//~~ It is not recommended to use the system for event maps, unless you really know what you are doing.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### RegenSpawnZone::Map::Zone ###
+//	Id: Unique ID of respawn zone, 0-9
+//	PosX: The X coordinate, 1-255
+//	PosY: The Y coordinate, 1-255
+//	Rate: Chance rate to use selected zone
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Maximum 10 zones per map. Total rate is sum of all rates per map
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<RegenSpawnZone>
+	<Map Number="40" DieLocationRate="500" DieLocationMsg="1">
+		<Zone Id="0" PosX="233" PosY="17" Rate="2000" />
+		<Zone Id="1" PosX="233" PosY="13" Rate="1000" />
+	</Map>
+</RegenSpawnZone>

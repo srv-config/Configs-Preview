@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### WarpSettings::Warp ###
+//	Index: Unique warp index
+//	ServerName: Display name for purpose of Server usage
+//	ClientName: Display name for purpose of Game Client usage
+//	MinLevel: Minimum Level requires to use the warp - regular level only
+//	MaxLevel: Maximum Level allowed to use the warp - regular level only
+//	ReqMoney: Money (Zen) collected for warp usage
+//	GateNumber: Number of a Gate to use for the warp
+//
+// Gates can be checked and configured in '\IGCData\Warps\IGC_GateSettings.xml'
+// Gates configuration must much Game Client file \Data\Gate.bmd
+//
+// ~ Note ~ Game Client MoveReq_xxx.bmd must much below configuration and exact order of indexes
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<WarpSettings>
+	<Warp Index="1"  ServerName="Arena"				  ClientName="Arena"		 MinLevel="50"  MaxLevel="400" ReqMoney="2000"  GateNumber="50" />
+	<Warp Index="49" ServerName="Stadium"			  ClientName="Stadium"		 MinLevel="50"  MaxLevel="400" ReqMoney="2000"  GateNumber="345" />
+	<Warp Index="2"  ServerName="Lorencia"			  ClientName="Lorencia"		 MinLevel="10"  MaxLevel="400" ReqMoney="2000"  GateNumber="17" />
+	<Warp Index="3"  ServerName="Noria"				  ClientName="Noria"		 MinLevel="10"  MaxLevel="400" ReqMoney="2000"  GateNumber="27" />
+	<Warp Index="31" ServerName="Elbeland"			  ClientName="Elveland"		 MinLevel="10"  MaxLevel="400" ReqMoney="2000"  GateNumber="267" />
+	<Warp Index="32" ServerName="Elbeland2"			  ClientName="Elveland2"	 MinLevel="10"  MaxLevel="400" ReqMoney="2500"  GateNumber="268" />
+	<Warp Index="43" ServerName="Elbeland3"			  ClientName="Elveland3"	 MinLevel="10"  MaxLevel="400" ReqMoney="3000"  GateNumber="269" />
+	<Warp Index="4"  ServerName="Devias"			  ClientName="Devias"		 MinLevel="20"  MaxLevel="400" ReqMoney="2000"  GateNumber="22" />
+	<Warp Index="5"  ServerName="Devias2"			  ClientName="Devias2"		 MinLevel="20"  MaxLevel="400" ReqMoney="2500"  GateNumber="72" />
+	<Warp Index="6"  ServerName="Devias3"			  ClientName="Devias3"		 MinLevel="20"  MaxLevel="400" ReqMoney="3000"  GateNumber="73" />
+	<Warp Index="7"  ServerName="Devias4"			  ClientName="Devias4"		 MinLevel="20"  MaxLevel="400" ReqMoney="3500"  GateNumber="74" />
+	<Warp Index="8"  ServerName="Dungeon"			  ClientName="Dungeon"		 MinLevel="30"  MaxLevel="400" ReqMoney="3000"  GateNumber="2" />
+	<Warp Index="9"  ServerName="Dungeon2"			  ClientName="Dungeon2"		 MinLevel="40"  MaxLevel="400" ReqMoney="3500"  GateNumber="6" />
+	<Warp Index="10" ServerName="Dungeon3"			  ClientName="Dungeon3"		 MinLevel="50"  MaxLevel="400" ReqMoney="4000"  GateNumber="10" />
+	<Warp Index="11" ServerName="Atlans"			  ClientName="Atlans"		 MinLevel="70"  MaxLevel="220" ReqMoney="4000"  GateNumber="49" />
+	<Warp Index="12" ServerName="Atlans2"			  ClientName="Atlans2"		 MinLevel="80"  MaxLevel="220" ReqMoney="4500"  GateNumber="75" />
+	<Warp Index="13" ServerName="Atlans3"			  ClientName="Atlans3"		 MinLevel="90"  MaxLevel="220" ReqMoney="5000"  GateNumber="76" />
+	<Warp Index="14" ServerName="LostTower"			  ClientName="LostTower"	 MinLevel="50"  MaxLevel="400" ReqMoney="5000"  GateNumber="42" />
+	<Warp Index="15" ServerName="LostTower2"		  ClientName="LostTower2"	 MinLevel="50"  MaxLevel="400" ReqMoney="5500"  GateNumber="31" />
+	<Warp Index="16" ServerName="LostTower3"		  ClientName="LostTower3"	 MinLevel="50"  MaxLevel="400" ReqMoney="6000"  GateNumber="33" />
+	<Warp Index="17" ServerName="LostTower4"		  ClientName="LostTower4"	 MinLevel="60"  MaxLevel="400" ReqMoney="6500"  GateNumber="35" />
+	<Warp Index="18" ServerName="LostTower5"		  ClientName="LostTower5"	 MinLevel="60"  MaxLevel="400" ReqMoney="7000"  GateNumber="37" />
+	<Warp Index="19" ServerName="LostTower6"		  ClientName="LostTower6"	 MinLevel="70"  MaxLevel="400" ReqMoney="7500"  GateNumber="39" />
+	<Warp Index="20" ServerName="LostTower7"		  ClientName="LostTower7"	 MinLevel="70"  MaxLevel="400" ReqMoney="8000"  GateNumber="41" />
+	<Warp Index="21" ServerName="Tarkan"			  ClientName="Tarkan"		 MinLevel="140" MaxLevel="400" ReqMoney="8000"  GateNumber="57" />
+	<Warp Index="22" ServerName="Tarkan2"			  ClientName="Tarkan2"		 MinLevel="140" MaxLevel="400" ReqMoney="8500"  GateNumber="77" />
+	<Warp Index="25" ServerName="Aida1"				  ClientName="Aida1"		 MinLevel="150" MaxLevel="400" ReqMoney="8500"  GateNumber="119" />
+	<Warp Index="27" ServerName="Aida2"				  ClientName="Aida2"		 MinLevel="150" MaxLevel="400" ReqMoney="8500"  GateNumber="140" />
+	<Warp Index="23" ServerName="Icarus"			  ClientName="Icarus"		 MinLevel="170" MaxLevel="400" ReqMoney="10000" GateNumber="63" />
+	<Warp Index="28" ServerName="Kanturu_ruin1"		  ClientName="KanturuRuins1" MinLevel="160" MaxLevel="350" ReqMoney="9000"  GateNumber="138" />
+	<Warp Index="29" ServerName="Kanturu_ruin2"		  ClientName="KanturuRuins2" MinLevel="160" MaxLevel="350" ReqMoney="9000"  GateNumber="141" />
+	<Warp Index="45" ServerName="Kanturu_ruin_island" ClientName="KanturuRuins3" MinLevel="160" MaxLevel="400" ReqMoney="15000" GateNumber="334" />
+	<Warp Index="30" ServerName="Kanturu_Remain"	  ClientName="KanturuRelics" MinLevel="230" MaxLevel="400" ReqMoney="12000" GateNumber="139" />
+	<Warp Index="46" ServerName="Karutan1"			  ClientName="Karutan1"		 MinLevel="170" MaxLevel="400" ReqMoney="13000" GateNumber="335" />
+	<Warp Index="47" ServerName="Karutan2"			  ClientName="Karutan2"		 MinLevel="170" MaxLevel="400" ReqMoney="14000" GateNumber="344" />
+	<Warp Index="34" ServerName="LaColen"			  ClientName="LaCleon"		 MinLevel="280" MaxLevel="400" ReqMoney="15000" GateNumber="287" />
+	<Warp Index="33" ServerName="Swamp_of_Calmness"	  ClientName="PeaceSwamp"	 MinLevel="400" MaxLevel="400" ReqMoney="15000" GateNumber="273" />
+	<Warp Index="42" ServerName="Vulcanus"			  ClientName="Vulcanus"		 MinLevel="30"  MaxLevel="400" ReqMoney="15000" GateNumber="294" />
+	<Warp Index="48" ServerName="Crywolf"			  ClientName="Crywolf"		 MinLevel="300"  MaxLevel="400" ReqMoney="15000" GateNumber="118" />
+</WarpSettings>

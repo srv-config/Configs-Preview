@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2016 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### IllusionTempleClassic ###
+//	Enable: Disables or Enables the event, 0/1
+//	MinPlayer: Minimum players participating the event to start it
+//	AllowMaxLevelEntry: Allow Max Levels to enter the event, 0/1
+//	MaxMatchPoint: Maximum Illusion Points pool player can reach
+//	MinUseSkillCount: Minimum Count of Skill usage to qualify for Illusion reward
+//	SaveRankingPoint: Disables or Enables saving of Illusion Temple ranking points, 0/1
+//
+// ### IllusionTempleClassic::Time ###
+//	StartIn: Announcement appearance, time to start the event (minutes)
+//	WaitingArea: Waiting time inside the Temple (minutes)
+//	Duration: Duration of the event (minutes)
+//	TownSpawn: Waiting time after event end before moving to town (minutes)
+//
+// ### IllusionTempleClassic::KillPoint ###
+//	AtStart: Points count every player participating the event starts with
+//	OpponentKill: Illusion Points reward for killing Player during the event
+//	MonsterKill: Illusion Points reward for killing Monster during the event
+//
+// ### IllusionTempleClassic::Reward ###
+//	GoldenFenrirChangeUp: Disables or Enables system changing up one of regular Fenrir into gold one basing on Change Up rates
+//	MinParticipants: Minimum player count participating the event to apply Fenrir ChangeUp Reward
+//	RegularExpBonus: Bonus of Regular Exp for winning the evening, expressed in percentage
+//	MasterExpBonus: Bonus of Master Exp for winning the evening, expressed in percentage
+//
+// ### IllusionTempleClassic::Reward:Fenrir ###
+//	Red: Chance to change up Red Fenrir reward into Gold one, expressed in percentage (0-100)
+//	Blue: Chance to change up Blue Fenrir reward into Gold one, expressed in percentage (0-100)
+//	Black:Chance to change up Black Fenrir reward into Gold one, expressed in percentage (0-100)
+//
+// ### IllusionTempleClassic::EventSchedule::Start ###
+//	Hour: Event Start Hour (0-23)
+//	Minute: Event Start Minute (0-60)
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<IllusionTemple Enable="1" MinPlayer="2" AllowMaxLevelEntry="1" MaxMatchPoint="7" MinUseSkillCount="3" SaveRankingPoint="1">
+	<Time StartIn="5" WaitingArea="1" Duration="15" TownSpawn="4" />
+	<KillPoint AtStart="10" OpponentKill="5" MonsterKill="2" />
+	<InvitationDrop OldScrollRate="10" IllusionSorcererCovenantRate="20" />
+	
+	<Reward GoldenFenrirChangeUp="1" MinParticipants="6" RegularExpBonus="100" MasterExpBonus="100">
+		<Fenrir Red="10" Blue="20" Black="30" />
+	</Reward>
+
+	<Schedule>
+		<Start Hour="1" Minute="0" />
+		<Start Hour="5" Minute="0" />
+		<Start Hour="9" Minute="0" />
+		<Start Hour="16" Minute="0" />
+		<Start Hour="19" Minute="0" />
+		<Start Hour="21" Minute="0" />
+		<Start Hour="23" Minute="0" />
+	</Schedule>
+</IllusionTemple>

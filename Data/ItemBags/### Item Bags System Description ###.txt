@@ -1,0 +1,154 @@
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//	BAG ITEM: NO LIMIT
+//
+// ### ItemBag::BagConfig ###
+//	Name: Name of an Item or Monster
+//	ItemRate: Chance to get an item from the bag, n/10000, if value is lower than 10000 then Zen drop is possible
+//	SetItemRate: Drop rate of random set item selected from entire pool of available ancients, rate is being drawn individually for every drop attempt, n/10000, can be 0
+//	SetItemCount: Number of set items to drop if SetItemRate is set to value greater than 0
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The SetItemRate is not available for all EVENT_BAG types. Define set items via Drop sections manually instead
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	MoneyDrop: Money (Zen) amount to drop from bag (must be greater than 0 if ItemRate is lower than 10000 and Ruud GainRate is 0)
+//	BagUseEffect:
+//		~ -1: no effect
+//		~ 0: Firecracker effect type
+//		~ 2: Silver and Gold Medals effect type, Box of Heaven
+//		~ 58: Cherry Blossom Play Box effect type
+//
+//	PartyDropRate: Chance to apply party drop, if chance rate draw succeed the bag will be executed individually for every party member within party range of 9 tiles from party master with consideration of PartyOneDropOnly setting, does not apply to INVENTORY bag type, n/10000
+//	PartyOneDropOnly: Defines type of item drop for party
+//		~ 0: Bag is executed individually for item and coin/ruud award for every party member within party range of 9 tiles from party master, for coin/ruud share type check PartyShareType setting
+//		~ 1: Bag is executed once only for item drop but issues coins/ruud for every party member within party range of 9 tiles from party master, for coin/ruud share type check PartyShareType setting
+//			
+//	PartyShareType: Determined mode of dividing share among party members, includes Coin, Ruud and Zen
+//		~ 0: Share proportionally to number of party members, e.g. coin reward is set to 100 and party members is 5, so each party member within 9 tiles from party master will receive 20 coins.
+//		~ 1: Each party member receives full coin amount configured in bag
+//
+//	BagUseRate: Defines probability to use Bag, n/10000.
+//				If value is lower than 10000 (100%) then a draw is performed between item bag and another drop system in hierarchy
+//
+// ### ItemBag::AddCoin ### - awards with configured coin type and count
+//	Enable: Activates or deactivates the coin award, 0/1
+//	CoinType:
+//		~ 0: WCoinC
+//		~ 1: WCoinP
+//		~ 2: Goblin Point
+//
+//	CoinValue: Points count to award with
+//	PlayerMinLevel: Minimum level of player to apply Coin (must be lower or equal to PlayerMaxLevel)
+//	PlayerMaxLevel: Maximum level of player to apply Coin (must be greater or equal to PlayerMinLevel)
+//
+// ### ItemBag::Ruud ### - awards with configured amount of Ruud basing of the rate
+//	GainRate: Chance rate to award with configured amount of Ruud, n/10000, can be 0
+//	MinValue: Minimum amount of Ruud to award with
+//	MaxValue: Maximum amount of Ruud to award with
+//	PlayerMinLevel: Minimum level of player to apply Ruud (must be lower or equal to PlayerMaxLevel)
+//	PlayerMaxLevel: Maximum level of player to apply Ruud (must be greater or equal to PlayerMinLevel
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If MAX is used as value for PlayerMaxLevel attribute then the attribute is being set to sum of MaxNormalLevel and MaxMasterLevel from Common.ini
+//~~ To reward Ruud only from the bag the ItemRate should be set to 0, MoneyDrop set to 0, Ruud Gain Rate set to value from range of 1-1000 and no DropSection shouldl present in file
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### DropSection ###
+//	UseMode: Determines way the section is being used like
+//		~ -1: Used for party and non-party drop
+//		~ 0: Used while not in party
+//		~ 1: Used for party only
+//
+//	DisplayName: Name of section, displayed within logs and used by ToolKit Premium editor
+//
+// ### ItemBag::DropSection::DropAllow ### - by setting lower class the higher one automatically is being allowed
+//	DW: 0 or specific class evolution: 1/2/3/4/5
+//	DK: 0 or specific class evolution: 1/2/3/4/5
+//	ELF: 0 or specific class evolution: 1/2/3/4/5
+//	MG: 0 or specific class evolution: 1/2/4/5
+//	DL: 0 or specific class evolution: 1/2/4/5
+//	SU: 0 or specific class evolution: 1/2/3/4/5
+//	RF: 0 or specific class evolution: 1/2/4/5
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ If MAX is used as value for PlayerMaxLevel attribute then the attribute is being set to sum of MaxNormalLevel and MaxMasterLevel from Common.ini
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	MapNumber: Map Number the drop of items applies to, -1 for all maps
+//
+// ### ItemBag::DropSection::DropAllow::Drop ###
+//	Rate: Drop rate of items from the section, n/10000
+//	Type: Defines the way items drop from the section
+//		~ 0: Regular drop, random items of configured count
+//		~ 1: All items from a section, Count attribute is ignored then
+//
+//	Count: Items count to be dropped at a time - option ignored for LuckyCoin, LordMix and Cherry Blosson rewards, always 1
+//
+// ### ItemBag::DropSection::DropAllow::Drop::Item ###
+//	Cat: Category of the item, refer to \Data\Items\ItemList.xml
+//	Index: Index of the item, refer to \Data\Items\ItemList.xml
+//	ItemMinLevel: Minimum level the item should drop with (must be lower or equal to ItemMaxLevel)
+//	ItemMaxLevel: Maximum level of the item should drop with (must be greater or equal to ItemMinLevel)
+//	Durability: Durability is optional attribute, if used then defined value will be used, otherwise generated automatically, 0-255
+//	Skill: 0 - no Skill, -1 - Random (50/50% chance), 1 - with Skill
+//	Luck: 0 - no Luck, -1 - Random (50/50% chance), 1 - with Luck
+//	Option: 0 - no Option, -1 - Random, 1,2,3,4,5,6,7 - with specified option - +4,+8,+12,+16,+20,+24,+28
+//	Exc:
+//		-1: Random Exc options
+//		-2: Lord Mix only, original setting
+//		-3: Random Exc options based on a Common Exc Options rate from IGC_ExcellentOptions.xml
+//		 0: No Exc options, or sum of below values (63 - Full of Excellent):
+//		 	 1: Mana recovery after Monster hunt +Mana/8
+//			 2: Health recovery after Monster hunt +HP/8
+//		 	 4: Speed +7
+//		 	 8: More Damage +2%
+//			16: More Damage +Level/20
+//			32: Excellent Damage Rate +10%
+//
+//	SetItem: 0 ~ no ancient, 1 ~ ancient (random Tier of specified item) - must be added as ancient, otherwise option will be ignored
+//	SocketCount:
+//		~ 0: no Socket slots
+//		~ 1: up to one slot
+//		~ 2: up to two slots
+//		~ 3: up to three slots
+//		~ 4: up to four slots
+//		~ 5: up to five slots
+//		~ -2: random count of socket slots (Pentagrams and Socket Items)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Type attribute of the item must be set to 2, refer to ItemList.xml
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	MinMoney: Minimum amount of Zen to drop, must be equal or lower MaxMoney, 0 if not applies
+//	MaxMoney: Maximum amount of Zen to drop, must be equal or higher MinMoney, 0 if not applies
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Min/Max money applies if item cat/index is set to 14,15
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Duration: Allows to drop expirable item, seconds (not every item is suitable for period items system, please test before putting on live server)
+//
+//~~ Item Bag structure explanation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Bag structure supports multiple DropSections. Each DropSections supports multiple DropAllow sub-sections. Each DropAllow section may have multiple Drop sub-sections.
+//
+//~~ Understanding DropSection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Every item bag (except INVENTORY bag type) supports ability to define multiple DropSection. It is used to drop two or more items from different sections of different rules for single player, check Item_(14,354,0)_PlayTime_Box.xml for examples.
+//
+//~~ Understanding DropAllow/Drop sections selection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Qualified (player meets requirements of) DropAllow section is selected on basis of its weight. Weight (priority) of DropAllow section is equal to sum of all Rates of Drop sections and divided by number of Drop sections contained inside DropAllow section.
+// If there are multiple DropAllow sections of same weight then DropAllow section is selected randomly from pool of all qualified DropAllow sections of same weight.
+//
+// Drop hierarchy:
+//	1. Set Items (SetItemRate)
+//		OR
+//	3. Zen (MoneyDrop)
+//		AND (optionally)
+//	4. Bag Items or Zen (DropSection)
+//		AND (optionally)
+//	5. Coins and/or Ruud
+//
+// STRICTLY NO COMMENTS INSIDE TAGS 
+-->

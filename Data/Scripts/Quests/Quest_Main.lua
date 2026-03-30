@@ -1,3 +1,4 @@
+癤�-- // ============================================================
 -- // ============================================================
 -- // == INTERNATIONAL GAMING CENTER NETWORK
 -- // == www.igcn.mu
@@ -7,33 +8,33 @@
 -- // ============================================================
 
 QuestInclude("Quest_Define.lua")
-QuestInclude("Quest_Ep1.lua")		-- 튜토리얼 퀘스트 진행
-QuestInclude("Quest_Ep2.lua")		-- 카오스 캐슬 입장 퀘스트 진행
-QuestInclude("Quest_Ep3.lua")		-- 블러드 캐슬 입장 퀘스트 진행
-QuestInclude("Quest_Ep4.lua")		-- 악마의광장 입장 퀘스트 진행
-QuestInclude("Quest_Ep5.lua")		-- 환영사원 입장 퀘스트 진행
-QuestInclude("Quest_Ep6.lua")		-- 일주 퀘스트 진행
-QuestInclude("Quest_Ep7.lua")		-- 인벤 확장 퀘스트 진행
-QuestInclude("Quest_Ep8.lua")		-- 아케론 퀘스트 진행
-QuestInclude("Quest_Ep9.lua")		-- 마스터스킬 트리 초기화 퀘스트(첫번째)
-QuestInclude("Quest_Ep10.lua")		-- 마스터스킬 트리 초기화 퀘스트(두번째)
-QuestInclude("Quest_Ep11.lua")		-- 마스터스킬 트리 초기화 퀘스트(세번째)
-QuestInclude("Quest_Ep12.lua")		-- 마스터스킬 트리 초기화 퀘스트(모든 트리)
-QuestInclude("Quest_Ep15.lua")		-- 아이템 지급 퀘스트 진행
-QuestInclude("Quest_Ep16.lua")		-- 겐스 퀘스트(1) 진행
-QuestInclude("Quest_Ep17.lua")		-- 겐스 퀘스트(2) 진행
-QuestInclude("Quest_Ep18.lua")		-- 반복 퀘스트(1) 1~259레벨 진행
-QuestInclude("Quest_Ep19.lua")		-- 반복 퀘스트(2) 260~349레벨 진행
-QuestInclude("Quest_Ep20.lua")		-- 일일퀘스트 350~400레벨, 400레벨 이상(200레벨로 수정)
+QuestInclude("Quest_Ep1.lua")-- Tutorial quest progress
+QuestInclude("Quest_Ep2.lua")-- Chaos Castle entry quest progress
+QuestInclude("Quest_Ep3.lua")-- Blood Castle entry quest progress
+QuestInclude("Quest_Ep4.lua")-- Devil Square entry quest progress
+QuestInclude("Quest_Ep5.lua")-- Illusion Temple entry quest progress
+QuestInclude("Quest_Ep6.lua")-- World Tour quest progress
+QuestInclude("Quest_Ep7.lua")-- Inventory Expansion quest progress
+QuestInclude("Quest_Ep8.lua")-- Acheron quest progress
+QuestInclude("Quest_Ep9.lua")-- Master Skill Tree Reset Quest (First)
+QuestInclude("Quest_Ep10.lua")-- Master Skill Tree Reset Quest (Second)
+QuestInclude("Quest_Ep11.lua")-- Master Skill Tree Reset Quest (Third)
+QuestInclude("Quest_Ep12.lua")-- Master Skill Tree Reset Quest (All Trees)
+QuestInclude("Quest_Ep15.lua")-- Item grant quest progress
+QuestInclude("Quest_Ep16.lua")-- Gens Quest (1) progress
+QuestInclude("Quest_Ep17.lua")-- Gens Quest (2) progress
+QuestInclude("Quest_Ep18.lua")-- Repeatable Quest (1) level 1~259 progress
+QuestInclude("Quest_Ep19.lua")-- Repeatable Quest (2) level 260~349 progress
+QuestInclude("Quest_Ep20.lua")-- Daily Quest level 350~400, 400+ (modified to level 200)
 QuestInclude("Quest_Main_NPC_List.lua")
 QuestInclude("Quest_Main_NPC_QuestList.lua")
 QuestInclude("Quest_Main_NPC_TalkList.lua")
 QuestInclude("Quest_Main_Quest_GiveUp.lua")
 --================================================================================================================
--- 진행중인 퀘스트가 존재 하냐?
+-- Is there a quest in progress?
 function ChkProgQuest(Ep, iObjIndex)
 
-	local ProgEp = LuaQuestClass:ChkProgQuest(Ep, iObjIndex)
+	local ProgEp = LuaQuestClass.ChkProgQuest(Ep, iObjIndex)
 	
 	if ProgEp > 0 then
 		return 1
@@ -44,8 +45,8 @@ end
 --================================================================================================================
 function Make_QuestIndexIDToEP(QuestIndexID)
 
-	--local LuaQuestClass = QuestExpLuaBind()	
-	local Ep = LuaQuestClass:Make_QuestIndexIDToEP(QuestIndexID)
+	--local LuaQuestClass = QuestExpLuaBind()   
+	local Ep = LuaQuestClass.Make_QuestIndexIDToEP(QuestIndexID)
 	
 	return Ep
 end
@@ -53,14 +54,14 @@ end
 function ItemAndEvent(iObjIndex)
 
 	--DebugPrint('ItemAndEvent')
-	local UserLv = LuaQuestClass:GetUserLv(iObjIndex)
-	local UserQS = LuaQuestClass:GetQuestSwitch(Ep1, iObjIndex)
-	local CharClass = LuaQuestClass:GetCharClass(iObjIndex)
+	local UserLv = LuaQuestClass.GetUserLv(iObjIndex)
+	local UserQS = LuaQuestClass.GetQuestSwitch(Ep1, iObjIndex)
+	local CharClass = LuaQuestClass.GetCharClass(iObjIndex)
 	
 	ItemType = 13 ItemIndex = 20 ItemLevel = 1 ItemSkill = 0 Opt = 0 ExOpt = 0
-	local Ring1 = LuaQuestClass:GetInvenItemFind(ItemType, ItemIndex, ItemLevel, ItemSkill, Opt, ExOpt, iObjIndex)
+	local Ring1 = LuaQuestClass.GetInvenItemFind(ItemType, ItemIndex, ItemLevel, ItemSkill, Opt, ExOpt, iObjIndex)
 	ItemType = 13 ItemIndex = 20 ItemLevel = 2 ItemSkill = 0 Opt = 0 ExOpt = 0
-	local Ring2 = LuaQuestClass:GetInvenItemFind(ItemType, ItemIndex, ItemLevel, ItemSkill, Opt, ExOpt, iObjIndex)
+	local Ring2 = LuaQuestClass.GetInvenItemFind(ItemType, ItemIndex, ItemLevel, ItemSkill, Opt, ExOpt, iObjIndex)
 	
 	if CharClass == CLASS_DARKLORD or CharClass == CLASS_MAGUMSA or CharClass == CLASS_MONK then
 		return
@@ -75,20 +76,20 @@ function ItemAndEvent(iObjIndex)
 	end
 
 	if UserQS <= 3 then
-		LuaQuestClass:AddItemAndEtcQuestList(Ep1, 0)
-		LuaQuestClass:SendQuestItemAndEventList(iObjIndex)--이벤트 퀘스트
+		LuaQuestClass.AddItemAndEtcQuestList(Ep1, 0)
+		LuaQuestClass.SendQuestItemAndEventList(iObjIndex)--Event quest
 		return
 	end
 end
 --================================================================================================================
--- season6 아이템 사용 퀘스트 
--- 함수명 변경 불가(서버팀에 문의 하시오.)
--- return 1 이면 아이템 삭제.
+-- season6 item use quest 
+-- Function name cannot be changed (contact the server team).
+-- If return 1, delete item.
 function ItemUseQuest(iObjIndex, Ep)
 
-	local UserLv = LuaQuestClass:GetUserLv(iObjIndex)
-	local UserQS = LuaQuestClass:GetQuestSwitch(Ep, iObjIndex)
-	local CharMaster = LuaQuestClass:IsMasterLevel(iObjIndex)	
+	local UserLv = LuaQuestClass.GetUserLv(iObjIndex)
+	local UserQS = LuaQuestClass.GetQuestSwitch(Ep, iObjIndex)
+	local CharMaster = LuaQuestClass.IsMasterLevel(iObjIndex)   
 	--local CheatChangeDay = LuaQuestClass:GetCheatChangeDay()
 	local CheatChangeDay = -1
 	
@@ -102,39 +103,39 @@ function ItemUseQuest(iObjIndex, Ep)
 		end
 	
 			if DayOfWeek == Mon then
-				LuaQuestClass:SetQuestSwitch(Ep20, 9, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 9)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 9, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 9)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Tue then
-				LuaQuestClass:SetQuestSwitch(Ep20, 16, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 16)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 16, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 16)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Wed then
-				LuaQuestClass:SetQuestSwitch(Ep20, 23, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 23)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 23, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 23)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Thu then
-				LuaQuestClass:SetQuestSwitch(Ep20, 30, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 30)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 30, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 30)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Fri then
-				LuaQuestClass:SetQuestSwitch(Ep20, 37, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 37)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 37, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 37)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Sat then
-				LuaQuestClass:SetQuestSwitch(Ep20, 44, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 44)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 44, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 44)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Sun then
-				LuaQuestClass:SetQuestSwitch(Ep20, 51, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 51)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 51, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 51)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			end
 		
@@ -149,39 +150,39 @@ function ItemUseQuest(iObjIndex, Ep)
 		end
 	
 			if DayOfWeek == Mon then
-				LuaQuestClass:SetQuestSwitch(Ep20, 74, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 74)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 74, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 74)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Tue then
-				LuaQuestClass:SetQuestSwitch(Ep20, 78, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 78)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 78, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 78)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Wed then
-				LuaQuestClass:SetQuestSwitch(Ep20, 82, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 82)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 82, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 82)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Thu then
-				LuaQuestClass:SetQuestSwitch(Ep20, 86, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 86)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 86, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 86)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Fri then
-				LuaQuestClass:SetQuestSwitch(Ep20, 90, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 90)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 90, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 90)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Sat then
-				LuaQuestClass:SetQuestSwitch(Ep20, 94, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 94)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 94, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 94)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			elseif DayOfWeek == Sun then
-				LuaQuestClass:SetQuestSwitch(Ep20, 98, iObjIndex)
-				LuaQuestClass:AddItemAndEtcQuestList(Ep20, 98)
-				LuaQuestClass:SendQuestItemUseList(iObjIndex)
+				LuaQuestClass.SetQuestSwitch(Ep20, 98, iObjIndex)
+				LuaQuestClass.AddItemAndEtcQuestList(Ep20, 98)
+				LuaQuestClass.SendQuestItemUseList(iObjIndex)
 				return 1
 			end
 	end
@@ -190,8 +191,8 @@ end
 --================================================================================================================
 function ChkProgress(Ep, QS, iObjIndex)
 
-	--local LuaQuestClass = QuestExpLuaBind()	
-	local NpcIndex = LuaQuestClass:GetNpcIndex(iObjIndex)
+	--local LuaQuestClass = QuestExpLuaBind()   
+	local NpcIndex = LuaQuestClass.GetNpcIndex(iObjIndex)
 		
 	if Ep == 1 and QS > 4 then
 		if NpcIndex ~= NPC_SHADOW_PHANTOM then
@@ -202,11 +203,11 @@ function ChkProgress(Ep, QS, iObjIndex)
 	return 1
 end
 --================================================================================================================
--- 퀘스트 목록에서 하나 선택시. 0x0A
+-- When selecting one from the quest list. 0x0A
 function CGReqQuestSwitch(RecvQuestIndexID, SelectSyntactic, iObjIndex)
 
 	local Ep = Make_QuestIndexIDToEP(RecvQuestIndexID)
-	local QuestSwitch = LuaQuestClass:GetQuestSwitch(Ep, iObjIndex)
+	local QuestSwitch = LuaQuestClass.GetQuestSwitch(Ep, iObjIndex)
 	
 	if ChkProgress(Ep, QuestSwitch, iObjIndex) == 0 then
 		return
@@ -217,22 +218,22 @@ function CGReqQuestSwitch(RecvQuestIndexID, SelectSyntactic, iObjIndex)
 	end
 	
 	if Ep ~= 0 then
-		LuaQuestClass:SetQuestProg(Ep, iObjIndex, 1)
-		-- 한달에 한번씩 해당 내용 검색 및 정리
+		LuaQuestClass.SetQuestProg(Ep, iObjIndex, 1)
+		-- Search and clean up once a month
 		Ep19_NPCQuestList(iObjIndex)
---		Ep20_NPCQuestList(iObjIndex)
-		QuestSwitch = LuaQuestClass:GetQuestSwitch(Ep, iObjIndex)
-		LuaQuestClass:SendQuestProgress(Ep, QuestSwitch, iObjIndex)
+--      Ep20_NPCQuestList(iObjIndex)
+		QuestSwitch = LuaQuestClass.GetQuestSwitch(Ep, iObjIndex)
+		LuaQuestClass.SendQuestProgress(Ep, QuestSwitch, iObjIndex)
 	end
 	
 	return
 	
 end
 --================================================================================================================
--- 대화 진행중 0x0B
+-- Dialogue in progress 0x0B
 function CGReqQuestProgress(RecvQuestIndexID, SelectSyntactic, iObjIndex)
 	
-	--local LuaQuestClass = QuestExpLuaBind()	
+	--local LuaQuestClass = QuestExpLuaBind()   
 	--local CurrentQuestIndexID = LuaQuestClass:GetCurrentQuestIndexID_NpcTalk(iObjIndex)
 	local Ep = Make_QuestIndexIDToEP(RecvQuestIndexID)
 	
@@ -283,7 +284,7 @@ function CGReqQuestProgress(RecvQuestIndexID, SelectSyntactic, iObjIndex)
 	end
 end
 --================================================================================================================
---[0xF6][0x0D] 퀘스트 완료 요청
+--[0xF6][0x0D] Quest completion request
 function CGReqQuestComplete(RecvQuestIndexID, iObjIndex)
 
 	local Ep = Make_QuestIndexIDToEP(RecvQuestIndexID)
@@ -331,9 +332,9 @@ function CGReqQuestComplete(RecvQuestIndexID, iObjIndex)
 	end
 end
 --================================================================================================================
---퀘스트 포기시(이름 변경 금지)
+--When abandoning quest (name change prohibited)
 function QuestGiveUp(iObjIndex, Ep, QS)
-	local UserLv = LuaQuestClass:GetUserLv(iObjIndex)
+	local UserLv = LuaQuestClass.GetUserLv(iObjIndex)
 	if Ep == Ep1 then
 		EP1_GiveUp_Level_check(iObjIndex, Ep, QS)
 	end
@@ -360,7 +361,7 @@ function QuestGiveUp(iObjIndex, Ep, QS)
 
 	if Ep == Ep7 then
 			EP7_GiveUp_Level_check(iObjIndex, Ep, QS)
-	end	
+	end 
 
 	if Ep == Ep8 then
 			EP8_GiveUp_Level_check(iObjIndex, Ep, QS)
@@ -368,7 +369,7 @@ function QuestGiveUp(iObjIndex, Ep, QS)
 
 	if Ep == Ep9 then
 			EP9_GiveUp_Level_check(iObjIndex, Ep, QS)
-	end	
+	end 
 	
 	if Ep == Ep10 then
 			EP10_GiveUp_Level_check(iObjIndex, Ep, QS)

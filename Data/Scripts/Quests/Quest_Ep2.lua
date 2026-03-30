@@ -1,400 +1,401 @@
+癤�--[[
 --[[
 Quest_Ep2.lua
-[ Start  ] 	2009.12.
-[ Latest ]	2009-12-08 10:45 AM
-[ Version ]	0.0.0.0
-[ Text ]									
-[ Desc ]									
+[ Start  ]  2009.12.
+[ Latest ]  2009-12-08 10:45 AM
+[ Version ] 0.0.0.0
+[ Text ]                                    
+[ Desc ]                                    
 --]]
 QuestInclude("Quest_Define.lua")
 
 function Ep2_Progress(SelectSyntactic, objIndex)
 
 
-	local QS = LuaQuestClass:GetQuestSwitch(Ep2, objIndex)
+	local QS = LuaQuestClass.GetQuestSwitch(Ep2, objIndex)
 	--Print('1', 'qs = ', QS, 'SelectSyntactic = ' , SelectSyntactic)
--- 카오스 캐슬 1지역: 1차 연계 퀘스트
+-- Chaos Castle Zone 1: 1st Chain Quest
 	if QS == 0 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 2, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 2, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 1, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 1, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 설명	
+-- Chaos Castle description 
 	if QS == 2 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 3, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 3, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 	
 	if QS == 3 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 4, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 4, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 
 	if QS == 4 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 5, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 5, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 
 	if QS == 5 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 6, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 6, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 	if QS == 6 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 7, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 7, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 	if QS == 7 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 8, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 8, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
--- 카오스 캐슬 1지역: 2차 연계 퀘스트
+-- Chaos Castle Zone 1: 2nd Chain Quest
 	if QS == 9 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 11, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 11, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 10, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 10, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 1지역: 3차 연계 퀘스트
+-- Chaos Castle Zone 1: 3rd Chain Quest
 	if QS == 12 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 14, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 14, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 13, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 13, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 1지역: 4차 연계 퀘스트
+-- Chaos Castle Zone 1: 4th Chain Quest
 	if QS == 15 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 17, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 17, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 16, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 16, objIndex)-- 
 			return
 		end
 	end
 
--- 카오스 캐슬 2지역: 1차 연계 퀘스트
+-- Chaos Castle Zone 2: 1st Chain Quest
 	if QS == 18 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 20, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 20, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 19, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 19, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 설명	
+-- Chaos Castle description 
 
 	if QS == 20 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 21, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 21, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 
 	if QS == 21 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 22, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 22, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 	if QS == 22 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 23, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 23, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 	if QS == 23 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 24, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 24, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 	if QS == 24 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 25, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 25, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
 	if QS == 25 then
-		if SelectSyntactic == 1 then -- 그렇군
-			LuaQuestClass:SendQuestProgress(Ep2, 26, objIndex)-- 
+		if SelectSyntactic == 1 then-- I see.
+			LuaQuestClass.SendQuestProgress(Ep2, 26, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 	end
--- 카오스 캐슬 2지역: 2차 연계 퀘스트
+-- Chaos Castle Zone 2: 2nd Chain Quest
 	if QS == 27 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 29, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 29, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 28, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 28, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 2지역: 3차 연계 퀘스트
+-- Chaos Castle Zone 2: 3rd Chain Quest
 	if QS == 30 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 32, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 32, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 31, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 31, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 2지역: 4차 연계 퀘스트
+-- Chaos Castle Zone 2: 4th Chain Quest
 	if QS == 33 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 35, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 35, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 34, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 34, objIndex)-- 
 			return
 		end
 	end
 
--- 카오스 캐슬 3지역: 1차 연계 퀘스트
+-- Chaos Castle Zone 3: 1st Chain Quest
 	if QS == 36 then
-		if SelectSyntactic == 1 then -- 잘알았삼
-			LuaQuestClass:SendQuestProgress(Ep2, 37, objIndex)-- 
+		if SelectSyntactic == 1 then-- Got it.
+			LuaQuestClass.SendQuestProgress(Ep2, 37, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
 
 	end
 	if QS == 37 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 39, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 39, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 38, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 38, objIndex)-- 
 			return
 		end
 
 	end
--- 카오스 캐슬 3지역: 2차 연계 퀘스트
+-- Chaos Castle Zone 3: 2nd Chain Quest
 	if QS == 40 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 42, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 42, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 41, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 41, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 3지역: 3차 연계 퀘스트
+-- Chaos Castle Zone 3: 3rd Chain Quest
 	if QS == 43 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 45, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 45, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 44, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 44, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 4지역: 1차 연계 퀘스트
+-- Chaos Castle Zone 4: 1st Chain Quest
 	if QS == 46 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 48, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 48, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 47, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 47, objIndex)-- 
 			return
 		end
 
 	end
--- 카오스 캐슬 4지역: 2차 연계 퀘스트
+-- Chaos Castle Zone 4: 2nd Chain Quest
 	if QS == 49 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 51, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 51, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 50, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 50, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 4지역: 3차 연계 퀘스트
+-- Chaos Castle Zone 4: 3rd Chain Quest
 	if QS == 52 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 54, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 54, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 53, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 53, objIndex)-- 
 			return
 		end
 	end
 
--- 카오스 캐슬 5지역: 1차 연계 퀘스트
+-- Chaos Castle Zone 5: 1st Chain Quest
 	if QS == 55 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 57, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 57, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 56, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 56, objIndex)-- 
 			return
 		end
 
 	end
--- 카오스 캐슬 5지역: 2차 연계 퀘스트
+-- Chaos Castle Zone 5: 2nd Chain Quest
 	if QS == 58 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 60, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 60, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 59, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 59, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 5지역: 3차 연계 퀘스트
+-- Chaos Castle Zone 5: 3rd Chain Quest
 	if QS == 61 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 63, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 63, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 62, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 62, objIndex)-- 
 			return
 		end
 	end
 
--- 카오스 캐슬 6지역: 1차 연계 퀘스트
+-- Chaos Castle Zone 6: 1st Chain Quest
 	if QS == 64 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 66, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 66, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 65, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 65, objIndex)-- 
 			return
 		end
 
 	end
--- 카오스 캐슬 6지역: 2차 연계 퀘스트
+-- Chaos Castle Zone 6: 2nd Chain Quest
 	if QS == 67 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 69, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 69, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 68, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 68, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 6지역: 3차 연계 퀘스트
+-- Chaos Castle Zone 6: 3rd Chain Quest
 	if QS == 70 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 72, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 72, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 71, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 71, objIndex)-- 
 			return
 		end
 	end
 	
--- 카오스 캐슬 7지역: 1차 연계 퀘스트
+-- Chaos Castle Zone 7: 1st Chain Quest
 	if QS == 73 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 75, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 75, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 74, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 74, objIndex)-- 
 			return
 		end
 
 	end
--- 카오스 캐슬 7지역: 2차 연계 퀘스트
+-- Chaos Castle Zone 7: 2nd Chain Quest
 	if QS == 76 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 78, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 78, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 77, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 77, objIndex)-- 
 			return
 		end
 	end
--- 카오스 캐슬 7지역: 3차 연계 퀘스트
+-- Chaos Castle Zone 7: 3rd Chain Quest
 	if QS == 79 then
-		if SelectSyntactic == 1 then -- 뭔데
-			LuaQuestClass:SendQuestProgress(Ep2, 81, objIndex)-- 
+		if SelectSyntactic == 1 then-- What is it?
+			LuaQuestClass.SendQuestProgress(Ep2, 81, objIndex)-- 
 			--Print('qs = ', QS , 'SelectSyntactic = ', SelectSyntactic)
 			return
 		end
-		if SelectSyntactic == 2 then -- 지금은 바뻐.
-			LuaQuestClass:SendQuestProgress(Ep2, 80, objIndex)-- 
+		if SelectSyntactic == 2 then-- I'm busy now.
+			LuaQuestClass.SendQuestProgress(Ep2, 80, objIndex)-- 
 			return
 		end
 	end
@@ -421,47 +422,47 @@ function Ep2_SendCompleteQS(QS, objIndex)
 
 
 	if QS == 11 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 12, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 12, objIndex)
 	elseif QS == 14 then 
-		LuaQuestClass:SetQuestSwitch(Ep2, 15, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 15, objIndex)
 	elseif QS == 17 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 18, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 18, objIndex)
 	elseif QS == 29 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 30, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 30, objIndex)
 	elseif QS == 32 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 33, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 33, objIndex)
 	elseif QS == 35 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 36, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 36, objIndex)
 	elseif QS == 39 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 40, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 40, objIndex)
 	elseif QS == 42 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 43, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 43, objIndex)
 	elseif QS == 45 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 46, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 46, objIndex)
 	elseif QS == 48 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 49, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 49, objIndex)
 	elseif QS == 51 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 52, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 52, objIndex)
 	elseif QS == 54 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 55, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 55, objIndex)
 	elseif QS == 57 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 58, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 58, objIndex)
 	elseif QS == 60 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 61, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 61, objIndex)
 	elseif QS == 63 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 64, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 64, objIndex)
 	elseif QS == 66 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 67, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 67, objIndex)
 	elseif QS == 69 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 70, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 70, objIndex)
 	elseif QS == 72 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 73, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 73, objIndex)
 	elseif QS == 75 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 76, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 76, objIndex)
 	elseif QS == 78 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 79, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 79, objIndex)
 	elseif QS == 81 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 82, objIndex)
+		LuaQuestClass.SetQuestSwitch(Ep2, 82, objIndex)
 	end
 
 	return
@@ -474,117 +475,117 @@ function Ep2_Complete(objIndex)
 	local LimitLv = 400
 	
 	
-	local QS = LuaQuestClass:GetQuestSwitch(Ep2, objIndex)
+	local QS = LuaQuestClass.GetQuestSwitch(Ep2, objIndex)
 	
 	if QS == 1 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 9, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 9, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif QS == 10 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 9, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 9, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 13 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 12, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 12, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 16 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 15, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 15, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 19 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 27, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 27, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 28 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 27, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 27, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 31 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 30, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 30, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 34 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 33, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 33, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 38 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 37, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 37, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 41 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 40, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 40, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 44 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 43, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 43, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 47 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 46, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 46, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 50 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 49, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 49, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 53 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 52, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 52, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 56 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 55, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 55, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 59 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 58, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 58, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 62 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 61, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 61, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 65 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 64, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 64, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 68 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 67, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 67, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 71 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 70, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 70, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 74 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 73, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 73, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 77 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 76, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 76, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
 	elseif  QS == 80 then
-		LuaQuestClass:SetQuestSwitch(Ep2, 79, objIndex)
-		LuaQuestClass:SendQuestComplete(Ep2, QS, objIndex)--진행상 보상 없이 확인 버튼 눌렀을때.
+		LuaQuestClass.SetQuestSwitch(Ep2, 79, objIndex)
+		LuaQuestClass.SendQuestComplete(Ep2, QS, objIndex)--When the confirm button is pressed without in-progress reward.
 		return
-	end	
+	end 
 
 	if QS == 8 then
-		local Result = LuaQuestClass:SendQuestReward(Ep2, objIndex)
+		local Result = LuaQuestClass.SendQuestReward(Ep2, objIndex)
 		if Result == 1 then
-			LuaQuestClass:SetQuestSwitch(Ep2, 9, objIndex)
+			LuaQuestClass.SetQuestSwitch(Ep2, 9, objIndex)
 		end
 		return
 	elseif QS == 26 then
-		local Result = LuaQuestClass:SendQuestReward(Ep2, objIndex)
+		local Result = LuaQuestClass.SendQuestReward(Ep2, objIndex)
 		if Result == 1 then
-			LuaQuestClass:SetQuestSwitch(Ep2, 27, objIndex)
+			LuaQuestClass.SetQuestSwitch(Ep2, 27, objIndex)
 		end
 		return
-	end		
+	end     
 	
-	local bComplete = LuaQuestClass:IsQuestComplete(Ep2, objIndex)--완료 체크
+	local bComplete = LuaQuestClass.IsQuestComplete(Ep2, objIndex)--Completion check
 	
 	if bComplete == false then
 		return
@@ -594,19 +595,19 @@ function Ep2_Complete(objIndex)
 	
 	if ChkCompleteQS == 1 then
 	
-		local UserLv = LuaQuestClass:GetUserLv(objIndex)
+		local UserLv = LuaQuestClass.GetUserLv(objIndex)
 		
 		if UserLv <= LimitLv then
-			local Result = LuaQuestClass:SendQuestReward(Ep2, objIndex)
+			local Result = LuaQuestClass.SendQuestReward(Ep2, objIndex)
 			if Result == 1 then
 				Ep2_SendCompleteQS(QS, objIndex)
 			end
 			return
 		elseif UserLv > LimitLv then
-			local Result = LuaQuestClass:SendQuestReward(Ep2, objIndex)
+			local Result = LuaQuestClass.SendQuestReward(Ep2, objIndex)
 			if Result == 1 then
 				Ep2_SendCompleteQS(QS, objIndex)
-				LuaQuestClass:SetQuestSwitch(Ep2, 82, objIndex)
+				LuaQuestClass.SetQuestSwitch(Ep2, 82, objIndex)
 			end
 
 			return

@@ -1,40 +1,41 @@
+癤�--[[
 --[[
 Quest_Main.lua
-[ Start  ] 	2010.06.
-[ Latest ]	2011-09-14 3:07 PM
-[ Author ]	김정민
-[ Version ]	0.0.0.2
-[ Text ]	마스터 스킬 트리 초기화 퀘스트 추가								
-[ Desc ]									
+[ Start  ]  2010.06.
+[ Latest ]  2011-09-14 3:07 PM
+[ Author ]  Kim Jeongmin
+[ Version ] 0.0.0.2
+[ Text ]    Added Master Skill Tree Reset Quest
+[ Desc ]                                    
 --]]
---소스에서 호출합니다. 함수명 변경 금지.
+--Called from source. Function name must not be changed.
 --================================================================================================================
 function NpcTalkClick(NpcIndex, iObjIndex)
-	local GensInfluence = LuaQuestClass:GetGensInfluence(iObjIndex)--겐스세력	
-	--local LuaQuestClass = QuestExpLuaBind()	
+	local GensInfluence = LuaQuestClass.GetGensInfluence(iObjIndex)--Gens faction   
+	--local LuaQuestClass = QuestExpLuaBind()   
 	--local NpcIndex = g_QuestExpLuaBind:GetNpcIndex()
 	--g_QuestExpLuaBind:SetiObjIndex(iObjIndex)
 	-------------
-	----테스트 코드
-	--g_QuestExpLuaBind:AddQuestExpNpcTalk(Episode_1, 1)-- NPC한테 보내줄 퀘스트
+	---- Test code
+	--g_QuestExpLuaBind:AddQuestExpNpcTalk(Episode_1, 1)-- Quest to send to NPC
 	--g_QuestExpLuaBind:SendQuestExpNpcTalk()
 	--local iObjIndex = g_QuestExpLuaBind:GetiObjIndex()
-	--g_QuestExpLuaBind:SendQuestToNPC(Episode_1, 1, iObjIndex)-- NPC한테 보내줄 퀘스트
+	--g_QuestExpLuaBind:SendQuestToNPC(Episode_1, 1, iObjIndex)-- Quest to send to NPC
 	--------------
 	
-	--npc클릭하고 퀘 npc 이면 
+	--If clicked NPC is a quest NPC 
 	if NpcIndex == NPC_SHADOW_PHANTOM then
 		return NpcTalk_ShadowPhantom(iObjIndex)
 		
 		--return AcceptQuestEp1(QuestSwitch)
 	elseif NpcIndex == NPC_GENS_DUPRIAN then
-		if GensInfluence == GENS_DUPRIAN then	
+		if GensInfluence == GENS_DUPRIAN then   
 			return NpcTalk_GENS(iObjIndex)
 		end
 		return NpcTalk_GENS_Null(iObjIndex)
 		
 	elseif NpcIndex == NPC_GENS_VANERT then
-		if GensInfluence == GENS_VANERT then	
+		if GensInfluence == GENS_VANERT then    
 			return NpcTalk_GENS(iObjIndex)
 		end
 		return NpcTalk_GENS_Null(iObjIndex)
@@ -53,70 +54,69 @@ function NpcTalkClick(NpcIndex, iObjIndex)
 	end 
 end
 --================================================================================================================
-function NpcTalk_ShadowPhantom(iObjIndex)			-- 처음 대사창 처리 0x0A
+function NpcTalk_ShadowPhantom(iObjIndex)-- First dialogue window handling 0x0A
 
 	-- local LuaQuestClass = QuestExpLuaBind()
-	-- LuaQuestClass:AddQuestExpNpcTalk(0, 1)-- 버프
+	-- LuaQuestClass:AddQuestExpNpcTalk(0, 1)-- Buff
 
 	local ProgEp = 0
 
-	local QS = LuaQuestClass:GetQuestSwitch(Ep1, iObjIndex)
-	local CharClass = LuaQuestClass:GetCharClass(iObjIndex)
+	local QS = LuaQuestClass.GetQuestSwitch(Ep1, iObjIndex)
+	local CharClass = LuaQuestClass.GetCharClass(iObjIndex)
 
 	if QS > 4 then
-		LuaQuestClass:AddQuestExpNpcTalk(Ep1, QS)	-- NPC한테 보내줄 퀘스트
+		LuaQuestClass.AddQuestExpNpcTalk(Ep1, QS)-- Quest to send to NPC
 	end
 	
-	local UserLv = LuaQuestClass:GetUserLv(iObjIndex)
+	local UserLv = LuaQuestClass.GetUserLv(iObjIndex)
 
--- 쉐도우 팬텀 퀘스트 진행
 
-	Ep2_NPCTalkList(iObjIndex)				-- 카오스 캐슬   퀘스트
-	Ep3_NPCTalkList(iObjIndex)				-- 블러드 캐슬   퀘스트
-	Ep4_NPCTalkList(iObjIndex)				-- 악마의 광장   퀘스트
-	Ep5_NPCTalkList(iObjIndex)				-- 환영사원 입장 퀘스트
-	Ep6_NPCTalkList(iObjIndex)				-- 일주          퀘스트
+	Ep2_NPCTalkList(iObjIndex)-- Chaos Castle   quest
+	Ep3_NPCTalkList(iObjIndex)-- Blood Castle   quest
+	Ep4_NPCTalkList(iObjIndex)-- Devil Square   quest
+	Ep5_NPCTalkList(iObjIndex)-- Illusion Temple entry quest
+	Ep6_NPCTalkList(iObjIndex)-- World Tour     quest
 	
 	if QuestResetMasterSkill == 1 then
-		Ep9_NPCTalkList(iObjIndex)				-- 마스터 스킬 트리 초기화 퀘스트(첫번째)
-		Ep10_NPCTalkList(iObjIndex)				-- 마스터 스킬 트리 초기화 퀘스트(두번째)
-		Ep11_NPCTalkList(iObjIndex)				-- 마스터 스킬 트리 초기화 퀘스트(세번째)
-		Ep12_NPCTalkList(iObjIndex)				-- 마스터 스킬 트리 초기화 퀘스트(마지막)
+		Ep9_NPCTalkList(iObjIndex)-- Master Skill Tree Reset Quest (First)
+		Ep10_NPCTalkList(iObjIndex)-- Master Skill Tree Reset Quest (Second)
+		Ep11_NPCTalkList(iObjIndex)-- Master Skill Tree Reset Quest (Third)
+		Ep12_NPCTalkList(iObjIndex)-- Master Skill Tree Reset Quest (Last)
 	end
 	
 	if CharClass == CLASS_KNIGHT or CharClass == CLASS_WIZARD or CharClass == CLASS_ELF or CharClass == CLASS_SUMMONER then
-		Ep15_NPCTalkList(iObjIndex)			-- 1차 캐릭터만 진행하는 아이템 지급 퀘스트
+		Ep15_NPCTalkList(iObjIndex)-- Item grant quest for 1st-level characters only
 	end
 	
-	Ep18_NPCTalkList(iObjIndex)				-- 반복 퀘스트(1) 1   ~ 259레벨
-	Ep19_NPCTalkList(iObjIndex)				-- 반복 퀘스트(2) 260 ~ 349레벨
+	Ep18_NPCTalkList(iObjIndex)-- Repeatable Quest (1) level 1 ~ 259
+	Ep19_NPCTalkList(iObjIndex)-- Repeatable Quest (2) level 260 ~ 349
 	
-	LuaQuestClass:SendQuestSwitchList(iObjIndex)		-- NPC 한테 보낸다.
+	LuaQuestClass.SendQuestSwitchList(iObjIndex)-- Send to NPC.
 end
 --================================================================================================================
 function NpcTalk_GENS(iObjIndex)
 
 	Ep16_NPCTalkList(iObjIndex)
 	Ep17_NPCTalkList(iObjIndex)
-	Ep20_NPC_Gen_TalkList(iObjIndex)		-- 1차 일일 퀘스트(월?, 월?) 정보 전달
+	Ep20_NPC_Gen_TalkList(iObjIndex)-- 1st daily quest (Mon?, Mon?) information transfer
 	
-	LuaQuestClass:SendQuestSwitchList(iObjIndex)	-- npc 한테 보낸다.
+	LuaQuestClass.SendQuestSwitchList(iObjIndex)-- Send to NPC.
 	
 end
 --================================================================================================================
--- 아무것도 없는 퀘스트를 줄경우
--- NPC Talk는 꼭 주어야 한다.
+-- When giving a quest with nothing
+-- NPC Talk must be given.
 function NpcTalk_GENS_Null(iObjIndex)
 
-	LuaQuestClass:SendQuestSwitchList(iObjIndex)	--npc 한테 보낸다.
+	LuaQuestClass.SendQuestSwitchList(iObjIndex)--Send to NPC.
 	
 end
 --================================================================================================================
 function NpcTalk_Tersia(iObjIndex)
 
-	Ep20_NPC_Tersia_TalkList(iObjIndex)		-- 1차 일일 퀘스트(임무수령) 정보 전달
+	Ep20_NPC_Tersia_TalkList(iObjIndex)-- 1st daily quest (mission acceptance) information transfer
 	
-	LuaQuestClass:SendQuestSwitchList(iObjIndex)	--npc 한테 보낸다.
+	LuaQuestClass.SendQuestSwitchList(iObjIndex)--Send to NPC.
 	
 end
 --================================================================================================================
@@ -124,7 +124,7 @@ function NpcTalk_Vaina(iObjIndex)
 
 	Ep20_NPC_Vaina_TalkList(iObjIndex)
 	
-	LuaQuestClass:SendQuestSwitchList(iObjIndex)	--npc 한테 보낸다.
+	LuaQuestClass.SendQuestSwitchList(iObjIndex)--Send to NPC.
 	
 end
 --================================================================================================================
@@ -133,15 +133,15 @@ function NpcTalk_Zairo(iObjIndex)
 	Ep7_NPCTalkList(iObjIndex)
 	Ep20_NPC_Zairo_TalkList(iObjIndex)
 	
-	LuaQuestClass:SendQuestSwitchList(iObjIndex)	--npc 한테 보낸다.
+	LuaQuestClass.SendQuestSwitchList(iObjIndex)--Send to NPC.
 	
 end
 --================================================================================================================
 function NpcTalk_Derubish(iObjIndex)
 
-	Ep8_NPC_Derubish_TalkList(iObjIndex)		-- 아케론 퀘스트 정보 전달
-	Ep20_NPC_Derubish_TalkList(iObjIndex)		-- 2차 일일 퀘스트(목, 월?) 정보 전달
-	LuaQuestClass:SendQuestSwitchList(iObjIndex)	--npc 한테 보낸다.
+	Ep8_NPC_Derubish_TalkList(iObjIndex)-- Acheron quest information transfer
+	Ep20_NPC_Derubish_TalkList(iObjIndex)-- 2nd daily quest (Thu, Mon?) information transfer
+	LuaQuestClass.SendQuestSwitchList(iObjIndex)--Send to NPC.
 	
 end
 --================================================================================================================

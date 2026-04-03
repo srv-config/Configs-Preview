@@ -936,6 +936,13 @@ function RequiemDotDamage(Damage)
 	return DotDamage, Time
 end
 
+-- SkillID: 225, Pollution
+function SummonerPollutionCalc(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = InDamage
+	
+	return OutDamage
+end
+
 -- SkillID: 230, Lightning Shock
 function SummonerLightningShock(InDamage, Energy)
 	local OutDamage = InDamage

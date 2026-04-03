@@ -383,6 +383,18 @@ function Item.IsElemental(iItemId) end
 function Item.IsPentagram(iItemId) end
 
 ---@param iItemId integer Item ID
+---@return boolean True if master pentagram item
+function Item.IsMasterPentagram(iItemId) end
+
+---@param iItemId integer Item ID
+---@return boolean True if pentagram jewel
+function Item.IsPentagramJewel(iItemId) end
+
+---@param iItemId integer Item ID
+---@return boolean True if master pentagram jewel
+function Item.IsMasterPentagramJewel(iItemId) end
+
+---@param iItemId integer Item ID
 ---@return integer Set option index
 function Item.GetSetOption(iItemId) end
 
@@ -399,6 +411,17 @@ function Item.Create(iPlayerIndex, stItemCreate) end
 ---@param bGremoryCase integer Gremory case flag
 ---@param bDropMasterySet boolean Drop mastery set
 function Item.MakeRandomSet(iPlayerIndex, bGremoryCase, bDropMasterySet) end
+
+------------------------------------------------------------------
+-- Monster Namespace
+------------------------------------------------------------------
+
+Monster = {}
+
+---Returns monster attribute table for given class
+---@param iClass integer Monster class ID
+---@return MonsterAttr|nil Monster attribute object, or nil if not found
+function Monster.GetAttr(iClass) end
 
 ------------------------------------------------------------------
 -- ItemBag Namespace

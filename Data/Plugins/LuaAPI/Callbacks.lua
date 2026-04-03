@@ -412,6 +412,34 @@ function onMonsterRespawn(oPlayer)
 	end
 end
 
+-- Called upon target attack attempt (Sync)
+function OnCheckUserTarget(oPlayer, oTarget)
+	if (oPlayer ~= nil) then
+		if (oTarget ~= nil) then
+
+		end
+	end
+	return 0
+end
+
+-- Called when player uses a duration-based skill (Sync - return non-zero to block)
+function onUseDurationSkill(oPlayer, aTargetIndex, iSkill, btX, btY, btDir)
+	if (oPlayer ~= nil) then
+
+	end
+	return 0
+end
+
+-- Called when player uses a normal (instant) skill on a target (Sync - return non-zero to block)
+function onUseNormalSkill(oPlayer, oTarget, iSkill)
+	if (oPlayer ~= nil) then
+		if (oTarget ~= nil) then
+
+		end
+	end
+	return 0
+end
+
 ------------------------------------------------------------------
 -- Shop & Trading Events
 ------------------------------------------------------------------
@@ -440,9 +468,17 @@ end
 function onShopSellEventItem(oPlayer, oItem)
 	if (oPlayer ~= nil) then
 		if (oItem ~= nil) then
-		
-		end		
+
+		end
 	end
+end
+
+-- Called when player interacts with Moss the Merchant (Sync - return non-zero to block)
+function onMossMerchantUse(oPlayer, iSectionId)
+	if (oPlayer ~= nil) then
+
+	end
+	return 0
 end
 
 ------------------------------------------------------------------

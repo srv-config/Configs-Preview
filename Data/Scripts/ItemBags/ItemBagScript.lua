@@ -658,6 +658,14 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 				ItemResult.IsSocket = -2
 			end
 		end
+		
+		if (Item.IsMasterPentagramJewel(ItemID) == true) then
+			if (BagItem.Anc >= 0 and BagItem.Anc <= 1) then
+				ItemResult.SetOption = BagItem.Anc
+			else
+				ItemResult.SetOption = Utility.GetRandomRangedInt(0, 1)
+			end
+		end
 	else
 		ItemResult.IsElemental = 0 -- no elemental attributes, applies for non elemental items only
 		ItemResult.ErrtelRank = 0
@@ -863,6 +871,14 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 				ItemResult.IsSocket = -2
 			end
 		end
+		
+		if (Item.IsMasterPentagramJewel(ItemID) == true) then
+			if (BagItem.Anc >= 0 and BagItem.Anc <= 1) then
+				ItemResult.SetOption = BagItem.Anc
+			else
+				ItemResult.SetOption = Utility.GetRandomRangedInt(0, 1)
+			end
+		end
 	else
 		ItemResult.IsElemental = 0 -- no elemental attributes, applies for non elemental items only
 		ItemResult.ErrtelRank = 0
@@ -1066,6 +1082,14 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket)
 			elseif (BagItem.Socket == -2) then
 				ItemResult.IsSocket = -2
+			end
+		end
+		
+		if (Item.IsMasterPentagramJewel(ItemID) == true) then
+			if (BagItem.Anc >= 0 and BagItem.Anc <= 1) then
+				ItemResult.SetOption = BagItem.Anc
+			else
+				ItemResult.SetOption = Utility.GetRandomRangedInt(0, 1)
 			end
 		end
 	else
@@ -1279,6 +1303,14 @@ function EventBagMakeItem(BagItem)
 				ItemResult.IsSocket = -2
 			end
 		end
+		
+		if (Item.IsMasterPentagramJewel(ItemID) == true) then
+			if (BagItem.Anc >= 0 and BagItem.Anc <= 1) then
+				ItemResult.SetOption = BagItem.Anc
+			else
+				ItemResult.SetOption = Utility.GetRandomRangedInt(0, 1)
+			end
+		end
 	else
 		ItemResult.IsElemental = 0 -- no elemental attributes, applies for non elemental items only
 		ItemResult.ErrtelRank = 0
@@ -1479,6 +1511,14 @@ function InventoryBagItemCreate(aIndex, BagItem)
 				ItemResult.IsSocket = Utility.GetRandomRangedInt(1, BagItem.Socket)
 			elseif (BagItem.Socket == -2) then
 				ItemResult.IsSocket = -2
+			end
+		end
+		
+		if (Item.IsMasterPentagramJewel(ItemID) == true) then
+			if (BagItem.Anc >= 0 and BagItem.Anc <= 1) then
+				ItemResult.SetOption = BagItem.Anc
+			else
+				ItemResult.SetOption = Utility.GetRandomRangedInt(0, 1)
 			end
 		end
 	else

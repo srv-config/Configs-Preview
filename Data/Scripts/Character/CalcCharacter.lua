@@ -1114,6 +1114,7 @@ function CalcPenaltyDamageFromMonster(UserLevel, UserMapNumber, UserDamageCorrec
 	return OutDamage
 end
 
+-- Adjusts extra damage min/max before it is forwarded to the target
 function ExtraDamageCalc(UserLevel, UserMasterLevel, MonsterLevel, Class, Strength, Dexterity, Vitality, Energy, InDamageMin, InDamageMax)
 	local OutDamageMin = InDamageMin
 	local OutDamageMax = InDamageMax
@@ -1121,6 +1122,7 @@ function ExtraDamageCalc(UserLevel, UserMasterLevel, MonsterLevel, Class, Streng
 	return OutDamageMin, OutDamageMax
 end
 
+-- Scales extra damage by type for player attackers
 function ExtraDamageTypeCalc(InDamage, ExtraDamageType)
 	local OutDamage = 0
 	
@@ -1134,3 +1136,19 @@ function ExtraDamageTypeCalc(InDamage, ExtraDamageType)
 	
 	return OutDamage
 end
+
+-- Final extra damage adjustment during attack, based on attacker/target type (1=user, 2=monster) and class
+function ExtraDamageAttack(Type, Class, TargetType, TargetClass, InExtraDamage, ExtraDamageType)
+	local OutDamage = 0
+	
+	if (ExtraDamageType == 0) then
+		OutDamage = InExtraDamage
+	elseif (ExtraDamageType == 1) then
+		OutDamage = InExtraDamage
+	elseif (ExtraDamageType == 2) then
+		OutDamage = InExtraDamage
+	end
+	
+	return OutDamage
+end
+

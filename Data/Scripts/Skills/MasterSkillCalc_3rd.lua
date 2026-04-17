@@ -830,6 +830,27 @@ function SummonerDrainLife_PvP_Level1(Energy, Damage)
 	return AddHP
 end
 
+-- SkillID: 776, Pollution Strengthener
+function Pollution_MasterLevel1_Summoner(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = InDamage
+	
+	return OutDamage
+end
+
+-- SkillID: 777, Pollution Strengthener
+function Pollution_MasterLevel2_Summoner(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = InDamage
+	
+	return OutDamage
+end
+
+-- SkillID: 778, Pollution Mastery
+function Pollution_MasterLevel3_Summoner(InDamage, Strength, Dexterity, Vitality, Energy)
+	local OutDamage = InDamage
+	
+	return OutDamage
+end
+
 -- SkillID: 554, Killing Blow Mastery - (Fist Master)
 function KillingBlow_Master(InDamage, Vitality)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0

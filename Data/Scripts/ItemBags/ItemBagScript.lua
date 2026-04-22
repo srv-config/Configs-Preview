@@ -235,7 +235,7 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
 		ItemResult.ExcOption = BagItem.Exc
 	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption(ItemID);
+		ItemResult.ExcOption = Item.GetExcellentOption()
 	end
 
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)
@@ -335,7 +335,7 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
 		ItemResult.ExcOption = BagItem.Exc
 	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption(ItemID);
+		ItemResult.ExcOption = Item.GetExcellentOption()
 	end
 
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)
@@ -434,7 +434,7 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
 		ItemResult.ExcOption = BagItem.Exc
 	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption(ItemID);
+		ItemResult.ExcOption = Item.GetExcellentOption()
 	end
 
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)
@@ -532,7 +532,7 @@ function EventBagMakeItem()
 	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
 		ItemResult.ExcOption = BagItem.Exc
 	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption(ItemID);
+		ItemResult.ExcOption = Item.GetExcellentOption()
 	end
 
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)

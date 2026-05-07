@@ -105,6 +105,6 @@
 		<Upgrade InitialLevel="11" ReqMoney="6500000" ReqItemCat="20" ReqItemIndex="161" ReqItemCount="5" SuccessRate="70" />
 		<Upgrade InitialLevel="12" ReqMoney="7000000" ReqItemCat="20" ReqItemIndex="161" ReqItemCount="5" SuccessRate="70" />
 		<Upgrade InitialLevel="13" ReqMoney="7500000" ReqItemCat="20" ReqItemIndex="161" ReqItemCount="5" SuccessRate="65" />
-		<Upgrade InitialLevel="14" ReqMoney="8000000" ReqItemCat="20" ReqItemIndex="161" ReqItemCount="5" SuccessRate="65" />		
+		<Upgrade InitialLevel="14" ReqMoney="8000000" ReqItemCat="20" ReqItemIndex="161" ReqItemCount="5" SuccessRate="65" />
 	</WingCoreLevelUp>
 </WingCoreOption>

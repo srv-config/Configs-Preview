@@ -119,6 +119,53 @@ Enums.ItemBagType = {
 -- Usage: ItemBag.Use(oPlayer.Index, Enums.ItemBagType.MONSTER, monsterClass, oPlayer.Index)
 -- Usage: ItemBag.Use(oPlayer.Index, Enums.ItemBagType.EVENT, eventBagId, oPlayer.Index)
 
+-- Item Serial Create Map Type
+-- Used in the MapNumber field of CreateItemInfo passed to Item.Create()
+-- Values 0-199: real map number, item drops on the ground at (X, Y) on that map
+-- Values 200+: special creation mode, map coordinates are ignored;
+-- the value selects a specific inventory/system insertion path instead
+Enums.ItemSerialCreateMapType = {
+	BEGIN                              = 200,
+	ABILITYCARD_INVENTORY_INSERT       = 201,
+	ABILITYCARD_MIX                    = 202,
+	WINGCORE_INVENTORY_INSERT          = 203,
+	BUNDLEITEM_INVENTORY_INSERT        = 204,
+	ENCHANTITEM_MIX                    = 205,
+	STARTERINVENTORY_INSERT            = 206,
+	MASTERY_ERRTEL_REFINE              = 207,
+	MASTERY_PENTAGRAM_REFINE           = 208,
+	PETTRAINER_MIX                     = 209,
+	OVERLAPITEM_INVENTORY_INSERT       = 210,
+	LQMIX                              = 211,
+	EVOMONREWARD_EVENTINVENTORY_INSERT = 212,
+	MOSSMERCHANT                       = 213,
+	INVENTORYBAG                       = 214,
+	MURUMMY_EVENTINVENTORY             = 215,
+	SOCKETITEM_MIX                     = 216,
+	RUUD_SHOP                          = 217,
+	MUUN_EXCHANGE                      = 218,
+	SEED_EXTRACT                       = 219,
+	MURUMMY_MUUNINVENTORY              = 220,
+	SHOP_BUY_1                         = 221,
+	SHOP_BUY_2                         = 222,
+	MINESYSTEM                         = 223,
+	MUUN_MUUNINVENTORY_INSERT          = 224,
+	MURUMMY_INVENTORY                  = 225,
+	EVENTINVENTORY_INSERT              = 226,
+	MUUNINVENTORY_DROP                 = 227,
+	GENSRANKING_REWARD                 = 228,
+	PENTAGRAM_MIX_INVENTORY            = 230,
+	PENTAGRAM_JEWEL_OUT                = 231,
+	GREMORYCASE_WITHDRAW               = 232,
+	QUESTREWARD_INVENTORY_INSERT       = 233,
+	LUCKYCOIN_EXCHANGE                 = 234,
+	INVENTORY_INSERT                   = 235,
+	PERIODITEM_INVENTORY_INSERT        = 236,
+	CHAOSBOX                           = 255,
+}
+-- Usage: itemInfo.MapNumber = oPlayer.MapNumber  -- drop on ground (0-199)
+-- Usage: itemInfo.MapNumber = Enums.ItemSerialCreateMapType.INVENTORY_INSERT  -- insert directly to inventory
+
 Enums.HPManaUpdateFlag = {
 	INVENTORY_STATE_RESET = 253, -- SendLife only: restores inventory interaction after a failed item operation
 	MAX_HP_MANA = 254, -- Sends maximum HP/Shield or Mana/AG values (after stat change, level up, buff)

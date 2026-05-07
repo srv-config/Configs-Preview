@@ -919,3 +919,16 @@ function EventMonsterTracker.SpawnWaveAndRegister(iEventType, iMonsterClass, iCo
 ---@param iNpcClass integer NPC class ID
 function EventMonsterTracker.RegisterNPC(iEventType, iNpcIndex, iNpcClass) end
 
+------------------------------------------------------------------
+-- Script Loading (global functions, no namespace)
+------------------------------------------------------------------
+
+---Load and execute a Lua script file
+---@param path string Relative path to .lua file
+function LoadScript(path) end
+
+---Load and execute an encrypted Lua script file (.lsc)
+---@param path string Relative path to .lsc file encrypted with IGC File Encrypt
+function LoadEncryptedScript(path) end
+
+

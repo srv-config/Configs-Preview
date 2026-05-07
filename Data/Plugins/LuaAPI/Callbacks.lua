@@ -413,7 +413,7 @@ function onMonsterRespawn(oPlayer)
 end
 
 -- Called upon target attack attempt (Sync)
-function OnCheckUserTarget(oPlayer, oTarget)
+function onCheckUserTarget(oPlayer, oTarget)
 	if (oPlayer ~= nil) then
 		if (oTarget ~= nil) then
 

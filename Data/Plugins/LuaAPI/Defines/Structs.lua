@@ -257,7 +257,7 @@ function ItemAttr:GetResistance(iType) end
 ---@field ItemOptionEx integer Item option ex (380)
 ---@field Duration integer Item duration timestamp
 ---@field MainAttribute integer Main pentagram attribute
----@field TargetInvenPos integer Target inventory pos (255=auto)
+---@field TargetInvenPos integer Target inventory slot position (must be a valid slot, see Constants.EQUIPMENT_SLOT_* or 0-203 for main inventory)
 ---@field PetCreate boolean Create as pet item
 
 -- CreateItemInfo methods (1-based indexing)

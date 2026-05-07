@@ -421,6 +421,7 @@ function onCheckUserTarget(oPlayer, oTarget)
 	end
 	return 0
 end
+
 ------------------------------------------------------------------
 -- Shop & Trading Events
 ------------------------------------------------------------------

@@ -6,7 +6,7 @@
 -- // == File is a part of IGCN Group MuOnline Server files.
 -- // ============================================================
 
--- MasterSkillPoint Control Script, Lua v5.2
+-- MasterSkillPoint Control Script, Lua v5.3
 -- Skill Tree Skill benefits per point - Can be modified to adjust for own needs
 
 -- Formulas applies to Skill Tree Skill of specified SkillID specified at [4] - Damage/SkillID column in SkillList.txt file

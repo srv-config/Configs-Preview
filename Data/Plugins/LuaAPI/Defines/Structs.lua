@@ -363,3 +363,38 @@ function QueryResultJS:GetValue() end
 
 ---@alias stLuaRow QueryResultJS
 
+------------------------------------------------------------------
+-- MonsterAttr Structure
+------------------------------------------------------------------
+
+---@class MonsterAttr
+---@field Index integer Monster class index (readonly)
+---@field Level integer Monster level
+---@field ScriptHP integer Script-defined HP override
+---@field HP integer Maximum HP
+---@field MP integer Maximum MP
+---@field DamageMin integer Minimum attack damage
+---@field DamageMax integer Maximum attack damage
+---@field Defense integer Defense rating
+---@field MagicDefense integer Magic defense rating
+---@field AttackRating integer Attack success rating
+---@field DefenseRating integer Defense success rate
+---@field MoveRange integer Movement range (tiles)
+---@field AttackRange integer Attack range (tiles)
+---@field AttackType integer Attack type (readonly)
+---@field ViewRange integer View/detection range (tiles)
+---@field MoveSpeed integer Movement speed
+---@field AttackSpeed integer Attack speed
+---@field RegenTime integer Respawn time (ms)
+---@field Attribute integer Monster attribute flags (readonly)
+---@field IsTrap boolean Is a trap object (readonly)
+
+---Returns monster name
+---@return string
+function MonsterAttr:GetName() end
+
+---Returns resistance value for given type
+---@param iType integer Resistance type index (0 to MAX_RESISTENCE_TYPE-1)
+---@return integer Resistance value, or -1 if out of range
+function MonsterAttr:GetResistance(iType) end
+

@@ -294,8 +294,8 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 
 	local ItemResult = BagItemResult.new()
 	ItemResult.MapNumber = MapNumber
-	ItemResult.X = X
-	ItemResult.Y = Y
+	ItemResult.X = MonsterX
+	ItemResult.Y = MonsterY
 	ItemResult.ItemNum = ItemID
 	ItemResult.ItemLevel = Utility.GetRandomRangedInt(BagItem.ItemMinLevel, BagItem.ItemMaxLevel)
 	ItemResult.ItemDurability = BagItem.Durability
@@ -393,8 +393,8 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 
 	local ItemResult = BagItemResult.new()
 	ItemResult.MapNumber = MapNumber
-	ItemResult.X = X
-	ItemResult.Y = Y
+	ItemResult.X = MonsterX
+	ItemResult.Y = MonsterY
 	ItemResult.ItemNum = ItemID
 	ItemResult.ItemLevel = Utility.GetRandomRangedInt(BagItem.ItemMinLevel, BagItem.ItemMaxLevel)
 	ItemResult.ItemDurability = BagItem.Durability
@@ -481,7 +481,7 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 end
 
 -- ### /4/ Create Item (using Event Bag Structure) - Mix/Inventory - LuckyCoin, CherryBlossom, LordMix ### --
-function EventBagMakeItem()
+function EventBagMakeItem(BagItem)
 	local ItemID = MakeItemID(BagItem.ItemType, BagItem.ItemIndex)
 	local ItemCheck = Item.IsValid(ItemID);
 
@@ -491,9 +491,6 @@ function EventBagMakeItem()
 	end
 
 	local ItemResult = BagItemResult.new()
-	ItemResult.MapNumber = MapNumber
-	ItemResult.X = X
-	ItemResult.Y = Y
 	ItemResult.ItemNum = ItemID
 	ItemResult.ItemLevel = Utility.GetRandomRangedInt(BagItem.ItemMinLevel, BagItem.ItemMaxLevel)
 	ItemResult.ItemDurability = BagItem.Durability

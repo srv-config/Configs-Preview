@@ -378,6 +378,17 @@ function Item.Create(iPlayerIndex, stItemCreate) end
 function Item.MakeRandomSet(iPlayerIndex, bGremoryCase, bDropMasterySet) end
 
 ------------------------------------------------------------------
+-- Monster Namespace
+------------------------------------------------------------------
+
+Monster = {}
+
+---Returns monster attribute table for given class
+---@param iClass integer Monster class ID
+---@return MonsterAttr|nil Monster attribute object, or nil if not found
+function Monster.GetAttr(iClass) end
+
+------------------------------------------------------------------
 -- ItemBag Namespace
 ------------------------------------------------------------------
 
@@ -851,4 +862,16 @@ function EventMonsterTracker.SpawnWaveAndRegister(iEventType, iMonsterClass, iCo
 ---@param iNpcIndex integer NPC object index
 ---@param iNpcClass integer NPC class ID
 function EventMonsterTracker.RegisterNPC(iEventType, iNpcIndex, iNpcClass) end
+
+------------------------------------------------------------------
+-- Script Loading (global functions, no namespace)
+------------------------------------------------------------------
+
+---Load and execute a Lua script file
+---@param path string Relative path to .lua file
+function LoadScript(path) end
+
+---Load and execute an encrypted Lua script file (.lsc)
+---@param path string Relative path to .lsc file encrypted with IGC File Encrypt
+function LoadEncryptedScript(path) end
 

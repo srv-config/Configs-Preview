@@ -50,6 +50,7 @@
 //	DisableMovement: Allows to disable automated character movement, 0/1
 //	DisableInfoAbovePlayer: Allows to disable information cloud above player in offline leveling mode, 0/1
 //	AllowPersonalStore: Allows to run off-level with opened personal store, 0/1
+//	AllowGainGoblinPoint: Whether or not, allow to gain goblin points for play time during offline-levelling, 0/1
 //
 // ### OffLevelling::Timing ###
 //	StartHour: Start hour of time range the Offline Leveling is available at, 0-23
@@ -100,7 +101,7 @@
 -->
 
 <OffLevelling Enable="1">
-	<General HitInterval="1000" ChargeInterval="3600" SelfBuffInterval="10" CoinType="0" CoinValue="100" MaxDuration="24" MaxVipDuration="48" ImmortalToPlayers="1" VipType="-1" ImmortalToMonsters="1" DisconnectAfterDeath="1" StayInSafeZoneAfterDeath="0" DisableMovement="0" DisableInfoAbovePlayer="1" AllowPersonalStore="0"/>
+	<General HitInterval="1000" ChargeInterval="3600" SelfBuffInterval="10" CoinType="0" CoinValue="100" MaxDuration="24" MaxVipDuration="48" ImmortalToPlayers="1" VipType="-1" ImmortalToMonsters="1" DisconnectAfterDeath="1" StayInSafeZoneAfterDeath="0" DisableMovement="0" DisableInfoAbovePlayer="1" AllowPersonalStore="0" AllowGainGoblinPoint="0" />
 	<Timing StartHour="0" StartMinute="0" EndHour="23" EndMinute="59" />
 
 	<PickItem Enable="1">

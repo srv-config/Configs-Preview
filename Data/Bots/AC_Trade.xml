@@ -33,13 +33,27 @@
 //	Option:
 //		~ 0-7: Options from +0 to +28
 //
-// Exc:
-//		-1: No exc option
-//		-2: Random count of random options (based on rates from ExcellentOptions.xml)
-//		-3;X: Specified count of random options, the 'X' defines count of excellent options, max 9 (options selection based on rates from ExcellentOptions.xml)
-//		-10: A draw of bonus and excellent options set from MasteryExcOptions.xml. If used, the skill and luck attributes from this file are ignored, see referred file for further details.
-//		X;X;X;X;X;X;X;X;X: Defined excellent options, the 'X' is excellent option ID based on ExcellentOptions.xml, maximum 9 options can be defined
+//	Exc:
+//		Excellent Options:
+//			-1: No exc option
+//			-2: Random count of random options (based on rates from ExcellentOptions.xml)
+//			-3;X: Specified count of random options, the 'X' defines count of excellent options, max 9 (options selection based on rates from ExcellentOptions.xml)
+//			-10: A draw of bonus and excellent options set from MasteryExcOptions.xml. If used, the skill and luck attributes from this file are ignored, see referred file for further details.
+//			X;X;X;X;X;X;X;X;X: Defined excellent options, the 'X' is excellent option ID based on ExcellentOptions.xml, maximum 9 options can be defined
+//		Earring Options:
+//			-2: Random count of random options
+//			-3;X: Specified count of random options, the 'X' defines count of options, max 5
+//		Guardian Items:
+//			-1: No option
+//			-2;X: Random count of random options (based on rates from GuardianItemOption.xml), the 'X' takes value 0 or 1, determining whether to generate random elite option or not
+//			-3;X;Y: Specified count of random options, the 'X' defines count of options, max 4, the 'Y' takes value 0 or 1, determining whether to generate random elite option or not
+//			X;X;X;X;Y: Defines specific options, the 'X' is guardian regular option index from GuardianItemOption.xml::OptionList section, maximum 4 options can be defined, -1 if not applies, the Y is elite option index from GuardianItemOption.xml::EliteOptionList, must be defined as 5th argument, -1 if not applies
 //
+//	Socket:
+//		-1: Ignore sockets check
+//		-2: Checks if socket item with any socket number presents
+//		-3;X: Checks if socket item with specific sockets number presents where X is number of expected sockets
+//	
 //	SetItem: Specific set item ID from ItemSetOption.xml
 //	Elemental:
 //		~ -1: Random element
@@ -86,6 +100,11 @@
 //		-3;X: Require excellent item of specified number of options, the 'X' defines count of excellent options, max 9
 //		X;X;X;X;X;X;X;X;X: Require excellent item of specified set of excellent options, the 'X' is excellent option ID based on ExcellentOptions.xml, maximum 9 options can be defined
 //
+//	Socket:
+//		-1: Random number of sockets
+//		-2: Same as -1
+//		-3;X: Specific number of sockets where X is number of sockets 1-5
+//
 //	SetItem: Specific set item ID from ItemSetOption.xml
 //	Elemental:
 //		~ -1: Random element
@@ -103,28 +122,28 @@
 -->
 
 <ItemList>
-	<CraftItem ID="1" Cat="7" Index="0" Level="9" Skill="1" Luck="1" Option="4" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
-		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
-		<ReqItem ID="2" Cat="14" Index="13" MinLevel="0" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	<CraftItem ID="1" Cat="7" Index="0" Level="9" Skill="1" Luck="1" Option="4" Exc="-1" Socket="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="13" MinLevel="0" Durability="1" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
 	</CraftItem>
 
-	<CraftItem ID="2" Cat="10" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
-		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
-		<ReqItem ID="2" Cat="14" Index="14" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	<CraftItem ID="2" Cat="10" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="14" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
 	</CraftItem>
 
-	<CraftItem ID="3" Cat="11" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
-		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
-		<ReqItem ID="2" Cat="14" Index="16" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	<CraftItem ID="3" Cat="11" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="16" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
 	</CraftItem>
 
-	<CraftItem ID="4" Cat="9" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
-		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
-		<ReqItem ID="2" Cat="14" Index="22" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	<CraftItem ID="4" Cat="9" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="14" Index="22" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
 	</CraftItem>
 
-	<CraftItem ID="5" Cat="8" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="9" Count="1" SuccessRate="100">
-		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
-		<ReqItem ID="2" Cat="12" Index="15" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" Count="1"/>
+	<CraftItem ID="5" Cat="8" Index="0" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="9" Count="1" SuccessRate="100">
+		<ReqItem ID="1" Cat="14" Index="342" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
+		<ReqItem ID="2" Cat="12" Index="15" MinLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" Socket="-1" SetItem="0" Count="1"/>
 	</CraftItem>
 </ItemList>

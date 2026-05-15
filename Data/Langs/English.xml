@@ -899,6 +899,8 @@
 		<Msg ID="873" Text="You are lacking %d Jewels of Creation to proceed." />
 		<Msg ID="874" Text="To reset you must be at minimum level of: %d (normal) and %d (master)." />
 		<Msg ID="875" Text="[Party Move] You need to have at least %s VIP type to be moved to party leader location." />
+		<Msg ID="876" Text="Manual Server Play Time Left: %d hours %d minutes" />
+        <Msg ID="877" Text="Money: %d, GP: %d, WCoin: %d, ContributePoints: %d" />
 	</Message>
 	
 	<VIPSystem>

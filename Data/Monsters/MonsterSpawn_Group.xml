@@ -55,6 +55,7 @@
 //	Defense: Value of defense to set for specified monster
 //	AttackRate: Value of Attack Rate to set for specified monster
 //	DefenseRate: Value of Defense Rate to set for specified monster
+//	EliteMark: Whether or not, disaplay elite mark under boss monster, 0/1
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Override values of monster attributes applies only if OverrideDefaultSettings is set to 1
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -96,8 +97,8 @@
  
 	<MonsterSettings>
 		<Group Index="0">
-			<Monster Index="561" MoveRange="10" SpawnType="0" Count="1" OverrideDefaultSettings="1" EventID="150" HP="15000000" DamageMin="1000" DamageMax="1500" Defense="550" AttackRate="2000" DefenseRate="2000" SendKillNotice="1" KillNotice="[MEDUSA] %s killed Medusa! [%d] of [%d]" />
-			<Monster Index="560" MoveRange="10" SpawnType="0" Count="7" OverrideDefaultSettings="1" EventID="151" HP="150000" DamageMin="100" DamageMax="150" Defense="150" AttackRate="1000" DefenseRate="1000" SendKillNotice="1" KillNotice="[MEDUSA] %s killed Medusa assistant! [%d] of [%d]" />
+			<Monster Index="561" MoveRange="10" SpawnType="0" Count="1" OverrideDefaultSettings="1" EventID="150" HP="15000000" DamageMin="1000" DamageMax="1500" Defense="550" AttackRate="2000" DefenseRate="2000" EliteMark="0" SendKillNotice="1" KillNotice="[MEDUSA] %s killed Medusa! [%d] of [%d]" />
+			<Monster Index="560" MoveRange="10" SpawnType="0" Count="7" OverrideDefaultSettings="1" EventID="151" HP="150000" DamageMin="100" DamageMax="150" Defense="150" AttackRate="1000" DefenseRate="1000" EliteMark="0" SendKillNotice="1" KillNotice="[MEDUSA] %s killed Medusa assistant! [%d] of [%d]" />
 		</Group>
 	</MonsterSettings>
  

@@ -107,6 +107,6 @@
 		<Skill ID="49" Type="0" ItemCat="20" ItemIndex="258" SkillIndex="2094" ReqSkill="1239" StaticOptionIndex="2" StaticOptionValue="1" FormulaID="286" />
 	</Class>
 	<Class ID="15"> <!-- CR -->
-		<Skill ID="49" Type="0" ItemCat="20" ItemIndex="300" SkillIndex="2109" ReqSkill="1508" StaticOptionIndex="1" StaticOptionValue="15" FormulaID="287" />
+		<Skill ID="51" Type="0" ItemCat="20" ItemIndex="300" SkillIndex="2109" ReqSkill="1508" StaticOptionIndex="1" StaticOptionValue="15" FormulaID="287" />
 	</Class>
 </AbilityCardSkill>

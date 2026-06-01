@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2025 IGC-Network (R)
+// == (C) 2010-2026 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == Modify if you know what you do only!
 // == File is a part of IGCN Group MuOnline Server files.
@@ -899,8 +899,16 @@
 		<Msg ID="873" Text="You are lacking %d Jewels of Creation to proceed." />
 		<Msg ID="874" Text="To reset you must be at minimum level of: %d (normal) and %d (master)." />
 		<Msg ID="875" Text="[Party Move] You need to have at least %s VIP type to be moved to party leader location." />
-		<Msg ID="876" Text="Manual Server Play Time Left: %d hours %d minutes" />
-        <Msg ID="877" Text="Money: %d, GP: %d, WCoin: %d, ContributePoints: %d" />
+		<Msg ID="876" Text="[Manual Server Play] Time Left: %d hours %d minutes." />
+		<Msg ID="877" Text="[Manual Server Play] Time to close: 5 minutes." />
+		<Msg ID="878" Text="[Manual Server Play] Your time is over, logging out." />
+		<Msg ID="879" Text="You entered Manual Play Server" />
+		<Msg ID="880" Text="You entered Speed Server" />
+		<Msg ID="881" Text="Money: %d, GP: %d, WCoin: %d, ContributePoints: %d" />
+		<Msg ID="882" Text="AutoReset: [%s]" />
+		<Msg ID="883" Text="ON" />
+		<Msg ID="884" Text="OFF" />
+		<Msg ID="885" Text="[ResetCMD] Sorry, you have reached maximum grand reset" />
 	</Message>
 	
 	<VIPSystem>

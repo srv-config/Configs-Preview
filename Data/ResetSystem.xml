@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2025 IGC-Network (R)
+// == (C) 2010-2026 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -17,7 +17,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Refer to Commands.ini for auto-reset usage/activation
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//	MaxReset: Maximum reset to use auto-reset, -1 if not applies
+//	MaxReset: Maximum reset to use auto-reset, use specific value or if "MAXINGAMERESETS" is used a valie of MaxInGameResets attribute will be used
 //	MaxGrandReset: maximum grand reset to use auto-reset, -1 if not applies
 //	MinVipType: Minimum VIP level to activate auto-reset, -1 if not applies
 //	MaxTime: Maximum number the auto-reset can be used for, -1 if not applies, minutes
@@ -150,7 +150,7 @@
 -->
 
 <ResetSystem Enable="0" MaxDailyResets="10">
-<AutoReset Enable="0" MaxReset="-1" MaxGrandReset="-1" AllowInOffLevel="0" MinVipType="-1" MaxTime="-1" BlockManualReset="1" />
+<AutoReset Enable="0" MaxReset="MAXINGAMERESETS" MaxGrandReset="-1" AllowInOffLevel="0" MinVipType="-1" MaxTime="-1" BlockManualReset="1" />
 <Requirements MinLevelMode="0" MinLevel="400" MinMasterLevel="0" MaxInGameResets="100" MaxWebResets="100" MinVipType="-1" />
 <Settings RemoveEquipment="1" RemoveFromParty="1" EnableMuHelper="1" ClearBuffs="1" ResetStats="0" SaveOldStatPoint="0" MoveToCharSelectWindow="0" StayOnPosition="0" MaxResetPoints="0" 
 	LevelAfterReset="1" ResetMasterLevel="0" MasterLevelAfterReset="0" ResetMasterSkillTree="1" SkillTreePointsReturnMode="1" SkillTreePointsReturnReductionPercent="100" />

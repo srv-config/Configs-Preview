@@ -1071,23 +1071,23 @@ function CalcDarkHorseDefenseBonus(Dexterity, PetLevel)
 end
 
 -- Penalty Damage calculation from user, Damage Correction of Monster is configured from MonsterList.xml
-function CalcPenaltyDamageFromUser(UserLevel, UserMapNumber, UserDamageCorrection, MonsterClass, PenaltyLevel, MonsterLevel, MonsterDamageCorrection, InDamage)
+function CalcPenaltyDamageFromUser(UserLevel, UserMapNumber, UserDamageCorrection, PenaltyLevel, MonsterClass, MonsterLevel, MonsterDamageCorrection, InDamage)
 	local LevelDiff = PenaltyLevel - UserLevel
 	local DamageCorrectionDiff = MonsterDamageCorrection - UserDamageCorrection
 	local OutDamage = InDamage
-
+	
 	if LevelDiff <= 0 then
 		return OutDamage
 	end
-
-	if (LevelDiff > 7) then
+	
+	if LevelDiff > 7 then
 		LevelDiff = 7
 	end
-
+	
 	if DamageCorrectionDiff < 0 then
 		DamageCorrectionDiff = 0
 	end
-
+	
 	OutDamage = OutDamage - (OutDamage * ((LevelDiff * 10) + DamageCorrectionDiff) / 100)
 	return OutDamage
 end
@@ -1139,8 +1139,8 @@ end
 
 -- Final extra damage adjustment during attack, based on attacker/target type (1=user, 2=monster) and class
 function ExtraDamageAttack(Type, Class, TargetType, TargetClass, InExtraDamage, ExtraDamageType)
-	local OutDamage = 0
-	
+	local OutDamage = InExtraDamage
+
 	if (ExtraDamageType == 0) then
 		OutDamage = InExtraDamage
 	elseif (ExtraDamageType == 1) then
@@ -1148,7 +1148,7 @@ function ExtraDamageAttack(Type, Class, TargetType, TargetClass, InExtraDamage, 
 	elseif (ExtraDamageType == 2) then
 		OutDamage = InExtraDamage
 	end
-	
+
 	return OutDamage
 end
 

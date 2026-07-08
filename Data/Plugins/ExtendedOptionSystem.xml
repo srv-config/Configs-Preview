@@ -31,9 +31,23 @@
 //	Applies once, across the whole system, regardless of any per-Jewel Restrictions below.
 //	DenyKindA: List of Item Kind A values that are prohitibted to obtain any extended option, semicolon separated
 //	DenyKindB: List of Item Kind B values that are prohitibted to obtain any extended option, semicolon separated
+//	MaxOptionCount: Global fallback limit of extended options an item may hold, 1-10 (array capacity is 10)
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Leave empty to do not apply any restructions.
 //~~ The GlobalRestrictions is higher priority than per option restruction
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ExtendedOptionSystem::OptionCountLimit::Item ###
+//	Optional list of rules overriding GlobalRestrictions::MaxOptionCount for specific items.
+//	KindA: Item Kind A to match, -1 to match any
+//	KindB: Item Kind B to match, -1 to match any
+//	Type: Item Category (Cat, see ItemList.xml) to match, -1 to match any
+//	MaxOptionCount: Option count limit applied when this rule matches, 1-10
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ When several rules match the same item, the most specific one wins (most non -1 fields);
+//~~ ties are broken by the first matching <Item> row. A rule with all fields -1 has no real
+//~~ criterion and is never considered a match. When no rule matches, MaxOptionCount from
+//~~ GlobalRestrictions is used.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // ### ExtendedOptionSystem::JewelMapping::Jewel ###
@@ -137,7 +151,13 @@
 -->
 
 <ExtendedOptionSystem Enable="1">
-	<GlobalRestrictions DenyKindA="0;9;12;" DenyKindB="56;" />
+	<GlobalRestrictions DenyKindA="0;9;12;" DenyKindB="56;" MaxOptionCount="10" />
+	<OptionCountLimit>
+		<Item KindA="-1" KindB="-1" Type="-1" MaxOptionCount="3" />
+		<Item KindA="5" KindB="-1" Type="-1" MaxOptionCount="3" />
+		<Item KindA="-1" KindB="2" Type="-1" MaxOptionCount="3" />
+		<Item KindA="5" KindB="3" Type="-1" MaxOptionCount="3" />
+	</OptionCountLimit>
 	<JewelMapping>
 		<!-- Option 0: Max HP reduced %d -->
 		<Jewel Cat="19" Index="230" OptionId="0" BuffIndex="1" BuffEffectType="1" Enable="1">

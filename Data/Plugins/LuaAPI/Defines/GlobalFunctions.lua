@@ -897,8 +897,9 @@ function EventMonsterTracker.ClearAll() end
 ---@param iX2 integer Spawn area end X
 ---@param iY2 integer Spawn area end Y
 ---@param iElement integer Elemental attribute (0=none)
+---@parm iDir integer, optional, Spawn direction (-1=random, 0-7: specific direction)
 ---@return integer Monster object index or -1 if failed
-function EventMonsterTracker.SpawnAndRegister(iEventType, iMonsterClass, iMapNumber, iX1, iY1, iX2, iY2, iElement) end
+function EventMonsterTracker.SpawnAndRegister(iEventType, iMonsterClass, iMapNumber, iX1, iY1, iX2, iY2, iElement, iDir) end
 
 ---Spawn wave of monsters and register all to tracking
 ---@param iEventType integer Event type ID
@@ -910,8 +911,9 @@ function EventMonsterTracker.SpawnAndRegister(iEventType, iMonsterClass, iMapNum
 ---@param iX2 integer Spawn area end X
 ---@param iY2 integer Spawn area end Y
 ---@param iElement integer Elemental attribute (0=none)
+---@parm iDir integer, optional, Spawn direction (-1=random, 0-7: specific direction)
 ---@return table Array of spawned monster indices
-function EventMonsterTracker.SpawnWaveAndRegister(iEventType, iMonsterClass, iCount, iMapNumber, iX1, iY1, iX2, iY2, iElement) end
+function EventMonsterTracker.SpawnWaveAndRegister(iEventType, iMonsterClass, iCount, iMapNumber, iX1, iY1, iX2, iY2, iElement, iDir) end
 
 ---Register existing NPC to tracking
 ---@param iEventType integer Event type ID

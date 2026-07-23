@@ -194,4 +194,8 @@
 	<Element Number="181" Type="4" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="40" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Sapi Queen Destruction AG Reduction" />
 	<Element Number="182" Type="0" SuccessRate="3" ContinuanceTime="3" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="-1" CharacterClass="0" CharacterLevel="0" Name="Swamp of Destruction Monsters Stun" />
 	<Element Number="183" Type="20" SuccessRate="100" ContinuanceTime="0" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Aquila Temple Monster Attack" />
+	<Element Number="185" Type="20" SuccessRate="100" ContinuanceTime="10" IncAndDecType="-1" IncAndDecValue="-1" NullifiedMagic="-1" CharacterClass="0" CharacterLevel="0" Name="Raklion Oblivion Monster Attack" /> 
+	<Element Number="186" Type="18" SuccessRate="100" ContinuanceTime="0" IncAndDecType="0" IncAndDecValue="-1" NullifiedMagic="-1" CharacterClass="0" CharacterLevel="0" Name="Raklion Oblivion Monster Blow Attack" />
+	<Element Number="187" Type="3" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="650" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Raklion Oblivion Mana Reduction" />
+	<Element Number="188" Type="4" SuccessRate="100" ContinuanceTime="0" IncAndDecType="12" IncAndDecValue="50" NullifiedMagic="300" CharacterClass="0" CharacterLevel="0" Name="Raklion Oblivion AG Reduction" />
 </MonsterSkill>

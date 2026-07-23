@@ -56,7 +56,8 @@
 //
 //	Name: Name of the skill, used for logging and in-file description purpose
 //
-// STRICTLY NO COMMENTS INSIDE TAGS-->
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
 <MasterSkillTree MaxSkillLevel="20">
 	<Class ID="1">
 		<Tree Type="0">
@@ -266,11 +267,9 @@
 			<Skill Index="64" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="428" ValueType="0" Name="Summoned Monster Power Up(3)" />
 			<Skill Index="65" ReqMinPoint="1" MaxPoint="20" ParentSkill1="426" ParentSkill2="0" MagicNumber="429" ValueType="1" Name="Party Healing Strengthener" />
 			<Skill Index="66" ReqMinPoint="10" MaxPoint="10" ParentSkill1="0" ParentSkill2="0" MagicNumber="430" ValueType="0" Name="Bless" />
-			<Skill Index="67" ReqMinPoint="10" MaxPoint="10" ParentSkill1="0" ParentSkill2="0" MagicNumber="427" ValueType="0" Name="Poison Arrow" />
 			<Skill Index="68" ReqMinPoint="10" MaxPoint="10" ParentSkill1="428" ParentSkill2="0" MagicNumber="432" ValueType="0" Name="Summon Satyros" />
 			<Skill Index="69" ReqMinPoint="10" MaxPoint="10" ParentSkill1="0" ParentSkill2="0" MagicNumber="651" ValueType="0" Name="Shadow Step" />
 			<Skill Index="70" ReqMinPoint="1" MaxPoint="20" ParentSkill1="430" ParentSkill2="0" MagicNumber="433" ValueType="1" Name="Bless Strengthener" />
-			<Skill Index="71" ReqMinPoint="1" MaxPoint="20" ParentSkill1="427" ParentSkill2="0" MagicNumber="434" ValueType="1" Name="Poison Arrow Strengthener" />
 			<Skill Index="72" ReqMinPoint="10" MaxPoint="10" ParentSkill1="0" ParentSkill2="0" MagicNumber="652" ValueType="0" Name="Evasion" />
 		</Tree>
 		<Tree Type="2">

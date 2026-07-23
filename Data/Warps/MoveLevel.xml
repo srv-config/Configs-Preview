@@ -95,4 +95,5 @@
 	<Move Level="1500" MapNumber="143" StartX="1" StartY="1" EndX="255" EndY="255" Name="Kardamahal Underground Temple" />
 	<Move Level="1550" MapNumber="144" StartX="1" StartY="1" EndX="255" EndY="255" Name="Swamp of Destruction" />
 	<Move Level="1600" MapNumber="145" StartX="1" StartY="1" EndX="255" EndY="255" Name="Aquila's Temple" />
+	<Move Level="1650" MapNumber="146" StartX="1" StartY="1" EndX="255" EndY="255" Name="Forgotten Raklion" />
 </MoveSettings>

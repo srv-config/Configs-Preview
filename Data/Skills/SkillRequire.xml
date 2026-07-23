@@ -20,7 +20,6 @@
 	<Skill Index="724" ItemGroup="12" ItemIndex="290" ReqIndex="2" ReqMasterSkillIndex="390" ReqMasterPoint="10" />
 	<Skill Index="725" ItemGroup="12" ItemIndex="291" ReqIndex="2" ReqMasterSkillIndex="390" ReqMasterPoint="10" />
 	<Skill Index="726" ItemGroup="12" ItemIndex="292" ReqIndex="9" ReqMasterSkillIndex="385" ReqMasterPoint="10" />
-	<Skill Index="727" ItemGroup="12" ItemIndex="293" ReqIndex="24" ReqMasterSkillIndex="418" ReqMasterPoint="10" />
 	<!-- <Skill Index="728" ItemGroup="12" ItemIndex="294" ReqIndex="24" ReqMasterSkillIndex="418" ReqMasterPoint="10" /> -->
 	<Skill Index="729" ItemGroup="12" ItemIndex="295" ReqIndex="215" ReqMasterSkillIndex="455" ReqMasterPoint="10" />
 	<Skill Index="730" ItemGroup="12" ItemIndex="296" ReqIndex="215" ReqMasterSkillIndex="455" ReqMasterPoint="10" />

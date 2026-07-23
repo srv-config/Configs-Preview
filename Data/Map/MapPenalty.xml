@@ -41,4 +41,5 @@
 	<Map Number="143" PenaltyLevel="1550" /> <!-- Kardamahal Underground Temple -->
 	<Map Number="144" PenaltyLevel="1600" /> <!-- Swamp of Destruction -->
 	<Map Number="145" PenaltyLevel="1650" /> <!-- Aquila's Temple -->
+	<Map Number="146" PenaltyLevel="1700" /> <!-- Raklion of Oblivion -->
 </MapPenalty>

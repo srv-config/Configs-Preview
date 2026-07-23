@@ -1,7 +1,7 @@
 -- // ============================================================
 -- // == INTERNATIONAL GAMING CENTER NETWORK
 -- // == www.igcn.mu
--- // == (C) 2010-2024 IGC-Network (R)
+-- // == (C) 2010-2026 IGC-Network (R)
 -- // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- // == File is a part of IGCN Group MuOnline Server files.
 -- // ============================================================
@@ -12,21 +12,22 @@
 -- SkillID refers to Index of skill in \Data\Skills\SkillList.txt
 
 -- Character Classes
-CLASS_WIZARD                                          = 0
-CLASS_KNIGHT                                          = 1
-CLASS_ELF                                             = 2
-CLASS_GLADIATOR                                       = 3
-CLASS_DARKLORD                                        = 4
-CLASS_SUMMONER                                        = 5
-CLASS_RAGEFIGHTER                                     = 6
-CLASS_GROWLANCER									  = 7
-CLASS_RUNEWIZARD									  = 8
-CLASS_SLAYER									  	  = 9
-CLASS_GUNCRUSHER									  = 10
-CLASS_LIGHTWIZARD									  = 11
-CLASS_LEMURIAMAGE									  = 12
-CLASS_ILLUSIONKNIGHT								  = 13
-CLASS_ALCHEMIST										  = 14
+CLASS_WIZARD = 0
+CLASS_KNIGHT = 1
+CLASS_ELF = 2
+CLASS_GLADIATOR = 3
+CLASS_DARKLORD = 4
+CLASS_SUMMONER = 5
+CLASS_RAGEFIGHTER = 6
+CLASS_GROWLANCER = 7
+CLASS_RUNEWIZARD = 8
+CLASS_SLAYER = 9
+CLASS_GUNCRUSHER = 10
+CLASS_LIGHTWIZARD = 11
+CLASS_LEMURIAMAGE = 12
+CLASS_ILLUSIONKNIGHT = 13
+CLASS_ALCHEMIST = 14
+CLASS_CRUSADER = 15
 
 -- SkillID: 2037, Meteor Storm of Gale
 function MeteorStorm_5thEnchant_Wizard(InDamage, Energy)
@@ -118,15 +119,15 @@ function ChaosBlade_5thEnchant_Gladiator(InDamage, Strength, Dexterity, Vitality
     local OutDamage = 0
     
     if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 4) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 5) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;	
+        OutDamage = (InDamage * 0.33)
 	elseif(BarrageCount == 6) then -- Explosion
 		OutDamage = 10000
     end
@@ -138,15 +139,15 @@ function HavokSpear_5thEnchant_Gladiator(InDamage, Strength, Dexterity, Vitality
     local OutDamage = 0
     
     if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 4) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 5) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;		
+        OutDamage = (InDamage * 0.33)
 	elseif(BarrageCount == 6) then -- Explosion
 		OutDamage = 10000
     end
@@ -255,18 +256,18 @@ function BurstingFlare_5thEnchant_GunCrusher(InDamage, Strength, Dexterity, Vita
 	local OutDamage = 0
 
     if (IsShockwave == 1) then
-        OutDamage = (InDamage * 1.5) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+        OutDamage = InDamage * 1.5
         return OutDamage
     end
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 4) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	end
 	
 	return OutDamage
@@ -277,13 +278,13 @@ function UltimateForce_5thEnchant_LemuriaMage(InDamage, Strength, Dexterity, Vit
 	local OutDamage = 0
 	
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 4) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	end
 	
 	return OutDamage

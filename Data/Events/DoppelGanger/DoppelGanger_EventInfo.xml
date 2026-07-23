@@ -95,15 +95,15 @@
 	<EntryLevel>
 		<Room Number="0" MinLevel="50"  MaxLevel="399" />
 		<Room Number="1" MinLevel="400" MaxLevel="799" />
-		<Room Number="2" MinLevel="800" MaxLevel="999" />
-		<Room Number="3" MinLevel="1000" MaxLevel="1199" />
-		<Room Number="4" MinLevel="1200" MaxLevel="1399" />
-		<Room Number="5" MinLevel="1400" MaxLevel="1599" />
-		<Room Number="6" MinLevel="1600" MaxLevel="MAX" />
+		<Room Number="2" MinLevel="800" MaxLevel="1099" />
+		<Room Number="3" MinLevel="1100" MaxLevel="1299" />
+		<Room Number="4" MinLevel="1300" MaxLevel="1499" />
+		<Room Number="5" MinLevel="1500" MaxLevel="1699" />
+		<Room Number="6" MinLevel="1700" MaxLevel="MAX" />
 	</EntryLevel>
 
 	<Room Number="0" RewardExp="60000">
-		<Monster LevelMultiplier="2.2" HPMultiplier="4.1" DamageMultiplier="1.43" DefenseMultiplier="1.8" />
+		<Monster LevelMultiplier="1.06" HPMultiplier="1.46" DamageMultiplier="1.02" DefenseMultiplier="1.03" />
 		<InterimChest SuccessRate="400">
 			<Chest Number="1" EventBagID="1200" BagUseCount="1" Rate="476192" />
 			<Chest Number="2" EventBagID="1201" BagUseCount="1" Rate="476188" />
@@ -119,7 +119,7 @@
 		</FinalChest>
 	</Room>
 	<Room Number="1" RewardExp="100000">
-		<Monster LevelMultiplier="3.93" HPMultiplier="13.2" DamageMultiplier="3.91" DefenseMultiplier="4.65" />
+		<Monster LevelMultiplier="1.53" HPMultiplier="5.39" DamageMultiplier="4.62" DefenseMultiplier="2.09" />
 		<InterimChest SuccessRate="400">
 			<Chest Number="1" EventBagID="1200" BagUseCount="1" Rate="476192" />
 			<Chest Number="2" EventBagID="1201" BagUseCount="1" Rate="476188" />
@@ -135,7 +135,7 @@
 		</FinalChest>
 	</Room>
 	<Room Number="2" RewardExp="130000">
-		<Monster LevelMultiplier="5.25" HPMultiplier="22.8" DamageMultiplier="5.68" DefenseMultiplier="8" />
+		<Monster LevelMultiplier="5.19" HPMultiplier="30.50" DamageMultiplier="12.45" DefenseMultiplier="18.20" />
 		<InterimChest SuccessRate="400">
 			<Chest Number="1" EventBagID="1200" BagUseCount="1" Rate="476192" />
 			<Chest Number="2" EventBagID="1201" BagUseCount="1" Rate="476188" />
@@ -151,7 +151,7 @@
 		</FinalChest>
 	</Room>
 	<Room Number="3" RewardExp="160000">
-		<Monster LevelMultiplier="5.65" HPMultiplier="31.8" DamageMultiplier="7.38" DefenseMultiplier="9.8" />
+		<Monster LevelMultiplier="6.02" HPMultiplier="55.61" DamageMultiplier="23.39" DefenseMultiplier="22.00" />
 		<InterimChest SuccessRate="400">
 			<Chest Number="1" EventBagID="1200" BagUseCount="1" Rate="476192" />
 			<Chest Number="2" EventBagID="1201" BagUseCount="1" Rate="476188" />
@@ -167,7 +167,7 @@
 		</FinalChest>
 	</Room>
 	<Room Number="4" RewardExp="190000">
-		<Monster LevelMultiplier="6.79" HPMultiplier="38.0" DamageMultiplier="8.48" DefenseMultiplier="11.6" />
+		<Monster LevelMultiplier="9.33" HPMultiplier="172.15" DamageMultiplier="67.89" DefenseMultiplier="35.79" />
 		<InterimChest SuccessRate="400">
 			<Chest Number="1" EventBagID="1200" BagUseCount="1" Rate="476192" />
 			<Chest Number="2" EventBagID="1201" BagUseCount="1" Rate="476188" />
@@ -183,7 +183,7 @@
 		</FinalChest>
 	</Room>
 	<Room Number="5" RewardExp="210000">
-		<Monster LevelMultiplier="6.79" HPMultiplier="49.0" DamageMultiplier="11.38" DefenseMultiplier="16.7" />
+		<Monster LevelMultiplier="11.74" HPMultiplier="235.21" DamageMultiplier="87.30" DefenseMultiplier="45.64" />
 		<InterimChest SuccessRate="400">
 			<Chest Number="1" EventBagID="1200" BagUseCount="1" Rate="476192" />
 			<Chest Number="2" EventBagID="1201" BagUseCount="1" Rate="476188" />
@@ -199,7 +199,7 @@
 		</FinalChest>
 	</Room>
 	<Room Number="6" RewardExp="240000">
-		<Monster LevelMultiplier="6.79" HPMultiplier="59.0" DamageMultiplier="13.82" DefenseMultiplier="21.2" />
+		<Monster LevelMultiplier="14.21" HPMultiplier="277.25" DamageMultiplier="97.19" DefenseMultiplier="56.65" />
 		<InterimChest SuccessRate="400">
 			<Chest Number="1" EventBagID="1200" BagUseCount="1" Rate="476192" />
 			<Chest Number="2" EventBagID="1201" BagUseCount="1" Rate="476188" />

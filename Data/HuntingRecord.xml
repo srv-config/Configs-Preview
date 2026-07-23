@@ -91,6 +91,7 @@
 		<Map Index="143" Name="Kardamahal Underground Temple" />
 		<Map Index="144" Name="Swamp of Destruction" />
 		<Map Index="145" Name="Aquila's Temple" />
+		<Map Index="146" Name="Raklion of Oblivion" />
 	</MapIncluded>
 	<MonstersExcluded> <!-- Monsters excluded from hunting records -->
 		<Monster Index="413" Name="Gold Rabbit" />

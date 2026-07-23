@@ -184,4 +184,6 @@
 	<Unit Number="171" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="3" Delay="300" ElementSlot0="183" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Aquila Warrior Attack" />
 	<Unit Number="172" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="6" Delay="300" ElementSlot0="183" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Aquila Gunner Attack" />
 	<Unit Number="173" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="6" Delay="300" ElementSlot0="183" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Aquila Magician Attack" />
+	<Unit Number="175" TargetType="1" ScopeType="0" ScopeAngle="-1" ScopeValue="2" Delay="300" ElementSlot0="185" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Giant of Oblivion Attack" />
+	<Unit Number="176" TargetType="1" ScopeType="-1" ScopeAngle="-1" ScopeValue="0" Delay="300" ElementSlot0="186" ElementSlot1="187" ElementSlot2="188" ElementSlot3="-1" ElementSlot4="-1" Name="Iron Knight of Oblivion Attack" />
 </MonsterSkill>

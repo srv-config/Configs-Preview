@@ -37,7 +37,7 @@
 	<Item SetOptionID="338" Cat1="0" Index1="134" Cat2="6" Index2="83" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="339" Cat1="4" Index1="69" Cat2="4" Index2="69" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="340" Cat1="5" Index1="157" Cat2="5" Index2="154" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
-	<Item SetOptionID="341" Cat1="5" Index1="155" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="341" Cat1="5" Index1="155" Cat2="6" Index2="130" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="342" Cat1="0" Index1="133" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 <!-- Grade 2 -->
 	<Item SetOptionID="342" Cat1="0" Index1="133" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
@@ -58,7 +58,8 @@
 	<Item SetOptionID="356" Cat1="0" Index1="141" Cat2="6" Index2="115" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="357" Cat1="4" Index1="72" Cat2="4" Index2="72" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="358" Cat1="5" Index1="166" Cat2="5" Index2="163" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
-	<Item SetOptionID="359" Cat1="5" Index1="164" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="359" Cat1="5" Index1="164" Cat2="6" Index2="131" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="360" Cat1="0" Index1="140" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="361" Cat1="5" Index1="167" Cat2="5" Index2="168" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="375" Cat1="2" Index1="71" Cat2="6" Index2="113" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 </LegendaryItemSetType>

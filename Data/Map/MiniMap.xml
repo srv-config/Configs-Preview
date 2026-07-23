@@ -424,6 +424,7 @@
 		<Tag Id="0" MapNumber="57" X="224" Y="214" Name="Devias Entrance" />
 		<Tag Id="1" MapNumber="57" X="169" Y="22" Name="Hatchery Entrance" />
 		<Tag Id="2" MapNumber="57" X="210" Y="226" Name="Nixie Lake Entrance" />
+		<Tag Id="3" MapNumber="57" X="230" Y="150" Name="Raklion of Oblivion Entrance" />
 	<!-- Vulcanus -->
 		<Tag Id="0" MapNumber="63" X="33" Y="15" Name="Volcano Ignis Entrance" />
 	<!-- Karutan 1 -->
@@ -615,5 +616,7 @@
 		<Tag Id="0" MapNumber="144" X="101" Y="125" Name="Swamp of Calmness Entrance" />
 	<!-- Aquila's Temple -->
 		<Tag Id="0" MapNumber="145" X="112" Y="66" Name="Kanturu Ruins Entrance" />
+	<!-- Aquila's Temple -->
+		<Tag Id="0" MapNumber="146" X="130" Y="19" Name="Raklion Entrance" />
 	</TypeTwo>
 </MiniMapObjects>

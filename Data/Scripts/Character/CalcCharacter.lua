@@ -988,7 +988,7 @@ function CalcAbilityGauge(Class, Strength, Dexterity, Vitality, Energy, Leadersh
 	elseif(Class == CLASS_ELF) then
 		AG = (Strength * 0.3) + (Dexterity * 0.2) + (Vitality * 0.3) + (Energy * 0.2)
 	elseif(Class == CLASS_GLADIATOR) then
-		AG = (Strength * 0.2) + (Dexterity * 0.25) + (Vitality * 0.3) + (Energy * 0.15)
+		AG = (Strength * 0.2) + (Dexterity * 0.25) + (Vitality * 0.3) + (Energy * 0.3)
 	elseif(Class == CLASS_DARKLORD) then
 		AG = (Strength * 0.3) + (Dexterity * 0.2) + (Vitality * 0.1) + (Energy * 0.15) + (Leadership * 0.3)
 	elseif(Class == CLASS_SUMMONER) then
@@ -1152,3 +1152,17 @@ function ExtraDamageAttack(Type, Class, TargetType, TargetClass, InExtraDamage, 
 	return OutDamage
 end
 
+-- Magic Gladiator Combat Power Increase for skills based on Energy when attacking with Staff
+-- For Combat Power formula for skills based on Strength/Agiliy when attacking with Swords refer to FormulaData.xml, CombatPower section, ID 26
+function GladiatorChaosAttackPowerCalc(Strength, Dexterity, Vitality, Energy)
+	local ChaosAttackPower = 120 + (Strength / 20) + (Dexterity / 20)
+	
+	return ChaosAttackPower
+end
+
+-- Illusion Knight Illusion Attack Power formula
+function IllusionKnightIllusionAttackPowerCalc(Strength, Dexterity, Vitality, Energy)
+	local IllusionAttackPower = 200 + (Strength / 30) + (Dexterity + 30)
+	
+	return IllusionAttackPower
+end

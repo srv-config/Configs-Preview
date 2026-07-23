@@ -1,7 +1,7 @@
 -- // ============================================================
 -- // == INTERNATIONAL GAMING CENTER NETWORK
 -- // == www.igcn.mu
--- // == (C) 2010-2023 IGC-Network (R)
+-- // == (C) 2010-2026 IGC-Network (R)
 -- // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- // == File is a part of IGCN Group MuOnline Server files.
 -- // ============================================================
@@ -61,7 +61,7 @@ function FireBlow_4thEnchant_Knight(InDamage, Strength, Dexterity, Vitality, Ene
 end
 
 function FireBlood_4thEnchant_Gladiator(InDamage, Strength, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 	local SuccessRate = 6
 	local DebuffDamage = Strength / 10
 	local DebuffTime = 10
@@ -70,7 +70,7 @@ function FireBlood_4thEnchant_Gladiator(InDamage, Strength, Energy)
 end
 
 function IceBlood_4thEnchant_Gladiator(InDamage, Strength, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 	local SuccessRate = 6
 	local DebuffTime = 10
 	
@@ -78,7 +78,7 @@ function IceBlood_4thEnchant_Gladiator(InDamage, Strength, Energy)
 end
 
 function FireSlash_4thEnchant_Gladiator(InDamage, Strength, Energy, BarrageCount)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 	
 	if (BarrageCount == 1) then
 		OutDamage = OutDamage * 0.15
@@ -266,13 +266,13 @@ function ChaosBlade_4thEnchant_Gladiator(InDamage, Strength, Dexterity, Vitality
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 4) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;		
+		OutDamage = (InDamage * 0.33)
 	elseif(BarrageCount == 5) then -- Explosion
 		OutDamage = 10000
 	end
@@ -284,13 +284,13 @@ function HavokSpear_4thEnchant_Gladiator(InDamage, Strength, Dexterity, Vitality
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.33)
 	elseif (BarrageCount == 4) then
-		OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;		
+		OutDamage = (InDamage * 0.33)	
 	elseif(BarrageCount == 5) then -- Explosion
 		OutDamage = 10000
 	end
@@ -405,16 +405,14 @@ end
 
 -- SkillID: 1211, Dark Plasma Enhancement Skill
 function DarkPlasma_4thEnchant_GunCrusher(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	OutDamage = InDamage * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 1212, Ice Blast Enhancement Skill
 function IceBlast_4thEnchant_GunCrusher(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	OutDamage = InDamage * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+	local OutDamage = InDamage
 	
 	return OutDamage
 end
@@ -424,16 +422,16 @@ function BurstingFlare_4thEnchant_GunCrusher(InDamage, Strength, Dexterity, Vita
 	local OutDamage = 0
 
 	if (IsShockwave == 1) then
-		OutDamage = (InDamage * 1.5) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage * 1.5
 		return OutDamage
 	end
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	end
 	
 	return OutDamage
@@ -456,18 +454,14 @@ end
 
 -- SkillID: 1217, Marvel Burst Enhancement Skill
 function LemuriaMageMarvelBurst_4thEnchant_Calc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 	
 	return OutDamage
 end
 
 -- SkillID: 1218, Unleash Marvel Enhancement Skill
 function LemuriaMageUnleashMarvel_4thEnchant_Calc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 	
 	return OutDamage
 end
@@ -477,11 +471,11 @@ function LemuriaMageUltimateForce_4thEnchant_Calc(InDamage, Strength, Dexterity,
 	local OutDamage = 0
 	
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	end
 	
 	return OutDamage

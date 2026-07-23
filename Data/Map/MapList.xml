@@ -173,6 +173,7 @@
 		<Map Number="143" File="143_Kardamahal_Underground_Temple.att" />
 		<Map Number="144" File="144_SwampOfDestruction.att" />
 		<Map Number="145" File="145_AquilasTemple.att" />
+		<Map Number="146" File="146_RaklionOfOblivion.att" />
 	</DefaultMaps>
 	
 	<CrywolfEventAttr>

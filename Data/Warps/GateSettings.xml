@@ -129,34 +129,34 @@
 	<Gate Index="92" Flag="0" MapNumber="28" StartX="10" StartY="16" EndX="17" EndY="22" Target="0" Direction="0" MinLevel="281" GoToGate="-2" Name="Warp: Kalima 5" />
 	<Gate Index="93" Flag="0" MapNumber="29" StartX="10" StartY="16" EndX="17" EndY="22" Target="0" Direction="0" MinLevel="331" GoToGate="-2" Name="Warp: Kalima 6" />
 	<Gate Index="116" Flag="0" MapNumber="36" StartX="10" StartY="16" EndX="17" EndY="22" Target="0" Direction="0" MinLevel="350" GoToGate="-2" Name="Warp: Kalima 7" />
-	<Gate Index="94" Flag="0" MapNumber="30" StartX="88" StartY="31" EndX="102" EndY="46" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley Of Loren" />
-	<Gate Index="96" Flag="1" MapNumber="30" StartX="93" StartY="242" EndX="95" EndY="243" Target="97" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Valley Of Loren to Valley Of Loren" />
+	<Gate Index="94" Flag="0" MapNumber="30" StartX="88" StartY="31" EndX="102" EndY="46" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley of Loren" />
+	<Gate Index="96" Flag="1" MapNumber="30" StartX="93" StartY="242" EndX="95" EndY="243" Target="97" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Valley of Loren to Valley of Loren" />
 	<Gate Index="97" Flag="2" MapNumber="30" StartX="164" StartY="198" EndX="187" EndY="209" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Target for Gate 96" />
-	<Gate Index="98" Flag="1" MapNumber="30" StartX="160" StartY="203" EndX="161" EndY="205" Target="99" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Valley Of Loren to Valley Of Loren" />
+	<Gate Index="98" Flag="1" MapNumber="30" StartX="160" StartY="203" EndX="161" EndY="205" Target="99" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Valley of Loren to Valley of Loren" />
 	<Gate Index="99" Flag="2" MapNumber="30" StartX="90" StartY="236" EndX="99" EndY="239" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Target for Gate 98" />
-	<Gate Index="100" Flag="0" MapNumber="30" StartX="39" StartY="14" EndX="142" EndY="50" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley Of Loren" />
-	<Gate Index="105" Flag="0" MapNumber="30" StartX="72" StartY="10" EndX="104" EndY="199" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley Of Loren" />
-	<Gate Index="101" Flag="0" MapNumber="30" StartX="84" StartY="180" EndX="100" EndY="222" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley Of Loren" />
-	<Gate Index="104" Flag="0" MapNumber="30" StartX="87" StartY="209" EndX="100" EndY="232" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley Of Loren" />
-	<Gate Index="106" Flag="0" MapNumber="30" StartX="131" StartY="94" EndX="138" EndY="92" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley Of Loren" />
-	<Gate Index="109" Flag="1" MapNumber="31" StartX="59" StartY="7" EndX="63" EndY="8" Target="110" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Land Of Trials to Valley Of Loren" />
+	<Gate Index="100" Flag="0" MapNumber="30" StartX="39" StartY="14" EndX="142" EndY="50" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley of Loren" />
+	<Gate Index="105" Flag="0" MapNumber="30" StartX="72" StartY="10" EndX="104" EndY="199" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley of Loren" />
+	<Gate Index="101" Flag="0" MapNumber="30" StartX="84" StartY="180" EndX="100" EndY="222" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley of Loren" />
+	<Gate Index="104" Flag="0" MapNumber="30" StartX="87" StartY="209" EndX="100" EndY="232" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley of Loren" />
+	<Gate Index="106" Flag="0" MapNumber="30" StartX="131" StartY="94" EndX="138" EndY="92" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Valley of Loren" />
+	<Gate Index="109" Flag="1" MapNumber="31" StartX="59" StartY="7" EndX="63" EndY="8" Target="110" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Land of Trials to Valley of Loren" />
 	<Gate Index="110" Flag="2" MapNumber="30" StartX="131" StartY="94" EndX="138" EndY="92" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Target for Gate 109" />
-	<Gate Index="102" Flag="1" MapNumber="0" StartX="239" StartY="14" EndX="240" EndY="15" Target="103" Direction="0" MinLevel="10" GoToGate="-1" Name="Move: Lorencia to Valley Of Loren" />
+	<Gate Index="102" Flag="1" MapNumber="0" StartX="239" StartY="14" EndX="240" EndY="15" Target="103" Direction="0" MinLevel="10" GoToGate="-1" Name="Move: Lorencia to Valley of Loren" />
 	<Gate Index="103" Flag="2" MapNumber="30" StartX="29" StartY="42" EndX="30" EndY="37" Target="0" Direction="0" MinLevel="10" GoToGate="-2" Name="Target for Gate 102" />
-	<Gate Index="107" Flag="1" MapNumber="30" StartX="28" StartY="40" EndX="28" EndY="41" Target="108" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Valley Of Loren to Lorencia" />
+	<Gate Index="107" Flag="1" MapNumber="30" StartX="28" StartY="40" EndX="28" EndY="41" Target="108" Direction="0" MinLevel="0" GoToGate="-2" Name="Move: Valley of Loren to Lorencia" />
 	<Gate Index="108" Flag="2" MapNumber="0" StartX="235" StartY="13" EndX="239" EndY="13" Target="0" Direction="0" MinLevel="0" GoToGate="-1" Name="Target for Gate 107" />
 	<Gate Index="111" Flag="0" MapNumber="32" StartX="133" StartY="91" EndX="141" EndY="99" Target="0" Direction="0" MinLevel="10" GoToGate="-2" Name="Warp: Devil Square 5 - 8" />
 	<Gate Index="112" Flag="0" MapNumber="32" StartX="135" StartY="162" EndX="142" EndY="170" Target="0" Direction="0" MinLevel="10" GoToGate="-2" Name="Warp: Devil Square 5 - 8" />
-	<Gate Index="95" Flag="0" MapNumber="31" StartX="60" StartY="10" EndX="69" EndY="19" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Land Of Trials" />
+	<Gate Index="95" Flag="0" MapNumber="31" StartX="60" StartY="10" EndX="69" EndY="19" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Land of Trials" />
 	<Gate Index="120" Flag="1" MapNumber="3" StartX="220" StartY="30" EndX="226" EndY="30" Target="113" Direction="0" MinLevel="150" GoToGate="-1" Name="Move: Noria to Aida" />
 	<Gate Index="113" Flag="2" MapNumber="33" StartX="76" StartY="9" EndX="78" EndY="16" Target="0" Direction="0" MinLevel="10" GoToGate="119" Name="Target for Gate 120" />
 	<Gate Index="121" Flag="1" MapNumber="33" StartX="74" StartY="9" EndX="74" EndY="13" Target="122" Direction="0" MinLevel="10" GoToGate="-1" Name="Move: Aida to Noria" />
 	<Gate Index="122" Flag="2" MapNumber="3" StartX="220" StartY="31" EndX="226" EndY="34" Target="0" Direction="0" MinLevel="10" GoToGate="-1" Name="Target for Gate 121" />
 	<Gate Index="119" Flag="0" MapNumber="33" StartX="82" StartY="8" EndX="87" EndY="14" Target="0" Direction="0" MinLevel="150" GoToGate="-1" Name="Warp: Aida" />
 	<Gate Index="140" Flag="0" MapNumber="33" StartX="186" StartY="173" EndX="190" EndY="177" Target="0" Direction="0" MinLevel="380" GoToGate="-1" Name="Warp: Aida" />
-	<Gate Index="117" Flag="1" MapNumber="30" StartX="161" StartY="37" EndX="165" EndY="45" Target="114" Direction="0" MinLevel="10" GoToGate="-2" Name="Move: Valley Of Loren to Crywolf" />
+	<Gate Index="117" Flag="1" MapNumber="30" StartX="161" StartY="37" EndX="165" EndY="45" Target="114" Direction="0" MinLevel="10" GoToGate="-2" Name="Move: Valley of Loren to Crywolf" />
 	<Gate Index="114" Flag="2" MapNumber="34" StartX="231" StartY="37" EndX="234" EndY="45" Target="0" Direction="0" MinLevel="10" GoToGate="-2" Name="Target for Gate 117" />
-	<Gate Index="123" Flag="1" MapNumber="34" StartX="239" StartY="40" EndX="240" EndY="44" Target="124" Direction="0" MinLevel="10" GoToGate="-2" Name="Move: Crywolf to Valley Of Loren" />
+	<Gate Index="123" Flag="1" MapNumber="34" StartX="239" StartY="40" EndX="240" EndY="44" Target="124" Direction="0" MinLevel="10" GoToGate="-2" Name="Move: Crywolf to Valley of Loren" />
 	<Gate Index="124" Flag="2" MapNumber="30" StartX="155" StartY="37" EndX="158" EndY="43" Target="0" Direction="0" MinLevel="10" GoToGate="-2" Name="Target for Gate 123" />
 	<Gate Index="118" Flag="0" MapNumber="34" StartX="229" StartY="37" EndX="239" EndY="46" Target="0" Direction="0" MinLevel="10" GoToGate="-2" Name="Warp: Crywolf" />
 	<Gate Index="125" Flag="1" MapNumber="8" StartX="6" StartY="199" EndX="6" EndY="201" Target="126" Direction="0" MinLevel="160" GoToGate="-1" Name="Move: Tarkan to Kanturu" />
@@ -210,19 +210,19 @@
 	<Gate Index="270" Flag="0" MapNumber="32" StartX="62" StartY="150" EndX="70" EndY="158" Target="0" Direction="0" MinLevel="10" GoToGate="-2" Name="Warp: Devil Square 5 - 8" />
 	<Gate Index="271" Flag="0" MapNumber="52" StartX="12" StartY="5" EndX="14" EndY="10" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Blood Castle 8" />
 	<Gate Index="272" Flag="0" MapNumber="53" StartX="31" StartY="88" EndX="36" EndY="95" Target="0" Direction="0" MinLevel="0" GoToGate="-2" Name="Warp: Chaos Castle 7" />
-	<Gate Index="273" Flag="0" MapNumber="56" StartX="135" StartY="105" EndX="142" EndY="111" Target="0" Direction="0" MinLevel="380" GoToGate="273" Name="Warp: Swamp Of Calmness" />
-	<Gate Index="274" Flag="1" MapNumber="56" StartX="139" StartY="125" EndX="139" EndY="126" Target="275" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
+	<Gate Index="273" Flag="0" MapNumber="56" StartX="135" StartY="105" EndX="142" EndY="111" Target="0" Direction="0" MinLevel="380" GoToGate="273" Name="Warp: Swamp of Calmness" />
+	<Gate Index="274" Flag="1" MapNumber="56" StartX="139" StartY="125" EndX="139" EndY="126" Target="275" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
 	<Gate Index="275" Flag="2" MapNumber="56" StartX="189" StartY="190" EndX="191" EndY="193" Target="0" Direction="0" MinLevel="380" GoToGate="-1" Name="Target for Gate 274" />
-	<Gate Index="276" Flag="1" MapNumber="56" StartX="185" StartY="187" EndX="186" EndY="188" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
-	<Gate Index="277" Flag="1" MapNumber="56" StartX="149" StartY="109" EndX="150" EndY="109" Target="278" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
+	<Gate Index="276" Flag="1" MapNumber="56" StartX="185" StartY="187" EndX="186" EndY="188" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
+	<Gate Index="277" Flag="1" MapNumber="56" StartX="149" StartY="109" EndX="150" EndY="109" Target="278" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
 	<Gate Index="278" Flag="2" MapNumber="56" StartX="204" StartY="10" EndX="206" EndY="14" Target="0" Direction="0" MinLevel="380" GoToGate="-1" Name="Target for Gate 277" />
-	<Gate Index="279" Flag="1" MapNumber="56" StartX="197" StartY="12" EndX="197" EndY="14" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
-	<Gate Index="280" Flag="1" MapNumber="56" StartX="139" StartY="95" EndX="140" EndY="95" Target="281" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
+	<Gate Index="279" Flag="1" MapNumber="56" StartX="197" StartY="12" EndX="197" EndY="14" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
+	<Gate Index="280" Flag="1" MapNumber="56" StartX="139" StartY="95" EndX="140" EndY="95" Target="281" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
 	<Gate Index="281" Flag="2" MapNumber="56" StartX="65" StartY="47" EndX="67" EndY="48" Target="0" Direction="0" MinLevel="380" GoToGate="-1" Name="Target for Gate 280" />
-	<Gate Index="282" Flag="1" MapNumber="56" StartX="68" StartY="52" EndX="69" EndY="53" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
-	<Gate Index="283" Flag="1" MapNumber="56" StartX="124" StartY="109" EndX="124" EndY="110" Target="284" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
+	<Gate Index="282" Flag="1" MapNumber="56" StartX="68" StartY="52" EndX="69" EndY="53" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
+	<Gate Index="283" Flag="1" MapNumber="56" StartX="124" StartY="109" EndX="124" EndY="110" Target="284" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
 	<Gate Index="284" Flag="2" MapNumber="56" StartX="62" StartY="174" EndX="63" EndY="179" Target="0" Direction="0" MinLevel="380" GoToGate="-1" Name="Target for Gate 283" />
-	<Gate Index="285" Flag="1" MapNumber="56" StartX="57" StartY="176" EndX="57" EndY="177" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp Of Calmness" />
+	<Gate Index="285" Flag="1" MapNumber="56" StartX="57" StartY="176" EndX="57" EndY="177" Target="273" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Calmness" />
 	<Gate Index="286" Flag="1" MapNumber="2" StartX="52" StartY="90" EndX="54" EndY="91" Target="287" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Devias to Raklion" />
 	<Gate Index="287" Flag="0" MapNumber="57" StartX="222" StartY="211" EndX="225" EndY="212" Target="0" Direction="0" MinLevel="380" GoToGate="287" Name="Warp: Raklion" />
 	<Gate Index="288" Flag="1" MapNumber="57" StartX="223" StartY="215" EndX="225" EndY="215" Target="289" Direction="0" MinLevel="380" GoToGate="-1" Name="Move: Raklion to Devias" />
@@ -489,30 +489,30 @@
 	<Gate Index="564" Flag="0" MapNumber="119" StartX="125" StartY="119" EndX="126" EndY="120" Target="0" Direction="0" MinLevel="780" GoToGate="-1" Name="Warp: DeepDungeon 4" />
 	<Gate Index="565" Flag="0" MapNumber="120" StartX="126" StartY="119" EndX="127" EndY="120" Target="0" Direction="0" MinLevel="780" GoToGate="-1" Name="Warp: DeepDungeon 5" />
 	<Gate Index="566" Flag="0" MapNumber="0" StartX="138" StartY="120" EndX="139" EndY="121" Target="0" Direction="0" MinLevel="0" GoToGate="-1" Name="Warp: Lorencia" />
-	<Gate Index="567" Flag="0" MapNumber="122" StartX="128" StartY="110" EndX="140" EndY="125" Target="0" Direction="0" MinLevel="800" GoToGate="567" Name="Warp: Swamp Of Darkness" />
-	<Gate Index="568" Flag="1" MapNumber="122" StartX="126" StartY="128" EndX="127" EndY="129" Target="569" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="567" Flag="0" MapNumber="122" StartX="128" StartY="110" EndX="140" EndY="125" Target="0" Direction="0" MinLevel="800" GoToGate="567" Name="Warp: Swamp of Darkness" />
+	<Gate Index="568" Flag="1" MapNumber="122" StartX="126" StartY="128" EndX="127" EndY="129" Target="569" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="569" Flag="2" MapNumber="122" StartX="103" StartY="159" EndX="104" EndY="160" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 568" />
-	<Gate Index="570" Flag="1" MapNumber="122" StartX="107" StartY="154" EndX="108" EndY="155" Target="571" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="570" Flag="1" MapNumber="122" StartX="107" StartY="154" EndX="108" EndY="155" Target="571" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="571" Flag="2" MapNumber="122" StartX="128" StartY="125" EndX="129" EndY="126" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 570" />
-	<Gate Index="572" Flag="1" MapNumber="122" StartX="148" StartY="111" EndX="148" EndY="113" Target="573" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="572" Flag="1" MapNumber="122" StartX="148" StartY="111" EndX="148" EndY="113" Target="573" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="573" Flag="2" MapNumber="122" StartX="182" StartY="102" EndX="183" EndY="103" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 572" />
-	<Gate Index="574" Flag="1" MapNumber="122" StartX="177" StartY="102" EndX="177" EndY="104" Target="575" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="574" Flag="1" MapNumber="122" StartX="177" StartY="102" EndX="177" EndY="104" Target="575" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="575" Flag="2" MapNumber="122" StartX="142" StartY="112" EndX="143" EndY="113" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 574" />
-	<Gate Index="576" Flag="1" MapNumber="122" StartX="132" StartY="102" EndX="133" EndY="103" Target="577" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="576" Flag="1" MapNumber="122" StartX="132" StartY="102" EndX="133" EndY="103" Target="577" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="577" Flag="2" MapNumber="122" StartX="132" StartY="68" EndX="133" EndY="69" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 576" />
-	<Gate Index="578" Flag="1" MapNumber="122" StartX="133" StartY="73" EndX="135" EndY="73" Target="579" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="578" Flag="1" MapNumber="122" StartX="133" StartY="73" EndX="135" EndY="73" Target="579" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="579" Flag="2" MapNumber="122" StartX="133" StartY="107" EndX="134" EndY="108" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 578" />
-	<Gate Index="580" Flag="1" MapNumber="122" StartX="120" StartY="113" EndX="121" EndY="114" Target="581" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="580" Flag="1" MapNumber="122" StartX="120" StartY="113" EndX="121" EndY="114" Target="581" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="581" Flag="2" MapNumber="122" StartX="88" StartY="104" EndX="89" EndY="105" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 580" />
-	<Gate Index="582" Flag="1" MapNumber="122" StartX="92" StartY="105" EndX="92" EndY="107" Target="583" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="582" Flag="1" MapNumber="122" StartX="92" StartY="105" EndX="92" EndY="107" Target="583" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="583" Flag="2" MapNumber="122" StartX="125" StartY="114" EndX="126" EndY="115" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 582" />
-	<Gate Index="584" Flag="1" MapNumber="122" StartX="142" StartY="128" EndX="144" EndY="129" Target="585" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="584" Flag="1" MapNumber="122" StartX="142" StartY="128" EndX="144" EndY="129" Target="585" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="585" Flag="2" MapNumber="122" StartX="160" StartY="152" EndX="161" EndY="153" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 584" />
-	<Gate Index="586" Flag="1" MapNumber="122" StartX="158" StartY="150" EndX="160" EndY="151" Target="587" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
+	<Gate Index="586" Flag="1" MapNumber="122" StartX="158" StartY="150" EndX="160" EndY="151" Target="587" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
 	<Gate Index="587" Flag="2" MapNumber="122" StartX="139" StartY="125" EndX="140" EndY="126" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Target for Gate 586" />
-	<Gate Index="588" Flag="1" MapNumber="122" StartX="241" StartY="91" EndX="242" EndY="92" Target="590" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
-	<Gate Index="589" Flag="1" MapNumber="122" StartX="12" StartY="158" EndX="13" EndY="158" Target="590" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp Of Darkness to Swamp Of Darkness" />
-	<Gate Index="590" Flag="0" MapNumber="122" StartX="192" StartY="9" EndX="193" EndY="11" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Warp: Swamp Of Darkness" />
+	<Gate Index="588" Flag="1" MapNumber="122" StartX="241" StartY="91" EndX="242" EndY="92" Target="590" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
+	<Gate Index="589" Flag="1" MapNumber="122" StartX="12" StartY="158" EndX="13" EndY="158" Target="590" Direction="0" MinLevel="800" GoToGate="-1" Name="Move: Swamp of Darkness to Swamp of Darkness" />
+	<Gate Index="590" Flag="0" MapNumber="122" StartX="192" StartY="9" EndX="193" EndY="11" Target="0" Direction="0" MinLevel="800" GoToGate="-1" Name="Warp: Swamp of Darkness" />
 	<Gate Index="591" Flag="0" MapNumber="123" StartX="236" StartY="87" EndX="239" EndY="91" Target="0" Direction="0" MinLevel="850" GoToGate="591" Name="Warp: Kubera Mine Area 1" />
 	<Gate Index="592" Flag="1" MapNumber="123" StartX="215" StartY="109" EndX="216" EndY="111" Target="593" Direction="0" MinLevel="850" GoToGate="-1" Name="Move: Kubera Mine Area 1 to Kubera Mine Area 1" />
 	<Gate Index="593" Flag="2" MapNumber="123" StartX="204" StartY="64" EndX="208" EndY="67" Target="0" Direction="0" MinLevel="850" GoToGate="591" Name="Target for Gate 592" />
@@ -539,9 +539,9 @@
 	<Gate Index="614" Flag="1" MapNumber="123" StartX="232" StartY="86" EndX="234" EndY="89" Target="615" Direction="7" MinLevel="850" GoToGate="-1" Name="Move: Kubera Mine Area 1 to Devias" />
 	<Gate Index="615" Flag="2" MapNumber="2" StartX="163" StartY="54" EndX="165" EndY="59" Target="0" Direction="3" MinLevel="850" GoToGate="615" Name="Target for Gate 614" />
 	<Gate Index="616" Flag="0" MapNumber="123" StartX="224" StartY="111" EndX="231" EndY="115" Target="0" Direction="0" MinLevel="850" GoToGate="-1" Name="Warp: Kubera Mine Area 1" />
-	<Gate Index="617" Flag="0" MapNumber="128" StartX="129" StartY="126" EndX="132" EndY="129" Target="0" Direction="0" MinLevel="900" GoToGate="617" Name="Warp: Abyss Of Atlas 1" />
-	<Gate Index="618" Flag="0" MapNumber="129" StartX="128" StartY="124" EndX="131" EndY="127" Target="0" Direction="0" MinLevel="925" GoToGate="618" Name="Warp: Abyss Of Atlas 2" />
-	<Gate Index="619" Flag="0" MapNumber="130" StartX="128" StartY="122" EndX="131" EndY="126" Target="0" Direction="0" MinLevel="950" GoToGate="619" Name="Warp: Abyss Of Atlas 3" />
+	<Gate Index="617" Flag="0" MapNumber="128" StartX="129" StartY="126" EndX="132" EndY="129" Target="0" Direction="0" MinLevel="900" GoToGate="617" Name="Warp: Abyss of Atlas 1" />
+	<Gate Index="618" Flag="0" MapNumber="129" StartX="128" StartY="124" EndX="131" EndY="127" Target="0" Direction="0" MinLevel="925" GoToGate="618" Name="Warp: Abyss of Atlas 2" />
+	<Gate Index="619" Flag="0" MapNumber="130" StartX="128" StartY="122" EndX="131" EndY="126" Target="0" Direction="0" MinLevel="950" GoToGate="619" Name="Warp: Abyss of Atlas 3" />
 	<Gate Index="620" Flag="0" MapNumber="131" StartX="236" StartY="13" EndX="242" EndY="16" Target="0" Direction="0" MinLevel="1000" GoToGate="620" Name="Warp: Scorched Canyon" />
 	<Gate Index="621" Flag="1" MapNumber="131" StartX="196" StartY="25" EndX="198" EndY="27" Target="622" Direction="0" MinLevel="1000" GoToGate="-1" Name="Move: Scorched Canyon to Scorched Canyon" />
 	<Gate Index="622" Flag="2" MapNumber="131" StartX="80" StartY="74" EndX="82" EndY="77" Target="0" Direction="0" MinLevel="1000" GoToGate="-1" Name="Target for Gate 621" />
@@ -636,9 +636,9 @@
 	<Gate Index="711" Flag="1" MapNumber="143" StartX="104" StartY="10" EndX="105" EndY="13" Target="712" Direction="0" MinLevel="1500" GoToGate="-1" Name="Move: Kardamahal Underground Temple to Karutan 1" />
 	<Gate Index="712" Flag="2" MapNumber="80" StartX="214" StartY="18" EndX="216" EndY="20" Target="0" Direction="0" MinLevel="1500" GoToGate="-1" Name="Target for Gate 711" />
 	<Gate Index="713" Flag="0" MapNumber="144" StartX="107" StartY="121" EndX="116" EndY="134" Target="0" Direction="0" MinLevel="1550" GoToGate="713" Name="Warp: Swamp of Destruction" />
-	<Gate Index="714" Flag="1" MapNumber="56" StartX="131" StartY="116" EndX="133" EndY="119" Target="715" Direction="0" MinLevel="1550" GoToGate="-1" Name="Move: Swamp Of Calmness to Swamp of Destruction" />
+	<Gate Index="714" Flag="1" MapNumber="56" StartX="131" StartY="116" EndX="133" EndY="119" Target="715" Direction="0" MinLevel="1550" GoToGate="-1" Name="Move: Swamp of Calmness to Swamp of Destruction" />
 	<Gate Index="715" Flag="2" MapNumber="144" StartX="107" StartY="121" EndX="116" EndY="134" Target="0" Direction="0" MinLevel="1550" GoToGate="-1" Name="Target for Gate 714" />
-	<Gate Index="716" Flag="1" MapNumber="144" StartX="101" StartY="124" EndX="102" EndY="128" Target="717" Direction="0" MinLevel="1550" GoToGate="-1" Name="Move: Swamp of Destruction to Swamp Of Calmness" />
+	<Gate Index="716" Flag="1" MapNumber="144" StartX="101" StartY="124" EndX="102" EndY="128" Target="717" Direction="0" MinLevel="1550" GoToGate="-1" Name="Move: Swamp of Destruction to Swamp of Calmness" />
 	<Gate Index="717" Flag="2" MapNumber="56" StartX="135" StartY="105" EndX="142" EndY="111" Target="0" Direction="0" MinLevel="1550" GoToGate="-1" Name="Target for Gate 716" />
 	<Gate Index="718" Flag="0" MapNumber="145" StartX="121" StartY="63" EndX="123" EndY="68" Target="0" Direction="0" MinLevel="1600" GoToGate="718" Name="Warp: Aquilas Temple" />
 	<Gate Index="719" Flag="1" MapNumber="37" StartX="125" StartY="175" EndX="126" EndY="176" Target="720" Direction="0" MinLevel="1600" GoToGate="-1" Name="Move: Kanturu to Aquilas Temple" />
@@ -649,4 +649,14 @@
 	<Gate Index="724" Flag="2" MapNumber="145" StartX="132" StartY="147" EndX="135" EndY="149" Target="0" Direction="0" MinLevel="1600" GoToGate="-1" Name="Target for Gate 723" />
 	<Gate Index="725" Flag="1" MapNumber="145" StartX="132" StartY="140" EndX="134" EndY="143" Target="726" Direction="0" MinLevel="1600" GoToGate="-1" Name="Move: Aquilas Temple to Aquilas Temple" />
 	<Gate Index="726" Flag="2" MapNumber="145" StartX="132" StartY="82" EndX="135" EndY="84" Target="0" Direction="0" MinLevel="1600" GoToGate="-1" Name="Target for Gate 725" />
+	<Gate Index="727" Flag="0" MapNumber="34" StartX="126" StartY="28" EndX="132" EndY="33" Target="0" Direction="0" MinLevel="1000" GoToGate="-1" Name="Warp: Crywolf" />
+	<Gate Index="728" Flag="0" MapNumber="146" StartX="135" StartY="20" EndX="135" EndY="25" Target="0" Direction="0" MinLevel="1650" GoToGate="-1" Name="Warp: Raklion of Oblivion" />
+	<Gate Index="729" Flag="1" MapNumber="57" StartX="230" StartY="150" EndX="236" EndY="152" Target="730" Direction="0" MinLevel="1650" GoToGate="-1" Name="Move: Raklion to Raklion of Oblivion" />
+	<Gate Index="730" Flag="2" MapNumber="146" StartX="135" StartY="20" EndX="135" EndY="25" Target="0" Direction="0" MinLevel="1650" GoToGate="-1" Name="Target for Gate 729" />
+	<Gate Index="731" Flag="1" MapNumber="146" StartX="130" StartY="19" EndX="131" EndY="22" Target="732" Direction="0" MinLevel="1650" GoToGate="-1" Name="Move: Raklion of Oblivion to Raklion" />
+	<Gate Index="732" Flag="2" MapNumber="57" StartX="229" StartY="145" EndX="235" EndY="146" Target="0" Direction="0" MinLevel="1650" GoToGate="-1" Name="Target for Gate 731" />
+	<Gate Index="733" Flag="1" MapNumber="146" StartX="143" StartY="33" EndX="145" EndY="36" Target="734" Direction="0" MinLevel="1650" GoToGate="-1" Name="Move: Raklion of Oblivion to Raklion of Oblivion" />
+	<Gate Index="734" Flag="2" MapNumber="146" StartX="128" StartY="104" EndX="130" EndY="109" Target="0" Direction="0" MinLevel="1650" GoToGate="-1" Name="Target for Gate 733" />
+	<Gate Index="735" Flag="1" MapNumber="146" StartX="121" StartY="105" EndX="123" EndY="108" Target="736" Direction="0" MinLevel="1650" GoToGate="-1" Name="Move: Raklion of Oblivion to Raklion of Oblivion" />
+	<Gate Index="736" Flag="2" MapNumber="146" StartX="138" StartY="31" EndX="140" EndY="36" Target="0" Direction="0" MinLevel="1650" GoToGate="-1" Name="Target for Gate 735" />
 </GateSettings>

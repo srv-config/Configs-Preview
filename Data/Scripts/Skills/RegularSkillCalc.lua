@@ -1,7 +1,7 @@
 -- // ============================================================
 -- // == INTERNATIONAL GAMING CENTER NETWORK
 -- // == www.igcn.mu
--- // == (C) 2010-2025 IGC-Network (R)
+-- // == (C) 2010-2026 IGC-Network (R)
 -- // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- // == File is a part of IGCN Group MuOnline Server files.
 -- // ============================================================
@@ -274,8 +274,10 @@ end
 function Knight_Gladiator_CalcSkillBonus(SkillID, Class, InDamage, Strength, Energy)	
 	local OutDamage = 0
 	
-	if (Class == CLASS_GLADIATOR or Class == CLASS_DARKLORD) then
+	if (Class == CLASS_DARKLORD) then
 		OutDamage = InDamage * 2
+	elseif (Class == CLASS_GLADIATOR) then
+		OutDamage = InDamage
 	else
 		OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100;
 	end
@@ -348,7 +350,7 @@ end
 
 -- SkillID: 731, Ice Blood
 function GladiatorIceBloodCalcDamageAndDot(InDamage, Strength, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 	local SuccessRate = 6
 	local DebuffTime = 10
 	
@@ -357,7 +359,7 @@ end
 
 -- SkillID: 732, Fire Blood
 function GladiatorFireBloodCalcDamageAndDot(InDamage, Strength, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 	local SuccessRate = 6
 	local DebuffDamage = Strength / 10
 	local DebuffTime = 10
@@ -672,8 +674,10 @@ end
 function ImpaleSkillCalc(Class, InDamage, Energy)
 	local OutDamage = 0
 	
-	if (Class == CLASS_GLADIATOR or Class == CLASS_DARKLORD) then
+	if (Class == CLASS_DARKLORD) then
 		OutDamage = InDamage * 2
+	elseif (Class == CLASS_GLADIATOR) then
+		OutDamage = InDamage
 	else
 		OutDamage = ( InDamage * ( Energy / 10 + 200 )  ) / 100;
 	end
@@ -686,27 +690,27 @@ function GladiatorFireSlash(InDamage, Strength, Energy, BarrageCount)
     local OutDamage = 0
     
     if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.15) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.15)
     elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.18) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.18)
     elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.22) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.22)
     elseif (BarrageCount == 4) then
-        OutDamage = (InDamage * 0.25) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.25)
     end
     return OutDamage
 end
 
 -- SkillID: 56, Power Slash
 function GladiatorPowerSlash(InDamage, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 	
 	return OutDamage
 end
 
 -- SkillID: 236, Flame Strike
 function FlameStrikeCalc(InDamage, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 	
 	return OutDamage
 end
@@ -730,11 +734,11 @@ function GladiatorChaosBlade(InDamage, Strength, Dexterity, Vitality, Energy, Ba
     local OutDamage = 0
     
     if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Strength / 10 ) ) / 100;		
+        OutDamage = (InDamage * 0.33)
 	elseif(BarrageCount == 4) then -- Explosion
 		OutDamage = 10000
     end
@@ -746,11 +750,11 @@ function GladiatorHavokSpear(InDamage, Strength, Dexterity, Vitality, Energy, Ba
     local OutDamage = 0
     
     if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;
+        OutDamage = (InDamage * 0.33)
     elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33) * ( 200 + ( Energy / 10 ) ) / 100;	
+        OutDamage = (InDamage * 0.33)
 	elseif(BarrageCount == 4) then -- Explosion
 		OutDamage = 10000
     end
@@ -1384,8 +1388,7 @@ end
 
 -- SkillID: 2001, Dark Plasma
 function GunCrusherDarkPlasmaCalc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	OutDamage = InDamage * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
@@ -1395,11 +1398,11 @@ function GunCrusherIceBreakCalc(InDamage, Strength, Dexterity, Vitality, Energy,
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage * 0.8
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage * 1.0
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 1.2) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage * 1.2
 	end
 
 	return OutDamage
@@ -1410,9 +1413,9 @@ function GunCrusherDeathFireCalc(InDamage, Strength, Dexterity, Vitality, Energy
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage * 0.8
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage * 1.0
 	end
 
 	return OutDamage
@@ -1420,8 +1423,7 @@ end
 
 -- SkillID: 2003, Ice Blast
 function GunCrusherIceBlastCalc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	OutDamage = InDamage * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+	local OutDamage = InDamage
 	
 	return OutDamage
 end
@@ -1431,16 +1433,16 @@ function GunCrusherBurstingFlareCalc(InDamage, Strength, Dexterity, Vitality, En
 	local OutDamage = 0
 
 	if (IsShockwave == 1) then
-		OutDamage = (InDamage * 1.5) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage * 1.5
 		return OutDamage
 	end
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1451,9 +1453,9 @@ function GunCrusherDeathIceCalc(InDamage, Strength, Dexterity, Vitality, Energy,
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1461,7 +1463,7 @@ end
 
 -- SkillID: 240, Magic Shot
 function LightWizardMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+	local OutDamage = (InDamage * 1.0) * ((Energy / 50) + 200) / 100
 
 	return OutDamage
 end
@@ -1511,25 +1513,21 @@ end
 
 -- SkillID: 240, Magic Shot
 function LemuriaMageMagicShot(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 245, Marvel Burst
 function LemuriaMageMarvelBurst(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 246, Unleash Marvel
 function LemuriaMageUnleashMarvel(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
@@ -1539,9 +1537,9 @@ function LemuriaMageUltimateForce(InDamage, Strength, Dexterity, Vitality, Energ
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 1.0) * (140 + (Energy / 100)) / 100
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1731,9 +1729,9 @@ function IllusionKnightChargeSlash(InDamage, Strength, Dexterity, Vitality, Ener
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1744,11 +1742,11 @@ function IllusionKnightWindGlaive(InDamage, Strength, Dexterity, Vitality, Energ
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1759,11 +1757,11 @@ function IllusionKnightBladeStorm(InDamage, Strength, Dexterity, Vitality, Energ
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage

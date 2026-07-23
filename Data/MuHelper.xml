@@ -168,6 +168,7 @@
 			<Area Index="28" MoveReqIndex="73" Name="Cardamahal Underground Temple" ElementalMonsterArea="1" Zoning="1" />
 			<Area Index="29" MoveReqIndex="74" Name="Swammp of Destruction Karutan" ElementalMonsterArea="1" Zoning="1" />
 			<Area Index="30" MoveReqIndex="75" Name="Aquila's Temple" ElementalMonsterArea="1" Zoning="1" />
+			<Area Index="31" MoveReqIndex="76" Name="Raklion of Oblivion" ElementalMonsterArea="1" Zoning="1" />
 		</HuntAreas>
 		<HuntAreaInfo UseSafeZoneGate="1">
 			<Area ID="0" Index="0" MapNumber="95" Type="0" Element="1" StartX="180" StartY="87" EndX="206" EndY="107" BuffX="50" BuffY="80" HuntEntranceX="198" HuntEntranceY="75" HuntStartX="190" HuntStartY="98" ChannelChangeX="20" ChannelChangeY="104" HuntZoneGate="436" SafeZoneGate="417" />
@@ -500,6 +501,16 @@
 			<Area ID="327" Index="30" MapNumber="145" Type="1" Element="3" StartX="100" StartY="228" EndX="119" EndY="245" BuffX="133" BuffY="157" HuntEntranceX="104" HuntEntranceY="218" HuntStartX="109" HuntStartY="236" ChannelChangeX="134" ChannelChangeY="155" HuntZoneGate="718" SafeZoneGate="718" />
 			<Area ID="328" Index="30" MapNumber="145" Type="1" Element="4" StartX="229" StartY="149" EndX="245" EndY="167" BuffX="145" BuffY="142" HuntEntranceX="218" HuntEntranceY="130" HuntStartX="236" HuntStartY="158" ChannelChangeX="143" ChannelChangeY="143" HuntZoneGate="718" SafeZoneGate="718" />
 			<Area ID="329" Index="30" MapNumber="145" Type="1" Element="5" StartX="141" StartY="9" EndX="157" EndY="26" BuffX="146" BuffY="91" HuntEntranceX="182" HuntEntranceY="33" HuntStartX="149" HuntStartY="19" ChannelChangeX="145" ChannelChangeY="93" HuntZoneGate="718" SafeZoneGate="718" />
+			<Area ID="329" Index="30" MapNumber="145" Type="0" Element="1" StartX="175" StartY="189" EndX="189" EndY="204" BuffX="125" BuffY="160" HuntEntranceX="168" HuntEntranceY="193" HuntStartX="182" HuntStartY="196" ChannelChangeX="125" ChannelChangeY="160" HuntZoneGate="734" SafeZoneGate="734" />
+			<Area ID="330" Index="30" MapNumber="145" Type="0" Element="2" StartX="225" StartY="8" EndX="244" EndY="27" BuffX="134" BuffY="63" HuntEntranceX="224" HuntEntranceY="33" HuntStartX="234" HuntStartY="18" ChannelChangeX="132" ChannelChangeY="60" HuntZoneGate="728" SafeZoneGate="728" />
+			<Area ID="331" Index="30" MapNumber="145" Type="0" Element="3" StartX="213" StartY="109" EndX="231" EndY="127" BuffX="138" BuffY="137" HuntEntranceX="213" HuntEntranceY="134" HuntStartX="222" HuntStartY="118" ChannelChangeX="134" ChannelChangeY="137" HuntZoneGate="734" SafeZoneGate="734" />
+			<Area ID="332" Index="30" MapNumber="145" Type="0" Element="4" StartX="22" StartY="91" EndX="41" EndY="109" BuffX="117" BuffY="136" HuntEntranceX="46" HuntEntranceY="113" HuntStartX="31" HuntStartY="100" ChannelChangeX="121" ChannelChangeY="136" HuntZoneGate="734" SafeZoneGate="734" />
+			<Area ID="333" Index="30" MapNumber="145" Type="0" Element="5" StartX="30" StartY="4" EndX="47" EndY="22" BuffX="115" BuffY="61" HuntEntranceX="36" HuntEntranceY="32" HuntStartX="37" HuntStartY="14" ChannelChangeX="118" ChannelChangeY="60" HuntZoneGate="728" SafeZoneGate="728" />
+			<Area ID="334" Index="30" MapNumber="145" Type="1" Element="1" StartX="168" StartY="223" EndX="184" EndY="242" BuffX="125" BuffY="160" HuntEntranceX="177" HuntEntranceY="218" HuntStartX="176" HuntStartY="231" ChannelChangeX="126" ChannelChangeY="158" HuntZoneGate="734" SafeZoneGate="734" />
+			<Area ID="335" Index="30" MapNumber="145" Type="1" Element="2" StartX="219" StartY="77" EndX="238" EndY="97" BuffX="134" BuffY="63" HuntEntranceX="223" HuntEntranceY="68" HuntStartX="227" HuntStartY="85" ChannelChangeX="131" ChannelChangeY="62" HuntZoneGate="728" SafeZoneGate="728" />
+			<Area ID="336" Index="30" MapNumber="145" Type="1" Element="3" StartX="224" StartY="176" EndX="243" EndY="193" BuffX="138" BuffY="137" HuntEntranceX="225" HuntEntranceY="170" HuntStartX="232" HuntStartY="184" ChannelChangeX="135" ChannelChangeY="137" HuntZoneGate="734" SafeZoneGate="734" />
+			<Area ID="337" Index="30" MapNumber="145" Type="1" Element="4" StartX="13" StartY="171" EndX="32" EndY="191" BuffX="117" BuffY="136" HuntEntranceX="36" HuntEntranceY="165" HuntStartX="23" HuntStartY="180" ChannelChangeX="122" ChannelChangeY="136" HuntZoneGate="734" SafeZoneGate="734" />
+			<Area ID="338" Index="30" MapNumber="145" Type="1" Element="5" StartX="51" StartY="60" EndX="69" EndY="76" BuffX="115" BuffY="61" HuntEntranceX="62" HuntEntranceY="54" HuntStartX="60" HuntStartY="67" ChannelChangeX="117" ChannelChangeY="61" HuntZoneGate="728" SafeZoneGate="728" />
 		</HuntAreaInfo>
 	</HelperPlus>
 </MuHelper>

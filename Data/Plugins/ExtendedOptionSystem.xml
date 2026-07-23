@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Extended Option System - per item option upgrades, driven by jewels.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// A <Jewel> maps ONE jewel item to ONE option it grants or improves. Each <Option>
+// row is a single achievable level, fully self-describing. To attempt an upgrade the
+// server takes the option's current value on the target item, selects the next-higher
+// <Option> row, and rolls SuccessRate. On success the row's payload is written to the item;
+// on failure the row's FailType is applied. The jewel is ALWAYS consumed on an applied
+// attempt (success or fail) - the jewel itself is the entire cost.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Options data is stored in ExtendedItemOption table
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ExtendedOptionSystem ###
+//	Enable: Whether or not, disable the system, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Disabling the system does not remove existing options from items
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ExtendedOptionSystem::GlobalRestrictions ###
+//	Applies once, across the whole system, regardless of any per-Jewel Restrictions below.
+//	DenyKindA: List of Item Kind A values that are prohitibted to obtain any extended option, semicolon separated
+//	DenyKindB: List of Item Kind B values that are prohitibted to obtain any extended option, semicolon separated
+//	MaxOptionCount: Global fallback limit of extended options an item may hold, 1-10
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Leave empty to do not apply any restructions.
+//~~ The GlobalRestrictions is higher priority than per option restruction
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ExtendedOptionSystem::OptionCountLimit::Item ###
+//	Optional list of rules overriding GlobalRestrictions::MaxOptionCount for specific items.
+//	KindA: Item Kind A to match, -1 to match any
+//	KindB: Item Kind B to match, -1 to match any
+//	Type: Item Category (Cat, see ItemList.xml) to match, -1 to match any
+//	MaxOptionCount: Option count limit applied when the rule matches, 1-10
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ When several rules match the same item, the most specific one wins (most non -1 fields),
+//~~ ties are broken by the first matching <Item> row. A rule with all fields -1 has no real
+//~~ criterion and is never considered a match. When no rule matches, MaxOptionCount from
+//~~ GlobalRestrictions is used.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ExtendedOptionSystem::JewelMapping::Jewel ###
+//	Cat: Category of the jewel item, see ItemList.xml
+//	Index: Index of the jewel item, see ItemList.xml
+//	OptionNumber: Option number the configured jewel grants/improves
+//	Enable: Whether or not, disable specific jewel, 0/1
+//	BuffIndex: Buff id applied by this option, 0 to disable
+//	BuffEffectType: Buff effect type, 0 to disable
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ExtendedOptionSystem::JewelMapping::Jewel::Restrictions ###
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	Optional, per jewel controls which target items may receive this option
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	AllowExcellent: Whether or not, allow use of the jewel on excellent items, 0/1
+//	AllowSocket: Whether or not, allow use of the jewel on socket items, 0/1
+//	AllowAncient: Whether or not, allow use of the jewel on ancient items, 0/1
+//	AllowMastery: Whether or not, allow use of the jewel on mastery items, 0/1
+//	AllowLegendary: Whether or not, allow use of the jewel on legendary items, 0/1
+//	DenyKindA: List of Item Kind A that are prohitibted to obtain any extended option, semicolon separated
+//	DenyKindB: List of Item Kind B that are prohitibted to obtain any extended option, semicolon separated
+//
+// ### ExtendedOptionSystem::JewelMapping::Jewel::Option ###
+//	Level: Level number, label only, progression is keyed on Value attribute
+//	Value: Resulting option value specific option level, highest calue  on the jewel is a cap
+//	SuccessRate: Chance rate to reach soecific option level, 0-100
+//	FailType: What happens to the item on a failed roll at this level:
+//		~ 0: Jewel burn, item remains untouched
+//		~ 1: Option Reset, removes the option from the item
+//		~ 2: Destroy the target item
+//		~ 3: Downgrade the option to the previous defined level
+//
+//	OptionProbability: Percent chance for options that is displayed "(Chance %d%%)"m 0 for value only
+//	BuffValue: Buff value for configured buff at specific option level, 0 to disable
+//	BuffProbability: Buff chance rate at specific option level, 0 to disable
+//	BuffDuration: Duration of the buff at specific option level, 0 to disable
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Value/OptionProbability are floats. Value must be STRICTLY ascending across rows,
+//~~ or a duplicate/lower row becomes unreachable. Up to 10 option levels per item.
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//	Options List:
+//		~ 0: Total amount of HP is reduced to half
+//		~ 1: Attack speed is reduced to half
+//		~ 2: Freeze the enemy for 5 seconds
+//		~ 3: Stun enemy for 3 seconds
+//		~ 4: Auto Combo Hurt, There's a chance to strike with Combo Hurt
+//		~ 5: Double damage
+//		~ 6: Increased attack power
+//		~ 7: Increase in total blood volume
+//		~ 8: Increased defenses
+//		~ 9: Damage Reduction
+//		~ 10: AG Stats Increase
+//		~ 11: One-shot Monster
+//		~ 12: One-shot PVP
+//		~ 13: Rebound damage
+//		~ 14: Five seconds to impact, Poison rebound Ineffective
+//		~ 15: Being attacked, fully restored to life
+//		~ 16: When attacked （PVP）, remain invisible for 3 seconds
+//		~ 17: When attacked, the victim dies instantly (PVP)
+//		~ 18: When attacked, 10% of the target's current blood loss (PVP)
+//		~ 19: When attacked,Rebound total damage probability (PVP)
+//		~ 20: Excellent Damage Resistance
+//		~ 21: Critical Damage Resistance
+//		~ 22: Double Damage, Resistance
+//		~ 23: Increases chance of True Damage Resistance
+//		~ 24: Increases Combo damage
+//		~ 25: Absorb PVP damage
+//		~ 26: Excellent Damage probability increased
+//		~ 27: Critical Damage probability increased
+//		~ 28: Chance of True Damage probability increased
+//		~ 29: Triples the chance of injury
+//		~ 30: Three times the chance of damage resistance
+//		~ 31: Become invincible after being attacked for %d seconds
+//		~ 32: Blind enemy for %d seconds
+//		~ 33: Increase all stats
+//		~ 34: Ignore SD
+//		~ 35: Increase Skill Damage
+//		~ 36: Empty
+//		~ 37: Increase Attack Success Rate
+//		~ 38: Increase SD Resistance, 1-100
+//		~ 39: Stun Resistance, 1-100
+//		~ 40: Combo Damage Decrease
+//		~ 41: Triple Damage Damage Increase
+//		~ 42: Elemental Damage Increase
+//		~ 43: Elemental Defense Increase
+//		~ 46: Stun 4th Tree
+//		~ 47: Empty
+//		~ 48: Total invincibility
+//		~ 49: Increase chaos mix rate +%d
+//		~ 50: Increase Exp +%d
+//		~ 51: Increase Item Drop rate +%d
+//		~ 52: Hunt Point Bonus +%d
+//		~ 53: Max SD Bonus 
+//		~ 54: Attack Speed Bonus Bonus 
+//		~ 55: Elemental Critical Rate Bonus
+//		~ 56: PVE Damage Increase Bonus
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<ExtendedOptionSystem Enable="1">
+	<GlobalRestrictions DenyKindA="0;9;12;" DenyKindB="56;" MaxOptionCount="10" />
+	<OptionCountLimit>
+		<Item KindA="5" KindB="-1" Type="-1" MaxOptionCount="5" />
+	</OptionCountLimit>
+	<JewelMapping>
+		<!-- Option 0: Max HP reduced %d -->
+		<Jewel Cat="19" Index="230" OptionId="0" BuffIndex="1" BuffEffectType="1" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="3" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="10" BuffProbability="10000" BuffDuration="10000" />
+			<Option Level="2" Value="6" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="10" BuffProbability="10000" BuffDuration="10000" />
+			<Option Level="3" Value="9" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="10" BuffProbability="10000" BuffDuration="10000" />
+			<Option Level="4" Value="12" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="10" BuffProbability="10000" BuffDuration="10000" />
+			<Option Level="5" Value="15" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="10" BuffProbability="10000" BuffDuration="10000" />
+		</Jewel>
+		<!-- Option 1: Attack speed reduced %d -->
+		<Jewel Cat="19" Index="231" OptionId="1" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="3" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="6" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="9" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="12" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="15" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 2: Freeze enemy (seconds) -->
+		<Jewel Cat="19" Index="232" OptionId="2" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 3: Stun enemy (seconds) -->
+		<Jewel Cat="19" Index="233" OptionId="3" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 4: Auto Combo -->
+		<Jewel Cat="19" Index="234" OptionId="4" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="5" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="10" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="15" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="20" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="25" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 5: Double DMG chance +%d -->
+		<Jewel Cat="19" Index="235" OptionId="5" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 6: Increased attack power +%d -->
+		<Jewel Cat="19" Index="236" OptionId="6" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 7: Max HP +%d -->
+		<Jewel Cat="19" Index="237" OptionId="7" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="100" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="200" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="300" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="400" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="500" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 8: Increased Defense +%d -->
+		<Jewel Cat="19" Index="238" OptionId="8" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="20" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="40" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="60" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="80" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="100" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 9: DMG Reduction +%d -->
+		<Jewel Cat="19" Index="239" OptionId="9" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 10: Max AG Increase +%d -->
+		<Jewel Cat="19" Index="240" OptionId="10" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="20" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="40" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="60" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="80" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="100" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 11: One-shot Monster -->
+		<Jewel Cat="19" Index="241" OptionId="11" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 12: One-shot PVP -->
+		<Jewel Cat="19" Index="242" OptionId="12" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 13: Reflect DMG +%d -->
+		<Jewel Cat="19" Index="243" OptionId="13" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 14: Poison Target (seconds) -->
+		<Jewel Cat="19" Index="244" OptionId="14" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="3" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="4" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="5" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="6" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 15: Recover Full HP -->
+		<Jewel Cat="19" Index="245" OptionId="15" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 16: PVP Invisible (seconds) -->
+		<Jewel Cat="19" Index="246" OptionId="16" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 17: PVP Instant kill -->
+		<Jewel Cat="19" Index="247" OptionId="17" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 18: PVP lose % current HP -->
+		<Jewel Cat="19" Index="248" OptionId="18" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 19: PVP Rebound Full DMG -->
+		<Jewel Cat="19" Index="249" OptionId="19" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 20: Excellent DMG Resistance +%d -->
+		<Jewel Cat="19" Index="250" OptionId="20" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="5" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="10" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="15" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="20" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="25" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 21: Critical DMG Resistance +%d -->
+		<Jewel Cat="19" Index="251" OptionId="21" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="5" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="10" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="15" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="20" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="25" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 22: Double DMG Resistance +%d -->
+		<Jewel Cat="19" Index="252" OptionId="22" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="5" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="10" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="15" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="20" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="25" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 23: True DMG Resistance +%d -->
+		<Jewel Cat="19" Index="253" OptionId="23" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="5" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="10" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="15" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="20" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="25" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 24: Combo DMG Increase +%d -->
+		<Jewel Cat="19" Index="254" OptionId="24" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 25: Absorb PVP DMG +%d -->
+		<Jewel Cat="19" Index="255" OptionId="25" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 26: Increase Excellent DMG Rate +%d -->
+		<Jewel Cat="19" Index="256" OptionId="26" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 27: Increase Critical DMG Rate +%d -->
+		<Jewel Cat="19" Index="257" OptionId="27" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 28: True DMG Chance +%d -->
+		<Jewel Cat="19" Index="258" OptionId="28" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 29: Triple DMG Chance +%d -->
+		<Jewel Cat="19" Index="259" OptionId="29" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 30: Triple DMG Resistance +%d -->
+		<Jewel Cat="19" Index="260" OptionId="30" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 31: Invincible (seconds) -->
+		<Jewel Cat="19" Index="261" OptionId="31" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 32: Blind enemy (seconds) -->
+		<Jewel Cat="19" Index="262" OptionId="32" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 33: Increase all stats +%d -->
+		<Jewel Cat="19" Index="263" OptionId="33" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="10" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="20" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="30" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="40" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="50" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 34: Ignore SD +%d -->
+		<Jewel Cat="19" Index="264" OptionId="34" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 35: Increase Skill DMG +%d -->
+		<Jewel Cat="19" Index="265" OptionId="35" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 37: Increase Attack Success Rate +%d -->
+		<Jewel Cat="19" Index="267" OptionId="37" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="50" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="100" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="150" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="200" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="250" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 38: Increase SD Resistance +%d -->
+		<Jewel Cat="19" Index="268" OptionId="38" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 39: Stun Resistance +%d -->
+		<Jewel Cat="19" Index="269" OptionId="39" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="5" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="10" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="15" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="20" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="25" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 40: Incoming Combo DMG Reduce +%d -->
+		<Jewel Cat="19" Index="270" OptionId="40" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 41: Triple DMG Increase +%d -->
+		<Jewel Cat="19" Index="271" OptionId="41" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 42: Elemental DMG Increase +%d -->
+		<Jewel Cat="19" Index="272" OptionId="42" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 43: Elemental DEF Increase +%d -->
+		<Jewel Cat="19" Index="273" OptionId="43" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 46: Stun 4th Tree (seconds) -->
+		<Jewel Cat="19" Index="276" OptionId="46" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="5" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="10" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="15" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="20" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="25" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 48: Become invincible (toggle) -->
+		<Jewel Cat="19" Index="278" OptionId="48" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="80" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 49: Increase Chaos Mix Rate +%d -->
+		<Jewel Cat="19" Index="279" OptionId="49" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="1" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="2" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="3" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="4" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="5" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 50: Increase Exp +%d -->
+		<Jewel Cat="19" Index="280" OptionId="50" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 51: Increase Item drop Rate +%d -->
+		<Jewel Cat="19" Index="281" OptionId="51" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 52: Hunt Point Bonus +%d -->
+		<Jewel Cat="19" Index="282" OptionId="52" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="5" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="10" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="15" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="20" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="25" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 53: Max SD Bonus +%d -->
+		<Jewel Cat="19" Index="283" OptionId="53" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="50" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="100" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="150" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="200" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="250" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 54: Attack Speed Bonus +%d -->
+		<Jewel Cat="19" Index="284" OptionId="54" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 55: Elemental Critical Rate bonus +%d -->
+		<Jewel Cat="19" Index="285" OptionId="55" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+		<!-- Option 56: PVE Damage Increase +%d -->
+		<Jewel Cat="19" Index="286" OptionId="56" BuffIndex="0" BuffEffectType="0" Enable="1">
+			<Restrictions AllowExcellent="1" AllowSocket="1" AllowAncient="1" AllowMastery="1" AllowLegendary="1" DenyKindA="" DenyKindB="" />
+			<Option Level="1" Value="2" SuccessRate="90" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="2" Value="4" SuccessRate="70" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="3" Value="6" SuccessRate="50" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="4" Value="8" SuccessRate="30" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+			<Option Level="5" Value="10" SuccessRate="15" FailType="3" OptionProbability="0" BuffValue="0" BuffProbability="0" BuffDuration="0" />
+		</Jewel>
+	</JewelMapping>
+</ExtendedOptionSystem>

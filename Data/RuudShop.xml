@@ -136,7 +136,6 @@
 		<Item Cat="14" Index="395" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="10000" /> <!-- Support Elf Conversion Order -->
 		<Item Cat="4" Index="28" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Bow -->
 		<Item Cat="4" Index="34" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Quiver -->
-		<Item Cat="12" Index="293" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Orb of Focus Shot -->
 		<Item Cat="12" Index="167" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Raining Arrow Bead -->
 		<Item Cat="12" Index="168" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- DEX Booster Bead -->
 		<Item Cat="12" Index="169" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Holy Bolt Bead -->
@@ -153,8 +152,9 @@
 		<Item Cat="13" Index="377" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Pants of Captivation -->
 		<Item Cat="13" Index="378" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Sealed Blood Angel Gloves of Captivation -->
 		<Item Cat="5" Index="41" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Staff -->
+		<Item Cat="5" Index="169" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Magic Staff -->
 		<Item Cat="0" Index="44" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Magic Sword -->
-		<Item Cat="0" Index="89" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Magic Two Hand Sword -->
+		<Item Cat="0" Index="89" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="200000" /> <!-- Blood Angel Magic Two Hand Sword -->
 		<Item Cat="14" Index="396" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Attack MG Conversion Order -->
 		<Item Cat="14" Index="397" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="10000" /> <!-- Magic MG Conversion Order -->
 		<Item Cat="12" Index="297" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Orb of Ice Blood -->
@@ -247,6 +247,7 @@
 		<Item Cat="20" Index="64" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Liberation -->
 		<Item Cat="20" Index="65" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Liberation -->
 		<Item Cat="5" Index="86" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Orb -->
+		<Item Cat="6" Index="120" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Mage Shield -->
 		<Item Cat="15" Index="53" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Scroll of Ultimate Force -->
 	</Character>
 	<Character Class="13" Name="Illusion Knight">
@@ -255,7 +256,7 @@
 		<Item Cat="20" Index="91" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Pants of Longing -->
 		<Item Cat="20" Index="92" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Boots of Longing -->
 		<Item Cat="12" Index="91" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Blade Storm Orb -->
-		<Item Cat="0" Index="105" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Blade -->
+		<Item Cat="0" Index="105" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="200000" /> <!-- Blood Angel Blade -->
 	</Character>
 	<Character Class="14" Name="Alchemist">
 		<Item Cat="20" Index="240" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Sealed Blood Angel Helm of Element -->
@@ -305,12 +306,13 @@
 		<Item Cat="14" Index="463" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="700" /> <!-- [Level 4] Monster Soul Converter -->
 		<Item Cat="14" Index="464" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="800" /> <!-- [Level 5] Monster Soul Converter -->
 		<Item Cat="14" Index="497" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="25000" /> <!-- Glory of Honor -->
-		<Item Cat="14" Index="498" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Ice Dragon Seal -->
-		<Item Cat="14" Index="510" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Pierce Lion's Seal -->
-		<Item Cat="20" Index="84" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Shining Tail's Seal -->
+		<Item Cat="14" Index="498" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Seal of Ice Dragon -->
+		<Item Cat="14" Index="510" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Seal of Pierce Lion -->
+		<Item Cat="20" Index="84" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Seal of Shining Tail -->
 		<Item Cat="20" Index="119" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Seal of Ur -->
-		<Item Cat="20" Index="253" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Leviathan's Seal -->
+		<Item Cat="20" Index="253" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Seal of Leviathan -->
 		<Item Cat="20" Index="276" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Seal of Taurus -->
+		<Item Cat="20" Index="409" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Seal of Rhino -->
 		<Item Cat="12" Index="509" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Pentagram Emblem -->
 		<Item Cat="12" Index="510" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="20000" /> <!-- Errtel Emblem -->
 		<Item Cat="12" Index="82" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Manticore Anvil -->
@@ -327,9 +329,9 @@
 		<Item Cat="20" Index="279" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="150000" /> <!-- Temple Guard Moru (Wrath) -->
 		<Item Cat="20" Index="280" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="150000" /> <!-- Temple Guard Moru (Faith) -->
 		<Item Cat="20" Index="281" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="150000" /> <!-- Temple Guard Moru (Wizard) -->
-		<Item Cat="20" Index="282" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="150000" /> <!-- Temple Guard Moru (Magic) -->
 		<Item Cat="20" Index="283" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="150000" /> <!-- Temple Guard Moru (White Wizard) -->
 		<Item Cat="20" Index="306" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="160000" /> <!-- Imperial Anvil -->
 		<Item Cat="20" Index="307" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="80000" /> <!-- Imperial Soul -->
+		<Item Cat="20" Index="410" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="25000" /> <!-- Frame of Benevolent -->
 	</Character>
 </RuudShop>

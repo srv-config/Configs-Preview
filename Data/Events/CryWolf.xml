@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2023 IGC-Network (R)
+// == (C) 2010-2026 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -73,24 +73,33 @@
 //	RankA: Experience amount to award with at specified rank (A)
 //	RankS: Experience amount to award with at specified rank (S)
 //
-// ### CryWolf::Benefits ###
+// ### CryWolf::Benefit ###
 //	Enable: Enables benefits system for winning the event, 0/1
 //	PlusChaosRate: Chaos machine rate bonus, percentage
 //	MonsterHPRate: Monster HP rate decrease, percentage
 //	KundunHPRefill: Enables or disables Kundun HP Refill, 0/1
 //
-// ### CryWolf::Penalties ###
+// ### CryWolf::Penalty ###
 //	Enable: Enables penalties system for loosing the event, 0/1
 //	GemDropPenaltyRate: Chance rate drop of jewel will be discarded, percentage, 1-100
 //	GettingExpPenaltyRate: Decreases final experience by configured value, percentage, 1-100
+//
+// ### CryWolf::ElementInfo::Week ###
+//	Number: Number of a week during the year, 1-52
+//	Element: Element type the event monsters are spawned with
+//		~ -1: Random
+//		~ 1: Fire
+//		~ 2: Water
+//		~ 3: Earth
+//		~ 4: Wind
+//		~ 5: Darkness
 //
 // STRICTLY NO COMMENTS INSIDE TAGS
 -->
 
 <CryWolf Enable="1">
 	<Schedule>
-		<Start Mode="0" State="1" Month="-1" Day="-1" DayOfWeek="2" Hour="21" Minute="25" ContinuanceTime="-1" />
-		<Start Mode="0" State="1" Month="-1" Day="-1" DayOfWeek="6" Hour="21" Minute="25" ContinuanceTime="-1" />
+		<Start Mode="0" State="1" Month="-1" Day="-1" DayOfWeek="1" Hour="9" Minute="30" ContinuanceTime="-1" />
 	</Schedule>
 
 	<CycleSettings>
@@ -102,7 +111,7 @@
 		<Cycle State="6" Hours="0" Minutes="0" Seconds="10" /> <!-- CRYWOLF_STATE_ENDCYCLE -->
 	</CycleSettings>
 
-	<MonsterGroupSettings MonsterAIChangeTime="300" BalgassAIGroup="5" BalgassTurnUpTime="600">
+	<MonsterGroupSettings MonsterAIChangeTime="180" BalgassAIGroup="5" BalgassTurnUpTime="400">
 		<MonsterAIGroup ID="1" />
 		<MonsterAIGroup ID="2" />
 		<MonsterAIGroup ID="3" />
@@ -123,4 +132,59 @@
 	
 	<Benefit Enable="1" PlusChaosRate="5" MonsterHPRate="90" KundunHPRefill="0" /> <!-- KundunHPRefill, 0/1 -->
 	<Penalty Enable="0" GemDropPenaltyRate="70" GettingExpPenaltyRate="100" />
+	
+	<ElementInfo>
+		<Week Number="1" Element="1" />
+		<Week Number="2" Element="2" />
+		<Week Number="3" Element="3" />
+		<Week Number="4" Element="4" />
+		<Week Number="5" Element="5" />
+		<Week Number="6" Element="-1" />
+		<Week Number="7" Element="1" />
+		<Week Number="8" Element="2" />
+		<Week Number="9" Element="3" />
+		<Week Number="10" Element="4" />
+		<Week Number="11" Element="5" />
+		<Week Number="12" Element="-1" />
+		<Week Number="13" Element="1" />
+		<Week Number="14" Element="2" />
+		<Week Number="15" Element="3" />
+		<Week Number="16" Element="4" />
+		<Week Number="17" Element="5" />
+		<Week Number="18" Element="-1" />
+		<Week Number="19" Element="1" />
+		<Week Number="20" Element="2" />
+		<Week Number="21" Element="3" />
+		<Week Number="22" Element="4" />
+		<Week Number="23" Element="5" />
+		<Week Number="24" Element="-1" />
+		<Week Number="25" Element="1" />
+		<Week Number="26" Element="2" />
+		<Week Number="27" Element="3" />
+		<Week Number="28" Element="4" />
+		<Week Number="29" Element="5" />
+		<Week Number="30" Element="-1" />
+		<Week Number="31" Element="1" />
+		<Week Number="32" Element="2" />
+		<Week Number="33" Element="3" />
+		<Week Number="34" Element="4" />
+		<Week Number="35" Element="5" />
+		<Week Number="36" Element="-1" />
+		<Week Number="37" Element="1" />
+		<Week Number="38" Element="2" />
+		<Week Number="39" Element="3" />
+		<Week Number="40" Element="4" />
+		<Week Number="41" Element="5" />
+		<Week Number="42" Element="-1" />
+		<Week Number="43" Element="1" />
+		<Week Number="44" Element="2" />
+		<Week Number="45" Element="3" />
+		<Week Number="46" Element="4" />
+		<Week Number="47" Element="5" />
+		<Week Number="48" Element="-1" />
+		<Week Number="49" Element="1" />
+		<Week Number="50" Element="2" />
+		<Week Number="51" Element="3" />
+		<Week Number="52" Element="4" />
+	</ElementInfo>
 </CryWolf>

@@ -115,6 +115,29 @@
 		<Pass ID="18" StartDate="2024-10-10 08:30" EndDate="2024-11-07 08:30" />
 		<Pass ID="19" StartDate="2024-11-07 08:30" EndDate="2024-12-05 08:30" />
 		<Pass ID="20" StartDate="2024-12-05 08:30" EndDate="2025-01-02 08:30" />
+		<Pass ID="21" StartDate="2025-01-09 08:30" EndDate="2025-02-06 08:30" />
+		<Pass ID="22" StartDate="2025-02-06 08:30" EndDate="2025-03-06 08:30" />
+		<Pass ID="23" StartDate="2025-03-06 08:30" EndDate="2025-04-03 08:30" />
+		<Pass ID="24" StartDate="2025-04-10 08:30" EndDate="2025-05-08 08:30" />
+		<Pass ID="25" StartDate="2025-05-08 08:30" EndDate="2025-06-05 08:30" />
+		<Pass ID="26" StartDate="2025-06-05 08:30" EndDate="2025-07-03 08:30" />
+		<Pass ID="27" StartDate="2025-07-03 08:30" EndDate="2025-07-31 08:30" />
+		<Pass ID="28" StartDate="2025-08-07 08:30" EndDate="2025-09-04 08:30" />
+		<Pass ID="29" StartDate="2025-09-04 08:30" EndDate="2025-10-02 08:30" />
+		<Pass ID="30" StartDate="2025-10-02 08:30" EndDate="2025-10-30 08:30" />
+		<Pass ID="31" StartDate="2025-11-06 08:30" EndDate="2025-12-04 08:30" />
+		<Pass ID="32" StartDate="2025-12-11 08:30" EndDate="2026-01-08 08:30" />
+		<Pass ID="33" StartDate="2026-01-08 08:30" EndDate="2026-02-05 08:30" />
+		<Pass ID="34" StartDate="2026-02-05 08:30" EndDate="2026-03-05 08:30" />
+		<Pass ID="35" StartDate="2026-03-05 08:30" EndDate="2026-04-02 08:30" />
+		<Pass ID="36" StartDate="2026-04-02 08:30" EndDate="2026-04-30 08:30" />
+		<Pass ID="37" StartDate="2026-05-07 08:30" EndDate="2026-06-04 08:30" />
+		<Pass ID="38" StartDate="2026-06-04 08:30" EndDate="2026-07-02 08:30" />
+		<Pass ID="39" StartDate="2026-07-02 08:30" EndDate="2026-07-30 08:30" />
+		<Pass ID="40" StartDate="2026-08-06 08:30" EndDate="2026-09-03 08:30" />
+		<Pass ID="41" StartDate="2026-09-03 08:30" EndDate="2026-10-01 08:30" />
+		<Pass ID="42" StartDate="2026-10-01 08:30" EndDate="2026-10-29 08:30" />
+		<Pass ID="43" StartDate="2026-11-05 08:30" EndDate="2026-12-03 08:30" />
 	</PassInfo>
 	<ExpTable>
 		<Exp Level="1" Amount="100" />

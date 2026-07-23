@@ -31,9 +31,9 @@
 
 <AbilityCardOptions>
 	<CardOption>
-		<Option ID="-1" ItemCat="20" ItemIndex="235" Index="80" FormulaID="0" />
-		<Option ID="-1" ItemCat="20" ItemIndex="236" Index="81" FormulaID="0" />
-		<Option ID="-1" ItemCat="20" ItemIndex="237" Index="82" FormulaID="0" />
+		<Option ID="-1" ItemCat="20" ItemIndex="235" Index="80" FormulaID="288" />
+		<Option ID="-1" ItemCat="20" ItemIndex="236" Index="81" FormulaID="289" />
+		<Option ID="-1" ItemCat="20" ItemIndex="237" Index="82" FormulaID="290" />
 		<Option ID="0" ItemCat="20" ItemIndex="213" Index="15" FormulaID="52" />
 		<Option ID="1" ItemCat="20" ItemIndex="213" Index="42" FormulaID="53" />
 		<Option ID="2" ItemCat="20" ItemIndex="213" Index="48" FormulaID="54" />
@@ -348,9 +348,9 @@
 		<Option Index="77" Name="Nuke Triple Damage Probability" Operator="1" />
 		<Option Index="78" Name="Bolt Triple Damage Probability" Operator="1" />
 		<Option Index="79" Name="Wide Area Triple Damage Probability" Operator="1" />
-		<Option Index="80" Name="[Extra Damage] Nuke" Operator="0" />
-		<Option Index="81" Name="[Extra Damage] Bolt" Operator="0" />
-		<Option Index="82" Name="[Extra Damage] Wide Area" Operator="0" />
+		<Option Index="80" Name="Nuke Attack Power" Operator="0" />
+		<Option Index="81" Name="Bolt Attack Power" Operator="0" />
+		<Option Index="82" Name="Area Attack Power" Operator="0" />
 		<Option Index="83" Name="5th Wing Wizardry Increase" Operator="0" />
 		<Option Index="84" Name="5th Wing Curse Power Increase" Operator="0" />
 		<Option Index="85" Name="Wizardry Power Increase every 20Lv" Operator="0" />

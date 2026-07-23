@@ -1,7 +1,7 @@
 -- // ============================================================
 -- // == INTERNATIONAL GAMING CENTER NETWORK
 -- // == www.igcn.mu
--- // == (C) 2010-2024 IGC-Network (R)
+-- // == (C) 2010-2026 IGC-Network (R)
 -- // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- // == File is a part of IGCN Group MuOnline Server files.
 -- // ============================================================
@@ -607,35 +607,35 @@ end
 
 -- SkillID: 344, Blood Storm - (Duel Master)
 function BloodStormCalc_MasterLevel1_Gladiator(InDamage, Energy)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
-
+	local OutDamage = InDamage
+	
 	return OutDamage
 end
 
 -- SkillID: 346, Blood Storm Strengthener - (Duel Master)
 function BloodStormCalc_MasterLevel2_Gladiator(InDamage, Energy)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 479, Cyclone Strengthener - (Duel Master)
 function CycloneCalc_Master_Gladiator(InDamage, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 481, Twisting Slash Strengthener - (Duel Master)
 function TwistingSlashCalc_Master_Gladiator(InDamage, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 482, Power Slash Strengthener - (Duel Master)
 function PowerSlash_Master_Gladiator(InDamage, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 
 	return OutDamage
 end
@@ -645,13 +645,13 @@ function FireSlash_MasterLevel1_Gladiator(InDamage, Strength, Energy, BarrageCou
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 0.15) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.15)
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 0.18) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.18)
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 0.22) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.22)
 	elseif (BarrageCount == 4) then
-		OutDamage = (InDamage * 0.25) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.25)
 	end
 
 	return OutDamage
@@ -659,7 +659,7 @@ end
 
 -- SkillID: 492, Flame Strike Strengthener - (Duel Master)
 function FlameStrike_MasterLevel1_Gladiator(InDamage, Energy)
-	local OutDamage = InDamage * 2
+	local OutDamage = InDamage
 
 	return OutDamage
 end
@@ -669,13 +669,13 @@ function FireSlash_MasterLevel2_Gladiator(InDamage, Strength, Energy, BarrageCou
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * 0.15) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.15)
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * 0.18) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.18)
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * 0.22) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.22)
 	elseif (BarrageCount == 4) then
-		OutDamage = (InDamage * 0.25) * ( 200 + ( Energy / 10 ) ) / 100;
+		OutDamage = (InDamage * 0.25)
 	end
 
 	return OutDamage
@@ -1343,16 +1343,14 @@ end
 
 -- SkillID: 820, Dark Plasma Strengthener - (Master Gun Breaker, Heist Gun Crusher)
 function GunCrusherDarkPlasma_Level1(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	OutDamage = InDamage * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 821, Dark Plasma Proficiency - (Master Gun Breaker, Heist Gun Crusher)
 function GunCrusherDarkPlasma_Level2(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-	OutDamage = InDamage * ((Energy / 8) + (Dexterity / 28) + 120) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
@@ -1529,18 +1527,14 @@ end
 
 -- SkillID: 848, Marvel Burst Strengthener
 function LemuriaMageMarvelBurst_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 849, Marvel Burst Mastery
 function LemuriaMageMarvelBurst_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
@@ -1731,18 +1725,14 @@ end
 
 -- SkillID: 855, Unleash Marvel Strengthener
 function LemuriaMageUnleashMarvel_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 856, Unleash Marvel Mastery
 function LemuriaMageUnleashMarvel_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy)
-	local OutDamage = 0
-
-	OutDamage = InDamage * (140 + (Energy / 100)) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end

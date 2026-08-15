@@ -47,6 +47,11 @@
 	EVENTBAG_LUCKYCOIN30 = 24
 	EVENTBAG_LORDMIX = 25
 	EVENTBAG_KUNDUN = 26
+	EVENTBAG_DS_RANK1 = 35
+	EVENTBAG_DS_RANK2 = 36
+	EVENTBAG_DS_RANK3 = 37
+	EVENTBAG_DS_RANK4 = 38
+	EVENTBAG_DS_RANK5 = 39
 	EVENTBAG_CHERRYBLOSSOM_WHITE = 46
 	EVENTBAG_CHERRYBLOSSOM_RED = 47
 	EVENTBAG_CC2 = 48
@@ -151,6 +156,11 @@ function LoadItemBag() -- Bags Load
 	ItemBag.Add(BAG_EVENT, 24,0, 'Mix_LuckyCoin(30)_Reward') -- DropFunction /4/
 	ItemBag.Add(BAG_EVENT, 25,0, 'Mix_Senior_Reward') -- DropFunction /4/
 	ItemBag.Add(BAG_EVENT, 26,0, 'Monster_(275)_Kundun') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 35,0, 'Event_DevilSquare_Rank(1)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 36,0, 'Event_DevilSquare_Rank(2)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 37,0, 'Event_DevilSquare_Rank(3)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 38,0, 'Event_DevilSquare_Rank(4)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 39,0, 'Event_DevilSquare_Rank(5)_Reward') -- DropFunction /3/
 	ItemBag.Add(BAG_EVENT, 46,0, 'Mix_Cherry_Blossom_White_Reward') -- DropFunction /4/
 	ItemBag.Add(BAG_EVENT, 47,0, 'Mix_Cherry_Blossom_Red_Reward') -- DropFunction /4/
 	ItemBag.Add(BAG_EVENT, 48,0, 'Event_ChaosCastle(2)_Reward') -- DropFunction /3/

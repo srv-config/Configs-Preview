@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### NewsSystem::NewsList::News ###
+//	Index: Unique news index
+//	DateRGB: Color of date, comma separated, (0-255)
+//	TitleRGB: Color of title, comma separated, (0-255)
+//	TextRGB: Color of text, comma separated, (0-255)
+//	Title: News title, max 40 characters
+//	Text: News text
+//	Day: News day, 1-31
+//	Month: News month 1-12
+//	Year:  News year
+//
+// ### NewsSystem::NewsTitle ###
+//	Text: Title on the top of the News Box
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+<NewsSystem>
+	<NewsList>
+		<News Index="0" DateRGB="255;0;155" TitleRGB="215;0;100" TextRGB="120;0;135" Title="Info" Text="This news info support all languages" Day="10" Month="12" Year="2013" />
+		<News Index="1" DateRGB="255;0;155" TitleRGB="215;0;100" TextRGB="120;0;135" Title="Info" Text="When no News added News Windows in Client will not be displayed" Day="10" Month="12" Year="2013" />
+	</NewsList>
+
+	<NewsTitle Text="Server News" />
+</NewsSystem>

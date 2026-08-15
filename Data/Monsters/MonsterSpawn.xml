@@ -1735,55 +1735,7 @@
 			<Spawn Index="70" Distance="30" StartX="69" StartY="77" Dir="-1" />
 		</Spot>
 	</Map>
-	<Map Number="11" Name="Unknown Map 11">
-		<Spot Type="0" Description="NPC/Traps">
-			<Spawn Index="232" Distance="0" StartX="10" StartY="9" Dir="1" />
-			<Spawn Index="132" Distance="0" StartX="14" StartY="95" Dir="0" />
-			<Spawn Index="131" Distance="0" StartX="14" StartY="75" Dir="0" />
-		</Spot>
-	</Map>
-	<Map Number="12" Name="Unknown Map 12">
-		<Spot Type="0" Description="NPC/Traps">
-			<Spawn Index="232" Distance="0" StartX="10" StartY="9" Dir="1" />
-			<Spawn Index="132" Distance="0" StartX="14" StartY="95" Dir="0" />
-			<Spawn Index="131" Distance="0" StartX="14" StartY="75" Dir="0" />
-		</Spot>
-	</Map>
-	<Map Number="13" Name="Unknown Map 13">
-		<Spot Type="0" Description="NPC/Traps">
-			<Spawn Index="232" Distance="0" StartX="10" StartY="9" Dir="1" />
-			<Spawn Index="132" Distance="0" StartX="14" StartY="95" Dir="0" />
-			<Spawn Index="131" Distance="0" StartX="14" StartY="75" Dir="0" />
-		</Spot>
-	</Map>
-	<Map Number="14" Name="Unknown Map 14">
-		<Spot Type="0" Description="NPC/Traps">
-			<Spawn Index="232" Distance="0" StartX="10" StartY="9" Dir="1" />
-			<Spawn Index="132" Distance="0" StartX="14" StartY="95" Dir="0" />
-			<Spawn Index="131" Distance="0" StartX="14" StartY="75" Dir="0" />
-		</Spot>
-	</Map>
-	<Map Number="15" Name="Unknown Map 15">
-		<Spot Type="0" Description="NPC/Traps">
-			<Spawn Index="232" Distance="0" StartX="10" StartY="9" Dir="1" />
-			<Spawn Index="132" Distance="0" StartX="14" StartY="95" Dir="0" />
-			<Spawn Index="131" Distance="0" StartX="14" StartY="75" Dir="0" />
-		</Spot>
-	</Map>
-	<Map Number="16" Name="Unknown Map 16">
-		<Spot Type="0" Description="NPC/Traps">
-			<Spawn Index="232" Distance="0" StartX="10" StartY="9" Dir="1" />
-			<Spawn Index="132" Distance="0" StartX="14" StartY="95" Dir="0" />
-			<Spawn Index="131" Distance="0" StartX="14" StartY="75" Dir="0" />
-		</Spot>
-	</Map>
-	<Map Number="17" Name="Unknown Map 17">
-		<Spot Type="0" Description="NPC/Traps">
-			<Spawn Index="232" Distance="0" StartX="10" StartY="9" Dir="1" />
-			<Spawn Index="132" Distance="0" StartX="14" StartY="95" Dir="0" />
-			<Spawn Index="131" Distance="0" StartX="14" StartY="75" Dir="0" />
-		</Spot>
-	</Map>
+	
 	<Map Number="24" Name="Kalima 1">
 		<Spot Type="2" Description="Single Point Monsters">
 			<Spawn Index="147" Distance="30" StartX="30" StartY="75" Dir="-1" />

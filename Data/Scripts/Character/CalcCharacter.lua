@@ -1162,7 +1162,7 @@ end
 
 -- Illusion Knight Illusion Attack Power formula
 function IllusionKnightIllusionAttackPowerCalc(Strength, Dexterity, Vitality, Energy)
-	local IllusionAttackPower = 200 + (Strength / 30) + (Dexterity + 30)
+	local IllusionAttackPower = 200 + (Strength / 30) + (Dexterity / 30)
 	
 	return IllusionAttackPower
 end

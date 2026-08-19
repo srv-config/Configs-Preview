@@ -10,7 +10,7 @@
 -- Event Callbacks - Server Event Handlers
 ------------------------------------------------------------------
 -- All callback functions triggered by game server events.
--- Sync: Executed synchronously (can return values to C++)
+-- Sync: Executed synchronously (can return values to the engine)
 -- Async: Executed asynchronously (no return value expected)
 ------------------------------------------------------------------
 
@@ -260,24 +260,49 @@ end
 -- Item Acquisition Events
 ------------------------------------------------------------------
 
--- Called when player picks up item from ground (Async)
-function onItemGet(oPlayer, sItemType, sItemLevel, btItemDur, btItemElement)
+-- Called when player picks up item from ground (Async). iItemPos = inventory slot it landed in
+function onItemGet(oPlayer, iItemPos, sItemType, sItemLevel, btItemDur, btItemElement)
 	if (oPlayer ~= nil) then
 		
 	end
 end
 
--- Called when player acquires event item (Async)
-function onEventItemGet(oPlayer, sItemType, sItemLevel, btItemDur, btItemElement)
+-- Called when player acquires event item (Async). iItemPos = event-inventory slot it landed in
+function onEventItemGet(oPlayer, iItemPos, sItemType, sItemLevel, btItemDur, btItemElement)
 	if (oPlayer ~= nil) then
 		
 	end
 end
 
--- Called when player acquires Muun item (Async)
-function onMuunItemGet(oPlayer, sItemType, sItemLevel, btItemDur, btItemElement)
+-- Called when player acquires Muun item (Async). iItemPos = Muun-inventory slot it landed in
+function onMuunItemGet(oPlayer, iItemPos, sItemType, sItemLevel, btItemDur, btItemElement)
 	if (oPlayer ~= nil) then
 		
+	end
+end
+
+------------------------------------------------------------------
+-- Inventory Insert Events
+------------------------------------------------------------------
+
+-- Called when an item is placed into the main inventory (Async). iItemPos = slot
+function onInventoryInsertItem(oPlayer, iItemPos, sItemType)
+	if (oPlayer ~= nil) then
+
+	end
+end
+
+-- Called when an item is placed into the Muun inventory (Async). iItemPos = slot
+function onMuunInventoryInsertItem(oPlayer, iItemPos, sItemType)
+	if (oPlayer ~= nil) then
+
+	end
+end
+
+-- Called when an item is placed into the event inventory (Async). iItemPos = slot
+function onEventInventoryInsertItem(oPlayer, iItemPos, sItemType)
+	if (oPlayer ~= nil) then
+
 	end
 end
 
@@ -482,25 +507,55 @@ function onMossMerchantUse(oPlayer, iSectionId)
 end
 
 ------------------------------------------------------------------
--- Database Query Events
+-- Cash Shop (X-Shop) Events
 ------------------------------------------------------------------
--- Global storage
-local queryResultsDS = {}
+-- Sync guards: return 0 to allow, non-zero to block (the value becomes the
+-- result code sent to the client). oItemList is a CashShopItemList, oItemInfo a
+-- CashShopItemInfo.
 
--- Called when DataServer database query result is received (Async)
-function onDSDBQueryReceive(iPlayerIndex, iQueryNumber, bIsLastPacket, iCurrentRow, btColumnCount, btCurrentPacket, oRow)
-	if (oRow ~= nil) then
-		
+-- Called before a single cash shop item is bought (Sync)
+function onCashShopItemBuy(oPlayer, oItemList, oItemInfo)
+	if (oPlayer ~= nil) then
+
 	end
+	return 0
 end
 
--- Global storage
-local queryResultsJS = {}
+-- Called before a cash shop package is bought (Sync)
+function onCashShopPackageBuy(oPlayer, oItemList)
+	if (oPlayer ~= nil) then
 
--- Called when JoinServer database query result is received (Async)
-function onJSDBQueryReceive(iPlayerIndex, iQueryNumber, bIsLastPacket, iCurrentRow, btColumnCount, btCurrentPacket, oRow)
-	if (oRow ~= nil) then
-		
 	end
+	return 0
 end
 
+-- Called before a single cash shop item is gifted (Sync)
+function onCashShopItemGift(oPlayer, oItemList, oItemInfo, szTargetName, szGiftMessage)
+	if (oPlayer ~= nil) then
+
+	end
+	return 0
+end
+
+-- Called before a cash shop package is gifted (Sync)
+function onCashShopPackageGift(oPlayer, oItemList, szTargetName, szGiftMessage)
+	if (oPlayer ~= nil) then
+
+	end
+	return 0
+end
+
+-- Called before a cash shop item is used from the cash inventory (Sync)
+function onCashShopItemUse(oPlayer, iUniqueCode, iAuthCode, iItemID)
+	if (oPlayer ~= nil) then
+
+	end
+	return 0
+end
+
+------------------------------------------------------------------
+-- Other callback files
+------------------------------------------------------------------
+-- Database query results moved to CallbacksDB.lua, and the Lua UI
+-- entry points to CallbacksUI.lua. This file is for game events.
+------------------------------------------------------------------

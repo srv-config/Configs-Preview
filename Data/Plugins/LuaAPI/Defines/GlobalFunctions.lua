@@ -16,8 +16,6 @@
 --   Player.GetObjByIndex(index)
 --   Object.ForEachPlayer(callback)
 --   Timer.Create(interval, name, callback)
---
--- For full documentation see: Reference/Functions/GLOBAL_FUNCTIONS.md
 ------------------------------------------------------------------
 
 ------------------------------------------------------------------
@@ -130,11 +128,6 @@ function Object.CountPlayersOnMap(mapNumber, filter) end
 ---@return integer Number of monsters matching criteria
 function Object.CountMonstersOnMap(mapNumber, filter) end
 
----Find player by name (optimized early exit)
----@param playerName string Player name to find
----@return object|nil Player object or nil if not found
-function Object.GetObjByName(playerName) end
-
 ---Spawn a monster on the given map within a bounding box
 ---@param iMonIndex integer Monster class ID
 ---@param iMapNumber integer Map number
@@ -194,7 +187,7 @@ function Player.SetMoney(iPlayerIndex, iAmount, bResetMoney) end
 function Player.SetRuud(iPlayerIndex, iRuud, iObtainedRuud, bIsObtainedRuud) end
 
 ---@param iPlayerIndex integer Player index
-function Player.Reset(iPlayerIndex) end
+function Player.DoReset(iPlayerIndex) end
 
 ---@param iPlayerIndex integer Player index
 ---@return integer Evolution level (1-5, -1 if invalid)
@@ -219,8 +212,8 @@ function Player.SendMana(iPlayerIndex, iMana, flag, iBP) end
 
 
 ---Save character to database
----@param iPlayerIndex integer Player index
-function Player.SaveCharacter(iPlayerIndex) end
+---@param oPlayer object Player object (stObject)
+function Player.SaveCharacter(oPlayer) end
 
 ---Send experience packet to client (REQUIRED after modifying oPlayer.Experience)
 ---@param iPlayerIndex integer Player receiving exp
@@ -256,6 +249,16 @@ function Player.TradeOkButton(iPlayerIndex) end
 ---Cancel trade for player
 ---@param iPlayerIndex integer Player index
 function Player.TradeCancel(iPlayerIndex) end
+
+---Run the native item-action guard chain before creating/deleting/moving items
+---@param oPlayer object Player object (stObject)
+---@return integer Enums.ItemActionBlock value - OK (0) when allowed, otherwise the block reason
+function Player.CheckItemAction(oPlayer) end
+
+---Close the player's game session - disconnect, or send them back to a select screen
+---@param oPlayer object Player object (stObject)
+---@param iCloseType integer How to close the client - an Enums.CloseType value
+function Player.CloseSet(oPlayer, iCloseType) end
 
 ------------------------------------------------------------------
 -- Combat Namespace
@@ -920,6 +923,21 @@ function EventMonsterTracker.SpawnWaveAndRegister(iEventType, iMonsterClass, iCo
 ---@param iNpcIndex integer NPC object index
 ---@param iNpcClass integer NPC class ID
 function EventMonsterTracker.RegisterNPC(iEventType, iNpcIndex, iNpcClass) end
+
+------------------------------------------------------------------
+-- CashShop Namespace
+------------------------------------------------------------------
+
+CashShop = {}
+
+---Grant a cash shop item to the player - queues the DataServer buy request
+---@param iPlayerIndex integer Player index
+---@param iItemInfoGUID integer Cash shop item-info GUID (CashShopItemList.ItemInfoGUID)
+---@param iItemInfoID integer Cash shop item-info ID (CashShopItemList.ItemInfoID)
+---@param iPrice integer Price charged
+---@param btCoinType integer Currency type (Enums.CoinType)
+---@param szDescription string Description/log text for the purchase
+function CashShop.ItemBuy(iPlayerIndex, iItemInfoGUID, iItemInfoID, iPrice, btCoinType, szDescription) end
 
 ------------------------------------------------------------------
 -- Script Loading (global functions, no namespace)

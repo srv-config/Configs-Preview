@@ -97,6 +97,42 @@ Enums.PlayerState = {
 }
 -- Usage: if oPlayer.Connected == Enums.PlayerState.PLAYING then print("Player is playing") end
 
+-- Interface state (IfState) types - which window/dialog a player has open.
+-- Used with oPlayer:SetIfState(use, state, type) / oPlayer:GetIfStateType().
+Enums.IfState = {
+	NONE = 0,
+	TRADE = 1,
+	PARTY = 2,
+	SHOP = 3,
+	GUILD = 4,
+	GUILDMASTER = 5,
+	WAREHOUSE = 6,
+	CHAOSBOX = 7,
+	EVENTCHIP = 9,
+	QUESTNPC = 10,
+	CHARTRANSFER = 11,
+	NPC_EVENT = 12,
+	DARK_TRAINER = 13,
+	GUILD_RELATIONSHIP = 14,
+	SIEGE_MACHINE_ATTACK = 15,
+	SIEGE_MACHINE_DEFENSE = 16,
+	CASHSHOP = 19,
+	JEWELMIX = 20,
+	PENTAGRAMMIXBOX = 21,
+	HARMONYRENEWAL = 22,
+	ENCHANTITEMMIX = 23,
+	WINGVOUCHER = 24,
+	LUAWINDOW = 25,
+}
+-- Usage: if oPlayer:GetIfStateType() == Enums.IfState.WAREHOUSE then end
+
+-- Close-set type (Player.CloseSet / gObjCloseSet CloseType) - how the client is closed.
+Enums.CloseType = {
+	DISCONNECT = 0, -- log out and disconnect (back to the login screen)
+	SELECT_CHARACTER = 1, -- close the game session, back to character select
+	SELECT_SERVER = 2, -- back to the server list
+}
+
 Enums.ElementType = {
 	NONE = 0,
 	FIRE = 1,
@@ -1249,3 +1285,46 @@ Enums.eLANGUAGE_TEXT_TYPE = {
 }
 -- Usage: local text = Language.GetText(oPlayer.LangCode, Enums.eLANGUAGE_TEXT_TYPE.COMMON, textID)
 
+
+Enums.CoinType = {
+	ZEN = 0,
+	WCOIN = 1,
+	GOBLIN_POINT = 2,
+	RUUD = 3,
+}
+-- Usage: if Coin.Check(oPlayer, Enums.CoinType.WCOIN, 500) then Coin.Charge(oPlayer, Enums.CoinType.WCOIN, 500) end
+
+-- Why Player.CheckItemAction refused.
+-- ALWAYS call Player.CheckItemAction before creating or deleting items - it is
+-- the same guard chain the native handlers run, and skipping it lets an item
+-- exist in two places at once (pending trade, personal shop, map move, ...).
+Enums.ItemActionBlock = {
+	OK = 0,
+	BAD_INDEX = 1,
+	SECURITY = 2,
+	MAP_MOVE = 3,
+	LOGOUT = 4,
+	PERSONAL_SHOP = 5,
+	GREMORY_WAIT = 6,
+	STORE_WAIT = 7,
+	BATTLE_CORE = 8,
+	IF_STATE = 9,
+	MINING = 10,
+	DUEL = 11,
+	TRANSACTION = 12,
+}
+-- Usage: if Player.CheckItemAction(oPlayer) ~= Enums.ItemActionBlock.OK then return end
+
+------------------------------------------------------------------
+-- Database query numbers - name every id here, one table per server.
+-- QueryDS: DataServer (DB.QueryDS), range 1000-1999.
+-- QueryJS: JoinServer (DB.QueryJS), range 2000-2999.
+------------------------------------------------------------------
+Enums.QueryDS = {
+	EXCHANGE_LOAD_DAILY = 1020,
+	EXCHANGE_LOAD_HISTORY = 1021,
+	EXCHANGE_SAVE = 1022,
+}
+
+Enums.QueryJS = {
+}

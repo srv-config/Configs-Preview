@@ -18,6 +18,25 @@ Helpers = {}
 -- Replicates COLORREF RGB macro from Windows API
 -- Converts RGB color components (0-255) to a single DWORD value
 -- Usage: local color = Helpers.RGB(255, 0, 0)  -- Red
+-- Characters, not bytes. #s counts BYTES, so a six-character Chinese name
+-- reads as 18 and a byte-based length check rejects it. Anything a player
+-- typed goes through here.
+function Helpers.TextLen(s)
+	s = tostring(s or "")
+	local n = 0
+
+	for i = 1, #s do
+		local b = s:byte(i)
+
+		-- 128..191 are continuation bytes: they belong to the character before
+		if b < 128 or b > 191 then
+			n = n + 1
+		end
+	end
+
+	return n
+end
+
 function Helpers.RGB(r, g, b)
 	return (r & 0xFF) | ((g & 0xFF) << 8) | ((b & 0xFF) << 16)
 end

@@ -1356,64 +1356,64 @@ function GunCrusherDarkPlasma_Level2(InDamage, Strength, Dexterity, Vitality, En
 end
 
 -- SkillID: 822, Dark Plasma Mastery - (Master Gun Breaker, Heist Gun Crusher)
-function GunCrusherDarkPlasma_Level3(InDamage, Strength, Dexterity, Vitality, Energy, SkillTreeValue)
+function GunCrusherDarkPlasma_Level3(InDamage, Strength, Dexterity, Vitality, Energy)
 	local OutDamage = 0
-	OutDamage = InDamage * (((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+	OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 823, Ice Break Strengthener - (Master Gun Breaker, Heist Gun Crusher)
-function GunCrusherIceBreak_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, SkillTreeValue)
+function GunCrusherIceBreak_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = ((InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 0.8)
 	elseif (BarrageCount == 2) then
-		OutDamage = ((InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.0)
 	elseif (BarrageCount == 3) then
-		OutDamage = ((InDamage * 1.2) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.2)
 	end
 
 	return OutDamage
 end
 
 -- SkillID: 824, Ice Break Mastery - (Master Gun Breaker, Heist Gun Crusher)
-function GunCrusherIceBreak_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, SkillTreeValue)
+function GunCrusherIceBreak_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = ((InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 0.8)
 	elseif (BarrageCount == 2) then
-		OutDamage = ((InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.0)
 	elseif (BarrageCount == 3) then
-		OutDamage = ((InDamage * 1.2) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.2)
 	end
 
 	return OutDamage
 end
 
 -- SkillID: 825, Death Fire Strengthener - (Master Gun Breaker, Heist Gun Crusher)
-function GunCrusherDeathFire_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, SkillTreeValue)
+function GunCrusherDeathFire_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = ((InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 0.8)
 	elseif (BarrageCount == 2) then
-		OutDamage = ((InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.0)
 	end
 
 	return OutDamage
 end
 
 -- SkillID: 826, Death Fire Mastery - (Master Gun Breaker, Heist Gun Crusher)
-function GunCrusherDeathFire_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, SkillTreeValue)
+function GunCrusherDeathFire_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = ((InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 0.8)
 	elseif (BarrageCount == 2) then
-		OutDamage = ((InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.0)
 	end
 
 	return OutDamage
@@ -1432,26 +1432,26 @@ function GunCrusherFixedFire_MasterLevel2_Calc(Strength, Dexterity, Vitality, En
 end
 
 -- SkillID: 835, Death Ice Strengthener - (Master Gun Breaker, Heist Gun Crusher)
-function GunCrusherDeathIce_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, SkillTreeValue)
+function GunCrusherDeathIce_MasterLevel1_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = ((InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 0.8)
 	elseif (BarrageCount == 2) then
-		OutDamage = ((InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.0)
 	end
 
 	return OutDamage
 end
 
 -- SkillID: 836, Death Ice Mastery - (Master Gun Breaker, Heist Gun Crusher)
-function GunCrusherDeathIce_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount, SkillTreeValue)
+function GunCrusherDeathIce_MasterLevel2_Calc(InDamage, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = ((InDamage * 0.8) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 0.8)
 	elseif (BarrageCount == 2) then
-		OutDamage = ((InDamage * 1.0) * ((Energy / 8) + (Dexterity / 28) + 120) + SkillTreeValue) / 100
+		OutDamage = (InDamage * 1.0)
 	end
 
 	return OutDamage
@@ -1794,9 +1794,9 @@ function IllusionKnightChargeSlash_MasterLevel1_Calc(InDamage, Strength, Dexteri
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1807,9 +1807,9 @@ function IllusionKnightChargeSlash_MasterLevel2_Calc(InDamage, Strength, Dexteri
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1820,11 +1820,11 @@ function IllusionKnightWindGlaive_MasterLevel1_Calc(InDamage, Strength, Dexterit
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1835,11 +1835,11 @@ function IllusionKnightWindGlaive_MasterLevel2_Calc(InDamage, Strength, Dexterit
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1850,11 +1850,11 @@ function IllusionKnightBladeStorm_MasterLevel2_Calc(InDamage, Strength, Dexterit
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage
@@ -1865,11 +1865,11 @@ function IllusionKnightBladeStorm_MasterLevel1_Calc(InDamage, Strength, Dexterit
 	local OutDamage = 0
 
 	if (BarrageCount == 1) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 2) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	elseif (BarrageCount == 3) then
-		OutDamage = (InDamage * (200 + (Strength / 30) + (Dexterity / 30))) / 100;
+		OutDamage = InDamage
 	end
 
 	return OutDamage

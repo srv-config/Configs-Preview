@@ -7,13 +7,11 @@
 --═══════════════════════════════════════════════════════════════
 
 ------------------------------------------------------------------
--- Structs.lua - C++ Type Definitions
+-- Structs.lua - Engine Type Definitions
 ------------------------------------------------------------------
--- LuaDoc type hints for C++ objects exposed to Lua.
--- These structures CANNOT be created in Lua - they are C++ objects
+-- LuaDoc type hints for engine objects exposed to Lua.
+-- These structures CANNOT be created in Lua - they are engine objects
 -- accessible only through functions like Player.GetObjByIndex().
---
--- For full documentation see: Reference/STRUCTS.md
 ------------------------------------------------------------------
 
 ------------------------------------------------------------------
@@ -22,12 +20,12 @@
 
 ---@class userData
 ---@field Strength integer Base strength stat
----@field Dexterity integer Base dexterity stat
+---@field Agility integer Base agility stat
 ---@field Vitality integer Base vitality stat
 ---@field Energy integer Base energy stat
 ---@field Command integer Base command stat
 ---@field AddStrength integer Additional strength (blue stat)
----@field AddDexterity integer Additional dexterity (blue stat)
+---@field AddAgility integer Additional agility (blue stat)
 ---@field AddVitality integer Additional vitality (blue stat)
 ---@field AddEnergy integer Additional energy (blue stat)
 ---@field AddCommand integer Additional command (blue stat)
@@ -42,9 +40,11 @@
 ---@field UsedFourthTreePoint integer Used master points in 4th skill tree
 ---@field Money integer Zen currency
 ---@field Ruud integer Ruud currency
----@field Resets integer Total resets performed today
----@field VIPType integer VIP tier (-1 = none)
----@field VIPMode integer Active VIP mode
+---@field CharacterId integer Character row id in the database (db_id; read-only) - the per-character DB key
+---@field Resets integer Total reset count
+---@field ResetsToday integer Resets performed today
+---@field VipType integer VIP tier (-1 = none)
+---@field VipMode integer Active VIP mode
 
 ------------------------------------------------------------------
 -- ActionTickCount Structure
@@ -81,7 +81,7 @@
 ---@field NPCType, BYTE (read-only; Enums.NPCType,NONE | SHOP | WAREHOUSE | CHAOS_MIX | GOLDEN_ARCHER | PENTAGRAM_MIX | MAP_MOVE | LAST_MAN_STANDING)
 ---@field Connected integer Connection state (1=connected, 0=disconnected)
 ---@field UserNumber integer Unique user session number (read-only)
----@field DBNumber integer Database character ID (memb_guid; read-only)
+---@field DBNumber integer Account id in the database (memb_guid; read-only) - character id is userData.CharacterId
 ---@field LangCode integer Client language code
 ---@field Class integer Character class code
 ---@field Level integer Character level
@@ -169,6 +169,21 @@ function Object:GetWarehouseItem(iWarehousePos) end
 ---@param iTradeBoxPos integer Trade box slot (0 to TRADE_BOX_SIZE-1)
 ---@return ItemInfo|nil Item pointer if valid, nil otherwise
 function Object:GetTradeItem(iTradeBoxPos) end
+
+-- Interface state (open window/dialog). btType is an Enums.IfState value.
+---@param btUse integer 0 = no interface open, 1 = open
+---@param btState integer interface sub-state (0-15; type-specific, usually 0)
+---@param btType integer which interface - an Enums.IfState value
+function Object:SetIfState(btUse, btState, btType) end
+
+---@return integer 1 while an interface is open (trade, shop, warehouse, Lua window, ...), else 0
+function Object:GetIfStateUse() end
+
+---@return integer the sub-state set with SetIfState
+function Object:GetIfStateState() end
+
+---@return integer the open interface's type (Enums.IfState)
+function Object:GetIfStateType() end
 
 ------------------------------------------------------------------
 -- ItemAttr Structure (Read-Only)
@@ -534,4 +549,68 @@ function MonsterAttr:GetName() end
 ---@param iType integer Resistance type index (0 to MAX_RESISTENCE_TYPE-1)
 ---@return integer Resistance value, or -1 if out of range
 function MonsterAttr:GetResistance(iType) end
+
+------------------------------------------------------------------
+-- Cash Shop item objects (passed to the onCashShop* callbacks)
+------------------------------------------------------------------
+
+---@class CashShopItemInfo
+---@field GUID integer Item-info GUID (readonly)
+---@field ID integer Item-info ID (readonly)
+---@field ItemGroup integer Item group (readonly)
+---@field ItemIndex integer Item index within the group (readonly)
+---@field ItemLevel integer Item level (readonly)
+---@field Durability integer Durability (readonly)
+---@field Skill integer Skill flag (readonly)
+---@field Luck integer Luck flag (readonly)
+---@field Option integer Option level (readonly)
+---@field SetOption integer Ancient/set option (readonly)
+---@field SocketCount integer Socket count (readonly)
+---@field Attribute integer Item attribute (readonly)
+---@field Type integer Item type (readonly)
+---@field Duration integer Period/expiry time (readonly)
+---@field Rank integer Item rank (readonly)
+
+---Full item code, ITEMGET(ItemGroup, ItemIndex)
+---@return integer
+function CashShopItemInfo:GetItemCode() end
+
+---Item description text
+---@return string
+function CashShopItemInfo:GetDescription() end
+
+---Excellent option value at a 1-based index
+---@param index integer 1..MAX_ITEM_EXC_OPTION
+---@return integer Value, or -1 if the index is out of range
+function CashShopItemInfo:GetExc(index) end
+
+---Socket option value at a 1-based index
+---@param index integer 1..MAX_SOCKET_OPTION
+---@return integer Value, or -1 if the index is out of range
+function CashShopItemInfo:GetSocket(index) end
+
+---Option-slot value at a 1-based index
+---@param index integer 1..MAX_OPTSLOT
+---@return integer Value, or -1 if the index is out of range
+function CashShopItemInfo:GetOptSlot(index) end
+
+---@class CashShopItemList
+---@field Guid integer Row GUID (readonly)
+---@field ItemIndex integer Item index (readonly)
+---@field ItemSubIndex integer Item sub-index (readonly)
+---@field ItemOptionSelect integer Selected option (readonly)
+---@field PackageID integer Package id, 0 when not a package (readonly)
+---@field CoinType integer Currency type (readonly)
+---@field Price integer Price (readonly)
+---@field ItemInfoGUID integer Linked CashShopItemInfo GUID (readonly)
+---@field ItemInfoID integer Linked CashShopItemInfo ID (readonly)
+---@field Category integer Shop category (readonly)
+---@field GoblinPoint integer Goblin point value (readonly)
+---@field EnableForSale integer Sellable flag (readonly)
+---@field EnableForGift integer Giftable flag (readonly)
+---@field RandomItemPackage integer Random-item package flag (readonly)
+
+---True when this row is a package (PackageID > 0)
+---@return boolean
+function CashShopItemList:IsPackage() end
 

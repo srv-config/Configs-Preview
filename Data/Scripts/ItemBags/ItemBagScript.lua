@@ -155,19 +155,19 @@ function LoadItemBag() -- Bags Load
 	ItemBag.Add(BAG_EVENT, 24,0, 'Mix_LuckyCoin(30)_Reward') -- DropFunction /4/
 	ItemBag.Add(BAG_EVENT, 25,0, 'Mix_Senior_Reward') -- DropFunction /4/
 	ItemBag.Add(BAG_EVENT, 26,0, 'Monster_(275)_Kundun') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 27,0, 'Event_ChaosCastle(2)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 28,0, 'Event_ChaosCastle(3)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 29,0, 'Event_ChaosCastle(4)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 30,0, 'Event_ChaosCastle(5)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 31,0, 'Event_ChaosCastle(6)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 32,0, 'Event_ChaosCastle(7)_Reward') -- DropFunction /3/
+	ItemBag.Add(BAG_EVENT, 33,0, 'Mix_Cherry_Blossom_White_Reward') -- DropFunction /4/
+	ItemBag.Add(BAG_EVENT, 34,0, 'Mix_Cherry_Blossom_Red_Reward') -- DropFunction /4/
 	ItemBag.Add(BAG_EVENT, 35,0, 'Event_DevilSquare_Rank(1)_Reward') -- DropFunction /3/
 	ItemBag.Add(BAG_EVENT, 36,0, 'Event_DevilSquare_Rank(2)_Reward') -- DropFunction /3/
 	ItemBag.Add(BAG_EVENT, 37,0, 'Event_DevilSquare_Rank(3)_Reward') -- DropFunction /3/
 	ItemBag.Add(BAG_EVENT, 38,0, 'Event_DevilSquare_Rank(4)_Reward') -- DropFunction /3/
 	ItemBag.Add(BAG_EVENT, 39,0, 'Event_DevilSquare_Rank(5)_Reward') -- DropFunction /3/
-	ItemBag.Add(BAG_EVENT, 46,0, 'Mix_Cherry_Blossom_White_Reward') -- DropFunction /4/
-	ItemBag.Add(BAG_EVENT, 47,0, 'Mix_Cherry_Blossom_Red_Reward') -- DropFunction /4/
-	ItemBag.Add(BAG_EVENT, 48,0, 'Event_ChaosCastle(2)_Reward') -- DropFunction /3/
-	ItemBag.Add(BAG_EVENT, 49,0, 'Event_ChaosCastle(3)_Reward') -- DropFunction /3/
-	ItemBag.Add(BAG_EVENT, 50,0, 'Event_ChaosCastle(4)_Reward') -- DropFunction /3/
-	ItemBag.Add(BAG_EVENT, 51,0, 'Event_ChaosCastle(5)_Reward') -- DropFunction /3/
-	ItemBag.Add(BAG_EVENT, 52,0, 'Event_ChaosCastle(6)_Reward') -- DropFunction /3/
-	ItemBag.Add(BAG_EVENT, 53,0, 'Event_ChaosCastle(7)_Reward') -- DropFunction /3/
 	
 -- Bags for purpose of Monster Group Regen System
 	ItemBag.Add(BAG_EVENT, 150,0, 'Event_Monster_(561)_Medusa') -- DropFunction /3/ used when OverriteDefaultSettings from IGC_MonsterGroupRegen.xml is set to 1
@@ -255,6 +255,8 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
 			ItemResult.SocketCount = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
+		elseif (BagItem.Socket == -2) then
+			ItemResult.SocketCount = Item.GetSocketCount(ItemID)
 		end
 	else
 		ItemResult.SocketCount = 0 -- no socket, applies for items of no item type 2 only
@@ -355,6 +357,8 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
 			ItemResult.SocketCount = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
+		elseif (BagItem.Socket == -2) then
+			ItemResult.SocketCount = Item.GetSocketCount(ItemID)
 		end
 	else
 		ItemResult.SocketCount = 0 -- no socket, applies for items of no item type 2 only
@@ -454,6 +458,8 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
 			ItemResult.SocketCount = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
+		elseif (BagItem.Socket == -2) then
+			ItemResult.SocketCount = Item.GetSocketCount(ItemID)
 		end
 	else
 		ItemResult.SocketCount = 0 -- no socket, applies for items of no item type 2 only
@@ -549,6 +555,8 @@ function EventBagMakeItem(BagItem)
 	if (Item.IsSocket(ItemID) == true) then
 		if (BagItem.Socket > 0 and BagItem.Socket <= 5) then -- if slots value is supported (0-5)
 			ItemResult.SocketCount = Utility.GetRandomRangedInt(1, BagItem.Socket) -- set up to configured value of sockets
+		elseif (BagItem.Socket == -2) then
+			ItemResult.SocketCount = Item.GetSocketCount(ItemID)
 		end
 	else
 		ItemResult.SocketCount = 0 -- no socket, applies for items of no item type 2 only

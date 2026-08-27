@@ -101,7 +101,6 @@
 //	Exc:
 //		-1: Random Exc options
 //		-2: Lord Mix only, original setting
-//		-3: Random Exc options based on a Common Exc Options rate from IGC_ExcellentOptions.xml
 //		 0: No Exc options, or sum of below values (63 - Full of Excellent):
 //		 	 1: Mana recovery after Monster hunt +Mana/8
 //			 2: Health recovery after Monster hunt +HP/8
@@ -118,7 +117,7 @@
 //		~ 3: up to three slots
 //		~ 4: up to four slots
 //		~ 5: up to five slots
-//		~ -2: random count of socket slots (Pentagrams and Socket Items)
+//		~ -2: random count of socket slots (Socket Items)
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Type attribute of the item must be set to 2, refer to ItemList.xml
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

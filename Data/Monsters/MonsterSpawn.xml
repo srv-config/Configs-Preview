@@ -1639,18 +1639,6 @@
 			<Spawn Index="57" Distance="30" StartX="114" StartY="78" Dir="-1" />
 		</Spot>
 	</Map>
-	<Map Number="9" Name="Unknown Map 9">
-		<Spot Type="1" Description="Multi-Spawn">
-			<Spawn Index="17" Distance="30" StartX="119" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" />
-			<Spawn Index="15" Distance="30" StartX="119" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" />
-			<Spawn Index="10" Distance="30" StartX="121" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" />
-			<Spawn Index="39" Distance="30" StartX="121" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" />
-			<Spawn Index="41" Distance="30" StartX="49" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
-			<Spawn Index="37" Distance="30" StartX="49" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
-			<Spawn Index="64" Distance="30" StartX="53" StartY="74" EndX="83" EndY="109" Dir="-1" Count="35" />
-			<Spawn Index="65" Distance="30" StartX="53" StartY="74" EndX="83" EndY="109" Dir="-1" Count="35" />
-		</Spot>
-	</Map>
 	<Map Number="10" Name="Icarus">
 		<Spot Type="2" Description="Single Point Monsters">
 			<Spawn Index="77" Distance="30" StartX="34" StartY="238" Dir="1" />
@@ -2351,16 +2339,6 @@
 			<Spawn Index="292" Distance="30" StartX="224" StartY="191" Dir="-1" />
 			<Spawn Index="291" Distance="30" StartX="193" StartY="167" Dir="-1" />
 			<Spawn Index="290" Distance="30" StartX="103" StartY="91" Dir="-1" />
-		</Spot>
-	</Map>
-	<Map Number="32" Name="Unknown Map 32">
-		<Spot Type="1" Description="Multi-Spawn">
-			<Spawn Index="294" Distance="30" StartX="120" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" />
-			<Spawn Index="60" Distance="30" StartX="120" StartY="80" EndX="150" EndY="115" Dir="-1" Count="35" />
-			<Spawn Index="290" Distance="30" StartX="122" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" />
-			<Spawn Index="57" Distance="30" StartX="122" StartY="152" EndX="151" EndY="184" Dir="-1" Count="35" />
-			<Spawn Index="434" Distance="30" StartX="50" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
-			<Spawn Index="435" Distance="30" StartX="50" StartY="138" EndX="79" EndY="173" Dir="-1" Count="35" />
 		</Spot>
 	</Map>
 	<Map Number="33" Name="Aida">

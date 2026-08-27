@@ -85,24 +85,15 @@
 		<Option ID="13" Number="1" Value="50" ItemKindA="6" ItemKindB="27" Name="Increase Life" />
 		<Option ID="14" Number="2" Value="50" ItemKindA="6" ItemKindB="27" Name="Increase Mana" />
 		<Option ID="15" Number="4" Value="3" ItemKindA="6" ItemKindB="27" Name="Chance of Damage from Breaking Enemy's Defense" />
-	
-	<!-- Monster Wings aka 2.5 level options -->
-		<Option ID="16" Number="1" Value="3" ItemKindA="6" ItemKindB="28" Name="Chance of Damage from Breaking Enemy's Defense" />
-		<Option ID="17" Number="2" Value="5" ItemKindA="6" ItemKindB="28" Name="Chance of Fully Recovering Life" />
-	
-	<!-- Wings of Conqueror options -->
-		<Option ID="18" Number="1" Value="5" ItemKindA="6" ItemKindB="60" Name="Chance of Damage from Breaking Enemy's Defense" />
-		<Option ID="19" Number="2" Value="5" ItemKindA="6" ItemKindB="60" Name="Chance of Returning the Enemy's Attack Power" />
-		<Option ID="20" Number="4" Value="5" ItemKindA="6" ItemKindB="60" Name="Chance of Fully Recovering Life" />
-		<Option ID="21" Number="8" Value="5" ItemKindA="6" ItemKindB="60" Name="Chance of Fully Recovering Mana" />
-		
-	<!-- Wings of Angel Devil options -->
-		<Option ID="22" Number="1" Value="4" ItemKindA="6" ItemKindB="62" Name="Chance of Double damage" />
-		<Option ID="23" Number="2" Value="4" ItemKindA="6" ItemKindB="62" Name="Chance of Damage from Breaking Enemy's Defense" />
-		<Option ID="24" Number="4" Value="4" ItemKindA="6" ItemKindB="62" Name="Chance of Fully Recovering Life" />
 	</Wings>
 	
 	<OptionDropRate>
 		<Common One="7500" Two="2500" Three="0" Four="0" Five="0" Six="0" /> <!-- Sum of the values must be equal to 10000 -->
+		<Wing>
+			<Kind A="6" B="24" Zero="8000" One="1500" Two="500" Three="0" Four="0" Five="0" Six="0" />
+			<Kind A="6" B="25" Zero="9000" One="750" Two="250" Three="0" Four="0" Five="0" Six="0" />
+			<Kind A="6" B="26" Zero="8000" One="1500" Two="500" Three="0" Four="0" Five="0" Six="0" />
+			<Kind A="6" B="27" Zero="9000" One="750" Two="250" Three="0" Four="0" Five="0" Six="0" />
+		</Wing>
 	</OptionDropRate>
 </ExcellentOptions>

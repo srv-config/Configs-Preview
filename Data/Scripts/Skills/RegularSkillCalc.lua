@@ -734,11 +734,11 @@ function GladiatorChaosBlade(InDamage, Strength, Dexterity, Vitality, Energy, Ba
     local OutDamage = 0
     
     if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33)
+        OutDamage = InDamage
     elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33)
+        OutDamage = InDamage
     elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33)
+        OutDamage = InDamage
 	elseif(BarrageCount == 4) then -- Explosion
 		OutDamage = 10000
     end
@@ -750,11 +750,11 @@ function GladiatorHavokSpear(InDamage, Strength, Dexterity, Vitality, Energy, Ba
     local OutDamage = 0
     
     if (BarrageCount == 1) then
-        OutDamage = (InDamage * 0.33)
+        OutDamage = InDamage
     elseif (BarrageCount == 2) then
-        OutDamage = (InDamage * 0.33)
+        OutDamage = InDamage
     elseif (BarrageCount == 3) then
-        OutDamage = (InDamage * 0.33)
+        OutDamage = InDamage
 	elseif(BarrageCount == 4) then -- Explosion
 		OutDamage = 10000
     end

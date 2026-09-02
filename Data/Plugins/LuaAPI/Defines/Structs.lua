@@ -154,6 +154,18 @@
 ---@field ActionTickCount ActionTickCount[] Array of 3 timers (Lua index 1-3)
 ---@field TradeMoney integer Zen amount offered in trade window
 ---@field TradeOk integer Trade confirmation status (0=not confirmed, 1=confirmed)
+---@field CsJoinSide integer Castle Siege side, from the registered guild's siege id (0 = not taking part)
+---@field CsGuildInvolved boolean Player's guild is registered for this siege
+---@field AccumulatedCrownAccessTime integer Milliseconds banked at the crown, carried across interruptions
+---@field LifeStoneCount integer Life stones this player currently has placed
+---@field CsNpcType integer 0 = not a siege structure, 1 = spawned from the base list, 2 and 3 = the two sides
+---@field CsGateOpen integer 1 while the gate stands open
+---@field CsGateLeverLinkIndex integer Object index of the paired gate or lever, -1 when unlinked
+---@field CsNpcDfLevel integer Defence level of the siege structure
+---@field CsNpcRgLevel integer Regeneration level of the siege structure
+---@field CreationState integer Life stone growth, 0 to 5; 5 means finished
+---@field CreatedActivationTime integer Timer behind CreationState, twelve units per step
+---@field AccumulatedDamage integer Running damage total, reset by whatever owns the threshold
 -- @field TargetNumber short Target object Index (monster/player being attacked)
 -- @field TargetNpcNumber short NPC object Index (NPC player is interacting with)
 
@@ -188,6 +200,10 @@ function Object:GetIfStateType() end
 ------------------------------------------------------------------
 -- ItemAttr Structure (Read-Only)
 ------------------------------------------------------------------
+
+---@class EventNotice
+---@field type integer Which event it is (Enums.EventNoticeType)
+---@field secondsRemaining integer Seconds until the event starts, -1 when unknown
 
 ---@class ItemAttr
 ---@field HasItemInfo integer Item has valid info (0-1)
@@ -361,6 +377,7 @@ function CreateItemInfo:SetOptSlot(index, value) end
 ---@field ElementalDefense integer Elemental defense
 ---@field LegendaryAddOptionType integer Legendary option type
 ---@field LegendaryAddOptionValue integer Legendary option value
+---@field IsLoadHarmonyOptionInfo integer Harmony option data has been read for this item (0-1)
 
 -- ItemInfo methods
 ---@param index integer Class index (0-based)

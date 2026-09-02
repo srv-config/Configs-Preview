@@ -1283,7 +1283,7 @@ Enums.eLANGUAGE_TEXT_TYPE = {
 	VIPSYSTEM = 5,
 	MAX = 6,
 }
--- Usage: local text = Language.GetText(oPlayer.LangCode, Enums.eLANGUAGE_TEXT_TYPE.COMMON, textID)
+-- Usage: local text = Lang.GetText(oPlayer.LangCode, Enums.eLANGUAGE_TEXT_TYPE.COMMON, textID)
 
 
 Enums.CoinType = {

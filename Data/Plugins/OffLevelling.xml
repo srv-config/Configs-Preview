@@ -249,5 +249,6 @@
 		<Map Number="143" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Kardamahal Underground Temple -->
 		<Map Number="144" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Swamp of Destruction -->
 		<Map Number="145" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Aquila's Temple -->
+		<Map Number="146" Disable="0" CoinType="-1" CoinValue="100" /> <!-- Raklion of Oblivio -->
 	</PerMapAdjustments>
 </OffLevelling>

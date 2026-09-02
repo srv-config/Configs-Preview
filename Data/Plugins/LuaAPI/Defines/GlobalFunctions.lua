@@ -261,6 +261,52 @@ function Player.CheckItemAction(oPlayer) end
 function Player.CloseSet(oPlayer, iCloseType) end
 
 ------------------------------------------------------------------
+-- Coin Namespace
+------------------------------------------------------------------
+
+Coin = {}
+
+---Currency types: 0 = Zen, 1 = WCoin, 2 = Goblin Point, 3 = Ruud. Zen and Ruud
+---live on the character, WCoin and Goblin Point on the account
+---@param iCoinType integer Currency type
+---@return boolean True for a known currency
+function Coin.IsValidType(iCoinType) end
+
+---Current balance
+---@param oPlayer object Player object (stObject)
+---@param iCoinType integer Currency type (0-3)
+---@return number Balance, 0 for an unknown type
+function Coin.Get(oPlayer, iCoinType) end
+
+---Can the player pay? An amount of 0 or less always passes
+---@param oPlayer object Player object (stObject)
+---@param iCoinType integer Currency type (0-3)
+---@param iAmount integer Amount to test
+---@return boolean True when the balance covers it
+function Coin.Check(oPlayer, iCoinType, iAmount) end
+
+---Takes the amount, but only when the balance covers it. The client is updated
+---for you, so there is no separate send
+---@param oPlayer object Player object (stObject)
+---@param iCoinType integer Currency type (0-3)
+---@param iAmount integer Amount to take
+---@return boolean False means nothing was taken
+function Coin.Charge(oPlayer, iCoinType, iAmount) end
+
+---Gives the amount. The client is updated for you
+---@param oPlayer object Player object (stObject)
+---@param iCoinType integer Currency type (0-3)
+---@param iAmount integer Amount to give
+---@return boolean False means nothing was given
+function Coin.Add(oPlayer, iCoinType, iAmount) end
+
+---Currency name in the player's language
+---@param oPlayer object Player object (stObject), decides the language
+---@param iCoinType integer Currency type (0-3)
+---@return string Localised name, empty for an unknown type
+function Coin.GetName(oPlayer, iCoinType) end
+
+------------------------------------------------------------------
 -- Combat Namespace
 ------------------------------------------------------------------
 
@@ -344,8 +390,17 @@ function Inventory.SetSlot(iPlayerIndex, iInventoryItemStartPos, btItemType) end
 ---@return integer Remaining durability
 function Inventory.ReduceDur(oPlayer, iInventoryItemPos, iDurabilityMinus) end
 
----@return boolean Space check result
-function Inventory.RectCheck() end
+---Is one exact rectangle of the inventory grid free? Grid coordinates, not slot
+---numbers: 8 columns wide, 8 + 4 * m_InventoryExpansion rows tall
+---@param iPlayerIndex integer Player index
+---@param iX integer Left column, 0 to 7
+---@param iY integer Top row, 0 based
+---@param iWidth integer Width in cells
+---@param iHeight integer Height in cells
+---@return integer Slot number of the top-left cell (12 + iY * 8 + iX), or 255 when
+---the rectangle overlaps something or runs off the right edge, or 254 when it runs
+---past the bottom of the unlocked inventory
+function Inventory.RectCheck(iPlayerIndex, iX, iY, iWidth, iHeight) end
 
 ------------------------------------------------------------------
 -- Item Namespace
@@ -415,6 +470,11 @@ function Item.Create(iPlayerIndex, stItemCreate) end
 ---@param bDropMasterySet boolean Drop mastery set
 function Item.MakeRandomSet(iPlayerIndex, bGremoryCase, bDropMasterySet) end
 
+---Stack size for one inventory slot
+---@param iItemNum integer Item ID
+---@return integer Items per slot, 0 when the item does not stack
+function Item.GetOverlapLimit(iItemNum) end
+
 ------------------------------------------------------------------
 -- Monster Namespace
 ------------------------------------------------------------------
@@ -425,6 +485,24 @@ Monster = {}
 ---@param iClass integer Monster class ID
 ---@return MonsterAttr|nil Monster attribute object, or nil if not found
 function Monster.GetAttr(iClass) end
+
+------------------------------------------------------------------
+-- NPC Namespace
+------------------------------------------------------------------
+
+NPC = {}
+
+---Opens one of the client's built-in NPC windows, the same answer the server
+---sends for its own NPCs (2 = warehouse). Filling the window is a separate send
+---@param iPlayerIndex integer Player index
+---@param iResultType integer Which window to open
+function NPC.SendTalkResult(iPlayerIndex, iResultType) end
+
+---Opens the client's dialog for that NPC class. The client fills it from its own
+---data, so the class need not match the NPC standing there
+---@param iPlayerIndex integer Player index
+---@param iNpcClass integer NPC class whose dialog to show
+function NPC.SendDialog(iPlayerIndex, iNpcClass) end
 
 ------------------------------------------------------------------
 -- ItemBag Namespace
@@ -441,6 +519,13 @@ function ItemBag.Add(iBagType, iParam1, iParam2, strFileName) end
 ---@param iPlayerIndex integer Player index
 ---@param stBagItem object Bag item struct (BagItem)
 function ItemBag.CreateItem(iPlayerIndex, stBagItem) end
+
+---Use item bag to give items to player
+---@param playerIndex integer Player index
+---@param bagType integer Bag type (use Enums.ItemBagType)
+---@param param1 integer Depends on bag type
+---@param param2 integer Depends on bag type
+function ItemBag.Use(playerIndex, bagType, param1, param2) end
 
 ------------------------------------------------------------------
 -- Buff Namespace
@@ -750,19 +835,6 @@ function Utility.FireCracker(iPlayerIndex) end
 function Utility.SendEventTimer(playerIndex, milliseconds, countUp, displayType, deleteTimer) end
 
 ------------------------------------------------------------------
--- ItemBag Namespace
-------------------------------------------------------------------
-
-ItemBag = {}
-
----Use item bag to give items to player
----@param playerIndex integer Player index
----@param bagType integer Bag type (use Enums.ItemBagType)
----@param param1 integer Depends on bag type
----@param param2 integer Depends on bag type
-function ItemBag.Use(playerIndex, bagType, param1, param2) end
-
-------------------------------------------------------------------
 -- Log Namespace
 ------------------------------------------------------------------
 
@@ -800,17 +872,46 @@ function Helpers.GetItemType(ItemId) end
 ---@return integer ItemIndex (0-511)
 function Helpers.GetItemIndex(ItemId) end
 ------------------------------------------------------------------
--- Language Namespace
+-- Lang Namespace
 ------------------------------------------------------------------
 
-Language = {}
+Lang = {}
 
----Get localized text from language files
+---Text from the server language files. Not the client's Lang.GetText, which reads
+---CustomText.bmd and takes two arguments
 ---@param iLangID integer Language code (oPlayer.LangCode)
 ---@param iTextType integer Text type (Enums.eLANGUAGE_TEXT_TYPE)
 ---@param iTextID integer Text ID in language file
----@return string Localized text or empty string if not found
-function Language.GetText(iLangID, iTextType, iTextID) end
+---@return string Localised text, empty when not found
+function Lang.GetText(iLangID, iTextType, iTextID) end
+
+------------------------------------------------------------------
+-- UI Namespace
+------------------------------------------------------------------
+
+UI = {}
+
+---Raw send on the Lua UI window channel. Scripts normally use UIWindow.Send,
+---which takes a player object and a payload writer and calls this underneath
+---@param iPlayerIndex integer Player index
+---@param iWindowId integer Window id
+---@param iParam integer Action the answer belongs to
+---@param iResult integer Result code, 0 for success
+---@param szData? string Payload bytes
+function UI.SendWindowUse(iPlayerIndex, iWindowId, iParam, iResult, szData) end
+
+------------------------------------------------------------------
+-- Net Namespace
+------------------------------------------------------------------
+
+Net = {}
+
+---Raw send on the general Lua channel; arrives as Net.OnPacket(opcode, ...) on the
+---client. Scripts normally use Net.Send, which calls this underneath
+---@param iPlayerIndex integer Player index
+---@param iOpcode integer Opcode the client registered a handler for
+---@param szData? string Payload bytes
+function Net.SendPacket(iPlayerIndex, iOpcode, szData) end
 
 ------------------------------------------------------------------
 -- EventMonsterTracker Namespace

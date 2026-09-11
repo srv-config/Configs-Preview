@@ -909,6 +909,8 @@
 		<Msg ID="883" Text="ON" />
 		<Msg ID="884" Text="OFF" />
 		<Msg ID="885" Text="[ResetCMD] Sorry, you have reached maximum grand reset" />
+		<Msg ID="886" Text="%s cannot receive the payment, his %s limit is reached" />
+		<Msg ID="887" Text="A sale was refused, your %s limit is reached" />
 	</Message>
 	
 	<VIPSystem>
@@ -1142,5 +1144,6 @@
 		<Msg ID="143" Text="Kardamahal Underground Temple" />
 		<Msg ID="144" Text="Swamp of Destruction" />
 		<Msg ID="145" Text="Aquila's Temple" />
+		<Msg ID="146" Text="Raklion of Oblivion" />
 	</Map>
 </Language>

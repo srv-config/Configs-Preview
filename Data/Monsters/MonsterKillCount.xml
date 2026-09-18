@@ -9,6 +9,9 @@
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
 //
+// ### MonsterKillCount ###
+//	SaveDelay: Seconds between kill count saves to the database, per character
+//
 // ### MonsterKillCount::Monster ###
 //	Index: Index of a monster, see MonsterList.xml
 //	Enable: Allows to enable or disable specified record, 0/1
@@ -21,6 +24,6 @@
 // STRICTLY NO COMMENTS INSIDE TAGS 
 -->
 
-<MonsterKillCount>
+<MonsterKillCount SaveDelay="120">
 	<Monster Index="1" Enable="0" />
 </MonsterKillCount>

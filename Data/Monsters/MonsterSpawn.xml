@@ -13794,4 +13794,10 @@
 			<Spawn Index="988" Distance="2" StartX="220" StartY="219" Dir="6" Element="1" />
 		</Spot>
 	</Map>
+	<Map Number="199" Name="Lost Land of Tarkan">
+		<Spot Type="4" Description="Single Point Elemental Monsters">
+			<!--(2499) Pharaoh [Lv.147]-->
+			<Spawn Index="2499" Distance="2" StartX="28" StartY="226" Dir="5" Element="2" />
+		</Spot>
+	</Map>
 </MonsterSpawn>

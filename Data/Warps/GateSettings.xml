@@ -659,4 +659,8 @@
 	<Gate Index="734" Flag="2" MapNumber="146" StartX="128" StartY="104" EndX="130" EndY="109" Target="0" Direction="0" MinLevel="1650" GoToGate="-1" Name="Target for Gate 733" />
 	<Gate Index="735" Flag="1" MapNumber="146" StartX="121" StartY="105" EndX="123" EndY="108" Target="736" Direction="0" MinLevel="1650" GoToGate="-1" Name="Move: Raklion of Oblivion to Raklion of Oblivion" />
 	<Gate Index="736" Flag="2" MapNumber="146" StartX="138" StartY="31" EndX="140" EndY="36" Target="0" Direction="0" MinLevel="1650" GoToGate="-1" Name="Target for Gate 735" />
+	<Gate Index="2048" Flag="1" MapNumber="199" StartX="90" StartY="43" EndX="91" EndY="47" Target="2049" Direction="0" MinLevel="1000" GoToGate="-1" Name="Move: Lost Land of Tarkan to Lost Land of Tarkan" />
+	<Gate Index="2049" Flag="2" MapNumber="199" StartX="35" StartY="60" EndX="39" EndY="62" Target="0" Direction="0" MinLevel="1000" GoToGate="-1" Name="Target for Gate 2048" />
+	<Gate Index="2050" Flag="1" MapNumber="199" StartX="35" StartY="60" EndX="39" EndY="62" Target="2051" Direction="0" MinLevel="1000" GoToGate="-1" Name="Move: Lost Land of Tarkan to Lost Land of Tarkan" />
+	<Gate Index="2051" Flag="2" MapNumber="199" StartX="90" StartY="43" EndX="91" EndY="47" Target="0" Direction="0" MinLevel="1000" GoToGate="-1" Name="Target for Gate 2050" />
 </GateSettings>

@@ -369,6 +369,17 @@ function onTeleport(oPlayer, wMapNumber, btPosX, btPosY)
 	end
 end
 
+-- Called when player asks to move to another map (Sync - can prevent the move)
+-- Return 1 to block the move, return 0 (or nothing) to allow it.
+-- Blocking sends nothing back, so tell the player yourself before returning 1.
+-- oWarp is the MoveReq.xml entry asked for, and nil for an index the file does not carry.
+function onMapMoveRequest(oPlayer, oWarp)
+	if (oPlayer ~= nil and oWarp ~= nil) then
+
+	end
+	return 0
+end
+
 -- Called when player uses teleport magic skill (Async)
 function onTeleportMagicUse(oPlayer, btPosX, btPosY)
 	if (oPlayer ~= nil) then
@@ -548,6 +559,15 @@ end
 -- Called before a cash shop item is used from the cash inventory (Sync)
 function onCashShopItemUse(oPlayer, iUniqueCode, iAuthCode, iItemID)
 	if (oPlayer ~= nil) then
+
+	end
+	return 0
+end
+
+-- Called before the shield (SD) break effect is decided (Sync - can take it over)
+-- Return 1 to have the server send the effect and skip its own threshold, 0 to leave it alone.
+function onShieldEffectSend(oPlayer, oTarget, iAttackDamage, iReduceLife, iReduceShield, bReduceShieldGage)
+	if (oTarget ~= nil) then
 
 	end
 	return 0

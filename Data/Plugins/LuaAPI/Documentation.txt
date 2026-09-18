@@ -1,5 +1,5 @@
-﻿Package: 21.2.3.2 S
-Docs snapshot: 0fc8ed7 - 2026-08-13
+﻿Package: 21.2.3.5 S
+Docs snapshot: f99c561 - 2026-09-18
 Wiki: https://github.com/srv-config/Configs-Preview/wiki
 
 The documentation for the Lua scripts in this package matches the wiki at the commit

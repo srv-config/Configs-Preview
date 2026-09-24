@@ -3,11 +3,369 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2010-2025 IGC-Network (R)
+// == (C) 2010-2026 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == Modify if you know what you do only!
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Each Monster entry defines one monster class, the server finds it by Index
+//~~ A class without an entry cannot spawn, the server shows the "Cannot find monster attribute" error box
+//~~ Some event spawns log their own message or fail silently instead
+//~~ In Imperial Guardian a class without an entry also stops the rest of that zone from spawning
+//~~ Index is not validated: an entry without Index is never found, a duplicate Index is not reported and the first one wins
+//~~ Every element after the first Monster entry is read as an entry, keep only Monster entries in the list
+//~~ The entry limit counts entries in file order, not Index values, entries above it are dropped with the "Monster Count Overflow" message:
+//~~	~ Custom map, monster and NPC plugin active: 2500 entries at most
+//~~	~ Plugin not active: 988 entries
+//~~ If the file fails to parse, a reload keeps the list loaded before
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ After loading, CalcMonster.ini [Calc] scales these attributes by percent, value * Percent / 100, fractions are cut (HP keeps them):
+//~~	~ LevelPercent: Level
+//~~	~ ExpLevelPercent: ExpLevel
+//~~	~ HPPercent: HP
+//~~	~ DamageMinPercent: DamageMin
+//~~	~ DamageMaxPercent: DamageMax
+//~~	~ DefensePercent: Defense and MagicDefense
+//~~	~ AttackRatePercent: AttackRate
+//~~	~ DefenseRatePercent: BlockRate
+//~~	~ PentagramDamageMinPercent: PentagramDamageMin
+//~~	~ PentagramDamageMaxPercent: PentagramDamageMax
+//~~	~ PentagramAttackRatePercent: PentagramAttackRate
+//~~	~ PentagramDefenseRatePercent: PentagramDefenseRate
+//~~	~ PentagramDefensePercent: PentagramDefense
+//~~ Every Percent defaults to 100
+//~~ A changed CalcMonster.ini takes effect after a reload of all data followed by a reload of monsters, or after a restart
+//~~ No other attribute is scaled, ranges below apply to the scaled values
+//~~ Many event, boss and summon spawns change some values again, for example Blood Castle, Devil Square, Kalima, Imperial Guardian and Castle Siege
+//~~ Crywolf changes HP on respawn while its benefit applies
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### MonsterList::Monster ###
+//	Index: Monster class index, sent to the client as the monster type, 0-65534
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Classes 683-688 and 695 never spawn outside Battle Core
+//~~ On Battle Core classes 240, 385, 540, 545-547, 651, 669 and 719-725 never spawn
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	IsTrap: Makes the monster untargetable, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Normal, extra, Muun and Dark Raven attacks, area skills and debuffs skip it
+//~~ Offline levelling skips it too
+//~~ Trap behaviour itself comes from the class (100-110, 523, 689), not from IsTrap
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	IsNpc: Spawns the class as an NPC, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Talking to it runs Lua onNpcTalk, then the class's own server talk handler if it has one, then NpcType
+//~~ Class 369 cannot be talked to, Lua onNpcTalk is not called for it
+//~~ Area skills skip it
+//~~ The server's own NPC classes are NPCs whatever IsNpc says
+//~~ So is any class spawned by ShopList.xml, Plugins\MapMoveNPC.xml, Plugins\HideAndSeek.xml, Events\LastManStanding.xml or Lua AddNPC
+//~~ Classes 523-528 stay monsters unless one of these files or Lua AddNPC spawns them
+//~~ An NPC still runs the monster AI, with Attribute other than 0 and ViewRange above 0 it looks for players and attacks them
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	NpcType: Window an IsNpc class opens when talked to:
+//		~ 0: None, the talk ends
+//		~ 2: Warehouse, not on Battle Core and Unity Battle
+//		~ 3: Chaos Machine, only with ChaosBox.ini [Common] IsChaosMachine 1 (default 1)
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Other values are logged and set to 0
+//~~ A shop comes from ShopList.xml, not from NpcType
+//~~ It is used only when Lua onNpcTalk returns 0 and no server talk handler of the class takes the talk
+//~~ The server sets the window of classes 234, 236, 238, 240, 368, 370, 450, 452, 453, 478, 582 and 873 itself
+//~~ NpcType is not read for them
+//~~ NPCs spawned by ShopList.xml, Plugins\MapMoveNPC.xml, Plugins\HideAndSeek.xml or Events\LastManStanding.xml ignore NpcType
+//~~ Lua AddNPC ignores NpcType too and sets the window from its own argument
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Name: Name of the monster in notices, quest messages and logs, UTF-8 text, max 49 bytes
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The spawned monster keeps only the first 10 bytes
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Level: Level of the monster, 1-32767
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ 0 is logged as an error
+//~~ Imperial Guardian needs Level above 0, a class with Level 0 stops the rest of that zone from spawning
+//~~ Experience uses FormulaData.xml Exp formula 0 when Level is at or above the killer's Level + MasterLevel, formula 1 otherwise
+//~~ Exp formula 5 is used when that gives 0 or less
+//~~ In a party the highest Level + MasterLevel of the members near the monster counts as the killer's, see ExpSystem.xml PartyExpGainRange
+//~~ Master characters get no experience when Level is below Common.ini [General] MonsterMinLevelFor3rdClassMLExp (default 95)
+//~~ Majestic characters get no experience when Level is below Common.ini [General] MonsterMinLevelFor4thClassMLExp (default 160)
+//~~ VIP characters use VIPSystem.xml ML_MonsterMinLevel and MJ_MonsterMinLevel instead
+//~~ Level also filters Items\Drop\AllMonsterBag.xml, EventItemMonsterBag.xml and SetItemMonsterBag.xml drops (MonsterMinLevel, MonsterMaxLevel)
+//~~ Items\Drop\ZenDrop.xml MultiplyByMonsterLevel 1 multiplies the zen from that file by Level at MultiplyChanceRate chance (1/10000)
+//~~ That applies only where ZenDrop.xml is on for the map (Enable 1, the map listed with Disable 0)
+//~~ Lua formulas get Level too, for example:
+//~~	~ Scripts\Skills\RegularSkillCalc.lua: Sleep and Drain Life
+//~~	~ Scripts\Misc\ExpCalc.lua: ExpPenaltyCalc, on maps with a Map\MapPenalty.xml PenaltyLevel
+//~~	~ Scripts\Character\CalcCharacter.lua: ExtraDamageCalc, CalcPenaltyDamageFromUser and CalcPenaltyDamageFromMonster
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	HP: Life of the monster, decimals allowed, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The client HP bar shows up to 2147483647
+//~~ Kill experience is split by the part of HP each attacker took
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	MP: Mana of the monster, not in use by server
+//	DamageMin: Minimum damage of the monster's attack, 0 to DamageMax
+//	DamageMax: Maximum damage of the monster's attack, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Each attack rolls between DamageMin and DamageMax, then the target's defense is subtracted
+//~~ A hit below Level / 10 after defense is raised to Level / 10 when CalcCharacter.ini [General] EnableLevelBasedDmg is 1 (default 1)
+//~~ Below Level 10 that minimum is 0, a hit that defense cuts to 0 stays 0
+//~~ DamageMin above DamageMax logs "Damage is 0" and the hit deals only that Level / 10 minimum
+//~~ The target's damage reductions and skill formulas apply after that minimum, so the final hit can be lower
+//~~ A spread (DamageMax - DamageMin) above 32767 cannot be rolled in full
+//~~ The Monsters\Skills\Monster_Skill_Element.xml Type 28 attack uses 120% of DamageMax
+//~~ For a monster with an element it uses 120% of DamageMax + PentagramDamageMax
+//~~ That value before the 120% must be 17895697 or less
+//~~ DamageMin also sets how fast the armor of a player it hits wears
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	ExtraDamageMin: Minimum of the extra damage hit that follows each attack that did not miss, 0-2147483647, 0 to disable
+//	ExtraDamageMax: Maximum of the extra damage hit, 0-2147483647, 0 to disable
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Extra damage needs both values above 0
+//~~ ExtraDamageMin above ExtraDamageMax always deals ExtraDamageMax
+//~~ A spread (ExtraDamageMax - ExtraDamageMin) above 32767 cannot be rolled in full
+//~~ The target's ExtraDefense is subtracted and the rest goes straight to HP, SD is not used
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Defense: Defense subtracted from every direct hit on the monster, physical and magic alike, 0-2147483647
+//	MagicDefense: Magic defense, not used in damage, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Defense sets how fast an attacking weapon wears, MagicDefense how fast a staff wears on magic hits
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	ExtraDefense: Reduces extra damage taken, from 5th skill tree extra abilities of players and extra hits of monsters, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Extra damage at or below ExtraDefense is ignored
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	AttackRate: Attack success rate against the target's defense rate, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ At or above the target's defense rate the miss chance is defense rate / AttackRate
+//~~ Below it 95% of attacks miss and the rest deal 30% damage
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	BlockRate: Defense success rate against the attacker's attack rate, 0-2147483647, 0 never blocks
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ At or below the attacker's attack rate the miss chance is BlockRate / attack rate
+//~~ Above it 95% of attacks miss and the rest deal 30% damage
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	MoveRange: Idle wandering distance, tiles around the current position, 0-32767, 0 stays in place
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Chasing a target is not limited by MoveRange or by Monsters\MonsterSpawn.xml Distance
+//~~ Idle moves stay within Distance of the spawn point, Distance 0 stops idle moves
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	AttackType: Attack mode and skill, the skill is a Skills\SkillList.xml Index, 0-32767:
+//		~ 0: Melee only
+//		~ 1-99 (except 50): Casts that skill at the target on every attack
+//		~ 50: Flame of Evil (Monster), hits the players within 6 tiles on every attack
+//		~ 100 and above: Skill (value - 100) cast on the players within 6 tiles on about 1 attack in 5, other attacks are melee
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Area casts (50, 100 and above) roll DamageMin-DamageMax, the Skills\SkillList.xml Damage of the skill is not added
+//~~ Some skills still scale that roll by their own formula, which can raise, cut or zero it
+//~~ Most of these formulas are in Scripts\Skills\RegularSkillCalc.lua and get 0 for every stat of the monster
+//~~ Index 988 and lower: the area cast hits at most 5 players and takes only player area skills the server accepts (Flame of Evil included)
+//~~ Index above 988: the area cast takes any skill and hits every player within 6 tiles, 20 at most (75 on the Castle Siege server)
+//~~ Each area cast also runs the skill's own server effect on the monster's target, if the skill has one
+//~~ Classes 161, 181, 189, 197, 267, 275, 657 and 919 take any skill without the 5 player cap
+//~~ Classes 77, 275, 657 and 919 also hit players beyond 6 tiles
+//~~ Classes listed in Monsters\Skills\Monster_Skill.xml and several boss classes choose their attacks themselves
+//~~ On Doppelganger maps and for class 918 the whole value is the skill, without the 100 offset
+//~~ Doppelganger monster classes and class 918 make no 1-in-5 area cast, 50 still casts
+//~~ Imperial Guardian spawns also use the whole value as the skill
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	AttackRange: Attack distance, tiles in a straight line rounded down, 0-32767, 0 attacks only on the same tile
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ AttackType 100 and above adds 2
+//~~ For traps it is the detection reach
+//~~ Traps with AttackRange above 0 detect by Monsters\MonsterSpawn.xml Dir:
+//~~	~ 3: A line of AttackRange + 1 tiles along X
+//~~	~ 1: A line of AttackRange + 1 tiles along Y
+//~~	~ 8: A square of AttackRange tiles around the trap
+//~~	~ Other directions: Nothing
+//~~ Class 689 searches that square whatever Dir says, and only while Lord Silvester has the Uruk traps active
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	ViewRange: Aggro distance, tiles, 0-32767, 0 attacks only when attacked first
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The nearest player closer than ViewRange becomes the target
+//~~ Looking for targets needs Attribute other than 0
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	MoveSpeed: Delay before the next target search of traps and Castle Siege mercenaries, milliseconds, 0-32767
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Not used for walking, the server sets its own step time
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	AttackSpeed: Delay after each attack before the monster acts again, milliseconds, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The delay is rounded up to the 500 milliseconds monster tick, 0 acts on every tick
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	RegenTime: Respawn delay after death, seconds, 0-2147483
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The monster comes back 1-2 seconds after the delay
+//~~ Monsters\MonsterRegenSpanTime.xml and events can set their own delay
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Attribute: Behaviour of the monster, 0-32767:
+//		~ 0: Passive, never looks for targets, never wanders, does not fight back
+//		~ 1: Aggressive, runs away from the attacker when below half of its life
+//		~ 2: Aggressive, never runs away
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Values 51-58, 60-65 and 100 are special, the server uses them for Kalima gates, temporary and event spawns, skill objects and summons
+//~~ They change AI, death and targeting, and set here they do the same
+//~~ 101 and above act like 1 but may chase onto safe zone tiles
+//~~ Any other value behaves like 1
+//~~ Monsters run by a Monsters\AI\Monster_AI_Group.xml group follow that AI, AttackSpeed, ViewRange, Attribute and AttackType do not drive them
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	IceRes: Chance to resist ice effects (Ice and Ice Storm freeze, Ice Arrow stone), 0-255
+//	PoisonRes: Chance to resist poisoning (Poison, Decay, the Luoyi item option, poison from monster skills), 0-255
+//	LightRes: Chance to resist the knock-back of the Lightning skill, 0-255
+//	FireRes: Not in use by server
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ A resistance never lowers damage, it only blocks the effect
+//~~ The chance is value / (value + 1): 0 never, 1 50%, 9 90%, 99 99%, 255 always
+//~~ Values above 255 wrap around (3000 becomes 184, 10000 becomes 16)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	PentagramMainAttrib: Element of the monster, picks the element relation rates in CalcCharacter.ini [Elemental]:
+//		~ 0: None
+//		~ 1: Fire
+//		~ 2: Water
+//		~ 3: Earth
+//		~ 4: Wind
+//		~ 5: Darkness
+//		~ 6: Random, one of 1-5 rolled when the monster is created
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ A monster with an element skips the AttackRate miss check when CalcCharacter.ini [ShieldGage] ShieldSystem is 1 (default 1)
+//~~ Killing it gives 15% more experience on Acheron, Arca Battle, Deventer, Uruk and Nars maps
+//~~ Values above 6 count as an element for these rules and the Type 28 attack, but deal no elemental damage
+//~~ Values below 0 act as 0
+//~~ Elemental spawns in Monsters\MonsterSpawn.xml with Element above 0, Labyrinth maps, Imperial Guardian and some other event and boss spawns replace the element
+//~~ The element also filters Items\Drop\EachMonsterMapDrop drops (MonsterElement) and is sent to the client
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	PentagramAttribPattern: Damage the monster takes:
+//		~ 2: Normal and extra damage deal 0
+//		~ Other values: No effect
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The Dark Raven still deals normal damage unless PetSettings.ini [Pet] AllowRavenAttackElementalMonsters is 0 (default 1)
+//~~ The Dark Raven in random attack mode never picks it
+//~~ Muun attacks still deal normal damage
+//~~ Ice, poison and knock-back effects still land on it
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	PentagramDamageMin: Minimum elemental damage of the monster's attack, 0 to PentagramDamageMax
+//	PentagramDamageMax: Maximum elemental damage of the monster's attack, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Elemental damage needs an element (PentagramMainAttrib 1-6)
+//~~ PentagramDamageMin above PentagramDamageMax is not reported
+//~~ The roll then goes from PentagramDamageMin up to 2 x PentagramDamageMin - PentagramDamageMax
+//~~ A spread between PentagramDamageMin and PentagramDamageMax above 32767 cannot be rolled in full
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	PentagramAttackRate: Elemental attack success rate against the target's elemental defense rate, 0-2147483647, 0 never deals elemental damage
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Above the target's elemental defense rate the elemental miss chance is that defense rate / PentagramAttackRate
+//~~ At or below it no elemental damage is dealt
+//~~ A PentagramAttackRate above 32768 counts as 32768
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	PentagramDefenseRate: Elemental defense success rate against the attacker's elemental attack rate, 0-2147483647, 0 never blocks
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Below the attacker's elemental attack rate the elemental miss chance is PentagramDefenseRate / that attack rate
+//~~ At or above it the monster takes no elemental damage
+//~~ The attacker's elemental attack rate counts as 32768 at most
+//~~ 32768 and above therefore blocks all elemental damage
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	PentagramDefense: Elemental defense, subtracted from elemental damage the monster takes, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Elemental damage and elemental defense are scaled by the element relation rates before the defense is subtracted
+//~~ Damage of 10 or less, or not above the defense, deals nothing
+//~~ Then a player whose Level alone (without MasterLevel) is more than 10 above the monster's Level still hits it
+//~~ That hit deals (Level + MasterLevel - monster Level) / 70-100
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	EliteMonster: Elite monster that may debuff its target by element, see Skills\SkillSettings.ini [EliteMonster], 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Each attack attempt shows elite skill 291 on the target and may put two 10 second debuffs on it
+//~~ One roll against [EliteMonster] DebuffSuccessRate (1/10000, default 10000) decides both debuffs, missed attacks included
+//~~ A debuff lands only when its [EliteMonster] value minus the target's Guardian elite resistance option is above 0
+//~~ Debuffs by PentagramMainAttrib:
+//~~	~ Fire: bleeding, damage reduction
+//~~	~ Water: poisoning, damage reduction
+//~~	~ Earth: bleeding, attack speed reduction
+//~~	~ Wind: poisoning, defense reduction
+//~~	~ Darkness: bleeding, defense reduction
+//~~	~ None: no debuff
+//~~ The value is also sent to the client with the monster
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	PunishImmune: Immunity to the Punish option of Errtel of Radiance, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Punish takes a percent of maximum life on an elemental excellent or critical hit
+//~~ Punish hits monsters only while CalcCharacter.ini [Elemental] PentagramPunishPvM is 1 (default 1), on 30% of those hits
+//~~ Each Punish hit on a monster takes at most [Elemental] PunishMaxDamagePvM life (default 200000, 250000 in the shipped file)
+//~~ [Elemental] RadiancePunishCooldown sets the seconds between a player's Punish hits (default 0, no cooldown)
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	DamageAbsorption: Part of normal and skill hit damage the monster ignores, percent, 0-255
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ 100 and above cuts the damage it applies to down to 0
+//~~ Flat skill bonuses added after it (master and 4th tree skill values) and skill hits dealt as fixed damage are not reduced
+//~~ Elemental, extra, Muun and Dark Raven damage and damage over time are not reduced
+//~~ Values above 255 wrap around
+//~~ The value is also sent to the client with the monster
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	CriticalDamageRes: Lowers the critical damage rate of players hitting the monster, percent points, 0-255
+//	ExcellentDamageRes: Lowers the excellent damage rate of players hitting the monster, percent points, 0-255
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Values above 255 wrap around
+//~~ Extra damage, Dark Raven and elemental critical and excellent hits ignore them
+//~~ Both values are also sent to the client with the monster
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	DebuffApplyRes: Lowers the chance of Magic Circle debuffs on the monster, 1/10000, 0-65535, see Skills\SkillSettings.ini [Debuffs]
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Magic Circle debuffs are the 4th skill tree poison, bleeding and freeze
+//~~ The value is also sent to the client with the monster
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	DamageCorrection: Extra level penalty for players below the map's Map\MapPenalty.xml PenaltyLevel, percent points, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The penalty lowers their damage to the monster and raises its damage to them
+//~~ Penalty = (PenaltyLevel - player Level - MasterLevel, at most 7) x 10 + (DamageCorrection - player's DamageCorrection, if above 0), percent
+//~~ Formulas: Scripts\Character\CalcCharacter.lua, CalcPenaltyDamageFromUser and CalcPenaltyDamageFromMonster
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	ExpLevel: Experience value of the monster, MonsterExpLevel in FormulaData.xml Exp formulas, 0-2147483647
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ 0 or less gives no experience and no zen drop, also on Items\Drop\ZenDrop.xml maps
+//~~ Above 0 the experience result also sets the zen the monster drops, unless Items\Drop\ZenDrop.xml is on for the map (Enable 1, the map listed with Disable 0)
+//~~ An experience result of 0 drops no zen, for example a master or majestic killer below the Level minimum
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS 
 -->

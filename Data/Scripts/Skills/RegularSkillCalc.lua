@@ -891,6 +891,36 @@ function SummonerDamageReflect(Index, TargetIndex, TargetClass, Energy)
 	return Reflect, Time
 end
 
+-- SkillID: 218, Berserker - the life it costs to hold the buff up
+function SummonerBerserkerDecreaseLife(Strength, Dexterity, Vitality, Energy, MaxLife, DecMultiplier)
+	local DecLife = (Dexterity / 3) * DecMultiplier
+
+	if ((MaxLife - DecLife) < 50) then
+		DecLife = MaxLife - 50
+	end
+
+	if (DecLife < 0) then
+		DecLife = 0
+	end
+
+	return DecLife
+end
+
+-- SkillID: 289, Darkness - the life it costs to hold the buff up
+function SummonerDarknessDecreaseLife(Strength, Dexterity, Vitality, Energy, MaxLife, DecMultiplier)
+	local DecLife = (Dexterity / 3) * DecMultiplier
+
+	if ((MaxLife - DecLife) < 50) then
+		DecLife = MaxLife - 50
+	end
+
+	if (DecLife < 0) then
+		DecLife = 0
+	end
+
+	return DecLife
+end
+
 -- SkillID: 288, Death Scythe
 function DeadScythe_Summoner(InDamage, TargetClass, Strength, Dexterity, Vitality, Energy, BarrageCount)
 	local OutDamage = 0

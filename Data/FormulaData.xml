@@ -12,6 +12,7 @@
 //~~ Changes to the file should be reflected in FormulaData.bmd in client side.
 //~~ Order and count of arguments is defined by %d and %1f included in specified formula.
 //~~ Types are explained as comments to every formula, in order the values are passed.
+//~~ A minus right after '(' or an operator belongs to the next number or group (Character 47 uses *-1).
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // ### FormulaData::Exp::Formula ###
@@ -29,13 +30,13 @@
 //	IF character's total level is lower or equal monster's level THEN: SoloExp = Formula 0
 //	IF character's total level is greater than monster's level THEN: SoloExp = Formula 1
 //	IF result of calculation of formula 0 OR 1 is equal or lower than 0 THEN: SoloExp = Formula 5
-//	IF result of calculation of formula 5 is 0 or lower then SoloExp = 1
+//	A result of formula 5 of 0 or lower stays as it is (no clamp to 1)
 //
 // Party Exp:
 //	IF character's total level is lower or equal monster's level THEN: SoloExp = Formula 0
 //	IF character's total level is greater than monster's level THEN: SoloExp = Formula 1
 //	IF result of calculation of formula 0 OR 1 is equal or lower than 0 THEN: SoloExp = Formula 5
-//	IF result of calculation of formula 5 is 0 or lower then SoloExp = 1
+//	A result of formula 5 of 0 or lower stays as it is (no clamp to 1)
 //		THEN:
 //	SoloExp = Formula 3
 //		THEN:
@@ -47,13 +48,14 @@
 // ### FormulaData::ExcellentOption::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
-//		~ 0-10: Used within ExcellentOptions.xml to calculate corresponding excellent option value
-//		~ 11-24: Used within KegendaryWeaponSetOption.xml to calculate corresponding legendary option value
-//		~ 25: Additional Damage Legendary green option, for items below level 10
+//		~ 0-6, 9, 10: Used within ExcellentOptions.xml (Operator 100) to calculate corresponding excellent option value
+//		~ 7, 8: Elemental attack (option element = target's element) / defense (option element = attacker's element) of each Errtel option of a master pentagram
+//		~ 11-24: Used within LegendaryWeaponSetOption.xml to calculate corresponding legendary option value
+//		~ 25: Additional Damage Legendary green option of ancient legendary weapons (Crusader Hammers included), at every item level
 //		~ 26: Value of bonus added to result of formula 25 if item level is equal or above 10
-//		~ 27: Additional Curse/Wizardry Damage Legendary green option, for items below level 10
+//		~ 27: Additional Curse/Wizardry Damage Legendary green option, at every item level
 //		~ 28: Value of bonus added to result of formula 27 if item level is equal or above 10
-//		~ 29: Additional Defense Legendary green option, for items below level 10
+//		~ 29: Additional Defense Legendary green option, at every item level
 //		~ 30: Value of bonus added to result of formula 29 if item level is equal or above 10
 //		~ 33-50: Used within LegendaryItemBonusOption.xml to calculate corresponding legendary bonus option value
 //		~ 51: Defense bonus value when wearing five pieces legendary set of level 10 or higher
@@ -62,19 +64,19 @@
 //		~ 54: Defense bonus value when wearing five pieces legendary set of level 13 or higher
 //		~ 55: Defense bonus value when wearing five pieces legendary set of level 14 or higher
 //		~ 56: Defense bonus value when wearing five pieces legendary set of level 15 or higher
-//		~ 57: Legendary weapon Attack Rate increase for items of level below level 10
+//		~ 57: Legendary weapon Attack Rate increase, at every item level
 //		~ 58: Legendary weapon Attack Rate bonus added to result of formula 57 for items equal or above level 10
-//		~ 59: Legendary weapon min/max damage increase for items of level below level 10
+//		~ 59: Legendary weapon min/max damage increase, at every item level
 //		~ 60: Legendary weapon min/max damage bonus added to result of formula 59 for items equal or above level 10
-//		~ 61: Legendary Curse/Wizardry damage increase for items of level below level 10
+//		~ 61: Legendary Curse/Wizardry damage increase, at every item level
 //		~ 62: Legendary Curse/Wizardry damage bonus added to result of formula 61 for items equal or above level 10
-//		~ 63: Legendary set item defense value added per level for item below level 10
+//		~ 63: Legendary set item defense value added per level, at every item level
 //		~ 64: Legendary set item defense bonus value added per level to result of formula 63 for item equal or above level 10
-//		~ 65: Legendary shield defense increase for items of level below level 10
+//		~ 65: Legendary shield defense increase, at every item level, ancient shields too (next to the set bonus)
 //		~ 66: Legendary shield defense bonus added to result of formula 65 for items equal or above level 10
-//		~ 67: Legendary shield defense success rate increase for items of level below level 10
+//		~ 67: Legendary shield defense success rate increase, at every item level
 //		~ 68: Legendary shield defense success rate bonus added to result of formula 67 for items equal or above level 10
-//		~ 69: Legendary excellent item defense value added per level for item below level 10
+//		~ 69: Legendary excellent item defense value added per level, at every item level
 //		~ 70: Legendary excellent item defense bonus value added per level to result of formula 69 for item equal or above level 10
 //		~ 71: Legendary excellent item base defense value at level 0
 //		~ 72: Legendary set item base defense value at level 0
@@ -82,17 +84,19 @@
 // ### FormulaData::SetAddStatOption::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
-//		ItemLevel: Level of item
+//		ItemDropLevel: DropLevel of the item in ItemList.xml
 //
 // ### FormulaData::SkillTree::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
 //		SkillPoint: Actual points invested in skill in the skill tree
+//		~ 4th tree side options: FormulaID1 up to EndPoint1, FormulaID2 from there up to and including EndPoint2
 //
 // ### FormulaData::SetOption::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
 //		ItemLevel: Level of item
+//		~ Used by ItemSetOption.xml options 120-151: partial and full set options are summed over the worn pieces with each piece's level, legendary set options are evaluated once without arguments
 //
 // ### FormulaData::Wing4thDamage::Formula ###
 //	ID: Next unique ID of formula, starts from 0
@@ -112,14 +116,15 @@
 //		~ 12: Damage increase of 4th wings of LM
 //		~ 13: Damage increase of 4th wings of IK
 //		~ 14: Damage increase of 4th wings of AC
+//		~ 15: Damage increase of 4th wings of CR
 //
 // ### FormulaData::Wing4th5thDefense::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
-//		~ 0: Fourth wings level 0-9 defense increase
-//		~ 1: Fourth wings level 10-15 defense increase
-//		~ 2: Fifth wings level 0-9 defense increase
-//		~ 3: Fifth wings level 10-15 defense increase
+//		~ 0: Fourth wings defense, at every level
+//		~ 1: Fourth wings defense added to formula 0 from level 10
+//		~ 2: Fifth wings defense, at every level
+//		~ 3: Fifth wings defense added to formula 2 from level 10
 //
 // ### FormulaData::Character::Formula ###
 //	ID: Next unique ID of formula, starts from 0
@@ -127,45 +132,56 @@
 //		~ 0: Berserker skill conversion
 //		~ 1: Berserker Attack Speed Increase
 //		~ 2: Berserker HP decrease
-//		~ 3: Berserker Defense deduction
+//		~ 3: Berserker Defense deduction: CalcCharacter defense -= Agility / 3 * result
 //		~ 4: Darkness skill conversion
 //		~ 5: Darkness Defense addition
 //		~ 6: Darkness HP decrease
 //		~ 7: Weakness Attack Decrease
 //		~ 8: Innovation Defense Decrease
 //		~ 9: Bat Flock Damage over time (DOT)
-//		~ 17: Mastery Shield Damage Reduction Taken Instead
-//		~ 30: Spiral Charge Attack Damage Increase
-//		~ 31: Spiral Charge Defense Increase
+//		~ 17: Mastery Shield Damage Reduction Taken Instead, Dark Knight shields of KindA 18 and 47 only
+//		~ 30: Spiral Charge Attack Damage Increase (TotalLevel, Strength)
+//		~ 31: Spiral Charge Defense Increase (TotalLevel, Strength)
 //		~ 32: Crusher Charge Attack Speed Increase
-//		~ 33: Crusher Charge Defense Increase
-//		~ 34: Elemental Charge Wizardry Increase
-//		~ 35: Elemental Charge Defense Increase
+//		~ 33: Crusher Charge Defense Increase (TotalLevel, Agility)
+//		~ 34: Elemental Charge Wizardry Increase (TotalLevel, Energy)
+//		~ 35: Elemental Charge Defense Increase (TotalLevel, Energy)
 //		~ 36: Elemental Damage Increase
 //		~ 37: Duration time for formulas 36 and 38
 //		~ 38: Elemental Defense Increase
-//		~ 39: DEX Booster Duration Time
+//		~ 39: DEX Booster movement speed bonus (client and the server's walk speed check) and the buff's Duration Time in minutes
 //		~ 40: DEX Booster Attack Speed Increase
+//		~ 41: DEX Booster Attack Rate Increase
 //		~ 42: Illusion Blade Attack Damage (deprecated)
 //		~ 44: Wrath Combat Power Increase
 //		~ 45: Oversting damage decrease
 //		~ 46: Wrath Attack Increase
-//		~ 47: Wrath Defense Decrease
-//		~ 48: Crown Force Increase All Stats
+//		~ 47: Wrath Defense Decrease, the result is negative (*-1) and the buff lowers defense by its size
+//		~ 48: Crown Force Increase All Stats, from Command without the Bless buffs
 //		~ 49: Crown Force Duration Time
-//		~ 50: Lord Dignity Critical and Excellent Damage Increase
-//		~ 51: Lord Dignity Duration Time
-//		~ 52: Dark Lord Mastery Shield Defense Increase Percent, applies when riding Divine Horse)
-//		~ 53: Dark Lord Mastery Shield Elemental Defense Increase Percent, applies when riding Divine Horse)
-//		~ 54: Skill Attack Power Increase of Dark Lord class
+//		~ 50: Crusader Divine Force wizardry increase (Strength, Agility, Command)
+//		~ 51: Crusader Divine Aura defense increase (Strength, Agility, Command)
+//		~ 52: Dark Lord Mastery or Legendary Shield Defense Increase Percent, applies when riding Divine Horse
+//		~ 53: Dark Lord Mastery or Legendary Shield Elemental Defense Increase Percent, applies when riding Divine Horse
+//		~ 54: Dark Lord Skill Attack Power % (Energy, Command), Scripts\Skills\DarkLord.lua: Damage * Result / 100
 //		~ 55: Battle Glory Combat Power Increase
 //		~ 56: Battle Glory Attack Power Increase
 //		~ 57: Alchemist Confusion Stone Transmution Rate (result of formula should not exceed 100)
 //		~ 58: Crusader Lugard's Protection field minimum Attack Power
 //		~ 59: Crusader Lugard's Protection field maximum Attack Power
-//		~ 60: Crusader Divine Fall, Holly Sweeep, Sacred Impact skill Attack Power
-//		~ 61: Elf Gale Attack Power Increase
+//		~ 60: Crusader Divine Attack Power % (Strength, Energy), Scripts\Skills\Crusader.lua: Damage * Result / 100
+//		~ 61: Elf Gale Attack Power % (Strength, Agility), Scripts\Skills\FairyElf.lua: Damage * Result / 100
 //		~ 62: Illusion Blade Attack Speed Increase
+//		~ 63: Grow Lancer Retaliation Attack Power % (Strength), Scripts\Skills\GrowLancer.lua: Damage * (Result + SkillTreeBonus) / 100; the DLL shows it in the character window (C)
+//		~ 64: Grow Lancer Rage Attack Power % (Agility), Scripts\Skills\GrowLancer.lua: Damage * (Result + SkillTreeBonus) / 100; the DLL shows it in the character window (C)
+//		~ 65: Dark Knight Rage Attack Power % (Strength, Agility), Scripts\Skills\DarkKnight.lua: Damage * Result / 100
+//		~ 66: Magic Gladiator Fighting Spirit Attack Power % (Strength, Agility), while Crusher Charge is active, Scripts\Skills\MagicGladiator.lua
+//		~ 67: Rage Fighter AOE Attack Power % (Strength, Agility), Dark Side skills, Scripts\Skills\RageFighter.lua
+//		~ 68: Rage Fighter Div Attack Power % (Strength, Energy), Dragon Roar, Dragon Slasher and Dark Side skills
+//		~ 69: Rage Fighter Melee Attack Power % (Strength, Vitality), Killing Blow, Beast Uppercut, Chain Drive, Charge, Phoenix Shot, Spirit Hook skills
+//		~ 70: Slayer Darkness Attack Power % (Strength, Agility), Scripts\Skills\Slayer.lua: Damage * Result / 100
+//		~ 71: Magic Gladiator Chaos Attack Power % (Strength, Agility), without Crusher Charge, Scripts\Skills\MagicGladiator.lua
+//		~ 200: Illusion Knight Illusion Attack Power % (Strength, Agility), Scripts\Skills\IllusionKnight.lua: Damage * Result / 100; the DLL shows it in the character window (C)
 //
 // ### FormulaData::GuardianItem::Formula ###
 //	ID: Next unique ID of formula, starts from 0
@@ -174,6 +190,7 @@
 // ### FormulaData::Earrings::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
+//		~ EarringAttribute.xml options 28-31 use the option Value as the formula id; argument: earring level (linked options: the formula at each of the two earrings' levels, summed)
 //
 // ### FormulaData::ArtifactOption::Formula ###
 //	ID: Next unique ID of formula, starts from 0
@@ -188,7 +205,8 @@
 //		~ 3: Combat Power adjustment formula for normal item of level greater or equal than 11
 //		~ 4: Combat Power adjustment formula for excellent item of level lower than 11
 //		~ 5: Combat Power adjustment formula for excellent item of level greater or equal than 11
-//		~ 6: Combat Power adjustment formula for ancient item
+//		~ 6: Not used: ancient items other than legendary weapons keep the ItemList CombatPower
+//		~ 2-5, 15, 16: ItemDropLevel is the DropLevel from ItemList.xml, for excellent and ancient items too
 //		~ 7: Two weapons Combat Power adjustment formula: CombatPowerAttackDamage = TwoWeaponCombatPower * Constant / 100
 //		~ 8: One weapon Combat Power adjustment formula: CombatPowerAttackDamage = OneWeaponCombatPower * Constant / 100
 //		~ 9: Base Combat Power formula for Knight class
@@ -197,10 +215,10 @@
 //		~ 12: Base Combat Power formula for Slayer class
 //		~ 13: Base Combat Power formula for Grow Lancer class
 //		~ 14: Base Combat Power formula for Dark Lord class
-//		~ 15: Combat Power adjustment formula for Legendary item of level lower than 11
-//		~ 16: Combat Power adjustment formula for excellent item of level greater or equal than 11
+//		~ 15: Combat Power adjustment formula for ancient legendary weapons (KindA 45) of level lower than 11
+//		~ 16: Combat Power adjustment formula for ancient legendary weapons (KindA 45) of level greater or equal than 11
 //		~ 17: Base Combat Power formula for Crusader class
-//		~ 18: Base Combat Power formula for Dark Lord class
+//		~ 18: Base Combat Power formula for Elf class
 //		~ 19: 
 //		~ 20: 
 //		~ 21: Base Combat Power formula for Illussion Knight class
@@ -208,15 +226,33 @@
 //		~ 23: 
 //		~ 24: 
 //		~ 25: 
-//		~ 26: Magic Attack formula for Magic Gladiator class (Energy/Staff skills), formula: AttackDamage = AttackDamage + (AttackDamage * FormulaResult / 100)
-//		~ 27: Magic Attack formula for Gun Crusher class, formula: AttackDamage = AttackDamage + (AttackDamage * FormulaResult / 100)
-//		~ 28: Magic Attack formula for Lemuria Mage class, formula: AttackDamage = AttackDamage + (AttackDamage * FormulaResult / 100)
+//		~ 26: Magic Gladiator Magic Attack Power % (Energy), Scripts\Skills\MagicGladiator.lua: AttackDamage = AttackDamage * FormulaResult / 100
+//		~ 27: Gun Crusher Magic Attack Power % (Energy), Scripts\Skills\GunCrusher.lua: AttackDamage = AttackDamage * FormulaResult / 100
+//		~ 28: Lemuria Mage Magic Attack Power % (Energy), Scripts\Skills\LemuriaMage.lua: AttackDamage = AttackDamage * FormulaResult / 100
+//		~ 29: 
+//		~ 30: 
+//		~ 31: 
+//		~ 32: 
+//		~ 33: 
+//		~ 34: 
+//		~ 35: 
+//		~ 36: 
+//		~ 37: 
+//		~ 38: 
+//		~ 39: 
+//		~ 40: 
+//		~ 41: 
+//		~ 42: 
+//		~ 43: 
+//		~ 200: Alchemist Magic Attack Power % (Energy), Scripts\Skills\Alchemist.lua: AttackDamage = AttackDamage * FormulaResult / 100; the DLL shows it in the character window (C)
+//		~ 201: Rune Wizard Magic Attack Power % (Energy), Scripts\Skills\RuneWizard.lua: AttackDamage = AttackDamage * FormulaResult / 100; the DLL shows it in the character window (C)
+//		~ 202: Light Wizard Magic Attack Power % (Energy), Scripts\Skills\LightWizard.lua: AttackDamage = AttackDamage * FormulaResult / 100; the DLL shows it in the character window (C)
 //
 // ### FormulaData::Wing5thDamage::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
-//		~ 0: Fifth Wings Damage Increase (12, 185)
-//		~ 1: Fifth Wings Damage Increase, all other 5th
+//		~ 0: Fifth Wings Damage Increase, all 5th wings but 12/185
+//		~ 1: Fifth Wings Damage Increase, 12/185 Wings of Barrier
 //
 // ### FormulaData::WingCore::Formula ###
 //	ID: Next unique ID of formula, starts from 0
@@ -253,21 +289,24 @@
 // ### FormulaData::LevelExp::Formula ###
 //	ID: Next unique ID of formula, starts from 0
 //	Data: The formula data, no spaces
-//		~ 0: Regular level exp for range 1 to 255
-//		~ 1: Regular level exp for range 255 to max regular level
-//		~ 2: Master level exp for range 1 to 600
-//		~ 3: Master level exp for range 601 to 770
-//		~ 4: Master level exp for range 771 to 800
-//		~ 5: Master level exp for range 801 to 999
-//		~ 6: Master level exp for range 1000 to 1449
-//		~ 7: Master level exp for range 1450 to max master level
+//		~ 0: Regular level exp for levels 1 to 255
+//		~ 1: Regular level exp above level 255
+//		~ 2-9: Master level exp; the argument is the total level (max regular level + master level)
+//		~ 2: total level up to 600
+//		~ 3: total level 601 to 770
+//		~ 4: total level 771 to 800
+//		~ 5: total level 801 to 999, added to the exp of master level 400
+//		~ 6: total level 1000 to 1449, added to the exp of master level 400
+//		~ 7: total level 1450 to 1549, added to the exp of master level 400
+//		~ 8: total level 1550 to 1599, added to the exp of master level 400
+//		~ 9: total level 1600 and above, added to the exp of master level 400
 //
 // STRICTLY NO COMMENTS INSIDE TAGS
 -->
 
 <FormulaData>
 	<Exp> <!-- Do not mix elements from different exp formulas, use only attributes available from within specified formula -->
-		<Formula ID="0" Data="(%d*15)+((((%d*15)*0.2)/500)*(%d-%d))" /> <!-- TotalLevel, MonsterExpLevel, MonsterExpLevel, TotalLevel -->
+		<Formula ID="0" Data="(%d*15)+((((%d*15)*0.2)/500)*(%d-%d))" /> <!-- TotalLevel, TotalLevel, MonsterExpLevel, TotalLevel -->
 		<Formula ID="1" Data="(%d*15)+((((%d*15)*0.2)/500)*(%d-%d))" /> <!-- MonsterExpLevel, TotalLevel, MonsterExpLevel, TotalLevel -->
 		<Formula ID="2" Data="%d*%f*%d/%d" /> <!-- SoloExp, PartyAddExp, MembLevel, TotalLevel -->
 		<Formula ID="3" Data="%d*(%I64d/%I64d)" /> <!-- SoloExp, AttackDamage, TotalDamage -->
@@ -285,8 +324,8 @@
 		<Formula ID="4" Data="(%d*0.3)" /> <!-- ItemDropLevel -->
 		<Formula ID="5" Data="(%d/3.5)" /> <!-- ItemDropLevel -->
 		<Formula ID="6" Data="(%d/100)*(%d/20)" /> <!-- ItemDropLevel, PlayerLevel -->
-		<Formula ID="7" Data="((%d/200)+((%d*4)^1.11))" /> <!-- ItemDropLevel, PlayerLevel -->
-		<Formula ID="8" Data="((%d/200)+((%d*3)^1.1))" /> <!-- ItemDropLevel, PlayerLevel -->
+		<Formula ID="7" Data="((%d/200)+((%d*4)^1.11))" /> <!-- PentagramDropLevel, ErrtelOptionLevel -->
+		<Formula ID="8" Data="((%d/200)+((%d*3)^1.1))" /> <!-- PentagramDropLevel, ErrtelOptionLevel -->
 		<Formula ID="9" Data="(%d*0.05)^1.4" /> <!-- ItemDropLevel -->
 		<Formula ID="10" Data="(%d-130)/10*15" /> <!-- ItemDropLevel -->
 		<Formula ID="11" Data="10" />
@@ -303,12 +342,12 @@
 		<Formula ID="22" Data="(%d*0.3)" /> <!-- ItemDropLevel -->
 		<Formula ID="23" Data="(%d*0.05)^1.4" /> <!-- ItemDropLevel -->
 		<Formula ID="24" Data="(%d-130)/10*15" /> <!-- ItemDropLevel -->
-		<Formula ID="25" Data="(((%d*5)+(%d+1))*2)" /> <!-- ItemLevel, LegendaryItemStage" -->
-		<Formula ID="26" Data="((%d+%d)*0)" /> <!-- ItemLevel, LegendaryItemStage" -->
-		<Formula ID="27" Data="(((%d*5)+(%d+1))*2)" /> <!-- ItemLevel, LegendaryItemStage" -->
-		<Formula ID="28" Data="((%d+%d)*0)" /> <!-- ItemLevel, LegendaryItemStage" -->
-		<Formula ID="29" Data="((%d*5)+(%d+1))" /> <!-- ItemLevel, LegendaryItemStage" -->
-		<Formula ID="30" Data="((%d+%d)*0)" /> <!-- ItemLevel, LegendaryItemStage" -->
+		<Formula ID="25" Data="(((%d*5)+(%d+1))*2)" /> <!-- ItemLevel, LegendaryItemStage -->
+		<Formula ID="26" Data="((%d+%d)*0)" /> <!-- ItemLevel, LegendaryItemStage -->
+		<Formula ID="27" Data="(((%d*5)+(%d+1))*2)" /> <!-- ItemLevel, LegendaryItemStage -->
+		<Formula ID="28" Data="((%d+%d)*0)" /> <!-- ItemLevel, LegendaryItemStage -->
+		<Formula ID="29" Data="((%d*5)+(%d+1))" /> <!-- ItemLevel, LegendaryItemStage -->
+		<Formula ID="30" Data="((%d+%d)*0)" /> <!-- ItemLevel, LegendaryItemStage -->
 		<Formula ID="31" Data="" />
 		<Formula ID="32" Data="" />
 		<Formula ID="33" Data="(75)+(%d*0)" /> <!-- 1 -->
@@ -354,20 +393,20 @@
 		<Formula ID="73" Data="(%d*1.5)" />
 	</ExcellentOption>
 	<SetAddStatOption>
-		<Formula ID="0"	Data="%d/10" /> <!-- ItemLevel -->
-		<Formula ID="1"	Data="%d/5" /> <!-- ItemLevel -->
-		<Formula ID="2"	Data="%d/10" /> <!-- ItemLevel -->
-		<Formula ID="3"	Data="%d/5" /> <!-- ItemLevel -->
-		<Formula ID="4"	Data="%d/10" /> <!-- ItemLevel -->
-		<Formula ID="5"	Data="%d/5" /> <!-- ItemLevel -->
-		<Formula ID="6"	Data="%d/10" /> <!-- ItemLevel -->
-		<Formula ID="7"	Data="%d/5" /> <!-- ItemLevel -->
-		<Formula ID="8"	Data="%d/10" /> <!-- ItemLevel -->
-		<Formula ID="9"	Data="%d/5" /> <!-- ItemLevel -->
-		<Formula ID="10" Data="%d/20" /> <!-- ItemLevel -->
-		<Formula ID="11" Data="%d/10" /> <!-- ItemLevel -->
-		<Formula ID="12" Data="(%d*0)+7" /> <!-- ItemLevel -->
-		<Formula ID="13" Data="(%d*0)+15" /> <!-- ItemLevel -->
+		<Formula ID="0"	Data="%d/10" /> <!-- ItemDropLevel -->
+		<Formula ID="1"	Data="%d/5" /> <!-- ItemDropLevel -->
+		<Formula ID="2"	Data="%d/10" /> <!-- ItemDropLevel -->
+		<Formula ID="3"	Data="%d/5" /> <!-- ItemDropLevel -->
+		<Formula ID="4"	Data="%d/10" /> <!-- ItemDropLevel -->
+		<Formula ID="5"	Data="%d/5" /> <!-- ItemDropLevel -->
+		<Formula ID="6"	Data="%d/10" /> <!-- ItemDropLevel -->
+		<Formula ID="7"	Data="%d/5" /> <!-- ItemDropLevel -->
+		<Formula ID="8"	Data="%d/10" /> <!-- ItemDropLevel -->
+		<Formula ID="9"	Data="%d/5" /> <!-- ItemDropLevel -->
+		<Formula ID="10" Data="%d/20" /> <!-- ItemDropLevel -->
+		<Formula ID="11" Data="%d/10" /> <!-- ItemDropLevel -->
+		<Formula ID="12" Data="(%d*0)+7" /> <!-- ItemDropLevel -->
+		<Formula ID="13" Data="(%d*0)+15" /> <!-- ItemDropLevel -->
 	</SetAddStatOption>
 	<SkillTree>
 		<Formula ID="0" Data="0" /> <!-- empty -->
@@ -710,6 +749,8 @@
 		<Formula ID="337" Data="((((8.5+%d)^2.2)/3.1))" /> <!-- SkillPoint -->
 		<Formula ID="338" Data="((((9+%d)^2.2)/3.1)+34)" /> <!-- SkillPoint -->
 		<Formula ID="339" Data="((((8.5+%d)^2.2)/3.1))" /> <!-- SkillPoint -->
+		<Formula ID="340" Data="(0.9+(((((((%d-35)^3)+40440)/600)/7.5))))*5" /> <!-- SkillPoint -->
+		<Formula ID="341" Data="(0.9+(((((((%d-35)^3)+40440)/600)/7.5))))*5" /> <!-- SkillPoint -->
 	</SkillTree>
 	<SetOption>
 		<Formula ID="0" Data="((((%d*1.25)^1.48)+5)/1.1)" /> <!-- ItemLevel -->
@@ -957,12 +998,12 @@
 		<Formula ID="27" Data="(%d*1.9)+900" /> <!--  -->
 		<Formula ID="28" Data="(%d/2)" /> <!--  -->
 		<Formula ID="29" Data="(10+((%d/2)*3))" /> <!--  -->
-		<Formula ID="30" Data="((%d/4)+(%d*0.2))*2.4" /> <!-- TotalLevel, Strength -->
-		<Formula ID="31" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Agility -->
+		<Formula ID="30" Data="((%d/2.5)+(%d*0.2))*2.4" /> <!-- TotalLevel, Strength -->
+		<Formula ID="31" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Strength -->
 		<Formula ID="32" Data="((%d/100)+(%d/50))*0.4" /> <!-- TotalLevel, Agility -->
 		<Formula ID="33" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Agility -->
 		<Formula ID="34" Data="((%d/15)+(%d*0.1))*1.5" /> <!-- TotalLevel, Energy -->
-		<Formula ID="35" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Agility -->
+		<Formula ID="35" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Energy -->
 		<Formula ID="36" Data="((%d/10)+5)" /> <!-- Energy -->
 		<Formula ID="37" Data="(%d/10)+10" /> <!-- Energy -->
 		<Formula ID="38" Data="(%d/11)+5" /> <!-- Energy -->
@@ -970,15 +1011,15 @@
 		<Formula ID="40" Data="30" />  <!-- Constant -->
 		<Formula ID="41" Data="2000" />  <!-- Constant -->
 		<Formula ID="42" Data="((%d/4)+(%d/14))" /> <!-- Strength, Agility -->
-		<Formula ID="43" Data="(%d/50)+(40+((%d+10)^2/16))+(%d*0)+(%d/3.5)" /> <!--  -->
+		<Formula ID="43" Data="(%d/50)+(40+((%d+10)^2/16))+(%d*0)+(%d/2.5)" /> <!--  -->
 		<Formula ID="44" Data="(%d+%d)*0+10" /> <!-- Strength, Agility -->
 		<Formula ID="45" Data="(%d+%d)*0+5" /> <!-- Strength, Agility -->
 		<Formula ID="46" Data="(%d+%d)/3" /> <!-- Strength, Agility -->
 		<Formula ID="47" Data="%d*(((%d+%d)*0+0.05)*-1)" /> <!-- Defense, Strength, Agility -->
 		<Formula ID="48" Data="%d/100+%d*0" /> <!-- Command, Energy -->
 		<Formula ID="49" Data="((%d+%d)*0)+5*100" /> <!-- Command, Energy -->
-		<Formula ID="50" Data="(%d/4)+(%d*%d*0)" /> <!-- Command, Energy, Command -->
-		<Formula ID="51" Data="(%d/4)+(%d/10)+(%d*0)" /> <!-- Command, Energy, Command -->
+		<Formula ID="50" Data="(%d/4)+(%d*%d*0)" /> <!-- Strength, Agility, Command -->
+		<Formula ID="51" Data="(%d/4)+(%d/10)+(%d*0)" /> <!-- Strength, Agility, Command -->
 		<Formula ID="52" Data="((%d*0)+(%d*0)+(%d/50))" /> <!-- ItemLevel, ItemLevel, ItemDropLevel -->
 		<Formula ID="53" Data="((%d*0)+(%d*0)+(%d/70))" /> <!-- ItemLevel, ItemLevel, ItemDropLevel -->
 		<Formula ID="54" Data="250+(%d/20)+(%d/20)" /> <!-- Energy, Command -->
@@ -990,6 +1031,19 @@
 		<Formula ID="60" Data="230+(%d/25)+(%d/50)" /> <!-- Strength, Energy -->
 		<Formula ID="61" Data="100+(%d/13)+(%d/50)" /> <!-- Strength, Agility -->
 		<Formula ID="62" Data="(%d/100)" /> <!-- Agility -->
+		<Formula ID="63" Data="97+(%d/10)" /> <!-- Strength -->
+		<Formula ID="64" Data="97+(%d/10)" /> <!-- Agility -->
+		<Formula ID="65" Data="225+(%d/55)+(%d/50)" /> <!-- Strength, Agility -->
+		<Formula ID="66" Data="185+(%d/55)+(%d/50)" /> <!-- Strength, Agility -->
+		<Formula ID="67" Data="190+(%d/40)+(%d/65)" /> <!-- Strength, Agility -->
+		<Formula ID="68" Data="190+(%d/40)+(%d/65)" /> <!-- Strength, Energy -->
+		<Formula ID="69" Data="190+(%d/40)+(%d/65)" /> <!-- Strength, Vitality -->
+		<Formula ID="70" Data="220+(%d/55)+(%d/50)" /> <!-- Strength, Agility -->
+		<Formula ID="71" Data="120+(%d/20)+(%d/20)" /> <!-- Strength, Agility -->
+		<Formula ID="72" Data="((%d/5)+(%d*0.1))*1.5" /> <!--  -->
+		<Formula ID="73" Data="15" /> <!--  -->
+		<Formula ID="74" Data="((%d/5)+(%d/20))*1.5" /> <!--  -->
+		<Formula ID="200" Data="200+(%d/30)+(%d/30)" /> <!-- Strength, Agility -->
 	</Character>
 	<GuardianItem>
 		<Formula ID="0" Data="20+((9+%d)/2)^2" /> <!-- ItemLevel -->
@@ -1123,10 +1177,10 @@
 		<Formula ID="6" Data="((((%d*25/%d+5)+%d)+2+((%d+30)/60))/2)+(%d*2)" /> <!-- CombatPowerResult, ItemDropLevel, CombatPowerResult, ItemLevel -->
 		<Formula ID="7" Data="60" /> <!-- Constant -->
 		<Formula ID="8" Data="40" /> <!-- Constant -->
-		<Formula ID="9" Data="10+(%d/80)" /> <!-- Strength -->
+		<Formula ID="9" Data="10+(%d/80)+(%d*0)" /> <!-- Strength, Strength -->
 		<Formula ID="10" Data="15+(%d/110)+(%d/80)" /> <!-- Strength, Agility -->
 		<Formula ID="11" Data="12+(%d/100)+(%d/100)" /> <!-- Agility, Vitality -->
-		<Formula ID="12" Data="10+(%d/100)" /> <!-- Agility -->
+		<Formula ID="12" Data="10+(%d*0)+(%d/100)" /> <!-- Agility, Agility -->
 		<Formula ID="13" Data="10+(%d/120)+(%d/130)" /> <!-- Strength, Agility -->
 		<Formula ID="14" Data="15+(%d/100)+(%d/90)" /> <!-- Strength, Command -->
 		<Formula ID="15" Data="((((%d*25/%d+5)+%d)/2)+(%d*1))+14.5" /> <!-- CombatPowerResult, ItemDropLevel, CombatPowerResult, ItemLevel -->
@@ -1143,6 +1197,24 @@
 		<Formula ID="26" Data="195+(%d/50)" /> <!-- Energy -->
 		<Formula ID="27" Data="200+(%d/50)" /> <!-- Energy -->
 		<Formula ID="28" Data="195+(%d/50)" /> <!-- Energy -->
+		<Formula ID="29" Data="1" /> <!--  -->
+		<Formula ID="30" Data="1.2" /> <!--  -->
+		<Formula ID="31" Data="1" /> <!--  -->
+		<Formula ID="32" Data="1.2" /> <!--  -->
+		<Formula ID="33" Data="1" /> <!--  -->
+		<Formula ID="34" Data="1.2" /> <!--  -->
+		<Formula ID="35" Data="1" /> <!--  -->
+		<Formula ID="36" Data="1.2" /> <!--  -->
+		<Formula ID="37" Data="1" /> <!--  -->
+		<Formula ID="38" Data="1.2" /> <!--  -->
+		<Formula ID="39" Data="1" /> <!--  -->
+		<Formula ID="40" Data="1.2" /> <!--  -->
+		<Formula ID="41" Data="195+(%d/50)" /> <!--  -->
+		<Formula ID="42" Data="200+(%d/50)" /> <!--  -->
+		<Formula ID="43" Data="200+(%d/40)" /> <!--  -->
+		<Formula ID="200" Data="165+(%d/65)" /> <!-- Energy -->
+		<Formula ID="201" Data="170+(%d/40)" /> <!-- Energy -->
+		<Formula ID="202" Data="200+(%d/50)" /> <!-- Energy -->
 	</CombatPower>
 	<Wing5thDamage>
 		<Formula ID="0" Data="300+(%d^1.6*23)" /> <!-- WingsLevel -->
@@ -1161,7 +1233,7 @@
 		<Formula ID="3" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.59+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="4" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="5" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="6" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.16+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
+		<Formula ID="6" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.4+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="7" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="8" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="9" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.71+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
@@ -1182,7 +1254,7 @@
 		<Formula ID="24" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="25" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="26" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.34+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="27" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.88+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
+		<Formula ID="27" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.59+50)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="28" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="29" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.4+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="30" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
@@ -1193,7 +1265,7 @@
 		<Formula ID="35" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.36+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="36" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="37" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="38" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.33+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
+		<Formula ID="38" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="39" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="40" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+38)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="41" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
@@ -1443,9 +1515,10 @@
 		<Formula ID="285" Data="%d*1000000" /> <!-- ReqCardCount -->
 		<Formula ID="286" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.59+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="287" Data="(((15+(%d*15))+((%d+1)*%d*2))*1+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="288" Data="6" />
-		<Formula ID="289" Data="4" />
-		<Formula ID="290" Data="2" />
+		<Formula ID="288" Data="6" /> <!--  -->
+		<Formula ID="289" Data="4" /> <!--  -->
+		<Formula ID="290" Data="2" /> <!--  -->
+		<Formula ID="291" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+30)" /> <!--  -->
 	</AbilityTree>
 	<PetItem>
 		<Formula ID="0" Data="50" /> <!-- None -->
@@ -1474,19 +1547,19 @@
 		<Formula ID="23" Data="200" /> <!-- None -->
 		<Formula ID="24" Data="1500" /> <!-- None -->
 		<Formula ID="25" Data="500" /> <!-- None -->
-		<Formula ID="26" Data="(((%d*4)+(%d*2.5))*(1+((%d/100)+(%d/5))/100))-100" /> <!-- PetLevel, CharacterTotalLevel, Energy, Command) -->
-		<Formula ID="27" Data="((%d*4)+(%d*2.5))*(1+((%d/100)+(%d/5))/100)" /> <!-- PetLevel, CharacterTotalLevel, Energy, Command) -->
+		<Formula ID="26" Data="(((%d*4)+(%d*2.5))*(1+((%d/100)+(%d/5))/100))-100" /> <!-- PetLevel, CharacterTotalLevel, Energy, Command -->
+		<Formula ID="27" Data="((%d*4)+(%d*2.5))*(1+((%d/100)+(%d/5))/100)" /> <!-- PetLevel, CharacterTotalLevel, Energy, Command -->
 	</PetItem>
 	<LevelExp>
 		<Formula ID="0" Data="(9+%d)*%d*%d*10" /> <!-- RegularLevel, RegularLevel, RegularLevel -->
 		<Formula ID="1" Data="((9+%d)*%d*%d*10)+((9+(%d-255))*(%d-255)*(%d-255)*1000)" /> <!-- RegularLevel, RegularLevel, RegularLevel, RegularLevel, RegularLevel -->
-		<Formula ID="2" Data="((((9+%d)*%d*%d*10)+((9+(%d-255))*(%d-255)*(%d-255)*1000)-3892250000)/2)" /> <!-- MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel -->
-		<Formula ID="3" Data="(((((9+%d)*%d*%d*10)+((9+(%d-255))*(%d-255)*(%d-255)*1000)-3892250000)/2)*(1+(1.2*((%d-600)^2))/100000))" /> <!-- MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel -->
-		<Formula ID="4" Data="(((((9+%d)*%d*%d*10)+((9+(%d-255))*(%d-255)*(%d-255)*1000)-3892250000)/2)*(1+(1.2*((%d-(600-(0.3*((%d-770)*(%d-770)))))^2))/100000))" /> <!-- MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel -->
-		<Formula ID="5" Data="((%d-800)*19024359459)+(300000000*(%d-801)*((%d-800)/2))" /> <!-- MasterLevel, MasterLevel, MasterLevel -->
-		<Formula ID="6" Data="(((%d-800)*19024359459)+(300000000*(%d-801)*((%d-800)/2))+(1200000000*(%d-999)*((%d-1000)/2)))" /> <!-- MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel -->
-		<Formula ID="7" Data="(197413333648350+(((%d-1450)*753724359459)+(1500000000*(%d-1450)*(%d-1449)/2)+(150001*(%d-1450)*(%d-1449)/2)*(((%d-1450)*(%d-1449)/2)^1.4)))" /> <!-- MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel, MasterLevel -->
-		<Formula ID="8" Data="396271760718481+(%d-1550)*6300000000000+((5200000000*(((%d))-1551)*(((%d))-1550)/2))*(49+(%d-1550))*0.5" />
-		<Formula ID="9" Data="1026586760718480+((%d-1600)*22500000000000)+(35500000000*((%d-1601)*(%d-1600)/2))" />
+		<Formula ID="2" Data="((((9+%d)*%d*%d*10)+((9+(%d-255))*(%d-255)*(%d-255)*1000)-3892250000)/2)" /> <!-- TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel -->
+		<Formula ID="3" Data="(((((9+%d)*%d*%d*10)+((9+(%d-255))*(%d-255)*(%d-255)*1000)-3892250000)/2)*(1+(1.2*((%d-600)^2))/100000))" /> <!-- TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel -->
+		<Formula ID="4" Data="(((((9+%d)*%d*%d*10)+((9+(%d-255))*(%d-255)*(%d-255)*1000)-3892250000)/2)*(1+(1.2*((%d-(600-(0.3*((%d-770)*(%d-770)))))^2))/100000))" /> <!-- TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel -->
+		<Formula ID="5" Data="((%d-800)*19024359459)+(300000000*(%d-801)*((%d-800)/2))" /> <!-- TotalLevel, TotalLevel, TotalLevel -->
+		<Formula ID="6" Data="(((%d-800)*19024359459)+(300000000*(%d-801)*((%d-800)/2))+(1200000000*(%d-999)*((%d-1000)/2)))" /> <!-- TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel -->
+		<Formula ID="7" Data="(197413333648350+(((%d-1450)*753724359459)+(1500000000*(%d-1450)*(%d-1449)/2)+(150001*(%d-1450)*(%d-1449)/2)*(((%d-1450)*(%d-1449)/2)^1.4)))" /> <!-- TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel, TotalLevel -->
+		<Formula ID="8" Data="396271760718481+(%d-1550)*6300000000000+((5200000000*(((%d))-1551)*(((%d))-1550)/2))*(49+(%d-1550))*0.5" /> <!-- TotalLevel, TotalLevel, TotalLevel, TotalLevel -->
+		<Formula ID="9" Data="1026586760718480+((%d-1600)*22500000000000)+(35500000000*((%d-1601)*(%d-1600)/2))" /> <!-- TotalLevel, TotalLevel, TotalLevel -->
 	</LevelExp>
 </FormulaData>

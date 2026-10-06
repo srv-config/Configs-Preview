@@ -50,7 +50,7 @@
 //	Edition: Edition option applies to
 //	Description: Option description
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~ For options of Edition=2, index 4 and 6, the Value attribute stores FormulaID from FormulaData.xml, earrings section
+//~~ Options 28-31 (also the linked option 31) take Value as a FormulaID from FormulaData.xml, earrings section, with the earring level as argument (linked options: the formula at each of the two earrings' levels, summed)
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS
@@ -184,7 +184,7 @@
 		<OptionSet Index="8" Value="18" Edition="8" Description="Damage Increase" />
 	<!-- Edition 9 -->
 		<OptionSet Index="0" Value="1000" Edition="9" Description="Max Life Increase and Max Mana Increase" />
-		<OptionSet Index="1" Value="32" Edition="9" Description="Skill Damage Increase" />
+		<OptionSet Index="1" Value="33" Edition="9" Description="Skill Damage Increase" />
 		<OptionSet Index="2" Value="12" Edition="9" Description="Excellent Damage Probability Increase and Critical Damage Probability Increase" />	
 		<OptionSet Index="3" Value="10" Edition="9"	Description="AG Auto Recovery Amount Increase" />
 		<OptionSet Index="4" Value="19" Edition="9"	Description="Attack Power / Wizardry Increase" />

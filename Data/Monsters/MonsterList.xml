@@ -369,6 +369,7 @@
 //
 // STRICTLY NO COMMENTS INSIDE TAGS 
 -->
+
 <MonsterList>
 	<Monster Index="0" IsTrap="0" Name="Bull Fighter" Level="6" HP="100" MP="0" DamageMin="16" DamageMax="20" ExtraDamageMin="0" ExtraDamageMax="0" Defense="6" MagicDefense="6" ExtraDefense="0" AttackRate="28" BlockRate="6" MoveRange="3" AttackType="0" AttackRange="1" ViewRange="5" MoveSpeed="400" AttackSpeed="1600" RegenTime="10" Attribute="2" IceRes="0" PoisonRes="0" LightRes="0" FireRes="0" PentagramMainAttrib="0" PentagramAttribPattern="0" PentagramDamageMin="0" PentagramDamageMax="0" PentagramAttackRate="0" PentagramDefenseRate="0" PentagramDefense="4" EliteMonster="0" PunishImmune="0" DamageAbsorption="0" CriticalDamageRes="0" ExcellentDamageRes="0" DebuffApplyRes="0" DamageCorrection="0" ExpLevel="5" />
 	<Monster Index="1" IsTrap="0" Name="Hound" Level="9" HP="140" MP="0" DamageMin="22" DamageMax="27" ExtraDamageMin="0" ExtraDamageMax="0" Defense="9" MagicDefense="9" ExtraDefense="0" AttackRate="39" BlockRate="9" MoveRange="3" AttackType="0" AttackRange="1" ViewRange="5" MoveSpeed="400" AttackSpeed="1600" RegenTime="10" Attribute="2" IceRes="0" PoisonRes="0" LightRes="0" FireRes="0" PentagramMainAttrib="0" PentagramAttribPattern="0" PentagramDamageMin="0" PentagramDamageMax="0" PentagramAttackRate="0" PentagramDefenseRate="0" PentagramDefense="6" EliteMonster="0" PunishImmune="0" DamageAbsorption="0" CriticalDamageRes="0" ExcellentDamageRes="0" DebuffApplyRes="0" DamageCorrection="0" ExpLevel="7" />

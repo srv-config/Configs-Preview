@@ -114,7 +114,7 @@
 	<ItemRewardList>
 		<Section ID="0" Active="1"  Name="Moss Sword Box">
 			<Input>
-				<Item ItemCat="-1" ItemIndex="-1" Cost="1000000" />
+				<Item ItemCat="-1" ItemIndex="-1" Cost="100000" />
 			</Input>
 			<Reward>
 				<Item Cat="2" Index="5" MinLevel="0" MaxLevel="0" Skill="1" Luck="1" Option="0" Exc="-2" SetItem="0" SocketCount="0" ElementalItem="0" Rate="100" /> <!-- Crystal Sword -->
@@ -132,7 +132,7 @@
 		</Section>
 		<Section ID="1" Active="1" Name="Moss Staff Box">
 			<Input>
-				<Item ItemCat="-1" ItemIndex="-1" Cost="1000000" />
+				<Item ItemCat="-1" ItemIndex="-1" Cost="100000" />
 			</Input>
 			<Reward>
 				<Item Cat="5" Index="11" MinLevel="0" MaxLevel="0" Skill="1" Luck="1" Option="0" Exc="-2" SetItem="0" SocketCount="0" ElementalItem="0" Rate="100" /> <!-- Staff of Kundun -->
@@ -150,7 +150,7 @@
 		</Section>	
 		<Section ID="2" Active="1" Name="Moss Bow Box">
 			<Input>
-				<Item ItemCat="-1" ItemIndex="-1" Cost="1000000" />
+				<Item ItemCat="-1" ItemIndex="-1" Cost="100000" />
 			</Input>
 			<Reward>
 				<Item Cat="4" Index="22" MinLevel="0" MaxLevel="0" Skill="1" Luck="1" Option="0" Exc="-2" SetItem="0" SocketCount="0" ElementalItem="0" Rate="100" /> <!-- Albatross Bow -->
@@ -170,7 +170,7 @@
 		</Section>			
 		<Section ID="3" Active="1" Name="Moss Scepter Box">
 			<Input>
-				<Item ItemCat="-1" ItemIndex="-1" Cost="1000000" />
+				<Item ItemCat="-1" ItemIndex="-1" Cost="100000" />
 			</Input>
 			<Reward>
 				<Item Cat="2" Index="11" MinLevel="0" MaxLevel="0" Skill="1" Luck="1" Option="0" Exc="-2" SetItem="0" SocketCount="0" ElementalItem="0" Rate="100" /> <!-- Lord Scepter -->
@@ -188,7 +188,7 @@
 		</Section>				
 		<Section ID="4" Active="1" Name="Moss Stick Box">
 			<Input>
-				<Item ItemCat="-1" ItemIndex="-1" Cost="1000000" />
+				<Item ItemCat="-1" ItemIndex="-1" Cost="100000" />
 			</Input>
 			<Reward>
 				<Item Cat="5" Index="17" MinLevel="0" MaxLevel="0" Skill="1" Luck="1" Option="0" Exc="-2" SetItem="0" SocketCount="0" ElementalItem="0" Rate="100" /> <!-- Ancient Stick -->

@@ -91,10 +91,10 @@
 			<Skill Index="41" ReqMinPoint="10" MaxPoint="10" ParentSkill1="0" ParentSkill2="0" MagicNumber="802" ValueType="0" Name="Sword's Fury Mastery" />
 			<Skill Index="46" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="335" ValueType="0" Name="Weapon Mastery" />
 			<Skill Index="47" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="803" ValueType="0" Name="Solid Protection Strengthener" />
-			<Skill Index="49" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="336" ValueType="0" Name="Death Stab Strengthener" />
+			<Skill Index="49" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="929" ValueType="0" Name="Fire Blow Strengthener" />
 			<Skill Index="51" ReqMinPoint="1" MaxPoint="20" ParentSkill1="803" ParentSkill2="0" MagicNumber="804" ValueType="0" Name="Solid Protection Proficiency" />
 			<Skill Index="52" ReqMinPoint="1" MaxPoint="20" ParentSkill1="0" ParentSkill2="0" MagicNumber="334" ValueType="0" Name="Maximum Life Increase" />
-			<Skill Index="53" ReqMinPoint="1" MaxPoint="20" ParentSkill1="336" ParentSkill2="0" MagicNumber="339" ValueType="1" Name="Death Stab Proficiency" />
+			<Skill Index="53" ReqMinPoint="1" MaxPoint="20" ParentSkill1="929" ParentSkill2="0" MagicNumber="930" ValueType="1" Name="Fire Blow Mastery" />
 			<Skill Index="56" ReqMinPoint="1" MaxPoint="20" ParentSkill1="334" ParentSkill2="0" MagicNumber="338" ValueType="0" Name="Maximum Mana Increase" />
 			<Skill Index="59" ReqMinPoint="10" MaxPoint="10" ParentSkill1="806" ParentSkill2="0" MagicNumber="807" ValueType="0" Name="Strike of Destruction Strengthener" />
 			<Skill Index="55" ReqMinPoint="1" MaxPoint="20" ParentSkill1="804" ParentSkill2="0" MagicNumber="806" ValueType="0" Name="Solid Protection Mastery" />

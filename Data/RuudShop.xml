@@ -116,7 +116,6 @@
 		<Item Cat="13" Index="353" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Pants of Sealed Fury -->
 		<Item Cat="13" Index="354" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="50000" /> <!-- Blood Angel Boots of Sealed Fury -->
 		<Item Cat="0" Index="42" Level="0" Skill="0" Luck="-1" Option="0" Exc="-10" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="100000" /> <!-- Blood Angel Sword -->
-		<Item Cat="12" Index="289" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Orb of Fire Blow -->
 		<Item Cat="14" Index="499" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="30000" /> <!-- Offensive Knight Conversion Order -->
 		<Item Cat="14" Index="500" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="10000" /> <!-- Defensive Knight Conversion Order -->
 		<Item Cat="12" Index="486" Level="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" Element="0" Duration="0" Price="1000" /> <!-- Sword Blow Bead -->

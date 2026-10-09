@@ -23,6 +23,9 @@
 //
 // ### ExtendedOptionSystem ###
 //	Enable: Whether or not, disable the system, 0/1
+//	ReduceEffectDuration: Duration in seconds of options 0 and 1 (Max HP and attack speed reduction)
+//	ReduceEffectMaxRate: Highest percent options 0 and 1 reach when summed over all items, 0-99
+//~~ While the system is active both also apply to options 0 and 1 given by ItemOptionSystem_Exc
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Disabling the system does not remove existing options from items
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -90,11 +93,11 @@
 //~~ or a duplicate/lower row becomes unreachable. Up to 10 option levels per item.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //	Options List:
-//		~ 0: Total amount of HP is reduced to half
-//		~ 1: Attack speed is reduced to half
+//		~ 0: Max HP of the target is reduced by Value % for ReduceEffectDuration seconds
+//		~ 1: Attack speed of the target is reduced by Value % for ReduceEffectDuration seconds
 //		~ 2: Freeze the enemy for 5 seconds
 //		~ 3: Stun enemy for 3 seconds
-//		~ 4: Auto Combo Hurt, There's a chance to strike with Combo Hurt
+//		~ 4: Auto Combo Hurt, Value is the percent chance to strike with Combo Hurt
 //		~ 5: Double damage
 //		~ 6: Increased attack power
 //		~ 7: Increase in total blood volume
@@ -121,13 +124,13 @@
 //		~ 28: Chance of True Damage probability increased
 //		~ 29: Triples the chance of injury
 //		~ 30: Three times the chance of damage resistance
-//		~ 31: Become invincible after being attacked for %d seconds
+//		~ 31: Become invincible for Value seconds when attacked by a player or a monster, no new roll while it lasts
 //		~ 32: Blind enemy for %d seconds
 //		~ 33: Increase all stats
 //		~ 34: Ignore SD
 //		~ 35: Increase Skill Damage
-//		~ 36: Empty
-//		~ 37: Increase Attack Success Rate
+//		~ 36: Paralyze enemy for Value seconds, OptionProbability is the percent chance (0 uses the class Paralysis rate), CalcCharacter.ini RadianceParalyzeCooldown applies
+//		~ 37: Increase Attack Success Rate by Value points, PvM and PvP
 //		~ 38: Increase SD Resistance, 1-100
 //		~ 39: Stun Resistance, 1-100
 //		~ 40: Combo Damage Decrease
@@ -150,7 +153,7 @@
 // STRICTLY NO COMMENTS INSIDE TAGS
 -->
 
-<ExtendedOptionSystem Enable="1">
+<ExtendedOptionSystem Enable="1" ReduceEffectDuration="5" ReduceEffectMaxRate="50">
 	<GlobalRestrictions DenyKindA="0;9;12;" DenyKindB="56;" MaxOptionCount="10" />
 	<OptionCountLimit>
 		<Item KindA="5" KindB="-1" Type="-1" MaxOptionCount="5" />

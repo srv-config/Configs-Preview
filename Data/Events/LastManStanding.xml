@@ -11,6 +11,7 @@
 // ### LastManStanding ###
 //	Enable: Whether or not, activate the event, 0/1
 //	AllowSameIPUser: Whether or not, allow different players from same IP to access same room twice or more at the same time, 0/1
+//	AllowSameHWIDUser: Whether or not, allow different players from same computer (HWID) to access same room twice or more at the same time, 0/1
 //	DamageReductionLimit: Maximum damage reduction that can be achieved during event battle
 //	MinPlayers: Minimum number of players required to start the event, minimum is 2
 //	MaxPlayers: Maximum number of players per room
@@ -110,7 +111,7 @@
 // STRICTLY NO COMMENTS INSIDE TAGS 
 -->	
 
-<LastManStanding Enable="0" AllowSameIPUser="1" DamageReductionLimit="30" MinPlayers="2" MaxPlayers="50">
+<LastManStanding Enable="0" AllowSameIPUser="1" AllowSameHWIDUser="1" DamageReductionLimit="30" MinPlayers="2" MaxPlayers="50">
 	<Reward RewardOnTimeOver="0" BestScoreWinner="1" MaxUsersToReward="3" />
 	<Event Duration="15" TownSpawn="15" MapNumber="6" StartX="146" StartY="78" EndX="160" EndY="60" />
 	<Registration Time="1" MapNumber="0" NPCIndex="258" PosX="145" PosY="140" Dir="1" ReqMoney="1000000" ReqSpecialItem="0" ItemCount="1" ItemCat="14" ItemIndex="160" ItemLevel="0" />

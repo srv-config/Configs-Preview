@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Server copy of ElementalUpgrade.txt (Lang.mpr), every change has to be made in both files
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ElementalUpgrade::MasteryPentagramUpgrade ### - Mastery Pentagram Upgrade, Adniel NPC
+//	ReqMoney: Upgrade cost in Zen
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ The client shows a fixed cost of 100000000 from main.exe, another value needs a client patch
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ElementalUpgrade::MasteryPentagramUpgrade::Rate ### - ElementalUpgrade.txt, section 0
+//	Mastery: Mastery grade of the source pentagram, 0 - regular pentagram
+//	SuccessRateLvX: Upgrade success rate for source pentagram level X (0-15), n/100
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ 0 - the client does not accept the pentagram at that level
+//~~ The client takes rows by position (row = Mastery), keep the order of section 0
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ElementalUpgrade::MasteryPentagramUpgrade::Pentagram ### - ElementalUpgrade.txt, section 1
+//	Cat: Category of source pentagram
+//	Index: Index of source pentagram
+//	ItemCatX: Material item category (1-4)
+//	ItemIndexX: Material item index (1-4)
+//	ItemCountX: Material item count (1-4)
+//	ResultCat: Category of result Mastery Pentagram
+//	ResultIndex: Index of result Mastery Pentagram
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Material 1 goes to the emblem slot, materials 2-4 to the three material slots
+//~~ The emblem slot holds a single item, ItemCount1 above 1 works only for a stackable emblem
+//~~ The client finds the row by Index only, Cat is not checked
+//~~ Columns 1, 16, 19, 20 and 21 of section 1 are used neither by the client nor by the server
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ElementalUpgrade::MasteryErrtelUpgrade ### - Mastery Errtel Upgrade, Adniel NPC
+//	ReqMoney: Upgrade cost in Zen
+//
+// ### ElementalUpgrade::MasteryErrtelUpgrade::Rate ### - ElementalUpgrade.txt, section 2
+//	Mastery: Mastery grade of the source Errtel, 0 - regular Errtel
+//	Rank: Rank of the source Errtel, -1 - any rank
+//	SuccessRateLvX: Upgrade success rate for source Errtel level X (0-10), n/100
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ 0 - the client does not accept the Errtel at that level
+//~~ The client takes rows by position (row = 3 * Mastery + Rank - 1), keep the order of section 2
+//~~ Ranks 4 and 5 need the same rows in ElementalUpgrade.txt, the client refuses them otherwise
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### ElementalUpgrade::MasteryErrtelUpgrade::Errtel ### - ElementalUpgrade.txt, section 3
+//	Cat: Category of source Errtel
+//	Index: Index of source Errtel
+//	ItemCatX: Material item category (1-4)
+//	ItemIndexX: Material item index (1-4)
+//	ItemCountX: Material item count (1-4)
+//	ResultCat: Category of result Mastery Errtel
+//	ResultIndex: Index of result Mastery Errtel
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Material 1 goes to the emblem slot, materials 2-4 to the three material slots
+//~~ The emblem slot holds a single item, ItemCount1 above 1 works only for a stackable emblem
+//~~ Only Errtels listed here can be put into the upgrade window
+//~~ Columns 17, 18, 19 and 20 of section 3 are used neither by the client nor by the server
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<ElementalUpgrade>
+	<MasteryPentagramUpgrade ReqMoney="100000000"> <!-- Modifications require changes to ElementalUpgrade.txt, sections 0 and 1 (Lang.mpr) -->
+		<Rate Mastery="0" SuccessRateLv0="0" SuccessRateLv1="0" SuccessRateLv2="0" SuccessRateLv3="0" SuccessRateLv4="0" SuccessRateLv5="0" SuccessRateLv6="0" SuccessRateLv7="0" SuccessRateLv8="0" SuccessRateLv9="0" SuccessRateLv10="0" SuccessRateLv11="80" SuccessRateLv12="85" SuccessRateLv13="90" SuccessRateLv14="95" SuccessRateLv15="100" /> <!-- Regular pentagram -->
+
+		<Pentagram Cat="12" Index="212" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="503" /> <!-- Arca's Prophecy -> Antonias' Sword (I) -->
+		<Pentagram Cat="12" Index="213" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="503" /> <!-- Antonia's Sword -> Antonias' Sword (I) -->
+		<Pentagram Cat="12" Index="214" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="503" /> <!-- Kundun's Seal Scroll -> Antonias' Sword (I) -->
+		<Pentagram Cat="12" Index="306" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="500" /> <!-- Runedil's Goldentune Harp -> Brilliant Orb (I) -->
+		<Pentagram Cat="12" Index="307" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="500" /> <!-- Lemuria's Orb -> Brilliant Orb (I) -->
+		<Pentagram Cat="12" Index="308" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="500" /> <!-- Norrwen's Bloodstring Lyra -> Brilliant Orb (I) -->
+		<Pentagram Cat="12" Index="208" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="500" /> <!-- Kundun's Madness Blade -> Brilliant Orb (I) -->
+		<Pentagram Cat="12" Index="209" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="500" /> <!-- Kundun's Magic Spell Scroll -> Brilliant Orb (I) -->
+		<Pentagram Cat="12" Index="210" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="500" /> <!-- Empire Guardians' Stronghold -> Brilliant Orb (I) -->
+		<Pentagram Cat="12" Index="211" ItemCat1="12" ItemIndex1="509" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="500" /> <!-- Ancient Icarus Scroll -> Brilliant Orb (I) -->
+	</MasteryPentagramUpgrade>
+
+	<MasteryErrtelUpgrade ReqMoney="25000000"> <!-- Modifications require changes to ElementalUpgrade.txt, sections 2 and 3 (Lang.mpr) -->
+		<Rate Mastery="0" Rank="1" SuccessRateLv0="0" SuccessRateLv1="0" SuccessRateLv2="0" SuccessRateLv3="0" SuccessRateLv4="0" SuccessRateLv5="0" SuccessRateLv6="0" SuccessRateLv7="70" SuccessRateLv8="80" SuccessRateLv9="90" SuccessRateLv10="100" /> <!-- Regular Errtel, Rank 1 -->
+		<Rate Mastery="0" Rank="2" SuccessRateLv0="85" SuccessRateLv1="90" SuccessRateLv2="95" SuccessRateLv3="100" SuccessRateLv4="100" SuccessRateLv5="100" SuccessRateLv6="100" SuccessRateLv7="100" SuccessRateLv8="100" SuccessRateLv9="100" SuccessRateLv10="100" /> <!-- Regular Errtel, Rank 2 -->
+		<Rate Mastery="0" Rank="3" SuccessRateLv0="100" SuccessRateLv1="100" SuccessRateLv2="100" SuccessRateLv3="100" SuccessRateLv4="100" SuccessRateLv5="100" SuccessRateLv6="100" SuccessRateLv7="100" SuccessRateLv8="100" SuccessRateLv9="100" SuccessRateLv10="100" /> <!-- Regular Errtel, Rank 3 -->
+		<Rate Mastery="0" Rank="4" SuccessRateLv0="100" SuccessRateLv1="100" SuccessRateLv2="100" SuccessRateLv3="100" SuccessRateLv4="100" SuccessRateLv5="100" SuccessRateLv6="100" SuccessRateLv7="100" SuccessRateLv8="100" SuccessRateLv9="100" SuccessRateLv10="100" /> <!-- Regular Errtel, Rank 4 -->
+		<Rate Mastery="0" Rank="5" SuccessRateLv0="100" SuccessRateLv1="100" SuccessRateLv2="100" SuccessRateLv3="100" SuccessRateLv4="100" SuccessRateLv5="100" SuccessRateLv6="100" SuccessRateLv7="100" SuccessRateLv8="100" SuccessRateLv9="100" SuccessRateLv10="100" /> <!-- Regular Errtel, Rank 5 -->
+		<Rate Mastery="1" Rank="-1" SuccessRateLv0="0" SuccessRateLv1="0" SuccessRateLv2="0" SuccessRateLv3="0" SuccessRateLv4="0" SuccessRateLv5="0" SuccessRateLv6="0" SuccessRateLv7="0" SuccessRateLv8="0" SuccessRateLv9="0" SuccessRateLv10="100" /> <!-- Mastery Errtel, any rank, unused: Mastery Errtels cannot be upgraded -->
+
+		<Errtel Cat="12" Index="221" ItemCat1="12" ItemIndex1="510" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="505" /> <!-- Errtel of Anger -> Anger Errtel (I) -->
+		<Errtel Cat="12" Index="231" ItemCat1="12" ItemIndex1="510" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="506" /> <!-- Errtel of Blessing -> Blessing Errtel (I) -->
+		<Errtel Cat="12" Index="241" ItemCat1="12" ItemIndex1="510" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="507" /> <!-- Errtel of Integrity -> Integrity Errtel (I) -->
+		<Errtel Cat="12" Index="251" ItemCat1="12" ItemIndex1="510" ItemCount1="1" ItemCat2="14" ItemIndex2="13" ItemCount2="30" ItemCat3="14" ItemIndex3="14" ItemCount3="30" ItemCat4="14" ItemIndex4="22" ItemCount4="10" ResultCat="12" ResultIndex="508" /> <!-- Errtel of Divinity -> Divinity (I) -->
+	</MasteryErrtelUpgrade>
+</ElementalUpgrade>

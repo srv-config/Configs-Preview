@@ -16,7 +16,6 @@
 -->
 
 <SkillRequire>
-	<Skill Index="723" ItemGroup="12" ItemIndex="289" ReqIndex="43" ReqMasterSkillIndex="339" ReqMasterPoint="10" />
 	<Skill Index="724" ItemGroup="12" ItemIndex="290" ReqIndex="2" ReqMasterSkillIndex="390" ReqMasterPoint="10" />
 	<Skill Index="725" ItemGroup="12" ItemIndex="291" ReqIndex="2" ReqMasterSkillIndex="390" ReqMasterPoint="10" />
 	<Skill Index="726" ItemGroup="12" ItemIndex="292" ReqIndex="9" ReqMasterSkillIndex="385" ReqMasterPoint="10" />

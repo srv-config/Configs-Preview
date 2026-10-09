@@ -22,7 +22,7 @@
 //	BonusType: Type of Bonus
 //		0 ~ None
 //		1 ~ Value
-//		2 ~ Rate
+//		2 ~ Rate, % (Max HP/Mana/AG: of the base Life/Mana/AG, other bonuses excluded)
 //		3 ~ Per Level
 //		4 ~ Per HP
 //		5 ~ Per MP
@@ -36,7 +36,7 @@
 //	BonusType: Type of bonus option
 //		0 ~ None
 //		1 ~ Value
-//		2 ~ Rate
+//		2 ~ Rate, % (Max HP/Mana/AG: of the base Life/Mana/AG, other bonuses excluded)
 //		3 ~ Per Level
 //		4 ~ Per HP
 //		5 ~ Per MP
@@ -65,7 +65,7 @@
 //	BonusType: Type of bonus
 //		0 ~ None
 //		1 ~ Value
-//		2 ~ Rate
+//		2 ~ Rate, % (Max HP/Mana/AG: of the base Life/Mana/AG, other bonuses excluded)
 //		3 ~ Per Level
 //		4 ~ Per HP
 //		5 ~ Per MP

@@ -18,6 +18,9 @@
 //
 // ### ItemOptionSystem ###
 //	Enabled: Deactivates or activates the system: 0/1
+//	ReduceEffectDuration: Duration in seconds of options 0 and 1 (Max HP and attack speed reduction)
+//	ReduceEffectMaxRate: Highest percent options 0 and 1 reach when summed over all items, 0-99
+//~~ While ExtendedOptionSystem is active its own ReduceEffectDuration/ReduceEffectMaxRate apply instead
 //	Password: A password used by ToolKit ServerInfo (XML) editor to encode the file, max 8 characters
 //
 // ### ItemOptionSystem::Notices ###
@@ -96,8 +99,8 @@
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //	Options List:
-//		~ 0: Total amount of HP is reduced to half, probability applies
-//		~ 1: Attack speed is reduced to half, probability applies
+//		~ 0: Max HP of the target is reduced by OptionValue % for ReduceEffectDuration seconds, probability applies
+//		~ 1: Attack speed of the target is reduced by OptionValue % for ReduceEffectDuration seconds, probability applies
 //		~ 2: Freeze the enemy for 5 seconds, probability applies
 //		~ 3: Stun enemy for 3 seconds, probability applies
 //		~ 4: Auto Combo Hurt, There's a chance to strike with Combo Hurt, probability applies
@@ -127,13 +130,13 @@
 //		~ 28: Chance of True Damage probability increased, probability applies
 //		~ 29: Triples the chance of injury, probability applies
 //		~ 30: Three times the chance of damage resistance, probability applies
-//		~ 31: Become invincible after being attacked for %d seconds
+//		~ 31: Become invincible for OptionValue seconds when attacked by a player or a monster, no new roll while it lasts, probability applies
 //		~ 32: Blind enemy for %d seconds
 //		~ 33: Increase all stats
 //		~ 34: Ignore SD
 //		~ 35: Increase Skill Damage
-//		~ 36: Empty
-//		~ 37: Increase Attack Success Rate
+//		~ 36: Paralyze enemy for OptionValue seconds, probability applies (0 uses the class Paralysis rate), CalcCharacter.ini RadianceParalyzeCooldown applies
+//		~ 37: Increase Attack Success Rate by OptionValue points, PvM and PvP
 //		~ 38: Increase SD Resistance, 1-100
 //		~ 39: Stun Resistance, 1-100
 //		~ 40: Combo Damage Decrease
@@ -156,7 +159,7 @@
 // STRICTLY NO COMMENTS INSIDE TAGS
 -->
 
-<ItemOptionSystem Enabled="0" Password="WErt$4t3">
+<ItemOptionSystem Enabled="0" ReduceEffectDuration="5" ReduceEffectMaxRate="50" Password="WErt$4t3">
 	<Notices PrintRequirementNotice="1" ColorID="10">
 		<Strings>
 			<String Index="0" Text=" (Req. " />

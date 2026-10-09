@@ -18,16 +18,16 @@
 <DropSection UseMode="-1" DisplayName="Section 1">
 	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" PlayerMinLevel="1" PlayerMaxLevel="MAX" MapNumber="-1">
 		<Drop Rate="3500" Count="1">
-			<Item Cat="13" Index="216" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
-			<Item Cat="13" Index="218" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="13" Index="216" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
+			<Item Cat="13" Index="218" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="2700" Count="1">
-			<Item Cat="13" Index="212" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="13" Index="212" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="100" Count="1">
-			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="216" />
-			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="218" />
-			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="212" />
+			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="216" />
+			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="218" />
+			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="212" />
 		</Drop>
 	</DropAllow>
 </DropSection>

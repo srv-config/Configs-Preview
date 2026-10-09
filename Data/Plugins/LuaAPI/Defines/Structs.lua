@@ -325,9 +325,45 @@ function ItemInfo:Clear() end
 ---@field Option short Has additional option (-1, 0, 1-7)
 ---@field Anc short Is ancient/set (0-1)
 ---@field Socket short Is socket item (-2, 0-5)
----@field Exc short Is excellent item (-1, 0-1)
 ---@field Durability WORD Item durability
 ---@field Duration DWORD Item duration
+
+-- BagItem methods (1-based indexing)
+---@param index integer Excellent option slot (1-based)
+---@return integer Excellent option (-1 if invalid)
+function BagItem:GetExc(index) end
+
+---@param index integer Excellent option slot (1-based)
+---@param value integer Excellent option value
+function BagItem:SetExc(index, value) end
+
+------------------------------------------------------------------
+-- BagItemResult Structure
+------------------------------------------------------------------
+
+---@class BagItemResult
+---@field MapNumber WORD Map number
+---@field X BYTE X position
+---@field Y BYTE Y position
+---@field ItemNum integer Item ID
+---@field ItemLevel BYTE Item level (0-15)
+---@field ItemDurability WORD Item durability
+---@field Option1 short Skill (0-1)
+---@field Option2 short Luck (0-1)
+---@field Option3 short Additional option (0-7)
+---@field LootIndex integer Index of the player allowed to loot the item
+---@field SetOption BYTE Ancient/set option
+---@field Duration integer Item duration
+---@field SocketCount integer Socket slot count
+
+-- BagItemResult methods (1-based indexing), excellent option slots start as -1 (none)
+---@param index integer Excellent option slot (1-based)
+---@return integer Excellent option (-1 if invalid)
+function BagItemResult:GetExc(index) end
+
+---@param index integer Excellent option slot (1-based)
+---@param value integer Excellent option value
+function BagItemResult:SetExc(index, value) end
 
 ------------------------------------------------------------------
 -- QueryResultDS Structure (Read-Only)

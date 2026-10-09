@@ -36,14 +36,10 @@
 //	Luck: 0: no luck, -1: random (50/50% chance), 1: with luck
 //	Option: 0: no option, -1: random, 1(+4), 2(+8), 3(+12), 4(+16), 5(+20), 6(+24), 7(+28): with specified option
 //	Exc:
-//	-1 - Random Exc options
-//	0 - No Exc options, or sum of below values (63 - Full of Excellent):
-//	1 - Mana recovery after Monster hunt +Mana/8
-//	2 - Health recovery after Monster hunt +HP/8
-//	4 - +7 Speed
-//	8 - More Damage +2%
-//	16 - More Damage +Level/20
-//	32 - Excellent Damage Rate +10%
+//	-1 - No exc option
+//	-2 - Random count of random options (based on rates from ExcellentOptions.xml)
+//	-3;X - Specified count of random options, the 'X' defines count of excellent options, max 6 (options selection based on rates from ExcellentOptions.xml)
+//	X;X;X;X;X;X - Defined excellent options, the 'X' is excellent option ID based on ExcellentOptions.xml, maximum 6 options can be defined
 //	SetItem: Makes a draw among available ancient sets for configured item, 0/1
 //	SocketCount: 0: no socket slots, 1: up to one slot, 2: up to two slots, 3: up to three slots, 4: up to four slots, 5: up to five slots - for Season 8 and later item must be set to Type 3 in ItemList.xml
 //	ElementalItem: 0: no elemental attribute, 1: fire, 2: water, 3: earth, 4: wind, 5: darkness, -1: random attribute - option ignored for Season 6
@@ -73,9 +69,9 @@
  
 <DropManager>
 	<!-- <Monster Index="-1" MonsterMinLevel="1" MonsterMaxLevel="150" MapNumber="-1" ItemRate="5000" ItemCount="1" CoinReward="0" CoinType="0" CoinValue="100" PlayerMinLevel="1" PlayerMaxLevel="MAX">
-		<Item Cat="0" Index="0" ItemMinLevel="0" ItemMaxLevel="0" Durability="-1" Skill="1" Luck="1" Option="1" Exc="1" SetItem="0" SocketCount="0" ElementalItem="0" DropRate="1" />
+		<Item Cat="0" Index="0" ItemMinLevel="0" ItemMaxLevel="0" Durability="-1" Skill="1" Luck="1" Option="1" Exc="5" SetItem="0" SocketCount="0" ElementalItem="0" DropRate="1" />
 	</Monster>
 	<Monster Index="20" MonsterMinLevel="1" MonsterMaxLevel="150" MapNumber="-1" ItemRate="3000" ItemCount="1" CoinReward="0" CoinType="0" CoinValue="100" PlayerMinLevel="1" PlayerMaxLevel="MAX">
-		<Item Cat="0" Index="1" ItemMinLevel="0" ItemMaxLevel="0" Durability="-1" Skill="1" Luck="1" Option="1" Exc="1" SetItem="0" SocketCount="0" ElementalItem="0" DropRate="1" />
+		<Item Cat="0" Index="1" ItemMinLevel="0" ItemMaxLevel="0" Durability="-1" Skill="1" Luck="1" Option="1" Exc="5" SetItem="0" SocketCount="0" ElementalItem="0" DropRate="1" />
 	</Monster> -->
 </DropManager>

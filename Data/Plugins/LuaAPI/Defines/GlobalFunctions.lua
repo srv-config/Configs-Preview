@@ -356,10 +356,6 @@ function Item.GetAttr(iItemId) end
 function Item.IsSocket(iItemId) end
 
 ---@param iItemId integer Item ID
----@return integer Excellent option flags
-function Item.GetExcellentOption(iItemId) end
-
----@param iItemId integer Item ID
 ---@return integer Set option index
 function Item.GetSetOption(iItemId) end
 

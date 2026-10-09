@@ -174,23 +174,6 @@ function LoadItemBag() -- Bags Load
 	ItemBag.Add(BAG_EVENT, 151,0, 'Event_Monster_(560)_Sapi_Queen') -- DropFunction /3/ used when OverriteDefaultSettings from IGC_MonsterGroupRegen.xml is set to 1
 end
 
-function MakeExcOptForLordMix()
-	local OptionLoop = Utility.GetRandomRangedInt(2, 4)
-	local ExcOpt = 0
-
-	while OptionLoop > 0 do
-		local RandOp = Utility.GetRandomRangedInt(0, 5)
-		local Option = bit32.lshift(1, RandOp)
-		
-		if bit32.band(ExcOpt, Option) ~= Option then
-			ExcOpt = bit32.bor(ExcOpt, Option)
-			OptionLoop = OptionLoop - 1
-		end
-	end
-
-	return ExcOpt
-end
-
 -- ### /1/ Drop Item (using Item Bag Structure) ### --
 function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 	local ItemID = MakeItemID(BagItem.ItemType, BagItem.ItemIndex)
@@ -210,7 +193,13 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 	ItemResult.ItemDurability = BagItem.Durability
 	ItemResult.LootIndex = aIndex
 	ItemResult.Duration = BagItem.Duration
-
+	ItemResult:SetExc(1, BagItem:GetExc(1))
+	ItemResult:SetExc(2, BagItem:GetExc(2))
+	ItemResult:SetExc(3, BagItem:GetExc(3))
+	ItemResult:SetExc(4, BagItem:GetExc(4))
+	ItemResult:SetExc(5, BagItem:GetExc(5))
+	ItemResult:SetExc(6, BagItem:GetExc(6))
+	
 	if (BagItem.Skill == 1) then -- Skill Always
 		ItemResult.Option1 = 1
 	elseif (BagItem.Skill == -1) then -- Random, 50% chance for Skill
@@ -241,12 +230,6 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 		ItemResult.Option3 = 0
 	end
 
-	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
-		ItemResult.ExcOption = BagItem.Exc
-	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption()
-	end
-
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)
 		ItemResult.SetOption = Item.GetSetOption(ItemID)
 	end
@@ -273,7 +256,6 @@ function CommonBagItemDrop(aIndex, MapNumber, X, Y, BagItem)
 		ItemResult.Option1 = 0
 		ItemResult.Option2 = 0
 		ItemResult.Option3 = 0
-		ItemResult.ExcOption = 0
 		ItemResult.SetOption = 0
 		ItemResult.SocketCount = 0
 	end
@@ -312,7 +294,13 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 	ItemResult.ItemDurability = BagItem.Durability
 	ItemResult.LootIndex = PlayerIndex
 	ItemResult.Duration = BagItem.Duration
-
+	ItemResult:SetExc(1, BagItem:GetExc(1))
+	ItemResult:SetExc(2, BagItem:GetExc(2))
+	ItemResult:SetExc(3, BagItem:GetExc(3))
+	ItemResult:SetExc(4, BagItem:GetExc(4))
+	ItemResult:SetExc(5, BagItem:GetExc(5))
+	ItemResult:SetExc(6, BagItem:GetExc(6))
+	
 	if (BagItem.Skill == 1) then -- Skill Always
 		ItemResult.Option1 = 1
 	elseif (BagItem.Skill == -1) then -- Random, 50% chance for Skill
@@ -343,12 +331,6 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 		ItemResult.Option3 = 0
 	end
 
-	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
-		ItemResult.ExcOption = BagItem.Exc
-	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption()
-	end
-
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)
 		ItemResult.SetOption = Item.GetSetOption(ItemID)
 	end
@@ -375,7 +357,6 @@ function MonsterBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerI
 		ItemResult.Option1 = 0
 		ItemResult.Option2 = 0
 		ItemResult.Option3 = 0
-		ItemResult.ExcOption = 0
 		ItemResult.SetOption = 0
 		ItemResult.SocketCount = 0
 	end
@@ -413,7 +394,13 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 	ItemResult.ItemDurability = BagItem.Durability
 	ItemResult.LootIndex = PlayerIndex
 	ItemResult.Duration = BagItem.Duration
-
+	ItemResult:SetExc(1, BagItem:GetExc(1))
+	ItemResult:SetExc(2, BagItem:GetExc(2))
+	ItemResult:SetExc(3, BagItem:GetExc(3))
+	ItemResult:SetExc(4, BagItem:GetExc(4))
+	ItemResult:SetExc(5, BagItem:GetExc(5))
+	ItemResult:SetExc(6, BagItem:GetExc(6))
+	
 	if (BagItem.Skill == 1) then -- Skill Always
 		ItemResult.Option1 = 1
 	elseif (BagItem.Skill == -1) then -- Random, 50% chance for Skill
@@ -444,12 +431,6 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 		ItemResult.Option3 = 0
 	end
 
-	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
-		ItemResult.ExcOption = BagItem.Exc
-	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption()
-	end
-
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)
 		ItemResult.SetOption = Item.GetSetOption(ItemID)
 	end
@@ -476,7 +457,6 @@ function EventBagItemDrop(MonsterIndex, MapNumber, MonsterX, MonsterY, PlayerInd
 		ItemResult.Option1 = 0
 		ItemResult.Option2 = 0
 		ItemResult.Option3 = 0
-		ItemResult.ExcOption = 0
 		ItemResult.SetOption = 0
 		ItemResult.SocketCount = 0
 	end
@@ -510,7 +490,13 @@ function EventBagMakeItem(BagItem)
 	ItemResult.ItemLevel = Utility.GetRandomRangedInt(BagItem.ItemMinLevel, BagItem.ItemMaxLevel)
 	ItemResult.ItemDurability = BagItem.Durability
 	ItemResult.Duration = BagItem.Duration
-
+	ItemResult:SetExc(1, BagItem:GetExc(1))
+	ItemResult:SetExc(2, BagItem:GetExc(2))
+	ItemResult:SetExc(3, BagItem:GetExc(3))
+	ItemResult:SetExc(4, BagItem:GetExc(4))
+	ItemResult:SetExc(5, BagItem:GetExc(5))
+	ItemResult:SetExc(6, BagItem:GetExc(6))
+	
 	if (BagItem.Skill == 1) then -- Skill Always
 		ItemResult.Option1 = 1
 	elseif (BagItem.Skill == -1) then -- Random, 50% chance for Skill
@@ -541,12 +527,6 @@ function EventBagMakeItem(BagItem)
 		ItemResult.Option3 = 0
 	end
 
-	if (BagItem.Exc > 0) then -- sets item with options of configured exc mask
-		ItemResult.ExcOption = BagItem.Exc
-	elseif (BagItem.Exc == -1) then -- random exc option(s)
-		ItemResult.ExcOption = Item.GetExcellentOption()
-	end
-
 	if (BagItem.Anc == 1) then -- Says item must be ancient (have to be configured as possible ancient)
 		ItemResult.SetOption = Item.GetSetOption(ItemID)
 	end
@@ -573,7 +553,6 @@ function EventBagMakeItem(BagItem)
 		ItemResult.Option1 = 0
 		ItemResult.Option2 = 0
 		ItemResult.Option3 = 0
-		ItemResult.ExcOption = 0
 		ItemResult.SetOption = 0
 		ItemResult.SocketCount = 0
 	end

@@ -18,38 +18,38 @@
 <DropSection UseMode="-1" DisplayName="Section 1">
 	<DropAllow DW="1" DK="1" ELF="1" MG="1" DL="1" SU="1" RF="1" PlayerMinLevel="1" PlayerMaxLevel="MAX" MapNumber="-1">
 		<Drop Rate="1000" Count="1">
-			<Item Cat="13" Index="216" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="13" Index="216" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="90" Count="1">
-			<Item Cat="13" Index="218" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="13" Index="218" ItemMinLevel="1" ItemMaxLevel="1" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="1400" Count="1">
-			<Item Cat="12" Index="15" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="12" Index="15" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="1200" Count="1">
-			<Item Cat="14" Index="14" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="14" Index="14" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="1100" Count="1">
-			<Item Cat="14" Index="16" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="14" Index="16" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="800" Count="1">
-			<Item Cat="14" Index="13" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="14" Index="13" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="100" Count="1">
-			<Item Cat="12" Index="141" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
-			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="216" />
+			<Item Cat="12" Index="141" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
+			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="216" />
 		</Drop>
 		<Drop Rate="50" Count="1">
-			<Item Cat="12" Index="31" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="12" Index="31" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="30" Count="1">
-			<Item Cat="12" Index="136" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="12" Index="136" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="20" Count="1">
-			<Item Cat="12" Index="30" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" />
+			<Item Cat="12" Index="30" ItemMinLevel="2" ItemMaxLevel="2" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" />
 		</Drop>
 		<Drop Rate="10" Count="1">
-			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="0" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="218" />
+			<Item Cat="13" Index="211" ItemMinLevel="0" ItemMaxLevel="0" Skill="0" Luck="0" Option="0" Exc="-1" SetItem="0" SocketCount="0" MuunEvolutionItemCat="13" MuunEvolutionItemIndex="218" />
 		</Drop>
 	</DropAllow>
 </DropSection>

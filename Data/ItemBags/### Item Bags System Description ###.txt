@@ -99,15 +99,11 @@
 //	Luck: 0 - no Luck, -1 - Random (50/50% chance), 1 - with Luck
 //	Option: 0 - no Option, -1 - Random, 1,2,3,4,5,6,7 - with specified option - +4,+8,+12,+16,+20,+24,+28
 //	Exc:
-//		-1: Random Exc options
-//		-2: Lord Mix only, original setting
-//		 0: No Exc options, or sum of below values (63 - Full of Excellent):
-//		 	 1: Mana recovery after Monster hunt +Mana/8
-//			 2: Health recovery after Monster hunt +HP/8
-//		 	 4: Speed +7
-//		 	 8: More Damage +2%
-//			16: More Damage +Level/20
-//			32: Excellent Damage Rate +10%
+//		Excellent Options:
+//			-1: No exc option
+//			-2: Random count of random options (based on rates from ExcellentOptions.xml)
+//			-3;X: Specified count of random options, the 'X' defines count of excellent options, max 6 (options selection based on rates from ExcellentOptions.xml)
+//			X;X;X;X;X;X: Defined excellent options, the 'X' is excellent option ID based on ExcellentOptions.xml, maximum 6 options can be defined
 //
 //	SetItem: 0 ~ no ancient, 1 ~ ancient (random Tier of specified item) - must be added as ancient, otherwise option will be ignored
 //	SocketCount:

@@ -9,15 +9,14 @@
 // ============================================================
 //
 // ### ProhibitedSymbols ###
-//	Mode: Defines mode the system will detect prohibited/allowed symbols
-//		0: Basing on characters defined in Symbols section, disallowed mode
-//		1: Basing on Regular Expression definition, Regex section, allowed mode
+//	Mode: Defines mode the system will detect prohibited/allowed symbols, one mode for chat, character names and guild names alike
+//		0: Basing on characters defined in Symbols section, disallowed mode, the Regex section is not used
+//		1: Basing on Regular Expression definition, Regex section, allowed mode, the Symbols section is not used
 //
 //	AllowSpace: Defines whether to allow spaces in character and guild names, 0/1, applies to mode 0 only - (not recommented to enable)
-//	CodePage: A code page of character input, e.g. if language is Korean then use dedicated code page of Korean 949 on both sides - client and server, UTF-8 is also allowed for UNICODE languages
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~ All characters in final are converted to UTF-8 and compared, the CodePage indicates a character culture. Remember to perform a test before going live. Character names check does not work (yet)
-//~~ Depending of configuration the current file may require to be saved in encoding dedicated for specified language, example editor allowing to set file encoding is NotePad++ (Encoding tab)
+//~~ Received text is decoded with the code page of the sender's language (LangBase.xml Set) and compared as Unicode characters. Remember to perform a test before going live
+//~~ Character names are checked on character creation and on name change. With a code page other than 1252 the client skips its own name check, this file is the only one
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // ### ProhibitedSymbols::Symbols::Restrict ###
@@ -37,17 +36,17 @@
 //~~ For tutorials of how to build own regex refer to http://regexone.com/ or
 //~~ https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html
 //~~ or any other guide of your choice. System does not have an effect on
-//~~ existing character or guild with prohibited symbol in name, only newly created
+//~~ existing character or guild with prohibited symbol in name, only newly created or renamed
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~ IMPORTANT ~~ File must be saved with UTF-8 Without BOM encoding
+//~~ IMPORTANT ~~ File must be saved as UTF-8, symbols and regex are read as UTF-8
 //~~ Invalid regex syntax will cause Game Server crash
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS
 -->
 
-<ProhibitedSymbols Mode="0" AllowSpace="0" CodePage="1252">
-	<Symbols> <!-- This section works in DISALLOW mode -->
+<ProhibitedSymbols Mode="0" AllowSpace="0">
+	<Symbols> <!-- This section works in DISALLOW mode, Mode 0 only -->
 		<Restrict Symbol="%" Chat="1" CharName="1" GuildName="1" />
 		<Restrict Symbol="'" Chat="0" CharName="1" GuildName="1" />
 		<Restrict Symbol="." Chat="0" CharName="1" GuildName="1" />
@@ -81,9 +80,9 @@
 	~~ Russian: ^[\w\d\s\Sа-яА-Я]+$
 	~~ Viernamese: ^[\w\d\s\SÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂ µưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]+$
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-	<Regex> <!-- Regex works in ALLOW mode -->
+	<Regex> <!-- Regex works in ALLOW mode, Mode 1 only -->
 		<Type System="0" Regex="^[\w\d\s\S]+$" /> <!-- In-Game Chat -->
-		<Type System="1" Regex="^[A-Za-z0-9]+$" /> <!-- Character Name --> <!-- Temporary working only if game client is being run on machine with Operating System of same culture as input language, e.g. Korean locale and Korean input -->
+		<Type System="1" Regex="^[A-Za-z0-9]+$" /> <!-- Character Name -->
 		<Type System="2" Regex="^[A-Za-z0-9]+$" /> <!-- Guild Names -->
 	</Regex>
 </ProhibitedSymbols>

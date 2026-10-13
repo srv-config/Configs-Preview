@@ -480,7 +480,7 @@ end
 -- Shop & Trading Events
 ------------------------------------------------------------------
 
--- Called when player buys item from NPC shop (Sync - can prevent purchase)
+-- Called after player buys item from NPC shop, for Zen or Ruud (Sync)
 function onShopBuyItem(oPlayer, oItem)
 	if (oPlayer ~= nil) then
 		if (oItem ~= nil) then

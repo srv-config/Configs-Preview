@@ -3,7 +3,7 @@
 // ============================================================
 // == INTERNATIONAL GAMING CENTER NETWORK
 // == www.igcn.mu
-// == (C) 2023 IGC-Network (R)
+// == (C) 2010-2026 IGC-Network (R)
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // == File is a part of IGCN Group MuOnline Server files.
 // ============================================================
@@ -90,6 +90,22 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 //	MapNumber: Map numbers to drop the mastery horn crystals items on, maximum 10 maps per item, separate with semicolon, -1 to disable drop
+//
+// ### SpecialShop ###
+//	Enable: Deactivates or activates the Special Pass tab of the MU Pass window with its point shop and ticket exchange, 0/1
+//	SpecialPointPerTicket: Special Pass points one pass-ticket gives in the Special Pass tab, 0 to disable the exchange
+//
+// ### SpecialShop::Item ###
+//	ID: Unique ID of the item in the shop, 0-255; the game client sorts the list by item (Cat, Index), not by ID
+//	Cat: Category of the item, see ItemList.xml
+//	Index: Index of the item, see ItemList.xml
+//	Durability: Durability of the item, if set to 0 the durability will be taken from ItemList.xml
+//	Price: Special Pass points the item costs, 1-65535
+//	Name: Name of the item, for reference only
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Maximum 40 items, each item (Cat and Index) once - the game client lists the shop by item
+//~~ Bought items are sent to the Gremory Case like the pass rewards
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS 
 -->
@@ -289,4 +305,22 @@
 		<Item Cat="20" Index="131" MapNumber="138" />
 		<Item Cat="20" Index="133" MapNumber="-1" />
 	</MasteryHornCrystalDrop>
-</SeasonPass>	
+	<SpecialShop Enable="1" SpecialPointPerTicket="2">
+		<Item ID="1" Cat="14" Index="493" Durability="0" Price="2500" Name="Temporary Wing Box" />
+		<Item ID="2" Cat="20" Index="43" Durability="1" Price="500" Name="Blood Angel Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="3" Cat="20" Index="44" Durability="1" Price="600" Name="Dark Angel Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="4" Cat="20" Index="45" Durability="1" Price="700" Name="Holy Angel Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="5" Cat="20" Index="46" Durability="1" Price="700" Name="Soul Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="6" Cat="20" Index="47" Durability="1" Price="700" Name="Blue Eye Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="7" Cat="20" Index="48" Durability="1" Price="700" Name="Silver Heart Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="8" Cat="20" Index="49" Durability="1" Price="700" Name="Manticore Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="9" Cat="20" Index="81" Durability="1" Price="700" Name="Brilliant Chaos Guild Amulet Fragment (Bound)" />
+		<Item ID="10" Cat="20" Index="87" Durability="1" Price="700" Name="Apocalypse Chaos Guild Charm Fragment (Bound)" />
+		<Item ID="11" Cat="14" Index="471" Durability="10" Price="100" Name="Sealed Armor Sculpture x10" />
+		<Item ID="12" Cat="14" Index="42" Durability="0" Price="30" Name="Jewel of Harmony" />
+		<Item ID="13" Cat="14" Index="53" Durability="10" Price="50" Name="Talisman of Luck" />
+		<Item ID="14" Cat="14" Index="189" Durability="10" Price="45" Name="Elemental Talisman of Luck" />
+		<Item ID="15" Cat="14" Index="486" Durability="0" Price="100" Name="Ruud Box (1500)" />
+	</SpecialShop>
+</SeasonPass>
+

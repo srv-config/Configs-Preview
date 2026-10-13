@@ -10,6 +10,10 @@
 // ============================================================
 //
 // ### LanguageSystem ###
+//	Set: Code page per language ID, one hex digit each, the same as Set in the game client's config.ini [Language]
+//		0 Thai, 1 Japanese, 2 Chinese simplified, 3 Korean, 4 Chinese traditional, 5 East Europe,
+//		6 Russian, 7 Western, 8 Greek, 9 Turkish, A Hebrew, B Arabic, C Baltic, D Vietnamese, E UTF-8
+//		Character names, guild names and chat are read in the code page of the player's language ID, no Set means 7 like the client's default
 //
 // ### LanguageSystem::Lang ###
 //	ID: Unique ID assigned to language, 0-5
@@ -17,15 +21,15 @@
 //	Enable: Allows to activate or deactivate specified language, 0/1
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~ List of languages should match list of available languages in ServerInfo.xml(bmd), LangInfo section
+//~~ List of languages should match the language IDs of the game client's config.ini [Language]
 //~~ In case player will set invalid language ID or language that is disabled on server side,
-//~~ the system will auto-switch to default language which is language of ID 0.
+//~~ the system will auto-switch to default language which is language of ID 0, its code page included.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS 
 -->
 
-<LanguageSystem>
+<LanguageSystem Set="7">
 	<Lang ID="0" FileName="English.xml"/> <!-- Lang ID = 0 is default language, enabled by default -->
 	<Lang ID="1" FileName="Spanish.xml" Enable="0"/>
 	<Lang ID="2" FileName="Portuguese.xml" Enable="0"/>

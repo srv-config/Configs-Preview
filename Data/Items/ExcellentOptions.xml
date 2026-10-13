@@ -30,6 +30,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Special values:
 //~~ 100: Blessed Archangel weapons
+//~~ 101: Item is NOT Blessed Archangel weapon, the option is never given to Blessed Archangel weapons
 //
 //~~ Specific Item Kind cannot be configure to options of same value of Number attribute. 
 //~~ If same ItemKind will be configured to more options of same value of Number attribute
@@ -191,8 +192,8 @@
 <ExcellentOptions>
 	<Common> <!-- Common excellent options -->
 		<Option ID="0" Number="0" Operator="2" Value="10" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="14" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="Increase Excellent Damage Chance by %d%%" />
-		<Option ID="1" Number="1" Operator="3" Value="1" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="-1" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="%s increases by %d every 20Lv" />
-		<Option ID="2" Number="2" Operator="2" Value="2" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="-1" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="%s increases by %d%%" />
+		<Option ID="1" Number="1" Operator="3" Value="1" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="101" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="%s increases by %d every 20Lv" />
+		<Option ID="2" Number="2" Operator="2" Value="2" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="101" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="%s increases by %d%%" />
 		<Option ID="3" Number="3" Operator="1" Value="7" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="14" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="Increase %d Attack (Wizardry) speed" />
 		<Option ID="4" Number="4" Operator="4" Value="8" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="14" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="Obtains (Life/%d) when monster is killed" />
 		<Option ID="5" Number="5" Operator="5" Value="8" FormulaID="-1" ItemKindA_1="1" ItemKindA_2="2" ItemKindA_3="14" ItemKindA_4="-1" ItemKindA_5="-1" ItemKindA_6="-1" ItemKindA_7="-1" ItemKindA_8="-1" ItemKindA_9="-1" Rate="5000" Name="Obtains (Mana/%d) when monster is killed" />

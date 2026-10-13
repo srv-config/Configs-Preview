@@ -911,6 +911,7 @@
 		<Msg ID="885" Text="[ResetCMD] Sorry, you have reached maximum grand reset" />
 		<Msg ID="886" Text="%s cannot receive the payment, his %s limit is reached" />
 		<Msg ID="887" Text="A sale was refused, your %s limit is reached" />
+		<Msg ID="889" Text="You do not have enough Special Pass points, %d are required." />
 	</Message>
 	
 	<VIPSystem>

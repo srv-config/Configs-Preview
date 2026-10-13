@@ -51,7 +51,7 @@
 //	RemoveFromParty: Determines whether to remove from party after reset, 0/1
 //	EnableMuHelper: Determines whether enable the MuHelper back after reset, 0/1
 //	ClearBuffs: Determines whether to clear existing buffs after reset, 0/1
-//	ResetStats: Determines whether to reset character stats after reset, does not apply to auto-reset, 0/1
+//	ResetStats: Determines whether to reset character stats after reset, auto-reset included; ConsumeItem points are given back, 0/1
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~ Stat points for all passed milestones will be calculated and returned as free Level Up Points
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

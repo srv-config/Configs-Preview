@@ -16,6 +16,7 @@
 //	MaxRewardPoint: Max points that can be added using defines in system items
 //	UseSuccessMsg: Message to display upon successful usage
 //	UseFailMessage: Message to display upon unsuccessful usage
+//~~ Points received are kept per character (Character.CJL) and given back after a reset that resets stats, Grand Reset included
 //
 // ### ConsumeItemSystem::Item ###
 //	Cat: Category of item

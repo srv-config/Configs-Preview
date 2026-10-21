@@ -24,11 +24,20 @@ function onDSDBQueryReceive(iPlayerIndex, iQueryNumber, bIsLastPacket, iCurrentR
 		if (iQueryNumber == Q.EXCHANGE_LOAD_DAILY or iQueryNumber == Q.EXCHANGE_LOAD_HISTORY) then
 			CoinExchangeDB.OnRow(iPlayerIndex, iQueryNumber, btCurrentPacket, iCurrentRow, oRow)
 		end
+
+		-- Skin Shop loads (Windows\SkinShop.lua)
+		if (iQueryNumber == Q.SKINSHOP_LOAD) then
+			SkinShopDB.OnRow(iPlayerIndex, iQueryNumber, btCurrentPacket, iCurrentRow, oRow)
+		end
 	end
 
 	if (bIsLastPacket == 1 or bIsLastPacket == true) then
 		if (iQueryNumber == Q.EXCHANGE_LOAD_DAILY or iQueryNumber == Q.EXCHANGE_LOAD_HISTORY) then
 			CoinExchangeDB.OnComplete(iPlayerIndex, iQueryNumber)
+		end
+
+		if (iQueryNumber == Q.SKINSHOP_LOAD) then
+			SkinShopDB.OnComplete(iPlayerIndex, iQueryNumber)
 		end
 	end
 end

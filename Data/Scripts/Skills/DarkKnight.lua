@@ -12,14 +12,14 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_DarkKnight(oPlayer, InDamage)
+function Defense_DarkKnight(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_DarkKnight(oPlayer, InDamage)
+function FallingSlash_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -34,7 +34,7 @@ function FallingSlash_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 20, Lunge
-function Lunge_DarkKnight(oPlayer, InDamage)
+function Lunge_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -49,7 +49,7 @@ function Lunge_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 21, Uppercut
-function Uppercut_DarkKnight(oPlayer, InDamage)
+function Uppercut_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -64,7 +64,7 @@ function Uppercut_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_DarkKnight(oPlayer, InDamage)
+function Cyclone_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -79,7 +79,7 @@ function Cyclone_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_DarkKnight(oPlayer, InDamage)
+function Slash_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -94,7 +94,7 @@ function Slash_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 41, Twisting Slash
-function TwistingSlash_DarkKnight(oPlayer, InDamage)
+function TwistingSlash_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -109,7 +109,7 @@ function TwistingSlash_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 42, Anger Strike
-function AngerStrike_DarkKnight(oPlayer, InDamage)
+function AngerStrike_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -124,7 +124,7 @@ function AngerStrike_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 43, Death Stab
-function DeathStab(oPlayer, InDamage)
+function DeathStab(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -139,7 +139,7 @@ function DeathStab(oPlayer, InDamage)
 end
 
 -- SkillID: 44, Crescent Moon Slash
-function CrescentMoonSlash_DarkKnight(oPlayer, InDamage)
+function CrescentMoonSlash_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -164,7 +164,7 @@ function SwellLife(oPlayer, oTarget, PartyBonus)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_DarkKnight(oPlayer, InDamage)
+function FireBreath_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -179,7 +179,7 @@ function FireBreath_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_DarkKnight(oPlayer, InDamage)
+function PlasmaStorm_DarkKnight(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -194,7 +194,7 @@ function PlasmaStorm_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 232, Strike of Destruction
-function StrikeOfDestruction_DarkKnight(oPlayer, InDamage)
+function StrikeOfDestruction_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -209,7 +209,7 @@ function StrikeOfDestruction_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 723, Fire Blow
-function FireBlow(oPlayer, InDamage)
+function FireBlow(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -224,7 +224,7 @@ function FireBlow(oPlayer, InDamage)
 end
 
 -- SkillID: 1500, Sword's Fury
-function SwordsFury(oPlayer)
+function SwordsFury(oPlayer, oTarget)
 	local SkillAddRange = 1
 	local SkillTime = -10
 
@@ -232,7 +232,7 @@ function SwordsFury(oPlayer)
 end
 
 -- SkillID: 1501, Sword Blow
-function SwordBlow(oPlayer, InDamage, BarrageCount)
+function SwordBlow(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -267,7 +267,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 326, Cyclone Strengthener
-function CycloneStrengthener_DarkKnight(oPlayer, InDamage)
+function CycloneStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -282,7 +282,7 @@ function CycloneStrengthener_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 327, Slash Strengthener
-function SlashStrengthener_DarkKnight(oPlayer, InDamage)
+function SlashStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -297,7 +297,7 @@ function SlashStrengthener_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 328, Falling Slash Strengthener
-function FallingSlashStrengthener_DarkKnight(oPlayer, InDamage)
+function FallingSlashStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -312,7 +312,7 @@ function FallingSlashStrengthener_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 329, Lunge Strengthener
-function LungeStrengthener_DarkKnight(oPlayer, InDamage)
+function LungeStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -327,7 +327,7 @@ function LungeStrengthener_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 330, Twisting Slash Strengthener
-function TwistingSlashStrengthener_DarkKnight(oPlayer, InDamage)
+function TwistingSlashStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -342,7 +342,7 @@ function TwistingSlashStrengthener_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 331, 812, Anger Blow Strengthener
-function AngerBlowStrengthener_DarkKnight(oPlayer, InDamage)
+function AngerBlowStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -357,7 +357,7 @@ function AngerBlowStrengthener_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 344, Blood Storm
-function BloodStorm_DarkKnight(oPlayer, InDamage)
+function BloodStorm_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -372,7 +372,7 @@ function BloodStorm_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 346, Blood Storm Strengthener
-function BloodStormStrengthener_DarkKnight(oPlayer, InDamage)
+function BloodStormStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -417,7 +417,7 @@ function SwellLifeMastery(oPlayer, oTarget, PartyBonus)
 end
 
 -- SkillID: 802, Sword's Fury Mastery
-function SwordsFuryMastery_DarkKnight(oPlayer, SkillTreeValue)
+function SwordsFuryMastery_DarkKnight(oPlayer, oTarget, SkillTreeValue)
 	local BaseAddRange = 1
 	local SkillTime = -10
 
@@ -457,7 +457,7 @@ function SolidProtectionMastery(oPlayer)
 end
 
 -- SkillID: 807, Strike of Destruction Strengthener
-function StrikeOfDestructionStrengthener_DarkKnight(oPlayer, InDamage, BarrageCount)
+function StrikeOfDestructionStrengthener_DarkKnight(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -478,7 +478,7 @@ function StrikeOfDestructionStrengthener_DarkKnight(oPlayer, InDamage, BarrageCo
 end
 
 -- SkillID: 809, Strike of Destruction Mastery
-function StrikeOfDestructionMastery_DarkKnight(oPlayer, InDamage, BarrageCount, SkillTreeValue)
+function StrikeOfDestructionMastery_DarkKnight(oPlayer, oTarget, InDamage, BarrageCount, SkillTreeValue)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -499,7 +499,7 @@ function StrikeOfDestructionMastery_DarkKnight(oPlayer, InDamage, BarrageCount, 
 end
 
 -- SkillID: 811, Tornado Strengthener
-function TornadoStrengthener_DarkKnight(oPlayer, InDamage)
+function TornadoStrengthener_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -514,7 +514,7 @@ function TornadoStrengthener_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 813, Rush
-function Rush_DarkKnight(oPlayer, InDamage)
+function Rush_DarkKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -529,7 +529,7 @@ function Rush_DarkKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 929, Fire Blow Strengthener
-function FireBlowStrengthener(oPlayer, InDamage)
+function FireBlowStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -544,7 +544,7 @@ function FireBlowStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 930, Fire Blow Mastery
-function FireBlowMastery(oPlayer, InDamage)
+function FireBlowMastery(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -561,7 +561,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1069, Anger Blow Enhancement Skill
-function AngerBlowEnhancementSkill(oPlayer, InDamage)
+function AngerBlowEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -576,7 +576,7 @@ function AngerBlowEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1071, Death Stab Enhancement Skill
-function DeathStabEnhancementSkill(oPlayer, InDamage)
+function DeathStabEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -591,7 +591,7 @@ function DeathStabEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1072, Fire Blow Enhancement Skill
-function FireBlowEnhancementSkill(oPlayer, InDamage)
+function FireBlowEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -606,7 +606,7 @@ function FireBlowEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1202, Strike of Destruction Enhancement Skill
-function StrikeOfDestructionEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function StrikeOfDestructionEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -631,7 +631,7 @@ function StrikeOfDestructionEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1203, Sword Blow Enhancement Skill
-function SwordBlowEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function SwordBlowEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -668,7 +668,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2040, Sword Blow of Saturation
-function SwordBlowOfSaturation(oPlayer, InDamage, BarrageCount)
+function SwordBlowOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
@@ -695,7 +695,7 @@ function SwordBlowOfSaturation(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2043, Destruction of Gale
-function DestructionOfGale(oPlayer, InDamage, BarrageCount)
+function DestructionOfGale(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100

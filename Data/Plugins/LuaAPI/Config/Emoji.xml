@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### Emoji ###
+//	Enable: Emoji in the chat
+//		~ 0: Off for everyone, the chat shows the codes as typed and the emoji button is hidden
+//		~ 1: On, a player can still turn them off with Show emoji in the picker (config.ini [LuaUI] EmojiShow=0)
+//
+//	The client asks once it enters the game: a change reaches a player after a Lua reload and their next login or map server change
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<Emoji Enable="1" />

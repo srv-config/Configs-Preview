@@ -12,28 +12,28 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_GrowLancer(oPlayer, InDamage)
+function Defense_GrowLancer(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 20, Lunge
-function Lunge_GrowLancer(oPlayer, InDamage)
+function Lunge_GrowLancer(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_GrowLancer(oPlayer, InDamage)
+function FireBreath_GrowLancer(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_GrowLancer(oPlayer, InDamage)
+function PlasmaStorm_GrowLancer(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -48,7 +48,7 @@ function PlasmaStorm_GrowLancer(oPlayer, InDamage)
 end
 
 -- SkillID: 271, Spin Step
-function SpinStep(oPlayer, InDamage, SkillTreeBonus)
+function SpinStep(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -72,7 +72,7 @@ function Obsidian(oPlayer, oTarget)
 end
 
 -- SkillID: 274, Magic Pin
-function MagicPin(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
+function MagicPin(oPlayer, oTarget, InDamage, SkillTreeBonus, BarrageCount)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -94,7 +94,7 @@ function MagicPin(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
 end
 
 -- SkillID: 276, Harsh Strike
-function HarshStrike(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
+function HarshStrike(oPlayer, oTarget, InDamage, SkillTreeBonus, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -114,7 +114,7 @@ function HarshStrike(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
 end
 
 -- SkillID: 277, Shining Peak
-function ShiningPeak(oPlayer, InDamage, SkillTreeBonus_Retailation, SkillTreeBonus_Rage)
+function ShiningPeak(oPlayer, oTarget, InDamage, SkillTreeBonus_Retailation, SkillTreeBonus_Rage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
@@ -132,7 +132,7 @@ function ShiningPeak(oPlayer, InDamage, SkillTreeBonus_Retailation, SkillTreeBon
 end
 
 -- SkillID: 279, Breche
-function Breche(oPlayer, InDamage, SkillTreeBonus)
+function Breche(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -146,7 +146,7 @@ function Breche(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 2036, Oversting
-function Oversting(oPlayer, InDamage, SkillTreeBonus)
+function Oversting(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -160,7 +160,7 @@ function Oversting(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 2085, Wild Breath
-function WildBreath(oPlayer, InDamage, SkillTreeBonus)
+function WildBreath(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -176,14 +176,14 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 329, Lunge Strengthener
-function LungeStrengthener_GrowLancer(oPlayer, InDamage)
+function LungeStrengthener_GrowLancer(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 687, Spin Step Strengthener
-function SpinStepStrengthener(oPlayer, InDamage, SkillTreeBonus)
+function SpinStepStrengthener(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -198,7 +198,7 @@ function SpinStepStrengthener(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 688, Harsh Strike Strengthener
-function HarshStrikeStrengthener(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
+function HarshStrikeStrengthener(oPlayer, oTarget, InDamage, SkillTreeBonus, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -218,7 +218,7 @@ function HarshStrikeStrengthener(oPlayer, InDamage, SkillTreeBonus, BarrageCount
 end
 
 -- SkillID: 690, Spin Step Mastery
-function SpinStepMastery(oPlayer, InDamage, SkillTreeBonus)
+function SpinStepMastery(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -233,7 +233,7 @@ function SpinStepMastery(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 691, Harsh Strike Mastery
-function HarshStrikeMastery(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
+function HarshStrikeMastery(oPlayer, oTarget, InDamage, SkillTreeBonus, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -255,7 +255,7 @@ function HarshStrikeMastery(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
 end
 
 -- SkillID: 692, Magic Pin Strengthener
-function MagicPinStrengthener(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
+function MagicPinStrengthener(oPlayer, oTarget, InDamage, SkillTreeBonus, BarrageCount)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -286,7 +286,7 @@ function ObsidianStrengthener(oPlayer, oTarget)
 end
 
 -- SkillID: 695, Magic Pin Mastery
-function MagicPinMastery(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
+function MagicPinMastery(oPlayer, oTarget, InDamage, SkillTreeBonus, BarrageCount)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -308,7 +308,7 @@ function MagicPinMastery(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
 end
 
 -- SkillID: 696, Breche Strengthener
-function BrecheStrengthener(oPlayer, InDamage, SkillTreeBonus)
+function BrecheStrengthener(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -322,7 +322,7 @@ function BrecheStrengthener(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 698, Breche Mastery
-function BrecheMastery(oPlayer, InDamage, SkillTreeBonus)
+function BrecheMastery(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -336,7 +336,7 @@ function BrecheMastery(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 699, Shining Peak Strengthener
-function ShiningPeakStrengthener(oPlayer, InDamage, SkillTreeBonus_Retailation, SkillTreeBonus_Rage)
+function ShiningPeakStrengthener(oPlayer, oTarget, InDamage, SkillTreeBonus_Retailation, SkillTreeBonus_Rage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
@@ -354,7 +354,7 @@ function ShiningPeakStrengthener(oPlayer, InDamage, SkillTreeBonus_Retailation, 
 end
 
 -- SkillID: 894, Oversting Strengthener
-function OverstingStrengthener(oPlayer, InDamage, SkillTreeBonus)
+function OverstingStrengthener(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -368,7 +368,7 @@ function OverstingStrengthener(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 896, Wild Breath Strengthener
-function WildBreathStrengthener(oPlayer, InDamage, SkillTreeBonus)
+function WildBreathStrengthener(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -384,7 +384,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1117, Magic Pin Enhancement Skill
-function MagicPinEnhancementSkill(oPlayer, InDamage, SkillTreeBonus, BarrageCount)
+function MagicPinEnhancementSkill(oPlayer, oTarget, InDamage, SkillTreeBonus, BarrageCount)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -410,7 +410,7 @@ function MagicPinEnhancementSkill(oPlayer, InDamage, SkillTreeBonus, BarrageCoun
 end
 
 -- SkillID: 1118, Breche Enhancement Skill
-function BrecheEnhancementSkill(oPlayer, InDamage, SkillTreeBonus)
+function BrecheEnhancementSkill(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -424,7 +424,7 @@ function BrecheEnhancementSkill(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 1119, Shining Peak Enhancement Skill
-function ShiningPeakEnhancementSkill(oPlayer, InDamage, SkillTreeBonus_Retailation, SkillTreeBonus_Rage)
+function ShiningPeakEnhancementSkill(oPlayer, oTarget, InDamage, SkillTreeBonus_Retailation, SkillTreeBonus_Rage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
@@ -442,7 +442,7 @@ function ShiningPeakEnhancementSkill(oPlayer, InDamage, SkillTreeBonus_Retailati
 end
 
 -- SkillID: 1235, Oversting Enhancement Skill
-function OverstingEnhancementSkill(oPlayer, InDamage, SkillTreeBonus)
+function OverstingEnhancementSkill(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -456,7 +456,7 @@ function OverstingEnhancementSkill(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 1236, Wild Breath Enhancement Skill
-function WildBreathEnhancementSkill(oPlayer, InDamage, SkillTreeBonus)
+function WildBreathEnhancementSkill(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 
@@ -472,7 +472,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2065, Oversting of Saturation
-function OverstingOfSaturation(oPlayer, InDamage, SkillTreeBonus)
+function OverstingOfSaturation(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local RageAttackPower = 100
 
@@ -486,7 +486,7 @@ function OverstingOfSaturation(oPlayer, InDamage, SkillTreeBonus)
 end
 
 -- SkillID: 2089, Wild Breath of Gale
-function WildBreathOfGale(oPlayer, InDamage, SkillTreeBonus)
+function WildBreathOfGale(oPlayer, oTarget, InDamage, SkillTreeBonus)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local RetaliationAttackPower = 100
 

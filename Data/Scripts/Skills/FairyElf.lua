@@ -12,14 +12,14 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_FairyElf(oPlayer, InDamage)
+function Defense_FairyElf(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_FairyElf(oPlayer, InDamage)
+function FallingSlash_FairyElf(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -34,7 +34,7 @@ function FallingSlash_FairyElf(oPlayer, InDamage)
 end
 
 -- SkillID: 20, Lunge
-function Lunge_FairyElf(oPlayer, InDamage)
+function Lunge_FairyElf(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -49,7 +49,7 @@ function Lunge_FairyElf(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_FairyElf(oPlayer, InDamage)
+function Cyclone_FairyElf(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -64,7 +64,7 @@ function Cyclone_FairyElf(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_FairyElf(oPlayer, InDamage)
+function Slash_FairyElf(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -79,7 +79,7 @@ function Slash_FairyElf(oPlayer, InDamage)
 end
 
 -- SkillID: 24, Triple Shot
-function TripleShot(oPlayer, InDamage)
+function TripleShot(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -234,7 +234,7 @@ function GreaterDamage(oPlayer, oTarget)
 end
 
 -- SkillID: 46, Starfall
-function Starfall(oPlayer, InDamage)
+function Starfall(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -249,7 +249,7 @@ function Starfall(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_FairyElf(oPlayer, InDamage)
+function FireBreath_FairyElf(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -264,7 +264,7 @@ function FireBreath_FairyElf(oPlayer, InDamage)
 end
 
 -- SkillID: 51, Ice Arrow
-function IceArrow(oPlayer, InDamage)
+function IceArrow(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -279,7 +279,7 @@ function IceArrow(oPlayer, InDamage)
 end
 
 -- SkillID: 52, Penetration
-function Penetration(oPlayer, InDamage)
+function Penetration(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -294,7 +294,7 @@ function Penetration(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_FairyElf(oPlayer, InDamage)
+function PlasmaStorm_FairyElf(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -309,7 +309,7 @@ function PlasmaStorm_FairyElf(oPlayer, InDamage)
 end
 
 -- SkillID: 234, Recovery
-function Recovery(oPlayer)
+function Recovery(oPlayer, oTarget)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local SkillEffect = Energy / 4 + oPlayer.Level
 
@@ -317,7 +317,7 @@ function Recovery(oPlayer)
 end
 
 -- SkillID: 235, Multi-Shot
-function MultiShot(oPlayer, InDamage)
+function MultiShot(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -332,7 +332,7 @@ function MultiShot(oPlayer, InDamage)
 end
 
 -- SkillID: 727, Focus Shot
-function FocusShot(oPlayer, InDamage)
+function FocusShot(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -347,7 +347,7 @@ function FocusShot(oPlayer, InDamage)
 end
 
 -- SkillID: 2023, Raining Arrow
-function RainingArrow(oPlayer, InDamage, BarrageCount)
+function RainingArrow(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -370,7 +370,7 @@ function RainingArrow(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2025, Holy Bolt
-function HolyBolt(oPlayer, InDamage, BarrageCount)
+function HolyBolt(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -487,7 +487,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 411, Multi-Shot Strengthener
-function MultiShotStrengthener(oPlayer, InDamage)
+function MultiShotStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -548,7 +548,7 @@ function HealStrengthener(oPlayer, oTarget)
 end
 
 -- SkillID: 414, Triple Shot Strengthener
-function TripleShotStrengthener(oPlayer, InDamage)
+function TripleShotStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -563,7 +563,7 @@ function TripleShotStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 416, Penetration Strengthener
-function PenetrationStrengthener(oPlayer, InDamage)
+function PenetrationStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -625,7 +625,7 @@ function DefenseIncreaseStrengthener(oPlayer, oTarget)
 end
 
 -- SkillID: 418, Triple Shot Mastery
-function TripleShotMastery(oPlayer, InDamage)
+function TripleShotMastery(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -781,7 +781,7 @@ function DefenseIncreaseMastery(oPlayer, oTarget)
 end
 
 -- SkillID: 424, Ice Arrow Strengthener
-function IceArrowStrengthener(oPlayer, InDamage)
+function IceArrowStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -796,7 +796,7 @@ function IceArrowStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 427, Poison Arrow
-function PoisonArrow_Dot(oPlayer, InDamage)
+function PoisonArrow_Dot(oPlayer, oTarget, InDamage)
 	local DotDamage = InDamage / 10
 	local Time = 10
 	local Rate = 30
@@ -805,7 +805,7 @@ function PoisonArrow_Dot(oPlayer, InDamage)
 end
 
 -- SkillID: 429, Party Healing Strengthener
-function PartyHealingStrengthener(oPlayer)
+function PartyHealingStrengthener(oPlayer, oTarget)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local HP = Energy / 6 + 6
 
@@ -821,7 +821,7 @@ function Bless(oPlayer, oTarget)
 end
 
 -- SkillID: 431, Multi-Shot Mastery
-function MultiShotMastery(oPlayer, InDamage)
+function MultiShotMastery(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -844,7 +844,7 @@ function BlessStrengthener(oPlayer, oTarget)
 end
 
 -- SkillID: 434, Poison Arrow Strengthener
-function PoisonArrowStrengthener_Dot(oPlayer, InDamage, MasterEffect)
+function PoisonArrowStrengthener_Dot(oPlayer, oTarget, InDamage, MasterEffect)
 	local DotDamage = (InDamage / 10) + MasterEffect
 	local Time = 10
 	local Rate = 30
@@ -861,7 +861,7 @@ function Evasion(oPlayer)
 end
 
 -- SkillID: 876, Holy Bolt Strengthener
-function HolyBoltStrengthener(oPlayer, InDamage, BarrageCount)
+function HolyBoltStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -886,7 +886,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1081, Triple Shot Enhancement Skill
-function TripleShotEnhancementSkill(oPlayer, InDamage)
+function TripleShotEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -901,7 +901,7 @@ function TripleShotEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1083, Multi-Shot Enhancement Skill
-function MultiShotEnhancementSkill(oPlayer, InDamage)
+function MultiShotEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -916,7 +916,7 @@ function MultiShotEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1085, Focus Shot Enhancement Skill
-function FocusShotEnhancementSkill(oPlayer, InDamage)
+function FocusShotEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -931,7 +931,7 @@ function FocusShotEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1222, Raining Arrow Enhancement Skill
-function RainingArrowEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function RainingArrowEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -958,7 +958,7 @@ function RainingArrowEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1223, Holy Bolt Enhancement Skill
-function HolyBoltEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function HolyBoltEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -1121,7 +1121,7 @@ function HealingEnhancementSkill(oPlayer, oTarget)
 end
 
 -- SkillID: 1227, Party Healing Enhancement Skill
-function PartyHealingEnhancementSkill(oPlayer)
+function PartyHealingEnhancementSkill(oPlayer, oTarget)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local HP = Energy / 6 + 6
 
@@ -1233,7 +1233,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2044, Raining Arrow of Saturation
-function RainingArrowOfSaturation(oPlayer, InDamage, BarrageCount)
+function RainingArrowOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100
@@ -1262,7 +1262,7 @@ function RainingArrowOfSaturation(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2047, Holy Bolt of Gale
-function HolyBoltOfGale(oPlayer, InDamage, BarrageCount)
+function HolyBoltOfGale(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local GaleAttackPower = 100

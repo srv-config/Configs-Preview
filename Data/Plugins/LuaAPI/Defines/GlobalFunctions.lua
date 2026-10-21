@@ -210,6 +210,10 @@ function Player.SendLife(iPlayerIndex, iLife, flag, iShield) end
 ---@param iBP integer AG/stamina value to send
 function Player.SendMana(iPlayerIndex, iMana, flag, iBP) end
 
+---Send exp tooltip data to client after modifying level, master level or resets
+---@param iPlayerIndex integer Player index
+function Player.SendExpToolTip(iPlayerIndex) end
+
 
 ---Save character to database
 ---@param oPlayer object Player object (stObject)

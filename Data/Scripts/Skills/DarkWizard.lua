@@ -12,91 +12,91 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 1, Poison
-function Poison_DarkWizard(oPlayer, InDamage)
+function Poison_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 2, Meteorite
-function Meteorite_DarkWizard(oPlayer, InDamage)
+function Meteorite_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 3, Lightning
-function Lightning_DarkWizard(oPlayer, InDamage)
+function Lightning_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 4, Fire Ball
-function FireBall_DarkWizard(oPlayer, InDamage)
+function FireBall_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 5, Flame
-function Flame_DarkWizard(oPlayer, InDamage)
+function Flame_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 7, Ice
-function Ice_DarkWizard(oPlayer, InDamage)
+function Ice_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 8, Twister
-function Twister_DarkWizard(oPlayer, InDamage)
+function Twister_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 9, Evil Spirit
-function EvilSpirit_DarkWizard(oPlayer, InDamage)
+function EvilSpirit_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 10, Hellfire
-function Hellfire_DarkWizard(oPlayer, InDamage)
+function Hellfire_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 11, Power Wave
-function PowerWave_DarkWizard(oPlayer, InDamage)
+function PowerWave_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 12, Aqua Beam
-function AquaBeam_DarkWizard(oPlayer, InDamage)
+function AquaBeam_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 13, Cometfall
-function Cometfall_DarkWizard(oPlayer, InDamage)
+function Cometfall_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 14, Inferno
-function Inferno_DarkWizard(oPlayer, InDamage)
+function Inferno_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -119,77 +119,77 @@ function SoulBarrier(oPlayer, oTarget)
 end
 
 -- SkillID: 17, Energy Ball
-function EnergyBall(oPlayer, InDamage)
+function EnergyBall(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_DarkWizard(oPlayer, InDamage)
+function Defense_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_DarkWizard(oPlayer, InDamage)
+function FallingSlash_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_DarkWizard(oPlayer, InDamage)
+function Cyclone_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 23, Slash
-function Slash_DarkWizard(oPlayer, InDamage)
+function Slash_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 38, Decay
-function Decay_DarkWizard(oPlayer, InDamage)
+function Decay_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 39, Ice Storm
-function IceStorm_DarkWizard(oPlayer, InDamage)
+function IceStorm_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 40, Nova
-function Nova_DarkWizard(oPlayer, InDamage)
+function Nova_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 45, Lance
-function Lance_DarkWizard(oPlayer, InDamage)
+function Lance_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_DarkWizard(oPlayer, InDamage)
+function FireBreath_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_DarkWizard(oPlayer, InDamage)
+function PlasmaStorm_DarkWizard(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -213,21 +213,21 @@ function ExpansionOfWizardry_DarkWizard(oPlayer)
 end
 
 -- SkillID: 724, Meteor Strike
-function MeteorStrike_DarkWizard(oPlayer, InDamage)
+function MeteorStrike_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 725, Meteor Storm
-function MeteorStorm(oPlayer, InDamage)
+function MeteorStorm(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 726, Soul Seeker
-function SoulSeeker(oPlayer, InDamage)
+function SoulSeeker(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -236,14 +236,14 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 378, Flame Strengthener
-function FlameStrengthener_DarkWizard(oPlayer, InDamage)
+function FlameStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 379, Lightning Strengthener
-function LightningStrengthener_DarkWizard(oPlayer, InDamage)
+function LightningStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -260,14 +260,14 @@ function ExpansionOfWizardryPowerUp_DarkWizard(oPlayer, MagicDamageMax, SkillTre
 end
 
 -- SkillID: 381, Inferno Strengthener
-function InfernoStrengthener_DarkWizard(oPlayer, InDamage)
+function InfernoStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 382, Blast Strengthener
-function BlastStrengthener_DarkWizard(oPlayer, InDamage)
+function BlastStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -284,56 +284,56 @@ function ExpansionOfWizardryMastery_DarkWizard(oPlayer, MagicDamageMax, SkillTre
 end
 
 -- SkillID: 384, Poison Strengthener
-function PoisonStrengthener_DarkWizard(oPlayer, InDamage)
+function PoisonStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 385, Evil Spirit Strengthener
-function EvilSpiritStrengthener_DarkWizard(oPlayer, InDamage)
+function EvilSpiritStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 387, Decay Strengthener
-function DecayStrengthener_DarkWizard(oPlayer, InDamage)
+function DecayStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 388, Hellfire Strengthener
-function HellfireStrengthener_DarkWizard(oPlayer, InDamage)
+function HellfireStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 389, Ice Strengthener
-function IceStrengthener_DarkWizard(oPlayer, InDamage)
+function IceStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 390, Meteor Strengthener
-function MeteorStrengthener_DarkWizard(oPlayer, InDamage)
+function MeteorStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 391, Ice Storm Strengthener
-function IceStormStrengthener_DarkWizard(oPlayer, InDamage)
+function IceStormStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 392, Nova Strengthener
-function NovaStrengthener_DarkWizard(oPlayer, InDamage)
+function NovaStrengthener_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -388,7 +388,7 @@ function SoulBarrierMastery(oPlayer, oTarget)
 end
 
 -- SkillID: 495, Earth Prison
-function EarthPrison_DarkWizard(oPlayer)
+function EarthPrison_DarkWizard(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -396,7 +396,7 @@ function EarthPrison_DarkWizard(oPlayer)
 end
 
 -- SkillID: 497, Earth Prison Strengthener
-function EarthPrisonStrengthener_DarkWizard(oPlayer)
+function EarthPrisonStrengthener_DarkWizard(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -406,21 +406,21 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1075, Meteor Strike Enhancement Skill
-function MeteorStrikeEnhancementSkill(oPlayer, InDamage)
+function MeteorStrikeEnhancementSkill(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 1076, Meteor Storm Enhancement Skill
-function MeteorStormEnhancementSkill(oPlayer, InDamage)
+function MeteorStormEnhancementSkill(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 1078, Evil Spirit Enhancement Skill
-function EvilSpiritEnhancementSkill_DarkWizard(oPlayer, InDamage)
+function EvilSpiritEnhancementSkill_DarkWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -429,7 +429,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2037, Meteor Storm of Gale
-function MeteorStormOfGale(oPlayer, InDamage)
+function MeteorStormOfGale(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage

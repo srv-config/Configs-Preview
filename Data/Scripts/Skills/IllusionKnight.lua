@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 22, Cyclone
-function Cyclone_IllusionKnight(oPlayer, InDamage)
+function Cyclone_IllusionKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -27,7 +27,7 @@ function Cyclone_IllusionKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 44, Crescent Moon Slash
-function CrescentMoonSlash_IllusionKnight(oPlayer, InDamage)
+function CrescentMoonSlash_IllusionKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -42,7 +42,7 @@ function CrescentMoonSlash_IllusionKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_IllusionKnight(oPlayer, InDamage)
+function FireBreath_IllusionKnight(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -57,7 +57,7 @@ function FireBreath_IllusionKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_IllusionKnight(oPlayer, InDamage)
+function PlasmaStorm_IllusionKnight(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -72,7 +72,7 @@ function PlasmaStorm_IllusionKnight(oPlayer, InDamage)
 end
 
 -- SkillID: 2028, Charge Slash
-function ChargeSlash(oPlayer, InDamage, BarrageCount)
+function ChargeSlash(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -93,7 +93,7 @@ function ChargeSlash(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2029, Wind Glaive
-function WindGlaive(oPlayer, InDamage, BarrageCount)
+function WindGlaive(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -116,7 +116,7 @@ function WindGlaive(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2030, Blade Storm
-function BladeStorm(oPlayer, InDamage, BarrageCount)
+function BladeStorm(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -151,7 +151,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 877, Charge Slash Strengthener
-function ChargeSlashStrengthener(oPlayer, InDamage, BarrageCount)
+function ChargeSlashStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -172,7 +172,7 @@ function ChargeSlashStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 878, Charge Slash Mastery
-function ChargeSlashMastery(oPlayer, InDamage, BarrageCount)
+function ChargeSlashMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -193,7 +193,7 @@ function ChargeSlashMastery(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 879, Wind Glaive Strengthener
-function WindGlaiveStrengthener(oPlayer, InDamage, BarrageCount)
+function WindGlaiveStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -216,7 +216,7 @@ function WindGlaiveStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 880, Wind Glaive Mastery
-function WindGlaiveMastery(oPlayer, InDamage, BarrageCount)
+function WindGlaiveMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -239,7 +239,7 @@ function WindGlaiveMastery(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 881, Blade Storm Strengthener
-function BladeStormStrengthener(oPlayer, InDamage, BarrageCount)
+function BladeStormStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -262,7 +262,7 @@ function BladeStormStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 882, Blade Storm Mastery
-function BladeStormMastery(oPlayer, InDamage, BarrageCount)
+function BladeStormMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -287,7 +287,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1231, Charge Slash Enhancement Skill
-function ChargeSlashEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function ChargeSlashEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -310,7 +310,7 @@ function ChargeSlashEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1232, Wind Glaive Enhancement Skill
-function WindGlaiveEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function WindGlaiveEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -335,7 +335,7 @@ function WindGlaiveEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1233, Blade Storm Enhancement Skill
-function BladeStormEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function BladeStormEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100
@@ -364,7 +364,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2082, Blade Storm of Saturation
-function BladeStormOfSaturation(oPlayer, InDamage, BarrageCount)
+function BladeStormOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local IllusionAttackPower = 100

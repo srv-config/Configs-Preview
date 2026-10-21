@@ -28,7 +28,7 @@ end
 -- ---------- Regular Skills ----------
 
 -- SkillID: 1, Poison
-function Poison_MagicGladiator(oPlayer, InDamage)
+function Poison_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -42,7 +42,7 @@ function Poison_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 2, Meteorite
-function Meteorite_MagicGladiator(oPlayer, InDamage)
+function Meteorite_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -56,7 +56,7 @@ function Meteorite_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 3, Lightning
-function Lightning_MagicGladiator(oPlayer, InDamage)
+function Lightning_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -70,7 +70,7 @@ function Lightning_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 4, Fire Ball
-function FireBall_MagicGladiator(oPlayer, InDamage)
+function FireBall_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -84,7 +84,7 @@ function FireBall_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 5, Flame
-function Flame_MagicGladiator(oPlayer, InDamage)
+function Flame_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -98,7 +98,7 @@ function Flame_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 7, Ice
-function Ice_MagicGladiator(oPlayer, InDamage)
+function Ice_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -112,7 +112,7 @@ function Ice_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 8, Twister
-function Twister_MagicGladiator(oPlayer, InDamage)
+function Twister_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -126,7 +126,7 @@ function Twister_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 9, Evil Spirit
-function EvilSpirit_MagicGladiator(oPlayer, InDamage)
+function EvilSpirit_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -140,7 +140,7 @@ function EvilSpirit_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 10, Hellfire
-function Hellfire_MagicGladiator(oPlayer, InDamage)
+function Hellfire_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -154,7 +154,7 @@ function Hellfire_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 11, Power Wave
-function PowerWave_MagicGladiator(oPlayer, InDamage)
+function PowerWave_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -168,7 +168,7 @@ function PowerWave_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 12, Aqua Beam
-function AquaBeam_MagicGladiator(oPlayer, InDamage)
+function AquaBeam_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -182,7 +182,7 @@ function AquaBeam_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 13, Cometfall
-function Cometfall_MagicGladiator(oPlayer, InDamage)
+function Cometfall_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -196,7 +196,7 @@ function Cometfall_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 14, Inferno
-function Inferno_MagicGladiator(oPlayer, InDamage)
+function Inferno_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -210,14 +210,14 @@ function Inferno_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_MagicGladiator(oPlayer, InDamage)
+function Defense_MagicGladiator(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_MagicGladiator(oPlayer, InDamage)
+function FallingSlash_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -230,7 +230,7 @@ function FallingSlash_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 20, Lunge
-function Lunge_MagicGladiator(oPlayer, InDamage)
+function Lunge_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -243,7 +243,7 @@ function Lunge_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 21, Uppercut
-function Uppercut_MagicGladiator(oPlayer, InDamage)
+function Uppercut_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -256,7 +256,7 @@ function Uppercut_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_MagicGladiator(oPlayer, InDamage)
+function Cyclone_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -269,7 +269,7 @@ function Cyclone_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_MagicGladiator(oPlayer, InDamage)
+function Slash_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -282,7 +282,7 @@ function Slash_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 41, Twisting Slash
-function TwistingSlash_MagicGladiator(oPlayer, InDamage)
+function TwistingSlash_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -295,7 +295,7 @@ function TwistingSlash_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_MagicGladiator(oPlayer, InDamage)
+function FireBreath_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -308,7 +308,7 @@ function FireBreath_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 55, Fire Slash
-function FireSlash(oPlayer, InDamage, BarrageCount)
+function FireSlash(oPlayer, oTarget, InDamage, BarrageCount)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -330,7 +330,7 @@ function FireSlash(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 56, Power Slash
-function PowerSlash(oPlayer, InDamage)
+function PowerSlash(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -343,7 +343,7 @@ function PowerSlash(oPlayer, InDamage)
 end
 
 -- SkillID: 57, Spiral Slash
-function SpiralSlash(oPlayer, InDamage)
+function SpiralSlash(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -356,7 +356,7 @@ function SpiralSlash(oPlayer, InDamage)
 end
 
 -- SkillID: 73, Mana Rays
-function ManaRays(oPlayer, InDamage)
+function ManaRays(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -370,7 +370,7 @@ function ManaRays(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_MagicGladiator(oPlayer, InDamage)
+function PlasmaStorm_MagicGladiator(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -385,7 +385,7 @@ function PlasmaStorm_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 236, Flame Strike
-function FlameStrike(oPlayer, InDamage)
+function FlameStrike(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -398,7 +398,7 @@ function FlameStrike(oPlayer, InDamage)
 end
 
 -- SkillID: 237, Gigantic Storm
-function GiganticStorm(oPlayer, InDamage)
+function GiganticStorm(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -412,7 +412,7 @@ function GiganticStorm(oPlayer, InDamage)
 end
 
 -- SkillID: 731, Ice Blood
-function IceBlood(oPlayer, InDamage)
+function IceBlood(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -427,7 +427,7 @@ function IceBlood(oPlayer, InDamage)
 end
 
 -- SkillID: 732, Fire Blood
-function FireBlood(oPlayer, InDamage)
+function FireBlood(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local AttackPower = 100
 
@@ -444,7 +444,7 @@ function FireBlood(oPlayer, InDamage)
 end
 
 -- SkillID: 733, Dark Blast
-function DarkBlast(oPlayer, InDamage)
+function DarkBlast(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -458,7 +458,7 @@ function DarkBlast(oPlayer, InDamage)
 end
 
 -- SkillID: 734, Meteor Strike
-function MeteorStrike_MagicGladiator(oPlayer, InDamage)
+function MeteorStrike_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -472,7 +472,7 @@ function MeteorStrike_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 2012, Chaos Blade
-function ChaosBlade(oPlayer, InDamage, BarrageCount)
+function ChaosBlade(oPlayer, oTarget, InDamage, BarrageCount)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -494,7 +494,7 @@ function ChaosBlade(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2013, Havok Spear
-function HavokSpear(oPlayer, InDamage, BarrageCount)
+function HavokSpear(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -519,7 +519,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 344, Blood Storm
-function BloodStorm_MagicGladiator(oPlayer, InDamage)
+function BloodStorm_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -532,7 +532,7 @@ function BloodStorm_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 346, Blood Storm Strengthener
-function BloodStormStrengthener_MagicGladiator(oPlayer, InDamage)
+function BloodStormStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -545,7 +545,7 @@ function BloodStormStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 479, Cyclone Strengthener
-function CycloneStrengthener_MagicGladiator(oPlayer, InDamage)
+function CycloneStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -558,7 +558,7 @@ function CycloneStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 480, Lightning Strengthener
-function LightningStrengthener_MagicGladiator(oPlayer, InDamage)
+function LightningStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -572,7 +572,7 @@ function LightningStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 481, Twisting Slash Strengthener
-function TwistingSlashStrengthener_MagicGladiator(oPlayer, InDamage)
+function TwistingSlashStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -585,7 +585,7 @@ function TwistingSlashStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 482, Power Slash Strengthener
-function PowerSlashStrengthener(oPlayer, InDamage)
+function PowerSlashStrengthener(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -598,7 +598,7 @@ function PowerSlashStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 483, Flame Strengthener
-function FlameStrengthener_MagicGladiator(oPlayer, InDamage)
+function FlameStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -612,7 +612,7 @@ function FlameStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 484, Blast Strengthener
-function BlastStrengthener_MagicGladiator(oPlayer, InDamage)
+function BlastStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -626,7 +626,7 @@ function BlastStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 486, Inferno Strengthener
-function InfernoStrengthener_MagicGladiator(oPlayer, InDamage)
+function InfernoStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -640,7 +640,7 @@ function InfernoStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 487, Evil Spirit Strengthener
-function EvilSpiritStrengthener_MagicGladiator(oPlayer, InDamage)
+function EvilSpiritStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -654,7 +654,7 @@ function EvilSpiritStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 489, Ice Strengthener
-function IceStrengthener_MagicGladiator(oPlayer, InDamage)
+function IceStrengthener_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -668,7 +668,7 @@ function IceStrengthener_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 490, Fire Slash Strengthener
-function FireSlashStrengthener(oPlayer, InDamage, BarrageCount)
+function FireSlashStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -691,7 +691,7 @@ function FireSlashStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 492, Flame Strike Strengthener
-function FlameStrikeStrengthener(oPlayer, InDamage)
+function FlameStrikeStrengthener(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -704,7 +704,7 @@ function FlameStrikeStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 493, Fire Slash Mastery
-function FireSlashMastery(oPlayer, InDamage, BarrageCount)
+function FireSlashMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -727,7 +727,7 @@ function FireSlashMastery(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 495, Earth Prison
-function EarthPrison_MagicGladiator(oPlayer)
+function EarthPrison_MagicGladiator(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -735,7 +735,7 @@ function EarthPrison_MagicGladiator(oPlayer)
 end
 
 -- SkillID: 496, Gigantic Storm Strengthener
-function GiganticStormStrengthener(oPlayer, InDamage)
+function GiganticStormStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -749,7 +749,7 @@ function GiganticStormStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 497, Earth Prison Strengthener
-function EarthPrisonStrengthener_MagicGladiator(oPlayer)
+function EarthPrisonStrengthener_MagicGladiator(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -759,7 +759,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1078, 1088, Evil Spirit Enhancement Skill
-function EvilSpiritEnhancementSkill_MagicGladiator(oPlayer, InDamage)
+function EvilSpiritEnhancementSkill_MagicGladiator(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -773,7 +773,7 @@ function EvilSpiritEnhancementSkill_MagicGladiator(oPlayer, InDamage)
 end
 
 -- SkillID: 1087, Gigantic Storm Enhancement Skill
-function GiganticStormEnhancementSkill(oPlayer, InDamage)
+function GiganticStormEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -787,7 +787,7 @@ function GiganticStormEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1089, Dark Blast Enhancement Skill
-function DarkBlastEnhancementSkill(oPlayer, InDamage)
+function DarkBlastEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -801,7 +801,7 @@ function DarkBlastEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1092, Fire Slash Enhancement Skill
-function FireSlashEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function FireSlashEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -828,7 +828,7 @@ function FireSlashEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1094, Fire Blood Enhancement Skill
-function FireBloodEnhancementSkill(oPlayer, InDamage)
+function FireBloodEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local AttackPower = 100
 
@@ -845,7 +845,7 @@ function FireBloodEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1095, Ice Blood Enhancement Skill
-function IceBloodEnhancementSkill(oPlayer, InDamage)
+function IceBloodEnhancementSkill(oPlayer, oTarget, InDamage)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -860,7 +860,7 @@ function IceBloodEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1214, Chaos Blade Enhancement Skill
-function ChaosBladeEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function ChaosBladeEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -884,7 +884,7 @@ function ChaosBladeEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1215, Havok Spear Enhancement Skill
-function HavokSpearEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function HavokSpearEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -911,7 +911,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2049, Chaos Blade of Saturation
-function ChaosBladeOfSaturation(oPlayer, InDamage, BarrageCount)
+function ChaosBladeOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local AttackPower = 100
 
 	if (oPlayer.Type == OBJ_USER) then
@@ -937,7 +937,7 @@ function ChaosBladeOfSaturation(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2051, Havok Spear of Wrath
-function HavokSpearOfWrath(oPlayer, InDamage, BarrageCount)
+function HavokSpearOfWrath(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 

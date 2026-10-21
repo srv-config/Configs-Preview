@@ -36,6 +36,10 @@ LoadScript(BASE .. "Timers.lua")
 -- Unlike the client, the server does not scan this folder: every window
 -- needs its own line here or it silently will not register.
 LoadScript(BASE .. "Windows\\CoinExchange.lua")
+LoadScript(BASE .. "Windows\\SkinShop.lua")
+
+-- Chat emoji switch, on the general channel (no window)
+LoadScript(BASE .. "Emoji.lua")
 
 -- Initialize event scheduler
 EventScheduler.Initialize()

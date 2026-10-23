@@ -21,7 +21,9 @@
 -- Called when player enters character selection screen (Async)
 function onCharacterSelectEnter(oPlayer)
 	if (oPlayer ~= nil) then
-		
+		if (SkinShop ~= nil) then
+			SkinShop.OnLeave(oPlayer)
+		end
 	end
 end
 
@@ -42,7 +44,9 @@ end
 -- Called when player disconnects from server (Async)
 function onPlayerDisconnect(oPlayer)
 	if (oPlayer ~= nil) then
-		
+    	if (SkinShop ~= nil) then
+        	SkinShop.OnLeave(oPlayer)
+    	end
 	end
 end
 
@@ -344,7 +348,9 @@ end
 -- Called when player joins map after login or teleport (Async)
 function onCharacterJoinMap(oPlayer)
 	if (oPlayer ~= nil) then
-		
+    	if (SkinShop ~= nil) then
+        	SkinShop.OnJoin(oPlayer)
+    	end
 	end
 end
 

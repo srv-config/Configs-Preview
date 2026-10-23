@@ -13,6 +13,9 @@
 -- Called every second
 function onTimerProcessSecond()
 	EventScheduler.ProcessEvents()
+	if (SkinShop ~= nil) then
+		SkinShop.OnSecond()
+	end
 end
 
 -- Called every minute

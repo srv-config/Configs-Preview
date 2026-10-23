@@ -215,8 +215,8 @@
 		<Buff Index="173" EffectType="112" ItemType="14" ItemIndex="175" Type="0" NoticeType="1" ClearType="1" BuffOutputValue="0" Name="Magic Backpack4" Description="Magic Backpack4" />
 		<Buff Index="174" EffectType="98" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Fire" Description="Total amount of SD is reduced to half." />
 		<Buff Index="175" EffectType="99" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Frost" Description="Total amount of MP is reduced to half." />
-		<Buff Index="176" EffectType="100" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Tornado" Description="Attack speed is reduced to half." />
-		<Buff Index="177" EffectType="101" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Bind" Description="Total amount of HP is reduced to half." />
+		<Buff Index="176" EffectType="100" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="1" Name="Tornado" Description="Attack speed is reduced by %d%%." />
+		<Buff Index="177" EffectType="101" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="1" Name="Bind" Description="Total amount of HP is reduced by %d%%." />
 		<Buff Index="178" EffectType="102" ItemType="-1" ItemIndex="-1" Type="1" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Darkness" Description="You can't do anything while you're stunned." />
 		<Buff Index="179" EffectType="103" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Fire Tower" Description="ATK+25/EXP+20%/when fire equipped ATK&amp;DEF+5%" />
 		<Buff Index="180" EffectType="104" ItemType="-1" ItemIndex="-1" Type="0" NoticeType="0" ClearType="1" BuffOutputValue="0" Name="Water Tower" Description="DEF +50/EXP +20%/when Water equipped, ATK &amp; DEF +5%" />

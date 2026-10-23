@@ -9,9 +9,12 @@
 -- Common Skill Calc Script, Lua v5.3 - constants and class independent calcs
 
 -- ============================================================
--- oPlayer, oTarget : the objects every skill function gets
+-- oPlayer, oTarget : the objects a skill function gets
 -- ============================================================
--- oTarget can be nil. Without the Lua API plugin both are read-only and hold only what is listed below.
+-- oTarget comes right after oPlayer: the object the skill hits, heals or buffs (Defense: oPlayer is the shield user, oTarget the attacker).
+-- Self-cast skills and party buffs counted once from the caster get no oTarget: Burst, Demolish, Dignity, Evasion,
+-- Expansion of Wizardry, Fixed Fire, Ignore Defense, Solid Protection, Illusion Avatar and the Berserker/Darkness life cost.
+-- Without the Lua API plugin both are read-only and hold only what is listed below.
 -- With the Lua API plugin the whole object and many more functions are available:
 -- https://github.com/srv-config/Configs-Preview/wiki/Player-Structure
 -- https://github.com/srv-config/Configs-Preview/wiki/Global-Functions
@@ -94,7 +97,7 @@ BUFFTYPE_CRUSHER_CHARGE_STRENGTHENER = 370
 BUFFTYPE_CRUSHER_CHARGE_MASTERY = 371
 
 -- SkillID: 59, Combo
-function Combo(oPlayer, InDamage)
+function Combo(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
@@ -138,7 +141,7 @@ function Combo(oPlayer, InDamage)
 end
 
 -- SkillID: 47, Impale - not in SkillList.xml
-function Impale(oPlayer, InDamage)
+function Impale(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = 0
 
@@ -166,7 +169,7 @@ function Bastion(oPlayer, oTarget)
 end
 
 -- BuffIndex: 239, Hemorrhage
-function Hemorrhage(oPlayer)
+function Hemorrhage(oPlayer, oTarget)
 	local CharacterLevel = oPlayer.Level + oPlayer.userData.MasterLevel
 	local SuccessRate = 10
 	local Duration = CharacterLevel / 4 + 20
@@ -179,7 +182,7 @@ function Hemorrhage(oPlayer)
 end
 
 -- BuffIndex: 240, Paralysis
-function Paralysis(oPlayer)
+function Paralysis(oPlayer, oTarget)
 	local SuccessRate = 10
 
 	if (SuccessRate > 100) then
@@ -190,7 +193,7 @@ function Paralysis(oPlayer)
 end
 
 -- BuffIndex: 241, Bondage
-function Bondage(oPlayer)
+function Bondage(oPlayer, oTarget)
 	local SuccessRate = 10
 
 	if (SuccessRate > 100) then
@@ -201,7 +204,7 @@ function Bondage(oPlayer)
 end
 
 -- BuffIndex: 242, Blindness
-function Blindness(oPlayer)
+function Blindness(oPlayer, oTarget)
 	local CharacterLevel = oPlayer.Level + oPlayer.userData.MasterLevel
 	local SuccessRate = 10
 	local Duration = CharacterLevel / 4 + 20
@@ -214,7 +217,7 @@ function Blindness(oPlayer)
 end
 
 -- SkillID: 2022, Bond - tick damage on monsters
-function Bond_Dot(oPlayer, MagicDamageMin, MagicDamageMax)
+function Bond_Dot(oPlayer, oTarget, MagicDamageMin, MagicDamageMax)
 	local SkillEffect = MagicDamageMax / 4
 	local Duration = 3
 
@@ -222,14 +225,14 @@ function Bond_Dot(oPlayer, MagicDamageMin, MagicDamageMax)
 end
 
 -- SkillID: 2022, Bond - bonus for Light Wizard and Lemuria Mage
-function Bond_Active(oPlayer, InDamage)
+function Bond_Active(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage * 130 / 100
 
 	return OutDamage
 end
 
 -- SkillID: 2022, Bond - bonus for other class party members
-function Bond_PartyMember(oPlayer, InDamage)
+function Bond_PartyMember(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage * 115 / 100
 
 	return OutDamage

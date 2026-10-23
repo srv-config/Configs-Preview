@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 1, Poison
-function Poison_Alchemist(oPlayer, InDamage)
+function Poison_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -26,7 +26,7 @@ function Poison_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 2, Meteorite
-function Meteorite_Alchemist(oPlayer, InDamage)
+function Meteorite_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -40,7 +40,7 @@ function Meteorite_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 3, Lightning
-function Lightning_Alchemist(oPlayer, InDamage)
+function Lightning_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -54,7 +54,7 @@ function Lightning_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 4, Fire Ball
-function FireBall_Alchemist(oPlayer, InDamage)
+function FireBall_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -68,7 +68,7 @@ function FireBall_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 5, Flame
-function Flame_Alchemist(oPlayer, InDamage)
+function Flame_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -82,7 +82,7 @@ function Flame_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 7, Ice
-function Ice_Alchemist(oPlayer, InDamage)
+function Ice_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -96,7 +96,7 @@ function Ice_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 8, Twister
-function Twister_Alchemist(oPlayer, InDamage)
+function Twister_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -110,7 +110,7 @@ function Twister_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 10, Hellfire
-function Hellfire_Alchemist(oPlayer, InDamage)
+function Hellfire_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -124,7 +124,7 @@ function Hellfire_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 11, Power Wave
-function PowerWave_Alchemist(oPlayer, InDamage)
+function PowerWave_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -138,7 +138,7 @@ function PowerWave_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 12, Aqua Beam
-function AquaBeam_Alchemist(oPlayer, InDamage)
+function AquaBeam_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -152,7 +152,7 @@ function AquaBeam_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 13, Cometfall
-function Cometfall_Alchemist(oPlayer, InDamage)
+function Cometfall_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -166,7 +166,7 @@ function Cometfall_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 14, Inferno
-function Inferno_Alchemist(oPlayer, InDamage)
+function Inferno_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -180,7 +180,7 @@ function Inferno_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_Alchemist(oPlayer, InDamage)
+function FallingSlash_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -188,7 +188,7 @@ function FallingSlash_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_Alchemist(oPlayer, InDamage)
+function Cyclone_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -196,7 +196,7 @@ function Cyclone_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_Alchemist(oPlayer, InDamage)
+function Slash_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -204,7 +204,7 @@ function Slash_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 38, Decay
-function Decay_Alchemist(oPlayer, InDamage)
+function Decay_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -218,7 +218,7 @@ function Decay_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 39, Ice Storm
-function IceStorm_Alchemist(oPlayer, InDamage)
+function IceStorm_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -232,7 +232,7 @@ function IceStorm_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 40, Nova
-function Nova_Alchemist(oPlayer, InDamage)
+function Nova_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -246,7 +246,7 @@ function Nova_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 45, Lance
-function Lance_Alchemist(oPlayer, InDamage)
+function Lance_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -260,7 +260,7 @@ function Lance_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_Alchemist(oPlayer, InDamage)
+function FireBreath_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -268,7 +268,7 @@ function FireBreath_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_Alchemist(oPlayer, InDamage)
+function PlasmaStorm_Alchemist(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -292,7 +292,7 @@ function ExpansionOfWizardry_Alchemist(oPlayer)
 end
 
 -- SkillID: 240, Magical Shot
-function MagicalShot_Alchemist(oPlayer, InDamage)
+function MagicalShot_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -306,7 +306,7 @@ function MagicalShot_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 2091, Alchemy: Angel Homunculus
-function AlchemyAngelHomunculus(oPlayer, InDamage)
+function AlchemyAngelHomunculus(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -320,7 +320,7 @@ function AlchemyAngelHomunculus(oPlayer, InDamage)
 end
 
 -- SkillID: 2092, Alchemy: Ignition Bomber
-function AlchemyIgnitionBomber(oPlayer, InDamage)
+function AlchemyIgnitionBomber(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -334,7 +334,7 @@ function AlchemyIgnitionBomber(oPlayer, InDamage)
 end
 
 -- SkillID: 2093, Alchemy: Countless Weapon
-function AlchemyCountlessWeapon(oPlayer, InDamage, BarrageCount)
+function AlchemyCountlessWeapon(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -350,7 +350,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 378, Flame Strengthener
-function FlameStrengthener_Alchemist(oPlayer, InDamage)
+function FlameStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -364,7 +364,7 @@ function FlameStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 379, Lightning Strengthener
-function LightningStrengthener_Alchemist(oPlayer, InDamage)
+function LightningStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -388,7 +388,7 @@ function ExpansionOfWizardryPowerUp_Alchemist(oPlayer, MagicDamageMax, SkillTree
 end
 
 -- SkillID: 381, Inferno Strengthener
-function InfernoStrengthener_Alchemist(oPlayer, InDamage)
+function InfernoStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -402,7 +402,7 @@ function InfernoStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 382, Blast Strengthener
-function BlastStrengthener_Alchemist(oPlayer, InDamage)
+function BlastStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -426,7 +426,7 @@ function ExpansionOfWizardryMastery_Alchemist(oPlayer, MagicDamageMax, SkillTree
 end
 
 -- SkillID: 384, Poison Strengthener
-function PoisonStrengthener_Alchemist(oPlayer, InDamage)
+function PoisonStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -440,7 +440,7 @@ function PoisonStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 385, Evil Spirit Strengthener
-function EvilSpiritStrengthener_Alchemist(oPlayer, InDamage)
+function EvilSpiritStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -454,7 +454,7 @@ function EvilSpiritStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 387, Decay Strengthener
-function DecayStrengthener_Alchemist(oPlayer, InDamage)
+function DecayStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -468,7 +468,7 @@ function DecayStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 388, Hellfire Strengthener
-function HellfireStrengthener_Alchemist(oPlayer, InDamage)
+function HellfireStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -482,7 +482,7 @@ function HellfireStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 389, Ice Strengthener
-function IceStrengthener_Alchemist(oPlayer, InDamage)
+function IceStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -496,7 +496,7 @@ function IceStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 390, Meteor Strengthener
-function MeteorStrengthener_Alchemist(oPlayer, InDamage)
+function MeteorStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -510,7 +510,7 @@ function MeteorStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 391, Ice Storm Strengthener
-function IceStormStrengthener_Alchemist(oPlayer, InDamage)
+function IceStormStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -524,7 +524,7 @@ function IceStormStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 392, Nova Strengthener
-function NovaStrengthener_Alchemist(oPlayer, InDamage)
+function NovaStrengthener_Alchemist(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -538,7 +538,7 @@ function NovaStrengthener_Alchemist(oPlayer, InDamage)
 end
 
 -- SkillID: 495, Earth Prison
-function EarthPrison_Alchemist(oPlayer)
+function EarthPrison_Alchemist(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -546,7 +546,7 @@ function EarthPrison_Alchemist(oPlayer)
 end
 
 -- SkillID: 497, Earth Prison Strengthener
-function EarthPrisonStrengthener_Alchemist(oPlayer)
+function EarthPrisonStrengthener_Alchemist(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -554,7 +554,7 @@ function EarthPrisonStrengthener_Alchemist(oPlayer)
 end
 
 -- SkillID: 900, Angel Homunculus Strengthener
-function AngelHomunculusStrengthener(oPlayer, InDamage)
+function AngelHomunculusStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -568,7 +568,7 @@ function AngelHomunculusStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 901, Angel Homunculus Mastery
-function AngelHomunculusMastery(oPlayer, InDamage)
+function AngelHomunculusMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -582,7 +582,7 @@ function AngelHomunculusMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 903, Ignition Bomber Strengthener
-function IgnitionBomberStrengthener(oPlayer, InDamage)
+function IgnitionBomberStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -596,7 +596,7 @@ function IgnitionBomberStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 904, Ignition Bomber Mastery
-function IgnitionBomberMastery(oPlayer, InDamage)
+function IgnitionBomberMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -612,7 +612,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1237, Alchemy: Angel Homunculus Enhancement Skill
-function AlchemyAngelHomunculusEnhancementSkill(oPlayer, InDamage)
+function AlchemyAngelHomunculusEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -626,7 +626,7 @@ function AlchemyAngelHomunculusEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1238, Alchemy: Ignition Bomber Enhancement Skill
-function AlchemyIgnitionBomberEnhancementSkill(oPlayer, InDamage)
+function AlchemyIgnitionBomberEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -640,7 +640,7 @@ function AlchemyIgnitionBomberEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1239, Alchemy: Countless Weapon Enhancement Skill
-function AlchemyCountlessWeaponEnhancementSkill(oPlayer, InDamage)
+function AlchemyCountlessWeaponEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -656,7 +656,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2094, Fiery Countless Weapon
-function FieryCountlessWeapon(oPlayer, InDamage)
+function FieryCountlessWeapon(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 

@@ -912,6 +912,8 @@
 		<Msg ID="886" Text="%s cannot receive the payment, his %s limit is reached" />
 		<Msg ID="887" Text="A sale was refused, your %s limit is reached" />
 		<Msg ID="889" Text="You do not have enough Special Pass points, %d are required." />
+		<Msg ID="890" Text="This option has already reached its maximum level." />
+		<Msg ID="891" Text="You do not have enough space in Gremory Case, %d free slots are required." />
 	</Message>
 	
 	<VIPSystem>

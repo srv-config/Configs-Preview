@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_RageFighter(oPlayer, InDamage)
+function FallingSlash_RageFighter(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -20,7 +20,7 @@ function FallingSlash_RageFighter(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_RageFighter(oPlayer, InDamage)
+function FireBreath_RageFighter(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -28,7 +28,7 @@ function FireBreath_RageFighter(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_RageFighter(oPlayer, InDamage)
+function PlasmaStorm_RageFighter(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -43,7 +43,7 @@ function PlasmaStorm_RageFighter(oPlayer, InDamage)
 end
 
 -- SkillID: 260, Killing Blow
-function KillingBlow(oPlayer, InDamage)
+function KillingBlow(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
 
@@ -51,7 +51,7 @@ function KillingBlow(oPlayer, InDamage)
 end
 
 -- SkillID: 261, Beast Uppercut
-function BeastUppercut(oPlayer, InDamage)
+function BeastUppercut(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
 
@@ -59,7 +59,7 @@ function BeastUppercut(oPlayer, InDamage)
 end
 
 -- SkillID: 262, Chain Drive
-function ChainDrive(oPlayer, InDamage)
+function ChainDrive(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
 
@@ -67,7 +67,7 @@ function ChainDrive(oPlayer, InDamage)
 end
 
 -- SkillID: 263, Dark Side
-function DarkSide(oPlayer, InDamage)
+function DarkSide(oPlayer, oTarget, InDamage)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
@@ -76,7 +76,7 @@ function DarkSide(oPlayer, InDamage)
 end
 
 -- SkillID: 264, Dragon Roar
-function DragonRoar(oPlayer, InDamage)
+function DragonRoar(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Energy / 10) * (Energy / 10 + 50) / 100.0
 
@@ -98,7 +98,7 @@ function DragonSlasher(oPlayer, oTarget, InDamage)
 end
 
 -- SkillID: 265, Dragon Slasher
-function DragonSlasher_DecreaseSD(oPlayer)
+function DragonSlasher_DecreaseSD(oPlayer, oTarget)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local SuccessRate = 0
 	local DecreasePercent = 0
@@ -153,7 +153,7 @@ function IncreaseBlock(oPlayer, oTarget)
 end
 
 -- SkillID: 269, Charge
-function Charge(oPlayer, InDamage)
+function Charge(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
 
@@ -161,7 +161,7 @@ function Charge(oPlayer, InDamage)
 end
 
 -- SkillID: 270, Phoenix Shot
-function PhoenixShot(oPlayer, InDamage)
+function PhoenixShot(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 200) / 100.0
 
@@ -169,7 +169,7 @@ function PhoenixShot(oPlayer, InDamage)
 end
 
 -- SkillID: 282, Spirit Hook
-function SpiritHook(oPlayer, InDamage)
+function SpiritHook(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
 
@@ -177,7 +177,7 @@ function SpiritHook(oPlayer, InDamage)
 end
 
 -- SkillID: 564, Dragon Slasher Strengthener
-function DragonSlasherStrengthener_DecreaseSD(oPlayer)
+function DragonSlasherStrengthener_DecreaseSD(oPlayer, oTarget)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local SuccessRate = 0
 	local DecreasePercent = 0
@@ -197,7 +197,7 @@ function DragonSlasherStrengthener_DecreaseSD(oPlayer)
 end
 
 -- SkillID: 739, Dark Phoenix Shot
-function DarkPhoenixShot(oPlayer, InDamage)
+function DarkPhoenixShot(oPlayer, oTarget, InDamage)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Agility / 10 + 50) / 100.0
 
@@ -207,7 +207,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 551, Killing Blow Strengthener
-function KillingBlowStrengthener(oPlayer, InDamage)
+function KillingBlowStrengthener(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
 
@@ -215,7 +215,7 @@ function KillingBlowStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 552, Beast Uppercut Strengthener
-function BeastUppercutStrengthener(oPlayer, InDamage)
+function BeastUppercutStrengthener(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
 
@@ -223,7 +223,7 @@ function BeastUppercutStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 554, Killing Blow Mastery
-function KillingBlowMastery(oPlayer, InDamage)
+function KillingBlowMastery(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
 
@@ -231,7 +231,7 @@ function KillingBlowMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 555, Beast Uppercut Mastery
-function BeastUppercutMastery(oPlayer, InDamage)
+function BeastUppercutMastery(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
 
@@ -239,7 +239,7 @@ function BeastUppercutMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 558, Chain Drive Strengthener
-function ChainDriveStrengthener(oPlayer, InDamage)
+function ChainDriveStrengthener(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
 
@@ -247,7 +247,7 @@ function ChainDriveStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 559, Dark Side Strengthener
-function DarkSideStrengthener(oPlayer, InDamage)
+function DarkSideStrengthener(oPlayer, oTarget, InDamage)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
@@ -256,7 +256,7 @@ function DarkSideStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 560, Dragon Roar Strengthener
-function DragonRoarStrengthener(oPlayer, InDamage)
+function DragonRoarStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Energy / 10) * (Energy / 10 + 50) / 100.0
 
@@ -264,7 +264,7 @@ function DragonRoarStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 563, Dark Side Mastery
-function DarkSideMastery(oPlayer, InDamage)
+function DarkSideMastery(oPlayer, oTarget, InDamage)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
@@ -287,7 +287,7 @@ function DragonSlasherStrengthener(oPlayer, oTarget, InDamage, SkillBonus)
 end
 
 -- SkillID: 565, Blood Howling
-function BloodHowling(oPlayer, TargetHP)
+function BloodHowling(oPlayer, oTarget, TargetHP)
 	local SkillEffect = 200 -- TargetHP * 5 / 100
 	local SkillSuccessRate = 10 -- 1
 	local SkillTime = 10
@@ -296,7 +296,7 @@ function BloodHowling(oPlayer, TargetHP)
 end
 
 -- SkillID: 567, Blood Howling Strengthener
-function BloodHowlingStrengthener(oPlayer, TargetHP)
+function BloodHowlingStrengthener(oPlayer, oTarget, TargetHP)
 	local SkillEffect = 200 -- TargetHP * 5 / 100
 	local SkillSuccessRate = 10 -- 1
 	local SkillTime = 10
@@ -340,7 +340,7 @@ function StaminaIncreaseStrengthener(oPlayer, oTarget)
 end
 
 -- SkillID: 744, Enhance Phoenix Shot
-function EnhancePhoenixShot(oPlayer, InDamage)
+function EnhancePhoenixShot(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 200) / 100.0
 
@@ -348,7 +348,7 @@ function EnhancePhoenixShot(oPlayer, InDamage)
 end
 
 -- SkillID: 745, Phoenix Shot Mastery
-function PhoenixShotMastery(oPlayer, InDamage)
+function PhoenixShotMastery(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Vitality / 10 + 200) / 100.0
 
@@ -358,7 +358,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1111, Dragon Roar Enhancement Skill
-function DragonRoarEnhancementSkill(oPlayer, InDamage)
+function DragonRoarEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Energy / 10) * (Energy / 10 + 50) / 100.0
 
@@ -366,7 +366,7 @@ function DragonRoarEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1113, Dark Side Enhancement Skill
-function DarkSideEnhancementSkill(oPlayer, InDamage)
+function DarkSideEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
@@ -375,7 +375,7 @@ function DarkSideEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1147, Spirit Hook Enhancement Skill
-function SpiritHookEnhancementSkill(oPlayer, InDamage)
+function SpiritHookEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
 
@@ -385,7 +385,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2061, Dark Side of Saturation
-function DarkSideOfSaturation(oPlayer, InDamage)
+function DarkSideOfSaturation(oPlayer, oTarget, InDamage)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
@@ -394,7 +394,7 @@ function DarkSideOfSaturation(oPlayer, InDamage)
 end
 
 -- SkillID: 2063, Spirit Hook of Saturation
-function SpiritHookOfSaturation(oPlayer, InDamage)
+function SpiritHookOfSaturation(oPlayer, oTarget, InDamage)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
 

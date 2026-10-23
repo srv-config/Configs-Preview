@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 49, Fire Breath
-function FireBreath_GunCrusher(oPlayer, InDamage)
+function FireBreath_GunCrusher(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -20,7 +20,7 @@ function FireBreath_GunCrusher(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_GunCrusher(oPlayer, InDamage)
+function PlasmaStorm_GunCrusher(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -35,7 +35,7 @@ function PlasmaStorm_GunCrusher(oPlayer, InDamage)
 end
 
 -- SkillID: 2001, Dark Plasma
-function DarkPlasma(oPlayer, InDamage)
+function DarkPlasma(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -49,7 +49,7 @@ function DarkPlasma(oPlayer, InDamage)
 end
 
 -- SkillID: 2002, Ice Break
-function IceBreak(oPlayer, InDamage, BarrageCount)
+function IceBreak(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -71,7 +71,7 @@ function IceBreak(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2003, Ice Blast
-function IceBlast(oPlayer, InDamage)
+function IceBlast(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -85,7 +85,7 @@ function IceBlast(oPlayer, InDamage)
 end
 
 -- SkillID: 2004, Death Fire
-function DeathFire(oPlayer, InDamage, BarrageCount)
+function DeathFire(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -105,7 +105,7 @@ function DeathFire(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2005, Bursting Flare
-function BurstingFlare(oPlayer, InDamage, BarrageCount, IsShockwave)
+function BurstingFlare(oPlayer, oTarget, InDamage, BarrageCount, IsShockwave)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -132,7 +132,7 @@ function BurstingFlare(oPlayer, InDamage, BarrageCount, IsShockwave)
 end
 
 -- SkillID: 2006, Death Ice
-function DeathIce(oPlayer, InDamage, BarrageCount)
+function DeathIce(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -161,7 +161,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 802, Sword's Fury Mastery
-function SwordsFuryMastery_GunCrusher(oPlayer, SkillTreeValue)
+function SwordsFuryMastery_GunCrusher(oPlayer, oTarget, SkillTreeValue)
 	local BaseAddRange = 1
 	local SkillTime = -10
 
@@ -171,7 +171,7 @@ function SwordsFuryMastery_GunCrusher(oPlayer, SkillTreeValue)
 end
 
 -- SkillID: 820, Dark Plasma Strengthener
-function DarkPlasmaStrengthener(oPlayer, InDamage)
+function DarkPlasmaStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -185,7 +185,7 @@ function DarkPlasmaStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 821, Dark Plasma Proficiency
-function DarkPlasmaProficiency(oPlayer, InDamage)
+function DarkPlasmaProficiency(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -199,7 +199,7 @@ function DarkPlasmaProficiency(oPlayer, InDamage)
 end
 
 -- SkillID: 822, Dark Plasma Mastery
-function DarkPlasmaMastery(oPlayer, InDamage)
+function DarkPlasmaMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -213,7 +213,7 @@ function DarkPlasmaMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 823, Ice Break Strengthener
-function IceBreakStrengthener(oPlayer, InDamage, BarrageCount)
+function IceBreakStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -235,7 +235,7 @@ function IceBreakStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 824, Ice Break Mastery
-function IceBreakMastery(oPlayer, InDamage, BarrageCount)
+function IceBreakMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -257,7 +257,7 @@ function IceBreakMastery(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 825, Death Fire Strengthener
-function DeathFireStrengthener(oPlayer, InDamage, BarrageCount)
+function DeathFireStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -277,7 +277,7 @@ function DeathFireStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 826, Death Fire Mastery
-function DeathFireMastery(oPlayer, InDamage, BarrageCount)
+function DeathFireMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -311,7 +311,7 @@ function FixedFireMastery(oPlayer)
 end
 
 -- SkillID: 835, Death Ice Strengthener
-function DeathIceStrengthener(oPlayer, InDamage, BarrageCount)
+function DeathIceStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -331,7 +331,7 @@ function DeathIceStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 836, Death Ice Mastery
-function DeathIceMastery(oPlayer, InDamage, BarrageCount)
+function DeathIceMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -353,7 +353,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1211, Dark Plasma Enhancement Skill
-function DarkPlasmaEnhancementSkill(oPlayer, InDamage)
+function DarkPlasmaEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -367,7 +367,7 @@ function DarkPlasmaEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1212, Ice Blast Enhancement Skill
-function IceBlastEnhancementSkill(oPlayer, InDamage)
+function IceBlastEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -381,7 +381,7 @@ function IceBlastEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1213, Busting Flare Enhancement Skill
-function BustingFlareEnhancementSkill(oPlayer, InDamage, BarrageCount, IsShockwave)
+function BustingFlareEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount, IsShockwave)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -410,7 +410,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2073, Bursting Flare of Gale
-function BurstingFlareOfGale(oPlayer, InDamage, BarrageCount, IsShockwave)
+function BurstingFlareOfGale(oPlayer, oTarget, InDamage, BarrageCount, IsShockwave)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 

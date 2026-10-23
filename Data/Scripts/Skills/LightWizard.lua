@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 3, Lightning
-function Lightning_LightWizard(oPlayer, InDamage)
+function Lightning_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -26,7 +26,7 @@ function Lightning_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 7, Ice
-function Ice_LightWizard(oPlayer, InDamage)
+function Ice_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -40,7 +40,7 @@ function Ice_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 8, Twister
-function Twister_LightWizard(oPlayer, InDamage)
+function Twister_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -54,7 +54,7 @@ function Twister_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 11, Power Wave
-function PowerWave_LightWizard(oPlayer, InDamage)
+function PowerWave_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -68,7 +68,7 @@ function PowerWave_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 12, Aqua Beam
-function AquaBeam_LightWizard(oPlayer, InDamage)
+function AquaBeam_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -82,7 +82,7 @@ function AquaBeam_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 13, Cometfall
-function Cometfall_LightWizard(oPlayer, InDamage)
+function Cometfall_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -96,7 +96,7 @@ function Cometfall_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_LightWizard(oPlayer, InDamage)
+function FallingSlash_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -104,7 +104,7 @@ function FallingSlash_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_LightWizard(oPlayer, InDamage)
+function Cyclone_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -112,7 +112,7 @@ function Cyclone_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_LightWizard(oPlayer, InDamage)
+function Slash_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -120,7 +120,7 @@ function Slash_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 40, Nova
-function Nova_LightWizard(oPlayer, InDamage)
+function Nova_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -134,7 +134,7 @@ function Nova_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 45, Lance
-function Lance_LightWizard(oPlayer, InDamage)
+function Lance_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -148,7 +148,7 @@ function Lance_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_LightWizard(oPlayer, InDamage)
+function FireBreath_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -156,7 +156,7 @@ function FireBreath_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_LightWizard(oPlayer, InDamage)
+function PlasmaStorm_LightWizard(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -180,7 +180,7 @@ function ExpansionOfWizardry_LightWizard(oPlayer)
 end
 
 -- SkillID: 240, Magical Shot
-function MagicalShot_LightWizard(oPlayer, InDamage)
+function MagicalShot_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -194,7 +194,7 @@ function MagicalShot_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 241, Shining Bird
-function ShiningBird(oPlayer, InDamage, BarrageCount)
+function ShiningBird(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -208,7 +208,7 @@ function ShiningBird(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 242, Dragon Violent
-function DragonViolent(oPlayer, InDamage, BarrageCount)
+function DragonViolent(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -228,7 +228,7 @@ function DragonViolent(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 243, Spear Storm
-function SpearStorm(oPlayer, InDamage, BarrageCount)
+function SpearStorm(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -248,7 +248,7 @@ function SpearStorm(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 244, Reflection Barrier
-function ReflectionBarrier(oPlayer)
+function ReflectionBarrier(oPlayer, oTarget)
 	local ReflectProbability = 50
 	local ReflectShockDmgPercentage = 50
 	local Duration = 60
@@ -258,7 +258,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 379, Lightning Strengthener
-function LightningStrengthener_LightWizard(oPlayer, InDamage)
+function LightningStrengthener_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -282,7 +282,7 @@ function ExpansionOfWizardryPowerUp_LightWizard(oPlayer, MagicDamageMax, SkillTr
 end
 
 -- SkillID: 382, Blast Strengthener
-function BlastStrengthener_LightWizard(oPlayer, InDamage)
+function BlastStrengthener_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -306,7 +306,7 @@ function ExpansionOfWizardryMastery_LightWizard(oPlayer, MagicDamageMax, SkillTr
 end
 
 -- SkillID: 389, Ice Strengthener
-function IceStrengthener_LightWizard(oPlayer, InDamage)
+function IceStrengthener_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -320,7 +320,7 @@ function IceStrengthener_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 392, Nova Strengthener
-function NovaStrengthener_LightWizard(oPlayer, InDamage)
+function NovaStrengthener_LightWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -334,7 +334,7 @@ function NovaStrengthener_LightWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 495, Earth Prison
-function EarthPrison_LightWizard(oPlayer)
+function EarthPrison_LightWizard(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -342,7 +342,7 @@ function EarthPrison_LightWizard(oPlayer)
 end
 
 -- SkillID: 497, Earth Prison Strengthener
-function EarthPrisonStrengthener_LightWizard(oPlayer)
+function EarthPrisonStrengthener_LightWizard(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -350,7 +350,7 @@ function EarthPrisonStrengthener_LightWizard(oPlayer)
 end
 
 -- SkillID: 843, Shining Bird Strengthener
-function ShiningBirdStrengthener(oPlayer, InDamage, BarrageCount, SkillTreeValue)
+function ShiningBirdStrengthener(oPlayer, oTarget, InDamage, BarrageCount, SkillTreeValue)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -364,7 +364,7 @@ function ShiningBirdStrengthener(oPlayer, InDamage, BarrageCount, SkillTreeValue
 end
 
 -- SkillID: 844, Shining Bird Mastery
-function ShiningBirdMastery(oPlayer, InDamage, BarrageCount, SkillTreeValue)
+function ShiningBirdMastery(oPlayer, oTarget, InDamage, BarrageCount, SkillTreeValue)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -378,7 +378,7 @@ function ShiningBirdMastery(oPlayer, InDamage, BarrageCount, SkillTreeValue)
 end
 
 -- SkillID: 846, Dragon Violent Strengthener
-function DragonViolentStrengthener(oPlayer, InDamage, BarrageCount, SkillTreeValue)
+function DragonViolentStrengthener(oPlayer, oTarget, InDamage, BarrageCount, SkillTreeValue)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -398,7 +398,7 @@ function DragonViolentStrengthener(oPlayer, InDamage, BarrageCount, SkillTreeVal
 end
 
 -- SkillID: 847, Dragon Violent Mastery
-function DragonViolentMastery(oPlayer, InDamage, BarrageCount, SkillTreeValue)
+function DragonViolentMastery(oPlayer, oTarget, InDamage, BarrageCount, SkillTreeValue)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -418,7 +418,7 @@ function DragonViolentMastery(oPlayer, InDamage, BarrageCount, SkillTreeValue)
 end
 
 -- SkillID: 861, Reflection Barrier Strengthener
-function ReflectionBarrierStrengthener(oPlayer, SkillTreeValue)
+function ReflectionBarrierStrengthener(oPlayer, oTarget, SkillTreeValue)
 	local ReflectProbability = 50
 	local ReflectShockDmgPercentage = 50 + SkillTreeValue
 	local Duration = 60
@@ -426,7 +426,7 @@ function ReflectionBarrierStrengthener(oPlayer, SkillTreeValue)
 end
 
 -- SkillID: 862, Reflection Barrier Skills
-function ReflectionBarrierSkills(oPlayer, SkillTreeValue, SkillTreeValue2)
+function ReflectionBarrierSkills(oPlayer, oTarget, SkillTreeValue, SkillTreeValue2)
 	local ReflectProbability = 50
 	local ReflectShockDmgPercentage = 50 + SkillTreeValue
 	local Duration = 60 + SkillTreeValue2
@@ -434,7 +434,7 @@ function ReflectionBarrierSkills(oPlayer, SkillTreeValue, SkillTreeValue2)
 end
 
 -- SkillID: 863, Reflection Barrier Mastery
-function ReflectionBarrierMastery(oPlayer, SkillTreeValue, SkillTreeValue2)
+function ReflectionBarrierMastery(oPlayer, oTarget, SkillTreeValue, SkillTreeValue2)
 	local ReflectProbability = 50
 	local ReflectShockDmgPercentage = 50 + SkillTreeValue
 	local Duration = 60 + SkillTreeValue2
@@ -444,7 +444,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1216, Spear Storm Enhancement Skill
-function SpearStormEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function SpearStormEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -466,7 +466,7 @@ function SpearStormEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1220, Shining Bird Enhancement Skill
-function ShiningBirdEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function ShiningBirdEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -486,7 +486,7 @@ function ShiningBirdEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1221, Dragon Violent Enhancement Skill
-function DragonViolentEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function DragonViolentEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -510,7 +510,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2080, Spear Storm of Saturation
-function SpearStormOfSaturation(oPlayer, InDamage, BarrageCount)
+function SpearStormOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 

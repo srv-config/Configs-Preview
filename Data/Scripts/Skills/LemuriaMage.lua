@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 1, Poison
-function Poison_LemuriaMage(oPlayer, InDamage)
+function Poison_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -26,7 +26,7 @@ function Poison_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 2, Meteorite
-function Meteorite_LemuriaMage(oPlayer, InDamage)
+function Meteorite_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -40,7 +40,7 @@ function Meteorite_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 3, Lightning
-function Lightning_LemuriaMage(oPlayer, InDamage)
+function Lightning_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -54,7 +54,7 @@ function Lightning_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 4, Fire Ball
-function FireBall_LemuriaMage(oPlayer, InDamage)
+function FireBall_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -68,7 +68,7 @@ function FireBall_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 5, Flame
-function Flame_LemuriaMage(oPlayer, InDamage)
+function Flame_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -82,7 +82,7 @@ function Flame_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 7, Ice
-function Ice_LemuriaMage(oPlayer, InDamage)
+function Ice_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -96,7 +96,7 @@ function Ice_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 8, Twister
-function Twister_LemuriaMage(oPlayer, InDamage)
+function Twister_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -110,7 +110,7 @@ function Twister_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 10, Hellfire
-function Hellfire_LemuriaMage(oPlayer, InDamage)
+function Hellfire_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -124,7 +124,7 @@ function Hellfire_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 11, Power Wave
-function PowerWave_LemuriaMage(oPlayer, InDamage)
+function PowerWave_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -138,7 +138,7 @@ function PowerWave_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 14, Inferno
-function Inferno_LemuriaMage(oPlayer, InDamage)
+function Inferno_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -152,14 +152,14 @@ function Inferno_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_LemuriaMage(oPlayer, InDamage)
+function Defense_LemuriaMage(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_LemuriaMage(oPlayer, InDamage)
+function FallingSlash_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -167,7 +167,7 @@ function FallingSlash_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_LemuriaMage(oPlayer, InDamage)
+function Cyclone_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -175,7 +175,7 @@ function Cyclone_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_LemuriaMage(oPlayer, InDamage)
+function Slash_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -183,7 +183,7 @@ function Slash_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 38, Decay
-function Decay_LemuriaMage(oPlayer, InDamage)
+function Decay_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -197,7 +197,7 @@ function Decay_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 39, Ice Storm
-function IceStorm_LemuriaMage(oPlayer, InDamage)
+function IceStorm_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -211,7 +211,7 @@ function IceStorm_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 45, Lance
-function Lance_LemuriaMage(oPlayer, InDamage)
+function Lance_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -225,7 +225,7 @@ function Lance_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_LemuriaMage(oPlayer, InDamage)
+function FireBreath_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -233,7 +233,7 @@ function FireBreath_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_LemuriaMage(oPlayer, InDamage)
+function PlasmaStorm_LemuriaMage(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -257,7 +257,7 @@ function ExpansionOfWizardry_LemuriaMage(oPlayer)
 end
 
 -- SkillID: 240, Magical Shot
-function MagicalShot_LemuriaMage(oPlayer, InDamage)
+function MagicalShot_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -271,7 +271,7 @@ function MagicalShot_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 245, Marvel Burst
-function MarvelBurst(oPlayer, InDamage)
+function MarvelBurst(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -285,7 +285,7 @@ function MarvelBurst(oPlayer, InDamage)
 end
 
 -- SkillID: 246, Unleash Marvel
-function UnleashMarvel(oPlayer, InDamage)
+function UnleashMarvel(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -299,7 +299,7 @@ function UnleashMarvel(oPlayer, InDamage)
 end
 
 -- SkillID: 247, Ultimate Force
-function UltimateForce(oPlayer, InDamage, BarrageCount)
+function UltimateForce(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -365,7 +365,7 @@ function BeginnerHealing(oPlayer, oTarget)
 end
 
 -- SkillID: 2008, Beginner Recovery
-function BeginnerRecovery(oPlayer)
+function BeginnerRecovery(oPlayer, oTarget)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local SkillEffect = Energy / 8 + oPlayer.Level
 
@@ -477,7 +477,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 378, Flame Strengthener
-function FlameStrengthener_LemuriaMage(oPlayer, InDamage)
+function FlameStrengthener_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -501,7 +501,7 @@ function ExpansionOfWizardryPowerUp_LemuriaMage(oPlayer, MagicDamageMax, SkillTr
 end
 
 -- SkillID: 381, Inferno Strengthener
-function InfernoStrengthener_LemuriaMage(oPlayer, InDamage)
+function InfernoStrengthener_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -525,7 +525,7 @@ function ExpansionOfWizardryMastery_LemuriaMage(oPlayer, MagicDamageMax, SkillTr
 end
 
 -- SkillID: 389, Ice Strengthener
-function IceStrengthener_LemuriaMage(oPlayer, InDamage)
+function IceStrengthener_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -539,7 +539,7 @@ function IceStrengthener_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 391, Ice Storm Strengthener
-function IceStormStrengthener_LemuriaMage(oPlayer, InDamage)
+function IceStormStrengthener_LemuriaMage(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -553,7 +553,7 @@ function IceStormStrengthener_LemuriaMage(oPlayer, InDamage)
 end
 
 -- SkillID: 495, Earth Prison
-function EarthPrison_LemuriaMage(oPlayer)
+function EarthPrison_LemuriaMage(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -561,7 +561,7 @@ function EarthPrison_LemuriaMage(oPlayer)
 end
 
 -- SkillID: 497, Earth Prison Strengthener
-function EarthPrisonStrengthener_LemuriaMage(oPlayer)
+function EarthPrisonStrengthener_LemuriaMage(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -569,7 +569,7 @@ function EarthPrisonStrengthener_LemuriaMage(oPlayer)
 end
 
 -- SkillID: 848, Marvel Burst Strengthener
-function MarvelBurstStrengthener(oPlayer, InDamage)
+function MarvelBurstStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -583,7 +583,7 @@ function MarvelBurstStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 849, Marvel Burst Mastery
-function MarvelBurstMastery(oPlayer, InDamage)
+function MarvelBurstMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -785,7 +785,7 @@ function BeginnerAttackImprovementMastery(oPlayer, oTarget)
 end
 
 -- SkillID: 855, Unleash Marvel Strengthener
-function UnleashMarvelStrengthener(oPlayer, InDamage)
+function UnleashMarvelStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -799,7 +799,7 @@ function UnleashMarvelStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 856, Unleash Marvel Mastery
-function UnleashMarvelMastery(oPlayer, InDamage)
+function UnleashMarvelMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -869,7 +869,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1217, Marvel Burst Enhancement Skill
-function MarvelBurstEnhancementSkill(oPlayer, InDamage)
+function MarvelBurstEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -883,7 +883,7 @@ function MarvelBurstEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1218, Unleash Marvel Enhancement Skill
-function UnleashMarvelEnhancementSkill(oPlayer, InDamage)
+function UnleashMarvelEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -897,7 +897,7 @@ function UnleashMarvelEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1219, Ultimate Force Enhancement Skill
-function UltimateForceEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function UltimateForceEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -921,7 +921,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2076, Ultimate Storm of Saturation
-function UltimateStormOfSaturation(oPlayer, InDamage, BarrageCount)
+function UltimateStormOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 

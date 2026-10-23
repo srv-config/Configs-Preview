@@ -12,14 +12,14 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_Crusader(oPlayer, InDamage)
+function Defense_Crusader(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_Crusader(oPlayer, InDamage)
+function FallingSlash_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -34,7 +34,7 @@ function FallingSlash_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_Crusader(oPlayer, InDamage)
+function Slash_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -49,7 +49,7 @@ function Slash_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 41, Twisting Slash
-function TwistingSlash_Crusader(oPlayer, InDamage)
+function TwistingSlash_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -64,7 +64,7 @@ function TwistingSlash_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 42, Anger Strike
-function AngerStrike_Crusader(oPlayer, InDamage)
+function AngerStrike_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -79,7 +79,7 @@ function AngerStrike_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_Crusader(oPlayer, InDamage)
+function FireBreath_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -94,7 +94,7 @@ function FireBreath_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 74, Fire Blast
-function FireBlast_Crusader(oPlayer, InDamage)
+function FireBlast_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -109,7 +109,7 @@ function FireBlast_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_Crusader(oPlayer, InDamage)
+function PlasmaStorm_Crusader(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -124,7 +124,7 @@ function PlasmaStorm_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 232, Strike of Destruction
-function StrikeOfDestruction_Crusader(oPlayer, InDamage)
+function StrikeOfDestruction_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -139,7 +139,7 @@ function StrikeOfDestruction_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 2105, Divine Fall
-function DivineFall(oPlayer, InDamage, BarrageCount)
+function DivineFall(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -154,7 +154,7 @@ function DivineFall(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2106, Holly Sweep
-function HollySweep(oPlayer, InDamage, BarrageCount)
+function HollySweep(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -169,7 +169,7 @@ function HollySweep(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2107, Secred Impact
-function SecredImpact(oPlayer, InDamage, BarrageCount)
+function SecredImpact(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -186,7 +186,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 328, Falling Slash Strengthener
-function FallingSlashStrengthener_Crusader(oPlayer, InDamage)
+function FallingSlashStrengthener_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -201,7 +201,7 @@ function FallingSlashStrengthener_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 330, Twisting Slash Strengthener
-function TwistingSlashStrengthener_Crusader(oPlayer, InDamage)
+function TwistingSlashStrengthener_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -216,7 +216,7 @@ function TwistingSlashStrengthener_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 331, 812, Anger Blow Strengthener
-function AngerBlowStrengthener_Crusader(oPlayer, InDamage)
+function AngerBlowStrengthener_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -231,7 +231,7 @@ function AngerBlowStrengthener_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 344, Blood Storm
-function BloodStorm_Crusader(oPlayer, InDamage)
+function BloodStorm_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -246,7 +246,7 @@ function BloodStorm_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 346, Blood Storm Strengthener
-function BloodStormStrengthener_Crusader(oPlayer, InDamage)
+function BloodStormStrengthener_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -261,7 +261,7 @@ function BloodStormStrengthener_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 807, Strike of Destruction Strengthener
-function StrikeOfDestructionStrengthener_Crusader(oPlayer, InDamage, BarrageCount)
+function StrikeOfDestructionStrengthener_Crusader(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -282,7 +282,7 @@ function StrikeOfDestructionStrengthener_Crusader(oPlayer, InDamage, BarrageCoun
 end
 
 -- SkillID: 809, Strike of Destruction Mastery
-function StrikeOfDestructionMastery_Crusader(oPlayer, InDamage, BarrageCount, SkillTreeValue)
+function StrikeOfDestructionMastery_Crusader(oPlayer, oTarget, InDamage, BarrageCount, SkillTreeValue)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -303,7 +303,7 @@ function StrikeOfDestructionMastery_Crusader(oPlayer, InDamage, BarrageCount, Sk
 end
 
 -- SkillID: 811, Tornado Strengthener
-function TornadoStrengthener_Crusader(oPlayer, InDamage)
+function TornadoStrengthener_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -318,7 +318,7 @@ function TornadoStrengthener_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 813, Rush
-function Rush_Crusader(oPlayer, InDamage)
+function Rush_Crusader(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -333,7 +333,7 @@ function Rush_Crusader(oPlayer, InDamage)
 end
 
 -- SkillID: 919, Divine Fall Strengthener
-function DivineFallStrengthener(oPlayer, InDamage, BarrageCount)
+function DivineFallStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -348,7 +348,7 @@ function DivineFallStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 920, Divine Fall Mastery
-function DivineFallMastery(oPlayer, InDamage, BarrageCount)
+function DivineFallMastery(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -363,7 +363,7 @@ function DivineFallMastery(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 921, Holly Sweep Strengthener
-function HollySweepStrengthener(oPlayer, InDamage, BarrageCount)
+function HollySweepStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -378,7 +378,7 @@ function HollySweepStrengthener(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 923, Secred Impact Strengthener
-function SecredImpactStrengthener(oPlayer, InDamage, BarrageCount)
+function SecredImpactStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -395,7 +395,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1506, Divine Fall Enhancement Skill
-function DivineFallEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function DivineFallEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -410,7 +410,7 @@ function DivineFallEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1507, Holly Sweep Enhancement Skill
-function HollySweepEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function HollySweepEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -425,7 +425,7 @@ function HollySweepEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1508, Secred Impact Enhancement Skill
-function SecredImpactEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function SecredImpactEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100
@@ -442,7 +442,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2109, Sacred Impact of Gale
-function SacredImpactOfGale(oPlayer, InDamage, BarrageCount)
+function SacredImpactOfGale(oPlayer, oTarget, InDamage, BarrageCount)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local DivineAttackPower = 100

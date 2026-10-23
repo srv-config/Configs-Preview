@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 20, Lunge
-function Lunge_Slayer(oPlayer, InDamage)
+function Lunge_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -20,7 +20,7 @@ function Lunge_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 21, Uppercut
-function Uppercut_Slayer(oPlayer, InDamage)
+function Uppercut_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -28,7 +28,7 @@ function Uppercut_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_Slayer(oPlayer, InDamage)
+function Cyclone_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -36,7 +36,7 @@ function Cyclone_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 41, Twisting Slash
-function TwistingSlash_Slayer(oPlayer, InDamage)
+function TwistingSlash_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -44,7 +44,7 @@ function TwistingSlash_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 42, Anger Strike
-function AngerStrike_Slayer(oPlayer, InDamage)
+function AngerStrike_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Energy / 10 + 200) / 100
 
@@ -52,7 +52,7 @@ function AngerStrike_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 44, Crescent Moon Slash
-function CrescentMoonSlash_Slayer(oPlayer, InDamage)
+function CrescentMoonSlash_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -60,7 +60,7 @@ function CrescentMoonSlash_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_Slayer(oPlayer, InDamage)
+function FireBreath_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -68,7 +68,7 @@ function FireBreath_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_Slayer(oPlayer, InDamage)
+function PlasmaStorm_Slayer(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -83,7 +83,7 @@ function PlasmaStorm_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 292, Sword Inertia
-function SwordInertia(oPlayer, InDamage)
+function SwordInertia(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -93,7 +93,7 @@ function SwordInertia(oPlayer, InDamage)
 end
 
 -- SkillID: 293, Bat Flock
-function BatFlock(oPlayer, InDamage)
+function BatFlock(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -116,7 +116,7 @@ function BatFlock_Dot(oPlayer, oTarget, InDamage, DOT)
 end
 
 -- SkillID: 294, Pierce Attack
-function PierceAttack(oPlayer, InDamage)
+function PierceAttack(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -189,7 +189,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 326, Cyclone Strengthener
-function CycloneStrengthener_Slayer(oPlayer, InDamage)
+function CycloneStrengthener_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Energy / 10 + 200) / 100
 
@@ -197,7 +197,7 @@ function CycloneStrengthener_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 327, Slash Strengthener
-function SlashStrengthener_Slayer(oPlayer, InDamage)
+function SlashStrengthener_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Energy / 10 + 200) / 100
 
@@ -205,7 +205,7 @@ function SlashStrengthener_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 330, Twisting Slash Strengthener
-function TwistingSlashStrengthener_Slayer(oPlayer, InDamage)
+function TwistingSlashStrengthener_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Energy / 10 + 200) / 100
 
@@ -213,7 +213,7 @@ function TwistingSlashStrengthener_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 331, Anger Blow Strengthener
-function AngerBlowStrengthener_Slayer(oPlayer, InDamage)
+function AngerBlowStrengthener_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Energy / 10 + 200) / 100
 
@@ -241,7 +241,7 @@ function SwellLifeProficiency_Slayer(oPlayer, oTarget, PartyBonus)
 end
 
 -- SkillID: 631, Rush
-function Rush_Slayer(oPlayer, InDamage)
+function Rush_Slayer(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * (Energy / 10 + 200) / 100
 
@@ -249,7 +249,7 @@ function Rush_Slayer(oPlayer, InDamage)
 end
 
 -- SkillID: 779, Sword Inertia Strengthener
-function SwordInertiaStrengthener(oPlayer, InDamage)
+function SwordInertiaStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -259,7 +259,7 @@ function SwordInertiaStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 780, Sword Inertia Mastery
-function SwordInertiaMastery(oPlayer, InDamage)
+function SwordInertiaMastery(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -269,7 +269,7 @@ function SwordInertiaMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 781, Bat Flock Strengthener
-function BatFlockStrengthener(oPlayer, InDamage)
+function BatFlockStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -279,7 +279,7 @@ function BatFlockStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 782, Bat Flock Mastery
-function BatFlockMastery(oPlayer, InDamage)
+function BatFlockMastery(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -313,7 +313,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1158, Sword Inertia Enhancement
-function SwordInertiaEnhancement(oPlayer, InDamage)
+function SwordInertiaEnhancement(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -323,7 +323,7 @@ function SwordInertiaEnhancement(oPlayer, InDamage)
 end
 
 -- SkillID: 1159, Bat Flock Enhancement
-function BatFlockEnhancement(oPlayer, InDamage)
+function BatFlockEnhancement(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -333,7 +333,7 @@ function BatFlockEnhancement(oPlayer, InDamage)
 end
 
 -- SkillID: 1160, Pierce Attack Enhancement
-function PierceAttackEnhancement(oPlayer, InDamage)
+function PierceAttackEnhancement(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
@@ -343,7 +343,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2071, Pierce Attack of Saturation
-function PierceAttackOfSaturation(oPlayer, InDamage)
+function PierceAttackOfSaturation(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100

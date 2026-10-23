@@ -12,42 +12,42 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 2, Meteorite
-function Meteorite_Summoner(oPlayer, InDamage)
+function Meteorite_Summoner(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 4, Fire Ball
-function FireBall_Summoner(oPlayer, InDamage)
+function FireBall_Summoner(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 7, Ice
-function Ice_Summoner(oPlayer, InDamage)
+function Ice_Summoner(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 11, Power Wave
-function PowerWave_Summoner(oPlayer, InDamage)
+function PowerWave_Summoner(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 45, Lance
-function Lance_Summoner(oPlayer, InDamage)
+function Lance_Summoner(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_Summoner(oPlayer, InDamage)
+function FireBreath_Summoner(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -55,7 +55,7 @@ function FireBreath_Summoner(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_Summoner(oPlayer, InDamage)
+function PlasmaStorm_Summoner(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -84,7 +84,7 @@ function DrainLife(oPlayer, oTarget, InDamage)
 end
 
 -- SkillID: 215, Chain Lightning
-function ChainLightning(oPlayer, InDamage, TargetNumber)
+function ChainLightning(oPlayer, oTarget, InDamage, TargetNumber)
 	local DamagePercent = 0
 
 	if (TargetNumber == 1) then
@@ -149,7 +149,7 @@ function Sleep(oPlayer, oTarget, Curse)
 end
 
 -- SkillID: 223, Explosion
-function Explosion_Dot(oPlayer, Damage)
+function Explosion_Dot(oPlayer, oTarget, Damage)
 	local DotDamage = Damage * 60 / 100
 	local Time = 5
 
@@ -157,7 +157,7 @@ function Explosion_Dot(oPlayer, Damage)
 end
 
 -- SkillID: 224, Requiem
-function Requiem_Dot(oPlayer, Damage)
+function Requiem_Dot(oPlayer, oTarget, Damage)
 	local DotDamage = Damage * 60 / 100
 	local Time = 5
 
@@ -165,14 +165,14 @@ function Requiem_Dot(oPlayer, Damage)
 end
 
 -- SkillID: 225, Pollution
-function Pollution(oPlayer, InDamage)
+function Pollution(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 230, Lightning Shock
-function LightningShock(oPlayer, InDamage)
+function LightningShock(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -229,14 +229,14 @@ function SleepStrengthener(oPlayer, oTarget, Curse)
 end
 
 -- SkillID: 729, Fire Beast
-function FireBeast(oPlayer, InDamage)
+function FireBeast(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 730, Aqua Beast
-function AquaBeast(oPlayer, InDamage)
+function AquaBeast(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -245,7 +245,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 455, Chain Lightning Strengthener
-function ChainLightningStrengthener(oPlayer, InDamage, TargetNumber)
+function ChainLightningStrengthener(oPlayer, oTarget, InDamage, TargetNumber)
 	local DamagePercent = 0
 
 	if (TargetNumber == 1) then
@@ -264,7 +264,7 @@ function ChainLightningStrengthener(oPlayer, InDamage, TargetNumber)
 end
 
 -- SkillID: 456, Lightning Shock Strengthener
-function LightningShockStrengthener(oPlayer, InDamage)
+function LightningShockStrengthener(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -285,21 +285,21 @@ function DrainLifeStrengthener(oPlayer, oTarget, InDamage)
 end
 
 -- SkillID: 776, Pollution Strengthener
-function PollutionStrengthener(oPlayer, InDamage)
+function PollutionStrengthener(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 777, Pollution Proficiency
-function PollutionProficiency(oPlayer, InDamage)
+function PollutionProficiency(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 778, Pollution Mastery
-function PollutionMastery(oPlayer, InDamage)
+function PollutionMastery(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -308,21 +308,21 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1102, Fire Beast Enhancement Skill
-function FireBeastEnhancementSkill(oPlayer, InDamage)
+function FireBeastEnhancementSkill(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 1103, Lightning Shock Enhancement Skill
-function LightningShockEnhancementSkill(oPlayer, InDamage)
+function LightningShockEnhancementSkill(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 1105, Aqua Beast Enhancement Skill
-function AquaBeastEnhancementSkill(oPlayer, InDamage)
+function AquaBeastEnhancementSkill(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage
@@ -350,7 +350,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2058, Fire Beast of Saturation
-function FireBeastOfSaturation(oPlayer, InDamage)
+function FireBeastOfSaturation(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage
 
 	return OutDamage

@@ -12,14 +12,14 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_DarkLord(oPlayer, InDamage)
+function Defense_DarkLord(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_DarkLord(oPlayer, InDamage)
+function FallingSlash_DarkLord(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -34,7 +34,7 @@ function FallingSlash_DarkLord(oPlayer, InDamage)
 end
 
 -- SkillID: 20, Lunge
-function Lunge_DarkLord(oPlayer, InDamage)
+function Lunge_DarkLord(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -49,7 +49,7 @@ function Lunge_DarkLord(oPlayer, InDamage)
 end
 
 -- SkillID: 21, Uppercut
-function Uppercut_DarkLord(oPlayer, InDamage)
+function Uppercut_DarkLord(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -64,7 +64,7 @@ function Uppercut_DarkLord(oPlayer, InDamage)
 end
 
 -- SkillID: 22, Cyclone
-function Cyclone_DarkLord(oPlayer, InDamage)
+function Cyclone_DarkLord(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -79,7 +79,7 @@ function Cyclone_DarkLord(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_DarkLord(oPlayer, InDamage)
+function FireBreath_DarkLord(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -94,7 +94,7 @@ function FireBreath_DarkLord(oPlayer, InDamage)
 end
 
 -- SkillID: 60, Force
-function Force(oPlayer, InDamage)
+function Force(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -109,7 +109,7 @@ function Force(oPlayer, InDamage)
 end
 
 -- SkillID: 61, Fire Burst
-function FireBurst(oPlayer, InDamage)
+function FireBurst(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -124,7 +124,7 @@ function FireBurst(oPlayer, InDamage)
 end
 
 -- SkillID: 62, Earth-Shake
-function EarthShake(oPlayer, InDamage)
+function EarthShake(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -149,7 +149,7 @@ function Dignity(oPlayer)
 end
 
 -- SkillID: 65, Electric Spike
-function ElectricSpike(oPlayer, InDamage)
+function ElectricSpike(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -164,7 +164,7 @@ function ElectricSpike(oPlayer, InDamage)
 end
 
 -- SkillID: 66, Force Wave
-function ForceWave(oPlayer, InDamage)
+function ForceWave(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -179,7 +179,7 @@ function ForceWave(oPlayer, InDamage)
 end
 
 -- SkillID: 74, Fire Blast
-function FireBlast_DarkLord(oPlayer, InDamage)
+function FireBlast_DarkLord(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -194,7 +194,7 @@ function FireBlast_DarkLord(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_DarkLord(oPlayer, InDamage)
+function PlasmaStorm_DarkLord(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -209,7 +209,7 @@ function PlasmaStorm_DarkLord(oPlayer, InDamage)
 end
 
 -- SkillID: 78, Fire Scream
-function FireScream(oPlayer, InDamage)
+function FireScream(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -224,7 +224,7 @@ function FireScream(oPlayer, InDamage)
 end
 
 -- SkillID: 238, Chaotic Diseier
-function ChaoticDiseier(oPlayer, InDamage)
+function ChaoticDiseier(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -239,7 +239,7 @@ function ChaoticDiseier(oPlayer, InDamage)
 end
 
 -- SkillID: 737, Wind Soul
-function WindSoul(oPlayer, InDamage, BarrageCount)
+function WindSoul(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -262,7 +262,7 @@ function WindSoul(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2095, Spirit Blast
-function SpiritBlast(oPlayer, InDamage, BarrageCount)
+function SpiritBlast(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -285,7 +285,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 508, Fire Burst Strengthener
-function FireBurstStrengthener(oPlayer, InDamage)
+function FireBurstStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -300,7 +300,7 @@ function FireBurstStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 509, Force Wave Strengthener
-function ForceWaveStrengthener(oPlayer, InDamage)
+function ForceWaveStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -325,7 +325,7 @@ function LordDignityStrengthener(oPlayer)
 end
 
 -- SkillID: 512, Earth-Shake Strengthener
-function EarthShakeStrengthener(oPlayer, InDamage)
+function EarthShakeStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -340,7 +340,7 @@ function EarthShakeStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 514, Fire Burst Mastery
-function FireBurstMastery(oPlayer, InDamage)
+function FireBurstMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -355,7 +355,7 @@ function FireBurstMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 518, Fire Scream Strengthener
-function FireScreamStrengthener(oPlayer, InDamage)
+function FireScreamStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -370,7 +370,7 @@ function FireScreamStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 519, Electric Spark Strengthener
-function ElectricSparkStrengthener(oPlayer, InDamage)
+function ElectricSparkStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -385,7 +385,7 @@ function ElectricSparkStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 520, Fire Scream Mastery
-function FireScreamMastery(oPlayer, InDamage)
+function FireScreamMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -400,7 +400,7 @@ function FireScreamMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 523, Chaotic Diseier Strengthener
-function ChaoticDiseierStrengthener(oPlayer, InDamage)
+function ChaoticDiseierStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -415,7 +415,7 @@ function ChaoticDiseierStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 911, Spirit Blast Strengthener
-function SpiritBlastStrengthener(oPlayer, InDamage, BarrageCount)
+function SpiritBlastStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -438,7 +438,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1096, Fire Burst Enhancement Skill
-function FireBurstEnhancementSkill(oPlayer, InDamage)
+function FireBurstEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -453,7 +453,7 @@ function FireBurstEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1098, Chaotic Diseier Enhancement Skill
-function ChaoticDiseierEnhancementSkill(oPlayer, InDamage)
+function ChaoticDiseierEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -468,7 +468,7 @@ function ChaoticDiseierEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1099, Wind Soul Enhancement Skill
-function WindSoulEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function WindSoulEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -493,7 +493,7 @@ function WindSoulEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1240, Spirit Blast Enhancement Skill
-function SpiritBlastEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function SpiritBlastEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -518,7 +518,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2054, Wind Soul of Saturation
-function WindSoulOfSaturation(oPlayer, InDamage, BarrageCount)
+function WindSoulOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100
@@ -544,7 +544,7 @@ function WindSoulOfSaturation(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2096, Spirit Blast of Anger
-function SpiritBlastOfAnger(oPlayer, InDamage, BarrageCount)
+function SpiritBlastOfAnger(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local Command = Stats.Get(oPlayer, STAT_COMMAND, STAT_BOTHTYPE)
 	local SkillAttackPower = 100

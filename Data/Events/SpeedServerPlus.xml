@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Changes to the file must be reflected in SpeedPlus.txt inside Lang.mpr
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### SpeedServerPlus ###
+//	Enable: Disables or enables the event on regular servers, 0/1
+//	RewardExpiryTime: Time the reward is available to pick up from Gremory Case, seconds
+//
+// ### SpeedServerPlus::SpeedServer ###
+//	MarkCharacter: Marks transferred characters, used only by a Game Server running as Speed Server
+//		~ 0: Characters are marked by hand or by the transfer script, see table IGC_SpeedServerPlus
+//		~ 1: Every character entering the game on the Speed Server is marked for the event set in EventIndex
+//
+//	EventIndex: Event the Speed Server characters take part in after the transfer, must exist in EventList
+//
+// ### SpeedServerPlus::EventList::Event ###
+//	Index: Index of the event, one per Speed Server season, 0-254, must exist in SpeedPlus.txt
+//	StartDate: Start date and time of the event, format: yyyy-MM-dd HH:mm
+//	EndDate: End date and time of the event, format: yyyy-MM-dd HH:mm, the window shows the date from SpeedPlus.txt
+//	CharacterLevel: Required character level, it is a sum of regular and master level
+//
+// ### SpeedServerPlus::MissionList::Mission ###
+//	EventIndex: Index of the event the mission belongs to, see EventList
+//	Number: Mission number, 1-64, numbered from 1 without gaps in the order of SpeedPlus.txt
+//	Type: Type of mission
+//		~ 0: Reach character level
+//
+//	Value: Required value, for type 0 it is a sum of regular and master level
+//
+// ### SpeedServerPlus::MissionList::Mission::Item ###
+//	Cat: Reward item category, see ItemList.xml
+//	Index: Reward item index, see ItemList.xml
+//	Count: Number of items, stackable items are given to Gremory Case in stacks
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Up to 6 items per mission, the client window shows no more
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<SpeedServerPlus Enable="0" RewardExpiryTime="604800">
+	<SpeedServer MarkCharacter="0" EventIndex="3" />
+	<EventList>
+		<Event Index="0" StartDate="2025-11-13 08:00" EndDate="2026-03-26 08:00" CharacterLevel="780" />
+		<Event Index="1" StartDate="2026-02-19 08:00" EndDate="2026-06-25 08:00" CharacterLevel="780" />
+		<Event Index="2" StartDate="2026-06-04 08:00" EndDate="2026-10-15 08:00" CharacterLevel="780" />
+		<Event Index="3" StartDate="2026-10-29 08:00" EndDate="2027-03-04 08:00" CharacterLevel="780" />
+	</EventList>
+	<MissionList>
+		<Mission EventIndex="0" Number="1" Type="0" Value="910">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="2" Type="0" Value="920">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="3" Type="0" Value="930">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="4" Type="0" Value="940">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="5" Type="0" Value="950">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="6" Type="0" Value="1000">
+			<Item Cat="14" Index="14" Count="30" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="30" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="30" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="30" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="30" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="30" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="7" Type="0" Value="1010">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="8" Type="0" Value="1020">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="9" Type="0" Value="1030">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="10" Type="0" Value="1040">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="11" Type="0" Value="1050">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="12" Type="0" Value="1100">
+			<Item Cat="14" Index="14" Count="40" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="40" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="40" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="40" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="40" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="40" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="13" Type="0" Value="1110">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="14" Type="0" Value="1120">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="15" Type="0" Value="1130">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="16" Type="0" Value="1140">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="17" Type="0" Value="1150">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="0" Number="18" Type="0" Value="1200">
+			<Item Cat="14" Index="14" Count="50" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="50" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="50" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="50" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="50" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="50" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+
+		<Mission EventIndex="1" Number="1" Type="0" Value="910">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="2" Type="0" Value="920">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="3" Type="0" Value="930">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="4" Type="0" Value="940">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="5" Type="0" Value="950">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="6" Type="0" Value="1000">
+			<Item Cat="14" Index="14" Count="30" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="30" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="30" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="30" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="30" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="30" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="7" Type="0" Value="1010">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="8" Type="0" Value="1020">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="9" Type="0" Value="1030">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="10" Type="0" Value="1040">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="11" Type="0" Value="1050">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="12" Type="0" Value="1100">
+			<Item Cat="14" Index="14" Count="40" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="40" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="40" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="40" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="40" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="40" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="13" Type="0" Value="1110">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="14" Type="0" Value="1120">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="15" Type="0" Value="1130">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="16" Type="0" Value="1140">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="17" Type="0" Value="1150">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="1" Number="18" Type="0" Value="1200">
+			<Item Cat="14" Index="14" Count="50" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="50" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="50" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="50" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="50" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="50" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+
+		<Mission EventIndex="2" Number="1" Type="0" Value="910">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="2" Type="0" Value="920">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="3" Type="0" Value="930">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="4" Type="0" Value="940">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="5" Type="0" Value="950">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="6" Type="0" Value="1000">
+			<Item Cat="14" Index="14" Count="30" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="30" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="30" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="30" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="30" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="30" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="7" Type="0" Value="1010">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="8" Type="0" Value="1020">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="9" Type="0" Value="1030">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="10" Type="0" Value="1040">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="11" Type="0" Value="1050">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="12" Type="0" Value="1100">
+			<Item Cat="14" Index="14" Count="40" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="40" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="40" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="40" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="40" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="40" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="13" Type="0" Value="1110">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="14" Type="0" Value="1120">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="15" Type="0" Value="1130">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="16" Type="0" Value="1140">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="17" Type="0" Value="1150">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="2" Number="18" Type="0" Value="1200">
+			<Item Cat="14" Index="14" Count="50" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="50" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="50" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="50" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="50" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="50" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+
+		<Mission EventIndex="3" Number="1" Type="0" Value="910">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="2" Type="0" Value="920">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="3" Type="0" Value="930">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="4" Type="0" Value="940">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="5" Type="0" Value="950">
+			<Item Cat="14" Index="14" Count="5" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="5" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="5" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="5" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="5" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="5" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="6" Type="0" Value="1000">
+			<Item Cat="14" Index="14" Count="30" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="30" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="30" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="30" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="30" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="30" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="7" Type="0" Value="1010">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="8" Type="0" Value="1020">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="9" Type="0" Value="1030">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="10" Type="0" Value="1040">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="11" Type="0" Value="1050">
+			<Item Cat="14" Index="14" Count="7" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="7" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="7" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="7" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="7" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="7" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="12" Type="0" Value="1100">
+			<Item Cat="14" Index="14" Count="40" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="40" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="40" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="40" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="40" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="40" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="13" Type="0" Value="1110">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="14" Type="0" Value="1120">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="15" Type="0" Value="1130">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="16" Type="0" Value="1140">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="17" Type="0" Value="1150">
+			<Item Cat="14" Index="14" Count="10" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="10" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="10" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="10" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="10" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="10" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+		<Mission EventIndex="3" Number="18" Type="0" Value="1200">
+			<Item Cat="14" Index="14" Count="50" /> <!-- Jewel of Soul -->
+			<Item Cat="14" Index="13" Count="50" /> <!-- Jewel of Bless -->
+			<Item Cat="14" Index="42" Count="50" /> <!-- Jewel of Harmony -->
+			<Item Cat="14" Index="467" Count="50" /> <!-- Guardian Enhanced Stone -->
+			<Item Cat="13" Index="510" Count="50" /> <!-- Lapidary Stone -->
+			<Item Cat="14" Index="371" Count="50" /> <!-- [Bound] Bless of Light (Greater) -->
+		</Mission>
+	</MissionList>
+</SpeedServerPlus>

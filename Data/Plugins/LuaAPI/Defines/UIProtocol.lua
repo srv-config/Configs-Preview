@@ -47,6 +47,7 @@ UIProtocol = {}
 UIProtocol.WINDOW = {
 	DEMO     = 1,
 	EXCHANGE = 3,
+	SKINSHOP = 20,
 }
 
 ------------------------------------------------------------------
@@ -80,6 +81,47 @@ UIProtocol.Exchange = {
 		BAD_AMOUNT = 10,
 		NO_FUNDS   = 11,
 		LIMIT      = 12,
+	},
+}
+
+------------------------------------------------------------------
+-- Skin Shop - transformation skins bought for a time or for good.
+--
+-- C->S  BUY       word skin, byte option (0-based, <Option> order),
+--                 dword price, byte coin - what the player saw; a timed skin
+--                 already owned is extended
+-- C->S  EQUIP     word skin
+-- C->S  UNEQUIP   nothing
+--
+-- S->C  STATE     byte n, n x (byte coin, dword balance),
+--                 word active (NONE when no skin is worn),
+--                 byte m, m x (word skin, byte permanent, dword secondsLeft)
+-- S->C  EXPIRY    word skin - the worn skin ran out and came off; the client
+--                 shows the notice in its own language (CustomText)
+--
+-- BUY, EQUIP and UNEQUIP are answered with the same action and a result; a
+-- success and a changed price are followed by a full STATE.
+------------------------------------------------------------------
+UIProtocol.SkinShop = {
+	id = UIProtocol.WINDOW.SKINSHOP,
+
+	STATE   = 1,
+	BUY     = 2,
+	EQUIP   = 3,
+	UNEQUIP = 4,
+	EXPIRY  = 5,
+
+	NONE = 65535,
+
+	RESULT = {
+		OK            = 0,
+		BAD_SKIN      = 10,
+		NO_FUNDS      = 11,
+		OWNED         = 12,
+		NOT_OWNED     = 13,
+		EXPIRED       = 14,
+		PRICE_CHANGED = 15,
+		BLOCKED       = 16,
 	},
 }
 

@@ -12,7 +12,7 @@
 -- ---------- Regular Skills ----------
 
 -- SkillID: 1, Poison
-function Poison_RuneWizard(oPlayer, InDamage)
+function Poison_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -26,7 +26,7 @@ function Poison_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 2, Meteorite
-function Meteorite_RuneWizard(oPlayer, InDamage)
+function Meteorite_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -40,7 +40,7 @@ function Meteorite_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 4, Fire Ball
-function FireBall_RuneWizard(oPlayer, InDamage)
+function FireBall_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -54,7 +54,7 @@ function FireBall_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 5, Flame
-function Flame_RuneWizard(oPlayer, InDamage)
+function Flame_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -68,7 +68,7 @@ function Flame_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 8, Twister
-function Twister_RuneWizard(oPlayer, InDamage)
+function Twister_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -82,7 +82,7 @@ function Twister_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 9, Evil Spirit
-function EvilSpirit_RuneWizard(oPlayer, InDamage)
+function EvilSpirit_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -96,7 +96,7 @@ function EvilSpirit_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 10, Hellfire
-function Hellfire_RuneWizard(oPlayer, InDamage)
+function Hellfire_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -110,7 +110,7 @@ function Hellfire_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 13, Cometfall
-function Cometfall_RuneWizard(oPlayer, InDamage)
+function Cometfall_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -124,7 +124,7 @@ function Cometfall_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 14, Inferno
-function Inferno_RuneWizard(oPlayer, InDamage)
+function Inferno_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -138,14 +138,14 @@ function Inferno_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 18, Defense - damage taken by the shield user
-function Defense_RuneWizard(oPlayer, InDamage)
+function Defense_RuneWizard(oPlayer, oTarget, InDamage)
 	local OutDamage = InDamage / 2
 
 	return OutDamage
 end
 
 -- SkillID: 19, Falling Slash
-function FallingSlash_RuneWizard(oPlayer, InDamage)
+function FallingSlash_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -153,7 +153,7 @@ function FallingSlash_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 23, Slash
-function Slash_RuneWizard(oPlayer, InDamage)
+function Slash_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -161,7 +161,7 @@ function Slash_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 39, Ice Storm
-function IceStorm_RuneWizard(oPlayer, InDamage)
+function IceStorm_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -175,7 +175,7 @@ function IceStorm_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 45, Lance
-function Lance_RuneWizard(oPlayer, InDamage)
+function Lance_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -189,7 +189,7 @@ function Lance_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 49, Fire Breath
-function FireBreath_RuneWizard(oPlayer, InDamage)
+function FireBreath_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
 
@@ -197,7 +197,7 @@ function FireBreath_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 76, Plasma Storm - Fenrir pet skill
-function PlasmaStorm_RuneWizard(oPlayer, InDamage)
+function PlasmaStorm_RuneWizard(oPlayer, oTarget, InDamage)
 	local DamageInc = oPlayer.Level - 300 + oPlayer.userData.MasterLevel
 
 	if (DamageInc < 0) then
@@ -221,7 +221,7 @@ function ExpansionOfWizardry_RuneWizard(oPlayer)
 end
 
 -- SkillID: 240, Magical Shot
-function MagicalShot_RuneWizard(oPlayer, InDamage)
+function MagicalShot_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -235,7 +235,7 @@ function MagicalShot_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 283, Magic Arrow
-function MagicArrow(oPlayer, InDamage)
+function MagicArrow(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -249,7 +249,7 @@ function MagicArrow(oPlayer, InDamage)
 end
 
 -- SkillID: 284, Plasma Ball
-function PlasmaBall(oPlayer, InDamage)
+function PlasmaBall(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -263,7 +263,7 @@ function PlasmaBall(oPlayer, InDamage)
 end
 
 -- SkillID: 285, Lightning Storm
-function LightningStorm(oPlayer, InDamage)
+function LightningStorm(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -296,7 +296,7 @@ function Haste(oPlayer, oTarget)
 end
 
 -- SkillID: 2101, Runic Spear
-function RunicSpear(oPlayer, InDamage, BarrageCount)
+function RunicSpear(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -310,7 +310,7 @@ function RunicSpear(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 2102, Rune Phrase
-function RunePhrase(oPlayer, InDamage, BarrageCount)
+function RunePhrase(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -326,7 +326,7 @@ end
 -- ---------- 3rd Skill Tree ----------
 
 -- SkillID: 378, Flame Strengthener
-function FlameStrengthener_RuneWizard(oPlayer, InDamage)
+function FlameStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -340,7 +340,7 @@ function FlameStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 379, Lightning Strengthener
-function LightningStrengthener_RuneWizard(oPlayer, InDamage)
+function LightningStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -364,7 +364,7 @@ function ExpansionOfWizardryPowerUp_RuneWizard(oPlayer, MagicDamageMax, SkillTre
 end
 
 -- SkillID: 381, Inferno Strengthener
-function InfernoStrengthener_RuneWizard(oPlayer, InDamage)
+function InfernoStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -378,7 +378,7 @@ function InfernoStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 382, Blast Strengthener
-function BlastStrengthener_RuneWizard(oPlayer, InDamage)
+function BlastStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -402,7 +402,7 @@ function ExpansionOfWizardryMastery_RuneWizard(oPlayer, MagicDamageMax, SkillTre
 end
 
 -- SkillID: 384, Poison Strengthener
-function PoisonStrengthener_RuneWizard(oPlayer, InDamage)
+function PoisonStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -416,7 +416,7 @@ function PoisonStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 385, Evil Spirit Strengthener
-function EvilSpiritStrengthener_RuneWizard(oPlayer, InDamage)
+function EvilSpiritStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -430,7 +430,7 @@ function EvilSpiritStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 387, Decay Strengthener
-function DecayStrengthener_RuneWizard(oPlayer, InDamage)
+function DecayStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -444,7 +444,7 @@ function DecayStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 388, Hellfire Strengthener
-function HellfireStrengthener_RuneWizard(oPlayer, InDamage)
+function HellfireStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -458,7 +458,7 @@ function HellfireStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 389, Ice Strengthener
-function IceStrengthener_RuneWizard(oPlayer, InDamage)
+function IceStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -472,7 +472,7 @@ function IceStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 390, Meteor Strengthener
-function MeteorStrengthener_RuneWizard(oPlayer, InDamage)
+function MeteorStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -486,7 +486,7 @@ function MeteorStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 391, Ice Storm Strengthener
-function IceStormStrengthener_RuneWizard(oPlayer, InDamage)
+function IceStormStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -500,7 +500,7 @@ function IceStormStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 392, Nova Strengthener
-function NovaStrengthener_RuneWizard(oPlayer, InDamage)
+function NovaStrengthener_RuneWizard(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -514,7 +514,7 @@ function NovaStrengthener_RuneWizard(oPlayer, InDamage)
 end
 
 -- SkillID: 495, Earth Prison
-function EarthPrison_RuneWizard(oPlayer)
+function EarthPrison_RuneWizard(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -522,7 +522,7 @@ function EarthPrison_RuneWizard(oPlayer)
 end
 
 -- SkillID: 497, Earth Prison Strengthener
-function EarthPrisonStrengthener_RuneWizard(oPlayer)
+function EarthPrisonStrengthener_RuneWizard(oPlayer, oTarget)
 	local DebuffSuccessRate = 5
 	local DebuffTime = 5
 
@@ -530,7 +530,7 @@ function EarthPrisonStrengthener_RuneWizard(oPlayer)
 end
 
 -- SkillID: 748, Magic Arrow Strengthener
-function MagicArrowStrengthener(oPlayer, InDamage)
+function MagicArrowStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -544,7 +544,7 @@ function MagicArrowStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 749, Magic Arrow Mastery
-function MagicArrowMastery(oPlayer, InDamage)
+function MagicArrowMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -558,7 +558,7 @@ function MagicArrowMastery(oPlayer, InDamage)
 end
 
 -- SkillID: 750, Plasma Ball Strengthener
-function PlasmaBallStrengthener(oPlayer, InDamage)
+function PlasmaBallStrengthener(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -572,7 +572,7 @@ function PlasmaBallStrengthener(oPlayer, InDamage)
 end
 
 -- SkillID: 751, Plasma Ball Mastery
-function PlasmaBallMastery(oPlayer, InDamage)
+function PlasmaBallMastery(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -624,7 +624,7 @@ function HasteMastery(oPlayer, oTarget)
 end
 
 -- SkillID: 916, Runic Spear Strengthener
-function RunicSpearStrengthener(oPlayer, InDamage, BarrageCount)
+function RunicSpearStrengthener(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -640,7 +640,7 @@ end
 -- ---------- 4th Skill Tree ----------
 
 -- SkillID: 1148, Magic Arrow Enhancement Skill
-function MagicArrowEnhancementSkill(oPlayer, InDamage)
+function MagicArrowEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -654,7 +654,7 @@ function MagicArrowEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1150, Lightning Storm Enhancement Skill
-function LightningStormEnhancementSkill(oPlayer, InDamage)
+function LightningStormEnhancementSkill(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -668,7 +668,7 @@ function LightningStormEnhancementSkill(oPlayer, InDamage)
 end
 
 -- SkillID: 1504, Runic Spear Enhancement Skill
-function RunicSpearEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function RunicSpearEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -682,7 +682,7 @@ function RunicSpearEnhancementSkill(oPlayer, InDamage, BarrageCount)
 end
 
 -- SkillID: 1505, Rune Phrase Enhancement Skill
-function RunePhraseEnhancementSkill(oPlayer, InDamage, BarrageCount)
+function RunePhraseEnhancementSkill(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -698,7 +698,7 @@ end
 -- ---------- 5th Skill Tree ----------
 
 -- SkillID: 2068, Lightning Storm of Gale
-function LightningStormOfGale(oPlayer, InDamage)
+function LightningStormOfGale(oPlayer, oTarget, InDamage)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 
@@ -712,7 +712,7 @@ function LightningStormOfGale(oPlayer, InDamage)
 end
 
 -- SkillID: 2103, Rune Phrase of Saturation
-function RunePhraseOfSaturation(oPlayer, InDamage, BarrageCount)
+function RunePhraseOfSaturation(oPlayer, oTarget, InDamage, BarrageCount)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
 	local MagicAttackPower = 100
 

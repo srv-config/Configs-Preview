@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### SkinShop ###
+//	The server reads this file, the client reads it as Data\Local\SkinShop.bmd, encrypted like CustomText.bmd; both must be the same file
+//
+//	DefaultCurrency: Currency of every price that names none of its own, ID of SkinShop::Currencies::Currency
+//	Key: Key or key combination that opens and closes the shop window; left empty, the window has no key
+//		~ Ctrl, Shift and Alt joined with + before one key, for example F5, Ctrl+K, Ctrl+Shift+F5 or Alt+5; names are not case-sensitive
+//		~ The key can be A-Z, 0-9, F1-F12, N0-N9 (numeric keypad), SPACE, INSERT, DELETE, HOME, END, PRIOR (Page Up), NEXT (Page Down), LEFT, UP, RIGHT, DOWN, PAUSE
+//		~ The combination must match exactly, so F5 does not open the window while Ctrl, Shift or Alt is held
+//		~ A combination whose key is a letter, a digit or SPACE does nothing while the chat's text box is open, F keys still work there
+//		~ F1 and F6-F12 are already taken by the DLL and Lua UI
+//
+// ### SkinShop::Currencies::Currency ###
+//	ID: Currency type
+//		~ 0: Zen
+//		~ 1: WCoin
+//		~ 2: Goblin Point
+//		~ 3: Ruud
+//
+//	NameID: Currency name, shown in the balance line and in the purchase question; Msg ID in CustomText.xml, section SkinShop
+//	ShortID: Short name, shown after a price when the currency has no icon; Msg ID in CustomText.xml, section SkinShop
+//	Icon: 32x32 icon under Data\, a .tga path loads the .ozt; left empty, the short name is shown instead
+//
+// ### SkinShop::Skins::Skin ###
+//	ID: Skin identification number, 1-65534; the server and the database know the skin by it, never reuse one
+//	Monster: Monster index the character turns into (MonsterList.xml or a CustomMonster ID)
+//	NameID: Skin name, Msg ID in the client's CustomText.xml, section SkinShop
+//	SummaryID: One short line under the name in the list, the price sits beside it; Msg ID in CustomText.xml, section SkinShop
+//	DescriptionID: Longer text in Skin info, Msg ID in CustomText.xml, section SkinShop
+//	Currency: Overrides DefaultCurrency for every option of this skin, optional
+//	Zoom: Preview size correction, float, optional
+//		~ 1: as the preview frames the skin by itself (default)
+//		~ above 1: closer
+//		~ below 1: further away
+//
+// ### SkinShop::Skins::Skin::Option ###
+//	One way to buy the skin, at most 5 per skin; the first one is shown in the list
+//
+//	Days: Duration in days, optional
+//	Hours: Duration in hours, optional
+//		~ Days and Hours add up; with both 0 or left out the skin is permanent
+//
+//	Price: Price in the option's currency
+//	Currency: Overrides the skin's currency for this option only, optional
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<SkinShop DefaultCurrency="1" Key="Ctrl+S">
+	<Currencies>
+		<Currency ID="0" NameID="50" ShortID="51" Icon="Custom\Interface\SkinShop\CoinZen.tga" />
+		<Currency ID="1" NameID="52" ShortID="53" Icon="Custom\Interface\SkinShop\CoinWCoin.tga" />
+		<Currency ID="2" NameID="54" ShortID="55" Icon="Custom\Interface\SkinShop\CoinGoblin.tga" />
+		<Currency ID="3" NameID="56" ShortID="57" Icon="Custom\Interface\SkinShop\CoinRuud.tga" />
+	</Currencies>
+	<Skins>
+		<Skin ID="1" Monster="503" NameID="100" SummaryID="101" DescriptionID="102"> <!-- Transformed Panda -->
+			<Option Days="7" Price="300" />
+			<Option Days="30" Price="900" />
+			<Option Price="4000" />
+		</Skin>
+		<Skin ID="2" Monster="548" NameID="103" SummaryID="104" DescriptionID="105"> <!-- Transformed Skeleton -->
+			<Option Days="7" Price="250" />
+			<Option Price="3500" />
+		</Skin>
+		<Skin ID="3" Monster="373" NameID="106" SummaryID="107" DescriptionID="108" Currency="3"> <!-- Jack Olantern -->
+			<Option Days="3" Price="1500" />
+			<Option Days="14" Price="5000" />
+		</Skin>
+		<Skin ID="4" Monster="2" NameID="109" SummaryID="110" DescriptionID="111"> <!-- Budge Dragon -->
+			<Option Hours="12" Price="5000000" Currency="0" />
+			<Option Days="7" Price="150" />
+		</Skin>
+		<Skin ID="5" Monster="9" NameID="112" SummaryID="113" DescriptionID="114"> <!-- Thunder Lich -->
+			<Option Days="30" Price="1200" />
+		</Skin>
+		<Skin ID="6" Monster="41" NameID="115" SummaryID="116" DescriptionID="117"> <!-- Death Cow -->
+			<Option Days="7" Price="400" />
+			<Option Days="30" Price="1100" Currency="2" />
+		</Skin>
+		<Skin ID="7" Monster="43" NameID="118" SummaryID="119" DescriptionID="120"> <!-- Golden Budge Dragon -->
+			<Option Price="9000" />
+		</Skin>
+		<Skin ID="8" Monster="62" NameID="121" SummaryID="122" DescriptionID="123"> <!-- Mutant -->
+			<Option Days="7" Price="350" />
+			<Option Days="30" Price="1000" />
+		</Skin>
+	</Skins>
+</SkinShop>

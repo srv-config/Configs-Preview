@@ -142,16 +142,7 @@ end
 
 -- SkillID: 47, Impale - not in SkillList.xml
 function Impale(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = 0
-
-	if (oPlayer.Class == CLASS_DARKLORD) then
-		OutDamage = InDamage * 2
-	elseif (oPlayer.Class == CLASS_GLADIATOR) then
-		OutDamage = InDamage
-	else
-		OutDamage = ( InDamage * ( Energy / 10 + 200 )  ) / 100
-	end
+	local OutDamage = InDamage
 
 	return OutDamage
 end

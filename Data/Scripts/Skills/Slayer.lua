@@ -13,56 +13,105 @@
 
 -- SkillID: 20, Lunge
 function Lunge_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 21, Uppercut
 function Uppercut_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 22, Cyclone
 function Cyclone_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 41, Twisting Slash
 function TwistingSlash_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 42, Anger Strike
 function AngerStrike_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 44, Crescent Moon Slash
 function CrescentMoonSlash_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 49, Fire Breath
 function FireBreath_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -86,8 +135,13 @@ end
 function SwordInertia(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -96,8 +150,13 @@ end
 function BatFlock(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage * 0.5
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * 0.5 * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -119,7 +178,14 @@ end
 function PierceAttack(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
+
 	return OutDamage
 end
 
@@ -190,32 +256,60 @@ end
 
 -- SkillID: 326, Cyclone Strengthener
 function CycloneStrengthener_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 327, Slash Strengthener
 function SlashStrengthener_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 330, Twisting Slash Strengthener
 function TwistingSlashStrengthener_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 331, Anger Blow Strengthener
 function AngerBlowStrengthener_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -242,8 +336,15 @@ end
 
 -- SkillID: 631, Rush
 function Rush_Slayer(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Energy / 10 + 200) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -252,8 +353,13 @@ end
 function SwordInertiaStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -262,8 +368,13 @@ end
 function SwordInertiaMastery(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -272,8 +383,13 @@ end
 function BatFlockStrengthener(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage * 0.5
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * 0.5 * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -282,8 +398,13 @@ end
 function BatFlockMastery(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage * 0.5
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * 0.5 * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -316,8 +437,13 @@ end
 function SwordInertiaEnhancement(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -326,8 +452,13 @@ end
 function BatFlockEnhancement(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
-	OutDamage = OutDamage * 0.5
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * 0.5 * DarkAttackPower / 100
 
 	return OutDamage
 end
@@ -336,7 +467,14 @@ end
 function PierceAttackEnhancement(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
+
 	return OutDamage
 end
 
@@ -346,6 +484,13 @@ end
 function PierceAttackOfSaturation(oPlayer, oTarget, InDamage)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * ((Strength / 8) + (Agility / 28) + 120) / 100
+	local DarkAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		DarkAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 70, Strength, Agility)
+	end
+
+	local OutDamage = InDamage * DarkAttackPower / 100
+
 	return OutDamage
 end

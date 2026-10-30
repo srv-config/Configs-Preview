@@ -197,6 +197,16 @@
 //		~ 62: Illusion Blade Attack Speed Increase
 //		~ 63: Grow Lancer Retaliation Attack Power % (Strength), Scripts\Skills\GrowLancer.lua: Damage * (Result + SkillTreeBonus) / 100; the DLL shows it in the character window (C)
 //		~ 64: Grow Lancer Rage Attack Power % (Agility), Scripts\Skills\GrowLancer.lua: Damage * (Result + SkillTreeBonus) / 100; the DLL shows it in the character window (C)
+//		~ 65: Dark Knight Rage Attack Power % (Strength, Agility), Scripts\Skills\DarkKnight.lua: Damage * Result / 100
+//		~ 66: Magic Gladiator Fighting Spirit Attack Power % (Strength, Agility), while Crusher Charge is active, Scripts\Skills\MagicGladiator.lua
+//		~ 67: Rage Fighter AOE Attack Power % (Strength, Agility), Dark Side skills, Scripts\Skills\RageFighter.lua
+//		~ 68: Rage Fighter Div Attack Power % (Strength, Energy), Dragon Roar, Dragon Slasher and Dark Side skills
+//		~ 69: Rage Fighter Melee Attack Power % (Strength, Vitality), Killing Blow, Beast Uppercut, Chain Drive, Charge, Phoenix Shot, Spirit Hook skills
+//		~ 70: Slayer Darkness Attack Power % (Strength, Agility), Scripts\Skills\Slayer.lua: Damage * Result / 100
+//		~ 71: Magic Gladiator Chaos Attack Power % (Strength, Agility), without Crusher Charge, Scripts\Skills\MagicGladiator.lua
+//		~ 72: 
+//		~ 73: 
+//		~ 74: 
 //		~ 200: Illusion Knight Illusion Attack Power % (Strength, Agility), Scripts\Skills\IllusionKnight.lua: Damage * Result / 100; the DLL shows it in the character window (C)
 //
 // ### FormulaData::GuardianItem::Formula ###
@@ -245,6 +255,21 @@
 //		~ 26: Magic Gladiator Magic Attack Power % (Energy), Scripts\Skills\MagicGladiator.lua: AttackDamage = AttackDamage * FormulaResult / 100
 //		~ 27: Gun Crusher Magic Attack Power % (Energy), Scripts\Skills\GunCrusher.lua: AttackDamage = AttackDamage * FormulaResult / 100
 //		~ 28: Lemuria Mage Magic Attack Power % (Energy), Scripts\Skills\LemuriaMage.lua: AttackDamage = AttackDamage * FormulaResult / 100
+//		~ 29: 
+//		~ 30: 
+//		~ 31: 
+//		~ 32: 
+//		~ 33: 
+//		~ 34: 
+//		~ 35: 
+//		~ 36: 
+//		~ 37: 
+//		~ 38: 
+//		~ 39: 
+//		~ 40: 
+//		~ 41: 
+//		~ 42: 
+//		~ 43: 
 //		~ 200: Alchemist Magic Attack Power % (Energy), Scripts\Skills\Alchemist.lua: AttackDamage = AttackDamage * FormulaResult / 100; the DLL shows it in the character window (C)
 //		~ 201: Rune Wizard Magic Attack Power % (Energy), Scripts\Skills\RuneWizard.lua: AttackDamage = AttackDamage * FormulaResult / 100; the DLL shows it in the character window (C)
 //		~ 202: Light Wizard Magic Attack Power % (Energy), Scripts\Skills\LightWizard.lua: AttackDamage = AttackDamage * FormulaResult / 100; the DLL shows it in the character window (C)
@@ -762,6 +787,8 @@
 		<Formula ID="337" Data="((((8.5+%d)^2.2)/3.1))" /> <!-- SkillPoint -->
 		<Formula ID="338" Data="((((9+%d)^2.2)/3.1)+34)" /> <!-- SkillPoint -->
 		<Formula ID="339" Data="((((8.5+%d)^2.2)/3.1))" /> <!-- SkillPoint -->
+		<Formula ID="340" Data="(0.9+(((((((%d-35)^3)+40440)/600)/7.5))))*5" /> <!-- SkillPoint -->
+		<Formula ID="341" Data="(0.9+(((((((%d-35)^3)+40440)/600)/7.5))))*5" /> <!-- SkillPoint -->
 	</SkillTree>
 	<SetOption>
 		<Formula ID="0" Data="((((%d*1.25)^1.48)+5)/1.1)" /> <!-- ItemLevel -->
@@ -1009,7 +1036,7 @@
 		<Formula ID="27" Data="(%d*1.9)+900" /> <!--  -->
 		<Formula ID="28" Data="(%d/2)" /> <!--  -->
 		<Formula ID="29" Data="(10+((%d/2)*3))" /> <!--  -->
-		<Formula ID="30" Data="((%d/4)+(%d*0.2))*2.4" /> <!-- TotalLevel, Strength -->
+		<Formula ID="30" Data="((%d/2.5)+(%d*0.2))*2.4" /> <!-- TotalLevel, Strength -->
 		<Formula ID="31" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Strength -->
 		<Formula ID="32" Data="((%d/100)+(%d/50))*0.4" /> <!-- TotalLevel, Agility -->
 		<Formula ID="33" Data="((%d/10)+(%d/30))*2" /> <!-- TotalLevel, Agility -->
@@ -1022,7 +1049,7 @@
 		<Formula ID="40" Data="30" />  <!-- Constant -->
 		<Formula ID="41" Data="2000" />  <!-- Constant -->
 		<Formula ID="42" Data="((%d/4)+(%d/14))" /> <!-- Strength, Agility -->
-		<Formula ID="43" Data="(%d/50)+(40+((%d+10)^2/16))+(%d*0)+(%d/3.5)" /> <!--  -->
+		<Formula ID="43" Data="(%d/50)+(40+((%d+10)^2/16))+(%d*0)+(%d/2.5)" /> <!--  -->
 		<Formula ID="44" Data="(%d+%d)*0+10" /> <!-- Strength, Agility -->
 		<Formula ID="45" Data="(%d+%d)*0+5" /> <!-- Strength, Agility -->
 		<Formula ID="46" Data="(%d+%d)/3" /> <!-- Strength, Agility -->
@@ -1044,6 +1071,16 @@
 		<Formula ID="62" Data="(%d/100)" /> <!-- Agility -->
 		<Formula ID="63" Data="97+(%d/10)" /> <!-- Strength -->
 		<Formula ID="64" Data="97+(%d/10)" /> <!-- Agility -->
+		<Formula ID="65" Data="225+(%d/55)+(%d/50)" /> <!-- Strength, Agility -->
+		<Formula ID="66" Data="185+(%d/55)+(%d/50)" /> <!-- Strength, Agility -->
+		<Formula ID="67" Data="190+(%d/40)+(%d/65)" /> <!-- Strength, Agility -->
+		<Formula ID="68" Data="190+(%d/40)+(%d/65)" /> <!-- Strength, Energy -->
+		<Formula ID="69" Data="190+(%d/40)+(%d/65)" /> <!-- Strength, Vitality -->
+		<Formula ID="70" Data="220+(%d/55)+(%d/50)" /> <!-- Strength, Agility -->
+		<Formula ID="71" Data="120+(%d/20)+(%d/20)" /> <!-- Strength, Agility -->
+		<Formula ID="72" Data="((%d/5)+(%d*0.1))*1.5" /> <!--  -->
+		<Formula ID="73" Data="15" /> <!--  -->
+		<Formula ID="74" Data="((%d/5)+(%d/20))*1.5" /> <!--  -->
 		<Formula ID="200" Data="200+(%d/30)+(%d/30)" /> <!-- Strength, Agility -->
 	</Character>
 	<GuardianItem>
@@ -1178,10 +1215,10 @@
 		<Formula ID="6" Data="((((%d*25/%d+5)+%d)+2+((%d+30)/60))/2)+(%d*2)" /> <!-- CombatPowerResult, ItemDropLevel, CombatPowerResult, ItemLevel -->
 		<Formula ID="7" Data="60" /> <!-- Constant -->
 		<Formula ID="8" Data="40" /> <!-- Constant -->
-		<Formula ID="9" Data="10+(%d/80)" /> <!-- Strength -->
+		<Formula ID="9" Data="10+(%d/80)+(%d*0)" /> <!-- Strength, Agility -->
 		<Formula ID="10" Data="15+(%d/110)+(%d/80)" /> <!-- Strength, Agility -->
 		<Formula ID="11" Data="12+(%d/100)+(%d/100)" /> <!-- Agility, Vitality -->
-		<Formula ID="12" Data="10+(%d/100)" /> <!-- Agility -->
+		<Formula ID="12" Data="10+(%d*0)+(%d/100)" /> <!-- Strength, Agility -->
 		<Formula ID="13" Data="10+(%d/120)+(%d/130)" /> <!-- Strength, Agility -->
 		<Formula ID="14" Data="15+(%d/100)+(%d/90)" /> <!-- Strength, Command -->
 		<Formula ID="15" Data="((((%d*25/%d+5)+%d)/2)+(%d*1))+14.5" /> <!-- CombatPowerResult, ItemDropLevel, CombatPowerResult, ItemLevel -->
@@ -1198,6 +1235,21 @@
 		<Formula ID="26" Data="195+(%d/50)" /> <!-- Energy -->
 		<Formula ID="27" Data="200+(%d/50)" /> <!-- Energy -->
 		<Formula ID="28" Data="195+(%d/50)" /> <!-- Energy -->
+		<Formula ID="29" Data="1" /> <!--  -->
+		<Formula ID="30" Data="1.2" /> <!--  -->
+		<Formula ID="31" Data="1" /> <!--  -->
+		<Formula ID="32" Data="1.2" /> <!--  -->
+		<Formula ID="33" Data="1" /> <!--  -->
+		<Formula ID="34" Data="1.2" /> <!--  -->
+		<Formula ID="35" Data="1" /> <!--  -->
+		<Formula ID="36" Data="1.2" /> <!--  -->
+		<Formula ID="37" Data="1" /> <!--  -->
+		<Formula ID="38" Data="1.2" /> <!--  -->
+		<Formula ID="39" Data="1" /> <!--  -->
+		<Formula ID="40" Data="1.2" /> <!--  -->
+		<Formula ID="41" Data="195+(%d/50)" /> <!--  -->
+		<Formula ID="42" Data="200+(%d/50)" /> <!--  -->
+		<Formula ID="43" Data="200+(%d/40)" /> <!--  -->
 		<Formula ID="200" Data="165+(%d/65)" /> <!-- Energy -->
 		<Formula ID="201" Data="170+(%d/40)" /> <!-- Energy -->
 		<Formula ID="202" Data="200+(%d/50)" /> <!-- Energy -->
@@ -1219,7 +1271,7 @@
 		<Formula ID="3" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.59+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="4" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="5" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="6" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.16+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
+		<Formula ID="6" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.4+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="7" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="8" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="9" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.71+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
@@ -1240,7 +1292,7 @@
 		<Formula ID="24" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="25" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="26" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.34+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="27" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.88+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
+		<Formula ID="27" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.59+50)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="28" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="29" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.4+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="30" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
@@ -1251,7 +1303,7 @@
 		<Formula ID="35" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.36+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="36" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="37" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="38" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.33+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
+		<Formula ID="38" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="39" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="40" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+38)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="41" Data="(%d+%d+%d)*0" /> <!-- CardLevel, CardLevel, CardLevel -->
@@ -1501,9 +1553,10 @@
 		<Formula ID="285" Data="%d*1000000" /> <!-- ReqCardCount -->
 		<Formula ID="286" Data="(((15+(%d*15))+((%d+1)*%d*2))*0.59+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
 		<Formula ID="287" Data="(((15+(%d*15))+((%d+1)*%d*2))*1+30)" /> <!-- CardLevel, CardLevel, CardLevel -->
-		<Formula ID="288" Data="6" />
-		<Formula ID="289" Data="4" />
-		<Formula ID="290" Data="2" />
+		<Formula ID="288" Data="6" /> <!--  -->
+		<Formula ID="289" Data="4" /> <!--  -->
+		<Formula ID="290" Data="2" /> <!--  -->
+		<Formula ID="291" Data="(((15+(%d*15))+((%d+1)*%d*2))*1.41+30)" /> <!--  -->
 	</AbilityTree>
 	<PetItem>
 		<Formula ID="0" Data="50" /> <!-- None -->

@@ -48,8 +48,7 @@ end
 
 -- SkillID: 49, Fire Breath
 function FireBreath_Summoner(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end

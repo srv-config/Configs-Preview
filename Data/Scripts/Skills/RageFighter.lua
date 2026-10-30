@@ -13,16 +13,30 @@
 
 -- SkillID: 19, Falling Slash
 function FallingSlash_RageFighter(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 49, Fire Breath
 function FireBreath_RageFighter(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
@@ -44,54 +58,98 @@ end
 
 -- SkillID: 260, Killing Blow
 function KillingBlow(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 261, Beast Uppercut
 function BeastUppercut(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 262, Chain Drive
 function ChainDrive(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 263, Dark Side
 function DarkSide(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
+	local DivineAttackPower = 100
+	local AOEAttackPower = 0
+
+	if (oPlayer.Type == OBJ_USER) then
+		DivineAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 67, Strength, Agility)
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * (DivineAttackPower + AOEAttackPower) / 100
 
 	return OutDamage
 end
 
 -- SkillID: 264, Dragon Roar
 function DragonRoar(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Energy / 10) * (Energy / 10 + 50) / 100.0
+	local AOEAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * AOEAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 265, Dragon Slasher
 function DragonSlasher(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
+	local AOEAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
 	local OutDamage = 0
 
 	if (oTarget.Type == OBJ_USER) then -- Player
-		OutDamage = InDamage * (Energy / 10 + 50) / 100.0
+		OutDamage = InDamage * AOEAttackPower / 100
 	else -- Monster
-		OutDamage = (InDamage * (Energy / 10 + 50) / 100.0 + 100.0) * 3.0
+		OutDamage = InDamage * 3.0 * AOEAttackPower / 100
 	end
 
 	return OutDamage
@@ -154,24 +212,45 @@ end
 
 -- SkillID: 269, Charge
 function Charge(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 270, Phoenix Shot
 function PhoenixShot(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 200) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 282, Spirit Hook
 function SpiritHook(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
@@ -198,8 +277,15 @@ end
 
 -- SkillID: 739, Dark Phoenix Shot
 function DarkPhoenixShot(oPlayer, oTarget, InDamage)
-	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Agility / 10 + 50) / 100.0
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
+	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
@@ -208,79 +294,146 @@ end
 
 -- SkillID: 551, Killing Blow Strengthener
 function KillingBlowStrengthener(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 552, Beast Uppercut Strengthener
 function BeastUppercutStrengthener(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 554, Killing Blow Mastery
 function KillingBlowMastery(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 555, Beast Uppercut Mastery
 function BeastUppercutMastery(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 558, Chain Drive Strengthener
 function ChainDriveStrengthener(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 559, Dark Side Strengthener
 function DarkSideStrengthener(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
+	local DivineAttackPower = 100
+	local AOEAttackPower = 0
+
+	if (oPlayer.Type == OBJ_USER) then
+		DivineAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 67, Strength, Agility)
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * (DivineAttackPower + AOEAttackPower) / 100
 
 	return OutDamage
 end
 
 -- SkillID: 560, Dragon Roar Strengthener
 function DragonRoarStrengthener(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Energy / 10) * (Energy / 10 + 50) / 100.0
+	local AOEAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * AOEAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 563, Dark Side Mastery
 function DarkSideMastery(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
+	local DivineAttackPower = 100
+	local AOEAttackPower = 0
+
+	if (oPlayer.Type == OBJ_USER) then
+		DivineAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 67, Strength, Agility)
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * (DivineAttackPower + AOEAttackPower) / 100
 
 	return OutDamage
 end
 
 -- SkillID: 564, Dragon Slasher Strengthener
 function DragonSlasherStrengthener(oPlayer, oTarget, InDamage, SkillBonus)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
+	local AOEAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
 	local OutDamage = 0
 
 	if (oTarget.Type == OBJ_USER) then -- User
-		OutDamage = (InDamage + SkillBonus) * (Energy / 10 + 50) / 100.0
+		OutDamage = (InDamage + SkillBonus) * AOEAttackPower / 100
 	else -- Monster
-		OutDamage = ((InDamage + SkillBonus) * (Energy / 10 + 50) / 100.0 + 100.0) * 3.0
+		OutDamage = (InDamage + SkillBonus) * 3.0 * AOEAttackPower / 100
 	end
 
 	return OutDamage
@@ -341,16 +494,30 @@ end
 
 -- SkillID: 744, Enhance Phoenix Shot
 function EnhancePhoenixShot(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 200) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 745, Phoenix Shot Mastery
 function PhoenixShotMastery(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = InDamage * (Vitality / 10 + 200) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
@@ -359,25 +526,48 @@ end
 
 -- SkillID: 1111, Dragon Roar Enhancement Skill
 function DragonRoarEnhancementSkill(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Energy / 10) * (Energy / 10 + 50) / 100.0
+	local AOEAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * AOEAttackPower / 100
 
 	return OutDamage
 end
 
 -- SkillID: 1113, Dark Side Enhancement Skill
 function DarkSideEnhancementSkill(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
+	local DivineAttackPower = 100
+	local AOEAttackPower = 0
+
+	if (oPlayer.Type == OBJ_USER) then
+		DivineAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 67, Strength, Agility)
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * (DivineAttackPower + AOEAttackPower) / 100
 
 	return OutDamage
 end
 
 -- SkillID: 1147, Spirit Hook Enhancement Skill
 function SpiritHookEnhancementSkill(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end
@@ -386,17 +576,33 @@ end
 
 -- SkillID: 2061, Dark Side of Saturation
 function DarkSideOfSaturation(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
 	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (Agility / 8 + InDamage + Energy / 10) * (Agility / 8 + Energy / 10 + 100) / 100.0
+	local DivineAttackPower = 100
+	local AOEAttackPower = 0
+
+	if (oPlayer.Type == OBJ_USER) then
+		DivineAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 67, Strength, Agility)
+		AOEAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 68, Strength, Energy)
+	end
+
+	local OutDamage = InDamage * (DivineAttackPower + AOEAttackPower) / 100
 
 	return OutDamage
 end
 
 -- SkillID: 2063, Spirit Hook of Saturation
 function SpiritHookOfSaturation(oPlayer, oTarget, InDamage)
+	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Vitality = Stats.Get(oPlayer, STAT_VITALITY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage + Vitality / 10) * (Vitality / 10 + 50) / 100.0
+	local MeleeAttackPower = 100
+
+	if (oPlayer.Type == OBJ_USER) then
+		MeleeAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 69, Strength, Vitality)
+	end
+
+	local OutDamage = InDamage * MeleeAttackPower / 100
 
 	return OutDamage
 end

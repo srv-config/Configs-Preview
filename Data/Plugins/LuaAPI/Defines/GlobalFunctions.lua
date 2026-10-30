@@ -214,11 +214,6 @@ function Player.SendMana(iPlayerIndex, iMana, flag, iBP) end
 ---@param iPlayerIndex integer Player index
 function Player.SendExpToolTip(iPlayerIndex) end
 
----Send the PK level (name colour) to the player and the players around, after changing oPlayer.PKLevel
----@param iPlayerIndex integer Player index
----@param btPKLevel integer PK level sent to the clients (0-6, 3 is a normal player)
-function Player.SendPKLevel(iPlayerIndex, btPKLevel) end
-
 
 ---Save character to database
 ---@param oPlayer object Player object (stObject)

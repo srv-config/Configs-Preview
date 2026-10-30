@@ -97,24 +97,21 @@ end
 
 -- SkillID: 19, Falling Slash
 function FallingSlash_LightWizard(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 22, Cyclone
 function Cyclone_LightWizard(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
 
 -- SkillID: 23, Slash
 function Slash_LightWizard(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end
@@ -149,8 +146,7 @@ end
 
 -- SkillID: 49, Fire Breath
 function FireBreath_LightWizard(oPlayer, oTarget, InDamage)
-	local Energy = Stats.Get(oPlayer, STAT_ENERGY, STAT_BOTHTYPE)
-	local OutDamage = (InDamage * ( 200 + ( Energy / 10 ) ) ) / 100
+	local OutDamage = InDamage
 
 	return OutDamage
 end

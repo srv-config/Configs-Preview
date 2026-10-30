@@ -9,11 +9,18 @@
 -- MagicGladiator Skill Calc Script, Lua v5.3
 -- SkillID refers to Index of skill in \Data\Skills\SkillList.xml
 
--- Chaos Attack Power of the Strength/Agility skills; S21 P2-3 has no FormulaData entry for it
+-- Crusher Charge switches the Strength/Agility skills from Chaos to Spirit Attack Power
 local function GladiatorAttackPower(oPlayer)
 	local Strength = Stats.Get(oPlayer, STAT_STRENGTH, STAT_BOTHTYPE)
 	local Agility = Stats.Get(oPlayer, STAT_AGILITY, STAT_BOTHTYPE)
-	local ChaosAttackPower = 120 + (Strength / 20) + (Agility / 20)
+
+	if (Buff.CheckUsed(oPlayer, BUFFTYPE_CRUSHER_CHARGE) or Buff.CheckUsed(oPlayer, BUFFTYPE_CRUSHER_CHARGE_STRENGTHENER) or Buff.CheckUsed(oPlayer, BUFFTYPE_CRUSHER_CHARGE_MASTERY)) then
+		local SpiritAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 66, Strength, Agility)
+
+		return SpiritAttackPower
+	end
+
+	local ChaosAttackPower = Formula.GetValue(FORMULA_TYPE_CHARACTER, 71, Strength, Agility)
 
 	return ChaosAttackPower
 end

@@ -1,0 +1,27 @@
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == Modify if you know what you do only!
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### AllowedClientType::Group ###
+//	Number: Server group, the GameServer Code divided by 20 (Codes 0-19 are group 0, 20-39 group 1 and so on)
+//	Classic: WZ game client with IGC.dll, 0 ~ refused, 1 ~ allowed
+//	IGCClientPC: IGC Client for PC, 0 ~ refused, 1 ~ allowed
+//	IGCClientMobile: IGC Client for phones, 0 ~ refused, 1 ~ allowed
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Game Clients the Join Server lets log in to the GameServers of a group
+//~~ A group not listed here, or a missing attribute, allows every client type
+//~~ A refused client is told its game client version is wrong
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<AllowedClientType>
+	<Group Number="0" Classic="1" IGCClientPC="1" IGCClientMobile="1" />
+</AllowedClientType>

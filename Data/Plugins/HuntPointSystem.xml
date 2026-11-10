@@ -90,6 +90,15 @@
 //	Id: Unique text ID
 //	Text: Text to display
 //
+// ### HuntPointSystem::V2 ###
+//	Enabled: Hunt Point window of the IGC Client (points, maps, quests, battle, ranking), the classic client keeps the buff tooltip, 0/1
+//	RankingRefreshMinutes: How often the ranking of the window is read again from the database, minutes, 1-1440
+//	RankingSize: Number of characters in the ranking, 1-50, Game Masters and blocked characters or accounts are left out
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Weekly and daily resets are made by the Data Server, see [HuntPointV2] in config.ini of the Data Server
+//~~ ResetWeekly is used only while the Data Server reset is off or its database tables are missing
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
 // STRICTLY NO COMMENTS INSIDE TAGS
 //
 -->
@@ -399,4 +408,6 @@
 		<Text Id="45" Text=" Hunt Points" />
 		<Text Id="46" Text=" Leaving the game is not possible during Battle!" />
 	</Language>
+
+	<V2 Enabled="1" RankingRefreshMinutes="10" RankingSize="10" />
 </HuntPointSystem>

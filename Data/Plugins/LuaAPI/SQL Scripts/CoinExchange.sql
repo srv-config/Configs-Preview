@@ -5,7 +5,7 @@
    Run once against the game (Muonline) database. Re-runnable: it creates the
    tables and procedures only if they are missing / drops-and-recreates the procs.
 
-   Used by Data\Plugins\LuaAPI\Windows\CoinExchange.lua through DB.QueryDS:
+   Used by Data\Plugins\LuaAPI\Windows\CoinExchange.lua through DB.CallDS:
      IGC_CoinExchange_LoadDaily     - today's converted total for a character
      IGC_CoinExchange_LoadHistory   - the character's recent conversions
      IGC_CoinExchange_AddConversion - record one conversion (counter + history)
@@ -94,6 +94,7 @@ CREATE PROCEDURE dbo.IGC_CoinExchange_AddConversion
 AS
 BEGIN
     SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
     DECLARE @today DATE = CAST(GETDATE() AS DATE);
 

@@ -151,7 +151,7 @@
 //	Enabled: Whether or not, send the event windows to the IGC Client, 0/1
 //
 // ### LastManStanding::GmTest ###
-//	Times of an event started with the /lmsstart command (Commands.ini [EventsV2]), 0 to use the times set above
+//	Times of an event started with the /lmsstart command (Commands.xml, Id LmsStart), 0 to use the times set above
 //	RegMinutes: Duration of registration, minutes
 //	PrepareSeconds: Duration of preparation, seconds
 //	DurationMinutes: Duration of the battle, minutes

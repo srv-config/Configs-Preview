@@ -87,6 +87,7 @@ CREATE PROCEDURE dbo.IGC_SkinShop_Grant
 AS
 BEGIN
     SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
     DECLARE @now DATETIME = GETDATE();
 
@@ -120,6 +121,7 @@ CREATE PROCEDURE dbo.IGC_SkinShop_SetActive
 AS
 BEGIN
     SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
     IF @SkinId = 0
     BEGIN

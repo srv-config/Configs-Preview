@@ -39,7 +39,7 @@
 //	Hint: A hint that will be displayed for linked word
 //
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~ For answer command check Commands.ini: /scramble <word>
+//~~ For answer command check Commands.xml: /scramble <word>
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS

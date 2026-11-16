@@ -189,7 +189,7 @@
 //	Enabled: Whether or not, send the event windows to the IGC Client, 0/1
 //
 // ### IceWindValley::GmTest ###
-//	Times of an event started with the commands of Commands.ini [EventsV2]
+//	Times of an event started with the Ice Wind Valley commands of Commands.xml (Ids IwvRegister, IwvNext, IwvStart)
 //	RegMinutes: Duration of registration, 1-1440 minutes
 //	PrepareMinutes: Duration of preparation, 0-1440 minutes
 //	DurationMinutes: Duration of the siege, 1-1440 minutes

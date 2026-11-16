@@ -1317,8 +1317,8 @@ Enums.ItemActionBlock = {
 
 ------------------------------------------------------------------
 -- Database query numbers - name every id here, one table per server.
--- QueryDS: DataServer (DB.QueryDS), range 1000-1999.
--- QueryJS: JoinServer (DB.QueryJS), range 2000-2999.
+-- QueryDS: DataServer (DB.CallDS, the deprecated DB.QueryDS), range 1000-1999.
+-- QueryJS: JoinServer (DB.CallJS, the deprecated DB.QueryJS), range 2000-2999.
 ------------------------------------------------------------------
 Enums.QueryDS = {
 	EXCHANGE_LOAD_DAILY = 1020,

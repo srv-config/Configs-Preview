@@ -19,7 +19,7 @@
 -- What each character owns and wears is stored in the database: the
 -- IGC_SkinShop_* tables and procedures come with the database scripts.
 --
---   state     IGC_SkinShop_Load / Grant / SetActive over DB.QueryDS
+--   state     IGC_SkinShop_Load / Grant / SetActive over DB.CallDS
 --   currency  Coin.Get / Coin.Charge
 --   look      Player.SetShopSkin
 --
@@ -191,7 +191,7 @@ function SkinShop.Load(oPlayer, sendWhenDone)
 	end
 
 	pending[oPlayer.Index] = { charId = charId, rows = {}, sendState = sendWhenDone }
-	DB.QueryDS(oPlayer.Index, Q_LOAD, string.format("EXEC IGC_SkinShop_Load %d", charId))
+	DB.CallDS(oPlayer.Index, Q_LOAD, "IGC_SkinShop_Load", charId)
 end
 
 -- One call per column per row; a second packet can overtake the first, so values go into (packet, row) buckets.
@@ -246,7 +246,7 @@ function SkinShopDB.OnComplete(iPlayerIndex, iQuery)
 
 	if st.active ~= nil and (entry == nil or secondsLeft(entry) == 0 or SkinShop.skins[st.active] == nil) then
 		st.active = nil
-		DB.QueryDS(iPlayerIndex, Q_SAVE, string.format("EXEC IGC_SkinShop_SetActive %d, 0", p.charId))
+		DB.CallDS(iPlayerIndex, Q_SAVE, "IGC_SkinShop_SetActive", p.charId, 0)
 	end
 
 	wear(oPlayer, st.active)
@@ -257,7 +257,7 @@ function SkinShopDB.OnComplete(iPlayerIndex, iQuery)
 end
 
 local function saveActive(oPlayer, st)
-	DB.QueryDS(oPlayer.Index, Q_SAVE, string.format("EXEC IGC_SkinShop_SetActive %d, %d", CharId(oPlayer), st.active or 0))
+	DB.CallDS(oPlayer.Index, Q_SAVE, "IGC_SkinShop_SetActive", CharId(oPlayer), st.active or 0)
 end
 
 ------------------------------------------------------------------
@@ -402,8 +402,8 @@ UIWindow.On(S.id, S.BUY, function(oPlayer, reader)
 		st.owned[skinId] = { permanent = false, expireAt = from + opt.seconds }
 	end
 
-	DB.QueryDS(oPlayer.Index, Q_SAVE, string.format("EXEC IGC_SkinShop_Grant %d, %d, %d, %d, %d, %d",
-		CharId(oPlayer), skinId, opt.seconds, optIndex, opt.price, opt.coin))
+	DB.CallDS(oPlayer.Index, Q_SAVE, "IGC_SkinShop_Grant",
+		CharId(oPlayer), skinId, opt.seconds, optIndex, opt.price, opt.coin)
 
 	Log.Add(string.format("[SkinShop] [%s][%s] bought skin %d option %d for %d (coin %d)",
 		oPlayer.AccountId, oPlayer.Name, skinId, optIndex + 1, opt.price, opt.coin))

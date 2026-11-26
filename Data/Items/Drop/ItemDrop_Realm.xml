@@ -153,6 +153,9 @@
 			<Monster Index="986" Rate="650" />
 			<Monster Index="987" Rate="650" />
 			<Monster Index="988" Rate="650" />
+			<Monster Index="989" Rate="700" />
+			<Monster Index="990" Rate="700" />
+			<Monster Index="991" Rate="700" />
 		</Item>
 		<Item DropID="2">
 			<Monster Index="839" Rate="100" />
@@ -200,6 +203,9 @@
 			<Monster Index="986" Rate="650" />
 			<Monster Index="987" Rate="650" />
 			<Monster Index="988" Rate="650" />
+			<Monster Index="989" Rate="700" />
+			<Monster Index="990" Rate="700" />
+			<Monster Index="991" Rate="700" />
 		</Item>
 		<Item DropID="3">
 			<Monster Index="839" Rate="100" />
@@ -247,6 +253,9 @@
 			<Monster Index="986" Rate="650" />
 			<Monster Index="987" Rate="650" />
 			<Monster Index="988" Rate="650" />
+			<Monster Index="989" Rate="700" />
+			<Monster Index="990" Rate="700" />
+			<Monster Index="991" Rate="700" />
 		</Item>
 		<Item DropID="4">
 			<Monster Index="839" Rate="100" />
@@ -294,6 +303,9 @@
 			<Monster Index="986" Rate="650" />
 			<Monster Index="987" Rate="650" />
 			<Monster Index="988" Rate="650" />
+			<Monster Index="989" Rate="700" />
+			<Monster Index="990" Rate="700" />
+			<Monster Index="991" Rate="700" />
 		</Item>
 		<Item DropID="5">
 			<Monster Index="839" Rate="100" />
@@ -341,6 +353,9 @@
 			<Monster Index="986" Rate="650" />
 			<Monster Index="987" Rate="650" />
 			<Monster Index="988" Rate="650" />
+			<Monster Index="989" Rate="700" />
+			<Monster Index="990" Rate="700" />
+			<Monster Index="991" Rate="700" />
 		</Item>
 	</DropItem>
 </RealmItemDrop>

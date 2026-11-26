@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ VIP Shop of the IGC Client, opened with the VIP Shop icon of the HUD, the Cash Shop stays as it is and works next to it
+//~~ Edit the file with Tools\IGC.VipShopEditor\VipShopEditor.html, reload it with the Game Server console command data.reload.vipshop
+//~~ Prices are calculated by the Game Server, bought items wait in the shop storage until the player claims them
+//~~ Times: yyyy-MM-dd HH:mm, server local time, empty for no limit
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VipShop ###
+//	Enabled: Whether or not, activate the VIP Shop, 0/1
+//	Currency: Name of the currency shown next to prices, the balance is always WCoin
+//	TopUpUrl: Payment page opened by the Top-up tab, {account} is replaced by the account ID and {pack} by TopUp::Pack ID, write & as &amp;
+//	NewTabs: Tabs with a NEW badge, list of Vip, Shop, TopUp, Packages separated by comma
+//	FooterNote: First line of the window footer
+//	RequestCooldownMs: Minimum time between two shop requests of a player, milliseconds
+//	MaxGiftMessage: Maximum length of a gift message, 0-60
+//	GiftMinLevel: Character level required to send a gift, 0 for any level
+//	GiftMinTopUp: WCoin the account must have topped up in total before it can send a gift, 0 to disable
+//
+// ### VipShop::Tabs ###
+//	Vip: Whether or not, show the VIP tab, 0/1
+//	Shop: Whether or not, show the item shop tab, 0/1
+//	TopUp: Whether or not, show the top-up tab, 0/1
+//	Packages: Whether or not, show the packages tab, 0/1
+//
+// ### VipShop::PriceTables::Table ###
+//	ID: Unique ID of the price table, 1-255
+//	Levels: Price of item level +0 to +15, 16 values separated by comma
+//	Skill: Price of the skill
+//	Luck: Price of the luck
+//	OptionStep: Price of every +4 of the additional option
+//	Excellent: Price of every excellent option
+//	Socket: Price of every socket
+//	Ancient5: Price of the +5 ancient option
+//	Ancient10: Price of the +10 ancient option
+//
+// ### VipShop::PriceTables::Table::Duration ###
+//	Days: Item duration sold with the table, 0-3650 days, 0 for permanent
+//	Percent: Price of the duration, percent of the price of a permanent item
+//
+// ### VipShop::Categories::Category ###
+//	ID: Unique ID of the item category, 1-255, categories are shown in this order
+//	Name: Name of the category
+//
+// ### VipShop::Vip::Tier ###
+//	ID: Unique ID of the VIP tier
+//	VipType: VIP type sold, see VIPSystem.xml
+//	Name: Name of the tier
+//	Look: Look of the tier card: bronze, silver, gold, platinum
+//	Hero: Whether or not, show the tier as the big banner, 0/1, one tier only
+//
+// ### VipShop::Vip::Tier::Offer ###
+//	Days: VIP days sold
+//	Price: Price of the offer, 0 requires Free set to 1
+//	OldPrice: Former price shown crossed out, 0 for none
+//	Free: Whether or not, the offer is free on purpose, 0/1, optional
+//
+// ### VipShop::Vip::Tier::Perk ###
+//	Text: One line of the tier description
+//
+// ### VipShop::Items::Item ###
+//	ID: Unique ID of the item offer, 1-65535
+//	Category: ID of the category, see VipShop::Categories
+//	Group: Category of the item, refer to ItemList.xml
+//	Index: Index of the item, refer to ItemList.xml
+//	BasePrice: Base price of the item, 0 requires Free set to 1
+//	Free: Whether or not, the item is free on purpose, 0/1, optional
+//	PriceTable: ID of the price table, see VipShop::PriceTables
+//	Tag: Badge of the offer: Hot, New, Sale, empty for none
+//	Discount: Discount of the final price, 0-99 percent
+//	Level: Item levels the player can choose, range, e.g. 0-15
+//	Option: Additional option steps the player can choose, range, 0-7 (+0 to +28), equipment only
+//	Skill: Whether or not, the player can add the skill, 0/1, items with skill only
+//	Luck: Whether or not, the player can add the luck, 0/1, equipment only
+//	Sockets: Maximum number of sockets the player can choose, socket items only, 1-5, 1-3 on socket accessories, 0 for none
+//	Ancient: Ancient options the player can choose: 0 for none, 5, 10 or 5,10, set items only, not together with sockets
+//	Excellent: Excellent options the player can choose, Number of ExcellentOptions.xml separated by comma, empty for none
+//		~ 0-5: Regular excellent options
+//		~ 6 and above: Extended excellent options, maximum 3 on an item
+//
+//	MaxExcellent: Maximum number of excellent options the player can choose
+//	Counts: Stack sizes sold, separated by comma, stackable items only
+//	Durations: Durations sold, Days of the price table separated by comma, 0 for permanent
+//	LimitCount: Number of purchases per account within LimitPeriod, 0 for no limit
+//	LimitPeriod: Period of LimitCount: None, Day, Week (from Monday), Month, Total, Sale (from Start to End)
+//	Stock: Number of items sold on the whole server, 0 for no limit
+//	Start: Start of the sale
+//	End: End of the sale
+//	Description: Description line of the offer
+//	Giftable: Whether or not, the item can be bought as a gift, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ An item cannot have ancient and excellent options together
+//~~ Price: (BasePrice + Levels of the level + Skill + Luck + OptionStep * option + Excellent * options + Socket * sockets + Ancient5 or Ancient10)
+//~~ * Percent of the duration / 100 * count * (100 - Discount) / 100, rounded down, up to 2,000,000,000
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VipShop::Packages::Package ###
+//	ID: Unique ID of the package
+//	Name: Name of the package, also the title in the shop storage, up to 40 characters
+//	Description: Description line of the package
+//	Filter: Text of the filter button the package is listed under, e.g. Starter, Growth
+//	Price: Price of the package, 0 requires Free set to 1
+//	Free: Whether or not, the package is free on purpose, 0/1, optional
+//	ForSale: Whether or not, the package is sold, 0 for a package given only by a coupon, 0/1, optional, 1 by default
+//	OldPrice: Former price shown crossed out, 0 for none
+//	Tag: Badge of the package: Hot, New, Sale, empty for none
+//	Flash: Whether or not, show the package in the flash sale banner with a countdown, 0/1, requires End
+//	LimitCount: Number of purchases per account within LimitPeriod, 0 for no limit
+//	LimitPeriod: Period of LimitCount: None, Day, Week (from Monday), Month, Total, Sale (from Start to End)
+//	Stock: Number of packages sold on the whole server, 0 for no limit
+//	Start: Start of the sale
+//	End: End of the sale
+//	Giftable: Whether or not, the package can be bought as a gift, 0/1
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ A sold package whose Coins are equal to or above its lowest price (daily deal price included) is not loaded
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VipShop::Packages::Package::Item ###
+//	Group: Category of the item, refer to ItemList.xml
+//	Index: Index of the item, refer to ItemList.xml
+//	Level: Level of the item, 0-15, optional
+//	Skill: Item with skill, 0/1, optional
+//	Luck: Item with luck, 0/1, optional
+//	Option: Additional option, 0-7, optional
+//	Excellent: Excellent options, Number of ExcellentOptions.xml separated by comma, optional
+//	Ancient: Ancient option, 0, 5 or 10, optional
+//	Sockets: Number of sockets, optional
+//	Element: Element of a Pentagram, 1-5, optional
+//	Count: Stack size or durability, optional
+//	Days: Item duration in days, 0 for permanent, optional
+//
+// ### VipShop::Packages::Package::Vip ###
+//	VipType: VIP type given, see VIPSystem.xml
+//	Days: VIP days given
+//
+// ### VipShop::Packages::Package::Coins ###
+//	Amount: WCoin given when the player claims the package
+//
+// ### VipShop::DailyDeal ###
+//	Discount: Discount of the package of the day, percent
+//	Pool: IDs of the packages separated by comma, one package per day in turn, changing at midnight server time
+//
+// ### VipShop::TopUp ###
+//	FirstBonusPercent: Extra WCoin of the first top-up of an account, percent
+//	PaymentTypes: Payment methods shown in the window, separated by comma
+//
+// ### VipShop::TopUp::Pack ###
+//	ID: Unique ID of the pack, sent to TopUpUrl as {pack}
+//	Coins: WCoin of the pack
+//	Bonus: Bonus WCoin of the pack
+//	Price: Price of the pack in real money, for the payment website
+//	PriceLabel: Text of the pack button
+//	Badge: Badge of the pack: Popular, Best, empty for none
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ WCoin are added by the payment website: one row per payment in the IGC_VipShop_TopUp table (MuOnline database)
+//~~ with AccountID, PackId, Coins (Coins and Bonus of the pack), a unique Reference of the payment and ProcessedAt left empty (NULL)
+//~~ The Data Server adds the WCoin within about 10 seconds and sets ProcessedAt
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// ### VipShop::TopUp::Monthly ###
+//	Need: WCoin topped up in the current month to claim the reward, every reward can be claimed once a month, maximum 32 rewards
+//	Name: Name of the reward
+//	Item, Vip, Coins: What the reward gives, same settings as in VipShop::Packages::Package
+//
+// ### VipShop::ServerCoupons::Coupon ###
+//	Code: Coupon code, 1-20 characters A-Z 0-9 _ -, not case sensitive
+//	Coins: WCoin given by the coupon, 0 for none
+//	PackageID: ID of the package given by the coupon, 0 for none
+//	MaxUses: Number of uses on the whole server, 0 for no limit
+//	PerAccount: Number of uses per account, must be 1
+//	Start: Start of the coupon
+//	End: End of the coupon
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Coupons are never sent to the game client, keep this file where players cannot read it
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<VipShop Enabled="0" Currency="WCoin" TopUpUrl="https://example.com/topup?account={account}&amp;pack={pack}" NewTabs="Shop" FooterNote="Purchases go to your Storage" RequestCooldownMs="300" MaxGiftMessage="60" GiftMinLevel="50" GiftMinTopUp="0">
+  <Tabs Vip="1" Shop="1" TopUp="1" Packages="1" />
+  <PriceTables>
+    <!-- Levels: price of +0..+15 (16 values). Option: per +4 step. Percent: duration factor -->
+    <Table ID="1" Levels="0,50,100,150,200,300,400,500,650,900,1300,1800,2500,3500,5000,7000" Skill="200" Luck="300" OptionStep="120" Excellent="400" Socket="250" Ancient5="600" Ancient10="900">
+      <Duration Days="0" Percent="100" />
+      <Duration Days="30" Percent="60" />
+      <Duration Days="7" Percent="30" />
+    </Table>
+    <!-- Wings: pricier levels and options -->
+    <Table ID="2" Levels="0,80,160,240,320,480,640,800,1050,1450,2100,2900,4000,5600,8000,11200" Skill="0" Luck="400" OptionStep="200" Excellent="600" Socket="0" Ancient5="0" Ancient10="0">
+      <Duration Days="0" Percent="100" />
+      <Duration Days="30" Percent="55" />
+      <Duration Days="7" Percent="25" />
+    </Table>
+    <!-- Flat price: jewels, seals, pets -->
+    <Table ID="3" Levels="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" Skill="0" Luck="0" OptionStep="0" Excellent="0" Socket="0" Ancient5="0" Ancient10="0">
+      <Duration Days="0" Percent="100" />
+      <Duration Days="30" Percent="60" />
+      <Duration Days="7" Percent="30" />
+    </Table>
+  </PriceTables>
+  <Categories>
+    <!-- ids 1..255, shown in this order; "All" is implicit -->
+    <Category ID="1" Name="Weapons" />
+    <Category ID="2" Name="Armor" />
+    <Category ID="3" Name="Wings" />
+    <Category ID="4" Name="Accessories" />
+    <Category ID="5" Name="Pets" />
+    <Category ID="6" Name="Jewels" />
+    <Category ID="7" Name="Seals / buffs" />
+  </Categories>
+  <Vip>
+    <!-- VipType = VIPSystem.xml Vip Type. Look: bronze|silver|gold|platinum. Hero="1": the big banner. OldPrice 0 = no strike price -->
+    <Tier ID="1" VipType="1" Name="Bronze" Look="bronze" Hero="0">
+      <Offer Days="7" Price="300" OldPrice="0" />
+      <Offer Days="30" Price="750" OldPrice="0" />
+      <Perk Text="+10% EXP" />
+      <Perk Text="+5% item drop" />
+      <Perk Text="VIP chat color" />
+    </Tier>
+    <Tier ID="2" VipType="2" Name="Silver" Look="silver" Hero="0">
+      <Offer Days="7" Price="400" OldPrice="0" />
+      <Offer Days="30" Price="900" OldPrice="0" />
+      <Perk Text="+20% EXP" />
+      <Perk Text="+10% item drop" />
+      <Perk Text="+10% Hunt Points" />
+    </Tier>
+    <Tier ID="3" VipType="3" Name="Gold" Look="gold" Hero="0">
+      <Offer Days="7" Price="650" OldPrice="0" />
+      <Offer Days="30" Price="1800" OldPrice="0" />
+      <Perk Text="+35% EXP" />
+      <Perk Text="+20% item drop" />
+      <Perk Text="+15% Hunt Points" />
+    </Tier>
+    <Tier ID="4" VipType="4" Name="Platinum" Look="platinum" Hero="1">
+      <Offer Days="7" Price="900" OldPrice="1200" />
+      <Offer Days="30" Price="2100" OldPrice="3000" />
+      <Perk Text="+50% EXP" />
+      <Perk Text="+30% item drop" />
+      <Perk Text="+25% Hunt Points" />
+      <Perk Text="Extra event entries" />
+    </Tier>
+  </Vip>
+  <Items>
+    <!-- ranges "a-b", lists "a,b,c"; empty/0 = not sold. Ancient="0" none, "5", "10", "5,10". Excellent = the exc option ids the admin sells (GS /item ids: 0-5 classic, 6+ extended). Counts = stack sizes on sale. Durations = Days values from the price table on sale (0 = permanent). LimitPeriod: None|Day|Week|Month|Total|Sale -->
+    <Item ID="101" Category="1" Group="0" Index="16" BasePrice="1500" PriceTable="1" Tag="" Discount="0" Level="0-15" Option="0-7" Skill="1" Luck="1" Sockets="0" Ancient="0" Excellent="0,1,2,3,4,5" MaxExcellent="4" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="Two-handed sword of the Dark Knight" Giftable="1" />
+    <Item ID="102" Category="1" Group="4" Index="19" BasePrice="1800" PriceTable="1" Tag="Hot" Discount="0" Level="0-15" Option="0-7" Skill="1" Luck="1" Sockets="0" Ancient="0" Excellent="0,1,2,3,4,5" MaxExcellent="4" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="103" Category="2" Group="8" Index="1" BasePrice="1200" PriceTable="1" Tag="" Discount="0" Level="0-15" Option="0-7" Skill="0" Luck="1" Sockets="0" Ancient="5,10" Excellent="" MaxExcellent="0" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="Ancient set armor" Giftable="1" />
+    <Item ID="104" Category="3" Group="12" Index="36" BasePrice="4500" PriceTable="2" Tag="New" Discount="0" Level="0-15" Option="0-7" Skill="0" Luck="1" Sockets="0" Ancient="0" Excellent="2,3,4,5" MaxExcellent="2" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="3rd wings" Giftable="1" />
+    <Item ID="105" Category="1" Group="0" Index="26" BasePrice="1500" PriceTable="1" Tag="" Discount="0" Level="0-15" Option="0-7" Skill="1" Luck="1" Sockets="5" Ancient="0" Excellent="" MaxExcellent="0" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="Socket sword: sockets come empty" Giftable="1" />
+    <Item ID="106" Category="1" Group="5" Index="11" BasePrice="1600" PriceTable="1" Tag="" Discount="0" Level="0-15" Option="0-7" Skill="0" Luck="1" Sockets="0" Ancient="0" Excellent="0,1,2,3,4,5" MaxExcellent="4" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="107" Category="2" Group="6" Index="16" BasePrice="1100" PriceTable="1" Tag="" Discount="0" Level="0-15" Option="0-7" Skill="0" Luck="1" Sockets="0" Ancient="0" Excellent="0,1,2,3,4,5" MaxExcellent="4" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="108" Category="4" Group="13" Index="24" BasePrice="900" PriceTable="1" Tag="" Discount="0" Level="0" Option="0-7" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="0,1,2,3,4,5" MaxExcellent="3" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="109" Category="4" Group="13" Index="12" BasePrice="950" PriceTable="1" Tag="" Discount="0" Level="0" Option="0-7" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="0,1,2,3,4,5" MaxExcellent="3" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="110" Category="5" Group="13" Index="4" BasePrice="2500" PriceTable="3" Tag="Sale" Discount="20" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1" Durations="0,30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="Dark Lord mount" Giftable="1" />
+    <Item ID="111" Category="5" Group="13" Index="80" BasePrice="1200" PriceTable="3" Tag="" Discount="0" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1" Durations="30,7" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="EXP pet" Giftable="1" />
+    <Item ID="112" Category="6" Group="14" Index="13" BasePrice="90" PriceTable="3" Tag="" Discount="0" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1,10,50" Durations="0" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="113" Category="6" Group="14" Index="14" BasePrice="70" PriceTable="3" Tag="" Discount="0" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1,10,50" Durations="0" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="114" Category="6" Group="12" Index="15" BasePrice="50" PriceTable="3" Tag="" Discount="0" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1,10,50" Durations="0" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="115" Category="6" Group="14" Index="16" BasePrice="120" PriceTable="3" Tag="" Discount="0" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1,10" Durations="0" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Description="" Giftable="1" />
+    <Item ID="116" Category="7" Group="13" Index="43" BasePrice="400" PriceTable="3" Tag="" Discount="0" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1" Durations="0" LimitCount="5" LimitPeriod="Week" Stock="0" Start="" End="" Description="EXP +50% while active" Giftable="1" />
+    <Item ID="117" Category="7" Group="13" Index="44" BasePrice="350" PriceTable="3" Tag="" Discount="0" Level="0" Option="0" Skill="0" Luck="0" Sockets="0" Ancient="0" Excellent="" MaxExcellent="0" Counts="1" Durations="0" LimitCount="5" LimitPeriod="Week" Stock="0" Start="" End="" Description="Zen +50% while active" Giftable="1" />
+  </Items>
+  <Packages>
+    <!-- Filter: free text group shown as a filter chip (e.g. Growth, PvP, Starter). Flash="1": in the flash-sale banner (needs End). ForSale="0": coupon-only. Free="1": price 0 on purpose. Entries: <Item>, <Vip VipType Days>, <Coins Amount> -->
+    <Package ID="201" Name="Newcomer Pack" Description="For new characters" Filter="Starter" Price="400" OldPrice="1000" Tag="" Flash="0" LimitCount="1" LimitPeriod="Total" Stock="0" Start="" End="" Giftable="0">
+      <Item Group="14" Index="13" Count="10" />
+      <Item Group="14" Index="3" Count="50" />
+      <Item Group="12" Index="3" Days="7" />
+      <Vip VipType="1" Days="7" />
+    </Package>
+    <Package ID="202" Name="Hunter Pack" Description="" Filter="Growth" Price="900" OldPrice="1500" Tag="" Flash="0" LimitCount="3" LimitPeriod="Week" Stock="0" Start="" End="" Giftable="1">
+      <Item Group="13" Index="43" Days="7" />
+      <Item Group="14" Index="14" Count="10" />
+      <Item Group="13" Index="44" Days="7" />
+      <Item Group="14" Index="16" Count="5" />
+    </Package>
+    <Package ID="203" Name="Warrior Pack" Description="" Filter="Growth" Price="2200" OldPrice="4000" Tag="Hot" Flash="0" LimitCount="1" LimitPeriod="Month" Stock="0" Start="" End="" Giftable="1">
+      <Vip VipType="3" Days="30" />
+      <Item Group="12" Index="15" Count="30" />
+      <Item Group="12" Index="6" Level="9" Luck="1" Option="2" Days="30" />
+      <Item Group="14" Index="16" Count="10" />
+    </Package>
+    <Package ID="204" Name="Legend Pack" Description="Server stock" Filter="Limited" Price="4500" OldPrice="9000" Tag="" Flash="1" LimitCount="1" LimitPeriod="Sale" Stock="200" Start="2026-11-07 00:00" End="2026-11-30 23:59" Giftable="1">
+      <Vip VipType="4" Days="30" />
+      <Item Group="12" Index="38" Level="11" Luck="1" Option="3" Days="30" />
+      <Item Group="13" Index="37" Days="30" />
+      <Item Group="14" Index="123" />
+    </Package>
+    <Package ID="205" Name="Jewel of Bless ×10" Description="" Filter="Jewels" Price="900" OldPrice="0" Tag="" Flash="0" LimitCount="1" LimitPeriod="Day" Stock="0" Start="" End="" Giftable="1">
+      <Item Group="14" Index="13" Count="10" />
+    </Package>
+    <Package ID="206" Name="Jewel of Soul ×10" Description="" Filter="Jewels" Price="700" OldPrice="0" Tag="" Flash="0" LimitCount="1" LimitPeriod="Day" Stock="0" Start="" End="" Giftable="1">
+      <Item Group="14" Index="14" Count="10" />
+    </Package>
+    <Package ID="207" Name="Jewel of Life ×10" Description="" Filter="Jewels" Price="1200" OldPrice="0" Tag="" Flash="0" LimitCount="1" LimitPeriod="Day" Stock="0" Start="" End="" Giftable="1">
+      <Item Group="14" Index="16" Count="10" />
+    </Package>
+    <!-- Coupon-only reward: not sold, not in the client catalog; given by the WELCOME2026 coupon -->
+    <Package ID="208" Name="Welcome Gift" Description="Coupon reward" Filter="" Price="0" Free="1" ForSale="0" OldPrice="0" Tag="" Flash="0" LimitCount="0" LimitPeriod="None" Stock="0" Start="" End="" Giftable="0">
+      <Item Group="14" Index="13" Count="5" />
+      <Vip VipType="1" Days="3" />
+    </Package>
+  </Packages>
+  <!-- package ids; today's = Pool[dayNumber % n], server local midnight -->
+  <DailyDeal Discount="50" Pool="205,206,207" />
+  <TopUp FirstBonusPercent="100" PaymentTypes="Cards,E-wallets,Bank transfer,Prepaid / vouchers,Local methods">
+    <!-- Pack: Coins + Bonus as sold by the payment website (VipShop_TopUp.md); Badge: Popular|Best. Monthly: tiers by WCoin topped up this calendar month -->
+    <Pack ID="1" Coins="500" Bonus="0" Price="4.99" PriceLabel="$4.99" Badge="" />
+    <Pack ID="2" Coins="1200" Bonus="120" Price="9.99" PriceLabel="$9.99" Badge="" />
+    <Pack ID="3" Coins="2500" Bonus="375" Price="19.99" PriceLabel="$19.99" Badge="Popular" />
+    <Pack ID="4" Coins="6500" Bonus="1300" Price="49.99" PriceLabel="$49.99" Badge="Best" />
+    <Pack ID="5" Coins="14000" Bonus="3500" Price="99.99" PriceLabel="$99.99" Badge="" />
+    <Pack ID="6" Coins="30000" Bonus="9000" Price="199.99" PriceLabel="$199.99" Badge="" />
+    <Monthly Need="2500" Name="2,500 WCoin">
+      <Item Group="12" Index="15" Count="20" />
+    </Monthly>
+    <Monthly Need="5000" Name="5,000 WCoin">
+      <Item Group="13" Index="80" Days="7" />
+    </Monthly>
+    <Monthly Need="10000" Name="10,000 WCoin">
+      <Item Group="12" Index="6" Days="7" />
+      <Coins Amount="500" />
+    </Monthly>
+  </TopUp>
+  <ServerCoupons>
+    <!-- never sent to clients -->
+    <Coupon Code="WELCOME2026" Coins="500" PackageID="208" MaxUses="1000" PerAccount="1" Start="" End="" />
+  </ServerCoupons>
+</VipShop>

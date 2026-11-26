@@ -15,7 +15,7 @@
 //	Tooltip that contains information of player ability improvements that are gained by the Hunt Point system and its current HuntPoints/Inactive points.
 //	Every player starts by default with 2500 HuntPoints. They can be spent by killing monsters on predefined maps for each of the ability.
 //	Once player moves to the configured map he can hover the Special hunt point Buff and the information of ability that can be improved in this map will be displayed.
-//	The players can use /huntbattle command to be moved to special PVP area defined by server administrator. In this area anyone who joins can fight each other to steal their points.
+//	The players can use the Hunt Point battle command to be moved to special PVP area defined by server administrator. In this area anyone who joins can fight each other to steal their points.
 //	HuntPoint system resets each week and transforms part of old points into Inactive points so the leaders of last week will have slight advantage until he loses it by failing battles.
 //	The abilities can be slightly boosted by completing range of quests defined in this file.
 //	Player can cancel one quest and start another if he decides to change his strategy to improve another ability
@@ -53,7 +53,7 @@
 //	MinMasterReset: Minimum Grand Reset to work
 //
 // ### HuntPointSystem::Battle::General ###
-//	CommandSwitch: Is /huntbattle command active
+//	CommandSwitch: Is the Hunt Point battle command active
 //	MinLevel: Minimum level to participate in battle
 //	MinMasterLevel: Minimum Master level to participate in battle
 //	MinReset: Minimum Reset to participate in battle.
@@ -89,6 +89,15 @@
 // ### HuntPointSystem::ItemQuest::Item::Language::Text ###
 //	Id: Unique text ID
 //	Text: Text to display
+//
+// ### HuntPointSystem::V2 ###
+//	Enabled: Hunt Point window of the IGC Client (points, maps, quests, battle, ranking), the classic client keeps the buff tooltip, 0/1
+//	RankingRefreshMinutes: How often the ranking of the window is read again from the database, minutes, 1-1440
+//	RankingSize: Number of characters in the ranking, 1-50, Game Masters and blocked characters or accounts are left out
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~ Weekly and daily resets are made by the Data Server, see [HuntPointV2] in config.ini of the Data Server
+//~~ ResetWeekly is used only while the Data Server reset is off or its database tables are missing
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //
 // STRICTLY NO COMMENTS INSIDE TAGS
 //
@@ -399,4 +408,6 @@
 		<Text Id="45" Text=" Hunt Points" />
 		<Text Id="46" Text=" Leaving the game is not possible during Battle!" />
 	</Language>
+
+	<V2 Enabled="1" RankingRefreshMinutes="10" RankingSize="10" />
 </HuntPointSystem>

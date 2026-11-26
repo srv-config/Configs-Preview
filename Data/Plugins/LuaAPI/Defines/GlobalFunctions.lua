@@ -214,6 +214,11 @@ function Player.SendMana(iPlayerIndex, iMana, flag, iBP) end
 ---@param iPlayerIndex integer Player index
 function Player.SendExpToolTip(iPlayerIndex) end
 
+---Send the PK level (name colour) to the player and the players around, after changing oPlayer.PKLevel
+---@param iPlayerIndex integer Player index
+---@param btPKLevel integer PK level sent to the clients (0-6, 3 is a normal player)
+function Player.SendPKLevel(iPlayerIndex, btPKLevel) end
+
 
 ---Save character to database
 ---@param oPlayer object Player object (stObject)
@@ -640,15 +645,37 @@ function Party.GetMember(iPartyNumber, iArrayIndex) end
 
 DB = {}
 
+---Send SQL text to the CharacterDB, each ? outside quotes and comments takes the next argument as a parameter (since 22.1.1.3 S); the result arrives in onDSDBQueryReceive
 ---@param iPlayerIndex integer Player index
 ---@param iQueryNumber integer Query identifier
----@param szQuery string SQL query string
-function DB.QueryDS(iPlayerIndex, iQueryNumber, szQuery) end
+---@param szQuery string SQL text in the SQL of the database engine, up to 1023 bytes
+---@param ... nil|boolean|integer|number|string Up to 16 arguments, one for each ?: nil is NULL, boolean is 0/1, string up to 256 bytes
+---@return boolean False when the query was not sent
+function DB.QueryDS(iPlayerIndex, iQueryNumber, szQuery, ...) end
 
+---Send SQL text to the JoinServer (AccountDB), each ? outside quotes and comments takes the next argument as a parameter (since 22.1.1.3 S); the result arrives in onJSDBQueryReceive
 ---@param iPlayerIndex integer Player index
 ---@param iQueryNumber integer Query identifier
----@param szQuery string SQL query string
-function DB.QueryJS(iPlayerIndex, iQueryNumber, szQuery) end
+---@param szQuery string SQL text in the SQL of the database engine, up to 1023 bytes
+---@param ... nil|boolean|integer|number|string Up to 16 arguments, one for each ?: nil is NULL, boolean is 0/1, string up to 256 bytes
+---@return boolean False when the query was not sent
+function DB.QueryJS(iPlayerIndex, iQueryNumber, szQuery, ...) end
+
+---Call a DataServer procedure with typed parameters, built for the database engine; the result arrives in onDSDBQueryReceive
+---@param iPlayerIndex integer Player index
+---@param iQueryNumber integer Query identifier
+---@param szProcedure string Procedure name (letters, digits, _)
+---@param ... nil|boolean|integer|number|string Up to 16 arguments: nil is NULL, boolean is 0/1, string up to 256 bytes
+---@return boolean False when the call was not sent
+function DB.CallDS(iPlayerIndex, iQueryNumber, szProcedure, ...) end
+
+---Call a JoinServer (AccountDB) procedure with typed parameters, built for the database engine; the result arrives in onJSDBQueryReceive
+---@param iPlayerIndex integer Player index
+---@param iQueryNumber integer Query identifier
+---@param szProcedure string Procedure name (letters, digits, _)
+---@param ... nil|boolean|integer|number|string Up to 16 arguments: nil is NULL, boolean is 0/1, string up to 256 bytes
+---@return boolean False when the call was not sent
+function DB.CallJS(iPlayerIndex, iQueryNumber, szProcedure, ...) end
 
 ------------------------------------------------------------------
 -- Message Namespace

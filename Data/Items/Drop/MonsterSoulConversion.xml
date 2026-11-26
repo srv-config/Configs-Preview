@@ -91,12 +91,13 @@
 			<Area ID="3" MapNumber="140" MonsterIndex="926" ReqSoulNumber="500" DropRate="450000" Name="Bloody Tarkan" />
 			<Area ID="4" MapNumber="141" MonsterIndex="942" ReqSoulNumber="500" DropRate="450000" Name="Bloody Tarkan" />
 			<Area ID="5" MapNumber="142" MonsterIndex="955" ReqSoulNumber="500" DropRate="450000" Name="Twisted Karutan" />
+			<Area ID="6" MapNumber="143" MonsterIndex="963" ReqSoulNumber="500" DropRate="450000" Name="Kardamahal Underground Temple" />
 		</Converter>
 		<Converter Level="5">
-			<Area ID="0" MapNumber="143" MonsterIndex="963" ReqSoulNumber="500" DropRate="450000" Name="Kardamahal Underground Temple" />
-			<Area ID="1" MapNumber="144" MonsterIndex="969" ReqSoulNumber="500" DropRate="450000" Name="Swamp of Destruction" />
-			<Area ID="2" MapNumber="145" MonsterIndex="975" ReqSoulNumber="500" DropRate="450000" Name="Aquila's Temple" />
-			<Area ID="3" MapNumber="146" MonsterIndex="983" ReqSoulNumber="500" DropRate="450000" Name="Raklion of Oblivion" />
+			<Area ID="0" MapNumber="144" MonsterIndex="969" ReqSoulNumber="500" DropRate="450000" Name="Swamp of Destruction" />
+			<Area ID="1" MapNumber="145" MonsterIndex="975" ReqSoulNumber="500" DropRate="450000" Name="Aquila's Temple" />
+			<Area ID="2" MapNumber="146" MonsterIndex="983" ReqSoulNumber="500" DropRate="450000" Name="Raklion of Oblivion" />
+			<Area ID="3" MapNumber="147" MonsterIndex="989" ReqSoulNumber="500" DropRate="450000" Name="Arcana Archive" />
 		</Converter>
 	</MonsterSettings>
 </MonsterSoulConversion>

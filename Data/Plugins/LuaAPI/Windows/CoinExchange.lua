@@ -15,7 +15,7 @@
 -- the database. Create the tables and procedures first with the script in
 -- Data\Plugins\LuaAPI\SQL Scripts\CoinExchange.sql.
 --
---   state   IGC_CoinExchange_LoadDaily / LoadHistory / AddConversion over DB.QueryDS
+--   state   IGC_CoinExchange_LoadDaily / LoadHistory / AddConversion over DB.CallDS
 --   currency  Coin.Get / Coin.Charge / Coin.Add
 --
 -- Loads are async: the window opens with whatever is cached, and refreshes when
@@ -80,10 +80,8 @@ local function RequestLoad(oPlayer)
 	pendDaily[oPlayer.Index] = { charId = charId, value = 0 }
 	pendHist[oPlayer.Index] = { charId = charId, rows = {} }
 
-	DB.QueryDS(oPlayer.Index, Q_LOAD_DAILY,
-		string.format("EXEC IGC_CoinExchange_LoadDaily %d", charId))
-	DB.QueryDS(oPlayer.Index, Q_LOAD_HISTORY,
-		string.format("EXEC IGC_CoinExchange_LoadHistory %d, %d", charId, MAX_HISTORY))
+	DB.CallDS(oPlayer.Index, Q_LOAD_DAILY, "IGC_CoinExchange_LoadDaily", charId)
+	DB.CallDS(oPlayer.Index, Q_LOAD_HISTORY, "IGC_CoinExchange_LoadHistory", charId, MAX_HISTORY)
 end
 
 -- One call per column per row. A second packet is a separate async task and can
@@ -259,8 +257,7 @@ UIWindow.On(S.id, S.CONVERT, function(oPlayer, reader)
 	remember(oPlayer, amount, gained)
 
 	-- persist: bumps the daily counter and appends a history row (fire and forget)
-	DB.QueryDS(oPlayer.Index, Q_SAVE,
-		string.format("EXEC IGC_CoinExchange_AddConversion %d, %d, %d", charId, amount, gained))
+	DB.CallDS(oPlayer.Index, Q_SAVE, "IGC_CoinExchange_AddConversion", charId, amount, gained)
 
 	UIWindow.Send(oPlayer, S.id, S.CONVERT, S.RESULT.OK)
 	sendRates(oPlayer)

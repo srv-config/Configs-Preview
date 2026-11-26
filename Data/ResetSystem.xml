@@ -15,7 +15,7 @@
 // ### ResetSystem::AutoReset ###
 //	Enable: Whether or not, auto-reset is enabled, 0/1
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~ Refer to Commands.ini for auto-reset usage/activation
+//~~ Refer to Commands.xml for auto-reset usage/activation
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //	MaxReset: Maximum reset to use auto-reset, use specific value or if "MAXINGAMERESETS" is used a valie of MaxInGameResets attribute will be used
 //	MaxGrandReset: maximum grand reset to use auto-reset, -1 if not applies

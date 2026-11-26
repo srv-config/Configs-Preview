@@ -92,6 +92,7 @@
 		<Map Index="144" Name="Swamp of Destruction" />
 		<Map Index="145" Name="Aquila's Temple" />
 		<Map Index="146" Name="Raklion of Oblivion" />
+		<Map Index="147" Name="Arcana Archive" />
 	</MapIncluded>
 	<MonstersExcluded> <!-- Monsters excluded from hunting records -->
 		<Monster Index="413" Name="Gold Rabbit" />

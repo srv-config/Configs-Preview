@@ -186,4 +186,8 @@
 	<Unit Number="173" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="6" Delay="300" ElementSlot0="183" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Aquila Magician Attack" />
 	<Unit Number="175" TargetType="1" ScopeType="0" ScopeAngle="-1" ScopeValue="2" Delay="300" ElementSlot0="185" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Giant of Oblivion Attack" />
 	<Unit Number="176" TargetType="1" ScopeType="-1" ScopeAngle="-1" ScopeValue="0" Delay="300" ElementSlot0="186" ElementSlot1="187" ElementSlot2="188" ElementSlot3="-1" ElementSlot4="-1" Name="Iron Knight of Oblivion Attack" />
+	<!-- 177-179: PLACEHOLDER scope/elements (Aquila 171 / 173 pattern); unit numbers are official (1.21.20 monsterskill.bmd) -->
+	<Unit Number="177" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="3" Delay="300" ElementSlot0="189" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Specter Knight Attack" />
+	<Unit Number="178" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="3" Delay="300" ElementSlot0="189" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Specter Scythe Attack" />
+	<Unit Number="179" TargetType="1" ScopeType="4" ScopeAngle="-1" ScopeValue="6" Delay="300" ElementSlot0="189" ElementSlot1="-1" ElementSlot2="-1" ElementSlot3="-1" ElementSlot4="-1" Name="Specter Sorcerer Attack" />
 </MonsterSkill>

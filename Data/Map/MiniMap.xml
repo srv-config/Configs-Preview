@@ -395,6 +395,7 @@
 		<Tag Id="1" MapNumber="33" X="238" Y="165" Name="Karutan Entrance" />
 		<Tag Id="2" MapNumber="33" X="218" Y="237" Name="Blaze Kethotum Entrance" />
 		<Tag Id="3" MapNumber="33" X="210" Y="18" Name="Kardamahal Underground Temple Entrance" />
+		<Tag Id="4" MapNumber="33" X="244" Y="102" Name="Arcana Archive Entrance" />
 	<!-- Crywolf Fortress (First Zone) -->
 		<Tag Id="0" MapNumber="34" X="238" Y="42" Name="Valley of Loren Entrance" />
 	<!-- Kanturu Ruins -->
@@ -618,5 +619,7 @@
 		<Tag Id="0" MapNumber="145" X="112" Y="66" Name="Kanturu Ruins Entrance" />
 	<!-- Aquila's Temple -->
 		<Tag Id="0" MapNumber="146" X="130" Y="19" Name="Raklion Entrance" />
+	<!-- Arcana Archive -->
+		<Tag Id="0" MapNumber="147" X="55" Y="115" Name="Aida Entrance" />
 	</TypeTwo>
 </MiniMapObjects>

@@ -62,4 +62,16 @@
 	<Item SetOptionID="360" Cat1="0" Index1="140" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="361" Cat1="5" Index1="167" Cat2="5" Index2="168" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 	<Item SetOptionID="375" Cat1="2" Index1="71" Cat2="6" Index2="113" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+<!-- Grade 3 (Dominion, Korea 1.21.25) -->
+	<Item SetOptionID="380" Cat1="0" Index1="142" Cat2="0" Index2="142" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="382" Cat1="4" Index1="76" Cat2="4" Index2="77" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="384" Cat1="0" Index1="143" Cat2="0" Index2="143" Cat3="0" Index3="146" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="385" Cat1="2" Index1="75" Cat2="6" Index2="135" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="386" Cat1="0" Index1="144" Cat2="0" Index2="144" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="387" Cat1="3" Index1="37" Cat2="6" Index2="134" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="388" Cat1="6" Index1="133" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="391" Cat1="0" Index1="145" Cat2="0" Index2="145" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="392" Cat1="0" Index1="148" Cat2="6" Index2="132" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="396" Cat1="0" Index1="147" Cat2="-1" Index2="-1" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
+	<Item SetOptionID="398" Cat1="2" Index1="77" Cat2="6" Index2="138" Cat3="-1" Index3="-1" Cat4="-1" Index4="-1" />
 </LegendaryItemSetType>

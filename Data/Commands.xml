@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+// ============================================================
+// == INTERNATIONAL GAMING CENTER NETWORK
+// == www.igcn.mu
+// == (C) 2010-2026 IGC-Network (R)
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// == File is a part of IGCN Group MuOnline Server files.
+// ============================================================
+//
+// ### Commands::Command ###
+//	Name: Text typed in the chat, starts with / and has no spaces, letter case does not matter, each Name only once in the file
+//	Id: Command of the GameServer run by the Name, several Names may use the same Id (aliases, e.g. translations: /post and /wiadomosc)
+//	Authority: Who may use the Name, optional, the minimum of the Id when missing
+//		~ 0: Every player
+//		~ 1: Game Master (CtlCode 8) and Administrator (CtlCode 32)
+//		~ 2: Administrator only (CtlCode 32)
+//
+//	A value below the minimum of the Id is raised to the minimum, the GameServer log says so
+//	Commands removed from the file cannot be used
+//	Game Master commands also need the privilege flag in IGC.EssentialTool, GM Management, named in the comment of the entry
+//	Reload on the GameServer console: data.reload.commands
+//
+// ### Item parameters ###
+//	/item <group> <index> <level> <durability> <skill> <luck> <option> <exc> <setitem> <periodtime> <socketslot> <socketbonus/attribute> <muunevolutionitemcat> <muunevolutionitemindex>
+//	group, index: ItemList.xml
+//	level: 0-15
+//	durability: 0 = default durability, overlap value for overlap items
+//	skill, luck: 0/1
+//	option: 0-7, option * 4 = item option
+//	exc: Excellent options
+//		~ -1: No excellent option
+//		~ -2: Random count of random options, rates from ExcellentOptions.xml
+//		~ -3;X: X random options, max 9, rates from ExcellentOptions.xml
+//		~ X;X;X;X;X;X;X;X;X: Option IDs from ExcellentOptions.xml, max 9
+//
+//	exc: Grade options of 4th wings
+//		~ -1: No grade option
+//		~ -2: Random count of random options, rates from ItemGradeOption.xml
+//		~ -3;X: X random options, max 4
+//		~ ID1;LV1;ID2;LV2;ID3;LV3;ID4;LV4: Index and GradeXVal level (0-9) from ItemGradeOption.xml, max 4
+//
+//	exc: Guardian items
+//		~ -1: No option
+//		~ -2;X: Random count of random options from GuardianItemOption.xml, X = 0/1 random elite option
+//		~ -3;X;Y: X random options, max 4, Y = 0/1 random elite option
+//		~ X;X;X;X;Y: OptionList indexes, max 4, -1 if not applies, Y = EliteOptionList index or -1
+//
+//	exc: Artifact items
+//		~ -1: No option
+//		~ -2: Random option set, rates from ArtifactSystem.xml
+//		~ X1;Y1;X2;Y2;X3;Y3: X = OptionType from ArtifactOption.xml, Y = value index 1-10, -1 if not applies
+//
+//	exc: Ability cards
+//		~ -1: Random option
+//		~ X: Option index from AbilityCardOption.xml
+//		~ X;Y: Option index from AbilityCardOption.xml and add option index from AbilityCardAddOption.xml
+//
+//	setitem: Ancient option, the item must be set in ItemSetType.xml
+//		~ 0: No set item
+//		~ 5: Tier 1 +5 Stamina
+//		~ 6: Tier 2 +5 Stamina
+//		~ 9: Tier 1 +10 Stamina
+//		~ 10: Tier 2 +10 Stamina
+//		~ 20: Tier 3 +5 Stamina
+//		~ 24: Tier 4 +5 Stamina
+//		~ 36: Tier 3 +10 Stamina
+//		~ 40: Tier 4 +10 Stamina
+//
+//	periodtime: Expiration in seconds, not every item supports it
+//	socketslot: Count of empty socket slots, socket and pentagram items
+//	socketbonus/attribute: Socket bonus of a socket item, or pentagram element
+//		~ 0: No attribute
+//		~ 1: Fire
+//		~ 2: Water
+//		~ 3: Earth
+//		~ 4: Wind
+//		~ 5: Darkness
+//
+//	muunevolutionitemcat, muunevolutionitemindex: Muun of the Evolution Stone (13,211) only
+//
+// ### GremoryGift parameters ###
+//	/addgift <name> <storage> <group> <index> <level> <durability> <skill> <luck> <option> <exc> <setitem> <socketslot> <socketbonus/attribute> <muunevolutionitemcat> <muunevolutionitemindex> <days>
+//	storage: Gremory Case storage
+//		~ 1: Server
+//		~ 2: Character
+//
+//	Other parameters as in Item parameters, days = days to expire
+//
+// ### Spawn parameters ###
+//	/spawn <class> <map> <range> <x> <y> <regen> <regen_time>
+//	class: MonsterList.xml
+//	map: MapList.xml, -1 = current map
+//	range: Spawn range in tiles from x, y
+//	x, y: Position 1-255, own position + 2 when missing on the own map
+//	regen: 0/1, respawn after death
+//	regen_time: Seconds to respawn, regen 1 only
+//
+// STRICTLY NO COMMENTS INSIDE TAGS
+-->
+
+<Commands>
+	<Command Name="/post" Id="Post" Authority="0" /> <!-- /post <message>: message to the players of this GameServer -->
+	<Command Name="/gpost" Id="GlobalPost" Authority="0" /> <!-- /gpost <message>: message to every GameServer of the group -->
+	<Command Name="/scramble" Id="Scramble" Authority="0" /> <!-- /scramble <answer>: answer in the Scramble event -->
+
+	<Command Name="/addstr" Id="AddStrength" Authority="0" /> <!-- /addstr <points> -->
+	<Command Name="/addagi" Id="AddAgility" Authority="0" /> <!-- /addagi <points> -->
+	<Command Name="/addvit" Id="AddVitality" Authority="0" /> <!-- /addvit <points> -->
+	<Command Name="/addene" Id="AddEnergy" Authority="0" /> <!-- /addene <points> -->
+	<Command Name="/addcmd" Id="AddCommand" Authority="0" /> <!-- /addcmd <points> -->
+	<Command Name="/autostat" Id="AutoStat" Authority="0" /> <!-- /autostat [status|off] or /autostat <min_free_points> <str%> <agi%> <vit%> <ene%> <cmd%> -->
+
+	<Command Name="/pkclear" Id="PkClear" Authority="0" /> <!-- /pkclear: clears the PK status, IGCCommon.ini [PKClear] -->
+	<Command Name="/reset" Id="Reset" Authority="0" /> <!-- /reset [auto|off]: character reset, IGCCommon.ini [ResetCMD] -->
+
+	<Command Name="/lock" Id="Lock" Authority="0" /> <!-- /lock <code>: locks the character, /lock 0 removes the code -->
+	<Command Name="/unlock" Id="Unlock" Authority="0" /> <!-- /unlock <code>: unlocks the character for this session -->
+	<Command Name="/requests" Id="Requests" Authority="0" /> <!-- /requests <on|off>: accepts or refuses trade and duel requests -->
+	<Command Name="/hideicon" Id="HideIcon" Authority="0" /> <!-- /hideicon: hides own Custom Rank icon -->
+	<Command Name="/move" Id="Move" Authority="0" /> <!-- /move <map_name>: player warp, or /move <name> <map> <x> <y>: Game Master with the Disconnect/Move flag -->
+	<Command Name="/prop" Id="MarryPropose" Authority="0" /> <!-- /prop <name>: marriage proposal -->
+	<Command Name="/accept" Id="MarryAccept" Authority="0" /> <!-- /accept: accepts a marriage proposal -->
+	<Command Name="/teleport" Id="MarryTeleport" Authority="0" /> <!-- /teleport: teleport to the spouse -->
+	<Command Name="/divorce" Id="MarryDivorce" Authority="0" /> <!-- /divorce -->
+
+	<Command Name="/online" Id="Online" Authority="0" /> <!-- /online: players and Game Masters online -->
+	<Command Name="/srvinfo" Id="ServerInfo" Authority="0" /> <!-- /srvinfo: server time, name, code and players online -->
+	<Command Name="/charinfo" Id="CharacterInfo" Authority="0" /> <!-- /charinfo: own account, level, class, map and spouse -->
+	<Command Name="/gethp" Id="GetHp" Authority="0" /> <!-- /gethp: own HP -->
+	<Command Name="/crew" Id="Crew" Authority="0" /> <!-- /crew: Game Masters online -->
+	<Command Name="/remaintime" Id="RemainTime" Authority="0" /> <!-- /remaintime: time left of the Gold Channel -->
+	<Command Name="/antilag" Id="AntiLagInfo" Authority="0" /> <!-- /antilag: help of the AntiLag system -->
+
+	<Command Name="/ware" Id="Ware" Authority="0" /> <!-- /ware <number>: switches the warehouse -->
+	<Command Name="/clearinv" Id="ClearInventory" Authority="0" /> <!-- /clearinv: deletes equipped items, inventory, Zen and Ruud -->
+	<Command Name="/clearbag" Id="ClearBag" Authority="0" /> <!-- /clearbag: deletes the inventory items, also the Clear Inventory button -->
+	<Command Name="/cleareventinv" Id="ClearEventInventory" Authority="0" /> <!-- /cleareventinv: deletes the event inventory items -->
+
+	<Command Name="/offtrade" Id="OffTrade" Authority="0" /> <!-- /offtrade: offline personal store, also the Off Trade button -->
+	<Command Name="/offlevel" Id="OffLevel" Authority="0" /> <!-- /offlevel: offline levelling, also the Off Level button -->
+	<Command Name="/dcfriend" Id="DisconnectFriend" Authority="0" /> <!-- /dcfriend <name> <password>: disconnects own character -->
+
+	<Command Name="/war" Id="GuildWar" Authority="0" /> <!-- /war <guild>: guild war proposal -->
+	<Command Name="/endwar" Id="GuildWarEnd" Authority="0" /> <!-- /endwar: guild master ends the war, /endwar <guild>: Game Master with the Guild flag -->
+	<Command Name="/battlesoccer" Id="BattleSoccerRequest" Authority="0" /> <!-- /battlesoccer <guild>: Battle Soccer challenge -->
+	<Command Name="/regicewind" Id="IceWindRegister" Authority="0" /> <!-- /regicewind: Ice Wind Valley registration -->
+	<Command Name="/raffle" Id="Raffle" Authority="0" /> <!-- /raffle: Raffle event coupon -->
+	<Command Name="/lotto" Id="Lotto" Authority="0" /> <!-- /lotto <numbers>: Lotto event coupon -->
+	<Command Name="/hitorder" Id="HitOrder" Authority="0" /> <!-- /hitorder <numbers>: HitOrder event coupon -->
+
+	<Command Name="/firework" Id="Fireworks" Authority="1" /> <!-- /firework (flag Fireworks) -->
+	<Command Name="/trace" Id="Trace" Authority="1" /> <!-- /trace <name>: moves the Game Master to a player (flag Disconnect/Move) -->
+	<Command Name="/trans" Id="Summon" Authority="1" /> <!-- /trans <name>: moves a player to the Game Master (flag Disconnect/Move) -->
+	<Command Name="/dc" Id="Disconnect" Authority="1" /> <!-- /dc <name> (flag Disconnect/Move) -->
+	<Command Name="/gdc" Id="GuildDisconnect" Authority="1" /> <!-- /gdc <guild> (flag Guild) -->
+	<Command Name="/gmove" Id="GuildMove" Authority="1" /> <!-- /gmove <guild> <map> <x> <y> (flag Guild) -->
+	<Command Name="/setgw" Id="SetGuildWar" Authority="2" /> <!-- /setgw <guild> <guild> (flag Guild) -->
+	<Command Name="/socstart" Id="BattleSoccerStart" Authority="1" /> <!-- /socstart (flag Battle Soccer) -->
+	<Command Name="/socstop" Id="BattleSoccerStop" Authority="1" /> <!-- /socstop (flag Battle Soccer) -->
+	<Command Name="/chatban" Id="ChatBan" Authority="1" /> <!-- /chatban <name> <minutes>, 0 = permanent (flag Disconnect/Move) -->
+	<Command Name="/chatunban" Id="ChatUnban" Authority="1" /> <!-- /chatunban <name> (flag Disconnect/Move) -->
+	<Command Name="/banacc" Id="BanAccount" Authority="1" /> <!-- /banacc <account> (flag Ban) -->
+	<Command Name="/unbanacc" Id="UnbanAccount" Authority="1" /> <!-- /unbanacc <account> (flag Ban) -->
+	<Command Name="/banchar" Id="BanCharacter" Authority="1" /> <!-- /banchar <name> (flag Ban) -->
+	<Command Name="/unbanchar" Id="UnbanCharacter" Authority="1" /> <!-- /unbanchar <name> (flag Ban) -->
+	<Command Name="/setpk" Id="SetPk" Authority="1" /> <!-- /setpk <name> <pk_level> <pk_count> (flag PK Modify) -->
+	<Command Name="/info" Id="PlayerInfo" Authority="1" /> <!-- /info <name>: account, level, map and position of a player -->
+	<Command Name="/hide" Id="Hide" Authority="1" /> <!-- /hide (flag Invisible) -->
+	<Command Name="/unhide" Id="Unhide" Authority="1" /> <!-- /unhide (flag Invisible) -->
+	<Command Name="/skin" Id="Skin" Authority="1" /> <!-- /skin <monster_class>: MonsterList.xml, /skin 0 restores the character (flag Skin) -->
+	<Command Name="/item" Id="Item" Authority="2" /> <!-- /item <parameters>: see Item parameters above (flag Item Create) -->
+	<Command Name="/addgift" Id="GremoryGift" Authority="2" /> <!-- /addgift <parameters>: see GremoryGift parameters above (flag Item Create) -->
+	<Command Name="/spawn" Id="Spawn" Authority="2" /> <!-- /spawn <parameters>: see Spawn parameters above -->
+	<Command Name="/mlsreset" Id="ResetMasterTree" Authority="1" /> <!-- /mlsreset <tree_type>: resets own master skill tree -->
+	<Command Name="/labtestclear" Id="LabyrinthClear" Authority="1" /> <!-- /labtestclear: clears the current Labyrinth mission -->
+
+	<Command Name="/kundunhpinfo" Id="KundunInfo" Authority="1" /> <!-- /kundunhpinfo: Kundun HP notice (flag Event) -->
+	<Command Name="/setlifekundun" Id="KundunSetLife" Authority="1" /> <!-- /setlifekundun <hp> (flag Event) -->
+	<Command Name="/bcstart" Id="BloodCastleStart" Authority="1" /> <!-- /bcstart (flag Event) -->
+	<Command Name="/dsstart" Id="DevilSquareStart" Authority="1" /> <!-- /dsstart (flag Event) -->
+	<Command Name="/ccstart" Id="ChaosCastleStart" Authority="1" /> <!-- /ccstart (flag Event) -->
+	<Command Name="/ccsblow" Id="ChaosCastleFinalBlow" Authority="1" /> <!-- /ccsblow <0|1>: Chaos Castle Final test switch -->
+	<Command Name="/ccstrap" Id="ChaosCastleFinalTrap" Authority="1" /> <!-- /ccstrap <0|1>: Chaos Castle Final test switch -->
+	<Command Name="/crywolfset" Id="CrywolfSetState" Authority="1" /> <!-- /crywolfset <state>: 0 notify, 1 ready, 2 start, 3 end (flag Event, Castle Siege server only) -->
+	<Command Name="/cssetowner" Id="CastleSiegeSetOwner" Authority="2" /> <!-- /cssetowner [guild]: without a guild removes the owner (flag Event, Castle Siege server only) -->
+	<Command Name="/cssetregister" Id="CastleSiegeSetRegister" Authority="2" /> <!-- /cssetregister: registration (flag Event, Castle Siege server only) -->
+	<Command Name="/cssetregmark" Id="CastleSiegeSetRegMark" Authority="2" /> <!-- /cssetregmark: registration of the Lord marks (flag Event, Castle Siege server only) -->
+	<Command Name="/cssetnotify" Id="CastleSiegeSetNotify" Authority="2" /> <!-- /cssetnotify: notification (flag Event, Castle Siege server only) -->
+	<Command Name="/cssetready" Id="CastleSiegeSetReady" Authority="2" /> <!-- /cssetready: ready (flag Event, Castle Siege server only) -->
+	<Command Name="/cssetstart" Id="CastleSiegeSetStart" Authority="2" /> <!-- /cssetstart: start (flag Event, Castle Siege server only) -->
+	<Command Name="/cssetend" Id="CastleSiegeSetEnd" Authority="2" /> <!-- /cssetend: end (flag Event, Castle Siege server only) -->
+	<Command Name="/csgetowner" Id="CastleSiegeGetOwner" Authority="2" /> <!-- /csgetowner (flag Event, Castle Siege server only) -->
+	<Command Name="/csgetstate" Id="CastleSiegeGetState" Authority="2" /> <!-- /csgetstate (flag Event, Castle Siege server only) -->
+	<Command Name="/cschangeside" Id="CastleSiegeChangeSide" Authority="2" /> <!-- /cschangeside <guild> (flag Event, Castle Siege server only) -->
+	<Command Name="/ktstandby" Id="KanturuStandby" Authority="1" /> <!-- /ktstandby (flag Event, not on the Castle Siege server) -->
+	<Command Name="/ktmaya" Id="KanturuMaya" Authority="1" /> <!-- /ktmaya (flag Event, not on the Castle Siege server) -->
+	<Command Name="/kttower" Id="KanturuTower" Authority="1" /> <!-- /kttower (flag Event, not on the Castle Siege server) -->
+	<Command Name="/lmsstart" Id="LmsStart" Authority="1" /> <!-- /lmsstart: Last Man Standing registration now -->
+	<Command Name="/lmsnext" Id="LmsNext" Authority="1" /> <!-- /lmsnext: Last Man Standing next phase -->
+	<Command Name="/lmsend" Id="LmsEnd" Authority="1" /> <!-- /lmsend: Last Man Standing end -->
+	<Command Name="/lmsstatus" Id="LmsStatus" Authority="1" /> <!-- /lmsstatus -->
+	<Command Name="/iwvreg" Id="IwvRegister" Authority="1" /> <!-- /iwvreg: Ice Wind Valley registration now -->
+	<Command Name="/iwvnext" Id="IwvNext" Authority="1" /> <!-- /iwvnext: Ice Wind Valley next phase -->
+	<Command Name="/iwvstart" Id="IwvStart" Authority="1" /> <!-- /iwvstart: Ice Wind Valley play now -->
+	<Command Name="/iwvend" Id="IwvEnd" Authority="1" /> <!-- /iwvend: Ice Wind Valley end -->
+	<Command Name="/iwvseat" Id="IwvSeat" Authority="1" /> <!-- /iwvseat <guild> <seconds>: progress of a registered guild -->
+	<Command Name="/iwvstatus" Id="IwvStatus" Authority="1" /> <!-- /iwvstatus -->
+</Commands>

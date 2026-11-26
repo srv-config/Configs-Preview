@@ -980,6 +980,42 @@
 		<Formula ID="184" Data="240" />
 		<Formula ID="185" Data="50" />
 		<Formula ID="186" Data="50" />
+<!-- 3rd legendary (Dominion, Korea 1.21.25) -->
+		<Formula ID="187" Data="(96.5+(%d*1)/2)" /> <!-- ItemLevel -->
+		<Formula ID="188" Data="(48+(%d*1)/3)" /> <!-- ItemLevel -->
+		<Formula ID="189" Data="(833+(%d*6.78))" /> <!-- ItemLevel -->
+		<Formula ID="190" Data="(331+(%d*2.63))" /> <!-- ItemLevel -->
+		<Formula ID="191" Data="(254+(%d*2.65))" /> <!-- ItemLevel -->
+		<Formula ID="192" Data="(254+(%d*2.65))" /> <!-- ItemLevel -->
+		<Formula ID="193" Data="(93+(%d*1.2))" /> <!-- ItemLevel -->
+		<Formula ID="194" Data="(324+(%d*2.53))" /> <!-- ItemLevel -->
+		<Formula ID="195" Data="(300+(%d*2.37))" /> <!-- ItemLevel -->
+		<Formula ID="196" Data="(263+(%d*2.65))" /> <!-- ItemLevel -->
+		<Formula ID="197" Data="(109+(%d*1.5))" /> <!-- ItemLevel -->
+		<Formula ID="198" Data="(319+(%d*2.39))" /> <!-- ItemLevel -->
+		<Formula ID="199" Data="(307+(%d*2.33))" /> <!-- ItemLevel -->
+		<Formula ID="200" Data="(92+(%d*1.2))" /> <!-- ItemLevel -->
+		<Formula ID="201" Data="(146.5+(%d*1)/2)" /> <!-- ItemLevel -->
+		<Formula ID="202" Data="(191+(%d*2.5))" /> <!-- ItemLevel -->
+		<Formula ID="203" Data="(85+(%d*1))" /> <!-- ItemLevel -->
+		<Formula ID="204" Data="(210+(%d*1.39))" /> <!-- ItemLevel -->
+		<Formula ID="205" Data="500" />
+		<Formula ID="206" Data="500" />
+		<Formula ID="207" Data="300" />
+		<Formula ID="208" Data="400" />
+		<Formula ID="209" Data="(64+(%d*1.5))" /> <!-- ItemLevel -->
+		<Formula ID="210" Data="500" />
+		<Formula ID="211" Data="500" />
+		<Formula ID="212" Data="300" />
+		<Formula ID="213" Data="400" />
+		<Formula ID="214" Data="(64+(%d*1.5))" /> <!-- ItemLevel -->
+		<Formula ID="215" Data="150" />
+		<Formula ID="216" Data="120" />
+		<Formula ID="217" Data="100" />
+		<Formula ID="218" Data="300" />
+		<Formula ID="219" Data="240" />
+		<Formula ID="220" Data="50" />
+		<Formula ID="221" Data="50" />
 	</SetOption>
 	<Wing4thDamage>
 		<Formula ID="0" Data="100+(%d^1.2*11.8)" /> <!-- WingsLevel -->
